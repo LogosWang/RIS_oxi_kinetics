@@ -34,9 +34,29 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 \section{Model Formulation and Calibration}
 \label{sec:method}
 
+The model consists of two components: a radiation-induced segregation (RIS) model for the evolving GB chemistry and a reduced-dimensional oxidation model for oxygen transport, consumption, and oxide growth. The RIS-predicted Cr, Ni, Si, and Fe concentrations provide the local alloy composition for the oxidation model. Oxygen transport along the GB is solved explicitly, while transport through the oxide and interfacial reactions are treated using a quasi-steady resistance formulation. The oxide composition determines the effective oxygen diffusivity through an effective-medium treatment, which controls the local oxygen consumption and oxide growth rate. The formulations of the two components are described below.
+
+
 \subsection{Radiation-Induced Segregation Model}
 \label{sec:methodRIS}
-
+The RIS model is based on solving a set of coupled mass-conservation equations
+for all species of interest, including the alloying elements (Cr, Ni, Si, and Fe)
+and point defects (vacancies and self-interstitials). The evolution of each
+species is governed by
+\begin{equation}
+\frac{\partial C_i}{\partial t}
+=
+-\nabla\cdot J_i + S_i,
+\end{equation}
+where \(C_i\) and \(J_i\) denote the concentration and flux of species \(i\),
+respectively, and \(S_i\) represents the corresponding source or sink term.
+For substitutional alloying elements, \(S_i=0\), whereas for vacancies and
+self-interstitials,
+\begin{equation}
+S_i = \epsilon K_0 - R C_I C_V,
+\qquad i\in\{I,V\}.
+\end{equation}
+where \(\epsilon\) is the damage efficiency, \(K_0\) is the atomic displacement rate, and \(R\) is the recombination rate coefficient. The flux of each species is given by
 \subsection{Grain-Boundary Oxidation Model}
 \label{sec:methodGBOxidation}
 
