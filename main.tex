@@ -39,26 +39,94 @@ The model consists of two components: a radiation-induced segregation (RIS) mode
 
 \subsection{Radiation-Induced Segregation Model}
 \label{sec:methodRIS}
+
 The RIS model is based on solving a set of coupled mass-conservation equations
-for all species of interest, including the alloying elements (Cr, Ni, Si, and Fe)
-and point defects (vacancies and self-interstitials). The evolution of each
-species is governed by
+for the alloying elements (Cr, Ni, Si, and Fe) and point defects (vacancies and
+self-interstitials). For each alloying element \(i\), where
+\(i\in\{\mathrm{Cr,Ni,Si,Fe}\}\), the concentration evolves according to
+
 \begin{equation}
 \frac{\partial C_i}{\partial t}
 =
--\nabla\cdot J_i + S_i,
+-\nabla \cdot J_i .
 \end{equation}
-where \(C_i\) and \(J_i\) denote the concentration and flux of species \(i\),
-respectively, and \(S_i\) represents the corresponding source or sink term.
-For substitutional alloying elements, \(S_i=0\), whereas for vacancies and
-self-interstitials,
+
+The site fractions of vacancies and self-interstitials are governed separately by
+
 \begin{equation}
-S_i = \epsilon K_0 - R C_I C_V,
-\qquad i\in\{I,V\}.
+\frac{\partial C_{\mathrm{Vac}}}{\partial t}
+=
+-\nabla \cdot J_{\mathrm{Vac}}
++\epsilon K_0
+-R C_{\mathrm{Int}} C_{\mathrm{Vac}},
 \end{equation}
-where \(\epsilon\) is the damage efficiency, \(K_0\) is the atomic displacement rate, and \(R\) is the recombination rate coefficient. The flux of each species is given by
+
+\begin{equation}
+\frac{\partial C_{\mathrm{Int}}}{\partial t}
+=
+-\nabla \cdot J_{\mathrm{Int}}
++\epsilon K_0
+-R C_{\mathrm{Int}} C_{\mathrm{Vac}},
+\end{equation}
+
+where \(C_{\mathrm{Vac}}\) and \(C_{\mathrm{Int}}\) are the vacancy and
+self-interstitial site fractions, respectively, \(\epsilon\) is the damage
+efficiency, \(K_0\) is the radiation dose rate, and \(R\) is the
+vacancy--interstitial recombination rate coefficient. The flux of each species is given by
+
+\begin{equation}
+\mathbf{J}_i^{\mathrm{Vac}}=-\sum_j L_{ij}^{\mathrm{Vac}}\nabla\left(\mu_j-\mu_{\mathrm{Vac}}\right),
+\end{equation}
+\begin{equation}
+\mathbf{J}_i^\mathrm{Int}=-\sum_j L_{ij}^\mathrm{Int}\nabla\left(\mu_j+\mu_{\mathrm{Int}}\right),
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+L_{ii}^{\mathrm{Vac}} &= \left(\frac{C_iD_i^{\mathrm{Vac}}C_\mathrm{Vac}}{k_BT}\right)\left(1+\frac{1-f_0^\mathrm{Vac}}{f_0^\mathrm{Vac}}\frac{C_iD_i^{\mathrm{Vac}}}{\sum_m C_mD_m^{\mathrm{Vac}}}\right), &\qquad i=j,\\
+L_{ij}^{\mathrm{Vac}} &= L_{ji}^{\mathrm{Vac}}=\frac{\left(1-f_0^\mathrm{Vac}\right)}{f_0^\mathrm{Vac}}\frac{C_iD_i^{\mathrm{Vac}}C_jD_j^{\mathrm{Vac}}C_\mathrm{Vac}}{k_BT\sum_m C_mD_m^{\mathrm{Vac}}}, &\qquad i\ne j.t
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+L_{ii}^{\mathrm{Int}} &= \left(\frac{C_iD_i^{\mathrm{Int}}C_\mathrm{Int}}{k_BT}\right)\left(1+\frac{1-f_0^\mathrm{Int}}{f_0^\mathrm{Int}}\frac{C_iD_i^{\mathrm{Int}}}{\sum_m C_mD_m^{\mathrm{Int}}}\right), &\qquad i=j,\\
+L_{ij}^{\mathrm{Int}} &= L_{ji}^{\mathrm{Int}}=\frac{\left(1-f_0^\mathrm{Int}\right)}{f_0^\mathrm{Int}}\frac{C_iD_i^{\mathrm{Int}}C_jD_j^{\mathrm{Int}}C_\mathrm{Int}}{k_BT\sum_m C_mD_m^{\mathrm{Int}}}, &\qquad i\ne j.
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{Vac} = -\sum_i \mathbf{J}_i^{\mathrm{Vac}}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{Int} = \sum_i \mathbf{J}_i^{\mathrm{Int}}
+\end{equation}
+
+\begin{equation}
+v_\mathrm{lattice}^\mathrm{RIS}=\mathbf{J}_\mathrm{Vac}-\mathbf{J}_\mathrm{Int}
+\end{equation}
+
 \subsection{Grain-Boundary Oxidation Model}
 \label{sec:methodGBOxidation}
+
+\begin{equation}
+\frac{\partial C_\mathrm{O}}{\partial t} = -\frac{\partial \mathbf{J}_\mathrm{O}}{\partial y} - \frac{\mathbf{J}_\mathrm{r}}{\delta_\mathrm{GB}} 
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{O} = -D_\mathrm{O}^\mathrm{eff}\frac{\partial C_\mathrm{O}}{\partial y}
+\end{equation}
+
+\begin{equation}
+D_\mathrm{O}^\mathrm{eff} = \sum_i f_iD_\mathrm{O}^i
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{r} = D_\mathrm{O}^\mathrm{eff}\frac{C_\mathrm{O}-C_\mathrm{O}^\mathrm{interface}}{\sum_i thick_i}
+\end{equation}
+
+
 
 \subsection{Coupling Strategy and Simulation Protocol}
 \label{sec:methodCoupling}
