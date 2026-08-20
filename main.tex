@@ -130,10 +130,52 @@ D_\mathrm{O}^\mathrm{eff} = \sum_i f_iD_\mathrm{O}^i
 \mathbf{J}_\mathrm{r}^{\mathrm{Cr_2O_3}} = k_\mathrm{r}^{\mathrm{Cr_2O_3}}C_\mathrm{O}^\mathrm{interface}C_\mathrm{Cr}^\mathrm{GB}
 \end{equation}
 
+\begin{equation}
+\mathbf{J}_\mathrm{r}^{\mathrm{Fe_3O_4}} = k_\mathrm{r}^{\mathrm{Fe_3O_4}}\left(C_\mathrm{O}^\mathrm{interface}-C_\mathrm{O}^\mathrm{threshold}\right)C_\mathrm{Fe}^\mathrm{GB}
+\end{equation}
 
+\begin{equation}
+\mathbf{J}_\mathrm{r}^{\mathrm{FeCr_2O_4}} = k_\mathrm{r}^{\mathrm{FeCr_2O_4}}C_\mathrm{O}^\mathrm{interface}\frac{1}{\frac{1}{C_\mathrm{Fe}^\mathrm{GB}}+\frac{2}{C_\mathrm{Cr}^\mathrm{GB}}}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{r}^{\mathrm{SiO_2}} = k_\mathrm{r}^{\mathrm{SiO_2}}C_\mathrm{O}^\mathrm{interface}C_\mathrm{Si}^\mathrm{GB}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{r}=\mathbf{J}_\mathrm{r}^{\mathrm{Cr_2O_3}}+\mathbf{J}_\mathrm{r}^{\mathrm{Fe_3O_4}}+\mathbf{J}_\mathrm{r}^{\mathrm{FeCr_2O_4}}+\mathbf{J}_\mathrm{r}^{\mathrm{SiO_2}}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{r}^\mathrm{Cr} = \frac{2}{3}\mathbf{J}_\mathrm{r}^\mathrm{Cr_2O_3} + \frac{2}{4}\mathbf{J}_\mathrm{r}^\mathrm{FeCr_2O_4}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{r}^\mathrm{Fe} = \frac{3}{4}\mathbf{J}_\mathrm{r}^\mathrm{Fe_3O_4} + \frac{1}{4}\mathbf{J}_\mathrm{r}^\mathrm{FeCr_2O_4}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_\mathrm{r}^\mathrm{Si} = \frac{1}{2}\mathbf{J}_\mathrm{r}^\mathrm{SiO_2}
+\end{equation}
 
 \subsection{Coupling Strategy and Simulation Protocol}
 \label{sec:methodCoupling}
+
+\subsubsection{Lattice Velocity and Metal Consumption}
+\label{sec:methodLattice}
+
+\begin{equation}
+v_\mathrm{lattice}^\mathrm{reaction} = \mathbf{J}_\mathrm{r}^\mathrm{Cr} + \mathbf{J}_\mathrm{r}^\mathrm{Fe} + \mathbf{J}_\mathrm{r}^\mathrm{Si}
+\end{equation}
+
+\begin{equation}
+v_\mathrm{lattice} = v_\mathrm{lattice}^\mathrm{RIS} + v_\mathrm{lattice}^\mathrm{reaction}
+\end{equation}
+
+\begin{equation}
+\mathbf{J}_i = \mathbf{J}_i^\mathrm{Vac} + \mathbf{J}_i^\mathrm{Int} + \mathbf{J}_\mathrm{r}^i + C_iv_\mathrm{lattice}
+\end{equation}
+
 
 \subsubsection{Sequential Irradiation--Oxidation Protocol}
 \label{sec:methodSequential}
