@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.23)  19 AUG 2026 13:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  25 AUG 2026 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/cool/Desktop/writing/RIS_oxi_kinetics/main.tex
-(/Users/cool/Desktop/writing/RIS_oxi_kinetics/main.tex
+**/Users/cool/Desktop/RIS_oxi_kinetics/main.tex
+(/Users/cool/Desktop/RIS_oxi_kinetics/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -353,39 +353,110 @@ Package biblatex Info: ... and expl3
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen153
+\captionmargin=\dimen154
+\caption@leftmargin=\dimen155
+\caption@rightmargin=\dimen156
+\caption@width=\dimen157
+\caption@indent=\dimen158
+\caption@parindent=\dimen159
+\caption@hangindent=\dimen160
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count410
+\c@continuedfloat=\count411
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count412
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count413
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2025-02-27 v3.4.6 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count414
+\l__siunitx_number_exponent_fixed_int=\count415
+\l__siunitx_number_min_decimal_int=\count416
+\l__siunitx_number_min_integer_int=\count417
+\l__siunitx_number_round_precision_int=\count418
+\l__siunitx_number_lower_threshold_int=\count419
+\l__siunitx_number_upper_threshold_int=\count420
+\l__siunitx_number_group_first_int=\count421
+\l__siunitx_number_group_size_int=\count422
+\l__siunitx_number_group_minimum_int=\count423
+\l__siunitx_angle_tmp_dim=\dimen161
+\l__siunitx_angle_marker_box=\box55
+\l__siunitx_angle_unit_box=\box56
+\l__siunitx_compound_count_int=\count424
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+)
+\l__siunitx_table_tmp_box=\box57
+\l__siunitx_table_tmp_dim=\dimen162
+\l__siunitx_table_column_width_dim=\dimen163
+\l__siunitx_table_integer_box=\box58
+\l__siunitx_table_decimal_box=\box59
+\l__siunitx_table_uncert_box=\box60
+\l__siunitx_table_before_box=\box61
+\l__siunitx_table_after_box=\box62
+\l__siunitx_table_before_dim=\dimen164
+\l__siunitx_table_carry_dim=\dimen165
+\l__siunitx_unit_tmp_int=\count425
+\l__siunitx_unit_position_int=\count426
+\l__siunitx_unit_total_int=\count427
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen166
+\ar@mcellbox=\box63
+\extrarowheight=\dimen167
+\NC@list=\toks23
+\extratabsurround=\skip76
+\backup@length=\skip77
+\ar@cellbox=\box64
 ))
-\@quotelevel=\count410
-\@quotereset=\count411
- (./main.aux)
+\@quotelevel=\count428
+\@quotereset=\count429
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 45.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count412
-\scratchdimen=\dimen153
-\scratchbox=\box55
-\nofMPsegments=\count413
-\nofMParguments=\count414
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count415
-\MPscratchDim=\dimen154
-\MPnumerator=\count416
-\makeMPintoPDFobject=\count417
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count430
+\scratchdimen=\dimen168
+\scratchbox=\box65
+\nofMPsegments=\count431
+\nofMParguments=\count432
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count433
+\MPscratchDim=\dimen169
+\MPnumerator=\count434
+\makeMPintoPDFobject=\count435
+\everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -406,13 +477,14 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
 
 No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 23.
-Package biblatex Info: Reference segment=0 on input line 23.
-
-Overfull \hbox (12.39719pt too wide) in paragraph at lines 43--47
-\OT1/cmr/m/n/12 cies and self-interstitials). For each al-loy-ing el-e-ment $\OML/cmm/m/it/12 i$\OT1/cmr/m/n/12 , where $\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 2 f[]g$\OT1/cmr/m/n/12 ,
- []
-
+Package biblatex Info: Reference section=0 on input line 45.
+Package biblatex Info: Reference segment=0 on input line 45.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 45.
 
 
 [1
@@ -422,39 +494,99 @@ Overfull \hbox (12.39719pt too wide) in paragraph at lines 43--47
 [2]
 
 [3]
-Overfull \hbox (5.33954pt too wide) in paragraph at lines 203--203
-[]\OT1/cmr/bx/n/14.4 Dose-Dependent Grain-Boundary Ox-i-da-tion Ki-net-
- []
-
-
-LaTeX Warning: Empty bibliography on input line 239.
-
-
 
 [4]
 
-[5] (./main.aux)
+[5]
+
+[6]
+
+[7]
+<figures/profile_cr.pdf, id=35, 242.13348pt x 185.83029pt>
+File: figures/profile_cr.pdf Graphic file (type pdf)
+<use figures/profile_cr.pdf>
+Package pdftex.def Info: figures/profile_cr.pdf  used on input line 447.
+(pdftex.def)             Requested size: 124.80286pt x 95.78163pt.
+<figures/profile_ni.pdf, id=36, 242.13348pt x 185.83029pt>
+File: figures/profile_ni.pdf Graphic file (type pdf)
+<use figures/profile_ni.pdf>
+Package pdftex.def Info: figures/profile_ni.pdf  used on input line 451.
+(pdftex.def)             Requested size: 124.80286pt x 95.78163pt.
+<figures/profile_si.pdf, id=37, 244.36057pt x 185.83029pt>
+File: figures/profile_si.pdf Graphic file (type pdf)
+<use figures/profile_si.pdf>
+Package pdftex.def Info: figures/profile_si.pdf  used on input line 455.
+(pdftex.def)             Requested size: 124.80286pt x 94.90828pt.
+
+Overfull \hbox (5.33954pt too wide) in paragraph at lines 467--467
+[]\OT1/cmr/bx/n/14.4 Dose-Dependent Grain-Boundary Ox-i-da-tion Ki-net-
+ []
+
+<figures/front_vs_dose.pdf, id=38, 264.50583pt x 213.29086pt>
+File: figures/front_vs_dose.pdf Graphic file (type pdf)
+<use figures/front_vs_dose.pdf>
+Package pdftex.def Info: figures/front_vs_dose.pdf  used on input line 471.
+(pdftex.def)             Requested size: 234.00238pt x 188.69566pt.
+
+LaTeX Warning: Citation 'deng' on page 8 undefined on input line 477.
+
+
+LaTeX Warning: Citation 'deng' on page 8 undefined on input line 477.
+
+<figures/front_vs_time.pdf, id=39, 264.50583pt x 201.90976pt>
+File: figures/front_vs_time.pdf Graphic file (type pdf)
+<use figures/front_vs_time.pdf>
+Package pdftex.def Info: figures/front_vs_time.pdf  used on input line 490.
+(pdftex.def)             Requested size: 234.00238pt x 178.62695pt.
+
+LaTeX Warning: Citation 'deng' on page 8 undefined on input line 498.
+
+
+LaTeX Warning: Citation 'deng' on page 8 undefined on input line 498.
+
+
+LaTeX Warning: Empty bibliography on input line 531.
+
+
+
+[8]
+Overfull \vbox (316.07729pt too high) has occurred while \output is active []
+
+
+
+[9 <./figures/profile_cr.pdf> <./figures/profile_ni.pdf> <./figures/profile_si.pdf> <./figures/front_vs_dose.pdf>]
+
+[10 <./figures/front_vs_time.pdf>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10076 strings out of 473190
- 189173 string characters out of 5715800
- 1025591 words of memory out of 5000000
- 33261 multiletter control sequences out of 15000+600000
- 565751 words of font info for 60 fonts, out of 8000000 for 9000
+ 15743 strings out of 473190
+ 345009 string characters out of 5715801
+ 1133940 words of memory out of 5000000
+ 38897 multiletter control sequences out of 15000+600000
+ 566051 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,10n,81p,795b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (5 pages, 120453 bytes).
+ 67i,11n,81p,787b,1049s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (10 pages, 304233 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 175 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
