@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1787694990.94159 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1787863535.21947 0
   "main.bcf" 0 -1 0 "pdflatex"
   "refs.bib" 0 -1 0 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787694990.19657 "/Users/cool/Desktop/RIS_oxi_kinetics/main.tex" "main.pdf" "main" 1787694990.94183 0
-  "/Users/cool/Desktop/RIS_oxi_kinetics/main.tex" 1787694989.20673 22439 ab4393f78e9351bc156754606e564c23 ""
+["pdflatex"] 1787863534.39401 "/Users/cool/Desktop/RIS_oxi_kinetics/main.tex" "main.pdf" "main" 1787863535.21972 0
+  "/Users/cool/Desktop/RIS_oxi_kinetics/main.tex" 1787863534.19291 24139 449c49adcda33f5e02ac03561990f3ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -96,10 +96,10 @@
   "figures/profile_cr.pdf" 1786744227.64 37257 039c792774880568f6d47ef636061a38 ""
   "figures/profile_ni.pdf" 1786744228.15 37530 1a68ff334c90f73ea54a42d80194fae6 ""
   "figures/profile_si.pdf" 1786744228.65 36469 abe1c180f22663d275b306ebc2d9e69d ""
-  "main.aux" 1787694990.8187 8736 580df263ba5edfa88f38e92201251151 "pdflatex"
+  "main.aux" 1787863535.08236 8760 60f8ac43915b97c0433eb34dd95bb1bb "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1787694990.82095 2305 d1e3f957872dc7f084773151e849db4d "pdflatex"
-  "main.tex" 1787694989.20673 22439 ab4393f78e9351bc156754606e564c23 ""
+  "main.run.xml" 1787863535.0845 2305 d1e3f957872dc7f084773151e849db4d "pdflatex"
+  "main.tex" 1787863534.19291 24139 449c49adcda33f5e02ac03561990f3ba ""
   (generated)
   "main.aux"
   "main.bcf"

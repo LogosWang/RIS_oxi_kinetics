@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  25 AUG 2026 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  27 AUG 2026 13:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,45 +518,47 @@ File: figures/profile_si.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/profile_si.pdf  used on input line 455.
 (pdftex.def)             Requested size: 124.80286pt x 94.90828pt.
 
-Overfull \hbox (5.33954pt too wide) in paragraph at lines 467--467
+
+[8]
+Overfull \hbox (5.33954pt too wide) in paragraph at lines 474--474
 []\OT1/cmr/bx/n/14.4 Dose-Dependent Grain-Boundary Ox-i-da-tion Ki-net-
  []
 
-<figures/front_vs_dose.pdf, id=38, 264.50583pt x 213.29086pt>
+<figures/front_vs_dose.pdf, id=41, 264.50583pt x 213.29086pt>
 File: figures/front_vs_dose.pdf Graphic file (type pdf)
 <use figures/front_vs_dose.pdf>
-Package pdftex.def Info: figures/front_vs_dose.pdf  used on input line 471.
+Package pdftex.def Info: figures/front_vs_dose.pdf  used on input line 478.
 (pdftex.def)             Requested size: 234.00238pt x 188.69566pt.
 
-LaTeX Warning: Citation 'deng' on page 8 undefined on input line 477.
+LaTeX Warning: Citation 'deng' on page 9 undefined on input line 484.
 
 
-LaTeX Warning: Citation 'deng' on page 8 undefined on input line 477.
+LaTeX Warning: Citation 'deng' on page 9 undefined on input line 484.
 
-<figures/front_vs_time.pdf, id=39, 264.50583pt x 201.90976pt>
+<figures/front_vs_time.pdf, id=42, 264.50583pt x 201.90976pt>
 File: figures/front_vs_time.pdf Graphic file (type pdf)
 <use figures/front_vs_time.pdf>
-Package pdftex.def Info: figures/front_vs_time.pdf  used on input line 490.
+Package pdftex.def Info: figures/front_vs_time.pdf  used on input line 497.
 (pdftex.def)             Requested size: 234.00238pt x 178.62695pt.
 
-LaTeX Warning: Citation 'deng' on page 8 undefined on input line 498.
+LaTeX Warning: Citation 'deng' on page 9 undefined on input line 505.
 
 
-LaTeX Warning: Citation 'deng' on page 8 undefined on input line 498.
+LaTeX Warning: Citation 'deng' on page 9 undefined on input line 505.
 
 
-LaTeX Warning: Empty bibliography on input line 531.
-
-
-
-[8]
-Overfull \vbox (316.07729pt too high) has occurred while \output is active []
+LaTeX Warning: Empty bibliography on input line 538.
 
 
 
-[9 <./figures/profile_cr.pdf> <./figures/profile_ni.pdf> <./figures/profile_si.pdf> <./figures/front_vs_dose.pdf>]
+[9 <./figures/profile_cr.pdf> <./figures/profile_ni.pdf> <./figures/profile_si.pdf>]
+Overfull \vbox (69.06233pt too high) has occurred while \output is active []
 
-[10 <./figures/front_vs_time.pdf>] (./main.aux)
+
+
+[10 <./figures/front_vs_dose.pdf>]
+
+[11 <./figures/front_vs_time.pdf>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -577,16 +579,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  15743 strings out of 473190
  345009 string characters out of 5715801
- 1133940 words of memory out of 5000000
+ 1133986 words of memory out of 5000000
  38897 multiletter control sequences out of 15000+600000
  566051 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,11n,81p,787b,1049s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (10 pages, 304233 bytes).
+Output written on main.pdf (11 pages, 306532 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 178 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
