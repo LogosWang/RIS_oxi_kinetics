@@ -37,6 +37,8 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 \graphicspath{{figures/}}
 
 \usepackage{siunitx}
+\usepackage{mhchem}
+
 \DeclareSIUnit{\dpa}{dpa}
 \DeclareSIUnit{\atpct}{at.\%}
 
@@ -56,7 +58,64 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 \section{Model Formulation and Calibration}
 \label{sec:method}
 
+\begin{figure}[htbp]\centering
+% the panels are drawn at ~9 cm each; the block is set wider than the text
+% column so that they print close to 1:1 and their labels stay legible
+\makebox[\textwidth][c]{%
+\begin{minipage}{18.6cm}\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering
+  \includegraphics[width=\linewidth]{framework_a}
+  \caption{}\label{fig:framework-domain}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering
+  \includegraphics[width=\linewidth]{framework_b}
+  \caption{}\label{fig:framework-ris}
+\end{subfigure}
+
+\vspace{1em}
+
+\begin{subfigure}[t]{0.49\linewidth}\centering
+  \includegraphics[width=\linewidth]{framework_c}
+  \caption{}\label{fig:framework-ox}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering
+  \includegraphics[width=\linewidth]{framework_d}
+  \caption{}\label{fig:framework-coupling}
+\end{subfigure}
+\end{minipage}}
+\caption{Overview of the model: (a) physical picture and computational domain,
+(b) radiation-induced segregation, (c) oxygen transport across the oxide and the
+interfacial reactions, and (d) coupling between the two components.}
+\label{fig:framework}
+\end{figure}
+
+
 The model consists of two components: a radiation-induced segregation (RIS) model for the evolving GB chemistry and a reduced-dimensional oxidation model for oxygen transport, consumption, and oxide growth. The RIS-predicted Cr, Ni, Si, and Fe concentrations provide the local alloy composition for the oxidation model. Oxygen transport along the GB is solved explicitly, while transport through the oxide and interfacial reactions are treated using a quasi-steady resistance formulation. The oxide composition determines the effective oxygen diffusivity through an effective-medium treatment, which controls the local oxygen consumption and oxide growth rate. The formulations of the two components are described below.
+
+Figure~\ref{fig:framework} summarises the model. The computational domain,
+Fig.~\ref{fig:framework-domain}, is a grain boundary of width \(\delta_{\GB}\)
+that opens onto the surface exposed to the primary water. Oxygen enters at the
+mouth through the surface film and migrates along the boundary. While the oxide
+is thinner than \(\delta_{\GB}\) the boundary retains free volume, which carries
+a fast oxygen path; once the oxide fills the channel that contribution is lost.
+Only the half-domain on one side of the boundary is simulated, the other half
+following by symmetry.
+
+The boundary acts as a perfect sink for the vacancies and self-interstitials
+produced by irradiation, Fig.~\ref{fig:framework-ris}. The resulting
+redistribution depletes Cr and enriches Ni and Si at the boundary, and the
+imbalance between the two defect fluxes gives the segregation contribution
+\(\mathbf{v}_{\lat}^{\mathrm{RIS}}=\mathbf{J}_{\Vac}-\mathbf{J}_{\Int}\) to the
+lattice velocity; the profiles shown are calculated, mirrored about the boundary
+and convolved with a \SI{1}{\nano\metre} FWHM Gaussian. At a given depth,
+Fig.~\ref{fig:framework-ox}, the oxygen delivered along the boundary crosses the
+oxide in quasi-steady state and is partitioned at the fixed oxide/metal interface
+among the four oxide phases; the metal removed there sets the oxidation
+contribution \(v_{\ox}\). The two components are coupled as shown in
+Fig.~\ref{fig:framework-coupling}: irradiation fixes the boundary chemistry and
+part of the lattice velocity, the boundary chemistry controls the interfacial
+reaction rates, and the oxide that forms feeds back on the oxygen supply through
+its thickness and its effective diffusivity.
 
 \paragraph{Notation.}
 Alloying-element indices are \(i,j\in\{\mathrm{Cr},\mathrm{Ni},\mathrm{Si},\mathrm{Fe}\}\);
@@ -471,40 +530,99 @@ Cr is depleted at the boundary and Ni and Si are enriched, at both doses. The bo
 
 Overall, the RIS profiles show clear dose-dependent changes in both the magnitude and spatial distribution of grain-boundary segregation. The most pronounced changes are observed in the grain-boundary enrichment or depletion levels, while the characteristic widths of the segregation profiles remain broadly similar across doses. Only modest differences in the full width at half maximum (FWHM) are observed, generally on the order of 1-\SI{2}{nm}, with the most noticeable changes occurring for Cr and Si at \SI{3}{dpa}. Thus, the dose dependence is primarily reflected in the segregation magnitude rather than substantial changes in the profile width.
 
-\subsection{Dose-Dependent Grain-Boundary Oxidation Kinetics}
-\label{sec:resultsOxi}
-\begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.6\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_dose}
-  \caption{}\label{fig:front-dose-depth}
-\end{subfigure}
-% 以后加第二块: 把上面 0.6 改成 0.48, 加 \hfill 和同样结构的第二个 subfigure
-\caption{Oxidation front depth as a function of dose, taken at a total oxide
-thickness of \SI{1}{nm}. Measurements from \textcite{deng} are those used to
-calibrate the oxidation parameters.}
-\label{fig:front-dose}
-\end{figure}
-
-
-
 \subsection{Oxide Composition and Interfacial Ni Enrichment}
 \label{sec:resultsNiEnrichment}
 
+\begin{figure}[!ht]\centering
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{oxide_composition_percent}
+  \caption{}\label{fig:ox-comp}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{SiO2_fraction}
+  \caption{}\label{fig:ox-sio2}
+\end{subfigure}
+
+\vspace{1em}
+
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{Ni_at_GB}
+  \caption{}\label{fig:ni-gb}
+\end{subfigure}
+\caption{Calculated and measured grain-boundary chemistry as a function of dose.
+(a) Oxide composition on a metal (cation) basis, evaluated at the depth of the
+corresponding EDX line scan: 23, 30 and \SI{44}{nm} for 0, 0.5 and
+\SI{3.0}{\dpa}. (b) \ce{SiO2} volume fraction in the oxide, both at the same
+depths and averaged over the oxidized length of the boundary. (c) Ni
+concentration at the grain boundary before and after exposure; calculated
+profiles are convolved with a Gaussian of \SI{1}{nm} FWHM to match the quoted
+EDX probe diameter and are sampled at the depth of the measurement. Filled
+symbols with solid lines are calculations, open symbols with dashed lines the
+measurements of \textcite{deng}.}
+\label{fig:gb-chemistry}
+\end{figure}
+
+Figure~\ref{fig:gb-chemistry} compares the calculated grain-boundary chemistry
+with the measurements of \textcite{deng}. Because the reported EDX line scans
+were taken at a single depth on each specimen, the calculated quantities are
+evaluated at the corresponding depths, measured from the micrographs as 23, 30
+and \SI{44}{nm} for 0, 0.5 and \SI{3.0}{\dpa}.
+
+At those depths the model reproduces the measured dose dependence of the oxide
+cation composition (Fig.~\ref{fig:ox-comp}). The calculated Cr content falls
+from 84 to \SI{65}{\atpct} between 0 and \SI{3.0}{\dpa}, against a measured
+decrease from 75 to \SI{58}{\atpct}; Fe rises from 15 to \SI{36}{\atpct},
+against a measured 24 to \SI{38}{\atpct}. %% 核对数值
+Both trends follow from the Cr depletion established during irradiation: less Cr
+is available at the front, so the oxide that forms there is correspondingly
+poorer in Cr and richer in Fe. Ni oxidation is not included in the model, so the
+calculated Ni content of the oxide is identically zero; the measurements give a
+few at.\% at all three doses, wich slighly increase with dose due to the grain boundary positive segregation.
+
+The measured Si content of the oxide is close to zero at every dose, while the
+calculated \ce{SiO2} volume fraction rises from 1.1 to \SI{25.6}{\percent} over
+the same dose range (Fig.~\ref{fig:ox-sio2}). The two are not in conflict.
+Silica formed at the grain boundary is not retained: the segregated Si is
+oxidised preferentially and the resulting \ce{SiO2} dissolves into the water,
+leaving porosity behind in the intergranular oxide \parencite{du}. Its absence
+from the line scans is therefore expected even where the model predicts that a
+substantial amount has formed.
+
+The model adopts this behaviour explicitly. All \ce{SiO2} produced is treated as
+dissolved, and the volume it occupied is retained as free volume available for
+oxygen transport. The calculated \ce{SiO2} volume fraction is thus a measure of
+the porosity generated within the intergranular oxide rather than of a phase
+present in it, and it increases with dose because Si segregation to the boundary
+increases with dose.
+
+
+
+
+\subsection{Dose-Dependent Grain-Boundary Oxidation Kinetics}
+\label{sec:resultsOxi}
+\begin{figure}[!ht]\centering
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{front_vs_dose}
+  \caption{}\label{fig:front-dose}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{front_vs_time}
+  \caption{}\label{fig:front-time}
+\end{subfigure}
+\caption{Calculated and measured oxidation front depth, taken at a total oxide
+thickness of \SI{1}{nm}. (a) Dependence on dose after the \SI{500}{h} exposure;
+these measurements are the ones used to calibrate the oxidation parameters.
+(b) Dependence on exposure time at 0.5 and \SI{1.5}{\dpa}, obtained with the
+calibrated parameters held fixed; neither the \SI{1.5}{\dpa} dose nor the
+exposure times shown enter the calibration. Measurements from \textcite{deng}.}
+\label{fig:front}
+\end{figure}
+
+
+
 \subsection{Predictions against Independent Experiments}
 \label{sec:resultsPredictiveValidation}
-\begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.6\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_time}
-  \caption{}\label{fig:front-time-depth}
-\end{subfigure}
-% 以后加第二块: 同上
-\caption{Predicted and measured oxidation front depth as a function of exposure
-time at 0.5 and \SI{1.5}{\dpa}, taken at a total oxide thickness of \SI{1}{nm}.
-The parameters are those calibrated in Fig.~\ref{fig:front-dose}; neither the
-\SI{1.5}{\dpa} dose nor the exposure times shown enter the calibration.
-Measurements from \textcite{deng}.}
-\label{fig:front-time}
-\end{figure}
+
 
 
 
