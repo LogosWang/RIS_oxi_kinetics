@@ -1,0 +1,1243 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        9
+      ]
+    ],
+    "date-time": "2026-07-09T14:32:01Z",
+    "timestamp": 1783607521129,
+    "version": "3.55.0"
+  },
+  "reference-count": 86,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2025-06-01T00:00:00Z",
+        "timestamp": 1748736000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2025-06-01T00:00:00Z",
+        "timestamp": 1748736000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            24
+          ]
+        ],
+        "date-time": "2026-04-24T00:00:00Z",
+        "timestamp": 1776988800000
+      },
+      "content-version": "am",
+      "delay-in-days": 327,
+      "URL": "http://www.elsevier.com/open-access/userlicense/1.0/"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/100006147",
+      "name": "Office of Nuclear Energy",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "DE-AC07-05ID14517"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "DE-AC07-05ID14517"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/100006147",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/100011660",
+      "name": "Idaho National Laboratory",
+      "doi-asserted-by": "publisher",
+      "id": [
+        {
+          "id": "10.13039/100011660",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/100007000",
+      "name": "Laboratory Directed Research and Development",
+      "doi-asserted-by": "publisher",
+      "id": [
+        {
+          "id": "10.13039/100007000",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "short-container-title": [
+    "Computational Materials Science"
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2025,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.commatsci.2025.113895",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        4,
+        24
+      ]
+    ],
+    "date-time": "2025-04-24T12:02:56Z",
+    "timestamp": 1745496176000
+  },
+  "page": "113895",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 10,
+  "special_numbering": "C",
+  "title": [
+    "Phase-field modeling of radiation-induced composition redistribution: An application to additively manufactured austenitic Fe–Cr–Ni"
+  ],
+  "prefix": "10.1016",
+  "volume": "255",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0001-6085-1817",
+      "authenticated-orcid": false,
+      "given": "Sourabh Bhagwan",
+      "family": "Kadambi",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-8958-4748",
+      "authenticated-orcid": false,
+      "given": "Daniel",
+      "family": "Schwen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-8931-7885",
+      "authenticated-orcid": false,
+      "given": "Jia-Hong",
+      "family": "Ke",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Lingfeng",
+      "family": "He",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-4945-5714",
+      "authenticated-orcid": false,
+      "given": "Andrea M.",
+      "family": "Jokisaari",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "issue": "11",
+      "key": "10.1016/j.commatsci.2025.113895_b1",
+      "doi-asserted-by": "crossref",
+      "first-page": "12",
+      "DOI": "10.1016/S1369-7021(09)70294-9",
+      "article-title": "Structural materials for fission & fusion energy",
+      "volume": "12",
+      "author": "Zinkle",
+      "year": "2009",
+      "journal-title": "Mater. Today"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.commatsci.2025.113895_b2",
+      "doi-asserted-by": "crossref",
+      "first-page": "735",
+      "DOI": "10.1016/j.actamat.2012.11.004",
+      "article-title": "Materials challenges in nuclear energy",
+      "volume": "61",
+      "author": "Zinkle",
+      "year": "2013",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "issue": "4–7",
+      "key": "10.1016/j.commatsci.2025.113895_b3",
+      "doi-asserted-by": "crossref",
+      "first-page": "641",
+      "DOI": "10.1080/14786430412331320035",
+      "article-title": "Segregation at grain boundaries: from equilibrium to irradiation induced steady states",
+      "volume": "85",
+      "author": "Nastar",
+      "year": "2005",
+      "journal-title": "Phil. Mag."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.commatsci.2025.113895_b4",
+      "doi-asserted-by": "crossref",
+      "first-page": "253",
+      "DOI": "10.1016/j.cossms.2014.06.002",
+      "article-title": "Grain boundary segregation engineering in metallic alloys: A pathway to the design of interfaces",
+      "volume": "18",
+      "author": "Raabe",
+      "year": "2014",
+      "journal-title": "Curr. Opin. Solid State Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b5",
+      "series-title": "Advanced Materials and Manufacturing Technologies (AMMT) 2022 Roadmap",
+      "author": "Li",
+      "year": "2022"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b6",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2021.152849",
+      "article-title": "Mechanical behavior of additively manufactured and wrought 316L stainless steels before and after neutron irradiation",
+      "volume": "548",
+      "author": "Byun",
+      "year": "2021",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b7",
+      "series-title": "Mechanical Properties of Additively Manufactured 316L Stainless Steel Before and After Neutron Irradiation (FY21)",
+      "author": "Collins",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b8",
+      "doi-asserted-by": "crossref",
+      "first-page": "19",
+      "DOI": "10.1016/j.actamat.2020.07.063",
+      "article-title": "Origin of dislocation structures in an additively manufactured austenitic stainless steel 316L",
+      "volume": "199",
+      "author": "Bertsch",
+      "year": "2020",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b9",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2020.152745",
+      "article-title": "Heavy ion irradiation response of an additively manufactured 316LN stainless steel",
+      "volume": "546",
+      "author": "Shang",
+      "year": "2021",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b10",
+      "series-title": "In-situ and Ex-Situ Characterization of Irradiated AM Materials",
+      "author": "Chen",
+      "year": "2024"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b11",
+      "series-title": "Fundamentals of Radiation Materials Science: Metals and Alloys",
+      "author": "Was",
+      "year": "2007"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b12",
+      "doi-asserted-by": "crossref",
+      "first-page": "471",
+      "DOI": "10.1016/B978-0-08-056033-5.00035-5",
+      "article-title": "1.18-Radiation-induced segregation",
+      "volume": "1",
+      "author": "Nastar",
+      "year": "2012",
+      "journal-title": "Compr. Nucl. Mater."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.commatsci.2025.113895_b13",
+      "doi-asserted-by": "crossref",
+      "first-page": "115",
+      "DOI": "10.1016/j.cossms.2015.11.001",
+      "article-title": "Radiation-induced solute segregation in metallic alloys",
+      "volume": "20",
+      "author": "Ardell",
+      "year": "2016",
+      "journal-title": "Curr. Opin. Solid State Mater. Sci."
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.commatsci.2025.113895_b14",
+      "doi-asserted-by": "crossref",
+      "first-page": "41",
+      "DOI": "10.1016/j.jnucmat.2011.01.031",
+      "article-title": "Assessment of radiation-induced segregation mechanisms in austenitic and ferritic–martensitic alloys",
+      "volume": "411",
+      "author": "Was",
+      "year": "2011",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "1601",
+      "key": "10.1016/j.commatsci.2025.113895_b15",
+      "first-page": "191",
+      "article-title": "Grain boundary segregation",
+      "volume": "335",
+      "author": "Seah",
+      "year": "1973",
+      "journal-title": "Proc. R. Soc. A"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b16",
+      "doi-asserted-by": "crossref",
+      "first-page": "285",
+      "DOI": "10.1016/j.actamat.2018.09.005",
+      "article-title": "Solute interaction effects on grain boundary segregation in ternary alloys",
+      "volume": "161",
+      "author": "Xing",
+      "year": "2018",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b17",
+      "doi-asserted-by": "crossref",
+      "first-page": "445",
+      "DOI": "10.1557/PROC-540-445",
+      "article-title": "Origin and influence of pre-existing segregation on radiation-induced segregation in austenitic stainless steels",
+      "volume": "540",
+      "author": "Kenik",
+      "year": "1998",
+      "journal-title": "MRS Online Proc. Libr. (OPL)"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b18",
+      "doi-asserted-by": "crossref",
+      "first-page": "451",
+      "DOI": "10.1557/PROC-540-451",
+      "article-title": "Influence of initial grain boundary composition on the evolution of radiation-induced segregation profiles",
+      "volume": "540",
+      "author": "Busby",
+      "year": "1998",
+      "journal-title": "MRS Online Proc. Libr. (OPL)"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b19",
+      "series-title": "The Influence of Pre-Irradiation Heat Treatments on Thermal Non-Equilibrium and Radiation-Induced Segregation Behavior in Model Austenitic Stainless Steel Alloys",
+      "author": "Cole",
+      "year": "2002"
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.commatsci.2025.113895_b20",
+      "doi-asserted-by": "crossref",
+      "first-page": "57",
+      "DOI": "10.1016/j.jnucmat.2013.03.067",
+      "article-title": "Atomic scale study of grain boundary segregation before carbide nucleation in Ni–Cr–Fe Alloys",
+      "volume": "439",
+      "author": "Li",
+      "year": "2013",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "2–3",
+      "key": "10.1016/j.commatsci.2025.113895_b21",
+      "doi-asserted-by": "crossref",
+      "first-page": "198",
+      "DOI": "10.1016/S0022-3115(01)00751-6",
+      "article-title": "Emulation of neutron irradiation effects with protons: validation of principle",
+      "volume": "300",
+      "author": "Was",
+      "year": "2002",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b22",
+      "doi-asserted-by": "crossref",
+      "first-page": "181",
+      "DOI": "10.1016/j.jnucmat.2018.01.053",
+      "article-title": "Observation of oscillatory radiation induced segregation profiles at grain boundaries in neutron irradiated 316 stainless steel using atom probe tomography",
+      "volume": "504",
+      "author": "Barr",
+      "year": "2018",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.commatsci.2025.113895_b23",
+      "doi-asserted-by": "crossref",
+      "first-page": "3679",
+      "DOI": "10.1016/S1359-6454(98)00019-6",
+      "article-title": "Modeling radiation-induced segregation in austenitic Fe–Cr–Ni alloys",
+      "volume": "46",
+      "author": "Allen",
+      "year": "1998",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b24",
+      "doi-asserted-by": "crossref",
+      "first-page": "218",
+      "DOI": "10.1007/s11661-007-9296-1",
+      "article-title": "The mechanism of Zr and Hf in reducing radiation-induced segregation in 316 stainless steel",
+      "volume": "39",
+      "author": "Hackett",
+      "year": "2008",
+      "journal-title": "Met. Mater. Trans. A"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.commatsci.2025.113895_b25",
+      "doi-asserted-by": "crossref",
+      "first-page": "267",
+      "DOI": "10.1016/S0022-3115(01)00493-7",
+      "article-title": "Numerical simulation modeling on the effects of grain boundary misorientation on radiation-induced solute segregation in 304 austenitic stainless steels",
+      "volume": "294",
+      "author": "Duh",
+      "year": "2001",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b26",
+      "doi-asserted-by": "crossref",
+      "first-page": "438",
+      "DOI": "10.1016/j.actamat.2015.01.064",
+      "article-title": "Defect sink characteristics of specific grain boundary types in 304 stainless steels under high dose neutron environments",
+      "volume": "89",
+      "author": "Field",
+      "year": "2015",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b27",
+      "doi-asserted-by": "crossref",
+      "first-page": "35",
+      "DOI": "10.1016/j.jnucmat.2016.02.007",
+      "article-title": "Roles of vacancy/interstitial diffusion and segregation in the microchemistry at grain boundaries of irradiated Fe–Cr–Ni alloys",
+      "volume": "473",
+      "author": "Yang",
+      "year": "2016",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b28",
+      "doi-asserted-by": "crossref",
+      "first-page": "383",
+      "DOI": "10.1557/PROC-481-383",
+      "article-title": "Role of interstitial and interstitial-impurity interaction on irradiation-induced segregation in austenitic steels",
+      "volume": "481",
+      "author": "Nastar",
+      "year": "1997",
+      "journal-title": "MRS Online Proc. Libr. (OPL)"
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.commatsci.2025.113895_b29",
+      "doi-asserted-by": "crossref",
+      "first-page": "8",
+      "DOI": "10.1016/j.jnucmat.2011.08.022",
+      "article-title": "Modeling radiation induced segregation in Ni–Cr model alloys from first principles",
+      "volume": "425",
+      "author": "Barnard",
+      "year": "2012",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b30",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.3389/fmats.2021.684862",
+      "article-title": "Surface and size effects on the behaviors of point defects in irradiated crystalline solids",
+      "volume": "8",
+      "author": "Ozturk",
+      "year": "2021",
+      "journal-title": "Front. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b31",
+      "doi-asserted-by": "crossref",
+      "first-page": "42",
+      "DOI": "10.1016/j.actamat.2013.09.049",
+      "article-title": "The mechanism of radiation-induced segregation in ferritic–martensitic alloys",
+      "volume": "65",
+      "author": "Wharry",
+      "year": "2014",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b32",
+      "doi-asserted-by": "crossref",
+      "first-page": "353",
+      "DOI": "10.1016/j.commatsci.2018.02.007",
+      "article-title": "How to apply the phase field method to model radiation damage",
+      "volume": "147",
+      "author": "Tonks",
+      "year": "2018",
+      "journal-title": "Comput. Mater. Sci."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.commatsci.2025.113895_b33",
+      "doi-asserted-by": "crossref",
+      "first-page": "16",
+      "DOI": "10.1038/s41524-017-0018-y",
+      "article-title": "A review: applications of the phase field method in predicting microstructure and property evolution of irradiated nuclear materials",
+      "volume": "3",
+      "author": "Li",
+      "year": "2017",
+      "journal-title": "Npj Comput. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b34",
+      "doi-asserted-by": "crossref",
+      "first-page": "324",
+      "DOI": "10.1016/j.commatsci.2018.03.024",
+      "article-title": "Multiscale modeling of Radiation Induced Segregation in iron based alloys",
+      "volume": "149",
+      "author": "Thuinet",
+      "year": "2018",
+      "journal-title": "Comput. Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b35",
+      "doi-asserted-by": "crossref",
+      "first-page": "249",
+      "DOI": "10.1016/j.commatsci.2016.05.021",
+      "article-title": "Atomic-based phase-field method for the modeling of radiation induced segregation in Fe–Cr",
+      "volume": "122",
+      "author": "Piochaud",
+      "year": "2016",
+      "journal-title": "Comput. Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b36",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2022.153614",
+      "article-title": "Effect of concurrent grain growth on radiation-induced segregation in nanocrystalline Fe–Cr–Ni alloys",
+      "volume": "563",
+      "author": "Rezwan",
+      "year": "2022",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "11",
+      "key": "10.1016/j.commatsci.2025.113895_b37",
+      "doi-asserted-by": "crossref",
+      "first-page": "1513",
+      "DOI": "10.1080/14786430500383575",
+      "article-title": "A self-consistent mean field calculation of the phenomenological coefficients in a multicomponent alloy with high jump frequency ratios",
+      "volume": "86",
+      "author": "Barbe",
+      "year": "2006",
+      "journal-title": "Phil. Mag."
+    },
+    {
+      "issue": "28",
+      "key": "10.1016/j.commatsci.2025.113895_b38",
+      "doi-asserted-by": "crossref",
+      "first-page": "2514",
+      "DOI": "10.1080/14786435.2017.1340685",
+      "article-title": "Automatic numerical evaluation of vacancy-mediated transport for arbitrary crystals: Onsager coefficients in the dilute limit using a Green function approach",
+      "volume": "97",
+      "author": "Trinkle",
+      "year": "2017",
+      "journal-title": "Phil. Mag."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b39",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.commatsci.2019.109191",
+      "article-title": "KineCluE: A kinetic cluster expansion code to compute transport coefficients beyond the dilute limit",
+      "volume": "172",
+      "author": "Schuler",
+      "year": "2020",
+      "journal-title": "Comput. Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b40",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2023.154395",
+      "article-title": "Radiation-induced segregation at grain boundaries of alloy 800H: Experimentally-informed atomistic simulations",
+      "volume": "579",
+      "author": "Dai",
+      "year": "2023",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "15",
+      "key": "10.1016/j.commatsci.2025.113895_b41",
+      "doi-asserted-by": "crossref",
+      "first-page": "3817",
+      "DOI": "10.1016/S1359-6454(02)00187-8",
+      "article-title": "A phase field model for the solute drag on moving grain boundaries",
+      "volume": "50",
+      "author": "Cha",
+      "year": "2002",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b42",
+      "doi-asserted-by": "crossref",
+      "first-page": "159",
+      "DOI": "10.1016/j.actamat.2015.07.058",
+      "article-title": "Stabilization of nanocrystalline alloys via grain boundary segregation: a diffuse interface model",
+      "volume": "101",
+      "author": "Abdeljawad",
+      "year": "2015",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "issue": "2–3",
+      "key": "10.1016/j.commatsci.2025.113895_b43",
+      "doi-asserted-by": "crossref",
+      "first-page": "292",
+      "DOI": "10.1016/0022-3115(83)90268-4",
+      "article-title": "Drift forces on vacancies and interstitials in alloys with radiation-induced segregation",
+      "volume": "114",
+      "author": "Wolfer",
+      "year": "1983",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.commatsci.2025.113895_b44",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevE.84.031601",
+      "article-title": "Unified derivation of phase-field models for alloy solidification from a grand-potential functional",
+      "volume": "84",
+      "author": "Plapp",
+      "year": "2011",
+      "journal-title": "Phys. Rev. E"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.commatsci.2025.113895_b45",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevE.98.023309",
+      "article-title": "Grand-potential-based phase-field model for multiple phases, grains, and chemical components",
+      "volume": "98",
+      "author": "Aagesen",
+      "year": "2018",
+      "journal-title": "Phys. Rev. E"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.commatsci.2025.113895_b46",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevB.78.024113",
+      "article-title": "Quantitative analysis of grain boundary properties in a generalized phase field model for grain growth in anisotropic systems",
+      "volume": "78",
+      "author": "Moelans",
+      "year": "2008",
+      "journal-title": "Phys. Rev. B"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.commatsci.2025.113895_b47",
+      "doi-asserted-by": "crossref",
+      "first-page": "287",
+      "DOI": "10.1016/j.cossms.2015.03.003",
+      "article-title": "A method for coupling the phase-field model based on a grand-potential formalism to thermodynamic databases",
+      "volume": "19",
+      "author": "Choudhury",
+      "year": "2015",
+      "journal-title": "Curr. Opin. Solid State Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b48",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.commatsci.2022.111261",
+      "article-title": "Grand-potential-based phase-field model of dissolution/precipitation: Lattice Boltzmann simulations of counter term effect on porous medium",
+      "volume": "207",
+      "author": "Boutin",
+      "year": "2022",
+      "journal-title": "Comput. Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b49",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.actamat.2021.116630",
+      "article-title": "A grand-potential based phase-field approach for simulating growth of intermetallic phases in multicomponent alloy systems",
+      "volume": "206",
+      "author": "Chatterjee",
+      "year": "2021",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b50",
+      "series-title": "Defect Production and Microstructural Feature Impact for Radiation Damage in Additively Manufactured 316 Stainless Steel",
+      "author": "Jokisaari",
+      "year": "2024"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b51",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2022.153669",
+      "article-title": "Mechanistic calculation of the effective silver diffusion coefficient in polycrystalline silicon carbide: Application to silver release in AGR-1 TRISO particles",
+      "volume": "563",
+      "author": "Simon",
+      "year": "2022",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.commatsci.2025.113895_b52",
+      "doi-asserted-by": "crossref",
+      "first-page": "1111",
+      "DOI": "10.1103/PhysRevB.4.1111",
+      "article-title": "Correlation factors for diffusion in nondilute alloys",
+      "volume": "4",
+      "author": "Manning",
+      "year": "1971",
+      "journal-title": "Phys. Rev. B"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b53",
+      "doi-asserted-by": "crossref",
+      "first-page": "286",
+      "DOI": "10.1016/j.jnucmat.2015.09.046",
+      "article-title": "Influence of dislocation and dislocation loop biases on microstructures simulated by rate equation cluster dynamics",
+      "volume": "467",
+      "author": "Jourdan",
+      "year": "2015",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.commatsci.2025.113895_b54",
+      "doi-asserted-by": "crossref",
+      "first-page": "357",
+      "DOI": "10.1016/j.jnucmat.2013.06.029",
+      "article-title": "Dislocation bias factors in fcc copper derived from atomistic calculations",
+      "volume": "441",
+      "author": "Chang",
+      "year": "2013",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b55",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.actamat.2021.116668",
+      "article-title": "Density-based grain boundary phase diagrams: Application to Fe-Mn-Cr, Fe-Mn-Ni, Fe-Mn-Co, Fe-Cr-Ni and Fe-Cr-Co alloy systems",
+      "volume": "207",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.commatsci.2025.113895_b56",
+      "doi-asserted-by": "crossref",
+      "first-page": "1487",
+      "DOI": "10.1016/0001-6160(86)90093-3",
+      "article-title": "A note on Manning’s relations for concentrated multicomponent alloys",
+      "volume": "34",
+      "author": "Lidiard",
+      "year": "1986",
+      "journal-title": "Acta Metall."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.commatsci.2025.113895_b57",
+      "doi-asserted-by": "crossref",
+      "first-page": "98",
+      "DOI": "10.1016/0022-3115(79)90596-8",
+      "article-title": "A theory of radiation-induced segregation in concentrated alloys",
+      "volume": "83",
+      "author": "Wiedersich",
+      "year": "1979",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "17",
+      "key": "10.1016/j.commatsci.2025.113895_b58",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevB.85.174111",
+      "article-title": "Defect and solute properties in dilute Fe-Cr-Ni austenitic alloys from first principles",
+      "volume": "85",
+      "author": "Klaver",
+      "year": "2012",
+      "journal-title": "Phys. Rev. B"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.commatsci.2025.113895_b59",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevB.89.024101",
+      "article-title": "First-principles study of point defects in an fcc Fe-10Ni-20Cr model alloy",
+      "volume": "89",
+      "author": "Piochaud",
+      "year": "2014",
+      "journal-title": "Phys. Rev. B"
+    },
+    {
+      "issue": "45",
+      "key": "10.1016/j.commatsci.2025.113895_b60",
+      "doi-asserted-by": "crossref",
+      "first-page": "26728",
+      "DOI": "10.1039/D0RA04682E",
+      "article-title": "A model for grain boundary thermodynamics",
+      "volume": "10",
+      "author": "Kamachali",
+      "year": "2020",
+      "journal-title": "RSC Adv."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.commatsci.2025.113895_b61",
+      "doi-asserted-by": "crossref",
+      "first-page": "317",
+      "DOI": "10.1016/0364-5916(91)90030-N",
+      "article-title": "SGTE data for pure elements",
+      "volume": "15",
+      "author": "Dinsdale",
+      "year": "1991",
+      "journal-title": "Calphad"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.commatsci.2025.113895_b62",
+      "doi-asserted-by": "crossref",
+      "first-page": "231",
+      "DOI": "10.1016/S0364-5916(99)00027-9",
+      "article-title": "Thermodynamic reassessment of Fe-Cr-Ni system with emphasis on the iron-rich corner",
+      "volume": "23",
+      "author": "Miettinen",
+      "year": "1999",
+      "journal-title": "Calphad"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.commatsci.2025.113895_b63",
+      "article-title": "Sink strength and dislocation bias of three-dimensional microstructures",
+      "volume": "3",
+      "author": "Kohnert",
+      "year": "2019",
+      "journal-title": "Phys. Rev. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b64",
+      "doi-asserted-by": "crossref",
+      "first-page": "357",
+      "DOI": "10.1016/B978-0-08-056033-5.00029-X",
+      "article-title": "1.13-Radiation damage theory",
+      "volume": "1",
+      "author": "Golubov",
+      "year": "2012",
+      "journal-title": "Compr. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b65",
+      "doi-asserted-by": "crossref",
+      "first-page": "166",
+      "DOI": "10.1016/j.jmps.2017.01.011",
+      "article-title": "Point defect sink efficiency of low-angle tilt grain boundaries",
+      "volume": "101",
+      "author": "Gu",
+      "year": "2017",
+      "journal-title": "J. Mech. Phys. Solids"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b66",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.softx.2020.100430",
+      "article-title": "MOOSE: Enabling massively parallel multiphysics simulation",
+      "volume": "11",
+      "author": "Permann",
+      "year": "2020",
+      "journal-title": "SoftwareX"
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.commatsci.2025.113895_b67",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.jnucmat.2010.12.231",
+      "article-title": "Ab-initio based modeling of diffusion in dilute bcc Fe–Ni and Fe–Cr alloys and implications for radiation induced segregation",
+      "volume": "411",
+      "author": "Choudhury",
+      "year": "2011",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.commatsci.2025.113895_b68",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevE.95.063312",
+      "article-title": "Linearization-based method for solving a multicomponent diffusion phase-field model with arbitrary solution thermodynamics",
+      "volume": "95",
+      "author": "Welland",
+      "year": "2017",
+      "journal-title": "Phys. Rev. E"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.commatsci.2025.113895_b69",
+      "doi-asserted-by": "crossref",
+      "first-page": "148",
+      "DOI": "10.1016/j.net.2019.07.009",
+      "article-title": "Radiation induced grain boundary segregation in ferritic/martensitic steels",
+      "volume": "52",
+      "author": "Xia",
+      "year": "2020",
+      "journal-title": "Nucl. Eng. Technol."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b70",
+      "doi-asserted-by": "crossref",
+      "first-page": "145",
+      "DOI": "10.1016/j.actamat.2013.11.060",
+      "article-title": "Anisotropic radiation-induced segregation in 316L austenitic stainless steel with grain boundary character",
+      "volume": "67",
+      "author": "Barr",
+      "year": "2014",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.commatsci.2025.113895_b71",
+      "doi-asserted-by": "crossref",
+      "first-page": "1044",
+      "DOI": "10.3390/met13061044",
+      "article-title": "The Effect of B on the co-segregation of C-Cr at grain boundaries in austenitic steels",
+      "volume": "13",
+      "author": "Yan",
+      "year": "2023",
+      "journal-title": "Metals"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b72",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2021.152894",
+      "article-title": "Correlative STEM-APT characterization of radiation-induced segregation and precipitation of in-service BWR 304 stainless steel",
+      "volume": "549",
+      "author": "Lach",
+      "year": "2021",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b73",
+      "doi-asserted-by": "crossref",
+      "first-page": "692",
+      "DOI": "10.1016/j.jnucmat.2015.10.041",
+      "article-title": "Microchemical and microstructural evolution of AISI 304 stainless steel irradiated in EBR-II at PWR-relevant dpa rates",
+      "volume": "467",
+      "author": "Dong",
+      "year": "2015",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.commatsci.2025.113895_b74",
+      "doi-asserted-by": "crossref",
+      "first-page": "1220",
+      "DOI": "10.1016/j.actamat.2010.10.055",
+      "article-title": "Novel features of radiation-induced segregation and radiation-induced precipitation in austenitic stainless steels",
+      "volume": "59",
+      "author": "Jiao",
+      "year": "2011",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.commatsci.2025.113895_b75",
+      "doi-asserted-by": "crossref",
+      "first-page": "71",
+      "DOI": "10.1016/j.jnucmat.2011.11.072",
+      "article-title": "Grain boundary segregation in neutron-irradiated 304 stainless steel studied by atom probe tomography",
+      "volume": "425",
+      "author": "Toyama",
+      "year": "2012",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b76",
+      "doi-asserted-by": "crossref",
+      "first-page": "167",
+      "DOI": "10.1016/j.msea.2013.04.048",
+      "article-title": "Solute segregation on Σ3 and random grain boundaries in type 316L stainless steel",
+      "volume": "578",
+      "author": "Tomozawa",
+      "year": "2013",
+      "journal-title": "Mater. Sci. Eng.: A"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b77",
+      "series-title": "Evaluation of the Effect of Composition on Radiation Hardening and Embrittlement in Model FeCrAl Alloys",
+      "author": "Field",
+      "year": "2015"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.commatsci.2025.113895_b78",
+      "doi-asserted-by": "crossref",
+      "first-page": "7801",
+      "DOI": "10.1038/srep07801",
+      "article-title": "Superior radiation-resistant nanoengineered austenitic 304L stainless steel for applications in extreme radiation environments",
+      "volume": "5",
+      "author": "Sun",
+      "year": "2015",
+      "journal-title": "Sci. Rep."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b79",
+      "article-title": "An approach to combine neutron and ion irradiation data to accelerate material qualification for nuclear reactors",
+      "author": "Taller",
+      "year": "2024",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b80",
+      "doi-asserted-by": "crossref",
+      "first-page": "106",
+      "DOI": "10.1016/0022-3115(83)90015-6",
+      "article-title": "Compositional changes in Fe-Cr-Ni alloys under proton bombardment at elevated temperatures",
+      "volume": "117",
+      "author": "Lam",
+      "year": "1983",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b81",
+      "doi-asserted-by": "crossref",
+      "first-page": "166",
+      "DOI": "10.1016/j.actamat.2020.03.038",
+      "article-title": "Solute diffusion by self-interstitial defects and radiation-induced segregation in ferritic Fe–X (X=Cr, Cu, Mn, Ni, P, Si) dilute alloys",
+      "volume": "191",
+      "author": "Messina",
+      "year": "2020",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b82",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2022.153910",
+      "article-title": "Cluster dynamics modeling of Mn-Ni-Si precipitates coupled with radiation-induced segregation in low-Cu reactor pressure vessel steels",
+      "volume": "569",
+      "author": "Ke",
+      "year": "2022",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b83",
+      "doi-asserted-by": "crossref",
+      "first-page": "83",
+      "DOI": "10.1016/j.jnucmat.2017.10.008",
+      "article-title": "Cluster dynamics modeling of Mn-Ni-Si precipitates in ferritic-martensitic steel under irradiation",
+      "volume": "498",
+      "author": "Ke",
+      "year": "2018",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b84",
+      "series-title": "Structural Materials for Generation IV Nuclear Reactors",
+      "first-page": "253",
+      "article-title": "7 - Irradiation effects in Generation IV nuclear reactor materials",
+      "author": "Aitkaliyeva",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b85",
+      "series-title": "Preliminary Results Addressing Material Qualification Using Combined Ion Irradiation and Modeling Data",
+      "author": "Jokisaari",
+      "year": "2023"
+    },
+    {
+      "key": "10.1016/j.commatsci.2025.113895_b86",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.commatsci.2023.112503",
+      "article-title": "Microstructure modeling of nuclear structural materials: Recent progress and future directions",
+      "volume": "230",
+      "author": "Ke",
+      "year": "2023",
+      "journal-title": "Comput. Mater. Sci."
+    }
+  ],
+  "container-title": [
+    "Computational Materials Science"
+  ],
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0927025625002381?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0927025625002381?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        11,
+        5
+      ]
+    ],
+    "date-time": "2025-11-05T07:55:58Z",
+    "timestamp": 1762329358000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0927025625002381"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        6
+      ]
+    ]
+  },
+  "references-count": 86,
+  "alternative-id": [
+    "S0927025625002381"
+  ],
+  "URL": "https://doi.org/10.1016/j.commatsci.2025.113895",
+  "relation": {},
+  "ISSN": [
+    "0927-0256"
+  ],
+  "issn-type": [
+    {
+      "value": "0927-0256",
+      "type": "print"
+    }
+  ],
+  "subject": [],
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        6
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Phase-field modeling of radiation-induced composition redistribution: An application to additively manufactured austenitic Fe–Cr–Ni",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Computational Materials Science",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.commatsci.2025.113895",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2025 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "113895"
+}

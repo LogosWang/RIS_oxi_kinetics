@@ -1,0 +1,651 @@
+===== PDF PAGE 1 =====
+1
+In-service corrosion and grain boundary oxidation in neutron-irradiated 316 stainless steel 
+baffle-former bolts
+Timothy G. Lach1*, Maxim N. Gussev2, and Xiang (Frank) Chen1
+1Materials Science and Technology Division, Oak Ridge National Laboratory, 1 Bethel Valley 
+Road, Oak Ridge, TN 37831, USA
+2Nuclear Energy and Fuel Cycle Division, Oak Ridge National Laboratory, 1 Bethel Valley Road, 
+Oak Ridge, TN 37831, USA
+* Corresponding author: lachtg@ornl.gov 
+ABSTRACT
+Reactor core internal components such as baffle-former bolts (BFBs) are subjected to significant 
+mechanical stress, corrosive environment, and neutron irradiation from the reactor core during the 
+plant operation. Over the long operation period, these conditions lead to potential degradation and 
+of the bolts. In this work, characterization was performed on the oxidized surface of stainless steel 
+BFBs harvested from a commercial pressurized water reactor (PWR) after 40 years of operation. 
+The analysis shows that a complex multilayered surface oxide with six identified layers formed 
+that is different from 2-layer structure commonly observed in model experiments. The oxide varies 
+by composition – predominantly Fe, Cr, and Ni, grain size, and phase, and has features resembling 
+both unirradiated and radiation/ corrosion experiments likely due to the low radiation flux 
+compared to ion-irradiation or the test reactor radiation. In addition, grain boundary oxidative 
+attack featured a pathway for Fe and other elements to move from the metal matrix to the outermost 
+oxide. The results help assess PWR lifetime extension, put into context previous experimental 
+studies, and provide input for designing experiments combining radiation and corrosion effects.
+Notice: This manuscript has been authored by UT-Battelle, LLC under Contract No. DE-AC05-
+00OR22725 with the U.S. Department of Energy. The United States Government retains and the 
+publisher, by accepting the article for publication, acknowledges that the United States 
+Government retains a non-exclusive, paid-up, irrevocable, world-wide license to publish or 
+reproduce the published form of this manuscript, or allow others to do so, for United States 
+Government purposes. The Department of Energy will provide public access to these results of 
+federally sponsored research in accordance with the DOE Public Access Plan 
+(http://energy.gov/downloads/doe-public-access-plan). 
+Keywords: Baffle-former bolt; In-service irradiation and corrosion; Multilayered oxide structure; 
+Radiation-induced segregation (RIS); Irradiation assisted stress corrosion cracking (IASCC); 
+Crack initiation 
+1. Introduction
+Light water reactor (LWR) internal components are exposed to multiple extreme environmental 
+conditions such as high temperature water, neutron and gamma radiation, and mechanical stresses. 
+These conditions leave the materials susceptible to microstructural changes that increase the 
+susceptibility to void swelling, embrittlement, and irradiation-assisted stress corrosion cracking 
+(IASCC). In particular, IASCC is of high concern for life extension of pressurized water reactors 
+
+===== PDF PAGE 2 =====
+2
+(PWRs) [1-3]. To understand IASCC, the effects of irradiation on both general corrosion and 
+localized grain boundary oxidation must be studied. 
+Most experimental research into IASCC and irradiation/corrosion has focused on sequential 
+exposure of irradiated steel to corrosive environments such as simulated PWR water [4-10] or 
+relatively short-term combined ion (usually proton) irradiation-corrosion experiments [11-13]. 
+Being valuable from scientific and engineering points of view, out-of-reactor short-term 
+experiments cannot fully reproduce in-service conditions. Duration of the corrosion processes is 
+an important parameter; irradiation accelerates corrosion at relatively short time scales, but 
+potentially reduces corrosion rates at longer time scales due to the evolution of the Cr content in 
+the inner oxide layer [7, 8]. Also, model experiments often do not include the effect of water 
+radiolysis observed during concurrent irradiation/corrosion experiments [11-14]. Radiolysis has 
+been found to increase the corrosion potential of the water, thus dissolving the inner Cr-rich oxide 
+and reducing its passivating ability but still reducing the overall corrosion rate compared to 
+sequential exposure [8]. Additionally, parameters like flux (damage rate), neutron spectra, 
+exposure time are difficult to reproduce. It underlines the importance of studying harvested in-
+service components, which have experienced LWR conditions with concurrent irradiation, 
+corrosion, and mechanical stresses. 
+As one of the PWR internal components, baffle-former bolts (BFBs) are particularly susceptible 
+to IASCC attack. Over the long operation period, the extreme conditions in operating reactors can 
+lead to effects like embrittlement, creep, stress relaxation followed by occasional overstressing, 
+and large-scale cracking. The first degraded BFBs were observed in 1989 [15]. In support of 
+evaluating long-term operation performance of materials used in core internal components, the 
+Materials Research Pathway under the U.S. Department of Energy (DOE), Office of Nuclear 
+Energy, Light Water Reactor Sustainability Program pursued the retrieval of aged structural 
+components such as BFBs for the study of the microstructure, mechanical, and corrosion-related 
+properties. Two high fluence BFBs were removed in 2011 from a Westinghouse two-loop 
+downflow type PWR and delivered to Oak Ridge National Laboratory. The BFBs showed no 
+indication of cracking by visual and ultrasonic inspection after being withdrawn from service. In 
+addition to standard post irradiation examination (PIE) to analyze radiation-induced 
+microstructural and mechanical property evolution along the length of the bolts found in previous 
+work [16] and ongoing work, the oxidized surfaces of the BFBs are also the subject of high interest. 
+This study focuses on the curved region of bolt head/shank intersection. This intersection still has 
+the in-service exposure surface intact from handling, which is of high interest because it has a high 
+mechanical stress concentration compared to the rest of the bolt head or shank and was also 
+exposed to the primary water [3]. Thus, this region has the three primary components for IASCC: 
+corrosive environment, stress, and irradiation. To the authors’ knowledge, this is the first time the 
+native oxide of in-service BFBs has been characterized with high resolution analytical electron 
+microscopy. Characterization of the oxidized surface and oxidized grain boundary will be 
+discussed in detail. The results show that while simulated conditions in sequential experiments or 
+concurrent ion irradiation/corrosion experiments do provide useful information about the corrosion 
+and grain boundary oxidation behavior in stainless steels, the oxidation behavior observed in 
+materials after PWR in-service exposure is more complex.
+
+===== PDF PAGE 3 =====
+3
+2. Materials and Methods
+Two BFBs studied in the present work were removed from a Westighouse two-loop downflow 
+type pressurized water reactor (PWR) in 2011. During routine inspection, the BFBs showed no 
+visual indication of cracking, though a lower torque was needed for removal from the baffle 
+structure than the original torque specified during installation, suggesting radiation-induced stress 
+relaxation [17]. Importantly, the bolts do still have some of the original surface that was exposed 
+to coolant water where the bolt head intersects with the bolt shank. Optical and microscopy survey 
+showed that this area did not receive significant mechanical damage during removal and handling 
+being protected, at some degee, by the bolt geometry. 
+The element composition of bolts are within the specifications for type 316-SS based on atom 
+probe tomography analysis conducted previously [16]. The bolts were in the reactor for 
+approximately 40 years; the calculated radiation dose of each bolt was different as the bolt head in 
+#4412 received ~41 displacements per atom (dpa) while #4416 received ~29 dpa due to the 
+difference in neutron flux at each bolt location. The exact temperature profiles of the bolts are 
+unknown, but it is known that the power plant went through 35 operating cycles for fuel 
+replacement and maintenance [18], so the temperature did ramp up and down. The operating 
+temperature at this portion of the bolts was likely about 305-317 °C based on finite element 
+modeling [3]. After removal from service, the bolts were cut inside a hot cell, and the bolt heads 
+were sliced further to produce samples suitable for out-of-hot-cell handling, Figure 1.
+Figure 1. a) Harvested baffle bolt; b, c) Cutting and slicing the BFB head; d) Location of the 
+studied specimen. 
+
+
+===== PDF PAGE 4 =====
+4
+A slice of the bolt head sections for both bolts was polished to a mirror-finish with a final polishing 
+step using colloidal silica in a vibratory polisher. The cross-section of the near-surface area in the 
+bolt head/shank intersection curved region was characterized by SEM-electron backscatter 
+diffraction (EBSD) using a Tescan Mira3 SEM equipped with an Oxford Instruments Symmetry 
+S2 high speed EBSD detector. SEM voltage was 20 kV; scanning was performed on a rectangular 
+grid with step size 500 nm (for general view scan) and 125 nm (for high-resolution scans). 
+Transmission electron microscopy (TEM) liftouts normal to the surface for further analysis were 
+carried out using a Thermo Fisher Versa3D dual-beam focused ion-beam (FIB)/SEM. The TEM 
+sample preparation followed the procedures of initial trenching, cutting, and thinning to 200 nm 
+with 30 keV Ga ion beam, rough polishing to 100 nm with ion beam energy gradually reduced 
+from 16 keV to 8 and 5 keV, and fine polishing with 2 keV ion beam to remove most FIB-induced 
+damage. Before loading into the TEM, samples were always cleaned with a Fischione 1020 
+Nanomill for 10 minutes on each side using 900 eV Ar + ions. Microstructural and elemental 
+mapping characterization was performed using transmission Kikuchi diffraction (tKD) using the 
+Tescan Mira3 SEM and scanning TEM (STEM)/Energy-dispersive X-ray spectroscopy (EDS)-
+based mapping using a Thermo Fisher Talos F200X STEM equipped with the SuperX 4-sector X-
+ray EDS system. This was done to identify and quantify structural defects, elemental segregation, 
+and nanoscale precipitates. The SEM-EDS, EBSD, and tKD analysis and mapping were performed 
+using the Oxford Instruments Aztec Crystal and EDAX OIM v.8 software packages. The TEM 
+and STEM-EDS analysis was performed using Thermo Fisher Velox software. 
+3. Results
+3.1.  General Baffle Former Bolt microstructure 
+
+
+===== PDF PAGE 5 =====
+5
+Figure 2. General microstructure of the BFB #4412 head portion. a, b) EBSD inverse pole figure 
+(IPF) and KAM maps, respectively taken at the distance of approximately 2 mm from the head-to-
+shaft-transition (the area is marked as “Bulk” in Figure 1); c) SEM BSE image taken close to the 
+shaft and illustrating grain morphology and presence of non-metallic inclusions (black arrows). 
+d, e) EBSD maps recorded close to the shaft ((the area is marked as “Head-to-shank transition” 
+in Figure 1). The IPFs are colored in the horizontal direction. EBSD step size: 500 nm. 
+Figure 2(a-c) shows a representative BFB head microstructure recorded in the head area 
+(approximately 2 mm from the head-to-shaft transition). Equiaxial well-shaped grains dominate 
+the microstructure; many grains reveal annealing twins. No retained ferrite was observed in the 
+microstructure, so no phase map is shown. The SEM BSE image, Figure 2(c), shows the presence 
+of nonmetallic inclusions of a few micrometers in size. 
+Although EBSD data suggest a mostly annealed microstructure with minor misorientation 
+gradients, some grains contain slightly elevated misorientation levels with multiple in-grain low-
+angle boundaries, see the kernel average misorientation (KAM) map, Figure 2(a, b). Several of 
+such grains are marked as “AG” (“abnormal grains”). A population of much smaller recrystallized 
+grains fully surrounds AGs, ruling out the possibility that cold work (occasional or intentional 
+deformation) was a possible source of the elevated in-grain misorientation levels. KAM 
+distribution inside such abnormal grains is also not typical for cold or warm deformation in 
+reference (non-irradiated) steel or strain localization processes in irradiated steel. The specific 
+shape of grain boundaries (arcs or semicircles) for AGs suggests that these grains may be a result 
+of abnormal grain growth [19] (sometimes termed also as “anomalous grain growth”). 
+Figure 2(d, e) shows the microstructure of the head-to-shank transition area. One may see the same 
+pattern of dominating well-shaped equiaxed grains mixed with relatively rare AGs. Also, there is 
+a thin layer (shown by dotted rectangle in Figure 2(e) along the edge with a thickness estimated at 
+10–15 µm with elevated KAM values. Elevated local misorientation means high local dislocation 
+density along the edge. The impact on general corrosion of a deformed surface layer could be an 
+enhancement of uniform oxidation [20-22]; however, this prior work showed an ultrafine grain 
+(UFG) microstructure at the surface, which appears to be absent here, although it cannot be entirely 
+ruled out since the initial surface condition of the bolts is unknown. As will be shown in Section 
+3.3, the nanograin oxide layer, if from a consumed UFG surface, is much thinner than what would 
+be found from machining [22].  The impact on IASCC may be significant due to the importance 
+of strain localization on IASCC [1] and will be discussed in more details in Sections 3.4 and 4.2. 
+Prior research has shown that a highly deformed and/or UFG surface may have enhanced SCC 
+resistance in unirradiated environments [20, 21]. This thin layer is likely related to BFB 
+manufacturing. 
+Not shown here but presented elsewhere [16, 23] is the radiation-induced defect structures. There 
+is a high density of nanocavities with limited swelling, dislocation loops, and Ni/Si-rich 
+precipitates within the grains and radiation-induced segregation (RIS) to grain boundaries. These 
+structures have a substantive impact on radiation hardening and IASCC susceptibility. A detailed 
+analysis of as-irradiated microstructure and post-service mechanical performace will be given in a 
+separate focused paper.
+3.2.  Appearance of the water-exposed surface
+As was mentioned above, the slices still had the water exposed surface retained, Figure 3. The 
+oxidized surface is heterogeneous in nature with large lighter shade features down to smaller 
+nodules. The range in size of the nodule-like features is large with some greater than 10 μm across 
+
+===== PDF PAGE 6 =====
+6
+and others less than 1 μm. The surface microstructure may be interpreted as an oxide film with 
+coarse particles of iron-rich oxide. Such a structure is common and was often observed in corrosion 
+and stress corrosion cracking experiments [24-26].
+In this region of the bolts (head-to-shank transition area), there are also cracks in the oxide layer, 
+visible in SEM, while there are no cracks visible away from the curved region of the bolt. Some 
+of the cracks appear to be over 20 μm in length. Most cracks are oriented in the BFB axial direction, 
+likely reflecting the direction of acting stress. 
+Figure 3: Backscatter electron SEM images from two different areas of the surface of the 
+head/shank transition area of BFB #4412. There are multiple small cracks visible (red arrows) 
+and rough heterogeneously sized Fe-rich oxide particles across surface. 
+3.3.  Complexity of the surface oxide multilayer structure
+To investigate further the oxidation behavior and grain boundary attack at the cracks, targeted FIB 
+liftouts were taken from the oxidized surface targeting cracks. One such liftout is shown in Figure 
+4 for BFB #4412, highlighting specific features: complex surface oxidation, grain boundary 
+oxidative attack and cracking, and localized deformation in the form of dislocation channels [23]. 
+
+
+===== PDF PAGE 7 =====
+7
+Figure 4: a) STEM-ADF image of liftout from BFB #4412 taken from oxidized surface near “crack 
+#4” in Figure 9. b) tKD IPF map of the same liftout. Multiple features are apparent including a 
+multilayered oxide (red arrows), grain boundary attack (blue arrow), and localized deformation 
+features inside the bolt (yellow arrows). The IPF map is based on the face centered cubic (FCC) 
+lattice showing the matrix austenite and oxide layers have same lattice.
+The surface oxide on the curved region of the BFBs is complex. The STEM images, tKD IPF map, 
+and EDS map for BFB #4412 in Figure 5, the TEM and selected area electron diffraction (SAED) 
+patterns for BFB #4412 in Figure 6, STEM-EDS analysis for BFB #4412 in Figure 7, and STEM-
+EDS analysis for BFB #4416 in Figure 8 highlight six distinct layers of the surface oxide that 
+separate themselves by composition and by grain size. The observed porosity within the oxide 
+layers of the liftouts is minimal. Interestingly, instead of six layers, only three layers are commonly 
+identified for corrosion and radiation-enhanced corrosion [7, 13]. The total oxide thickness for this 
+BFB is ~3 μm near its thinnest point and up to ~5 μm near grain boundaries.
+The outermost oxide layer, denoted as layer 1, is an Fe-rich oxide with large grains ~250-500 nm 
+in size. The thickness of this layer varies from one grain thick (~250 nm) to multiple grains but 
+seems to be largest around grain boundaries. The second layer is an intermixed Fe/Ni-rich and Cr-
+rich oxide with grain sizes of ~100-200 nm and a thickness of approximately 600-700 nm. The 
+grains appear to be Fe/Ni-rich while the oxide boundaries are Cr-rich. The third layer is similar in 
+composition to layer 2 but is marked by a much finer grain size of well under 100 nm (~50 nm). 
+The interesting segregation behavior of what appears as Fe/Ni-rich grain centers surrounded by Cr 
+is more obvious in layer 2 but also appears be the case in the smaller grains in layer 3. The variation 
+in composition from oxide grain to oxide grain can clearly be seen in Figure 7(f). For this BFB 
+#4412, layer 3 is ~1.3 μm thick, but as is shown in Figure 8, the layer 3 oxide thickness can vary 
+substantially from bolt to bolt with only ~150-400 nm for the sample taken from BFB #4416. 
+While layer 1 may traditionally be referred to as the outer oxide, layers 1, 2, and 3 here are all 
+outside the original metal surface and so could be considered outer oxide layers. This is based on 
+the grain size being much less than the inner oxide layers 4 and 5 as well as a growing mismatch 
+in the zone axis orientation of the base metal and inner oxide layers 4 and 5 in Figure 6.
+
+
+===== PDF PAGE 8 =====
+8
+The fourth and fifth oxide layers appear monolithic in nature but are segregated by composition 
+with the fourth layer being Cr/Fe/Ni-rich while the fifth layer closest to the alloy surface is depleted 
+in Fe and Ni. The “monolithic” nature is a result of these layers being originally the base metal 
+substrate and thus part of the original large micron-scale grains. This is clear based on two 
+observations: the tKD-IPF map in Figure 4 shows that layer 4 has the same orientation as the base 
+metal below (layer 5 could not be indexed) just as was observed previously in high temperature 
+oxidation of a Fe-19Cr-9Ni alloy [27], and the TEM BF image and selected area electron 
+diffraction (SAED) patterns in Figure 6 showing the layer 4 contrast matches that of the base metal 
+below when tilted to a [100] zone axis and the diffraction pattern matching orientation between 
+the metal and oxide layers of 4 and 5, though all three – base metal and oxide layers 4/5 – have 
+different crystal structures. Looking at the SAED patterns, layer 5 looks to have two sets of 
+diffraction spots – ones that match the base metal (possibly due to an overlap of the selected area 
+aperture with the base metal) and ones that have a similar but slightly smaller spacing with 
+diffraction spots inside the base metal diffraction spots, consistent with a rock salt structure with 
+a cube-on-cube orientation relationship with the base metal [7]; layer 4 has the same single 
+crystalline pattern but with added superlattice reflections consistent with a spinel structure. The 
+original metal surface is at the boundary between the nanocrystalline layer 3 and layer 4.
+The final layer (layer 6) is a thin sub-5 nm Ni-enriched layer at the matrix/oxide interface. This 
+Ni-enriched layer has been observed in experimental conditions in both sequential and concurrent 
+testing [6, 28]. However, interestingly, this Ni-layer is not observed on the right side of the grain 
+boundary attack, as shown in the linear concentration profiles in Figure 7. This may be due to the 
+behavior of the grain boundary itself, as it breaks up the layers nearest the matrix or the Ni 
+segregation to the grain boundary discourages the formation of the thin Ni-enriched layer. This 
+layer could not be identified in the tKD maps in Figure 5 or the TEM imaging and SAED 
+diffraction in Figure 6, meaning it is purely an elemental segregation of Ni to the metal/oxide 
+interface.
+The composition gradient of each layer, 1 through 5, are shown in 1-D composition profiles in 
+Figure 7(c, d). The thickness of layers 4 and 5 are ~300 nm, which are about the same as in BFB 
+#4416 in Figure 8. The total thickness of the surface oxide in BFB #4416 in Figure 8 is ~1.7-2 μm, 
+or about two-thirds of the oxide thickness for BFB #4412. This could be due to multiple reasons, 
+such as: (1) the thickness of the oxide likely can vary between bolts; (2) the radiation dose is 
+different and could affect oxide formation; and (3) the PWR water conditions and flow could be 
+slightly different.
+
+===== PDF PAGE 9 =====
+9
+ 
+Figure 5: Complexity of the BFB in-service oxidation processes. a) STEM-BF, b) STEM-LAADF, 
+c) STEM-HAADF with tKD-IPF map overlayed, and d) STEM-EDS Cr/Fe/Ni map of BFB #4412 
+highlighting the multilayered oxide and grain boundary attack. Numbers correspond with each 
+oxide layer based on grain size and composition. The two near-parallel dotted lines highlight the 
+grain boundary pathway for the outward diffusion of Fe/Ni. Note: the fit of the tKD-IPF map 
+overlayed in (c) is not perfect as there may have been some drift during the tKD scan compared 
+to the STEM imaging.
+
+
+===== PDF PAGE 10 =====
+10
+Figure 6: TEM BF image and SAED patterns of surface oxide tilted to [100] zone axis of a grain 
+in the base metal just below the oxide in BFB #4412. Contrast in the BF image and the SAED 
+patterns from layers 4 and 5 highlight that these layers were a part of the original metal, and the 
+original metal surface is between layers 3 and 4.
+
+
+===== PDF PAGE 11 =====
+11
+Figure 7: Element distribution profiles though the oxide layers in BFB #4412. a) STEM-BF 
+image and b) STEM-EDS map of Cr/Fe/Ni overlayed showing oxide and grain boundary attack. 
+(c-f) Concentration profiles corresponding to arrows in (b). Profiles normal to the surface (c and 
+d) delineate the boundaries of each layer. 
+
+
+===== PDF PAGE 12 =====
+12
+Figure 8: Grain boundary attack and crack initiation in lower dose BFB #4416. a) STEM-BF 
+images near an oxidized grain boundary in BFB #4416 highlighting the multilayered oxide and 
+grain boundary attack. Numbers correspond with each oxide layer based on grain size and 
+composition. b) STEM-BF and c) STEM-HAADF images showing oxide and grain boundary 
+attack. STEM-EDS maps of d) Cr, Fe, Ni overlapped, e) Ni, f) Si, and g) O showing segregation 
+of Ni at grain boundary but a depletion of Si near the oxidized grain boundary.
+3.4.  Specific microstructure features near the surface and in the oxide layer
+3.4.1. Grain boundary corrosion.
+Figure 5 and Figure 7 highlight the interesting oxidative grain boundary attack. The near-parallel 
+dotted lines in Figure 5 highlight two features: the grain boundary oxide is enriched in Fe and 
+partially Ni or conversely depleted in Cr, and the oxide grain size is much larger than the oxides 
+in layers 3, 4, and 5 away from the grain boundary. The grain boundary acts as a fast diffusion 
+pathway or pipeline for Fe and Ni to move to the outer oxides, especially layer 1 which is thickest 
+around the grain boundary. The larger grains in layers 1 and 2 along the ‘pipeline’ are all enriched 
+in Fe and Ni as highlighted in the concentration profiles in Figure 7(e, f). This is likely exacerbated 
+by radiation-induced segregation of Ni and Si to the grain boundary and depletion of Cr at the 
+grain boundary. This same behavior observed in BFB #4412 can also be seen in BFB #4416 as 
+layer 3 is clearly interrupted by larger grains near the grain boundary in Figure 8 and the original 
+grain boundary location within the oxide is enriched in Fe and Ni and depleted in Cr. Radiation-
+induced segregation not only enhances grain boundary attack, but it also enhances external oxide 
+growth. Outside of this ‘pipeline’, oxidation forms a wide wedge shape into the grain boundary. 
+The wedge-shape may form as a means to further propagate the grain boundary oxidation, or 
+possibly due to the grain boundary oxidation being hindered, such as by a sulfide particle like the 
+Cu-rich sulfide particle in Figure 5.
+
+
+===== PDF PAGE 13 =====
+13
+3.4.2. Initial stages of stress corrosion cracking. 
+SEM imaging, as shown in BFB #4412 in Figure 9(a), demonstrated multiple small cracks along 
+the specimen edge; all observed cracks were located within the curved area, where stress 
+concentration would happen. The longest crack reached ~6 µm. All analyzed cracks appeared to 
+be filled with oxides. Some but not all cracks originated from oxide pockets where there was wide 
+wedge-shaped oxidation visible. SEM/EBSD crystallography analysis results for one of the cracks 
+are shown in Figure 9(b, c). One may see the crack propagated along random high-angle grain 
+boundary (RHAB). Special ∑3 boundaries were immune to crack formation in all analyzed cases, 
+which would correlate with the lack of Ni/Si RIS and Cr depletion at coherent ∑3 grain and twin 
+boundaries [29]. 
+Figure 9: a) SEM images from the curved section of BFB #4412 where the bolt head meets the 
+bolt shank. Microscale cracks indicative of IASCC are found in the curved region and not in the 
+
+
+===== PDF PAGE 14 =====
+14
+straight regions. b, c) IPF and KAM analysis of in-service formed short crack highlighted by red 
+dotted box in a). AG: abnormal grain; DC: defect-free channel. EBSD step size: 125 nm.
+One specific aspect is important to mention related to IASCC. Multiple defect-free channels were 
+observed in the near-surface grains – see  Figure 9(c) and Figure 5(a) – suggesting at least one 
+significant loading event while in service. Channel formation was observed at stress levels likely 
+ranging from 45% to 60–80% of the irradiated yield stress with high stress experienced locally at 
+the channel [1, 30, 31]. The channel density, characterized by the fraction of grains containing 
+defect-free channels and the number of channels per grain, strongly depends on the strain rate or 
+loading rate, temperature, alloy composition, and microstructure. Currently, it is not possible to 
+precisely determine the stress level experienced by the examined baffle former bolt while in 
+service. However, the presence of channels in the majority of analyzed near-surface grains implies 
+that the stress levels approached values comparable to the yield stress of the irradiated material.
+Formation of defect-free channels in the investigated baffle former bolts and their complex 
+microstructure are addressed in our separate, focused paper [23]. In the context of the present work, 
+loading event may explain appearance of cracks in the oxide film, Figure 3, and, if stress acted for 
+reasonably long time, formation of short stress corrosion cracks, Figure 9(a). These cracks were 
+not observed in regions of the bolt surface away from the curved region where stress would be 
+highest.
+ 
+4. Discussion
+4.1.  General oxidation in commercial PWR environment – comparison with 
+experiments
+Surface corrosion of stainless steels in PWR water conditions at around 300 °C, whether with or 
+without radiation, typically is presented as two oxide layers with a Cr-rich inner oxide and an Fe-
+rich outer oxide [4, 7, 32, 33]. The fully dense, multilayered oxide found at the surface of the 
+harvested BFBs in this study have a similar generalized inner and outer oxides; however, both the 
+inner and outer oxides can be divided into multiple layers themselves. The inner oxide, noted as 
+layers 4 and 5 in Figure 5, are split between a Cr-(Fe,Ni)-oxide with a spinel structure and a Cr-
+oxide with a rock salt structure nearest the current metal surface. The Cr-(Fe, Ni)-oxide layer 4 
+seems to function as a compositional intermediary between the outer oxide layers, which have a 
+higher concentration of Fe, and the innermost oxide layer 5. As illustrated in Figure 7, layer 5 
+consists primarily of Cr oxide. In contrast, layers 2 and 3 contain roughly equal amounts of Cr and 
+Fe, while layer 4 contains more Fe than layer 5, but less than what is found in layers 2 and 3. 
+Rather than just a composition gradient, it is clear the inner oxide is phase separated from the outer 
+oxide. 
+The outer oxide, on the other hand, has three layers that all have a polycrystalline spinel structure 
+but vary by composition and grain size. Layers 2 and 3 have similar composition and composition 
+distribution in and around the grains but vary strongly by grain size. Layer 3, which formed on the 
+original metal surface, was dominated by oxide grain nucleation rather than grain growth, while 
+layer 2 with the larger grains was dominated by grain growth. It is clearer in the larger grains in 
+layer 2, but in both layers, the grain interiors are Fe and Ni-rich while the grain boundaries are Cr-
+rich. This elemental separation may limit grain growth in layers 2 and especially 3, and it could be 
+a result of radiation-enhanced diffusion within the oxide possibly due to a vacancy-segregant 
+interaction [34, 35]. The most outward layer, layer 1, is relatively thin throughout – one grain thick 
+– but also is comprised of the large nodules shown in Figure 3. As will be discussed in the next 
+
+===== PDF PAGE 15 =====
+15
+section, these nodules likely form more readily and are larger over grain boundaries. By analogy 
+with ref. [36], the layers may have different strength, Young modulus, and hardness, but this aspect 
+is out of the present work scope. 
+The initial oxidation likely began at the interface between layers 3 and 4. Cr, followed by Fe and 
+Ni, move to the metal surface and then moves outward forming an oxide as O moves inward into 
+the metal. Outward Cr diffusion may have been enhanced by both irradiation and by the presence 
+of network dislocations formed during manufacturing [22]. This likely appears to take place 
+rapidly initially based on the nanocrystalline nature of layer 3. However, perhaps as a result of the 
+Cr segregation to the oxide grain boundaries ( Figure 7), there may be limited continued grain 
+growth, with more grain growth on the outer layers 1 and 2 where the Cr content is less. Layer 1 
+in particular is where the Cr reached its limit. On the inner oxide, layer 5 perhaps formed separate 
+from layer 4 as Fe and Ni moved to the outer oxides, depleting layer 5 of Fe and Ni leaving behind 
+a Cr-enriched and protective inner oxide layer, perhaps also enhanced by irradiation [8]. 
+Previous studies have shown that the effects of irradiation on corrosion of austenitic stainless steels 
+depend on whether irradiation and corrosion processes occur concurrently [12] or sequentially [4], 
+and whether the irradiation induces radiolysis within the water [33]. In sequential irradiation 
+followed by corrosion experiments, the degree of corrosion was suppressed in the irradiated 
+material due to radiation enhanced diffusion (RED) of Cr to the surface and forming a more 
+protective inner oxide [7]. The irradiated material also has a thin rock salt structure form at the 
+metal/oxide interface.
+In concurrent radiation/corrosion with ion irradiation in PWR water, radiolysis increases the 
+activity of oxygen which enhances oxide formation while destabilizing the inner oxide porosity 
+[33]; with the lack of porosity, the oxidation rate is reduced as it correlates with porosity or excess 
+volume [32]. However, the inner oxide film dissolves readily when in contact with water under 
+radiolysis; so the corrosion rate reaches a steady state when the oxide growth rate equals the 
+dissolution rate on rate [33]. Interestingly, they also found that radiation damage within the steel 
+(not in the oxide) had minimal impact on corrosion in PWR water. However, proton damage rates 
+and radiolysis rates are on the order of 100-150 times higher than in a LWR environment [33]. 
+Comparatively, the morphology, phases, and compositional distribution of the oxide layers in the 
+harvested BFBs appear to borrow features of both irradiated and unirradiated materials from these 
+prior studies into irradiation-affected corrosion. Layer 5, noted from Figure 5 and Figure 6, has the 
+rock salt structure, which was observed in proton irradiated material that was subsequentally 
+exposed to PWR-type water [7]. However, the overall oxide thickness and the morphology of the 
+interface between the inner oxide and the metal resemble that of the unirradiated and corroded 
+material [7], as unirradiated material had a thicker oxide and a curvy/ non-flat interface with the 
+metal, and the inner oxide (layers 4-6) match the orientation of the underlying metal grains as 
+shown in Figure 4 similarly to that of oxidation of polished surfaces [27]. The surface oxide is also 
+fully dense, which is the opposite of the unirradiated material and more in line with irradiated and 
+corroded material, but the fully dense nature could also be related to deformed surface observed 
+in Figure 2(e) which may promote Cr diffusion to the surface [22]; though it is unknown how the 
+porosity may have changed over time, but it could be speculated that the porosity closes over the 
+long term of operation and thus the corrosion rate is reduced over time. This may correspond to 
+the lower degree of radiolysis in the PWR environment. The radiolysis in the PWR may have been 
+enough to increase the oxygen activity, and thus, fully densify the inner oxide and reduce the 
+oxidation rate, but the degree of radiolysis may have been low enough to limit dissolution of the 
+inner oxide. As a result, the overall corrosion rate goes down over time.
+
+===== PDF PAGE 16 =====
+16
+The combined nature of features from both irradiated and unirradiated stainless steel corrosion 
+highlights that corrosion kinetics depend strongly on radiation flux and length of time under 
+exposure. The mechanism for irradiation affected corrosion likely changes over time, with more 
+dependence on radiolysis of the water, or relative lack thereof, initially and more dependence on 
+radiation damage and RED over extended time as the oxide thickens and porosity closes. This 
+balance in radiolysis versus RED may also account for the differences in oxide thickness and 
+individual oxide layer thickness, particularly the nanocrystalline layer 3. BFB #4412 had a higher 
+neutron fluence than BFB #4416 despite being in the reactor the same amount of time; the higher 
+radiation damage or local radiolysis levels in BFB #4412 may have enhanced oxide grain 
+nucleation before being taken over by grain growth in layer 2. Oxide grain growth may have taken 
+place earlier in BFB #4416. This is consistent with recent research that shows susceptibility to 
+IASCC (and thus relatedly oxidation) can vary by a factor of 2 or more depending on location of 
+the bolts along the former plate, even when they are relatively close to each other [37]. 
+Unfortunately, this is speculation as the ratio of layer 3 thickness between the two bolts is greater 
+than the ratio of the neutron fluence in the two bolts, and there are potentially other effects that 
+took place over the 40 years for the two bolts were in service. These other unknown effects could 
+include variation in water flow near each bolt, variation in surface finish between the bolts, and 
+potential spallation of the oxide into the water during operation.
+4.2.  Radiation-enhanced grain boundary attack and IASCC in commercial PWR 
+environment
+In addition to the general surface corrosion, there was substantial grain boundary attack. While 
+general corrosion in PWR internals is less of a concern, grain boundary attack is a significant 
+concern due to the susceptibility and effect it has on IASCC. Most studies attribute radiation 
+induced segregation (RIS) as one of the primary reasons responsible for grain boundaries 
+becoming more suscetible to oxidation under irradiation. This certainly appears to be the case here. 
+The original grain boundary within the oxide is greatly depleted in Cr along with depletion in Si 
+relative to the surrounding oxide and even the base metal, as shown in Figure 7(e). Cr is depleted, 
+while Ni is enriched at the grain boundary. This makes the grain boundary more susceptible to 
+oxidation due to the lack of Cr, and the Si is oxidized and quickly dissolved into the PWR water 
+[1, 38] and thus depleted at the grain boundary within the oxide. The grain boundary ahead of the 
+oxide in BFB #4416 in Figure 8 is actually depleted of Si, likely due to the same dissolution process 
+into the oxide or water. The behavior of the oxidized grain boundary in the metal does not appear 
+to be different between the harvested BFBs and prior experimental conditions, as all the key 
+components of IASCC are present.
+What appears to be new is how oxidation of the grain boundary affects oxidation at the surface of 
+the material: the grain boundary changes the local elemental distribution within the inner oxide 
+layers and also removes the presence of the nanocrystalline layer 3 in the vicinity of the grain 
+boundary. The lack of Cr allows for the enhanced outward diffusion of primarily Fe to the outer 
+oxide enabling the growth of the large Fe-rich oxide nodules on the surface that appear primarily 
+over grain boundaries. The lack of Cr likely enables grain growth within the grain boundary oxide 
+because it is segregated to the oxide grain boundaries; Cr appears to suppress grain growth. So not 
+only does RIS of Ni and Si and depletion of Cr enhance susceptibility of the steel to IASCC, it 
+also appears to enhance general surface corrosion.
+An alternative possibility is that a grain boundary crack occurred as a result of IASCC and grew 
+into the metal a few microns but stopped. Then the open crack surface went through general 
+corrosion but on a smaller length scale closing the crack. The region along the grain boundary then 
+
+===== PDF PAGE 17 =====
+17
+could essentially be the outermost oxide layer (layers 1 and 2 from Figure 5). So, instead of being 
+a pathway to the outermost oxide, this effect could be two sets of oxides impinging on each other. 
+However, this makes it difficult to explain the presence of the large, outermost Fe-rich nodules 
+that commonly decorate the grain boundary regions. 
+5. Conclusions
+Detailed electron microscopy characterization of the corroded surface of harvested stainless steel 
+316 baffle-former bolts from a commercial PWR was performed. The results showed a complex 
+multilayered surface oxide that is in many ways different than the oxide observed in irradiated 
+stainless steel subsequently put into simulated PWR conditions or that formed during combined 
+ion irradiation and corrosion experiments. The results help validate and put into context previous 
+experimental studies and will provide input for designing future research combining radiation and 
+corrosion effects. 
+1. The surface oxide is ~2-3 μm thick depending on the bolt with six – not three – distinct 
+layers that vary based on composition and grain size. The innermost layer is Cr-rich and 
+Fe/Ni depleted, and it has a rock salt crystal structure that is radiation-induced. This sits on 
+top of thin Ni-rich layer at the surface of the metal. The next layer is both Cr and Fe/Ni-
+rich with a spinel crystal structure. These two layers are formed by oxygen penetration into 
+the metal, as interface between these and the outer oxides makes up the original metal 
+surface. The next two layers are also likely commonly seen as the same layer, but these Cr-
+rich and Fe/Ni-rich oxide layers are clearly distinguished primarily by grain sizes, with 
+layer 3 being nanocrystalline and layer 4 being above ~100 nm in size. Layer 3 also was 
+shown to vary most in its thickness between the two BFBs. Lastly, the outermost oxide is 
+a Fe-rich oxide with a large grain size of ~500 nm. The general oxidation features corrosion 
+behaviors in both unirradiated and ion-irradiated PWR water environments with the oxide 
+layer phases matching that of prior irradiation studies, but the overall morphology of the 
+surface oxide appeared to match that of unirradiated material. This could be due to the 
+relatively low radiation flux in the BFBs compared to concurrent ion irradiation/corrosion 
+experiments. 
+2. The oxidized grain boundary attack appears like the commonly found grain boundary 
+attack in irradiation/corrosion studies with features from IASCC studies: RIS at the grain 
+boundary, dissolution of Si within the oxide, and localized deformation. However, there is 
+a feature that is different as the original grain boundary that is enriched in Fe/Ni and 
+depleted in Cr appears to act as a pathway for accelerating outward diffusion of Fe/Ni to 
+the outermost oxide layers. The grains along this path interrupt the nanocrystalline interior 
+oxide layers as they are larger and depleted in Cr. This pathway may fuel the growth of the 
+outermost oxide nodules that decorate grain boundaries and may further enhance general 
+oxidation and grain boundary attack.
+Declaration of Competing Interest 
+The authors declare that they have no known competing financial interests or personal 
+relationships that could have appeared to influence the work reported in this paper.
+
+===== PDF PAGE 18 =====
+18
+Acknowledgments
+This research was supported by the US Department of Energy, Office of Nuclear Energy, Light 
+Water Reactor Sustainability Program Materials Research Pathway under contract DE-AC05-
+00OR22725 with UT-Battelle LLC via Oak Ridge National Laboratory. The authors would like to 
+thank Patricia Tedder and Travis Dixon at the Low Activation Materials Development and 
+Analysis (LAMDA) Laboratory at ORNL, where SEM and TEM/STEM evaluation was 
+conducted. Microscopy in LAMDA is a cost recovery center available for users through the US-
+DOE Nuclear Science User Facilities. The initial handling and cutting of the bolts were done in 
+the hot cells in the Irradiated Materials Examination and Testing (IMET) facility at ORNL. The 
+Thermo Fisher Talos 200X STEM in LAMDA was purchased and funded through the US-DOE 
+Office of Nuclear Energy Advanced Fuel Campaign and Nuclear Science User Facilities. The 
+authors would like to thank the late Mike Burke who was involved in the bolt harvesting and 
+characterization planning and led the sample preparation, machining, and shipping when he was 
+working at Westinghouse Electric Company.
+Data Availability
+Data is available upon request.
+References
+1. Was, G.S., et al., How irradiation promotes intergranular stress corrosion crack initiation. 
+Progress in Materials Science, 2024. 143: p. 101255.
+2. Shoji, T., S.-i. Suzuki, and K.S. Raja, Current status and future of IASCC research. Journal of 
+Nuclear Materials, 1998. 258-263: p. 241-251.
+3. Ickes, M.R., et al., Irradiation-assisted stress corrosion cracking of Type 347 and Type 316 steels 
+irradiated in commercial pressurized water reactors. Journal of Nuclear Materials, 2020. 536: p. 
+152182.
+4. Wang, S., et al., Clarifying the mitigation effect of proton irradiation on the intergranular oxidation 
+of 316L stainless steel in high temperature water. Acta Materialia, 2022. 241: p. 118408.
+5. Du, D., K. Sun, and G.S. Was, IASCC of neutron irradiated 316 stainless steel to 125 dpa. Materials 
+Characterization, 2021. 173: p. 110897.
+6. Wang, S., et al., The time dependence of proton irradiation effect on the intergranular oxidation of 
+316 L stainless steel in high-temperature hydrogenated water. Acta Materialia, 2023. 260: p. 
+119340.
+7. Wang, S., et al., Clarifying the irradiation effect on the general oxidation of 316L stainless steel in 
+high temperature hydrogenated water after 1000h immersion. Acta Materialia, 2023. 255: p. 
+119100.
+8. Boisson, M., et al., Role of irradiation and irradiation defects on the oxidation first stages of a 
+316L austenitic stainless steel. Corrosion Science, 2019. 161: p. 108194.
+9. Deng, P., et al., Effect of irradiation on corrosion of 304 nuclear grade stainless steel in simulated 
+PWR primary water. Corrosion Science, 2017. 127: p. 91-100.
+10. Perrin, S., et al., Influence of Irradiation on the Oxide Film Formed on 316 L Stainless Steel in 
+PWR Primary Water. Oxidation of Metals, 2013. 80(5): p. 623-633.
+11. Raiman, S.S. and G.S. Was, Accelerated corrosion and oxide dissolution in 316L stainless steel 
+irradiated in situ in high temperature water. Journal of Nuclear Materials, 2017. 493: p. 207-218.
+12. Raiman, S.S., D.M. Bartels, and G.S. Was, Radiolysis driven changes to oxide stability during 
+irradiation-corrosion of 316L stainless steel in high temperature water. Journal of Nuclear 
+Materials, 2017. 493: p. 40-52.
+
+===== PDF PAGE 19 =====
+19
+13. Liu, H., G.-H. Lei, and H.-F. Huang, Review on synergistic damage effect of irradiation and 
+corrosion on reactor structural alloys. Nuclear Science and Techniques, 2024. 35(3): p. 57.
+14. Wang, P., et al., Effect of radiation damage and water radiolysis on corrosion of FeCrAl alloys in 
+hydrogenated water. Journal of Nuclear Materials, 2020. 533: p. 152108.
+15. Scott, P., A review of irradiation assisted stress corrosion cracking. Journal of Nuclear Materials, 
+1994. 211(2): p. 101-122.
+16. Lach, T.G. and X. Chen, Post Irradiation Examination of Pressurized Water Reactor Stainless 
+Steel Internal Components, in ASME 2023 Pressure Vessels & Piping Conference, PVP2023. p. 
+107347.
+17. Ishiyama, Y., R.B. Rogge, and M. Obata, Radiation-induced stress relaxation in high temperature 
+water of type 316L stainless steel evaluated by neutron diffraction. Journal of Nuclear Materials, 
+2011. 408(2): p. 153-160.
+18. Mogren, T., Response to Request for Additional Information RE: The 2011 Steam Generator Tube 
+Inspections - R.E. Ginna Nuclear Power Plant, U.S. NRC, Editor. 2012, CENG, LLC: 
+www.nrc.gov/docs/ML1205/ML12053A147.
+19. Najafkhani, F., et al., Recent advances in the kinetics of normal/abnormal grain growth: a review. 
+Archives of Civil and Mechanical Engineering, 2021. 21(1): p. 29.
+20. Chang, L., et al., Effect of machining on stress corrosion crack initiation in warm-forged type 304L 
+stainless steel in high temperature water. Acta Materialia, 2019. 165: p. 203-214.
+21. Qian, H., et al., The effect of surface grinding on the stress corrosion cracking initiation of 316LN 
+stainless steel in 600 °C supercritical CO2. Corrosion Science, 2024. 234: p. 112147.
+22. Das, A., S. Roychowdhury, and V. Kain, Effect of surface state of austenitic type 304L SS on oxide 
+characteristics formed in high temperature high pressure water. Journal of Nuclear Materials, 
+2022. 564: p. 153672.
+23. Lach, T.G., M.N. Gussev, and X. Chen, Complexity of segregation behavior at localized 
+deformation sites formed while in service in a 316 stainless steel baffle-former bolt. Scripta 
+Materialia, 2025. 255: p. 116371.
+24. Terachi, T., et al., Corrosion Behavior of Stainless Steels in Simulated PWR Primary Water—Effect 
+of Chromium Content in Alloys and Dissolved Hydrogen—. Journal of Nuclear Science and 
+Technology, 2008. 45(10): p. 975-984.
+25. Terachi, T., K. Fujii, and K. Arioka, Microstructural Characterization of SCC Crack Tip and Oxide 
+Film for SUS 316 Stainless Steel in Simulated PWR Primary Water at 320°C. Journal of Nuclear 
+Science and Technology, 2005. 42(2): p. 225-232.
+26. Hemmi, Y., Y. Uruma, and N. Ichikawa, General Corrosion of Materials under Simulated BWR 
+Primary Water Conditions. Journal of Nuclear Science and Technology, 1994. 31(5): p. 443-455.
+27. Chen, K., et al., A high-resolution study of the different surface state effects on the corrosion 
+behaviors of a ferritic steel and an austenitic steel in supercritical water. Corrosion Science, 2022. 
+209: p. 110757.
+28. Hanbury, R.D. and G.S. Was, Oxide growth and dissolution on 316L stainless steel during 
+irradiation in high temperature water. Corrosion Science, 2019. 157: p. 305-311.
+29. Barr, C.M., et al., Anisotropic radiation-induced segregation in 316L austenitic stainless steel with 
+grain boundary character. Acta Materialia, 2014. 67: p. 145-155.
+30. Bosch, R.W., et al., Crack initiation testing of thimble tube material under PWR conditions to 
+determine a stress threshold for IASCC. Journal of Nuclear Materials, 2015. 461: p. 112-121.
+31. Gussev, M.N., K.G. Field, and J.T. Busby, Deformation localization and dislocation channel 
+dynamics in neutron-irradiated austenitic stainless steels. Journal of Nuclear Materials, 2015. 460: 
+p. 139-152.
+32. Hanbury, R.D. and G.S. Was, Corrosion of 316L stainless steel in high temperature water and 
+steam: Mechanisms of corrosion. Journal of Nuclear Materials, 2024. 599: p. 155180.
+33. Hanbury, R.D. and G.S. Was, Corrosion of 316L stainless steel in high temperature water and 
+steam: effects of simultaneous proton irradiation. Journal of Nuclear Materials, 2024. 600: p. 
+155274.
+
+===== PDF PAGE 20 =====
+20
+34. Lee, H.B., F.B. Prinz, and W. Cai, Atomistic simulations of grain boundary segregation in 
+nanocrystalline yttria-stabilized zirconia and gadolinia-doped ceria solid oxide electrolytes. Acta 
+Materialia, 2013. 61(10): p. 3872-3887.
+35. Wei, S., et al., Radiation induced segregation in titanium diboride. Acta Materialia, 2024. 267: p. 
+119739.
+36. Hosemann, P., et al., Characterization of oxide layers grown on D9 austenitic stainless steel in lead 
+bismuth eutectic. Journal of Nuclear Materials, 2008. 375(3): p. 323-330.
+37. Jyung, J.-M., et al., Irradiation-induced age-related degradation mechanisms effect on integrity of 
+baffle former bolts. International Journal of Pressure Vessels and Piping, 2024. 208: p. 105116.
+38. Kuang, W., et al., A high-resolution characterization of irradiation-assisted stress corrosion 
+cracking of proton-irradiated 316L stainless steel in simulated pressurized water reactor primary 
+water. Corrosion Science, 2022. 199: p. 110187.

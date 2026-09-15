@@ -1,0 +1,2934 @@
+===== PDF PAGE 1 =====
+Phase-field modeling of radiation-induced composition
+redistribution: An application to additively manufactured
+austenitic Fe-Cr-Ni ⋆
+Sourabh B. Kadambi a,∗, Daniel Schwena, Jia-Hong Ke a, Lingfeng He a,b, Andrea
+Jokisaaria
+aIdaho National Laboratory, Idaho Falls, Idaho, USA
+bNorth Carolina State University, Raleigh, North Carolina, USA
+Abstract
+Multicomponent alloys undergoing irradiation damage develop radiation-induced
+composition redistribution at point defect sinks such as grain boundaries (GBs) and
+dislocations. Such redistribution results in undesired changes to their mechanical be-
+havior and corrosion resistance. Additively manufactured alloys proposed for future
+nuclear applications are expected to demonstrate a distinct response to irradiation
+owing to their unique microstructure with as-solidified dislocation density and chem-
+ical microsegregation. To capture the composition redistribution in such systems,
+we develop a mesoscale model with coupled evolution of atomic and point defect
+components in the presence of dislocation density, dislocation heterogeneity, and
+thermodynamic interactions at the GB. The model is parameterized for an FCC Fe-
+Cr-Ni alloy as a representative system for austenitic stainless steels, and simulations
+are performed in 1D and 2D as a function of irradiation temperature, dose, dislo-
+cation density, and grain size. Radiation-induced segregation (RIS) characterized
+by Cr depletion and Ni enrichment is predicted at both the GB and the dislocation
+⋆Published version: https://doi.org/10.1016/j.commatsci.2025.113895
+∗Email: SourabhBhagwan.Kadambi@inl.gov
+Preprint submitted to Elsevier May 13, 2025
+arXiv:2501.17154v2  [cond-mat.mtrl-sci]  10 May 2025
+
+===== PDF PAGE 2 =====
+cell wall, with RIS being lower in magnitude but wider at the cell wall. Strongly
+biased absorption of self-interstitials by dislocations is found to suppress Ni enrich-
+ment but slightly enhance Cr depletion under certain conditions. Thermodynamic
+segregation at the GB is predicted to be narrower and opposite in sign to RIS for
+both Cr and Ni. Importantly, non-monotonic segregation is found to occur when
+both thermodynamic and RIS mechanisms are considered, providing a novel physi-
+cal interpretation of experimental observations. The model is expected to serve as a
+key tool in accelerated qualification of irradiated materials.
+Keywords: phase-field model, radiation-induced segregation, Gibbs adsorption,
+additively manufactured, dislocation cell structure
+1. Introduction
+Austenitic stainless steels (SSs) serve as structural materials in the core and
+cladding of nuclear fission reactors. On exposure to radiation, these alloys un-
+dergo atomistic damage that ultimately leads to mesoscale and macroscale effects
+such as radiation-induced segregation (RIS), radiation-enhanced precipitation, and
+void swelling. RIS is the local enhancement or depletion of certain elements as
+a result of irradiation and manifests at extended defects such as grain boundaries
+(GBs) and dislocations. RIS adversely affects mechanical properties and resistance
+to irradiation-assisted stress corrosion cracking [1, 2]. In addition to RIS, thermody-
+namic segregation (TS) can occur at extended defects under accelerated kinetics due
+to radiation-enhanced diffusion [3]—we will refer to this as radiation-enhanced TS
+(RETS). TS can occur in isothermal conditions (as opposed to being driven by ther-
+mal gradients). TS at GBs can potentially lead to deleterious effects (embrittlement
+and sensitization) or advantageous effects (coarsening resistance) depending on the
+segregating elements and their effect on GB properties such as cohesion, GB energy
+2
+
+===== PDF PAGE 3 =====
+and mobility [4]. Thus, it is crucial to understand the underlying mechanisms that
+lead to segregation as a function of temperature and irradiation conditions.
+With significant progress being made in additive manufacturing technologies, ad-
+ditively manufactured (AM) austenitic SSs are being considered as prime candidates
+for future applications in advanced reactors [5]. Additive manufacturing can en-
+able new technologies to be deployed and reduce supply-chain burdens on reactor
+components [5]. While AM austenitic SSs have demonstrated promising strength
+and ductility [6], their responses under irradiation conditions are still not well char-
+acterized [7]. The microstructure of AM austenitic SSs is heavily dependent upon
+the build method, processing parameters, specimen geometry, and post-build heat
+treatments. However, general features of AM austenitic SSs include columnar or oth-
+erwise non-equiaxed grains, a substructure of dislocation cells that may be equiaxed
+or columnar, chemical microsegregation at the dislocation cell walls (CWs) and GBs,
+and chemical segregation along melt pool boundaries [8]. The dislocation cell struc-
+ture consists of closely packed cells on the order of a micron or less in diameter within
+the grains; the CWs consist of densely tangled dislocations and nanoscale oxides [8].
+These unique microstructural features of AM austenitic SSs give rise to a distinct
+radiation damage response in comparison to conventionally manufactured austenitic
+SSs [9, 10]. For example, ion irradiation of AM 316 SS can result in heterogeneous
+void formation, with voids forming near CWs and not within the center of the cell
+[10]. Radiation-induced segregation is also observed, with stronger segregation oc-
+curring on GBs and lesser, but evident, segregation occurring at CWs [10].
+The mechanisms behind RIS in conventional alloys have received considerable ex-
+perimental and theoretical attention [11–13]. Irradiation displacement cascades pro-
+duce supersaturated concentrations of vacancies and self-interstitial atoms (SIAs).
+While a number of these point defects annihilate or form clusters, the remaining
+3
+
+===== PDF PAGE 4 =====
+mobile point defects are transported and absorbed (in either a biased or unbiased
+manner) at dislocations, voids, and GBs. Owing to atom-vacancy exchange, solute-
+vacancy drag, and dumbbell migration, absorption of point defects at sinks is accom-
+panied by a flux of atoms. RIS consequently manifests from the unequal fluxes of
+different elements to the sinks. In austenitic SSs, the faster diffusivity of Cr relative
+to Fe and Ni via the atom-vacancy exchange mechanism has been widely recognized
+as the reason for Cr depletion at GBs [14]. However, other potential contributing
+factors such as vacancy production bias and SIA absorption bias of dislocations have
+received considerably less attention. While RIS manifests under non-equilibrium
+driving forces induced by radiation, TS can be observed under thermal conditions
+because it is driven by more favorable energetics of certain elements at the GB versus
+within the bulk [15, 4]. A variety of repulsive and attractive interactions between
+alloying elements at the GB and within the bulk can lead to TS in multicomponent
+alloys [16]. In addition, radiation-enhanced diffusion due to supersaturated point
+defect concentrations accelerates the kinetics of TS under irradiation, resulting in
+RETS. Pre-irradiation segregation (presumably TS) with Cr enrichment has been
+reported in austenitic SSs [17–20]. Under irradiation, “W”-shaped Cr segregation
+profiles have been observed with Cr enrichment at the GB and Cr depletion adja-
+cent to the GB [17, 18, 21, 22]. While the latter is attributed to RIS, the former
+has been speculated to be due to TS, possibly resulting from complex interactions
+of Cr with other alloying elements at the GB. Thus, the exact mechanism causing
+non-monotonic segregation profiles under irradiation are still under debate.
+Classical sharp-interface models typically employ a Dirichlet boundary (fixed at
+the thermal equilibrium concentration) to describe an ideal sink behavior of a high-
+angle GB—or more realistically, of a dislocation core. These simulations are also
+performed in a 1D setting and are thus restricted to ideal GBs and systems with
+4
+
+===== PDF PAGE 5 =====
+simple spatial variations in the sink density. More sophisticated models are therefore
+needed to describe microstructural effects and realistic GBs, especially relevant for
+AM austenitic SSs. Several sharp-interface models have been developed for RIS
+in austenitic SSs and austenitic Ni-Cr and ferritic Fe-Cr steels. Allen and Was
+[23] described composition-dependent vacancy migration energies for FCC Fe-Cr-
+Ni, and compared the temperature and dose predictions against proton irradiation
+data. The effect of Zr and Hf on mitigating RIS in austenitic SS via solute-vacancy
+trapping was described by Hackett et al. [24]. Duh et al. [25] and Field et al. [26]
+developed flux boundary conditions to simulate non-ideal sink behavior of symmetric
+tilt GBs in 304 austenitic SS. Yang et al. [27] and Nastar et al. [28] used experimental
+tracer diffusivity data to incorporate composition-dependent activation energies and
+frequency factors. They also incorporated non-ideal thermodynamic factors and
+preferential solute-SIA binding to more accurately capture the contributions to RIS.
+To describe RIS in Ni-Cr, Barnard et al. [29] employed ab initio parameters and
+compared the individual contributions of vacancy and SIA mechanisms. For the
+same system, Ozturk et al. [30] demonstrated that the effect of production bias can
+lead to non-monotonic “W”-shaped RIS profiles. For ferritic Fe-Cr alloys, Wharry
+et al. [31] showed that Cr is depleted near GBs at high temperatures as a result of
+Cr-vacancy exchange transport, but is enriched at low temperatures due to dominant
+Cr-SIA binding (the crossover in segregation occurs anywhere between 400 °C to 800
+°C depending on alloy composition and point defect energetics). The above models,
+though implemented in 1D, provide the essential framework needed to describe RIS.
+In contrast to the sharp-interface models, phase-field (PF) models employ a dif-
+fuse interface description and enable spatially resolved microstructure modeling in
+2D and 3D, in addition to 1D. They also offer potential for simulating dynamic spa-
+tial evolution of the sink distribution in the microstructure. While PF models have
+5
+
+===== PDF PAGE 6 =====
+been developed to study irradiation effects such as void/gas-bubble evolution, pre-
+cipitation, or phase separation, as well as point defect interaction with dislocations,
+RIS models have remained limited [32–34]. Piochaud [35] formulated a 1D BCC
+Fe-Cr model that relies on Onsager transport coefficients calculated from atomistic
+methods. Recently, Rezwan et al. [36] coupled the rate theory diffusion model of
+Allen and Was [23] to a polycrystal PF model in order to investigate the effects of
+concurrent grain growth and RIS in 2D. These models also assumed the GB to be
+ideal, neglected the thermodynamic interactions of alloying elements with GBs and
+omitted the effect of dislocation bias on RIS. In addition to the aforementioned lim-
+itations, most RIS models assume ideal alloy thermodynamics and kinetics. For a
+more accurate description of RIS mechanisms, formulations employing the complete
+Onsager transport relations [29, 35, 27] are preferred, since they can describe solute-
+vacancy drag and enable parameterization from analytic and atomistic calculations
+of Onsager coefficients [37–40]. Furthermore, to incorporate realistic alloy thermo-
+dynamics from Calculation of Phase Diagrams (CALPHAD) databases, transport
+relations must employ driving forces based on chemical or diffusion potential gradi-
+ents [29, 35, 27]. This is also necessary to simulate TS at GBs. While the PF method
+naturally permits such descriptions and PF models for TS in polycrystals have been
+developed [41, 42], a combined description of radiation and thermodynamic effects
+on segregation has been lacking [3].
+In this paper, we develop a multi-order-parameter, multicomponent PF model for
+GB segregation (RIS and RETS) in polycrystals under irradiation. To model RIS at
+the dislocation CWs of the AM microstructure, we leverage the multicomponent RIS
+model developed for GB segregation, but reduce it (i.e., neglect dynamic evolution
+of the PF order parameters) to a simple diffusion rate theory model with spatial
+variation in the mean dislocation density describing the AM cell structure. The
+6
+
+===== PDF PAGE 7 =====
+model formulations are presented in Sec. 2, with detailed derivations of the equations
+being provided in the Supplementary Material. In Sec. 3, we parameterize the models
+for a ternary component FCC Fe-Cr-Ni alloy as a representative system for austenitic
+SS. Sec. 4 details the numerical implementations of the PF model for GB segregation
+(RIS and RETS), the sharp-interface model for GB RIS and the spatially resolved RIS
+model for CW segregation. In Appendix A and Appendix B, details and simulations
+of the sharp-interface RIS models are presented for verification and parameterization
+of the PF model. In Sec. 5, the contributions of RETS and RIS to GB segregation
+are assessed. Following this, the results of GB RIS from 1D and 2D simulations are
+presented as a function of temperature, grain size, and dislocation density. Finally,
+1D and 2D simulations of RIS to dislocation CWs are presented, then compared with
+those of GBs. In Sec. 6, we discuss the relevance, limitations and future scope of the
+model formulation and the simulation results. The work is summarized in Sec. 7.
+2. Modeling framework
+We treat the polycrystal and dislocation cell structures separately. Within the
+PF approach, a polycrystal (or dislocation cell structure) of N grains (or dislocation
+cells) is represented by a set of order parametersη :={η1,η 2,...,η N}. An individual
+grain i is defined by ηi = 1 and ηj = 0 (∀ j̸= i), while the defected region (GB or
+dislocation CW) between two adjacent grain regions i and j is given by a smooth
+variation inηi from 0 (in grain j) to 1 (in grain i), withηj = 1−ηi due to symmetry.
+For the polycrystal, the model is rigorously developed in Sec. 2.1 by using the PF
+approach and will be applicable to GB movement and grain growth. For the latter,
+in Sec. 2.2 we assume the dislocation cell structure to be static in terms of dislocation
+density and spatial distribution, thus enabling development of a reduced model that
+does not require dynamic evolution of the PF order parameters.
+7
+
+===== PDF PAGE 8 =====
+To describe the flux coupling between atoms ( ϕ = 1, 2,...,K ) and point defects
+(υ =V,I ), we follow linear irreversible thermodynamics. The partial fluxes of alloy
+elements are given in terms of the chemical potential gradients of all components, as
+[43]:
+Jυ
+ϕ =−
+KX
+k=1
+Lυ
+ϕk∇ (µk + sign(υ)µυ), (1)
+whereK is the total number of atomic components, sign(V ) =−1 for the vacancy (V )
+and sign(I) = +1 for the SIA ( I, which can be any atom ϕ). Due to conservation,
+the total fluxes are given by Jϕ = P
+υJυ
+ϕ and Jυ = sign(υ)PK
+k=1Jυ
+k. From the
+Onsager reciprocal relations, the rest of the transport coefficients are given by Lϕυ =
+sign(υ)PK
+k=1Lυ
+ϕk and Lυυ =PK
+k=1
+PK
+l=1Lυ
+kl. Similar to Piochaud et al.’s treatment
+for a binary alloy [35], we reformulate the total fluxes in terms of the diffusion
+potentials (µk1 = µk−µ1) by invoking the Gibbs-Duhem relation PK
+k=1ck∇µk +
+P
+υcυ∇µυ = 0 and considering the point defect concentrations in their dilute limits.
+Here, the lattice site concentrations are related asc1 = 1−PK
+k=2ck +P
+υ sign(υ)cυ≈
+1−PK
+k=2ck, where 1 refers to the solvent atom, with the rest being solute atoms
+(here, ck counts both the on-lattice atoms and the off-lattice SIA atoms). Thus (see
+Sec. S1 in the Supplementary Material):
+Jϕ =−
+KX
+k=2
+L1
+ϕk∇µk1−
+X
+υ=V,I
+Lϕυ∇µυ, (2a)
+Jυ =−
+KX
+k=2
+L1
+υk∇µk1−Lυυ∇µυ, (2b)
+where the relative transport coefficients with reference to the solvent 1 are given by:
+8
+
+===== PDF PAGE 9 =====
+L1
+υk = sign(υ)
+ KX
+j=1
+Lυ
+kj−ckLυυ
+!
+, (3a)
+L1
+ϕk =
+X
+υ
+Lυ
+ϕk− ck
+X
+υ
+sign(υ)Lϕυ. (3b)
+With Eq. 2, we reduce the number of species to be tracked fromK +2 to K +1. The
+time evolution of the concentrations under irradiation can be written in a general
+form as:
+∂cϕ
+∂t =−∇· Jϕ, (4a)
+∂cυ
+∂t =−∇· Jυ +Pυ−RVIcVcI−k2
+υDυ(cυ−ce
+υ), (4b)
+where Dυ =Lυυθυυ represent the point defect diffusivities, with θυυ being the ther-
+modynamic factor. ce
+υ = exp
+
+−Ef
+υ +Sf
+υT
+kBT
+
+is the point defect concentration at thermal
+equilibrium, withEf
+υ being the formation energy andSf
+υ being the formation entropy.
+In Eq. 4b, the non-conserved mean-field rate terms are the point defect production
+rate Pυ, recombination reaction rate RVI , and sink strength k2
+υ. Coupling of the
+above with the PF microstructure for polycrystals and dislocation cells is presented
+in the subsequent sections.
+2.1. PF model for GB segregation
+We adapt the grand potential approach originally proposed for binary alloy solid-
+ification by Plapp [44], along with the extension to multicomponent and multiphase
+systems, as proposed by Aagesen et al. [45]. The isothermal grand potential func-
+tional for the polycrystalline microstructure is written as:
+Ω =
+Z
+V
+"
+ωb + (m0 +ωg−ωb)¯gmw +
+NX
+n=1
+κ
+2|∇ηn|2
+#
+dV, (5)
+9
+
+===== PDF PAGE 10 =====
+where the grand potential densities for the bulk ( b) and GB (g) are given by ωψ =
+fψ−PK
+k=2cψ
+kµk1−P
+υcυµυ (ψ = b or g). ωg−ωb is the excess grand potential
+density in the GB region, ¯gmw is a normalized multiwell potential, m0 is an external
+barrier height for the GB, and κ is the gradient energy coefficient for the order
+parameter fields. For simplicity, we only consider distinct energetics (at the GB
+relative to the bulk) for the alloy component, and ignore distinct energetics of the
+point defects. While the second term in the functional penalizes large GB widths, the
+last term penalizes small GB widths. We only consider gradient energy contributions
+for the order parameter fields, and ignore their contributions for the concentration
+fields [45]. ¯gmw is given by 8gmw (see Fig. 1), where gmw is the standard multiwell
+potential employed in existing PF models of grain growth [46, 45]:
+gmw = 1
+4 +
+NX
+i=1
+η4
+i
+4 − η2
+i
+2
+
++ 1.5
+NX
+i=1
+X
+j̸=i
+η2
+iη2
+j. (6)
+We approximate the free energy density of the alloy by using a multivariate Taylor
+expansion truncated to the second order [47]. The alloy and (dilute) point defect
+free energy density are together given by:
+fψ =fψ,◦ +
+NX
+k=2
+µψ,◦
+k1 (cψ
+k−cψ,◦
+k ) +
+KX
+k=2
+θψ,◦
+kk
+2 (cψ
+k−cψ,◦
+k )2
++
+KX
+k=2
+X
+l̸=k
+θψ,◦
+kl
+2 (cψ
+k−cψ,◦
+k )(cψ
+l −cψ,◦
+l ) +RT
+Vm
+X
+υ
+cυ ln
+cυ
+ce
+υ
+
+. (7)
+Here, the terms denoted by ◦ are obtained from the CALPHAD free energy fC (see
+Sec. S2 in the Supplementary Material) at the equilibrium (between b and g) com-
+position or the nominal composition (when b andg are identical in free energy). The
+diffusion potentials and thermodynamic factors specific to ψ (superscript is omitted
+in the following for clarity) are given by µ◦
+k1 = ∂fC/∂ck|c◦ andθ◦
+kl = ∂2fC/∂ck∂cl|c◦,
+10
+
+===== PDF PAGE 11 =====
+respectively. Vm is the molar volume of the lattice site, which is assumed constant
+across the system. The local concentrations at any point in the system are obtained
+as:
+ck =−δΩ
+δµk
+=−∂ωb
+∂µk1
++
+
+−∂ωg
+∂µk1
++ ∂ωb
+∂µk1
+
+¯gmw =cb
+k +
+
+cg
+k−cb
+k
+
+¯gmw, (8a)
+cυ =−δΩ
+δµυ
+=−∂ωb
+∂µυ
+=−∂ωg
+∂µυ
+. (8b)
+By inverting the expressions µϕ1 = ∂f/∂cϕ and µυ = ∂f/∂cυ obtained from Eq. 7,
+the phase concentrations can be expressed in terms of the diffusion potentials as:
+cψ
+k =cψ,◦
+k +
+KX
+j=2
+χψ
+kj(µj1−µψ,◦
+j1 ), (9a)
+cψ
+υ =cυ =ce
+υ exp
+Vm
+RTµυ
+
+, (9b)
+whereχ =θ−1 is the chemical susceptibility matrix for the alloy.
+The time evolution equations in terms of the PF concentration variables, diffusion
+potentials, and order parameters can be expressed after substituting Eq. 2 in Eq. 4
+as:
+∂cϕ
+∂t =∇·
+ KX
+k=2
+L1
+ϕk∇µk1 +
+X
+υ=V,I
+Lϕυ∇µυ
+!
+, (10a)
+∂cυ
+∂t =∇·
+ KX
+k=2
+L1
+υk∇µk1 +Lυυ∇µυ
+!
+, (10b)
++Pυ−RVIcVcI−k2
+υ,bDυ(cυ−ce
+υ)−k2
+gDυ(cυ−ce
+υ)gsink(η), (10c)
+where k2
+υ,b is the mean-field sink strength of dislocations in the bulk and is distinct
+for vacancies and SIAs. k2
+g is the local sink strength of the GB acting in the GB
+region that is identified by gsink. Thus, k2
+g must be determined in conjunction with
+gsink. In Appendix A and Appendix B, we test three different functions (see Fig. 1)
+11
+
+===== PDF PAGE 12 =====
+forgsink and compare the results of point defect and atomic concentrations from the
+PF implementation against that of the sharp-interface implementations of GB sinks.
+Based on these results, we propose gsink as:
+gsink = 65536
+NX
+i=1
+X
+j>i
+η8
+iη8
+j, (11)
+where the prefactor ensures that gsink = 1 at the GB center (see Fig. 1). Eqs. 10
+entail both concentration and diffusion potential variables and constitute a mixed
+formulation [48] of the grand potential model that can be solved with the constraints
+in Eq. 8. With c := c(µ,η), the chain rule for differentiation can be employed to
+reformulate ∂c(µ,η)/∂t in terms of ∂µ/∂t, or ∇µ in terms of ∇c. In the former
+approach, which was employed in the original grand potential formulations [44, 45],
+the concentration variables are eliminated and Eq. 10 is only solved for the diffusion
+potentials. This approach has been found to not adhere strictly to mass conservation
+if time integration is performed over large time steps. This issue is avoided by directly
+solving the mixed formulation presented above, or by adopting the latter approach
+[49, 48], in which the diffusion potential gradients are expanded (see Sec. S3 in the
+Supplementary Material) to yield:
+∂cϕ
+∂t =∇·
+ KX
+k=2
+KX
+j=2
+L1
+ϕjθjk∇ck +
+X
+υ=V,I
+Lϕυθυυ∇cυ
+−
+KX
+k=2
+KX
+j=2
+NX
+n=1
+L1
+ϕjθjk(cg
+k−cb
+k)d¯gmw
+dηn
+∇ηn
+!
+, (12a)
+∂cυ
+∂t =∇·
+ KX
+k=2
+KX
+j=2
+L1
+υjθjk∇ck +Lυυθυυ∇cυ
+!
++Pυ−RVIcVcI−k2
+υ,bDυ(cυ−ce
+υ)−k2
+gDυ(cυ−ce
+υ)gsink(η). (12b)
+12
+
+===== PDF PAGE 13 =====
+Finally, the time evolution equations for the order parameters are given by:
+∂ηn
+∂t =−Lη
+δΩ
+δηn
+=−Lη
+"
+(m0 +ωg−ωb)d¯gmw
+dηn
+−
+NX
+n=1
+κ∇2ηn
+#
+, (13)
+where Lη is the GB mobility.
+Figure 1: PF order parameters and functions across the interface (GB in a polycrystal and CW in
+an AM cell structure). All the three functions are tested as GB sink functions gsink in Appendix
+A and Appendix B. The narrow bell-shaped (red) function is selected as gsink for all results of
+GB RIS. The smooth step-shaped (blue) function describes the dislocation density at CWs in the
+AM microstructure. The wide bell-shaped or normalized multiwell function ¯ gmw describes the
+thermodynamic properties of the GB.
+2.2. Spatially resolved model for CW segregation
+Dislocation CWs comprised of dislocation tangles in the AM microstructure can-
+not be treated as interfaces because they do not accommodate relative misorientation
+between the adjacent crystals. Therefore, conventional PF order parameter dynam-
+ics (as given by the Allen-Cahn equation in Eq. 13) are not expected to apply to the
+evolution of the dislocation cell structure. Rather, the recovery of CW dislocations
+under thermal and irradiation conditions is expected to occur via annihilation of
+13
+
+===== PDF PAGE 14 =====
+dislocation dipoles, as facilitated by point defect absorption/dislocation climb. Al-
+though dislocation recovery is important to consider, it is beyond the scope of the
+present paper. In Ref. [50], we report a preliminary formulation of a model that
+considers dislocation recovery. In the present work, we only employ static PF order
+parameters to initialize and represent the dislocation CWs.
+For the present task of describing RIS at the CWs, we propose a simple description
+with spatially varied but temporally static dislocation density and sink strength. We
+also ignore thermodynamic interactions between the solutes and the dislocations at
+the CW. Therefore, considering only the bulk thermodynamics, Eq. 12 reduces to
+the following diffusion and rate theory form:
+∂cϕ
+∂t =∇·
+ KX
+k=2
+KX
+j=2
+L1
+ϕjθjk∇ck +
+X
+υ=V,I
+Lϕυθυυ∇cυ
+!
+, (14a)
+∂cυ
+∂t =∇·
+ KX
+k=2
+KX
+j=2
+L1
+υjθjk∇ck +Lυυθυυ∇cυ
+!
++Pυ−RVIcVcI−k2
+υ,b(ρ)Dυ(cυ−ce
+υ), (14b)
+where k2
+υ,b(ρ) is the spatially varying sink strength. The distribution in dislocation
+density and initial concentration (AM microsegregation) are defined as:
+ρb =ρb,c + (ρb,w−ρb,c)gcw, (15)
+c =cb,c + (cb,w−cb,c)gcw, (16)
+where gcw is a function of auxiliary PF order parameters given by:
+gcw = 1− 1
+2 [1 + tanh ((χbnds−χ◦
+bnds)β◦)], (17)
+where χbnds =P
+iη2
+i , χ◦
+bnds = 0.75, and β◦ = 2 tanh−1(0.8)
+0.11 [51]. Note that with this
+approach, we simply use the PF order parameters as auxiliary variables to initialize
+14
+
+===== PDF PAGE 15 =====
+the required microstructure and CW widths. To ensure the required CW width
+is realized, Eq. 13 is solved for a few time steps to evolve the auxiliary PF order
+parameters so that the accurate width is achieved. The functional forms of gsink and
+gcw are described in Sec. 4 and are plotted in Figs. 1 and 2.
+3. Parameterization
+The models presented in Sec. 2 are parameterized for the ternary FCC Fe-17Cr-
+12Ni system. Because Fe is the solvent, it is taken as the reference component 1;
+the solutes Cr and Ni are taken as components 2 and 3. The key parameters are
+summarized in Table 1.
+Table 1. Default model parameters.
+Symbol Description V alue Ref.
+c◦
+Cr Nominal Cr concentration 0.17
+c◦
+Ni Nominal Ni concentration 0.12
+T Temperature 773 K (500 ◦C)
+Pυ Point defect production rate 2 × 10−6 dpa/s
+Ef
+V Vacancy formation energy 1.8 eV [27]
+Sf
+V,Sf
+I Vacancy, SIA formation entropy 2 kB, 0 [11]
+QFe Activation energy for vacancy diffusion of Fe 2.89 eV [27]
+QCr Activation energy for vacancy diffusion of Cr 2.88 eV [27]
+QNi Activation energy for vacancy diffusion of Ni 2.86 eV [27]
+PFe Frequency factor for vacancy diffusion of Fe 3 .8× 1013 nm2/s [27]
+PCr Frequency factor for vacancy diffusion of Cr 5 .5× 1013 nm2/s [27]
+PNi Frequency factor for vacancy diffusion of Ni 1 .5× 1013 nm2/s [27]
+Ef
+I SIA formation energy 3.6 eV [23]
+Em
+I SIA migration energy 0.6 eV Based on [27]
+Eb
+CrI−Eb
+FeI SIA binding energy for Cr 0.025 eV Based on [27]
+15
+
+===== PDF PAGE 16 =====
+Eb
+NiI−Eb
+FeI SIA binding energy for Ni −0.0075 eV Based on [27]
+ω◦
+kI SIA jump frequency prefactor 1 .5× 1012 s−1 [23]
+fI Atom-SIA correlation factor 0.44 [23]
+f◦ FCC correlation factor 0.78 [52]
+a◦ Lattice parameter 0 .35 nm [24]
+b Burgers vector 0.25 nm [53]
+λI SIA jump distance a◦/2 nm [11]
+Va Atomic volume a3
+◦/4 [11]
+r◦ Recombination radius 2 a◦ [11]
+ZV Dislocation sink efficiency for vacancy 1 [54]
+ZI Dislocation sink efficiency for SIA 1.2 [54]
+ρb, ρb,c Dislocation density in bulk and cell 10 14 m−2 [8]
+ρb,w Dislocation density at CW 10 15 m−2
+σ Relative GB density 0.8, 0.9 [55]
+κ Gradient energy coefficient for GB 7 .5× 10−10 J/m This work
+Gradient energy coefficient for CW 7 .5× 10−8 J/m This work
+m◦ External barrier height for GB 7 .5× 108 J/m3 This work
+External barrier energy for CW 7 .5× 106 J/m3 This work
+∆ωe
+g Intrinsic barrier energy height of GB and CW 0 J/m 3 This work
+k2
+g Local sink strength for GB 34.6 nm −2 This work
+δ GB width 1 nm
+CW width 100 nm [9]
+d1D Grain size for 1D simulations 1 µm
+3.1. Transport properties
+Following Yang et al. [27], the Onsager coefficients are calculated from the par-
+tial diffusivities dkυ by using Manning’s relations for concentrated multicomponent
+16
+
+===== PDF PAGE 17 =====
+alloys [56]:
+Lυ
+kl =
+ckcυdkυ
+RT/Vm
+ 
+δkl + 2cldlυ
+Mo
+P
+jcjdjυ
+!
+, (18)
+whereδkl is the Kronecker delta and M◦ = 2f◦/(1−f◦), with f◦ being the geometric
+correlation factor for the FCC lattice. The partial diffusivities for vacancy and SIA-
+mediated transport are given by [27]:
+dkV =Pk exp
+ 
+−Qk +Ef
+V
+kBT
+!
+, (19a)
+dkI = 1
+6λ2
+kzfIω◦
+kI exp
+
+−Em
+I
+kBT
+
+βk, (19b)
+where the activation energyQk and frequency factorPk for the vacancy transport are
+temperature- and composition-dependent expressions of the Redlich-Kister form that
+have been optimized using tracer diffusivity data provided by Yang et al. [27]. The
+SIA diffusivities are given by the atom-SIA binding model of Wiedersich et al. [57],
+whereλI is the jump distance ofI,zI is the site coordination number,ω◦
+kI is the jump
+frequency prefactor, Em
+I is the SIA migration energy (assumed identical for all el-
+ements), andβk = exp ((EkI−EFeI )/kBT ))/{cFe +P
+kck exp ((EkI−EFeI )/kBT )}
+is the SIA binding factor. These parameters are provided in Table 1.
+Since the vacancy activation energies Qk are derived from experimental tracer
+diffusivity data, the vacancy migration energy for diffusion is given by Em
+Vk =Qk−
+Ef
+V . Qk is found to lie in the 2.86–2.89 eV range, and Ef
+V = 1.8 eV is chosen based
+on a first-principles study on dilute FCC Fe-Cr-Ni [58]. This yields an effective
+migration energy in the range of 1.05 to 1.1 eV. With this approach, Ef
+V is an
+uncertain parameter that must be more accurately estimated for a concentrated
+austenitic SS composition. The vacancy diffusivity at 500◦C isDV≈ 5.5×105 nm2/s
+and the partial diffusion coefficient ratios are dCrV/dFeV = 1.62 and dNiV/dFeV =
+17
+
+===== PDF PAGE 18 =====
+0.67. These ratios reflect the faster diffusivity of Cr and the slower diffusivity of
+Ni in FCC Fe. The SIA parameters in the model are quite uncertain, since they
+are not experimentally accessible and are challenging to determine via atomistic
+techniques. Em
+I = 0.9 eV, as chosen by Yang et al. [27], resulted in a low diffusivity
+for SIA in comparison to the vacancy. Therefore, we chose a lower value ofEm
+I = 0.6
+eV [27], yielding DI ≈ 1.3× 107 nm2/s at 500 ◦C—an order of magnitude higher
+than DV . With regards to SIA binding, first-principles studies of SIA in dilute [58]
+and concentrated [59] FCC Fe–Ni–Cr indicate an attractive interaction between SIAs
+and Cr, a repulsive interaction with Ni, and an ideal interaction with Fe. Thus, the
+positive value for Eb
+CrI−Eb
+FeI models favorable transport of Cr via SIAs, whereas
+the negative value forEb
+NiI−Eb
+FeI models unfavorable transport of Ni via SIAs. The
+resulting binding factors for the SIA partial diffusivities areβCrI = 1.37,βNiI = 0.84,
+andβFeI = 0.94. The ratios of SIA partial diffusion coefficients are dCrI/dFeI = 1.63
+and dNiI/dFeI = 0.89. At lower temperatures ( < 500◦ C), the increased importance
+of Cr-SIA binding means that Cr transport via SIA is expected to become more
+important (i.e. dCrI/dFeI > dCrV/dFeV ). All simulation of RIS performed in this
+paper employ the preferential solute-SIA binding discussed above. A comparison of
+these results with the case without solute-SIA binding is performed in Sec. S4 of the
+Supplementary Material.
+3.2. Phase free energy
+The free energy densities for the bulk and GB phases were fit to the Taylor form
+in Eq. 7 by using the CALPHAD free energy in Eq. 20. Following the method
+proposed by Kamachali et al. [60, 55], we describe the GB free energy by modifying
+the bulk CALPHAD free energy via the relative atomic density σ. σ is defined as
+the ratio of atomic volume at the GB over that in the bulk. Physically, σ relates
+18
+
+===== PDF PAGE 19 =====
+to the free volume at a GB due to atomic disorder or the misorientation angle of
+a symmetric tilt GB. Thus, σ = 1 indicates a GB structure identical to the bulk
+whereasσ <1 indicates a GB structure distinct from the bulk. The relative density
+is used to modify the bulk free energy, providing a thermodynamic driving force for
+the interaction of diffusing species with the GB:
+fC =cFeG◦
+Fe (σ) +cCrG◦
+Cr(σ) +cNiG◦
+Ni(σ) +σ2∆Hmix−T ∆Smix, (20)
+whereG◦
+k(σ) =σ2H◦
+k−σTS◦
+k. The modification to the pure component free energies
+G◦
+k(σ) byσ describes the higher free energy of the pure metal’s GB relative to the pure
+metal’s bulk. Thus, in the alloy, the element with lower GB energy in its pure metal
+state would be energetically favored to segregate to reduce the alloy’s GB energy.
+The modification to the enthalpy of mixing (fourth term on the right side of Eq. 20)
+captures the reduction in interaction strengths between the alloying elements at the
+GB. These modifications can be imagined to arise from broken bonds at the GB. The
+pure element enthalpiesH◦
+k and entropiesS◦
+k are obtained from Dinsdale [61], whereas
+the optimized parameters of the Redlich-Kister mixing enthalpy ∆Hmix are obtained
+from Miettinen [62]. Temperature-dependent expressions for these quantities are
+provided in Sec. S2 in the Supplementary Material. The pressure and magnetic
+contributions are expected to be negligible and are thus ignored. We assume the
+far field bulk composition to be the nominal alloy composition (i.e., cb,◦
+Cr = 0.17 and
+cb,◦
+Ni = 0.12), and evaluated the bulk parameters of Eq. 7 by using Eq. 20. By solving
+the equilibrium conditions∂fb
+C/∂cb
+k =∂fg
+C/∂cg
+k at a givenσ andT , we determine the
+GB parameters cg,◦
+k , fg,◦, µ◦
+kFe =µb,◦
+kFe =µg,◦
+kFe , and θg,◦
+kk of Eq. 7.
+3.3. Point defect reaction rates
+The reaction rate coefficients in Eq. 12b and 14b are defined as follows. We
+set PV = PI = 2× 10−6 dpa/s representing conditions of neutron or proton irra-
+19
+
+===== PDF PAGE 20 =====
+diation [23]. For the present work, we do not consider the formation and effects of
+clusters in the collision cascade and thus neglect the resulting point defect production
+bias. The recombination reaction coefficient is given by RVI = 4πr◦(DV +DI)/Va,
+with r◦ being the recombination radius. The point defect diffusivities are derived
+from the partial diffusivities in Sec. 3.1 as Dυ = (cNidNiυ +cCrdCrυ +cFedFeυ )/f◦.
+The sink strength of dislocation is given by k2
+υ,b = ρbZυ, where Zυ is the sink
+efficiency of dislocations for absorption of point defects. Realistically,Zυ is a function
+of the dislocation density and character [63]. Relations for Zυ based on calculations
+of the elastic interaction between dislocation configurations and the point defect
+have revealed a bias for SIA absorption (i.e., ZI > ZV ), and this bias increases
+with dislocation density. For the sake of simplicity, we choose dislocation-density-
+independent values ofZI = 1.2 andZV = 1, amounting to a bias factor (ZI−ZV )/ZV
+of 20% [54]. We note that estimates of bias factors ranging from 2 to 30% have been
+reported using different modeling techniques and the discrepancy between these have
+been discussed in Ref. [64]. The choice of ZI = 1.2 therefore represents a strong bias.
+Based on assessments in Appendix A and Appendix B, the narrow bell-shaped
+sink function (Eq. 11) is chosen and the local sink strength of the diffuse GB for this
+choice of sink function, corresponding to Csink = 0.32, is identified from Eq. A4 as
+k2
+g = 34.6 nm−2. This sink strength can be related to a symmetric tilt GB of 7◦−15◦
+misorientation angle [25, 65].
+3.4. Equilibrium PF properties
+We assume the excess GB energy to be γ = 1 J/m 2 and the planar GB width
+at equilibrium to be δ = 1 nm. These properties are realized by setting the model
+parameter values asm0 = 7.5× 108 J/m3 andκ = 7.5× 10−10 J/m. The relationship
+between the equilibrium GB properties and the model parameters are described in
+20
+
+===== PDF PAGE 21 =====
+Sec. S5 of the Supplementary Material. For the sake of simplicity in parameteriza-
+tion and interpretation of results, we omitted the grand potential dependence (i.e.
+ωg−ωb term) from the PF evolution in Eq. 13. This assumption is acceptable for the
+purposes of the current study since we are only interested in capturing the magnitude
+of TS (via Eq. 12a) and not in assessing the effects of TS on grain coarsening dy-
+namics. The complexity that would arise from a more rigorous approach is discussed
+in Sec. S6 of the Supplementary Material.
+For the AM microstructure, per the literature [9, 10], a CW width of δ = 100
+nm is considered. We choose a dislocation density of ρb,c = 10 14 m−2 in the cell,
+and set ρb,w in the CW to be 5–15 times higher. For ρb,w = 10 15 m−2 distributed
+uniformly across the CW width, the dislocation energy of the CW can be estimated
+as 1
+2Gb2ρc,wδ ≈ 1 J/m 2, where G = 77 GPa is the shear modulus. To realize a
+stationary CW of δ = 100 nm, we set the PF model parameters as m0 = 7.5× 106
+J/m3 and κ = 7.5× 10−8 J/m from Sec. S6 of the Supplementary Material. The
+interpolation scheme to determine the total atomic thermodynamic factors in Eq. 12
+and 14 from the phase-specific atomic thermodynamic factors obtained above is
+provided in Sec. S3 of the Supplementary Material. The thermodynamic factors for
+the point defect species are simply given by θυυ = (RT/Vm)/cυ.
+4. Implementation
+The model is implemented using the open-source MOOSE (Multiphysics Object
+Oriented Simulation Environment) framework. Weak forms of the partial differential
+equations are spatially discretized via the finite element method. For time integra-
+tion, the implicit second-order backward differentiation method is used to obtain
+the system of nonlinear equations at each time step. These are then solved using
+Newton’s method. Mesh elements with linear Lagrange shape functions are used
+21
+
+===== PDF PAGE 22 =====
+for the nonlinear and auxiliary variables. 2D domains are meshed with four-node
+quadrilateral elements. For both 1D and 2D simulations, a uniform mesh with adap-
+tive time stepping (see Sec. S7 for details on the IterationAdaptiveDT scheme and
+the results of testing the parameters), a nonlinear relative tolerance of 10 −8, and a
+nonlinear absolute tolerance of 10 −10 are employed. The order parameters for the
+2D polycrystal and 2D CW microstructures (Fig. 2) are generated using the Voronoi
+tessellation and grain growth algorithm implemented in MOOSE [66].
+4.1. GB segregation
+Simulations of GB segregation are performed in 1D and 2D with periodic bound-
+ary conditions. For the PF implementations, Eqs. 12a, 12b, and 13 are solved. For
+a GB width of δ = 1 nm, a mesh element size of 0 .1 nm is chosen, based on a
+mesh convergence test (i.e. separate simulations with different mesh element sizes
+were performed to identify the mesh element size at which the numerical solutions
+converge). The different PF simulation methods adopted in this work are as follows:
+• 1D PF: The domain constitutes a bicrystal with a full GB widthδ at the center
+and two GBs—each of half GB width δ/2—at the two ends of the domain.
+• 2D (hexagonal) PF (Fig. 2a): A square domain with hexagonal grains and GB
+widthδ is employed. Due to periodic boundary conditions, the system contains
+four equiaxed grains.
+In addition to the above PF simulations, we performed sharp interface simulations
+(see Appendix A and Appendix B) for RIS at GBs by employing Eq. 12 with
+boundary conditions. For this, we simply omit the PF sink term−k2
+gDυ(cυ−ce
+υ)gsink
+from Eq. 12b and impose a Dirichlet boundary condition (DBC) or Robin boundary
+condition (RBC) for the point defect concentration variables at the edges of the
+22
+
+===== PDF PAGE 23 =====
+domain defining the GB. The DBC sets cυ =ce
+υ at the GB, thus describing an ideal
+sink. The RBC is applied as a flux normal to the GB given byJυ.ˆn =Dυα−1(cυ−ce
+υ),
+whereα is a characteristic length for point defect absorption [65]. The effect of this
+parameter on the non-ideal GB sink behavior is studied in Appendix B. The different
+sharp-interface simulations of RIS at GBs performed in this work are:
+• 1D DBC: The domain constitutes a single grain with a GB at each end as
+specified by the DBC.
+• 1D RBC: Similar to the above, but with the RBC specified at the ends of the
+domain.
+• 2D (square) DBC: A square domain is used, with a DBC imposed on the edges
+(GBs).
+For those methods that employ a DBC, sharp gradients in the point defect con-
+centrations arise, making mesh convergence difficult to achieve. Thus, the results
+for mesh sizes ranging from a fraction of nanometer to 1 nm are reported; these are
+the resolutions achieved by high resolution experimental characterization techniques.
+The results of the RBC method converged at a mesh size of 0.1 nm. The param-
+eterization for the RBC method are presented in Appendix A, and Appendix B
+compares and verifies the results from 1D PF RIS simulations against 1D DBC and
+RBC simulations.
+4.2. CW segregation
+Simulations of RIS at CWs are performed in 1D and 2D by using the spatially
+resolved model in Eq. 14. Auxiliary PF order parameters are employed to initialize
+the microstructure with dislocation cells and CWs. Periodic boundary conditions are
+23
+
+===== PDF PAGE 24 =====
+imposed on the concentration variables. A CW of width δ = 100 nm is employed,
+and Eq. 15 is used to initialize a spatial variation in the dislocation density. The
+following simulation methods are adopted:
+• 1D cells: The domain constitutes two subgrains with a CW at the center of
+the domain.
+• 2D hexagonal cells: A square domain consisting of hexagonal subgrains and
+CWs.
+• 2D cells with DBC: A square grain consisting of one hexagonal subgrain and six
+one-half subgrains; the DBC is applied to the edges/GBs of the square grain.
+(a)
+ (b)
+Figure 2: 2D PF microstructures for (a) polycrystal and (b) AM dislocation cells. (a) Normalized
+multiwell potential ¯gmw. (b) Dislocation density distribution and the sink indicator function gsink.
+5. Results
+We first present the results of GB segregation in 1D and 2D systems as a function
+of irradiation dose and temperature. We examine four different GB segregation mech-
+anisms: RIS without TS, TS without RIS, radiation-enhanced TS (RETS) without
+24
+
+===== PDF PAGE 25 =====
+RIS, and RIS in combination with RETS (RIS+RETS). The effects of grain size and
+dislocation bias on RIS are then presented. The results obtained through verification
+and comparison of the 1D PF RIS simulations against sharp-interface simulations are
+provided in Appendix A and Appendix B. Next, we present the results of RIS at
+dislocation CWs in 1D and 2D cells. The effects of cell size, CW density, initial
+microsegregation, and GB sink are examined. Results of point defect concentrations
+are provided in Sec. S8 of the Supplementary Material.
+5.1. 1D simulations of GB segregation
+A periodic bicrystal with a grain size d1D of 1 µm is considered. To simulate the
+RIS or TS mechanism individually, the other mechanism is turned off. Since TS is
+impossible when the energetics at the GB are identical to that in the bulk, the TS
+mechanism is turned off by simply setting the relative GB atomic density σ = 1,
+resulting in the free energy of the GB being identical to that of the bulk. Since RIS
+does not occur when the partial diffusivities of the atomic components are equal, RIS
+is turned off by setting the vacancy activation energies of the solutes equal to that of
+Fe (i.e.,QCr =QNi =QFe ) and setting the SIA binding energies to be zero (i.e., the
+binding factors are βk = 1). With this approach, radiation-enhanced diffusivities are
+still retained due to point defect supersaturation, thus yielding RETS without RIS.
+Unless stated otherwise, all results correspond to the default parameters of 500 ◦C,
+σ = 0.8, ρb = 1014 m−2, and ZI = 1 (see Table 1).
+5.1.1. Segregation profiles
+Concentration profiles for the RIS mechanism are plotted for different doses in
+Fig. 3a. Ni enrichment (inverted “V”-shaped profile) and Cr depletion (“V”-shaped
+profile) are observed, with wide segregation widths of over 100 nm on either side of
+the GB center. Significant changes to RIS were found to occur between 0.01 dpa (1
+25
+
+===== PDF PAGE 26 =====
+hour) and 10 dpa (60 days). Concentration profiles for the RETS mechanism are
+plotted in Fig. 3b. Unlike RIS, RETS is seen to evolve rapidly and reach equilibrium
+at just after 0.01 dpa (1 hour). Moreover, Ni depletion and Cr enrichment, which
+are opposite to their behaviors during RIS, are observed. In further contrast, RETS
+shows sharp profiles that only extend to about 0.5 nm on either side of the GB
+center. Next, Fig. 4 shows profiles from the combined RIS+RETS simulation. Here,
+two different cases are shown, with TS being strong ( σ = 0.8) in one case and
+moderate (σ = 0.9) in the other. While the low-magnification plots of the profiles
+(see Sec. S8 in the Supplementary Material) resemble the monotonic RIS profiles,
+the high-magnification plots (Figs. 4a and 4b) clearly show non-monotonic variation
+close to the GB. For the case with strong TS, a slight Cr enrichment persists at the
+GB center, even at 10 dpa. The profiles resemble a “W” shape for Cr and an “M”
+shape for Ni. The non-monotonic profiles are less pronounced for the case of weak
+TS. Note that for the sake of simplicity, the local GB sink strength k2
+g was kept the
+same and only σ was varied; however, in a more realistic scenario, both k2
+g and σ
+would vary as a function of the GB structure.
+5.1.2. Dose and temperature dependence
+The irradiation time and dose evolution of GB concentrations are plotted in
+Figs. 5a and 5b. Concentrations 0.5 nm away from the GB center are also plotted
+for the RIS+RETS simulations. In addition to RETS, we show the evolution of
+TS in the absence of irradiation. We observe RETS to evolve rapidly and reach
+equilibrium faster (in a matter of hours or just over 0.01 dpa) in comparison to TS
+without irradiation (a few days), but the steady-state compositions are the same in
+both cases. In contrast, steady states for RIS and RIS+RETS are reached in a few
+months, and the steady-state compositions differ. The steady-state enrichment of Ni
+26
+
+===== PDF PAGE 27 =====
+(a)
+ (b)
+Figure 3: Segregation at the GB in a 1D system of 1 µm grain size when under irradiation at
+2× 10−6 dpa/s and 500 ◦C. (a) The RIS mechanism. (b) The RETS mechanism.
+(a)
+ (b)
+Figure 4: Segregation due to RIS and TS mechanisms at the GB in a 1D system of 1 µm grain size
+when under irradiation at 2 × 10−6 dpa/s and 500 ◦C. (a) Strong TS corresponding to a relative
+GB density of σ = 0.8. (b) Weak TS corresponding to σ = 0.9.
+27
+
+===== PDF PAGE 28 =====
+and depletion of Cr are significantly lower for the combined RIS+RETS case than for
+RIS alone. In the initial period of evolution for RIS+RETS, the GB concentrations
+somewhat follow that of RETS, with Ni showing a slight depletion and Cr showing
+significant enrichment. This indicates that TS dominates in the early stages of
+irradiation. However, at 0.5 nm from the GB center, a monotonic evolution in
+segregation as governed by RIS is seen, with no influence from TS.
+(a)
+ (b)
+Figure 5: Evolution of GB concentrations of (a) Ni and (b) Cr in a 1D system of 1 µm grain
+size when under irradiation at 2 × 10−6 dpa/s and 500 ◦C. Different segregation mechanisms are
+separately plotted. For the combined case of RIS+RETS (with σ = 0.8), the concentration at 0.5
+nm from the GB center is also shown.
+For the different mechanisms, GB concentrations at 60 days (10 dpa) are plotted
+as a function of temperature in Fig. 6. The equilibrium segregation concentrations
+(labeled as: TS, equilibrium) are analytically calculated from the CALPHAD free
+energies (Sec. 3.2) for comparison. Excellent agreement is found for the steady-state
+RETS composition with the equilibrium analytical calculation; Cr enrichment and
+Ni depletion occur at all temperatures as a result of the more favorable energetics of
+28
+
+===== PDF PAGE 29 =====
+Cr at the GB. RETS is found to decrease steadily with temperature, although some
+effect of RETS is seen even at 800 ◦C.
+However, TS without irradiation shows lower segregation at the end of the sim-
+ulated 60 days than that observed with RETS below 450 ◦C, indicating that equi-
+librium TS is not achieved during that time frame due to the extremely slow dif-
+fusivity at lower temperatures. In contrast, RIS varies strongly with temperature
+and peaks at around 500◦C. Negligible RIS is observed above 750◦C due to thermal
+back diffusion. Conversely, below 500 ◦C, increasing contributions from recombina-
+tion and preferential SIA diffusivity (see Sec. S4 in the Supplementary Material) lead
+to decreasing RIS (here, SIAs are mobile but vacancies have reduced mobility; thus,
+recombination is promoted, resulting in a reduced loss of vacancies to sinks). Com-
+pared to RIS alone, RIS+RETS for σ = 0.8 (strong TS) shows lower Ni enrichment
+at intermediate temperatures, while a transition to Ni depletion is observed below
+400◦C and above 650◦C. For RIS+RETS of Cr, RETS dominates across the temper-
+ature range, resulting in an effective Cr enrichment at the GB center. However, at
+0.5 nm from the GB center, there is negligible influence from RETS; therefore, the
+temperature trend follows that of RIS. Finally, we note that for σ = 0.95 (weak TS,
+see Sec. S8 of the Supplementary Material), the RIS+RETS results are very close to
+that of RIS, even at the GB center.
+5.1.3. Dislocation sink density and bias effect
+In Fig. 7, we compare the temperature dependence of RIS for different bulk
+dislocation densitiesρb and absorption efficienciesZI. Increasing ρb beyond 1014 m−2
+leads to a significant reduction in Ni enrichment and Cr depletion. A more significant
+reduction in RIS is noted at higher temperatures, with the peak in RIS shifting to
+lower temperatures. Introducing a bias for SIA absorption ZI = 1.2 results in biased
+29
+
+===== PDF PAGE 30 =====
+(a)
+ (b)
+Figure 6: GB segregation of (a) Ni and (b) Cr as a function of temperature, as calculated from
+a 1D system of 1 µm grain size. The irradiation mechanism corresponds to 10 dpa or 60 days,
+and the TS mechanism ( σ = 0.8) corresponds to 60 days of thermal aging. For RIS+RETS, the
+concentrations are taken at the GB center as well as at 0.5 nm from the GB center.
+effects on the RIS of Ni and Cr. While Ni enrichment is significantly suppressed, Cr
+depletion is seen to be slightly enhanced. In contrast to the effect of ρb, peak RIS is
+not significantly affected by ZI.
+5.2. 2D simulations of GB segregation
+RETS, RIS, and RIS+RETS simulations are performed on a hexagonal polycrys-
+tal microstructure within a square domain of 50× 50 nm2 and 100× 100 nm2. Since
+2D PF simulations with a 1 nm GB width are computationally expensive, they are
+only performed for nanocrystalline grain sizes of ≈ 28 nm and 56 nm (diameters of
+the area equivalent circular grains). (To assess RIS for larger grain sizes, in Sec. 5.3,
+we perform 2D simulations using the DBC method—which is computationally less
+expensive than PF—and demonstrate the equivalence between the PF and DBC
+methods for select choices of GB width and mesh size, respectively.) As with the 1D
+30
+
+===== PDF PAGE 31 =====
+(a)
+ (b)
+Figure 7: GB RIS of (a) Ni and (b) Cr as a function of temperature for different bulk dislocation
+densities ρb and absorption efficiencies ZI for SIA. The calculations are from a 1D system of 1
+µm grain size irradiated to 10 dpa or 60 days. The dashed lines show results from the DBC
+implementation of 1 nm mesh size.
+simulations, a uniform (nominal) composition was employed as the initial condition.
+Concentration maps from the RETS simulation (for σ = 0.8) are shown in Figs. 8a
+and 8b. At 10 dpa (60 days), the GB center (far from the triple junction) is depleted
+in Ni (concentration of≈ 0.06) and enriched in Cr (concentration of ≈ 0.27). These
+concentrations are very close to those observed in 1D simulations of large grains.
+RETS is observed to be slightly higher at the triple points. This is due to a slightly
+higher value of the normalized multiwell potential ¯gmw = 1.1 at triple points as com-
+pared to ¯gmw = 1 at the GB center. Concentration maps from the RIS simulation are
+shown in Figs. 8c and 8d. At 10 dpa (60 days), monotonically varying Cr depletion
+and Ni enrichment profiles are observed, with a GB center concentration of 0.18 for
+Ni and 0.14 for Cr. RIS is found to be identical in all the grains, due to the same
+grain size, but is expected to vary over certain grain sizes, as discussed in Sec. 5.3.
+However, due to the smaller grain size in the 2D simulations, RIS is significantly
+31
+
+===== PDF PAGE 32 =====
+lower than the 1D result from the 1 µm grain size. Here, the effect of dimensionality
+(1D vs. 2D) also contributes to the variation in RIS. These effects are compared in
+the next section. Finally, concentration maps from the combined RIS+RETS simu-
+lation are shown in Figs. 8e and 8f. Non-monotonic “W”- and “M”-shaped variation
+in Ni and Cr concentrations, respectively, are observed across the GB. While the
+regions away from the GB center are depleted in Cr, the GB center itself is enriched
+relative to the nominal concentration. On the other hand, Ni enrichment is observed
+at all locations across the GB. However, the extent of enrichment at the GB center
+is lower than that caused by RIS alone.
+5.3. Effect of grain size and dimensionality on GB RIS
+To enable comparison of RIS for the different grain sizes, geometries, and dimen-
+sions employed in this work, we define the GB sink density as the ratio of the GB
+length per grain to the grain area. Thus, for the 1D system of grain length d1D,
+the GB sink density is 1/d1D. For the 2D square grain (implemented using the DBC
+method in Sec. 4) with edge lengthd2D,sq, the GB sink density is 2/d2D,sq. Finally, for
+the 2D hexagonal grain whose short diagonal is d2D,hex, the GB density is 2/d2D,hex.
+In Fig. 9, we plot RIS from these different systems as a function of the inverse of
+GB sink density. The results are shown for two different dislocation sink bias cases:
+ZI = 1 and ZI = 1.2. We note that the RIS concentrations from the 2D simulations
+are taken from the middle of those GB edges farthest from the corners/triple points.
+At low GB sink densities or large grain sizes ( d1D > 500 nm, right side of the plot),
+RIS is nearly constant, with no change in Ni and Cr concentrations. With increased
+GB sink density or decreased grain size ( d1D < 500 nm), RIS behavior reduces and
+the GB concentrations tend toward the nominal values. No difference in RIS is ob-
+served between ZI = 1 and ZI = 1.2 at very high GB sink densities or very small
+32
+
+===== PDF PAGE 33 =====
+(a)
+ (b)
+(c)
+ (d)
+(e)
+ (f)
+Figure 8: Segregation at GBs in a 2D hexagonal polycrystal system of 50 × 50 nm2 size irradiated
+to 10 dpa at 500 ◦C. (a,b) RETS mechanism for σ = 0.8. (c,d) RIS mechanism. (e,f) RIS+RETS
+mechanisms.
+33
+
+===== PDF PAGE 34 =====
+grain sizes (d1D < 100 nm, left side of the plot). However, for lower GB sink densi-
+ties or larger grain sizes ( d1D > 100 nm), the effect due to dislocation sink strength
+dominates, resulting in significant RIS differences between ZI = 1 and ZI = 1.2.
+The biased absorption of SIAs when ZI = 1.2 leads to a significant suppression of
+Ni enrichment and a slight enhancement of Cr depletion. Overall, for a given ZI,
+excellent agreement is observed among the 1D DBC (1 nm mesh), 1D PF, and 2D
+(square) DBC (1 nm mesh) systems of equivalent GB sink density. And while the
+2D (hexagonal) PF simulation was only performed for two grain sizes ( d2D,hex of 25
+and 50 nm), the concentrations (“star” markers) show excellent agreement with the
+other systems of equivalent GB sink density.
+Figure 9: GB segregation of as a function of the inverse of GB density ( d1D) for a bulk dislocation
+density of ρ = 10 14 m−2 and dislocation absorption efficiencies of ZI = 1 and ZI = 1.2 for SIAs.
+The results correspond to different simulation domains—1D PF, 1D DBC, 2D (hexagonal) PF, and
+2D (square) DBC—all irradiated to 10 dpa at 500 ◦C.
+34
+
+===== PDF PAGE 35 =====
+5.4. RIS in AM microstructure
+Simulations of RIS at 500◦C were performed in 1D and 2D dislocation cells repre-
+sentative of the AM microstructure. The effects of dislocation cell size and dislocation
+density are studied to capture the variations observed in AM alloys depending on
+the AM technique, build geometry and process parameters.
+5.4.1. 1D simulations of CW segregation
+1D simulations were performed on dislocation cell lengths ranging from 0.15 to 2
+µm, and on a 100 nm wide dislocation CW [9, 10] at the center of the cell. Concen-
+tration profiles from simulations with a CW dislocation density ρb,w = 1015 m−2 and
+a dislocation absorption bias ZI = 1.2 for SIAs are shown in Fig. 10. In Fig. 10a, the
+initial condition was a uniform nominal composition, whereas in 10b, a pre-irradiation
+microsegregation of Cr enrichment and Ni depletion was assumed following general
+observations in Ref. [9]. Similar to RIS at GBs, RIS at CWs is characterized by Cr
+depletion and Ni enrichment at 1 dpa. For the case with pre-irradiation microseg-
+regation, the effect of RIS is seen relative to the starting concentrations. While the
+RIS profiles are distinct at low doses due to their different starting conditions, they
+become nearly identical at above 1 dpa as they approach steady state. No persistent
+“W” or “M” shape is observed as the thermodynamic interaction between the solutes
+and dislocations at the CW were ignored. Due to the biased absorption of SIAs by
+dislocations, RIS of Cr is greater in magnitude than RIS of Ni.
+In Fig. 11, concentrations of Ni and Cr from the center of the CW at 1 dpa
+are plotted for different cell sizes with the same CW width. As with the grain size
+dependence of GB RIS (Fig. 9), RIS at CWs demonstrates a cell size dependence
+that decreases with diminishing cell size, but reaches a constant value beyond a size
+of 500 nm. For comparison, results from different CW dislocation densities ρb,w and
+35
+
+===== PDF PAGE 36 =====
+(a)
+ (b)
+Figure 10: RIS at a dislocation CW in a 1D AM microstructure of 500 nm dislocation cell size
+irradiated at 500 ◦C. The AM system corresponds to a cell interior dislocation density ofρb,c = 1014
+m−2 and a 100-nm-wide CW of dislocation density ρb,w = 1015 m−2, with a dislocation absorption
+efficiency of ZI = 1.2 for SIA. (a) Initial condition with a homogeneous composition. (b) Initial
+condition consisting of pre-irradiation segregation at the CW.
+sink efficiencies ZI are plotted. Due to the increasing sink strength of CW with the
+increase in dislocation densityρb,w, greater RIS is observed. However, for a givenρb,w,
+the absorption bias ZI = 1.2 leads to greater Cr depletion and lower Ni enrichment.
+This effect of bias on RIS at CWs is similar to that observed for GBs.
+5.4.2. 2D simulations of CW segregation
+2D simulations of RIS in dislocation cells are performed within a square domain
+of 1 × 1 µm2 (Fig. 2b). The pre-irradiation microsegregation at CWs with Cr
+enrichment and Ni depletion are shown in Figs. 12a and 12b, respectively. The
+dislocation densities are set to ρb,c = 10 14 m−2 and ρb,w = 10 15 m−2, and an SIA
+absorption bias given by ZI = 1.2 is used. Two separate simulations are performed
+to test the influence of GBs on RIS in dislocation cells. In the first, hexagonal
+36
+
+===== PDF PAGE 37 =====
+(a)
+ (b)
+Figure 11: RIS at a dislocation CW in a 1D AM microstructure as a function of dislocation cell
+length. The results correspond to different dislocation absorption efficiencies (i.e., ZI = 1 and
+ZI = 1.2) for SIAs. The AM system with a cell interior dislocation density of ρb,c = 1014 m−2 and
+a CW density of ρb,w = 1015 m−2 was irradiated to 1 dpa at 500 ◦C.
+cells≈ 0.5 µm in width are initialized within a square domain. This effectively
+models dislocation cells in large grains or those far from the influence of GBs. The
+concentration maps in Figs. 12c and 12d correspond to 1 dpa and demonstrate Ni
+enrichment and Cr depletion at the CWs. As with the 1D simulations, a flip in
+segregation from the pre-irradiation microsegregation is observed under irradiation.
+In the second simulation, the DBC is applied to all boundaries of the square domain
+to simulate RIS in dislocation cells near GBs or within small grains. The composition
+maps in Figs. 12e and 12f show significant RIS at the GBs (edges), while RIS at the
+CWs is relatively low. The maximum change in Cr concentration (in site fraction)
+is−0.025 at the CW, whereas it is −0.1 at the GB. Similarly, the maximum change
+in Ni concentration is just 0 .025 at the CW but 0.125 at the GB. Overall, reduced
+RIS at CWs is observed in the presence of the GBs due to the greater sink strength
+of the GBs.
+37
+
+===== PDF PAGE 38 =====
+(a)
+ (b)
+(c)
+ (d)
+(e)
+ (f)
+Figure 12: RIS in a 2D hexagonal AM cell structure 500 × 500 nm2 in size and irradiated to 1 dpa
+at 500 ◦C. (a,b) Initial condition consisting of pre-irradiation segregation at the CW. (c,d) Without
+DBC representing GB. (e,f) With DBC for point defect concentration applied to the edges of the
+square domain. The RIS width near the GB is exaggerated for illustration purposes by setting the
+same color level from 0.14 to 0.25 for cNi in (e), and from 0.069 to 0.15 for cCr in (f).
+38
+
+===== PDF PAGE 39 =====
+6. Discussion
+In the nuclear industry, there is an ongoing effort to increase the operating tem-
+perature of reactor designs to improve thermal efficiency, while material costs should
+remain as low as possible for improved economics. As a result, iron-based materials
+with high-temperature mechanical performance (e.g., up to 750 °C or even greater)
+are of interest. However, such high temperatures result in appreciable thermally-
+driven kinetics for the diffusion of species that does not occur at lower operation
+temperatures. Thus, understanding the contributions of the different physical mech-
+anisms to the observed in-reactor segregation is vital for qualification of materials
+for advanced reactor technologies. To this end, we developed a new microstructure-
+level model to study different mechanisms of segregation in AM austenitic SSs under
+irradiation.
+6.1. PF model for GB segregation
+A multi-order-parameter PF model was developed that describes both RIS and
+RETS in multicomponent polycrystals. The formulation also preserves the com-
+plete set of Onsager coefficients from the Onsager force-flux relations, thus allowing
+non-ideal kinetics (LkV/Lυ
+kk̸=−1) to be captured. Therefore, RIS mechanisms of
+solute-vacancy exchange or inverse Kirkendall effect ( LkV/LV
+kk < 0), solute-vacancy
+drag (LkV/LV
+kk > 0) or vacancy wind effect, and solute-SIA binding can be incorpo-
+rated. While Manning’s relations [56] for concentrated multicomponent alloy were
+used in this work to parameterize Lυ
+kl, one could utilize analytic methods (e.g., the
+self-consistent mean-field and the Green’s function) or atomistic calculations (e.g.,
+kinetic Monte Carlo and molecular dynamics) [13] to accurately parameterize the
+off-diagonalLij coefficients for systems in which their contribution or solute-vacancy
+drag is deemed important [67].
+39
+
+===== PDF PAGE 40 =====
+The grand potential formulation for TS locally imposes the equal diffusion po-
+tential condition between the bulk and GB phase free energies. In this regard, the
+model is similar in scheme to the binary component TS model of Cha et al. [41].
+By employing carefully constructed Taylor free energies that allow predefined ana-
+lytic relations for the phase concentrations [68], the grand potential approach avoids
+the computational expense of explicitly solving the equal diffusion potential condi-
+tions to determine the phase concentrations. Furthermore, we employed a mixed
+formulation [48] of the grand potential model—involving both concentration ck and
+diffusion potential µk1 variables related via Eq. 8—to strictly conserve the mass of
+the atomic components in the system. A physically relevant GB width of 1 nm was
+employed in this work, limiting the overall size of the system that could be simulated
+in 2D. Further study is warranted to explore the possibility of employing artificially
+large GB widths—to preserve quantitative GB energy, segregation, and solute drag
+effects—and enable mesoscale simulations of grain growth in large systems.
+In Appendix A, we proposed a method for parameterizing the RIS model for the
+local sink strength of the diffuse GB, based on the sharp-interface RBC. As demon-
+strated in Fig. A1, this approach enables non-ideal GB sink behavior to be captured
+within the PF framework and provides a direct link to the GB structure. Several
+experimental, analytical, and atomistic studies have described the GB misorienta-
+tion dependence on GB sink absorption and RIS [25, 26, 69, 65, 70]. In the future,
+the present model can be coupled to a misorientation-based polycrystal PF model
+to investigate the effects of texture and GB anisotropy. Further study is needed to
+examine the effect of the diffuse GB width on the solute excess, and not just on the
+GB center concentration.
+With the development of advanced, high-resolution compositional characteriza-
+tion, complex nanoscale segregation profiles across GBs, such as “W” and “M” con-
+40
+
+===== PDF PAGE 41 =====
+tours, have been revealed, necessitating new models to explain experimental obser-
+vations. The model formulation that we have developed enables a systematic inves-
+tigation for TS without irradiation, RIS without TS, TS with radiation-enhanced
+diffusion (RETS), and RIS+RETS. Our results show that there are important char-
+acteristic differences in the segregation profiles depending on the active physical
+mechanism(s), temperature, and radiation damage. The model and its results en-
+able a new means of interpreting experimental data. It also provides insights on how
+to structure experimental investigations into segregation mechanisms, given that the
+simulation results show qualitative differences in evolution with time and accumu-
+lated radiation damage. Thus, the interpretation of observed segregation behavior
+under irradiation is dependent upon the knowledge of the initial composition profile
+and the expected steady state, including the time and damage level to achieve it.
+6.2. GB segregation in austenitic SS
+Our results indicate that under irradiation, RIS and RETS concentration pro-
+files have different characteristic fingerprints: TS (driven by GB energetics) with or
+without radiation-enhanced diffusion in austenitic Fe-Cr-Ni will result in very narrow
+(approximately 1 nm) composition profiles with Cr enrichment and Ni depletion at
+the GBs. The narrow profile widths of equilibrium TS are due to the short-range
+thermodynamic interactions localized to the GB plane. Conversely, RIS (mediated
+by defect energetics and sustained long-range diffusion of point defects to GB sinks)
+results in wider composition profiles across the GB, with Cr depletion and Ni enrich-
+ment. In addition, the time scales at which these two behaviors reach steady state
+differ greatly, with TS and RETS reaching steady state over a few hours and 0.01
+dpa, while RIS and RIS+RETS take much longer. When RIS+RETS is active, the
+modeled segregation profiles have characteristics of both the mechanisms, resulting
+41
+
+===== PDF PAGE 42 =====
+in “W” or “M”-shapes.
+Several reports of thermal segregation observed during heat treatments performed
+prior to irradiation and RIS exist [17, 18], though to our knowledge, there is a lack
+of systematic study in the literature on TS at GBs in austenitic SSs. Only one
+study by Li et al. [20] specifically probed the thermal segregation of 304 SS annealed
+at 500 °C for 30 minutes; with the use of atom probe tomography (APT), they
+found enrichment of Cr and other minor elements and depletion of Ni at GBs. This
+observation is consistent with our simulations of Cr enrichment and Ni depletion
+via the TS mechanism (Fig. 3). Other studies further investigate the influence of
+irradiation and RIS on preexisting segregation profiles. For instance, Kenik et al. [17]
+reported pre-irradiation Cr enrichment in austenitic 304 and 316 SSs heat treated
+at 1050 °C for 20 minutes; for a similar alloy and conditions, Busby et al. [18] also
+observed pre-irradiation segregation. The pre-irradiation Cr enrichments observed in
+Refs. [17, 18] have been attributed to thermal non-equilibrium segregation resulting
+from the flux of supersaturated vacancies to the GB that arises during the cooling
+of the alloy from high temperatures [19]. According to this theory, for Cr to enrich
+at the GB, it would need to either 1) be the slower-diffusing species, contrary to
+experimental [27] and atomistic [59] tracer diffusivity data, or 2) be dragged by
+vacancies via complex formation, which is also not supported by atomistic data [14],
+or 3) have certain thermodynamic interactions with impurities that segregate by
+the thermal non-equilibrium mechanism [13]. The alternative explanation we have
+considered is that Cr enriches at the GB due to TS [20, 55] (or, although unexplored
+in this work, the similar mechanism of thermodynamic co-segregation with impurity
+elements such as B and C [20, 22, 71]), and that pre-irradiation TS is not necessary
+for the development of the “W” shape [3].
+Upon irradiation, multiple studies have documented the evolution of GB segre-
+42
+
+===== PDF PAGE 43 =====
+gation. After proton irradiation to 1 dpa at 360 ◦C, “W”-shaped Cr profiles were
+observed in the study by Kenik et al. [17]. For a similar alloy irradiated (at 7 ×10−6
+dpa/s) up to 5 dpa, the study by Busby et al. [18] found the “W”-shaped Cr profile
+first developed that later transitioned to a “V”-shaped profile with increasing dose.
+A more recent study by Barr et al. [22] reported non-transient “W”-shaped Cr and
+“M”-shaped Ni profiles in 316 SS that underwent neutron irradiation (at 2 ×10−7
+dpa/s) to 31 dpa in the temperature range of 390 to 410 ◦C. Their APT profiles
+resemble our simulated profiles of Fig. 4 except for the slightly wider segregation
+widths, which might be attributed to trajectory aberration [20]. Our simulations
+suggest that such a non-transient “W” shape could develop for strong TS, while
+the transient “W” shape could develop for weak TS under RIS+RETS (Fig. 4). In
+another study employing APT, 304 SS that underwent neutron irradiation to 3.5
+dpa was found to show both “W” and “V”-shaped Cr depletion [72]. Interestingly,
+2D concentration maps along the GB plane showed heterogeneous segregation with
+regions of enrichment and depletion for both Ni and Cr, suggesting the occurrence
+of an “M”-shaped profile for Ni at certain locations of the GB.
+The modeling approach for TS under irradiation undertaken in the present work
+utilized a simple atomic density modification of the Fe-Cr-Ni free energy to demon-
+strate that “W”-shaped Cr and “M”-shaped Ni profiles resulting from RIS+RETS
+are indeed stable even at large doses. Although this approach ignores the possibility
+of heterogeneous segregation, ballistic mixing, and the evolution of GB structure
+with irradiation, it still reproduces complex GB segregation from a few fundamen-
+tal physical principles. The effects currently neglected in the model could alter the
+degree of TS predicted by equilibrium and offer explanations for the observation (or
+lack thereof) of transient and non-transient “W”-shaped profiles in the literature.
+In addition, this approach currently makes the simplification of ignoring the for-
+43
+
+===== PDF PAGE 44 =====
+mation of secondary phases and the more complex interactions that are likely to
+occur in the presence of minor alloying elements and impurities. For instance, the
+formation of Cr-rich carbides at the GB is known to deplete Cr along the GB during
+thermal and radiation-induced sensitization [73, 20]. These precipitates could desta-
+bilize TS of Cr in their vicinity, resulting in “V” profiles instead of “W” profiles [73].
+GB carbide formation might alter or eliminate the central peak that would occur in
+RIS+RETS, unless the line profile perpendicular to the GB is extracted over the car-
+bide phase itself. In fact, Cr enrichment via TS may be required to produce Cr-rich
+carbides at GBs during irradiation, as RIS alone leads to depletion of Cr. Additional
+impurities such as P and B and minor elements such as Si and Mo complicate accu-
+rate modeling and the interpretation of experimental results. In irradiated austenitic
+SSs containing Si, Si is known to enrich the GB via SIA transport and Ni-Si clusters
+are known to form at the sinks [74, 75]; Si is therefore likely to affect the segregation
+behavior of Ni at GBs. Irradiation is also known to alter pre-irradiation thermal
+segregation of other elements: while C, P, B and Mo enrich the GB under thermal
+conditions [19, 20, 76], P enrichment is reported to be enhanced under irradiation,
+B enrichment appears to be largely unaffected, while that of C has been found to be
+complex and correlated with the segregation behavior of Cr [74]. Such complexities
+due to multiple segregation mechanisms and thermodynamic interactions between
+alloying elements are observed in ferritic Fe-Cr alloys as well. For example, in an
+irradiated Fe-Cr-Al [77], Si has been shown to enrich the GB plane while Cr enriches
+the regions immediately adjacent to Si; Cr-rich clusters are additionally found within
+the bulk. In the ferritic phase, and possibly in the austenitic phase, segregation of
+Cr is likely affected by both Cr-carbide precipitation and possible interactions of
+Cr with Si or other elements segregating via RETS or RIS. With better atomistic
+inputs, more sophisticated segregation models can be pursued in the future to de-
+44
+
+===== PDF PAGE 45 =====
+scribe these complex multinary interactions of Ni and Cr with other elements. On
+the other hand, more systematic experimental characterizations of TS in high-purity
+austenitic Fe-Cr-Ni are needed to validate the predictions of the present model.
+Our results of the grain size dependence of RIS (Fig. 9) indicate that nanocrys-
+talline Fe-Cr-Ni alloys can exhibit superior radiation damage tolerance. Indeed, Sun
+et al. [78] found that an ultrafine-grained 304L (100 nm grain size) demonstrates
+superior resistance to void swelling and precipitation compared to its coarse-grained
+counterpart (35 µm grain size). While radiation-resistant alloys with a high sink
+density (dislocations and GBs) have been proposed, they tend to suffer from mi-
+crostructural instability due to the high energetic driving force for reducing these
+defects in the microstructure. In this regard, the reduction in GB energy and/or mo-
+bility via TS of alloying elements offers opportunities to stabilize the microstructure.
+Our PF model provides a preliminary formulation to investigate such concepts for
+austenitic SS.
+The fundamental differences in segregation profiles and the time scales to reach
+steady state are important for assessing accelerated irradiation qualification efforts.
+Ion irradiation can induce radiation damage orders of magnitude faster than neu-
+tron irradiation, making it attractive as a substitute for neutron irradiation; how-
+ever, accelerated irradiation damage changes the balance of kinetic factors driving
+microstructural evolution [79]. Increased irradiation temperature is typically used
+to compensate for increased damage rates in ion irradiation to more closely match
+neutron irradiation damage. However, increased temperature will also alter TS or
+RETS behavior. By using the model developed in this work, the observed segre-
+gation behavior in ion-irradiated and neutron-irradiated material can be assessed
+to determine how well the different physical phenomena are being matched under
+different irradiation conditions.
+45
+
+===== PDF PAGE 46 =====
+6.3. RIS at dislocation CWs
+The results of the effects of dislocation density and absorption bias on RIS (Figs. 7
+and 11) are important for cold-worked and AM alloys that have a high density of as-
+processed dislocations. They are also important for annealed alloys at high levels of
+radiation damage, because dislocations and subgrain structures are known to develop
+under irradiation. A simple rate theory diffusion model with spatial variation in
+dislocation density and sink strength was utilized to study RIS in representative AM
+microstructures. The inhomogeneous distribution of dislocations arising from the
+additive manufacturing process was found to result in RIS at the dislocation CWs
+in addition to GBs. Our simulation results are generally in qualitative agreement
+with the preliminary characterization results found in the literature. In heavy ion
+irradiation of 316LN at 450 ◦C, Ni enrichment and Cr depletion at both high-angle
+GBs and dislocation CWs were observed [9]. As predicted by our simulations, RIS
+at both CWs and GBs was observed, with peak RIS being lower in magnitude but
+greater in width for the CWs. We presented the results of irradiations of up to a dose
+of only 1 dpa, since significant dislocation recovery is expected in reality at higher
+dpa levels. For instance, Chen et al. [10] observed the dislocation cell structures in
+316H and 316L to recover and homogenize at doses above a few dpa under ex situ ion
+irradiations at 300 ◦C and 600 ◦C. Therefore, concurrent evolution of RIS with the
+dislocation cell structure must to be considered for a complete picture. In a recent
+work [50], we coupled the present model of Sec. 2.2 with a dislocation evolution model
+in order to study such concurrent evolution. In that work, we found pipe diffusion to
+be important in accurately accounting for the kinetics of dislocation recovery. With
+experimental evidence for pre-irradiation microsegregation persisting at the CWs
+[10], it will be important in the future to also account for TS to dislocations, as
+well as its effects on dislocation recovery. Our PF model for GB segregation is also
+46
+
+===== PDF PAGE 47 =====
+expected to be useful for AM austenitic SS, as Cr enrichment at high-angle GBs in
+AM 316LN SS [9] has been observed.
+6.4. Limitations of the RIS model
+Although the simulation results of GB segregation profiles show a consistent
+trend with experimental observation, the model is limited by uncertainties in the
+SIA energetics of austenitic SS. Due to the lack of comprehensive experimental and
+simulation data, the model neglects potential differences in the mobility of mixed
+interstitial dumbbells (e.g., Fe-Cr, Fe-Ni, and Ni-Cr) by using a single SIA migration
+energy [27]. Additionally, the binding energies of interstitial dumbbells are treated
+as adjustable parameters based on previous studies [27, 57, 80]. Atomistic calcula-
+tions [59] of⟨100⟩ dumbbell energetics in Fe-20Cr-10Ni have shown that Fe-Fe is the
+most stable and Cr is likely to occur as mixed dumbbells, whereas Fe-Ni, Ni-Ni and
+Cr-Cr are very unlikely to occur. While the binding energies (i.e. favorable Cr and
+unfavorable Ni transport via SIA) utilized in Yang et al. [27] and in the present work
+are qualitatively consistent with the atomistic calculations, more accurate parame-
+terization is required. These energetics are crucial as they influence the preferred
+formation and mobility of mixed dumbbell configurations. Therefore, these uncer-
+tainties may lead to deviations of the predicted Onsager coefficients, RIS tendencies,
+and RIS profiles. The significance of migration barriers and binding energies of mixed
+interstitial dumbbells has been demonstrated in various BCC Fe-based steels [81–83],
+and similar chemical coupling mechanisms between solutes and point defects are ex-
+pected to occur in austenitic SS. The lack of available energy and property data
+involving SIAs in austenitic SS highlights the need for accurate thermo-kinetic prop-
+erty prediction. Such information is typically difficult to obtain from experiments,
+and the complex magnetic and chemical interactions caused by concentrated solute
+47
+
+===== PDF PAGE 48 =====
+elements further challenge accurate descriptions of alloy energetics.
+Our RIS results with absorption bias could be an overestimation due to the as-
+sumption of a strong bias factor of 20%, although the results will only differ quantita-
+tively, not qualitatively. An accurate value for ZI is not well known due to the com-
+plexity of elastic interaction between the different SIA configurations and the specifics
+of dislocation character and distribution [64]. Improved understanding of absorption
+bias is therefore needed for more accurate predictions of its effect on RIS. Addition-
+ally, the RIS model can be improved by considering defect clusters and voids, which
+are important for microstructure evolution in nuclear materials exposed to high-flux
+irradiation environments, such as those in advanced reactors [84]. In addition to
+sinks such as GBs and dislocations, defect clusters and voids act as temporary and
+permanent traps, respectively, for point defects [10]. For example, oversized solutes
+such as Hf, Zr, Ti and Nb have been suggested to bind with vacancies and reduce Cr
+depletion under certain irradiation conditions [24, 13]. Interstitial impurities such as
+C and N have been suggested to reduce Ni and Si enrichment in alloys similar to 304
+and 316 SS due to the increased formation of dislocations loops [13]. Incorporating
+these factors can improve the quantitative predictions of the model. Their formation
+and evolution can significantly impact the dose rate sensitivity of RIS. Developing an
+integrated model that couples these factors is crucial for understanding microstruc-
+ture evolution [50, 85, 86]. This can help establish the physics-based correlation
+between ion irradiation and neutron irradiation for accelerating the qualification of
+modern nuclear structural materials [79].
+7. Conclusions
+A multi-order-parameter PF model was developed to describe radiation-induced
+composition changes arising from multiple mechanisms such as preferential solute-
+48
+
+===== PDF PAGE 49 =====
+point defect transport (RIS), biased sinks at dislocations, and solute-GB thermody-
+namic interaction (TS). The dependence of RIS on temperature and GB sink density
+was presented using 1D and 2D simulations. An expression for the local sink strength
+of the diffuse GB was developed and verified using a sharp-interface RBC. Although
+the PF model was implemented for static GBs, it is expected to be further useful in
+studying composition evolution at moving GBs.
+The mesoscale model was used to simulate FCC Fe-Cr-Ni as a simplified system
+representative of austenitic SSs. We find characteristic “fingerprints” for segregation
+profiles depending on the physical mechanism(s) involved. RETS without RIS re-
+sults in narrow segregation profiles at the GB, while RIS without RETS results in
+broad segregation profiles. When both RETS and RIS occur, non-monotonic “W”-
+and “M”-shaped profiles for Cr and Ni, respectively, were found to persist to large
+irradiation doses. In addition, the time scales to achieve steady-state segregation at
+GB differ between the RIS and RETS mechanisms and are a function of temperature.
+For example, at 500 °C, RETS achieves steady state within hours, TS within days,
+and RIS and RIS+RETS over several months. Furthermore, we observe the effect
+of biased point defect absorption on RIS. For large dislocation densities, unbiased
+point defect absorption by dislocations suppressed RIS of both Cr and Ni at the GB;
+however, strongly biased absorption of SIAs suppressed Ni enrichment but slightly
+enhanced Cr depletion relative to the unbiased case.
+In addition to studying GB segregation, a reduced model was applied to study
+RIS in spatially resolved dislocation cell structures, which is representative of AM
+materials. Similar to RIS at the GB, Cr depletion and Ni enrichment were predicted
+to occur at dislocation CWs. The magnitude of segregation at CWs is less in com-
+parison to that at GBs, but the width of the segregation is greater due to the greater
+width of the dislocation CWs. In the absence of thermodynamic interactions with
+49
+
+===== PDF PAGE 50 =====
+dislocations, pre-irradiation microsegregation at the CW was found to have little
+effect on the RIS profile at large damage levels. In the future, the model is expected
+to be coupled with dislocation generation and recovery models in order to describe
+the concurrent evolution of RIS and dislocation cell structure.
+Our modeling results provide evidence for a new interpretation of experimentally
+observed GB segregation profiles of irradiated materials, as well as the first compu-
+tational study of segregation at dislocation CWs commonly found in AM materials.
+Although our results qualitatively align well with experimental results in the liter-
+ature for austentic SSs, future experimental investigations on high-purity austenitic
+Fe-Cr-Ni are needed for detailed validation of the model. In addition to providing
+new physical interpretations of experimental data, the proposed model can be a key
+tool in accelerated qualification of irradiated materials.
+Appendix A. Analytic relations for RIS at GBs
+Appendix A.1. Sink strength of GB
+In the sharp-interface implementation, an RBC for the point defect concentration
+is imposed as:
+Jυ·ˆn =Dυα−1(cυ−ce
+υ), (A1)
+whereJυ·ˆn is the flux of point defect normal to the GB plane and α−1 is a parameter
+governing the rate of point defect absorption or emission by a non-ideal GB [65]. In
+the PF implementation, the total absorption rate across a planar GB per unit area
+can be written as:
+Sυ =
+Z +δ/2
+−δ/2
+k2
+gDυ(cυ−ce
+υ)gsinkdx. (A2)
+50
+
+===== PDF PAGE 51 =====
+The absorption rates between the sharp-interface model with RBC and the PF model
+can be related as 2Jυ·ˆn =Sυ. However, since cυ is expected to vary spatially within
+the GB, one cannot accurately evaluate the above integral. As an approximation,
+we evaluated it by assuming that cυ is uniform within the diffuse GB, and related
+the coefficients between the sharp-interface and PF models as:
+2Dυα−1 =
+Z +δ/2
+−δ/2
+k2
+gDυgsinkdx
+=k2
+gDυ
+Z 1
+0
+gsink
+dx
+dηi
+dηi =k2
+gDυδC sink, (A3)
+where Csink can be obtained analytically or numerically. For different choices of the
+PF sink indicator functions shown in Fig. 1, we get: Csink = 0.67 for gsink = 16η2
+iη2
+j
+(wide bell-shaped), Csink = 0.32 for gsink = 65536η8
+iη8
+j (narrow bell-shaped), and
+Csink = 0.89 for gsink = 1− 0.5 [1 + tanh ((χ−χ◦)β◦)] (smooth step-shaped). Using
+Eq. A3, we parameterize k2
+g in the PF model as:
+k2
+g = 2α−1
+δC sink
+. (A4)
+Neglecting elastic interactions between point defects and GB dislocations, and re-
+combination in the bulk, expressions of α in terms of misorientation angle or dislo-
+cation spacing have been derived by Duh et al. [25] (for low-angle symmetric tilt and
+high-angle GB) and Gu et al. [65] (for low-angle symmetric tilt GB).
+Appendix A.2. Steady-state concentrations
+With the sharp-interface model, the evolution of point defect concentration in 1D
+follows:
+∂cυ
+∂t =−dJx,υ
+dx +Pυ−k2
+b,υDυ(cυ−ce
+υ), (A5)
+51
+
+===== PDF PAGE 52 =====
+with an RBC (Eq. A1) applied to model the GB sink. Here, recombination between
+vacancies and SIAs, which is only expected to contribute at low temperatures, has
+been neglected. At steady state (∂cυ/∂t = 0), the point defect concentrations at the
+grain center (dJx,υ/dx = 0) are given by:
+cυ =ce
+υ + Pυ
+k2
+b,υDυ
+. (A6)
+Furthermore, neglecting bulk sinks (k2
+b,υ = 0) and integrating Eq. A5 from the grain
+center to the GB plane gives us:
+Z Jb
+x,υ
+Jg
+x,υ
+dJx,υ =
+Z ±d/2
+0
+Pυdx, (A7)
+where d is the grain length and Jg
+x,υ(x = 0) and Jb
+x,υ(x =±d
+2) are the fluxes at the
+GB plane and grain center, respectively. In the RBC model, Jx varies monotonically
+from the grain center to the GB plane, with the maximum in Jx occurring at the
+GB plane. Noting that Jb
+x = 0, and Jg
+x,υ(x = 0) is given by Eq. A1, we obtain the
+concentration at the GB, as:
+cυ =ce
+υ + P d
+2Dυα−1. (A8)
+By substituting Eq. A4, we can get an approximate relation for the GB center con-
+centration in the PF model:
+cυ =ce
+υ + P d
+δC sinkk2
+gDυ
+. (A9)
+We note that in the PF model, the point defect absorption at the GB is diffuse,
+and the flux can exhibit a non-monotonic variation from the grain center to the GB
+center.
+52
+
+===== PDF PAGE 53 =====
+(a)
+ (b)
+(c)
+ (d)
+Figure A1: RIS at GB for (a) Ni, (b) Cr, (c) vacancy, and (d) SIA as a function ofα−1 as calculated
+from a 1D system of 1 µm grain size irradiated to 10 dpa. Results are shown for different PF sink
+functions and compared against sharp-interface simulations with DBC and RBC.
+53
+
+===== PDF PAGE 54 =====
+Appendix B. Verification of PF RIS results
+In this appendix, the steady-state GB center concentrations from the PF imple-
+mentation are compared against the GB concentrations from DBC and RBC imple-
+mentations. All results correspond to a grain size of 1 µm and the parameters listed
+in Table 1. Details on the different implementations, including mesh sizes, are pro-
+vided in Sec. 4. In Fig. A1, the results are compared as a function of α−1 at 500◦C.
+At low values of α−1 < 1, excellent agreement is found between the different meth-
+ods. For α−1 > 1, the PF model with the smooth step-shaped sink function shows
+significant deviation in SIA concentration, as well as differing trends in the atomic
+concentrations. On the other hand, for 1 <α−1 < 10, reasonably good agreement is
+found between the PF models with bell-shaped sink functions and the RBC model;
+for α >10, some deviations are observed between these methods. Due to the finite
+width of the GB in the PF model, point defect concentrations tend to reach ideal
+(equilibrium or DBC) values at a lower α−1. The DBC method with a mesh size of
+1 nm closely aligns with the PF models that employ the bell-shaped sink function.
+In Fig. A2, the results for α−1 = 5.5 nm−1, corresponding to a low-angle sym-
+metric tilt GB between 7 ◦− 15◦ misorientation angle [25, 65], are presented as a
+function of temperature. All the methods demonstrate ideal GB sink behavior at
+high temperatures: T > 600◦C for vacancy and T ≈ 800◦C for SIA. However, at
+lower temperatures, both the RBC and PF methods demonstrate point defect con-
+centrations that deviate from ideal (DBC) values. For both point defect and atomic
+concentrations, PF simulations employing the bell-shaped sink functions show excel-
+lent agreement with the RBC method. These results match well with Eq. A8 and
+with the DBC method employing a 1 nm mesh size. The PF model with the smooth
+step-shaped function, however, shows deviation from the other methods. This can
+54
+
+===== PDF PAGE 55 =====
+(a)
+ (b)
+(c)
+ (d)
+Figure A2: RIS at GB for (a) Ni, (b) Cr, (c) vacancy, and (d) SIA as a function of temperature
+as calculated from a 1D system of 1 µm grain size irradiated to 10 dpa or 60 days. Results are
+shown for different PF sink functions and compared against sharp-interface simulations with DBC
+and RBC. Analytic solutions for GB point defect concentrations are shown in (c,d).
+55
+
+===== PDF PAGE 56 =====
+be attributed to the wider, flatter region over which the sink absorption term acts.
+For analytic verification using Eq. A6, we also plotted (Fig. A2) the results for
+simulations performed without bulk annihilation (i.e., neglecting recombination and
+dislocation absorption). Good agreement is seen for the point defect concentrations.
+ACKNOWLEDGMENTS
+PF model development was supported by the Laboratory Directed Research and
+Development (LDRD) program of Idaho National Laboratory (INL). AM microstruc-
+ture modeling was sponsored by the U.S. Department of Energy Office of Nuclear
+Energy (DOE-NE)’s Advanced Materials and Manufacturing Technologies (AMMT)
+program. This research made use of the resources of the High Performance Com-
+puting Center at Idaho National Laboratory, which is supported by DOE-NE and
+the Nuclear Science User Facilities under contract no. DE-AC07-05ID14517. This
+manuscript was authored in part by Battelle Energy Alliance, LLC under contract
+no. DE-AC07-05ID14517.
+References
+[1] S. J. Zinkle, J. T. Busby, Structural materials for fission & fusion energy, Ma-
+terials Today 12 (11) (2009) 12–19.
+[2] S. J. Zinkle, G. Was, Materials challenges in nuclear energy, Acta Materialia
+61 (3) (2013) 735–758.
+[3] M. Nastar, Segregation at grain boundaries: from equilibrium to irradiation
+induced steady states, Philosophical Magazine 85 (4-7) (2005) 641–647.
+56
+
+===== PDF PAGE 57 =====
+[4] D. Raabe, M. Herbig, S. Sandl¨ obes, Y. Li, D. Tytko, M. Kuzmina, D. Ponge, P.-
+P. Choi, Grain boundary segregation engineering in metallic alloys: A pathway
+to the design of interfaces, Current Opinion in Solid State and Materials Science
+18 (4) (2014) 253–261.
+[5] M. Li, D. Andersson, R. Dehoff, A. Jokisaari, I. van Rooyen, D. Cairns-
+Gallimore, Advanced Materials and Manufacturing Technologies (AMMT) 2022
+Roadmap, Tech. rep., Argonne National Lab.(ANL), Argonne, IL (United
+States) (2022).
+[6] T. Byun, B. E. Garrison, M. R. McAlister, X. Chen, M. N. Gussev, T. G. Lach,
+A. Le Coq, K. Linton, C. B. Joslin, J. K. Carver, et al., Mechanical behavior
+of additively manufactured and wrought 316L stainless steels before and after
+neutron irradiation, Journal of Nuclear Materials 548 (2021) 152849.
+[7] D. A. Collins, A. G. Le Coq, T. G. Lach, K. D. Linton, M. N. Gussev, J. W.
+Werden, M. R. Mcalister, X. Chen, C. B. Joslin, et al., Mechanical properties of
+additively manufactured 316L stainless steel before and after neutron irradiation
+(FY21), Tech. rep., Oak Ridge National Laboratory (ORNL), Oak Ridge, TN
+(United States) (2021).
+[8] K. Bertsch, G. M. De Bellefon, B. Kuehl, D. Thoma, Origin of dislocation
+structures in an additively manufactured austenitic stainless steel 316L, Acta
+Materialia 199 (2020) 19–33.
+[9] Z. Shang, C. Fan, J. Ding, S. Xue, A. Gabriel, L. Shao, T. Voisin, Y. M. Wang,
+T. Niu, J. Li, et al., Heavy ion irradiation response of an additively manufactured
+316LN stainless steel, Journal of Nuclear Materials 546 (2021) 152745.
+57
+
+===== PDF PAGE 58 =====
+[10] W.-Y. Chen, Y. Chen, P. Baldo, L. Gao, D. Harbaruk, J. Hlavenka, In-situ and
+ex-situ characterization of irradiated am materials, Tech. rep., Argonne National
+Laboratory (ANL), Argonne, IL (United States) (2024).
+[11] G. S. Was, et al., Fundamentals of Radiation Materials Science: Metals and
+Alloys, Vol. 510, Springer, 2007.
+[12] M. Nastar, F. Soisson, 1.18-Radiation-induced segregation, Comprehensive Nu-
+clear Materials 1 (2012) 471–496.
+[13] A. J. Ardell, P. Bellon, Radiation-induced solute segregation in metallic alloys,
+Current Opinion in Solid State and Materials Science 20 (3) (2016) 115–139.
+[14] G. S. Was, J. P. Wharry, B. Frisbie, B. D. Wirth, D. Morgan, J. D. Tucker, T. R.
+Allen, Assessment of radiation-induced segregation mechanisms in austenitic
+and ferritic–martensitic alloys, Journal of Nuclear Materials 411 (1-3) (2011)
+41–50.
+[15] M. Seah, E. Hondros, Grain boundary segregation, Proceedings of the Royal
+Society of London. A. Mathematical and Physical Sciences 335 (1601) (1973)
+191–212.
+[16] W. Xing, A. R. Kalidindi, D. Amram, C. A. Schuh, Solute interaction effects
+on grain boundary segregation in ternary alloys, Acta Materialia 161 (2018)
+285–294.
+[17] E. Kenik, J. Busby, M. Miller, A. Thuvander, G. Was, Origin and influence of
+pre-existing segregation on radiation-induced segregation in austenitic stainless
+steels, MRS Online Proceedings Library (OPL) 540 (1998) 445.
+58
+
+===== PDF PAGE 59 =====
+[18] J. Busby, G. Was, S. Bruemmer, D. Edwards, E. Kenik, Influence of initial
+grain boundary composition on the evolution of radiation-induced segregation
+profiles, MRS Online Proceedings Library (OPL) 540 (1998) 451.
+[19] J. Cole, T. Allen, G. Was, R. Dropek, E. Kenik, The influence of pre-irradiation
+heat treatments on thermal non-equilibrium and radiation-induced segregation
+behavior in model austenitic stainless steel alloys., Tech. rep., Argonne National
+Lab., IL (US) (2002).
+[20] H. Li, S. Xia, W. Liu, T. Liu, B. Zhou, Atomic scale study of grain boundary
+segregation before carbide nucleation in Ni–Cr–Fe alloys, Journal of Nuclear
+Materials 439 (1-3) (2013) 57–64.
+[21] G. Was, J. Busby, T. Allen, E. Kenik, A. Jensson, S. Bruemmer, J. Gan, A. Ed-
+wards, P. Scott, P. Andreson, Emulation of neutron irradiation effects with
+protons: validation of principle, Journal of Nuclear Materials 300 (2-3) (2002)
+198–216.
+[22] C. M. Barr, P. J. Felfer, J. I. Cole, M. L. Taheri, Observation of oscillatory
+radiation induced segregation profiles at grain boundaries in neutron irradiated
+316 stainless steel using atom probe tomography, Journal of Nuclear Materials
+504 (2018) 181–190.
+[23] T. R. Allen, G. Was, Modeling radiation-induced segregation in austenitic Fe–
+Cr–Ni alloys, Acta materialia 46 (10) (1998) 3679–3691.
+[24] M. J. Hackett, J. T. Busby, G. Was, The mechanism of Zr and Hf in reducing
+radiation-induced segregation in 316 stainless steel, Metallurgical and Materials
+Transactions A 39 (2008) 218–224.
+59
+
+===== PDF PAGE 60 =====
+[25] T. Duh, J. Kai, F. Chen, L. Wang, Numerical simulation modeling on the effects
+of grain boundary misorientation on radiation-induced solute segregation in 304
+austenitic stainless steels, Journal of Nuclear Materials 294 (3) (2001) 267–273.
+[26] K. G. Field, Y. Yang, T. R. Allen, J. T. Busby, Defect sink characteristics of
+specific grain boundary types in 304 stainless steels under high dose neutron
+environments, Acta Materialia 89 (2015) 438–449.
+[27] Y. Yang, K. G. Field, T. R. Allen, J. T. Busby, Roles of vacancy/interstitial
+diffusion and segregation in the microchemistry at grain boundaries of irradiated
+Fe–Cr–Ni alloys, Journal of Nuclear Materials 473 (2016) 35–53.
+[28] M. Nastar, P. Bellon, G. Martin, J. Ruste, Role of interstitial and interstitial-
+impurity interaction on irradiation-induced segregation in austenitic steels, MRS
+Online Proceedings Library (OPL) 481 (1997) 383.
+[29] L. Barnard, J. Tucker, S. Choudhury, T. Allen, D. Morgan, Modeling radia-
+tion induced segregation in Ni–Cr model alloys from first principles, Journal of
+Nuclear Materials 425 (1-3) (2012) 8–15.
+[30] A. Ozturk, M. Gencturk, K. Ahmed, Surface and size effects on the behaviors
+of point defects in irradiated crystalline solids, Frontiers in Materials 8 (2021)
+684862.
+[31] J. P. Wharry, G. S. Was, The mechanism of radiation-induced segregation in
+ferritic–martensitic alloys, Acta Materialia 65 (2014) 42–55.
+[32] M. R. Tonks, A. Cheniour, L. Aagesen, How to apply the phase field method to
+model radiation damage, Computational Materials Science 147 (2018) 353–362.
+60
+
+===== PDF PAGE 61 =====
+[33] Y. Li, S. Hu, X. Sun, M. Stan, A review: applications of the phase field method
+in predicting microstructure and property evolution of irradiated nuclear mate-
+rials, npj Computational Materials 3 (1) (2017) 16.
+[34] L. Thuinet, M. Nastar, E. Martinez, G. B. Moladje, A. Legris, F. Soisson,
+Multiscale modeling of radiation induced segregation in iron based alloys, Com-
+putational Materials Science 149 (2018) 324–335.
+[35] J. Piochaud, M. Nastar, F. Soisson, L. Thuinet, A. Legris, Atomic-based phase-
+field method for the modeling of radiation induced segregation in Fe–Cr, Com-
+putational Materials Science 122 (2016) 249–262.
+[36] A. A. Rezwan, D. Schwen, Y. Zhang, Effect of concurrent grain growth on
+radiation-induced segregation in nanocrystalline Fe–Cr–Ni alloys, Journal of
+Nuclear Materials 563 (2022) 153614.
+[37] V. Barbe, M. Nastar, A self-consistent mean field calculation of the phenomeno-
+logical coefficients in a multicomponent alloy with high jump frequency ratios,
+Philosophical Magazine 86 (11) (2006) 1513–1538.
+[38] D. R. Trinkle, Automatic numerical evaluation of vacancy-mediated transport
+for arbitrary crystals: Onsager coefficients in the dilute limit using a green
+function approach, Philosophical Magazine 97 (28) (2017) 2514–2563.
+[39] T. Schuler, L. Messina, M. Nastar, Kineclue: A kinetic cluster expansion code to
+compute transport coefficients beyond the dilute limit, Computational Materials
+Science 172 (2020) 109191.
+[40] C. Dai, Q. Wang, A. Prudil, W. Li, L. Walters, Radiation-induced segregation at
+61
+
+===== PDF PAGE 62 =====
+grain boundaries of alloy 800H: Experimentally-informed atomistic simulations,
+Journal of Nuclear Materials 579 (2023) 154395.
+[41] P.-R. Cha, S. G. Kim, D.-H. Yeon, J.-K. Yoon, A phase field model for the solute
+drag on moving grain boundaries, Acta Materialia 50 (15) (2002) 3817–3829.
+[42] F. Abdeljawad, S. M. Foiles, Stabilization of nanocrystalline alloys via grain
+boundary segregation: a diffuse interface model, Acta Materialia 101 (2015)
+159–171.
+[43] W. Wolfer, Drift forces on vacancies and interstitials in alloys with radiation-
+induced segregation, Journal of Nuclear Materials 114 (2-3) (1983) 292–304.
+[44] M. Plapp, Unified derivation of phase-field models for alloy solidification from
+a grand-potential functional, Physical Review E 84 (3) (2011) 031601.
+[45] L. K. Aagesen, Y. Gao, D. Schwen, K. Ahmed, Grand-potential-based phase-
+field model for multiple phases, grains, and chemical components, Physical Re-
+view E 98 (2) (2018) 023309.
+[46] N. Moelans, B. Blanpain, P. Wollants, Quantitative analysis of grain boundary
+properties in a generalized phase field model for grain growth in anisotropic
+systems, Physical Review B 78 (2) (2008) 024113.
+[47] A. Choudhury, M. Kellner, B. Nestler, A method for coupling the phase-field
+model based on a grand-potential formalism to thermodynamic databases, Cur-
+rent Opinion in Solid State and Materials Science 19 (5) (2015) 287–300.
+[48] T. Boutin, W. Verdier, A. Cartalade, Grand-potential-based phase-field model of
+dissolution/precipitation: Lattice boltzmann simulations of counter term effect
+on porous medium, Computational Materials Science 207 (2022) 111261.
+62
+
+===== PDF PAGE 63 =====
+[49] S. Chatterjee, N. Moelans, A grand-potential based phase-field approach for
+simulating growth of intermetallic phases in multicomponent alloy systems, Acta
+Materialia 206 (2021) 116630.
+[50] A. M. Jokisaari, S. B. Kadambi, S. K. Mazumder, M. M. Swisher, W. T. Yorga-
+son, Defect production and microstructural feature impact for radiation damage
+in additively manufactured 316 stainless steel, Tech. rep., Idaho National Lab-
+oratory (INL), Idaho Falls, ID (United States) (2024).
+[51] P.-C. Simon, L. K. Aagesen, C. Jiang, W. Jiang, J.-H. Ke, Mechanistic calcula-
+tion of the effective silver diffusion coefficient in polycrystalline silicon carbide:
+Application to silver release in AGR-1 TRISO particles, Journal of Nuclear Ma-
+terials 563 (2022) 153669.
+[52] J. R. Manning, Correlation factors for diffusion in nondilute alloys, Physical
+Review B 4 (4) (1971) 1111.
+[53] T. Jourdan, Influence of dislocation and dislocation loop biases on microstruc-
+tures simulated by rate equation cluster dynamics, Journal of Nuclear Materials
+467 (2015) 286–301.
+[54] Z. Chang, P. Olsson, D. Terentyev, N. Sandberg, Dislocation bias factors in
+fcc copper derived from atomistic calculations, Journal of Nuclear Materials
+441 (1-3) (2013) 357–363.
+[55] L. Wang, R. D. Kamachali, Density-based grain boundary phase diagrams: Ap-
+plication to Fe-Mn-Cr, Fe-Mn-Ni, Fe-Mn-Co, Fe-Cr-Ni and Fe-Cr-Co alloy sys-
+tems, Acta Materialia 207 (2021) 116668.
+63
+
+===== PDF PAGE 64 =====
+[56] A. Lidiard, A note on Manning’s relations for concentrated multicomponent
+alloys, Acta Metallurgica 34 (8) (1986) 1487–1490.
+[57] H. Wiedersich, P. Okamoto, N. Q. Lam, A theory of radiation-induced segrega-
+tion in concentrated alloys, Journal of Nuclear Materials 83 (1) (1979) 98–108.
+[58] T. Klaver, D. Hepburn, G. Ackland, Defect and solute properties in dilute Fe-
+Cr-Ni austenitic alloys from first principles, Physical Review B 85 (17) (2012)
+174111.
+[59] J. Piochaud, T. Klaver, G. Adjanor, P. Olsson, C. Domain, C. Becquart, First-
+principles study of point defects in an fcc Fe-10Ni-20Cr model alloy, Physical
+Review B 89 (2) (2014) 024101.
+[60] R. D. Kamachali, A model for grain boundary thermodynamics, RSC advances
+10 (45) (2020) 26728–26741.
+[61] A. Dinsdale, SGTE data for pure elements, Calphad 15 (4) (1991) 317–425.
+[62] J. Miettinen, Thermodynamic reassessment of Fe-Cr-Ni system with emphasis
+on the iron-rich corner, Calphad 23 (2) (1999) 231–248.
+[63] A. A. Kohnert, L. Capolungo, Sink strength and dislocation bias of three-
+dimensional microstructures, Physical Review Materials 3 (5) (2019) 053608.
+[64] S. Golubov, A. Barashev, R. Stoller, 1.13-Radiation damage theory, Compre-
+hensive Nuclear Materials 1 (2012) 357.
+[65] Y. Gu, J. Han, S. Dai, Y. Zhu, Y. Xiang, D. J. Srolovitz, Point defect sink effi-
+ciency of low-angle tilt grain boundaries, Journal of the Mechanics and Physics
+of Solids 101 (2017) 166–179.
+64
+
+===== PDF PAGE 65 =====
+[66] C. J. Permann, D. R. Gaston, D. Andrˇ s, R. W. Carlsen, F. Kong, A. D. Lindsay,
+J. M. Miller, J. W. Peterson, A. E. Slaughter, R. H. Stogner, et al., MOOSE: En-
+abling massively parallel multiphysics simulation, SoftwareX 11 (2020) 100430.
+[67] S. Choudhury, L. Barnard, J. Tucker, T. Allen, B. Wirth, M. Asta, D. Morgan,
+Ab-initio based modeling of diffusion in dilute bcc Fe–Ni and Fe–Cr alloys and
+implications for radiation induced segregation, Journal of Nuclear Materials
+411 (1-3) (2011) 1–14.
+[68] M. Welland, E. Tenuta, A. Prudil, Linearization-based method for solving a
+multicomponent diffusion phase-field model with arbitrary solution thermody-
+namics, Physical Review E 95 (6) (2017) 063312.
+[69] L. Xia, Y. Ji, W. Liu, H. Chen, Z. Yang, C. Zhang, L.-Q. Chen, Radiation
+induced grain boundary segregation in ferritic/martensitic steels, Nuclear Engi-
+neering and Technology 52 (1) (2020) 148–154.
+[70] C. M. Barr, G. A. Vetterick, K. A. Unocic, K. Hattar, X.-M. Bai, M. L. Taheri,
+Anisotropic radiation-induced segregation in 316L austenitic stainless steel with
+grain boundary character, Acta Materialia 67 (2014) 145–155.
+[71] X. Yan, P. Xu, P. Han, N. Dong, J. Wang, C. Zhang, The Effect of B on the
+co-segregation of C-Cr at grain boundaries in austenitic steels, Metals 13 (6)
+(2023) 1044.
+[72] T. G. Lach, M. J. Olszta, S. D. Taylor, K. H. Yano, D. J. Edwards, T. S.
+Byun, P. H. Chou, D. K. Schreiber, Correlative STEM-APT characterization of
+radiation-induced segregation and precipitation of in-service BWR 304 stainless
+steel, Journal of Nuclear Materials 549 (2021) 152894.
+65
+
+===== PDF PAGE 66 =====
+[73] Y. Dong, B. Sencer, F. Garner, E. Marquis, Microchemical and microstructural
+evolution of AISI 304 stainless steel irradiated in EBR-II at PWR-relevant dpa
+rates, Journal of Nuclear Materials 467 (2015) 692–702.
+[74] Z. Jiao, G. Was, Novel features of radiation-induced segregation and radiation-
+induced precipitation in austenitic stainless steels, Acta Materialia 59 (3) (2011)
+1220–1238.
+[75] T. Toyama, Y. Nozawa, W. Van Renterghem, Y. Matsukawa, M. Hatakeyama,
+Y. Nagai, A. Al Mazouzi, S. Van Dyck, Grain boundary segregation in neutron-
+irradiated 304 stainless steel studied by atom probe tomography, Journal of
+Nuclear Materials 425 (1-3) (2012) 71–75.
+[76] M. Tomozawa, Y. Miyahara, K. Kako, Solute segregation on Σ3 and random
+grain boundaries in type 316L stainless steel, Materials Science and Engineering:
+A 578 (2013) 167–173.
+[77] K. G. Field, S. A. Briggs, P. Edmondson, X. Hu, K. C. Littrell, R. Howard,
+C. M. Parish, Y. Yamamoto, Evaluation of the effect of composition on radiation
+hardening and embrittlement in model FeCrAl alloys, Tech. rep., Oak Ridge
+National Laboratory (ORNL), Oak Ridge, TN (United States) (2015).
+[78] C. Sun, S. Zheng, C. Wei, Y. Wu, L. Shao, Y. Yang, K. Hartwig, S. Maloy,
+S. Zinkle, T. Allen, et al., Superior radiation-resistant nanoengineered austenitic
+304L stainless steel for applications in extreme radiation environments, Scientific
+Reports 5 (1) (2015) 7801.
+[79] S. Taller, Y. Chen, R. Song, W.-Y. Chen, A. Jokisaari, An approach to combine
+66
+
+===== PDF PAGE 67 =====
+neutron and ion irradiation data to accelerate material qualification for nuclear
+reactors, Journal of Nuclear Materials (2024) 155385.
+[80] N. Lam, Compositional changes in fe-cr-ni alloys under proton bombardment at
+elevated temperatures, Journal of Nuclear Materials 117 (1983) 106–112.
+[81] L. Messina, T. Schuler, M. Nastar, M.-C. Marinica, P. Olsson, Solute diffusion by
+self-interstitial defects and radiation-induced segregation in ferritic Fe–X (X=Cr,
+Cu, Mn, Ni, P, Si) dilute alloys, Acta Materialia 191 (2020) 166–185.
+[82] J.-H. Ke, B. W. Spencer, Cluster dynamics modeling of Mn-Ni-Si precipitates
+coupled with radiation-induced segregation in low-Cu reactor pressure vessel
+steels, Journal of Nuclear Materials 569 (2022) 153910.
+[83] J.-H. Ke, H. Ke, G. R. Odette, D. Morgan, Cluster dynamics modeling of mn-ni-
+si precipitates in ferritic-martensitic steel under irradiation, Journal of Nuclear
+Materials 498 (2018) 83–88.
+[84] A. Aitkaliyeva, L. He, H. Wen, B. Miller, X. Bai, T. Allen, 7 - Irradiation
+effects in Generation IV nuclear reactor materials, in: P. Yvon (Ed.), Structural
+Materials for Generation IV Nuclear Reactors, Woodhead Publishing, 2017, pp.
+253–283.
+[85] A. M. Jokisaari, P. Baldo, W. Chen, Y. Chen, D. Harbaruk, S. B. Kadambi,
+J.-H. Ke, M. M. Swisher, J. Hlavenka, Preliminary results addressing mate-
+rial qualification using combined ion irradiation and modeling data, Tech. rep.,
+Idaho National Laboratory (INL), Idaho Falls, ID (United States) (09 2023).
+[86] J.-H. Ke, Microstructure modeling of nuclear structural materials: Recent
+67
+
+===== PDF PAGE 68 =====
+progress and future directions, Computational Materials Science 230 (2023)
+112503.
+68
+
+===== PDF PAGE 69 =====
+Supplementary Material
+Phase-field modeling of radiation-induced composition
+redistribution: An application to additively manufactured
+austenitic Fe-Cr-Ni
+Sourabh B. Kadambi a,∗, Daniel Schwena, Jia-Hong Ke a, Lingfeng He a,b, Andrea
+Jokisaaria
+aIdaho National Laboratory, Idaho Falls, Idaho, USA
+bNorth Carolina State University, Raleigh, North Carolina, USA
+S1. Atom–point defect flux coupling
+Using Onsager transport and reciprocity relations, the partial fluxes of atomic
+elementsJυ
+ϕ are given in terms of the chemical potential gradients of atomic elements
+µk and point defects µυ as:
+Jυ
+ϕ =−
+KX
+k=1
+Lυ
+ϕk∇ [µk + sign(υ)µυ], (S1.1a)
+where sign(V ) = −1 and sign( I) = +1. The point defect fluxes are given by
+Jυ = sign(υ)PK
+k=1Jυ
+k. By using the Gibbs-Duhem relation PK
+k=1ck∇µk = 0, and
+substituting c1 ≈ 1−PK
+k=2ck, we can write ∇µ1 = −PK
+k=2ck∇(µk− µ1) and
+∇µk(̸=1) = (1−PK
+k=2ck)∇(µk−µ1) +PK
+j=2cj∇(µk−µj). The independent fluxes
+s1
+
+===== PDF PAGE 70 =====
+(ϕ = 2 :K) can then be written as:
+Jυ
+ϕ =−
+KX
+k=2
+ 
+Lυ
+ϕk−ck
+KX
+j=1
+Lυ
+ϕj
+!
+∇(µk−µ1)
+−
+X
+υ=V,I
+ KX
+j=1
+sign(υ)Lυ
+ϕj
+!
+∇µυ (S1.2a)
+Jυ =−
+KX
+k=2
+"
+sign(υ)
+ KX
+j=1
+Lυ
+kj−ck
+KX
+i=1
+KX
+j=1
+Lυ
+ij
+!#
+∇(µk−µ1)
+−
+ KX
+i=1
+KX
+j=1
+Lυ
+ij
+!
+∇µυ. (S1.2b)
+The total atomic fluxes are Jϕ =P
+υ=V,IJυ
+ϕ. By defining Lϕυ =PK
+j=1 sign(υ)Lυ
+ϕj,
+Lυυ = PK
+i=1
+PK
+j=1Lυ
+ij, L1
+υk = sign(υ)
+PK
+j=1Lυ
+kj−ckLυυ
+
+, and L1
+ϕk = P
+υLυ
+ϕk−
+ck
+P
+υ sign(υ)Lϕυ, we obtain the total atomic and point defect fluxes as:
+Jϕ =−
+KX
+k=2
+L1
+ϕk∇µk1−
+X
+υ=V,I
+Lϕυ∇µυ, (S1.3a)
+Jυ =−
+KX
+k=2
+L1
+υk∇µk1−Lυυ∇µυ. (S1.3b)
+Here,µk1 =µk−µ1 =∂fC(c2,...,c K)/∂ck is the diffusion potential ofk with respect
+to 1.
+S2. Density-based CALPHAD free energy
+The free energy density (fC) is described as:
+fC =Gm/Vm =
+
+cFe
+oGFe +cCr
+oGCr +cNi
+oGNi +Gideal
+mix +EGm
+
+/Vm, (S2.1)
+whereGm is the molar Gibbs energy and Vm is the molar volume. Gideal
+mix is the ideal
+configurational entropy, written as:
+Gideal
+mix =RT (cFe lncFe +cCr lncCr +cNi lncNi). (S2.2)
+s2
+
+===== PDF PAGE 71 =====
+Following the density-based CALPHAD free energy formulation described by Ka-
+machali [60], oGϕ (ϕ = Fe,Cr,Ni) and EGm are expressed as functions of the relative
+atomic density (σ). Here, the pure component Gibbs free energies are given by:
+oGϕ = oHfcc
+ϕ σ2−T oSfcc
+ϕ σ. (S2.3)
+And the molar excess Gibbs energy of mixing is given by:
+EGm =cFecCrLfcc
+Fe,Crσ2 +cFecNiLfcc
+Fe,Niσ2 +cCrcNiLfcc
+Cr,Niσ2
++cFecCrcNiLfcc
+Fe,Cr,Niσ2. (S2.4)
+Per Dinsdale [61], the pure component enthalpies and entropies for the FCC phase
+in J/mol are:
+oHfcc
+Fe = 24.664T + 154717T−1 + 3.75752× 10−3T 2
++ 1.178538× 10−7T 3− 236.7, (S2.5a)
+oHfcc
+Cr = 26.908T + 278500T−1− 1.89435× 10−3T 2
++ 2.95442× 10−6T 3− 1572.94, (S2.5b)
+oHfcc
+Ni = 4.8407× 10−3T 2 + 22.096T− 5179.159 (S2.5c)
+and
+oSfcc
+Fe = 7.51504× 10−3T + 24.664 lnT + 77358.5T−2
++ 1.767807× 10−7T 2− 107.7517, (S2.6a)
+oSfcc
+Cr = 26.908 lnT− 3.7887× 10−3T + 139250T−2
++ 4.43163× 10−6T 2− 130.735, (S2.6b)
+oSfcc
+Ni = 9.6814× 10−3T + 22.096 lnT− 95.758. (S2.6c)
+s3
+
+===== PDF PAGE 72 =====
+Per Miettinen [62], the optimized ternary interaction parameters of the FCC phase
+in J/mol are:
+Lfcc
+Fe,Cr = (10833− 7.477) + (−1410)(cFe−cCr), (S2.7a)
+Lfcc
+Fe,Ni = (−12054 + 3.274T ) + (11082− 4.45T )(cFe−cNi)
++ (−726)(cFe−cNi)2, (S2.7b)
+Lfcc
+Cr,Ni = (8030− 12.88T ) + (33080− 16.036T )(cCr−cNi) (S2.7c)
+Lfcc
+Fe,Cr,Ni = (−6500)cFe + (10000− 10T )cCr + (48000)cNi. (S2.7d)
+S3. PF framework for GB
+Using the chain rule of differentiation, the gradient of atomic concentration
+cϕ(µϕ1,η) at any point can be written in terms of the gradients of µϕ1 and ηn as:
+∇cϕ =
+KX
+j=2
+∂cϕ
+∂µj1
+∇µj1 +
+NX
+n=1
+∂cϕ
+∂ηn
+∇ηn. (S3.1)
+Using Eq. 8a, we have ∂cϕ
+∂ηn
+=
+
+cg
+ϕ−cb
+ϕ
+ ∂gmw
+∂ηn
+. Substituting in Eq. S3.1, we get:
+∇cϕ =
+KX
+j=2
+χϕj∇µj1 +
+NX
+n=1
+
+cg
+ϕ−cb
+ϕ
+∂gmw
+∂ηn
+∇ηn, (S3.2)
+where χϕj is the susceptibility. For convenience, the above system of equations for
+ϕ = 2 :K can be rewritten in the matrix form and rearranged as:
+
+
+∇c2−PN
+n=1
+
+cg
+2−cb
+2
+ ∂gmw
+∂ηn
+∇ηn
+...
+∇cK−PN
+n=1
+
+cg
+K−cb
+K
+ ∂gmw
+∂ηn
+∇ηn
+
+ =
+
+
+χ22 ... χ 2K
+... ... ...
+χK1 ... χ KK
+
+
+
+
+∇µ21
+...
+∇µK1
+
+, (S3.3)
+s4
+
+===== PDF PAGE 73 =====
+where the first term on the right-hand side of the equation is the atomic susceptibility
+matrixχ. The gradients of diffusion potentials can then be expressed as:
+
+
+∇µ21
+...
+∇µK1
+
+ =
+
+
+χ22 ... χ 2K
+... ... ...
+χK1 ... χ KK
+
+
+−1
+
+∇c2−PN
+n=1
+
+cg
+2−cb
+2
+ ∂gmw
+∂ηn
+∇ηn
+...
+∇cK−PN
+n=1
+
+cg
+K−cb
+K
+ ∂gmw
+∂ηn
+∇ηn
+
+, (S3.4)
+where the inverse of the susceptibility matrix is the thermodynamic factor matrix,
+given by:
+θ =
+
+
+θ22 ... θ 2K
+... ... ...
+θK1 ... θ KK
+
+ =χ−1 =
+
+
+χ22 ... χ 2K
+... ... ...
+χK1 ... χ KK
+
+
+−1
+. (S3.5)
+The system of equations for ∇µϕ1 is:
+∇µϕ1 =
+KX
+j=2
+θϕj∇cj−
+KX
+j=2
+NX
+n=1
+θϕj
+
+cg
+ϕ−cb
+ϕ
+∂gmw
+∂ηn
+∇ηn. (S3.6)
+Using Eq. 8a, the local susceptibility at any point is realized as the interpolation
+between the phase susceptibilities as:
+χij = ∂ci
+∂µj1
+= ∂[cb
+i(1− ¯gmw) +cg
+i ¯gmw]
+∂µj1
+=χb
+ij(1− ¯gmw) +χg
+ij¯gmw. (S3.7)
+Here, the phase susceptibilities χb/g
+ij are obtained from the thermodynamic factors of
+the CALPHAD free energy fC as χ−1
+ij =θij = ∂2fC
+∂ci∂cj
+. For a ternary component alloy
+(1 being Fe, 2 being Cr and 3 being Ni), by using Eq. S3.5 and ¯ gb
+mw = 1− ¯gmw, we
+s5
+
+===== PDF PAGE 74 =====
+can write the thermodynamic factors as:
+θ22 = χb
+33¯gb
+mw +χg
+33¯gmw
+
+χb
+22¯gb
+mw +χg
+22¯gmw
+
+χb
+33¯gb
+mw +χg
+33¯gmw
+
+−
+
+χb
+23¯gb
+mw +χg
+23¯gmw
+2,
+θ23 = −
+
+χb
+23¯gb
+mw +χg
+23¯gmw
+
+
+χb
+22¯gb
+mw +χg
+22¯gmw
+
+χb
+33¯gb
+mw +χg
+33¯gmw
+
+−
+
+χb
+23¯gb
+mw +χg
+23¯gmw
+2,
+θ33 = χb
+22¯gb
+mw +χg
+22¯gmw
+
+χb
+22¯gb
+mw +χg
+22¯gmw
+
+χb
+33¯gb
+mw +χg
+33¯gmw
+
+−
+
+χb
+23¯gb
+mw +χg
+23¯gmw
+2. (S3.8a)
+To prevent atomic concentrations from taking nonphysical values (ck < 0 or ck > 1)
+during RIS, we introduce concentration dependence to the phase-specific thermo-
+dynamic factors in Eqs. 12 and 14 as: θ23 = ¯θ◦
+23/c1, θ22 = ¯θ◦
+22(1− c3)/c1 and
+θ33 = ¯θ◦
+33(1− c2)/c1. Here, ¯θ◦ are the normalized factors calculated at nominal
+concentrations as ¯θ◦
+23 =θ◦
+23c◦
+1, ¯θ◦
+22 =θ◦
+22c◦
+1/(1−c◦
+3) and ¯θ◦
+33 =θ◦
+33c◦
+1/(1−c◦
+2). Here, all
+quantitiesθ and ck are specific to the phase b or g.
+S4. Solute-SIA binding
+RIS simulations in the main paper were performed using preferential Solute-SIA
+binding, with a positive binding for Cr and negative binding for Ni. In Fig. S1, we
+compare these results with the simulations performed without preferential Solute-
+SIA binding (i.e. Eb
+CrI−Eb
+FeI = 0 and Eb
+NiI−Eb
+FeI = 0 yielding binding factors of
+βk = 1 for Fe, Cr and Ni). With the assumption that there is no difference in the
+binding energies as well as migration energies for transport of the elements via SIA,
+RIS to GB is primarily determined by the preferential transport of the elements via
+vacancies. Due to the absence preferential Cr flux via SIA transport, Cr depletion is
+seen to be significantly greater, especially at lower temperatures. Correspondingly,
+Ni enrichment is also significantly greater. These observations are in agreement with
+similar changes in RIS observed by Yang et al. [27] for simulations performed (at 320
+s6
+
+===== PDF PAGE 75 =====
+°C and 8× 10−7 dpa/s) with and without SIA-atom coupling. These results show
+that the RIS model based on Yang et al. [27] involves significant contributions from
+both vacancy and SIA fluxes. For the default bulk dislocation density ρb = 10−14
+m−2, if a strong bias of ZI = 1.2 for SIA absorption is assumed, RIS results (without
+Solute-SIA binding) show a significant decrease in Ni enrichment compared to the
+case of ZI = 1 without absorption bias. This can be explained by the increased
+absorption of SIAs and thus the reduced flux of Ni via SIA to the GB. Since Cr
+concentration is already low due to preferential vacancy-Cr exchange, reduced flux
+of Cr is not seen to significantly alter Cr RIS. The effect of bias (ZI = 1.2) on RIS for
+the case with Solute-SIA binding (as discussed in the main paper) is seen to decrease
+Ni enrichment and slightly enhance Cr depletion. Since the total Cr outflux from
+GB is the sum of vacancy and SIA outfluxes, the reduction in Cr influx for ZI = 1.2
+results in an effectively greater Cr outflux via vacancy-Cr exchange.
+(a)
+ (b)
+Figure S1: RIS at GB for (a) Ni and (b) Cr versus temperature calculated from a 1D system of 1
+µm grain size irradiated to 10 dpa or 60 days. The DBC method with a 1 nm mesh was used for
+simulation. Corresponding to a bulk dislocation density of ρb = 10 14 m−2, results are shown for
+cases with and without preferential SIA binding and for ZI = 1 and ZI = 1.2 (biased absorption).
+All other parameters default to Table 1.
+s7
+
+===== PDF PAGE 76 =====
+S5. Equilibrium GB properties
+To relate the PF model parameters with the material properties, we consider a
+planar interface. The following relations then hold under chemical equilibrium and
+stationary interface conditions:
+µk1(x)≡µe
+k1(const.(x)), (S5.1a)
+δΩ
+δηi
+= ∂ω
+∂ηe
+i
+−κd2ηe
+i
+dx2 = 0. (S5.1b)
+Here, the superscript “ e” denotes the equilibrium condition and x is the spatial
+coordinate normal to the planar GB. The equilibrium concentrations at any point
+are given by:
+ce
+k =(1− ¯ge
+mw)cb,e
+k + ¯ge
+mwcg,e
+k , (S5.2)
+where the phase concentrations are constant with respect to x, owing to Eq. S5.1a.
+As such, the phase grand potential densities are also constant with respect to x, and
+are thus decoupled from the order parameters. Eq. S5.1b follows as:
+(m0 + ∆ωe
+g)d¯ge
+mw
+dηe
+i
+−κd2ηe
+i
+dx2 = 0, (S5.3)
+where ∆ωe
+g =ωg(µe)−ωb(µe) captures the parallel tangent distance for equilibrium
+GB segregation. Following Moelans et al. [46], we can write the integrated equation
+involving the two order parameters ηi and ηj defining the GB:
+(m0 + ∆ωe
+g)¯ge
+mw− κ
+2
+"dηe
+i
+dx
+2
++
+dηe
+j
+dx
+2#
+= 0. (S5.4)
+The following far field boundary conditions for ηi and ηj are utilized here: ηi = 1
+and ηj = 0 for x→−∞ ; ηi = 0 and ηj = 1 for x→ +∞; and dηi/dx =dηj/dx = 0
+s8
+
+===== PDF PAGE 77 =====
+for x→±∞ . Rearrangement of the above equation yields:
+dηe
+i
+dx =−
+q
+2(m0 + ∆ωe
+g)¯gmw
+s
+κ
+
+1 +
+dηe
+j
+dηe
+i
+2 and dηe
+j
+dx =−
+q
+2(m0 + ∆ωe
+g)¯gmw
+s
+κ
+
+1 +
+
+dηe
+i
+dηe
+j
+2 . (S5.5)
+Since
+dηe
+j
+dηe
+i
+=−1, the above reduces to:
+dηe
+i
+dx =−
+q
+(m0 + ∆ωe
+g)¯gmw
+√κ and dηe
+j
+dx =
+q
+(m0 + ∆ωe
+g)¯gmw
+√κ . (S5.6)
+Defining the GB width δ as the gradient of ηi atx = 0 and substituting ηe
+i (x = 0) =
+ηe
+j(x = 0) = 0.5 or ¯ge
+mw(x = 0) = 1 yields:
+δ = 1
+|(dηe
+i/dx)x=0| =
+√κpm0 + ∆ωe
+g
+. (S5.7)
+Substituting for ¯gmw and δ, Eq. S5.6 can be written as:
+dηe
+i
+dx =−4
+δηi(1−ηi) and dηe
+j
+dx = 4
+δηj(1−ηj). (S5.8)
+Following Ref. [46], the solutions for the order parameters at equilibrium are:
+ηi(x) = 1
+2
+
+1− tanh
+2x
+δ
+
+and ηj(x) = 1
+2
+
+1 + tanh
+2x
+δ
+
+. (S5.9)
+The GB energy is defined as the excess grand potential per unit area and is obtained
+for the stationary planar interface at chemical equilibrium as:
+γ =
+Z ∞
+−∞
+"
+ωe
+b + (m0 + ∆ωe
+g)¯gmw + κ
+2
+dηi
+dx
+2
++ κ
+2
+dηi
+dx
+2#
+dx
+−
+Z ∞
+−∞
+ωe
+bdx. (S5.10)
+Employing the condition for equipartition of energy derived in Eq. S5.4 gives us:
+γ =
+Z ∞
+−∞
+2(m0 + ∆ωe
+g)¯gmwdx. (S5.11)
+s9
+
+===== PDF PAGE 78 =====
+Changing the variable of integration from x toηe
+i and substituting Eq. S5.6 gives us:
+γ =
+Z 1
+0
+2(m0 + ∆ωe
+g)¯gmw
+dx
+dηe
+i
+dηe
+i
+=
+Z 1
+0
+2
+q
+(m0 + ∆ωe
+g)κ¯gmwdηe
+i. (S5.12)
+Substituting ¯gmw = 16η2
+i (1−ηj)2 and taking the spatially independent terms out of
+the integral, we get:
+γ =8
+q
+(m0 + ∆ωe
+g)κ
+Z 1
+0
+ηe
+i (1−ηe
+j)dηe
+i. (S5.13)
+With the integral converging to 1/6, the GB energy is finally given as:
+γ =4
+3
+q
+(m0 + ∆ωe
+g)κ. (S5.14)
+S6. Equilibrium PF properties for GB
+For a planar PF interface at equilibrium, the excess GB energy γ and GB width
+δ are obtained as (see Sec. S5):
+γ = 4
+3
+q
+(m0 + ∆ωe
+g)κ (S6.1)
+and
+δ =
+√κpm0 + ∆ωe
+g
+, (S6.2)
+where ∆ωe
+g = ωe
+g−ωe
+b. Here, “ e” denotes that the quantities are evaluated for the
+condition of a stationary GB, ∂ηi/∂t = 0, and a constant diffusion potential µk1
+across the system. For a large system, the equilibrium concentration in the bulk can
+be assumed to be close to nominal. Thus, considering “ e” and “◦” (determined in
+Sec. 3.4) to be equivalent gives us ∆ωe
+g =fg,o−fb,o−µo
+CrFe (cg,◦
+Cr−cb,◦
+Cr)−µo
+NiFe (cg,◦
+Ni−
+cb,◦
+Ni). At 500◦C andσ = 0.8, this yields ∆ωe
+g = 2.5×108 J/m3. Thus, for a GB energy
+s10
+
+===== PDF PAGE 79 =====
+ofγ = 1 J/m2,m0 = 0 could be set to uniquely determineκ = 2.2×10−9 J/m andδ =
+2.9 nm by using the above relations. However, the temperature dependence of γ of
+∆ωe
+g would lead to significant GB width variation with temperature. Moreover, ∆ωe
+g
+tends to vanish as σ approaches unity (i.e., as the free energy of the GB approaches
+that of the bulk), yielding unphysical widths. Therefore, to model GBs without
+TS, a finite m0 must be determined by setting a value for δ per the convention in
+PF models. To simplify the parameterization and interpretation of results, we omit
+ωg−ωb from Eq. 13 and set ∆ωe
+g = 0 in Eqs. S6.1 and S6.2. We assume γ = 1 J/m2
+andδ = 1nm, thus yielding the parameters m0 = 7.5× 108 J/m3 andκ = 7.5× 10−10
+J/m.
+S7. Results of testing the adaptive time stepper
+Here, we present the results of convergence study of 1D RIS simulations per-
+formed for different parameters of the time stepping scheme, IterationAdaptiveDT,
+in the MOOSE framework. The time stepper increases or decreases the time step
+to maintain a certain number of nonlinear iterations, as specified by the parameter
+optimal iterations and iteration window. For the simulations in this work, we
+set optimal iterations = 8 and iteration window = 2 as the default. As high
+values of optimal iterations can result in greater time steps that could potentially
+increase discretization error of the simulation results, we performed a simulation for
+a lower value of optimal iterations = 4 in Fig. S2. A simulation was also per-
+formed with optimal iterations = 8 by cutting the time step sizes ( dt) realized
+by the default simulation by a factor of 10. Another simulation was performed by
+limiting the maximum time step size ( dt max) to 10−3 days. The results for atomic
+and point defect concentrations do not change significantly for the different param-
+eters values of the time stepper tested here; the error between the concentrations at
+s11
+
+===== PDF PAGE 80 =====
+any time is less than 1%.
+(a)
+ (b)
+(c)
+ (d)
+Figure S2: Results from different settings in MOOSE’s IterationAdaptiveDT time stepper.(a) Sim-
+ulation time step versus time. Evolution of (b) Ni and Cr RIS at GB. Evolution of vacancy (vac.)
+and SIA concentrations at (c) bulk and (d) GB.
+s12
+
+===== PDF PAGE 81 =====
+S8. Supplementary results on atomic and point defect concentrations
+Figure S3: Steady-state point defect concentrations near the GB in a 1D system of 1 µm grain size
+when under irradiation at 2 × 10−6 dpa/s and 500 °C. Profiles corresponding to the RIS (Fig. 3a),
+RETS (Fig. 3b) and RIS+RETS (Fig. 4a) mechanisms are nearly identical.
+Figure S4: Low magnification plot of segregation profiles from Fig. 4 corresponding to RIS and TS
+mechanisms in a 1D system of 1µm grain size when under irradiation at 2×10−6 dpa/s and 500°C.
+(a) σ = 0.8 and (b) σ = 0.9. The non-monotonic segregation at the GB is not discernible for Ni in
+(a) and for Cr and Ni in (b).
+s13
+
+===== PDF PAGE 82 =====
+Figure S5: Segregation due to very weak TS modeled by σ = 0.95 in a 1D system of 1µm grain size
+when under irradiation at 2×10−6 dpa/s and 500°C. (a) The RETS mechanism. (b) The combined
+RIS and TS mechanisms.
+Figure S6: Point defect concentrations as a function of grain size from 1D PF simulations of RIS
+in Fig. 9 with bulk dislocation density ρb = 10 14 m−2 and dislocation absorption efficiency of
+ZI = 1 for SIA. Bulk concentrations are seen to be identical between the PF and DBC (1 nm mesh)
+implementation, and decrease with decrease in grain size. GB concentrations are higher in the PF
+implementation.
+s14
+
+===== PDF PAGE 83 =====
+(a) 300 °C
+ (b) 500 °C
+(c) 700 °C
+Figure S7: Evolution of bulk and GB concentrations of vacancy (vac.) and SIA in a 1D system
+of 1 µm grain size when under irradiation at 2 × 10−6 dpa/s at different temperatures. For each
+temperatures, plots for the RIS, RETS and RIS+RETS mechanisms are found to be nearly identical.
+Results for 500 °C corresponds to Fig. 5.
+s15
+
+===== PDF PAGE 84 =====
+(a) 300 °C
+ (b) 500 °C
+(c) 700 °C
+Figure S8: Evolution of bulk and GB concentrations of Ni and Cr corresponding to Fig. S7. Both
+RIS and RETS are seen to evolve after the point defect concentrations in Fig. S7 reach a quasi-
+steady state determined by point defect generation, recombination, bulk dislocation absorption and
+GB sink. For 300 °C and 700 °C, RETS is seen to dominate, whereas for 500 °C, RIS is seen to
+dominate. Atomic concentrations are seen to reach equilibrium RETS faster than steady-state RIS.
+Results for 500 °C are identical to Fig. 5.
+s16
+
+===== PDF PAGE 85 =====
+Figure S9: Steady-state point vacancy (vac.) and SIA concentrations in a 1D AM microstructure
+of 500 nm dislocation cell size irradiated at 500 °C. The AM system corresponds to conditions
+similar to Fig. 10a. Higher CW dislocation density ρb,w results in significantly lower point defect
+concentrations at the CW. Biased absorption (ZI = 1.2) of SIA by dislocations results in a slightly
+lower SIA concentration.
+(a)
+ (b)
+Figure S10: Evolution of point defect concentrations at the CW and cell centers in the 1D AM
+microstructure of Fig. S9. Results are shown for different ZI and a CW dislocation density of
+ρb,w = 5× 1015 m−2.
+s17
+
+===== PDF PAGE 86 =====
+(a)
+ (b)
+Figure S11: Point defect concentrations at (a) the dislocation cell center and (b) the dislocation
+CW center as a function of dislocation cell size from RIS simulations of 1D AM microstructure
+corresponding to Fig. 11. Increasing the dislocation density ρb,w or the absorption efficiency for
+SIA ZI for ρb,w = 5× 1015 m−2 is seen to decrease the point defect concentration at the CW.
+Significant decrease in the concentrations at the cell interior is only observed for low dislocation
+cell sizes.
+s18

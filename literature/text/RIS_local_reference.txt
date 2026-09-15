@@ -1,0 +1,1934 @@
+===== PDF PAGE 1 =====
+1.08 Radiation-Induced Segregation ☆
+Maylise Nastar and Frédéric Soisson, The French Alternative Energies and Atomic Energy Commission, Gif-sur-Yvette, France
+r 2020 Elsevier Ltd. All rights reserved.
+1.08.1 Introduction 236
+1.08.2 Experimental Observations 237
+1.08.2.1 Anthony ’s Experiments 237
+1.08.2.2 First Observations of RIS 238
+1.08.2.3 General Trends 239
+1.08.2.3.1 Segregating elements 239
+1.08.2.3.2 Segregation pro ﬁles 239
+1.08.2.3.3 Temperature effects 239
+1.08.2.3.4 Effects of radiation particles, dose, and dose rates 240
+1.08.2.3.5 Impurity effects 240
+1.08.2.3.6 Density of sinks 240
+1.08.2.4 RIS and Precipitation 241
+1.08.2.5 RIS in Austenitic and Ferritic Steels 242
+1.08.2.6 RIS in High Entropy Alloys 243
+1.08.3 Diffusion Equations: The TIP Formalism 244
+1.08.3.1 Fluxes in Terms of L and ∇m 244
+1.08.3.2 Fluxes in Terms of D and ∇C 245
+1.08.3.2.1 ∇m– ∇C relationship 245
+1.08.3.2.2 L – D relationship 246
+1.08.3.2.3 Analytical solutions at steady state 247
+1.08.4 Diffusion Equations: Application to Real Systems 248
+1.08.4.1 Diffusion Equation Parameters From Experiments 248
+1.08.4.1.1 Thermodynamic databases 248
+1.08.4.1.2 Experimental evaluation of the kinetic coef ﬁcients 248
+1.08.4.1.2.1 Interdiffusion experiments 248
+1.08.4.1.2.2 Anthony ’s experiment 249
+1.08.4.1.2.3 Diffusion under irradiation 249
+1.08.4.2 L and D Coefﬁcients From Empirical Models 249
+1.08.4.2.1 Manning-based model of concentrated alloys 249
+1.08.4.2.2 Local concentration-dependent RIS model 250
+1.08.4.3 Diffusion Equation Parameters From Atomic Models 251
+1.08.4.3.1 Jump frequencies 251
+1.08.4.3.1.1 Ab initio calculations 251
+1.08.4.3.1.2 Interatomic potentials 251
+1.08.4.3.1.3 Broken-bond models 252
+1.08.4.3.2 Calculation of the phenomenological coef ﬁcients 252
+1.08.4.3.2.1 Dilute alloys 253
+1.08.4.3.2.2 Concentrated alloys 253
+1.08.4.4 Comparison With Experiment 254
+1.08.4.4.1 Dilute alloys 254
+1.08.4.4.2 Austenitic steels 254
+1.08.4.4.3 Ferritic steels 255
+1.08.4.5 Challenges of the RIS Continuous Models 256
+1.08.5 Simulation of RIS From Atomic Jumps 256
+1.08.5.1 Creation and Elimination of Point Defects 256
+1.08.5.2 Lattice Rate Models 257
+☆Change History : April 2015. Maylise Nastar corrected Eq. (28). New references have been added mainly in Sections 1.08.2.5., 1.08.4.2.1., and 1.08.4.2.2.
+January 2020. Added changes to the entire manuscript.
+This is an update of Nastar, M., Soisson, F., 2016. Radiation-Induced Segregation. Reference Module in Materials Science and Materials Engineering , Elsevier.
+Comprehensive Nuclear Materials 2nd edition, Volume 1 doi:10.1016/B978-0-12-803581-8.00668-8 235
+
+===== PDF PAGE 2 =====
+1.08.5.3 Monte Carlo Simulations 257
+1.08.5.4 Phase Field Models 259
+1.08.6 Conclusion 260
+Acknowledgments 261
+References 262
+Abbreviations
+1nn ﬁrst nearest neighbor
+2nn second nearest neighbor
+AKMC atomic kinetic Monte Carlo
+bcc body-centered cubic
+DFT density functional theory
+dpa displacement per atom
+fcc face-centered cubic
+IASCC irradiation-assisted stress corrosion cracking
+IK inverse Kirkendall
+MIK modiﬁed inverse Kirkendall
+nn nearest neighbor
+NRT Norgett, Robinson, and Torrens
+PPM path probability method
+RIP radiation-induced precipitation
+RIS radiation-induced segregation
+SCMF self-consistent mean ﬁeld
+TEM transmission electron microscopy
+TIP thermodynamics of irreversible processes
+Symbols
+D Diffusion coef ﬁcient Lij, L or L-coefﬁcient Phenomenological coef ﬁcient
+1.08.1 Introduction
+Irradiation creates excess point defects in materials (vacancies and self-interstitial atoms), which can be eliminated by mutual
+recombination, clustering, or annihilation on preexisting or radiation-induced defects in the microstructure, such as surfaces, grain
+boundaries, dislocations, or point defect clusters (dislocation loops and voids). As a result, permanent irradiation sustains ﬂuxes of
+point defects toward these point defect sinks and, in case of any preferential transport of one of the alloy components, leads to a
+local chemical redistribution. These radiation-induced segregation (RIS) phenomena are very common in alloys under irradiation
+and have important technological implications. Speci ﬁcally in the case of austenitic steels, because Cr depletion at the grain
+boundary is suspected to be responsible for irradiation-assisted stress corrosion, a large number of experiments have been
+conducted on the RIS dependence on alloy composition, impurity additions, irradiation ﬂux and time, irradiation particles
+(electrons, ions, or neutrons), annealing treatment before irradiation, and the nature of grain boundaries. 1– 5 Experimental
+observations of nuclear materials at low and high radiation doses tend to prove that RIS on point defect clusters are precursors to
+radiation-induced precipitation of secondary phases. 6 RIS modeling is therefore a necessary step in order to obtain a good
+understanding of the materials stability under irradiation.
+The ﬁrst RIS models consisted in adapting the Fick ’sl a w st or e p r o d u c et w os p e c iﬁc effects of irradiation: the
+enhancement of diffusion due to the increase of point defect concentration, and the emergence of new driving forces
+associated with the point defect concentration gra dients. According to these models, the kinetic coef ﬁcients D or L (deﬁned
+below) relating atomic ﬂuxes to gradients of concentration or chemical potential determine RIS. The framework of the
+thermodynamics of irreversible processes (TIPs) within the linear response theory yields the best de ﬁnition of these kinetic
+coef ﬁcients. Because the methods of calculating kinetic coef ﬁcients and the associated dif ﬁculties are different in a dilute or
+concentrated alloy, since the beginning, t here have been two types of RIS models, those dedicated to dilute alloys and those
+to concentrated alloys.
+Very recently, the dilute alloy models have bene ﬁted from progress made in the diffusion theories and from high throughput
+DFT calculations of the point defect jump frequencies. 7 There are now automatic codes providing the phenomenological coef-
+ﬁcients L in function of the atomic jump frequencies in multi-component dilute alloys, including the split-interstitial (dumbbell)
+diffusion mechanism. 8 These codes allow the immediate use of extensive ab initio atomic jump frequency databases for a
+quantitative and systematic estimation of the ﬂux couplings and sign of RIS with respect to temperature. 9– 12
+While the progress of RIS models of dilute alloys is closely related to that of diffusion theory, most segregation models for
+concentrated alloys still use oversimpli ﬁed diffusion models based on Manning ’s relations. 13 There are several reasons for this.
+First, the parameterization of an atomic jump frequency model in function of the surrounding alloy composition requires a large
+database of experimental diffusion coef ﬁcients, which are lacking and/or numerous ab initio calculations of atom jump fre-
+quencies. Finally, the jump sequences of the atoms are particularly complex in a multicomponent alloy, on account of the multiple
+jump frequencies and correlation effects that are involved. Only recently has an interstitial diffusion model been developed that
+236 Radiation-Induced Segregation
+
+===== PDF PAGE 3 =====
+could account for short-range order effects, including binding energies with point defects in Fe – Cr concentrated alloys. 14
+Numerous studies devoted to RIS in concentrated systems are experimental works, investigating the effect of temperature, com-
+position of model and technological alloys, irradiation conditions, as well as the effect of point defect trapping by a an impurity,
+and the nature and displacement of a speci ﬁc grain boundary. Most of the diffusion models of concentrated alloys rely on tracer
+diffusion data, from which one estimates the partial diffusion coef ﬁcients of the RIS diffusion equation. Paradoxically, the ﬁrst RIS
+models were more rigorous 15 than the present ones in which thermodynamic activities, particularly some of the cross-terms, are
+oversimpliﬁed. In this review, we go back to the ﬁrst models starting from the linear response theory, albeit slightly modi ﬁed, to be
+able to reproduce the main characteristics of an irradiated alloy.
+Atomistic simulation methods such as atomic kinetic Monte Carlo (AKMC) methods 14,16– 20 have become ef ﬁcient tools to
+simulate RIS. Thanks to a better knowledge of jump frequencies after the recent developments of DFT calculations, these simu-
+lations provide a ﬁne description of the thermodynamics as well as the kinetics of a speci ﬁc alloy. Moreover, information at the
+atomic scale is precious when RIS pro ﬁles exhibit oscillating behavior and spread over a few tens of nanometers. At the upper scale,
+Phase Field methods start addressing the complex issue of the impact of the microstructure – point defect interaction on RIS,
+including long-range elastic interactions between defects.
+In the second section, we present discoveries and typical observations of RIS. In the third section, we rely on the formalism of
+TIP to write the alloy ﬂux couplings. In section four, after a short review on available thermodynamic and diffusion data, we
+discuss the approximations and limitations of empirical and atomistic RIS models applied to the analysis of real systems. We then
+present the alternative approach based on atomistic modeling of jump mechanisms. The last section introduces multi-scale
+simulation techniques of RIS.
+1.08.2 Experimental Observations
+1.08.2.1 Anthony ’s Experiments
+RIS was predicted by Anthony 21 in 1969, a few years before the ﬁrst experimental observations: a rare case in the ﬁeld of
+radiation effects. The prediction stemmed from an analogy with nonequilibrium segregation observed in aluminum alloys
+quenched from high temperature. Between 1968 and 1970, in a pioneering work in binary aluminum alloys, Anthony and
+coworkers 21– 25 systematically studied the nonequilibrium segregation of various solute elements on the pyramidal cavities
+formed in aluminum after quenching from high temperature. They explained this segregation by a coupling between the ﬂux
+of excess vacancies toward the cavities and the ﬂux of solute ( Fig. 1 ). Nonequilibrium segregation had been previously
+observed by Kuczynski et al. 26 during the sintering of copper-based particles and by Aust et al. 27 after the quenching of zone
+reﬁned metals.
+Anthony suggested that similar coupling should produce nonequilibrium segregation in alloys under irradiation. 21,22 He
+predicted that the segregation should be much stronger than after quenching because under irradiation, the excess vacancy
+concentration and the resulting ﬂux can be sustained for very long times. 22,28 As for the cavities formed by vacancy condensation
+in alloys under irradiation, which result in the swelling phenomenon, he pointed out that with solute and solvent atoms of
+different sizes, segregation should generate strains around the voids. 28 Finally, he predicted intergranular corrosion in austenitic
+steels and zirconium alloys, resulting from possible solute depletion near grain boundaries. 28
+Anthony also presented a detailed discussion on nonequilibrium segregation mechanisms, in the framework of the TIP, 21– 24
+showing that the nonequilibrium tendencies are controlled by the phenomenological coef ﬁcients Lij of the Onsager matrix,
+which can be – in principle – computed from vacancy jump frequencies (see below Section 1.08.3). Clarifying previous
+discussions on non-equilibrium segregation mechanisms, 26,27 he considered two limiting cases for the coupling between solute
+Analyzed zone Z
+Surface S
+Aluminum matrix
+Vacancy
+condensation
+cavity
+Backscattered
+electrons
+ZnKa
+Al2O3 film
+e–
+JVJZn
+Fig. 1 One of Anthony ’s experiments. After quenching of an Al – Zn alloy, vacancies condense in small pyramidal cavities (left), under an Al 2O3
+thin ﬁlm covering the surface. Electronic probe measurements reveal enrichments in Zn around the cavities. Reproduced from Anthony, T.R., 1970.
+J. Appl. Phys. 41, 3969 – 3976.
+Radiation-Induced Segregation 237
+
+===== PDF PAGE 4 =====
+and vacancy ﬂuxes in an A – B alloy (at the time, he did not apparently consider the coupling between solute and interstitial
+ﬂuxes and its possible contribution to RIS). In both cases, the total ﬂux of atoms must be equal and in the direction opposite to
+the vacancy ﬂux:
+(1) If both A and B ﬂuxes are in the direction opposite to the vacancy ﬂux ( Fig. 2(a) ), one can expect a depletion of B near
+the vacancy sinks if the partial diffusion coefﬁcient of B is larger than that of A ( dBV 4dAV ); in the opposite case (dBV odAV ), one
+can expect an enrichment of B (this was essentially the explanation proposed by Kuczynski et al. 26). Note that as long as
+the solute concentration is not too small ( CB roughly below 1 at%), the tracer diffusion coef ﬁcients, DV
+A/C3 and DV
+B/C3 divided by
+the equilibrium vacancy concentration, provide a good estimation of the partial diffusion coef ﬁcients, dAV and dBV
+(cf Section 1.08.3.2. for a de ﬁnition of dAV and dBV).
+(2) However, A and B ﬂuxes are not necessarily in the same direction. Whenever, the B solute atoms are strongly bound to the
+vacancies, there is a chance vacancy drags a solute atom B by following circular jump sequences around B between two
+exchanges with B. Then, the vacancy and solute ﬂuxes can be in the same direction ( Fig. 2(b) ): this was the explanation
+proposed by Aust et al.27 In such a case, an enrichment of B is expected, even if the amplitude of dBV is higher than dAV. In that
+case, the partial diffusion coef ﬁcient dBV is negative and cannot be related to DV
+B/C3 .
+Starting from an initially uniform solid solution, these mechanisms lead to formation of a gradient in solute concentration ∇CB
+at the sinks, when the ratio of the total ﬂuxes JB=JA differs from CB=CA. In turn, ∇CB produces a back diffusion ﬂux, according to
+Fick’s law. The competition between these two driving forces leads to steady state RIS concentration pro ﬁles. Unlike Anthony 's
+quenching experiments, segregation under permanent irradiation is not a transient state. RIS pro ﬁles are sustained as long as there
+is no drastic change of the sink microstructure. Indeed, the segregation of elemental species driven by the point defect con-
+centration gradients, yields concentration gradients of the elemental species at the region of point defect sinks. In turn, chemical
+driving forces arise to counter the built-up gradients resulting from the point defect concentration gradient.
+1.08.2.2 First Observations of RIS
+In 1972, Okamoto et al. 29 observed strain contrasts around voids in an austenitic stainless steel Fe – 18Cr– 8Ni– 1Si during irra-
+diation in a high-voltage electron microscope. They attributed this contrast to the segregation strains predicted by Anthony. This is
+the ﬁrst reported experimental evidence of RIS. Soon after, a chemical segregation was directly measured by Auger spectroscopy at
+the surface of a similar alloy irradiated by Ni ions. 30
+It was soon realized that if the solute concentration near the point defect sinks reaches the solubility limit, a local precipitation
+would take place. In 1975, Barbu and Ardell 31 observed such a radiation-induced precipitation (RIP) of an ordered Ni 3Si phase in
+an undersaturated Ni – Si alloy.
+The analysis of strain contrast and concentration pro ﬁles measured by Auger spectroscopy suggested that undersized Ni and Si
+atoms (which can be more easily accommodated in interstitial sites) were diffusing toward point defect sinks, while oversized
+atoms (such as Cr) were diffusing away. Such a trend, later con ﬁrmed in other austenitic steels and nickel-based alloys, 32 led
+Okamoto and Wiedersich 30 to conclude that RIS in austenitic steels was due to the migration of interstitial – solute complexes,
+and they proposed this new RIS mechanism, in addition to the ones involving vacancies ( Fig. 2(c) ). Then again, Marwick 33
+explained the same experimental observations by a coupling between ﬂuxes of vacancies and solute atoms, pointing out that
+thermal diffusion data showed Ni to be a slow diffuser and Cr to be a rapid diffuser in austenitic steels. We will see later that, in
+spite of many experimental and theoretical studies, the debate on the diffusion mechanisms responsible for RIS in austenitic steels
+is not over.
+Following these debates on RIS mechanisms, it became common to refer to the situation illustrated in Fig. 2(a) as segregation
+by an inverse Kirkendall (IK) effect (the term was coined by Marwick 33 in 1977) and to the one in Fig. 2(b) as segregation by solute
+drag effects, or by migration of vacancy – solute complexes. In the classical Kirkendall effect, 34 a gradient of chemical species
+produces a ﬂux of defects. It occurs typically in interdiffusion experiments in A – B diffusion couples, when A and B do not diffuse at
+the same speed. A vacancy ﬂux must compensate for the difference between the ﬂux of A and B atoms, and this leads to a shift of
+the initial A/B interface (the Kirkendall plane). The IK effect is due to the same diffusion mechanisms but corresponds to the
+(a) (b) (c)
+JV
+B JV
+A Ji
+AJi
+B
+JV
+JV
+B JV
+A
+JV Ji
+Sink
+Sink
+Sink
+Fig. 2 Radiation-induced segregation mechanisms due to coupling between point defect and solute ﬂuxes in a binary A – B alloy. (a)
+An enrichment of B occurs if d BV o dAV and a depletion if d BV 4 dAV. (b) When the vacancies drag the solute, an enrichment of B occurs.
+(c) An enrichment of B occurs when d BI 4 dAI.
+238 Radiation-Induced Segregation
+
+===== PDF PAGE 5 =====
+situation where the gradient of point defects is imposed and generates a ﬂux of solute. The distinction between RIS by IK effect and
+RIS by migration of defect – solute complexes, initially proposed for the vacancy mechanisms, was soon generalized to interstitial
+ﬂuxes by Okamoto and Rehn. 35,36 RIS in dilute alloys, where solute – defect binding energies are clearly de ﬁned and often play a
+key role, is commonly explained by diffusion of solute – defect complexes, while the IK effect is often used to explain RIS in
+concentrated alloys. This distinction is re ﬂected in the modeling of RIS (see Section 1.08.3). However, it is clear that RIS can occur
+in dilute alloys without migration of solute – defect complexes. Moreover, such a terminology and sharp distinction can be
+somewhat misleading; the mechanisms are not mutually exclusive and result from the same microscopic diffusion mechanisms. In
+the case of undersized B atoms, for example, a strong binding between interstitial and B atoms can lead to a rapid diffusion of B by
+the interstitial (IK effect with dBI 4 dAI) and to the migration of interstitial – solute complexes. More generally, one can always say
+that RIS results from an IK effect, in the sense that it occurs when a gradient of point defects produces a ﬂux of solute. Nevertheless,
+because they are widely used, we will refer to these terms at times when they do not create confusion.
+1.08.2.3 General Trends
+Many experimental studies of RIS were carried out in the 1970s in model binary or ternary alloys, as well as in more complex and
+technological alloys (especially in stainless steels). It became apparent quite early on that RIS was a pervasive phenomenon,
+occurring in many alloys and with any kind of irradiating particle (ions, neutrons, or electrons). Extensive reviews can be found in
+Russell,1 Holland et al.,2 Nolﬁ,3 Ardell,4 Was,5 Ardell and Bellon37: here, we present only the general conclusions that can be drawn
+from these studies.
+1.08.2.3.1 Segregating elements
+From the previous discussion, it is clear that it is dif ﬁcult to predict the segregating element in a given alloy because of the
+competition between several mechanisms and the lack of precise diffusion data (especially concerning interstitial defects). As will
+be shown in Section 1.08.3, only the knowledge of the phenomenological coef ﬁcients Lij provides a reliable prediction of RIS.
+Nevertheless, relying on the body of RIS experimental studies, several general rules have been proposed. In dilute binary AB alloys,
+thermal self-diffusion coef ﬁcients DV
+A/C3 and impurity diffusion coef ﬁcients DV
+B/C3 are generally well known, at least at high tem-
+peratures. Tracer diffusion or intrinsic diffusion coef ﬁcients in some concentrated alloys are also available. 38 RIS experiments do
+not reveal a systematic depletion of the fast-diffusing and enrichment of the slow-diffusing elements near the point defect sinks: 4,32
+this suggests that the IK effect by vacancy diffusion is usually not the dominant mechanism. On the other hand, a clear correlation
+exists between RIS and the size effect 36; undersized atoms usually segregate at point defect sinks, oversized atoms usually do not.
+This suggests that interstitial diffusion could control the RIS, at least for atoms with a signi ﬁcant size effect. There are some
+exceptions: in Ni – Ge and Al – Ge alloys, the segregation of oversized solute atoms has been observed. Nevertheless, as pointed out
+by Rehn and Okamoto, 36 no case of depletion of undersized solute atoms in dilute alloys has ever been reported. According to
+Ardell,4 this holds true 25 years later.
+1.08.2.3.2 Segregation pro ﬁles
+Experiments show that segregation concentration pro ﬁles induced by irradiation display some speci ﬁc features. They can spread
+over large distances – a few tens of nanometers (see Figs. 7 and 8 and other examples in Russell 1 and Okamoto and Rehn 32) –
+while equilibrium segregation is usually limited to a few angstroms. This is because they result from a dynamic equilibrium
+between RIS ﬂuxes and the back diffusion created by the concentration gradient at the sinks, while the scale of equilibrium
+segregation pro ﬁles is determined by the range of atomic interactions. Equilibrium pro ﬁles are usually monotonic, except for the
+oscillations, which can appear – with atomic wavelengths – in alloys with ordering tendencies. 39 Segregation pro ﬁles observed in
+transient regimes are often non-monotonic because of the complex interaction between concentration gradients of point defects
+and solutes. A typical example is shown in Section 1.08.5.3, where an enrichment of solute is observed near a point defect sink,
+followed by a smaller solute depletion between the vicinity of sink and the bulk. In this particular case, the depletion is due to a
+local increase in vacancy concentration, which results from a lower interstitial concentration and recombination rate.
+Other kinds of non-monotonic pro ﬁles are sometimes observed, with typical ‘W-shapes’.40 In some austenitic or ferritic steels, a
+local enrichment of Cr at grain boundaries survives during the Cr depletion induced by irradiation (see below). This could result
+from a competition between opposite equilibrium and RIS tendencies. However, the extent of the Cr enrichment often seems too
+wide to be simply due to an equilibrium property (around 5 nm, see, e.g., Sections 1.08.2.5 and 1.08.5.3).
+RIS pro ﬁles at grain boundaries are sometimes asymmetrical, which has been related to the migration of boundaries resulting
+from the ﬂuxes of point defects under irradiation. 41,42 The segregation is affected by the atomic structure and the nature of the
+sinks. It has been clearly shown that RIS in austenitic steels is smaller at low angles and special grain boundaries than at large
+misorientation angles, 43,44 the latter being more ef ﬁcient point defect sinks than the former.
+1.08.2.3.3 Temperature effects
+RIS can occur only when signi ﬁcant ﬂuxes of defects towards sinks are sustained, which typically happens only at temperatures
+between 0.3 and 0.6 times the melting point. At lower temperatures, vacancies are immobile and point defects annihilate mainly by
+mutual recombination. At higher temperatures, the equilibrium vacancy concentration is too high; back diffusion and a lower
+Radiation-Induced Segregation 239
+
+===== PDF PAGE 6 =====
+vacancy supersaturation completely suppress the segregation. Temperature can also modify the direction of the RIS by changing the
+relative weight of V and SIA competing mechanisms, which do not have the same activation energy. We expect this competition
+occurs in Fe– Cr alloys (cf Section 1.08.4.4.3). In Ni – Ti alloys, the enrichment of Ti at the surface below 400 1C has been ascribed to
+the migration of Ti – V complexes, and the depletion observed at higher temperature should result from a vacancy IK effect. 45
+1.08.2.3.4 Effects of radiation particles, dose, and dose rates
+RIS can be observed for very small irradiation doses; an enrichment of B10% of Si has been measured, for example, at the surface
+of an Ni– 1%Si alloy, after a dose of 0.05 dpa at 525 1C.35 Such doses are much lower than those required for radiation swelling 5 or
+ballistic disordering effects. 46
+Increasing the radiation ﬂux, or dose rate ( F), directly results in higher point defect concentrations and ﬂuxes towards sinks.
+The transition between RIS regimes is then shifted toward a higher temperature ( Fig. 3 ). But because point defect concentrations
+slowly evolve with the radiation ﬂux (typically proportional to F or
+ﬃﬃﬃﬃ
+F
+p 47 in the temperature range where RIS occurs), a high
+increase is needed to get a signi ﬁcant temperature shift. However, within a given kinetic regime, the behavior of RIS differs from
+that of a point defect concentration. For example, one has shown that in the kinetic regime dominated by point defect elimination
+at sinks, the amount of RIS does not dependent on the radiation ﬂux as long as the point-defect sink strength does not vary. 20
+Radiation dose and dose rate are usually estimated in dpa and dpa s /C0 1, respectively, using the Norgett, Robinson, and Torrens
+model,48 especially when a comparison between different irradiation conditions is desired. It is then worth noting that the amount
+of RIS observed for a given dpa is usually larger during irradiation by light particles (electrons or light ions) than by heavy ones
+(neutrons or heavy ions). In the latter case, point defects are created by displacement cascades in a highly localized area, and a large
+fraction of vacancies and interstitials recombine or form point defect clusters. The fraction of the initially produced point defects
+that migrate over long distances and could contribute to RIS is reduced. On the contrary, upon irradiation by light particles, the
+creation of Frenkel pairs is more or less homogeneous in the material, and most of them survive and migrate as isolated point
+defects.49
+1.08.2.3.5 Impurity effects
+The addition of impurities has been explored as a possible way to control RIS in alloys, for example, in austenitic steels. The most
+common method is the addition of an oversized impurity, such as Hf and Zr, in stainless steels, 50,51 which should trap the
+vacancies (and, in some cases, the interstitials), thus increasing the mutual point defect recombination reactions at the expanse of
+elimination reactions at sinks. However, the experimental investigations tend to show the suppressing of RIS by an impurity lasts
+for a few displacements per atom only. This is certainly due to the kinetic drag of impurities by point defects toward sinks. A recent
+DFT study demonstrates it almost systematically occurs whenever there is a large positive point defect-impurity binding energy, at
+least in dilute FCC solid solutions. 11
+1.08.2.3.6 Density of sinks
+In the search for radiation tolerant materials, one devises microstructures with a high density of sinks as for example bulk nano-
+layered Cu – Nb composites containing interfaces with controlled sink ef ﬁciencies.52 Multiplying point defect sinks reduce the
+amount of RIS at a given sink. A simpli ﬁed RIS analytical model of multilayers separated by sink interfaces demonstrates the
+amount of segregation decreases linearly with decreasing interface spacing. 20
+0.0
+10–6 10–5 10–4 10–3
+K0 (dpa s–1)
+10–2
+0.2
+T/Tm0.4
+Radiation-induced
+segregation
+Back diffusion
+Recombination
+0.6
+0.8
+Fig. 3 Temperature and dose rate effect on the radiation-induced segregation.
+240 Radiation-Induced Segregation
+
+===== PDF PAGE 7 =====
+1.08.2.4 RIS and Precipitation
+As mentioned above, one of the most spectacular consequences of RIS is that it can completely modify the stability of
+precipitates and the precipitate microstructure. 53 When the local solute concentration at a point defect sink reaches the
+solubility limit, RIP can occur in an overall undersaturated alloy. RIP of the g0-Ni3Si phase is observed, for example, in Ni – Si
+alloys31 at concentrations well below the solubility limit (Ni 3Si is an ordered L1 2 structure and can be easily observed in dark-
+ﬁeld image in transmission electron microscopy (TEM)). In this case, we believe RIS is due to the preferential occupation of
+interstitials by undersized Si atoms. 31 The g0-phase can be observed on the preexisting dislocation network, at dislocation loops
+formed by self-interstitial clustering, 31 at free surfaces 49 or grain boundaries ( Fig. 4(a) ).54 The fact that the g0-phase dissolves
+when irradiation is stopped clearly reveals the nonequilibrium nature of the precipitation. This is also shown by the toroidal
+contrast of dislocation loops (cf Fig. 4 ): the g0-phase is observed only at the border of the loop on the dislocation line where
+self-interstitials are annihilated; when the loop grows, the ordered phase dissolves at the center of the loop, which is a perfect
+crystalline region where no ﬂux of Si sustains the segregation.
+In supersaturated alloys, irradiation may completely modify the existing precipitation microstructure. It may dissolve pre-
+cipitates located near sinks when RIS produces a solute depletion. For example, in Ni – Al alloys, 55 dissolution of g0 precipitates is
+observed around the growing dislocation loops, due to the Al depletion induced by irradiation ( Fig. 5 ), and in supersaturated
+Ni– Si alloys, Si segregation towards the interstitial biased sinks produces dissolution of the homogeneous precipitate micro-
+structure in the bulk, to the bene ﬁt of the precipitate layers on the surfaces 31 (Fig. 6 ) and grain boundaries. 56
+In these examples, RIS was observed to produce a heterogeneous precipitation at point defect sinks. But homogeneous RIP of
+coherent precipitates has also been observed, for example, in Al – Zn alloys. 57 Cauvin and Martin 58 have proposed a mechanism
+that explains such a decomposition. A solid solution contains ﬂuctuations of composition. In case of attractive vacancy – solute and
+interstitial– solute interactions, a solute-enriched ﬂuctuation tends to trap both vacancies and interstitials, thereby favoring mutual
+(a) (b) (c) 
+Fig. 4 Formation of Ni 3Si precipitates in undersaturated solid solution under irradiation (a) in the bulk on preexisting dislocations and at
+interstitial dislocations, (b) at grain boundaries, and (c) at free surfaces. (a) Courtesy of A. Barbu. Reproduced from Holland, J.R., Mansur, L.K.,
+Potter, D.I., 1981. Phase Stability During Radiation. Warrendale, PA: TMS-AIME.
+(110) g001
+Fig. 5 Dissolution of g0 precipitates near dislocation loops in Ni – Al under irradiation. Reproduced from Holland, J.R., Mansur, L.K., Potter, D.I.,
+1981. Phase Stability During Radiation. Warrendale, PA: TMS-AIME.
+Radiation-Induced Segregation 241
+
+===== PDF PAGE 8 =====
+recombination. The point defect concentrations then decrease, producing a ﬂux of new defects toward the ﬂuctuation. If the
+coupling with solute ﬂux is positive, additional solute atoms arrive on the enriched ﬂuctuations, and so it continues, until the
+solubility limit is reached.
+1.08.2.5 RIS in Austenitic and Ferritic Steels
+We have seen that RIS was ﬁrst observed in austenitic steels on the voids that are formed at large radiation doses. The depletion of
+Cr at grain boundaries is suspected to play a role in irradiation-assisted stress corrosion cracking (IASCC); this is one of the many
+technological concerns related to RIS. The enrichment of Ni and the depletion of Cr can also stabilize the austenite near the sinks,
+and favor the austenite - ferrite transition in the matrix. 32 The segregation of minor elements can lead to the heterogeneous
+precipitation of g0-precipitates (as in Ni – Si alloys), or various M 23C6 carbides and other phases. 1,32
+The segregation of major elements always involves an enrichment of Ni and a depletion of Cr at sinks over a length scale that
+depends on the alloy composition and irradiation conditions ( Fig. 7 ).5 Up to now, there is no de ﬁnite answer on the RIS
+mechanism controlling the segregation of the major elements. 59 It is not clear whether it is driven by vacancy ﬂuxes, as suggested
+by the order of the thermal tracer diffusion coef ﬁcients, DV
+Ni/C3 oDV
+Fe/C3 oDV
+Cr/C3 ,33 or by the migration of interstitial – solute complexes,
+resulting in the segregation of undersized atoms. 32 Some models of RIS take into account only the ﬁrst mechanism,5 while others
+predict a signi ﬁcant contribution of interstitials to the diffusion of Ni. 60,61 For the segregation of minor elements, the size effect
+seems dominant, with an enrichment of undersized atoms (e.g., Si 30) and a depletion of oversized atoms (e.g., Mo 62).
+The effect of minor elements on the segregation behavior of major ones has been pointed out since the ﬁrst experimental
+studies32; Si and Mo additions, by trapping vacancy, would enhance the vacancy-interstitial recombination rate which in turn
+would reduce the RIS of both major and minor elements. As previously mentioned, oversized impurity atoms, such as Hf and Zr,
+may also decrease RIS. 50
+RIS in ferritic steels and ferritic/martensitic steels has recently drawn much attention, because they are possible candidates for
+future Generation IV and fusion reactors. 63 Experimental studies are more dif ﬁcult than in austenitic steels, partly because of the
+complex pre-existing microstructures. The behavior of some minor elements has been clearly identi ﬁed (such as the enrichment of
+undersized Si and P atoms 63,64). However, the segregation of major elements (Fe and Cr) is still debated. Early experimental
+studies reviewed by Lu et al.65 have shown both depletion and enrichment of Cr at grain boundaries, but it appeared quite dif ﬁcult
+to distinguish correlations between the RIS behavior and the irradiation conditions or the alloy compositions. In some highly
+concentrated alloys a depletion of Cr (sometimes with W-shaped pro ﬁles, see Fig. 8 ) and an enrichment of Ni have been
+observed,63 reminding us of the general trends in austenitic steels. The addition of Hf has been found to reduce the Cr segregation,
+again similarly to what occurs in austenitic steels. 64
+More recently, systematic studies by Was et al.59,66 focusing on Fe – Cr model and industrial alloys with Cr contents between 9
+and 12 at% generally displayed Cr enrichment at intermediate temperatures, and Cr depletion at higher temperature. The increase
+in Cr content would favor the depletion. These behaviors are consistent with the predictions of recent modeling studies. They
+(a) (b)
+Fig. 6 Precipitate microstructure in Ni – Si alloys: the homogeneous distribution observed during thermal aging (a) is dissolved under electron
+irradiation and the surfaces of the transmission electron microscopy sample are covered by Ni 3Si precipitates. (b) Ni – 12%Si alloy under 1 MeV
+electron irradiation at 500 1C, after a dose of 5 /C2 10/C0 5 dpa. Courtesy of A. Barbu.
+242 Radiation-Induced Segregation
+
+===== PDF PAGE 9 =====
+would result from the competition between vacancies and self-interstitials (cf Section 1.08.5.3). However, many observations do
+not ﬁt this simple scenario, possibly because other factors may be involved. For example, it has been observed that the enrichment
+of Cr at grain boundaries could increase up to a few dpa and decrease at larger doses 66 (a possible effect of the long term evolution
+of the sink microstructure). Minor elements (especially C) may co-segregate with Cr, 67 or lead to the precipitation of other phases
+affecting the Cr segregation. 68 The orientation and structure of grain boundaries 67,69 have also an effect. All these factors have a
+stronger impact than in austenitic steels, leading to less predictable behaviors.
+1.08.2.6 RIS in High Entropy Alloys
+High entropy alloys, with equal or relatively large proportions of ﬁve or more elements have recently received considerable
+attention, and a few experimental studies of RIS have been published. 70– 74
+Irradiated to
+∼1.5 dpa
+W-shaped profile
+Irradiated to
+∼5 dpa
+Cr depletion
+Mill annealed
+Cr segregation
+LWR-irradiated 316SS
+JEOL 2010F
+0.7-nm probe
+–20
+13
+14
+15
+16
+17
+18
+19Cr concentration (wt%)
+20
+21
+–15 –10 –5 0
+Distance from grain boundary (nm)
+51 0 1 5 2 0
+Fig. 7 Thermal and radiation-induced segregation pro ﬁles in 316 stainless steel. Reproduced from Bruemmer, S.M., Simonen, E.P., Scott, P.M.,
+Andresen, P.L., Was, G.S., Nelson, J.L., 1999. J. Nucl. Mater. 274, 299 – 314.
+Chromium
+Iron
+Silicon
+Nickel
+502510
+Distance from lath boundary (nm)
+0–10–25–50–100
+817
+8
+9
+10
+11
+12
+13
+82
+83
+84
+85
+86
+87
+88
+89
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+Concentration (wt%) (Ni, Si)
+Concentration (wt%) (Fe)
+Concentration (wt%) (Cr) 0.4
+0.2
+100
+0
+Fig. 8 Concentration pro ﬁles of Cr, Ni, Si, and Fe on either side of a lath boundary in 12%Cr martensitic steel after neutron irradiation to 46 dpa
+at 465 1C. Reproduced from Little, E., 2006. Mater. Sci. Technol. 22, 491 – 518.
+Radiation-Induced Segregation 243
+
+===== PDF PAGE 10 =====
+Segregation at radiation-induced dislocation loops in CrFeCoNi, CrFeCoNiMn, and CrFeCoNiPd alloys have been observed
+during electron irradiation, showing depletions in Cr/Fe/Mn/Pd and enrichments in Co/Ni. 70 The authors relate this behavior to
+the atomic size of the elemental species. The formation of a L1 0 (NiMn) ordered phase and a spinodal decomposition between
+Co/Ni and Pd (also observed during long term annealing) is accelerated by irradiation.
+Barr et al. have observed Mn depletion and Co and Ni enrichment at grain boundaries, upon ion irradiation of an equiatomic
+CoCrFeNiMn.71 According to tracer diffusion experiments, Mn is the fastest vacancy diffuser in these alloys and Co is the slowest
+diffuser. These observations are consistent with a RIS mechanism dominated by a vacancy ﬂux coupling, the latter being modeled
+trough an inverse Kirkendall process. Such a RIS mechanism is reminiscent of what is suggested in most of the RIS models of
+austenitic steels.
+1.08.3 Diffusion Equations: The TIP Formalism
+RIS is a phenomenon that couples the ﬂuxes of defects created by irradiation to the atomic ﬂuxes of an alloy. In standard models,
+only point defect diffusion mechanisms are considered, although displacement cascades produce mobile point defect clusters,
+which may contribute to RIS. A RIS continuous model relies on diffusion-reaction equations modeling the evolution of vacancy,
+interstitial and the elemental species of the alloy.
+Far from sinks, we may transform a diffusion-and-annihilation at sinks process into a simple reaction event. For instance, in a
+standard mean ﬁeld homogeneous rate theory, the evolutions of vacancy and self-interstitial atomic fractions (Confusions in the
+deﬁnition of concentrations are a source of frequent mistakes. In the following, unless explicitly speci ﬁed, the concentrations of a
+specie a is given in atomic (or molar) fraction, Ca. The atomic concentration, i.e., the number of atoms per unit volume, is Ca=O,
+where O is the atomic volume), CV and CI are given by
+dCV
+dt ¼ K0 /C0 RCI CV /C0
+X
+s
+k2
+VsDV ðCV /C0 Ceq
+V Þ
+dCI
+dt ¼ K0 /C0 RCICV /C0
+X
+s
+k2
+IsDI CI ð1Þ
+where K0 is the point defect production rate (in dpa s /C0 1) proportional to the radiation ﬂux, R is the recombination rate, and DV
+and DI are the point defect diffusion coef ﬁcients. The third terms of the right hand side in Eq. (1) correspond to point defect
+diffusion and annihilation at sinks of type s. The ‘sink strengths’ k2
+Vs and k2
+Is depend on the nature and the density of sinks and have
+been calculated for all common sinks, such as dislocations, cavities, free surfaces, grain boundaries, etc. 75,76 Numerical integration
+of Eq. (1) yields the evolution of point defect concentrations and their variation with the radiation ﬂux and sink microstructure.
+We may as well derive steady state analytical solution of Eq. (1) .47
+A homogenous mean ﬁeld theory is not suf ﬁcient to model ﬂux couplings and subsequent RIS. We must start from the writing
+of the diffusion-annihilation at sinks in terms of divergence of ﬂuxes J. The evolution of atomic fractions of vacancies, interstitials,
+and chemical elements a in an alloy under irradiation is given by
+∂CV
+∂t ¼/C0 div JV þ K0 /C0 RCICV /C0
+X
+s
+k2
+VsDV CV /C0 Ceq
+V
+/C2/C3
+∂CI
+∂t ¼/C0 div JI þ K0 /C0 RCICV /C0
+X
+s
+k2
+IsDI CI
+∂Ca
+∂t ¼/C0 div Ja ð2Þ
+The basic problem of RIS is to ﬁnd the solution of these equations close to a given point defect sink, which requires the knowledge
+of how the ﬂuxes Ja are related to the concentrations. Note that the last terms of the point defect rate equations represent diffusion-
+annihilation reactions of point defects at the other sinks, which are treated within a mean ﬁeld homogeneous approximation.
+The modeling of the atomic and point defect transport controlling ﬂuxes relies on the theory of TIP. In this article, we start with a
+general description of TIP applied to transport. We write atomic ﬂuxes in terms of the phenomenological coef ﬁcients of diffusion
+(denoted hereafter by Lij or, simply, L) and the driving forces ∇m. Since what we measure and follow are the on-site average
+concentrations of the elemental species, we express gradients of chemical potential,∇m, as function of gradients of concentration, ∇C.
+The terms of proportionality between ﬂuxes and gradients of concentration are the so-called diffusion coef ﬁcients. Then, we deduce
+steady state relationship between gradients of concentration of the elemental species and the vacancy gradient of concentration.
+1.08.3.1 Fluxes in Terms of L and ∇m
+Within the TIP, 77,78 a system is divided into cells, which are supposed to be small enough to be considered as homogeneous and
+large enough to be in local equilibrium. The number of particles in a cell varies if there is a transfer of particles to other cells. The
+244 Radiation-Induced Segregation
+
+===== PDF PAGE 11 =====
+transfer of particles a between two cells is described by a ﬂux Ja, and the temporal variation of the local atomic fraction of a is given
+by the continuity equation
+∂Ca
+∂t ¼/C0 div Ja ð3Þ
+The ﬂux of species a between cells i and j is assumed to be a linear combination of the thermodynamic forces,
+Xb ¼ mj
+b /C0 mi
+b
+/C16/C17
+=kBT, where mi
+b is the chemical potential of species b in cell i, T the temperature, and kB the Boltzmann constant. In
+the continuous limit, Xb is obtained from the gradient of chemical potential: Xb ¼ ∇mb=kBT. Variables Xb represent the deviation of
+the system from equilibrium, whose ﬂuxes tend to reduce:
+Ja ¼/C0
+X
+b
+LabXb ð4Þ
+The equilibrium constants are the phenomenological (or Onsager) L-coefﬁcients. Since the point defect diffusion mechanisms
+satisfy the detailed balance, the matrix of the Onsager coef ﬁcients is symmetric. Due to the second principle of thermodynamics,
+the production of entropy is positive and consequently the Onsager matrix ( Lab)i sd e ﬁnite positive. By construction, the vacancy
+diffusion mechanism leads to the relation between ﬂuxes:
+JV ¼/C0
+X
+a
+JV
+a : ð5Þ
+Eq. (5) yields relationships between the phenomenological coef ﬁcients. For instance, if we choose to eliminate the LV
+Vb
+coefﬁcients, we obtain this expression of the atomic ﬂuxes:
+JV
+a ¼/C0
+X
+b
+LV
+abðXb /C0 XV Þ: ð6Þ
+Under irradiation, diffusion is controlled by both vacancies and interstitials. By construction, the interstitial diffusion
+mechanism leads to the relation between ﬂuxes:
+JI ¼
+X
+b
+JI
+b: ð7Þ
+One assumes, vacancy and interstitial contributions to the atomic ﬂuxes are additive:
+Ja ¼/C0
+X
+b
+LV
+abðXb /C0 XV Þ/C0
+X
+b
+LI
+abðXb þ XI Þ: ð8Þ
+The total ﬂux of species a is thus expressed in terms of two Onsager matrices of size Nsp /C2 Nsp where Nsp is the number of
+atomic species. Since every Onsager matrix is symmetric, it has Nsp /C2ð Nsp /C0 1Þ=2 independent L-coefﬁcients. While thermo-
+dynamic data are usually available for the determination of driving forces in terms of gradients of concentration, it is very dif ﬁcult
+to determine the whole set of L-coefﬁcients from diffusion data. Experimentally, we do not measure couples of ( L-coefﬁcient, ∇m )
+but couples of ( D-coefﬁcient, ∇C). In the next section, we de ﬁne the driving forces as a function of concentration gradients, ∇C.
+Then, we de ﬁne the experimental diffusion coef ﬁcients, D, in terms of the L-coefﬁcients and thermodynamic driving forces. The
+last part of the section shows how to use ﬁrst-principle calculations for building atomic jump frequency models to calculate
+macroscopic ﬂuxes of speci ﬁc alloys.
+1.08.3.2 Fluxes in Terms of D and ∇C
+Gradients of chemical potentials are the thermodynamic driving forces, which inform on the intensity of gradients of con-
+centrations but also on the energy interactions between species. The latter make a chemical potential of a given species depend on
+concentrations of the other species. In the ﬁrst part of the present article, we rely on the Gibbs – Duhem relationship and a
+conservation law to express the ∇m– ∇C relationship. Then, we deduce the steady state RIS relationship between gradients of
+concentration.
+1.08.3.2.1 ∇m–∇C relationship
+The chemical potential of species i corresponds to the partial derivative of the Gibbs free energy G of the alloy, with respect to the
+number of atoms of species i, that is, Ni. The resulting chemical potential is a function of temperature and atomic fractions of the
+alloy components, Ci ¼ Ni=N, N being the total number of atoms.
+To obtain the ∇m– ∇C relationship, we rely on the Gibbs – Duhem relationship 77
+X
+k ¼ 1;r
+Ck∇mk ¼ 0; ð9Þ
+and the conservation law
+X
+k ¼ 1;r
+Ck ¼ 1; ð10Þ
+where the sum runs over the number of species including point defects, though in front of the interstitial concentration we need to
+Radiation-Induced Segregation 245
+
+===== PDF PAGE 12 =====
+add a minus sign. To deduce relationships between gradients of chemical potentials, we introduce either vacancies or interstitials
+into the alloy. Indeed, we ignore the interactions between I and V and assume their interactions with atomic species are additive.
+These interactions should be negligible because whenever I and V are close to each other, they annihilate through mutual
+recombination reaction. From Eqs. (9) and (10), we deduce chemical potential gradient of atomic species i in terms of the alloy
+and point defect driving forces
+∇ mi /C0 mVðÞ ¼ /C0
+XNsp /C0 1
+k ¼ 1; ka i
+Ck
+1 /C0 CV
+∇ mk /C0 miðÞ /C0 1
+1 /C0 CV
+∇mV
+∇ mi þ mIðÞ ¼ /C0
+XNsp /C0 1
+k ¼ 1; ka i
+Ck
+1 þ CI
+∇ mk /C0 miðÞ /C0 1
+1 þ CI
+∇mI
+: ð11Þ
+Note that in thermal conditions, we usually ignore gradients of point defect chemical potential by assuming point defects are at
+local equilibrium with respect to the atomic species. Whereas, upon irradiation these gradients become the main driving forces.
+From the Gibbs free energy, we deduce the alloy and point defect driving forces in function of concentration gradients. To
+compute the alloy chemical potential gradients ∇ mk /C0 miðÞ of species k relative to species i, we ignore the point defect contribu-
+tions. The latter is then equal to
+∇ mk /C0 miðÞ
+kBT ¼ 1
+kBT
+X
+ja i
+∂ mk /C0 miðÞ
+∂Cj
+/C18/C19
+∇Cj ð12Þ
+In a binary alloy, there is a unique alloy chemical potential gradient, ∇ mB /C0 mAðÞ . The corresponding thermodynamic factor is
+deﬁned as
+F ¼ CACB
+1
+kBT
+∂ mB /C0 mAðÞ
+∂CB
+: ð13Þ
+Under irradiation, point defects are not at equilibrium and elimination reactions at point defect sinks give rise to gradients of
+point defect chemical potential. Therefore, in addition to the alloy chemical potential gradients, one accounts for point defect
+driving forces. If one ignores point defect clusters contributions to the point defect chemical potential, one may write vacancy and
+interstitial chemical potentials in terms of their equilibrium concentrations Ceq
+V and Ceq
+I respectively (dilute approximation):
+mV ¼ kBT lnðCV =Ceq
+V Þ and mI ¼ kBT lnðCI =Ceq
+I Þ; ð14Þ
+leading to an expression of the associated driving force 15
+∇mV
+kBT ¼ 1
+CV
+∇CV /C0 ξVA
+CA
+∇CA; with ξVA ¼ ∂ ln Ceq
+V
+∂ ln CA
+: ð15Þ
+The interstitial driving force has the same form, except that letter V is replaced by letter I. Note, that the equilibrium point defect
+concentrations may vary with the local alloy composition and stress. Although the variation of the equilibrium vacancy con-
+centration is expected to be mainly chemical, the change of the elastic forces due to a solute redistribution at sinks should not be
+ignored for the interstitials. 15
+Note that we introduce here a homogeneous formulation of the driving forces. The thermodynamic factors (i.e., partial
+derivatives of chemical potentials with respect to concentrations) depend on the local values but not on the spatial derivatives of
+the concentration ﬁeld. This corresponds to a standard approximation in diffusion. However, it may become an issue when
+employed in continuous RIS models. Indeed, a typical RIS pro ﬁle covers a few tens of nanometers. It may feature an oscillating
+behavior. Further, precipitation phenomena resulting from concentration spatial ﬂuctuations may occur. Therefore, we expect local
+chemical potentials not only depend on the local value but also on the spatial derivatives of the concentration gradients. According
+to Cahn and Hilliard, 79 the free-energy model of a non-uniform system can be written as a volume integral of an energy density
+made up of a homogeneous term plus gradient energy terms proportional to the squares of concentration gradients. By ignoring
+the latter, a RIS diffusion equation cannot produce physical phenomena controlled by an interface energy. In particular, a RIS
+diffusion equation applied to the calculation of an equilibrium segregation pro ﬁle of a structural defect gives rise to a ﬂat proﬁle.
+One cannot simulate an oscillating pro ﬁle resulting from a competition between the thermodynamic driving force of the equi-
+librium segregation pro ﬁle and ﬂux coupling; and even less precipitation phenomena.
+1.08.3.2.2 L –D relationship
+A RIS model must be able to describe the reaction of a system to a gradient in the alloy composition but also to unusual driving
+forces, such as point defect concentration gradients. We write then the driving forces in terms of concentration gradients and
+introduce the diffusion coef ﬁcients as the constants of proportionality between ﬂuxes and concentration gradients. They are
+functions of the L-coefﬁcients and partial derivatives of chemical potentials with respect to the atomic and point defect
+concentrations.
+A RIS model must also reproduce the atomic diffusion enhancement resulting from an increase of point defect concentration. If
+we ignore the thermodynamic and kinetic contributions of point defect clusters, the L-coefﬁcients vary linearly with point defect
+concentrations. To highlight the role of point defect concentration, one introduces normalized L-coefﬁcients, the so-called partial
+246 Radiation-Induced Segregation
+
+===== PDF PAGE 13 =====
+diffusion coefﬁcients, which are point defect concentration free. 15,33,80 They depend on temperature and local alloy composition.
+First expressions of the partial diffusion coef ﬁcients in terms of the L-coefﬁcients were from Howard and Lidiard 81 for the vacancy
+in dilute alloys, from Barbu 82 for the interstitial in dilute alloys, and from Wolfer 15 in concentrated alloys. In the following, we use
+the formulation of Wolfer because the approximations made to calculate the L-coefﬁcients and driving forces are clearly stated. In a
+binary alloy (AB), ﬂuxes are separated into two contributions: the ﬁrst one induced by the point defect concentration gradients,
+and the second one arising after the formation of chemical concentration gradients near the point defect sink 15:
+JA ¼ CAðdAV ∇CV /C0 dAI ∇CIÞ/C0ð dc
+AV CV þ dc
+AI CI ÞF∇CA
+JV ¼/C0 ð CAdAV þ CBdBV Þ∇CV þ CV Fðdc
+AV /C0 dc
+BV Þ∇CA
+JI ¼ð CAdAI þ CBdBIÞ∇CI þ CI Fðdc
+AI /C0 dc
+BI Þ∇CA ð16Þ
+where we de ﬁne the partial diffusion coef ﬁcients in terms of the L-coefﬁcients
+dAV ¼ LV
+AA þ LV
+AB
+CACV
+dAI ¼ LI
+AA þ LI
+AB
+CACI
+dc
+AV ¼ LV
+AA
+CACV
+/C0 LV
+AB
+CBCV
+þ dAV
+1
+F ζVA
+dc
+AI ¼ LI
+AA
+CACI
+/C0 LI
+AB
+CBCI
+þ dAI
+1
+F ζIA ð17Þ
+Note that the partial diffusion coef ﬁcients d have the same units as the L-coefﬁcients or as a diffusion coef ﬁcient divided by the
+atomic volume: m /C0 1 s/C0 1. ζVA is derived from the variation of the local equilibrium vacancy concentration with respect to the alloy
+local concentration (see Eq. (15)). Flux of B is deduced from the ﬂux of A by exchanging the letters A and B. In a multicomponent
+alloy, equivalent kinetic equations are provided by the Perks ’s model.83 In the latter, point defect concentrations are assumed to be
+independent of the chemical species concentrations: in other words, parameters ζVA and ζVB are set to zero. Most of the RIS models
+are derived from the Perks ’ model although they neglect the cross-coef ﬁcients and approximate the diagonal-coef ﬁcients by tracer
+diffusion coef ﬁcients.5 The ﬂux of specie i is assumed to be independent of the concentration gradients of the other species. In
+doing so, not only the kinetic couplings, but also some of the thermodynamic couplings are ignored. Indeed, as shown in Eq. (12),
+a chemical potential gradient is a function of all the concentration gradients. However, relying on a CALPHAD database, Yang et al.
+have improved the Perk ’s model by adding crossed-thermodynamic terms controlling the dependence of atomic chemical
+potential on the full set of chemical species. 61 Yet, one must emphasize, improving RIS models dedicated to concentrated alloys is
+not trivial, mainly because experimental diffusion data are lacking. An atomic ﬂux results from a balance between the so-called IK
+effect, atomic ﬂuxes induced by point defect concentration gradients ( ﬁrst term of the RHS of Eq. (16)), and the back diffusion and
+the Kirkendall (K) effect reacting against the formation of chemical concentration gradients at sinks produced by the IK effect (last
+term of LHS of Eq. (16)). Eq. (16) can be used in both dilute and concentrated alloys. Differences between models arise when one
+evaluates speci ﬁc partial diffusion coef ﬁcients.
+The ﬁrst RIS model in dilute fcc alloys, designed by Johnson and Lam, 84 introduced an explicit variable for solute – point defect
+complexes. The same kind of approach has been used by Faulkner et al. ,85 although it has been shown to be incorrect in speci ﬁc
+cases.82,86 The ﬁrst RIS model derived from a rigorous estimation of ﬂuxes, with a clear correspondence between the atomic jump
+frequencies and the L-coefﬁcients, was devoted to fcc dilute alloys, 87 and then to bcc dilute alloys. 88
+In concentrated alloys, due to the greater complexity and the lack of experimental data, atomic-based diffusion models of RIS
+are scarce. Most of them rely on TIP based diffusion equation, for which one uses empirical diffusion model as the Manning
+approximation to compute the diffusion coef ﬁcients.
+1.08.3.2.3 Analytical solutions at steady state
+In steady state, the time derivative of atomic and point defect concentrations are zero, in particular at the point defect sink.
+Therefore, the single ﬂux coming from the bulk, which controls the atomic concentration ( Eq. (3)) at the point defect sink is zero.
+Step by step from the sink plane, we demonstrate every ﬂux of a given atomic species a is zero
+Ja ¼ 0: ð18Þ
+In case of a unique population of point defect sinks, setting to zero the time-derivatives of point defect concentrations in
+Eq. (2) leads to the relationship
+JV ¼ JI : ð19Þ
+In a binary alloy, Eqs. (16) , (18), and (19) yield the Wiedersich ’s relationship between concentration gradients: 80
+∇CA ¼ CACBdBI dBV
+ðCBdBIDA þ CAdAI DBÞ
+dAV
+dBV
+/C0 dAI
+dBI
+/C18/C19
+∇CV ; ð20Þ
+Radiation-Induced Segregation 247
+
+===== PDF PAGE 14 =====
+where the intrinsic diffusion coef ﬁcient (normalized by the atomic volume) is equal to Da ¼ð dc
+aV CV þ dc
+aI CIÞF. The spatial extent
+of segregation coincides with the region of non vanishing defect gradients. Note that, in the original paper, 80 the partial and
+c-partial diffusion coef ﬁcients were taken to be equal. Such a simpli ﬁcation may change the amplitude of the RIS predictions. In a
+multicomponent alloy, not only the amplitude, but also the sign of RIS might be affected by this simpli ﬁcation.
+Note that Eq. (20) only gives the relationship between ∇CA and ∇CV . In the special case where the elimination of point defects
+at sinks are dominant (i.e., when recombination is negligible) and for simple sink microstructures (thin ﬁlms), one obtains
+analytical expressions of the point defect and solute concentration pro ﬁles, and of the total amount of solute segregation. 20 Main
+result is the solute segregation does not directly depend on the dose rate but only on the density of sinks.
+1.08.4 Diffusion Equations: Application to Real Systems
+It is often dif ﬁcult to apply the previous models to a speci ﬁc system due to the lack of diffusion experimental data. Below, we
+present a few experimental procedures to estimate both the driving forces and the L or D-coefﬁcients. We introduce then the
+empirical models used to deduce the partial diffusion coef ﬁcients of a RIS model.
+1.08.4.1 Diffusion Equation Parameters From Experiments
+1.08.4.1.1 Thermodynamic databases
+As shown in Eq. (13), we deduce the thermodynamic factor from a concentration derivative of the alloy chemical potential, which
+in turn is a ﬁrst derivative of the Gibbs free energy per atom G of the alloy. Thus, we have
+F ¼ CACB
+1
+kBT
+∂2G
+∂CB2 : ð21Þ
+When available, we may obtain an expression of the Gibbs free energy G from a thermodynamic database such as CALPHAD. 89
+The latter builds free-energy composition functions of the alloy phases from thermodynamic measurements (speci ﬁc heats,
+activities, etc.) and phase diagrams. These databases mostly ﬁtted on high temperature experimental data are less valid at low
+temperature. There is a CALPHAD database for most of the binary alloys and a few ternary alloys, as for instance FeNiCr. 90 In case
+there is no thermodynamic database but a phase diagram, we may get a rough estimation of the Gibbs free energy from the regular
+solution model. In the speci ﬁc case of a binary alloy A1– CBC with a clustering tendency, the regular solution model of the Gibbs
+free energy per atom writes
+G ¼ 2kBTcCð1 /C0 CÞþ kBTC lnðCÞþ kBTð1 /C0 CÞlnð1 /C0 CÞ; ð22Þ
+where Tc is the critical temperature extracted from the phase diagram (corresponding to the maximum temperature of a miscibility
+gap in systems with a clustering tendency). From Eqs. (21) and (22), we deduce the concentration-dependent thermodynamic
+factor
+F ¼ 1 /C0 4Cð1 /C0 CÞ Tc
+T : ð23Þ
+1.08.4.1.2 Experimental evaluation of the kinetic coef ﬁcients
+The L-coefﬁcients characterize the kinetic response of an alloy to a gradient of chemical potential. In practice, what we impose is a
+composition gradient. Thus, we switch to the D /C0 ∇C writing of ﬂuxes. Flux of a given species i follows then a generalized Fick ’s
+law
+Ji ¼/C0
+X
+j
+Dij
+∇Cj
+O : ð24Þ
+A diffusion experiment consists of measuring some of the terms of the diffusivity matrix Dij. These terms cannot be determined
+one by one because at least two concentration gradients are involved in a diffusion experiment. Note, that the L-coefﬁcients can be
+traced back only if the whole diffusivity matrix and the thermodynamic factors are known. Furthermore, most of the diffusion
+experiments are performed in thermal conditions and do not involve the interstitial diffusion mechanism.
+In the following section, we present two thermal diffusion experiments. Then, we review the few diffusion experiments
+performed under irradiation. From these examples, we show how dif ﬁcult it is to obtain the whole diffusivity matrix.
+1.08.4.1.2.1 Interdiffusion experiments
+In an interdiffusion experiment, a sample A (mostly composed of A atoms) is welded to a sample B (mostly composed of B atoms)
+and annealed at a temperature high enough to observe an evolution of the concentration pro ﬁle. We assume vacancy is at local
+equilibrium and the gradient of vacancy chemical potential is zero. Therefore, according to Eqs. (4) and (16), the ﬂux of
+component i in the reference crystal lattice is proportional to its concentration gradient:
+Ji ¼/C0 Di
+∇Ci
+O ; ð25Þ
+248 Radiation-Induced Segregation
+
+===== PDF PAGE 15 =====
+where the so-called intrinsic diffusion coef ﬁcient Di is a function of the phenomenological coef ﬁcients and the thermodynamic
+factor:
+Di ¼ O LV
+ii
+Ci
+/C0
+LV
+ij
+Cj
+ !
+F: ð26Þ
+An interdiffusion experiment consists of measuring the intrinsic diffusion coef ﬁcients as a function of local concentrations.
+Interdiffusion experiments have been performed in austenitic and ferritic steels. 38 The determination of the intrinsic diffusion
+coefﬁcients requires the measurement of the interdiffusion coef ﬁcient and of the Kirkendall speed for each composition. 91 In
+general, an interdiffusion experiment provides the Kirkendall speed for one composition only, leading to a pair of intrinsic
+diffusion coef ﬁcients in a binary alloy. Therefore, few values of intrinsic diffusion coef ﬁcients have been recorded at high
+temperatures and on a limited range of the alloy composition. Nevertheless, even if a complete characterization of the intrinsic
+diffusion coef ﬁcients was possible, an interdiffusion experiment in an alloy of Nsp components gives access to Nsp intrinsic
+diffusion coef ﬁcients, which is not enough to trace back the full L-coefﬁcient matrix comprising Nsp Nsp þ 1
+/C0/C1
+=2 independent
+coefﬁcients. In addition, interdiffusion is a kinetic response to a chemical driving force, which is very different from the kinetic
+response to a point defect concentration gradient. Anthony ’s diffusion experiment measures the ﬂux coupling induced by a
+gradient of vacancy concentration, which is similar to what occurs under irradiation. Therefore, such an experiment should
+complement the interdiffusion experiments.
+1.08.4.1.2.2 Anthony ’s experiment
+Anthony set up a thermal diffusion experiment involving vacancies as a driving force 21– 25,28,92 in aluminum alloys. A gradient of
+vacancy concentration around a cavity is produced by a slow decrease of temperature. At the beginning of the experiment, the ratio
+between solute and vacancy ﬂuxes is the following:
+JB
+JV
+¼/C0 LV
+BB þ LV
+AB
+LV
+AA þ LV
+BB þ 2LV
+AB
+ð27Þ
+The volume of the cavity and the amount of solute segregation nearby yield a value for the ﬂux ratio. Note, that an analysis
+relying on Eq. (27) neglects secondary ﬂuxes induced by the formation of a segregation pro ﬁle.
+This experiment, combined with an interdiffusion annealing, could be a way to estimate the complete Onsager matrix.
+Unfortunately, the Anthony’s experiment does not seem to be feasible in most alloys, especially in steels. In steels, vacancies do not
+form cavities, and solute segregation induced by quenched vacancies is not visible when the vacancy elimination is not con-
+centrated on cavities. In addition, we suspect the large attraction between vacancy and impurities such as oxygen, nitrogen and
+carbon in iron hinders the formation of a vacancy chemical potential gradient at low temperature. 93
+1.08.4.1.2.3 Diffusion under irradiation
+In the 1970s, a few tracer diffusion experiments were performed under irradiation. 94 The main objective was to enhance diffusion
+by increasing point defect concentrations and thus accelerate diffusion at low temperature. Another motive was to characterize
+diffusion of the interstitials created by irradiation. In pure metals, some experiments were reliable enough to provide diffusion
+coefﬁcient values at temperatures that were not accessible in thermal conditions. 94 The analysis of the same kind of experiments in
+alloys happened to be very dif ﬁcult.95 One of the major dif ﬁculties is to be able to decouple the effect of temperature and
+irradiation conditions on the microstructure from that on diffusion phenomena.
+Another technique is to use irradiation to implant point defects at very low temperature. A slow annealing of the irradiated
+samples combined with electrical resistivity recovery measurement highlights several regimes of diffusion; at low temperature,
+interstitials with low migration energies diffuse alone, while at higher temperatures, vacancies and point defect clusters also
+diffuse. Temperatures at which a change of slope is observed yield effective migration energies of interstitials, vacancies, and point
+defect clusters. 96 In situ TEM observation of the growth kinetics of interstitial loops in a sample under electron irradiation is
+another method of determining the effective migration of interstitials. 97
+1.08.4.2 L and D Coefﬁcients From Empirical Models
+In the previous section, we mentioned the dif ﬁculty in measuring the L-coefﬁcients of an alloy, especially those involved in ﬂuxes
+induced by point defect concentration gradients. Diffusion data are especially dif ﬁcult to obtain for the interstitials. This is
+probably why most of the RIS models emphasize the effect of vacancy ﬂuxes, with the interstitial contribution assumed to be
+neutral. We present the main approximations used to address the lack of experimental data and estimate the partial diffusion
+coefﬁcients of the vacancy diffusion mechanism. Then, we discuss a few applications to the modeling of RIS in real alloys.
+1.08.4.2.1 Manning-based model of concentrated alloys
+First diffusion model for concentrated alloys under irradiation is due to Marwick. 33 He introduced the concept of radiation-
+enhanced diffusion by taking out vacancy concentration as a separate factor of the partial diffusion coef ﬁcients. We deduce the
+L-coefﬁcient and the corresponding partial diffusion coef ﬁcients from a basic jump frequency model combined with the random
+lattice gas diffusion model of Manning. 13 In this diffusion model, correlation effects are added as corrective terms of the basic
+Radiation-Induced Segregation 249
+
+===== PDF PAGE 16 =====
+jump frequencies. The resulting ﬂuxes33 are similar to Eq. (16) , except that the c-partial diffusion coef ﬁcients dc
+AV , dc
+AI are now
+equal to the partial diffusion coef ﬁcients dAV , dAI , which is equivalent to neglecting cross L-coefﬁcients and the dependence of
+equilibrium point defect concentration on alloy composition. However, for the ﬁrst time, one understands the segregation of the
+major element, Ni, in concentrated austenitic steel is the result of a competition between fast- and slow-diffusing major alloy
+components, Ni being the slow element and Cr the fast one.
+After the relations of Manning, 13 we obtain an approximation of the L-coefﬁcients from the tracer diffusion coef ﬁcients DV
+i/C3 of
+element i:
+LV
+ij ¼ Ci
+O DV
+i/C3 δij þ 1 /C0 f0
+f0
+CjDV
+j/C3
+P
+k CkDV
+k/C3
+"#
+; ð28Þ
+where DV
+i/C3 is the tracer diffusion coef ﬁcient of element i via the vacancy diffusion mechanism. The same relations can be written for
+the interstitial mechanism, even though in practice, we cannot measure the interstitial mediated tracer diffusion coef ﬁcients. The
+Manning relations systematically predict positive partial diffusion coef ﬁcients which are directly related to the tracer diffusion
+coefﬁcients
+daV ¼ DV
+a/C3
+OCeq
+V
+: ð29Þ
+Establishing a link between partial diffusion coef ﬁcients and tracer diffusion coef ﬁcients can be very useful because we have a
+large database on tracer diffusion in model alloys of nuclear materials. However, we need to know the equilibrium concentration
+of vacancy in order to extract the normalized partial diffusion coef ﬁcient from Eq. (29) . The latter may strongly depend on the
+alloy composition and temperature, and directly measuring it is very dif ﬁcult.93 Note the Manning relations imply relationships
+between the L-coefﬁcients of an alloy, reducing to Nsp the number of independent L-coefﬁcients. Such an approximation yields
+satisfying results on the RIS behavior of the major alloy components of concentrated alloys as for instance in austenitic steels. 98 In
+the latter, RIS is commonly thought of in terms of tracer diffusion coef ﬁcients. In binary alloys, one relies on the difference
+½DV
+A/C3 =DV
+B/C3 /C0 DI
+A/C3 =DI
+B/C3 /C138 to predict the sign and the amplitude of RIS. However, such an approach may be not appropriate for the
+investigation of RIS of impurities in concentrated alloys. The constraint of positive L-coefﬁcients implies no vacancy solute-drag
+whereas recent ab initio studies demonstrate the vacancy solute drag of impurities is very frequent, at least in dilute alloys. 9,10
+Since the solute drag mechanism is mainly due to the attraction between vacancy and solute atoms and the subsequent large
+variation of the vacancy exchange frequencies with respect to its distance to the solute, we expect the minor elements in con-
+centrated alloys to be potentially exposed to the vacancy solute drag mechanism. We are not aware of a RIS model encompassing
+the solute drag mechanism in concentrated alloys.
+Wiedersich et al. 80 added to Marwick ’s model a contribution of the interstitials. The global interstitial ﬂux is described by Eq.
+(16), while preferential occupation of the dumbbell by a specie or two is deduced from the alloy concentration and the effective
+binding energies. Such a local equilibrium assumption lies in the hypothesis of very large interstitial jump frequencies compared
+to atomic jump frequencies. This kind of model yields an analytical expression of the ratio between the gradient of solute
+concentration and the gradient of defect concentration in the stationary state (see Eq. (20) ). A little later, one has attempted to
+establish the relationship between elementary interstitial jumps, their change of composition and the resulting diffusion coef ﬁ-
+cients. From a microscopic description of the jump mechanism, one derives the kinetic equations associated with each dumbbell
+composition.99– 102 Unlike previous models, there is no local equilibrium assumption, but correlation effects are neglected. Even
+more sophisticated interstitial diffusion model including the correlation effects had been developed, 103 but due to the lack of data
+for the interstitials, most of the concentrated alloy models have neglected the interstitial contribution to RIS. 83,104,105
+1.08.4.2.2 Local concentration-dependent RIS model
+Most of the RIS models assume thermodynamic factors equal to 1, although from the ﬁrst modeling paper, 15 the alloy ther-
+modynamic factor was recognized to be varying with solute concentration. Similarly, the quantities ξva and ζIa of the point defect
+driving forces depend on local concentration and stress ﬁeld.15,106 The shape of RIS pro ﬁle depends as well on the alloy
+thermodynamic factor.107 Besides, Wolfer15 has demonstrated that RIS and its effect on the local thermodynamic factors affect the
+repartition between interstitial and vacancy ﬂuxes and thereby, the swelling phenomena. The modi ﬁcation of sink bias might be
+due to several factors: the wind of point defect of a Kirkendall interdiffusion process induced by the formation of RIS, or the
+dependence of the point defect chemical potentials on local composition, including the elastic and chemical effects.
+A local-concentration-dependent driving force is due to the local-concentration-dependent atomic jump frequencies. Following
+this idea, the modi ﬁed inverse Kirkendall (MIK) model introduces partial diffusion coef ﬁcients of the form 104
+dAV ¼ d0
+AV exp /C0 Em
+AV
+kBT
+/C18/C19
+ð30Þ
+The migration energy is written as the difference between the saddle-point energy and the stable state energy. It depends on
+local composition through pair interactions calculated from thermodynamic quantities such as cohesive energies, vacancy for-
+mation energies, and ordering energies. In fact, the present partial diffusion coef ﬁcients correspond to a mesoscopic quantity
+deduced from a coarse-grained averaging of the microscopic jump frequencies. In principle, not only the effective migration
+energies, but also the mesoscopic correlation coef ﬁcients and thermodynamic factors should depend on local concentrations.
+250 Radiation-Induced Segregation
+
+===== PDF PAGE 17 =====
+Nevertheless, the thermodynamic factors, correlation coef ﬁcients, and the ζVa factor are assumed to be those of the pure metal A.
+More recently, a new continuous model suggested a multi-frequency formulation of the concentration-dependent partial diffusion
+coefﬁcients. Instead of averaging the sums of interaction bonds in the exponential argument, every jump frequency corresponding
+to a given con ﬁguration is considered with a con ﬁguration probability weight.18 Predictions of the model are compared with direct
+RIS Monte Carlo simulations that rely on the same atomic jump frequency models. In the two presented examples, the agreement
+is satisfactory. However, the thermodynamic factor and correlation coef ﬁcients are yet to be de ﬁned clearly. 18
+1.08.4.3 Diffusion Equation Parameters From Atomic Models
+As we have seen in the previous section, a full experimental determination of the concentration and temperature dependent
+L-coefﬁcients is almost impossible to achieve. An alternative approach is to compute the L-coefﬁcients from the knowledge of
+atomic jump frequencies. First-principles methods are now able to provide accurate values of jump frequencies in a given local
+environment. In dilute alloys, only a few environments have to be considered and all the relevant jump frequencies can be
+estimated. In concentrated alloys, the environments are too many and ab initio calculations too time consuming: we still need to
+develop interatomic potentials and parameterized concentration-dependent model of the point defect jump frequencies. Once we
+have built the jump frequency model, the L-o r D-coefﬁcients can be estimated from diffusion theories or from atomistic
+simulations.
+1.08.4.3.1 Jump frequencies
+In the framework of the transition state theory, 108 the exchange frequency between a vacancy V and a neighboring atom A is given
+by:
+GAV ¼ nAV exp /C0 DGmig
+AV
+kBT
+ !
+¼ nAV exp þ DSmig
+AV
+kB
+ !
+exp /C0 DHmig
+AV
+kBT
+ !
+ð31Þ
+when DHmig
+AV is signi ﬁcantly greater than thermal ﬂuctuations kBT. DGmig
+AV , DHmig
+AV and DSmig
+AV are respectively the Gibbs free energy,
+enthalpy and entropy of migration and nAV is the attempt frequency. DHmig
+AV corresponds to the increase of the total enthalpy when
+A goes from its initial site on the crystal lattice to the saddle point between its initial and ﬁnal position. A similar expression holds
+for self-interstitial jumps. The description of these jump frequencies, and of their dependence on the local atomic con ﬁguration,
+encompasses all the information on the thermodynamic and diffusion properties of the system.
+1.08.4.3.1.1 Ab initio calculations
+Since the development of the density functional theory (DFT), ﬁrst-principle methods have dramatically improved our knowledge
+of point defect and diffusion properties in metals. 109– 114 They provide a reliable way to compute the formation and binding
+energies of defects, their equilibrium con ﬁguration and migration barriers, the in ﬂuence of the local atomic con ﬁguration in alloys,
+etc. The DFT studies on self-interstitial properties – for which few experimental data are available – are of particular interest. They
+have shown e.g., that the stable con ﬁguration is the [110] dumbbell in a-iron,115,116 and the [100] dumbbell in most fcc
+alloys.113,114 More recently, one has demonstrated a systematic investigation of the thermodynamic and kinetic properties of
+dumbbells in dilute Fe-based alloys, including the vibrational entropy contributions, is now feasible. 12
+However, some limitations remain. Migration enthalpies are usually computed at 0K by the drag or by the nudged elastic band
+methods.117 Migration entropies can be computed by phonon calculations within a harmonic or quasi-harmonic approximation,
+but these calculations are especially expensive and since the jump frequency is less sensitive to the variation of DSmig
+AV than to the
+variation of DHmig
+AV , they are frequently dispensed with (a constant DSmig
+AV is assumed and integrated in the attempt frequency). More
+generally, the determination of ﬁnite temperature effects is still incomplete. Direct calculations of DGmig
+AV beyond the harmonic
+approximation are scare and rarely applied to RIS problems. The modeling of magnetic transitions affecting both point defect and
+diffusion properties (especially in iron-based alloys), is mostly phenomenological. 111,118,119 Above all, DFT methods are still too
+time consuming to allow either direct simulations of the atomic displacement ﬂuctuations, ‘on-the-ﬂy’ calculations of the
+migration barriers, or their prior calculation and tabulation for all the possible local con ﬁgurations (whose number increases very
+rapidly with the range of interactions and the number of chemical elements). One recent exception is the measurement of self-
+interstitial tracer diffusion coef ﬁcients in Ni – Cr alloy, by ab initio molecular dynamics. 120 An alternative approach is to develop
+approximate models of local-concentration dependent jump frequencies for concentrated alloys, whose parameters are ﬁtted to
+reproduce experimental data and/or ab initio calculations.
+1.08.4.3.1.2 Interatomic potentials
+Empirical or semi-empirical interatomic potentials, usually developed for molecular dynamics simulations, can be used for the
+modeling of RIS, but one must address several issues:
+ To get a reliable description of an alloy, the interatomic potential has to be adjusted on properties that control the ﬂux coupling
+of point defects and chemical elements. A complete ﬁtting procedure would be very tedious and, to our knowledge, has never
+been achieved for a given system.
+Radiation-Induced Segregation 251
+
+===== PDF PAGE 18 =====
+ Direct measurement of the L-coefﬁcients by MD are very demanding in CPU-time. Up to now, one is able to measure tracer
+diffusion coef ﬁcients mediated by an SIA diffusion mechanism only. For example, Terentyev et al .121,122 have measured this
+way the tracer diffusion coef ﬁcient of Cr and Fe in bcc Fe – Cr alloys with SIA. They have found that the preferential transport of
+Cr by o1104 dumbbells should tend to an enrichment of Cr near point defect sinks in ferritic steels.
+ At lower temperature, MD can be combined to a static calculation of jump frequencies in terms of attempt frequencies and
+migration barriers. The direct calculation of migration barriers with an interatomic potential, even though much simpler than
+DFT calculations, is still quite time consuming. Full calculations of vacancy migration barriers have indeed been implemented
+in Monte Carlo simulations, 123 using massively parallel calculation methods, but they are still limited to relatively small
+systems and short times, for example, for the study of diffusion properties rather than microstructure evolution. It is possible to
+simplify the calculation of the jump frequency, for example, by not performing the full calculation of the attempt frequencies
+(their impact on the jump frequency must be less critical than that of the migration barriers involved in the exponential term)
+or by omitting the relaxation of the saddle-point position. 124 Malerba et al. have recently proposed another method where the
+point defect migration barriers of an interatomic potential are exactly computed for a small subset of local con ﬁgurations, the
+other ones being extrapolated using arti ﬁcial intelligence techniques. This has been successfully achieved for the modeling of
+diffusion of vacancies in iron – copper alloys.125,126 Such techniques have not yet been used to model RIS, but this could change
+in the future.
+1.08.4.3.1.3 Broken-bond models
+Because of these dif ﬁculties, simulations of diffusive phase transformation kinetics are commonly based on various broken-bond
+models, in the framework of rigid lattice approximations. 5,127 The total energy of the system is considered to be a sum of constant
+pair interaction energies, for example, eðnÞ
+AB between A and B atoms located on nth nn sites. Interactions between atoms and point
+defects can also be used to provide a better description of their formation energies and interactions with solute atoms, and other
+defects. Concentration dependent pair interactions can be used to reproduced asymmetrical thermodynamic properties. 14
+Various approximations are used to compute the migration barriers: a common one 128 is writing the saddle-point energy of the
+system as the mean energy between the initial energy Ei and ﬁnal energy Ef , plus a constant contribution Q (which can depend on
+the jumping atom, A or B). The migration barrier for an A – V exchange is then:
+DEmig
+AV ¼ Ef /C0 Ei
+2 þ QA ð32Þ
+where Ef – Ei corresponds to the balance of bonds destroyed and created during the exchange.
+Another solution is to explicitly consider the interaction energy eSP
+AV of the jumping atom A with the system, when it is at the
+saddle point:
+DEmig
+AV ¼ eSP
+AV /C0
+X
+i;n
+eðnÞ
+Ai /C0
+X
+j;n
+eðnÞ
+Vj ð33Þ
+eSP
+AV itself can be written as a sum of interactions between A and the neighbors of the saddle point. 60,129,130
+We easily extend both approximations to the interstitial diffusion mechanisms, as long as we have experimental and/or ab initio
+data to rely on for the ﬁtting of the interaction energies. The ﬁrst approximate model of the migration energy has the drawback of
+imposing a linear dependence between the barrier and the difference between the initial and ﬁnal energies, which is not justi ﬁed
+and has been found to be unful ﬁlled in the very few cases where it has been checked using empirical potentials. 123 The second
+model should better take into account the effect of the local con ﬁguration and, according to the theory of activated processes, does
+not impose a dependence of the barrier on the ﬁnal state. However, a model of pair interactions on a rigid lattice does not give a
+very precise description of the energetic landscape in a metallic solid solution, so, the choice of approximations may not be crucial.
+Taking into account many-body interactions ( ﬁtted to ab initio calculations, using cluster expansion methods) could improve the
+description of migration barriers, but would signi ﬁcantly increase the simulation CPU time. 131,132
+1.08.4.3.2 Calculation of the phenomenological coef ﬁcients
+Given an atomic jump frequency model, transitions of the alloy con ﬁgurations are described by a master equation. With one point
+defect in the system, a Monte Carlo simulation produces a trajectory of the alloy in the con ﬁguration space. The L-coefﬁcients can
+be obtained from a Monte Carlo simulation. Measurements are performed on an equilibrated system using the generalized
+Einstein formula of Allnatt: 133
+Lij ¼ 1
+O
+〈DRiDRj〉
+6t ð34Þ
+where DRi is the displacement of the species i during time t. This numerical approach has proved its ef ﬁciency; however it is limited
+to short ranges of composition and temperature. Simulations become rapidly unworkable when, for example, binding energies
+between interstitials and neighboring atoms are signi ﬁcant.134,135 The simulated trajectory can be trapped in some con ﬁgurations
+due to the correlation effects of the diffusion mechanism; after a jump, an atom has a ﬁnite probability to exchange again with the
+same point defect and cancel its ﬁrst jump. The escape probability of the point defect from an atom decreases with the binding
+energy between the two species.
+252 Radiation-Induced Segregation
+
+===== PDF PAGE 19 =====
+In the limited case of dilute alloys, in which a few point defect jump frequencies are involved, it is possible to consider all the
+vacancy paths and deduce semi-analytical expressions for the L-coefﬁcients. In concentrated alloys, mean ﬁeld diffusion models of
+concentrated alloys yield approximate expressions of the transport coef ﬁcients.
+1.08.4.3.2.1 Dilute alloys
+The point defect jump frequencies to be considered are those that are far from the solute, those leaving the solute, those arriving at
+a nn site of the solute, and those jumping from nn to nn sites of the solute. We may apprehend a solute diffusivity as a series in
+which the successive terms include longer and longer looping paths of the point defect from the solute. A ﬁrst shell diffusion
+model accounts for solute-PD interactions between 1NN sites only, so that the set of exchange frequencies to be considered is
+small ( ﬁve in fcc, 7 four in bcc 7 and eight in hcp alloys 136 for the vacancy mechanism).
+In the case of the vacancy diffusion mechanism, before the development of ﬁrst-principles calculation methods, 1nn vacancy-
+solute interactions only were usually considered and jump frequency ratios could be estimated from a few experimental diffusion
+coefﬁcients (three for fcc and two for bcc). Data were calculated from the solvent and solute tracer diffusivities, the linear
+enhancement of self-diffusion with solute concentration, or the electro-migration enhancement factors of tracer atoms in an
+electric ﬁeld.137 Some examples of jump frequency ratios ﬁtted to experimental data are displayed in published tables. 138 Cur-
+rently, the most widely used approach is using ﬁrst-principles calculations to calculate not only the vacancy, but also the interstitial
+jump frequencies. 12,113,114
+Exact analytical expressions of the corresponding Onsager coef ﬁcients for these multi-frequency diffusion models can been
+obtained.139 A very large database of self and impurity diffusion coef ﬁcients,140 and ﬂux couplings, 11 has recently been auto-
+matically generated from high-throughput DFT calculations, 140 for more than 230 dilute solute diffusion systems in Mg, Al, Cu,
+Ni, Pd, and Pt host lattices. The good agreement with experimental data con ﬁrms the validity of the approach. Thanks to the recent
+development of more sophisticated diffusion models, which account for the variation of PD frequencies beyond the 1NN
+interaction shell, one may investigate not only tracer diffusion but also ﬂux couplings. The latter crucially depend on the variation
+of the PD frequencies with local environment. To compute them, we may use the code KineCluE (for Kinetic Cluster Expansion) 8
+based on the self-consistent mean ﬁeld (SCMF) theory, 9,109,111,141,142 and for the speci ﬁc case of vacancy-mediated diffusion, the
+code Onsager based on mixed SCMF-Green function formalism. 10 High throughput DFT approaches of low temperature ﬂux
+couplings in dilute alloys have now become feasible. 9,10 In the high temperature regime, LAV and LBV are negative, and tracer
+diffusion and solute-PD ﬂux coupling mainly depend on the exchange frequency of a vacancy with an atom of the matrix far from
+the solute and the exchange frequency of a vacancy with the solute atom. Consequently, the knowledge of the self-diffusion and
+solute diffusion coef ﬁcients usually provides a good estimation of LAV and LBV and of the vacancy-solute ﬂux coupling. This
+corresponds to the traditional interpretation of RIS in terms of inverse Kirkendall effect: the elimination of vacancies leads to an
+enrichment of solute B at sinks when dBVodAV and to a depletion when dAVodBV. However, at low temperature, large variations of
+the vacancy exchange frequencies with respect to its proximity with solute atoms may yield sequences of strongly correlated
+successive jumps of the vacancy. These correlations are the main contributors to the atomic-species off-diagonal Onsager coef ﬁ-
+cients and determine the sign of ﬂux coupling between PDs and atomic species. In its course toward a point defect sink, the
+vacancy turns around a solute atom by jumping from a neighboring site to another, then exchanges with it; and this way drags
+solute atoms toward the sink. This solute drag mechanism is associated with a positive ﬂux coupling ( LBV 4 0). It results from a
+subtle game of PD-solute binding energies and kinetic correlations and cannot be predicted from high temperature diffusion
+experiments. Studies dedicated to Fe – X dilute alloys report such a systematic behavior with negative LXV at high temperatures and
+positive LXV at low temperature. 9 The Fe– Cr system is a special case where the binding energy between Cr and V is especially weak.
+Consequently, the drag effect occurs at lower temperature than in other Fe-based binary alloy: below 300K, where no RIS is
+expected.
+The amplitude as well as the sign of RIS depend on both vacancy and interstitial contributions. Very recently, one has
+performed a similar systematic analysis of the solute-interstitial coupling in Fe-based alloys. 12 Preferential solute transport by
+dumbbells occurs for P, Mn, and for Cr to a lesser extent.
+The use of symmetry operations for the analysis of the PD transitions and the computation of the Onsager coef ﬁcients have
+recently widen the investigations to more complex systems. 139,143,144 Let us mention the study of solute drag in strained
+systems,109 in ternary alloys, 143 and in the hexagonal close packed magnesium crystal. 10
+Finally, it is worth noting that in systems submitted to irradiation, the solute-point defect clusters are not necessarily in local
+equilibrium with each other. In that case, we cannot use the TIP formulation of ﬂuxes. A recent extension of the SCMF theory
+splitting the Onsager matrix of L-coefﬁcients into intrinsic matrices of cluster L-coefﬁcients, should be particularly useful for the
+analysis of ﬂux coupling associated with a non-equilibrium cluster distribution. 8,145 As well the forced relocation of atoms within
+a displacement cascade may be treated as an atomic diffusion mechanism, although it does not satisfy the detailed balance, i.e., it
+does not drive the system toward the equilibrium state. Recent theoretical developments implemented into the code KineCluE
+allow to take into account the effect of a forced relocation mechanism on steady state short range order and on ﬂux couplings.146
+1.08.4.3.2.2 Concentrated alloys
+The ﬁrst diffusion models devoted to concentrated alloys rely on a verybasic description of the diffusion mechanism. One equates the
+alloy to a random lattice gas model where atoms do not interact and where vacancies jump at a frequency that depends only on the
+species they exchange with (two frequencies in a binary alloy). Using complex arguments, Manning 13 could express the correlation
+Radiation-Induced Segregation 253
+
+===== PDF PAGE 20 =====
+factors as a function of the few jump frequencies. The approach was extended to the interstitial diffusion mechanism.103 Such diffusion
+models, considering a limited number of jump frequencies, already make spectacular correlation effects appear possible, as for example
+percolation phenomena when the host atoms are immobile.13,147,148 However, they do not account for the effect of short-range order
+on the L-coefﬁcients although one knows that RIS behavior is often explained by means of a competition between binding energies of
+point defects with atomic species, especially in dilute alloys. One made a few attempts to incorporate short-range order in a Manning-
+type formulation of the phenomenological coefﬁcients, but coherency with thermodynamics was not guaranteed.149,150
+The current diffusion models for concentrated alloys, including short-range order, are based on either the path probability
+method (PPM) 151– 153 or the SCMF theory. 148,154– 157 Both mean- ﬁeld methods start from an atomic diffusion model and a
+microscopic master equation. While the PPM considers transition variables, which are deduced from a minimization of a pseudo
+free-energy functional associated to the kinetic path, the SCMF theory introduces an effective Hamiltonian to represent the non-
+equilibrium correction to the distribution function probability and calculates the effective interactions by imposing a self-
+consistent constraint on the kinetic equations of the distribution function moments. Diffusion models built from the PPM were
+developed in bcc solid solution and ordered alloys, using nn pair transition variables, which is equivalent to considering nn
+effective interactions, and a statistical pair approximation for the equilibrium averages within the SCMF theory. 151,152 The SCMF
+theory extended the approach to fcc alloys 13,147,148 and provided a model of the composition effect on solute drag by vacancies. 155
+The interstitial diffusion mechanism was also tackled. 135,158,159 For the ﬁrst time, an interstitial diffusion model including short-
+range order was proposed in bcc concentrated alloys. 158 It was shown that the usual value of 1 eV for the binding energy of an
+interstitial with a neighboring solute atom leads to very strong effects on the average interstitial jump frequency and, therefore, on
+the L-coefﬁcients.
+1.08.4.4 Comparison With Experiment
+RIS almost systematically takes place upon electron, neutron and ion irradiation, even at very low radiation dose. In many cases,
+we cannot achieve a full quantitative comparison between the RIS models and experimental observations, mostly because samples
+are made from commercial alloys containing at least ﬁve different chemical species plus impurities while models simulate RIS in
+binary and ternary model alloys. In addition, we generally simulate RIS as an isolated phenomenon while its amplitude and even
+its sign (in ferritic steels) depends on the full radiation-induced microstructure. We present a few examples of investigations, ﬁrst in
+dilute alloys, then in concentrated alloys. We close the section on the main challenges we still have to tackle.
+1.08.4.4.1 Dilute alloys
+RIS measurements in dilute alloys are less numerous than in concentrated alloys because the required grain boundary con-
+centrations are usually smaller. However, some of the ﬁrst RIS observations concerned the segregation of a dilute element, Si, in
+austenitic steels. In this speci ﬁc case, observations were easy because the RIS of Si goes along with the precipitation of Ni 3Si.
+The ﬁrst mechanism proposed to explain the observed solute segregation was the diffusion of solute – point defect complexes
+towards sinks.84 Since then, more rigorous models that rely on the linear response theory have been established and applied to the
+RIS description of Mn and P in nickel 87 and P in ferritic steels. 86,88 Although good precision of the microscopic parameters was still
+missing, the formulation of the kinetic equations was general enough to be used almost without modi ﬁcation.84 Recent ab initio
+calculations not only provided accurate atomic jump frequencies of P in Fe, 115,160 but they also called into question the jump
+interstitial diffusion mechanism that had to be considered. 160 Indeed, the octahedral and the (110) mixed dumbbell con ﬁg-
+urations have almost the same stability and migration enthalpies. The resulting effective diffusion energy estimated by the
+transport model was found to be smaller than the self-interstitial atom migration enthalpy, con ﬁrming the classical statement that
+a solute atom with a negative size effect tends to segregate at the grain boundary. However, as emphasized in Meslin et al.,160 the
+current interpretation of the interstitial contribution to RIS in terms of size effects is certainly oversimpli ﬁed. A very large ab initio
+value of 1.05 eV for the binding energy between a mixed dumbbell and a substitutional P atom may lead to a large activation
+energy for P interstitials and a drastic reduction of P segregation predictions. 160 To consider this new blocking con ﬁguration with
+two P atoms, a concentrated alloy diffusion model including short-range-order effects is required.
+A systematic RIS observation of Cr and minor elements in four martensitic-ferritic alloys irradiated with 2.0 MeV protons over a
+range of doses (1 – 10 dpa) and temperatures (300 – 7001C) has been performed. A positive and a bell-shaped temperature
+dependence of RIS in minor elements Si, Ni, and Cu have been observed. 66 DFT studies of dilute Fe-base binary alloys predict a
+drag by vacancy of these minor elements and a positive RIS at temperatures below 700 1C.111,161,162 These theoretical results
+although not performed on industrial multi-component alloys are consistent with the experimental observations.
+1.08.4.4.2 Austenitic steels
+Most of the RIS models for concentrated alloys were devoted to the ternary Fe – Cr– Ni system, which is a model alloy of austenitic
+steels. The diffusion ratios used in the ﬁtting process are the ones extracted from the tracer diffusion coef ﬁcients measured by
+Rothman et al. (referenced in Perks and Murphy 83 and Allen and Was 104) and more recently the ones collected by Jonsson 163 for
+the model of Yank et al.61 In most of the studies, the input parameters are taken from Perks model. 83 The more recent MIK model,
+which was initially based on the Perks model, used CALPHAD database to ﬁt its concentration-dependent migration energy
+model,104 and the thermodynamic factors. 61 A signiﬁcant improvement in the predictive capabilities of RIS modeling was achieved
+254 Radiation-Induced Segregation
+
+===== PDF PAGE 21 =====
+after a systematic comparison with RIS observations. RIS data which have been used for benchmarking the models are mainly
+Auger spectroscopy measurements of RIS in Fe – Cr– Ni model alloys as a function of temperature, nominal composition, and
+irradiation dose, 104 and scanning transmission electron microscopy-energy-dispersive x-ray spectroscopy pro ﬁles of neutron
+irradiated stainless steels with respect to the radiation dose. 61
+Every model reproduces the correct tendencies of RIS in austenitic steels: a depletion of Cr and an enrichment of Ni near a grain
+boundary. Therefore, whenever the binding energies of point defects with atoms are not so strong and the ratios between the tracer
+diffusion coef ﬁcients of the major elements are large enough (larger than 2 – 3), a rough estimation of the partial diffusion
+coefﬁcients from tracer diffusion coef ﬁcients seems to be suf ﬁcient to reproduce the main tendencies.
+As explained above, one often neglects interstitial contribution to RIS due to the lack of diffusion data. However, Stepanov
+et al. 164 observed an electron-irradiated foil at a temperature low enough so that only interstitials contributed to the RIS.
+Segregation proﬁles were similar to the typical ones observed at higher temperature. Parameters of the interstitial diffusion model
+were estimated in such a way that the experimental RIS was reproduced. The migration energy of interstitials was assumed to be
+equal to 0.2 eV, which is quite low in comparison with the effective migration energy deduced from recovery resistivity mea-
+surements.165 More recently, parametrization of the interstitial diffusion model was achieved by relying on DFT formation energy
+of the interstitials depending on their composition and experimental observation of RIS pro ﬁles.61 DFT calculations tend to
+suggest Cr-rich interstitial is more stable than Ni-rich interstitial in the Fe-rich Fe – Cr– Ni alloys.166 Main conclusion of this new RIS
+model is the dominant diffusion mechanism is the vacancy mechanism for Fe and Cr, while for Ni, the diffusion swings from a
+V-dominant mechanism to a SIA dominant mechanism.
+RIS in austenitic steels is commonly used as a benchmark to assess the representativity of neutron irradiation by ion and
+electron irradiation. By relying on a point defect rate theory model, we may estimate the ﬂux-temperature transition lines between
+the three main kinetic regimes, the thermal one (back diffusion), the one dominated by the elimination at sinks (RIS) and the one
+dominated by recombination (see Fig. 3). Based on the same rate theory model, Mansur has derived analytical expressions of the
+dose rate and dose dependence of the amount of absorbed point defects at sinks. 167 We may then deduce the shift of temperature,
+which is required to keep the same amount of absorbed point defects after a change of the dose rate. Assuming RIS is mainly
+controlled by the latter, the group of Was applies the temperature shift method to reproduce the RIS behavior of neutron-irradiated
+austenitic steels by means of self-ion irradiation. 168 Nevertheless Eq. (20) shows RIS is not exactly sensitive to the amount of
+absorbed point defects at sinks but to the gradient of a point defect concentration divided by its concentration. In the elimination-
+at-sink dominant regime, the resulting RIS should not vary with the dose rate, unless the point defect sink microstructure has
+sensibly changed. 20
+The attempts of the ﬁrst MIK model to reproduce the characteristic ‘W-shaped’ Cr proﬁles observed at intermediate doses were not
+conclusive: transitory proﬁles disappeared after a dose of 0.001 dpa, while the experimental threshold value was around 1 dpa. 40 The
+more recent MIK model adding the interstit ial contribution to RIS and thermodynamic f actors different from one, highlight a ‘W-
+shaped’ Fe and Ni proﬁles at 0.1 dpa.61 A study based on a lattice rate theory pointed out that an oscillating proﬁle was the signature of
+a local equilibrium established between the surface plane and the next plane.169 This kind of mean-ﬁeld model predicts that the local
+enrichment of Cr at a surface persists at larger irradiation dose (0.1 dpa), though not as large as the experimental value.
+The role of impurities as point defect traps has been explored since the 1970s. 170 In those models, impurities do not contribute
+to ﬂuxes but to the sink population as immobile sinks with an attachment parameter depending on an impurity – point defect
+binding energy. 171 Other models account for immobile vacancy traps by renormalizing the recombination coef ﬁcient with a
+vacancy– impurity binding energy. 164 Whether by vacancy or by interstitial trapping, the result is a recombination enhancement
+and a decrease of point defect concentrations, leading to a reduction of RIS and swelling. Hackett et al.171 estimated some binding
+energies between a vacancy and impurities, such as Pt, Ti, Zr, and Hf in fcc Fe, using ab initio calculations. The energy calculations
+seem to have been performed without relaxing the structure, probably because fcc Fe is not stable at 0K. Although the absolute
+values of the binding energies should be used with caution, one can expect the strong difference between the binding energies of a
+vacancy with Zr (1.08 eV) and Hf (0.71 eV) to persist after a relaxation of atomic positions. In a more rigorous way, the trapping of
+dumbbells could be modeled using the high migration energy associated with dumbbells bound to an impurity. 60 Such a model
+would allow the impurity to migrate and change the sink density with dose. The same model could explain the recent experimental
+results observing that, after a few dpa, RIS of the major elements starts again. 171
+RIS in austenitic steels was observed to be strongly affected by the nature of the grain boundary, that is, by the misorientation
+angle and the S value.44 One explains differences between the observed RIS by means of the so-called grain boundary ef ﬁciency,
+which is taken into account in a modi ﬁed rate equation model. 44,99,105,172 Calculations of vacancy formation energies at different
+grain boundaries, for example, in nickel in which atomic interactions are described by an embedded atom method, have been used
+to model sink strength as a function of the misorientation angle. The resulting RIS predictions around several tilt grain boundaries
+were found to be in good agreement with RIS data. 172 Grain boundary displacement and its effect on RIS were considered too.
+Grain boundary displacement was explained by an atomic rearrangement process due to recombination of excess point defects at
+the interface. New kinetic equations including an atomic rearrangement process after recombination of point defects at the
+interface predict asymmetrical concentration pro ﬁles, in agreement with experiments. 105
+1.08.4.4.3 Ferritic steels
+More recently, a RIS model based upon the framework of the Perk’s model has been parameterized for ferritic steels.173 It relies on the
+very strong assumption that every partial diffusion coefﬁcient is deﬁned by a single effective migration energy which value is selected
+Radiation-Induced Segregation 255
+
+===== PDF PAGE 22 =====
+among a set of DFT migration barriers computed in dilute con ﬁgurations. Despite this approximation, the model is able to take into
+account the competition between the RIS contributions of self-interstitials and vacancies. The former prevails at moderate tem-
+peratures, leading to Cr enrichment, the latter at higher temperatures, leading to Cr depletion – in good agreement with the
+experimental results. The decreasing amount of Cr enrichment with increasing bulk Cr composition is also reproduced. 59,66,173
+1.08.4.5 Challenges of the RIS Continuous Models
+Ab initio calculations have become a very powerful tool for RIS simulations. They have been shown to be able to provide not only
+the variation of the atomic jump frequencies with local concentration, 174 but also new diffusion mechanisms. 160 From a precise
+knowledge of the atomic jump frequencies and the recent development of diffusion models, 155 a quantitative description of ﬂux
+couplings is now feasible in dilute alloys. In concentrated alloys, it requires ﬁrst a development of a local concentration dependent
+jump frequency model of both vacancy and self-interstitial, and second the computation of the partial diffusion coef ﬁcients and
+the thermodynamic factors. Whereas both steps have been achieved in Fe – Cr alloys, 107 the ﬁrst step is still an on-going work for
+austenitic steels.
+Radiation induced precipitation following RIS is a common phenomenon. Including precipitation mechanisms in a con-
+tinuous approach is not straightforward because it implies a quantitative modeling of the spatial concentration ﬂuctuations.
+Adding ﬂuctuations within a deterministic approach requires a proper coarse graining method. 175,176 By introducing physical
+concentration ﬂuctuations, they naturally produce thermodynamic and kinetic properties, which do not depend on the dis-
+cretization of the solid. Even though, they are able to simulate precipitation phenomena in addition to ﬂux coupling, they rely on
+a local equilibrium assumption within the cell, which prevent them to tackle nucleation phenomena featuring a critical nucleus
+smaller than the discretized cell.
+Although it has been suggested since the ﬁrst publications 33 that the vacancy ﬂux that counters the built-up gradients of RIS
+could slow down the void swelling, the change of microstructure and its coupling with RIS have almost never been modeled. Only
+very recently, phase ﬁeld methods have tackled the kinetics of a concentration ﬁeld and its interaction with a cavity population or a
+single dislocation loop. The development of a simulation tool able to predict the mutual interaction between the point defect
+microstructure and the ﬂux coupling is still challenging.
+1.08.5 Simulation of RIS From Atomic Jumps
+There are two main strategies to predict RIS from the atomic jumps. The ﬁrst one aims at computing the macroscopic parameters of
+a RIS continuous model from the atomic scale, as explained above. The alternative approach is to perform full atomistic simu-
+lations of the segregation, relying on the atomic-scale description of the point defect jump mechanisms. One advantage of the
+method is that it does not require a diffusion model, based on speci ﬁc approximations, to make the link between the jump
+frequency and the transport coef ﬁcient.
+Molecular dynamics methods are much too slow – by several orders of magnitude – for microstructure evolution governed by
+thermally activated migration of point defects. Atomic lattice rate models or Atomic Kinetic Monte Carlo (AKMC) methods are
+therefore the appropriate technique to simulate nanoscale phenomena such as RIS. Phase-Field models are especially useful to
+model large systems and the effect of elastic interactions, but their kinetic properties must be ﬁrst carefully parametrized using
+another method, such as AKMC simulations. The dif ﬁculties are the same as for the modeling of diffusive phase transformations
+(such as precipitation or ordering during thermal aging), although one has to deal with the non-conservation of the point defect
+concentration resulting from several reactions: the point defect production, recombination and elimination at point defect sinks of
+the microstructure. Besides, the self-interstitial jump mechanisms are usually more complex than the vacancy ones. 127
+Validity of both approaches lies in the physical foundations of an on-lattice modeling of the point defect jump frequencies and
+the interaction of point defects with the ever-changing microstructure.
+1.08.5.1 Creation and Elimination of Point Defects
+Because RIS is due to ﬂuxes of excess point defects, modeling must take into account their creation and elimination mechanisms.
+For example, it must reproduce the ratio between vacancy and interstitial concentrations that controls the respective weights of
+annihilation by recombination or elimination at sinks. The situation from this point of view is very different from phase
+transformations during thermal aging, where usually only vacancy diffusion occurs, and simulations can be performed with
+nonphysical point defect concentrations and a correction of the timescale. 129,174,177
+During electron or light ion irradiation, defects are homogeneously created in the material, with a frequency directly given by
+the radiation ﬂux (in dpa s /C0 1), a condition that is easily modeled in continuous models, mean- ﬁeld models,60,178 or Monte Carlo
+simulations.17,161 The formation of defects in displacement cascades during irradiation by heavy particles can also be introduced
+in kinetic models, using the point defect distributions computed by molecular dynamics. 179
+The annihilation mechanisms at sinks such as surfaces or grain boundaries are, for the time being, simulated using very simple
+approximations (perfects sinks, no formation/annihilation of kinks on dislocations, or steps on surfaces). This should not affect
+256 Radiation-Induced Segregation
+
+===== PDF PAGE 23 =====
+the basic coupling between diffusion ﬂuxes, but the long-term evolution of the sink microstructure – which will eventually have an
+impact on the chemical distribution – is not taken into account. Nevertheless, one may investigate the impact of the grain size and/
+or point defect sink density on RIS by varying the distance between parallel perfect grain-boundaries. 20 Besides, one may introduce
+in an empirical way the impact of point defect clusters contributing to the point defect sink population, and in turn to RIS. It has
+been shown recently, a RIS simulation method combined with a mean ﬁeld cluster dynamics method simulating the evolution of
+the point defect clusters, yields realistic simulation of radiation-enhanced precipitation in Fe – Cr.180
+Thermally activated point defect formation mechanisms that operate during thermal aging, are taken into account in con-
+tinuous simulation methods. 15,107,169,178 Simulations that do not include the thermal production are then valid only at suf ﬁ-
+ciently low temperatures, when defect concentrations under irradiation are much larger than equilibrium ones.
+1.08.5.2 Lattice Rate Models
+The ﬁrst atomic scale models were mean ﬁeld lattice rate models. They included two thermally activated jump frequencies, one for
+the vacancy and the other for the self-interstitial, ﬁrst as a direct interstitial diffusion mechanism 178 and later on as a dumbbell
+diffusion mechanism. 60 Although modeled at the atomic scale, one computes the jump frequency as a function of a mean ﬁeld
+migration energy depending on the mean ﬁeld occupation of surrounding lattice sites both at the saddle point and at the
+equilibrium state. In general, one relies on a broken bond model to express the variation of migration energies in function of the
+local composition. At that time, DFT studies were scarce. Hence, energy interactions were ﬁtted on thermodynamic data including
+the phase diagram, surface and vacancy formation energy. Such a model is able to capture the local driving forces in an
+approximate way but its description of the local dynamics of point defects is limited. In principle, atomic mean ﬁeld kinetic
+equation do not encompass the kinetic correlations. It particular, they should be enable to model a change of kinetic regime with
+respect to the variation of the local solute concentration, as for instance a transition from a solute drag ﬂux coupling to a solute-
+vacancy negative ﬂux coupling. Nevertheless, in systems like austenitic steels, vacancy ﬂux coupling is always negative. Thus, one
+may adopt an empirical approach and parameterize the vacancy jump frequencies to reproduce the macroscopic diffusion
+properties of the alloy. 60 As for the self-interstitial parameters, we adjust them to reproduce the effective migration energies
+extracted from resistivity recovery measurements. 165 The resulting local-concentration-dependent jump frequencies describe both
+the kinetics of thermal alloys toward equilibrium and irradiation-induced surface segregation in concentrated alloys. Further,
+describing diffusion at the atomic scale yields atomic details on the thermodynamic and kinetic properties of point defects and
+atoms close to the point defect sinks. For instance, one may study the kinetics of establishment of a local equilibrium near a free
+surface, acting as a source and sink for point defects. We model it by introducing above the surface, a buffer plane almost full of
+vacancies. Hence, this mean ﬁeld method naturally takes into account the transition of a segregation pro ﬁle from the thermal
+equilibrium one to the RIS one. Application to model alloys of austenitic steels highlights the ‘W-shaped’ proﬁle is a transient state
+from the pre-irradiated enrichment to the strong radiation-induced depletion of Cr. 181 Therefore, both thermodynamic properties
+and the ratio of the transport coef ﬁcients between Fe, Cr, and Ni determines an RIS pro ﬁle (Fig. 9). Note the predicted W-pro ﬁle is
+not as wide as the experimental one.
+What needs to be improved is the interstitial diffusion model. The lack of experimental and ab initio data leads to approximate
+interstitial jump frequencies. Coupling between ﬂuxes is described partially as correlation effects are not accounted for. The recent
+mean-ﬁeld developments 155 should be integrated in this type of simulation.
+1.08.5.3 Monte Carlo Simulations
+AKMC simulations can be used to follow the atomic con ﬁguration of a ﬁnite-sized system, by performing successive point defect
+jumps.17– 19,179,182 In the framework of the chosen interaction model, the migration barriers are exactly computed using equations
+such as (22) or (23), without any mean- ﬁeld averaging. The jump to be performed can be chosen with a residence time
+algorithm,183,184 which can also easily integrate creation and annihilation events. 17,19 Correlation effects between successive point
+defect jumps, as well as thermal ﬂuctuations, are naturally taken into account. This ensures that diffusion properties and
+nucleation events are well described (the latter being especially important for the modeling of RIP). The downside is that AKMC
+simulations are more time consuming than mean- ﬁeld models, especially when correlation or trapping effects are signi ﬁcant.
+These advantages and drawbacks explain why AKMC is especially useful to model the ﬁrst stages of segregation and precipitation
+kinetics.
+AKMC simulations were ﬁrst used to study RIS and RIP in model systems, 17,18 to highlight the control of segregation by point
+defect migration mechanism, and to test the results of classical diffusion equations. These studies show that it is possible – in
+favorable situations, where correlation and trapping effects are not too strong – to simulate microstructure evolution with realistic
+dose rates and point defect concentrations, up to doses of typically 1 dpa.
+In simple cases, AKMC simulations validate the predictions of continuous models, on the basis of simple diffusion
+equations17– 19: an example is given in Fig. 10 for an ideal solid solution, that is, when RIS can be studied without any clustering or
+ordering tendency. 17 In this simulation, the diffusion of A atoms by vacancy jumps is more rapid than that of B atoms, and one
+observes an enrichment of B atoms at the sinks due to the IK effect (A and B atoms diffuse at the same speed by interstitial jumps;
+those jumps therefore do not contribute to the segregation). One can notice the non-monotonous shape of the concentration
+Radiation-Induced Segregation 257
+
+===== PDF PAGE 24 =====
+proﬁle, which corresponds to the prediction of Okamato and Rehn 32 when the partial diffusion coef ﬁcients are dBV/dAV o dBI/dAI.
+In the more complicated case of a regular solution, Rottler et al. 18 have shown that the RIS pro ﬁles of AKMC simulations can be
+reproduced by a continuous model, using a self-consistent formulation that gives the dependence of the partial diffusion coef-
+ﬁcients with the local composition.
+In alloys with a clustering tendency, AKMC simulations have been used to study microstructure evolution when RIS and
+precipitation interact, either in under- or supersaturated alloys. 17,19 The evolution of the precipitate distribution can be quite
+complicated as the kinetics of nucleation, growth, and coarsening depend on both the local solute concentrations and the point
+defect concentrations (which control solute diffusion), concentrations that evolve abruptly in the vicinity of the sinks. 17 A case of
+homogeneous RIP, due to a mechanism similar to the one proposed by Cauvin and Martin 58 (see Section 1.08.2.4), has been
+simulated with a simpli ﬁed interstitial diffusion model. 185,186
+Applications of AKMC to real alloys have been recently proposed. Copper segregation and precipitation in a-iron has been
+especially studied, because of its role in the hardening of nuclear reactor pressure vessel steels. 161,179,182,187,188 These studies are
+based on rigid lattice approximations, using parameters ﬁtted to DFT calculations. The point defect formation energies are much
+smaller in copper-rich coherent clusters than in the iron matrix, 174 and there is a strong attraction between vacancies and copper
+0.08
+0.12
+0.16
+0.2
+0.24
+Cr (at.%)
+Distance from grain boundary (m)
+1d p a0d p a
+13 dpa
+0.04
+0.08
+0.12
+0.16
+0.2
+0.24
+−4 10–9 4 10–90 100–4 10–9 4 10–90 100
+Cr (at.%)
+Distance from grain boundary (m)
+0.01 dpa0d p a
+1d p a
+Fig. 9 Comparison of Cr segregation pro ﬁles as a function of irradiation dose in FeNi 12Cr19 at T ¼ 635K. Left cell represents typical experimental
+results of Busby et al . right cell is mean- ﬁeld predicted result starting from the experimental pro ﬁle observed just before irradiation. Reproduced
+from Nastar, M., 2005. Philos. Mag. 85, 641 – 647. Busby, J.T., Was, G.S., Bruemmer, S.M., Edwards, D.J., Kenik, E.A., 1999. Mater. Res. Soc.
+Symp. Proc. 540, 451.
+–40
+0.90
+0.95
+1.00
+0.90
+0.95
+1.00
+0.90
+0.95
+CBCB
+Cd
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–4
+10–11
+10–12
+10–13
+–40 –20 0
+d (nm)
+20 40
+Vacancies
+Interstitials
+CB
+(c) 0.500 dpa
+(b) 0.078 dpa
+(a) 0.002 dpa Point defect sink1.00
+–20 0 20
+d (nm)
+40
+(a) (b)
+Fig. 10 (a) Evolution of the B concentration pro ﬁle in an A 10B90 ideal solid solution under irradiation at 500K and 10 /C0 3 dpa s/C0 1,w h e ndAV 4 dBV
+and dAI ¼ dBI; (b) Point defect concentration pro ﬁles in the steady state. Reproduced from Soisson, F.J., 2006. Nucl. Mater. 349, 235 – 250.
+258 Radiation-Induced Segregation
+
+===== PDF PAGE 25 =====
+atoms in iron, up to the second-nearest neighbor positions. 115,174 AKMC simulations show that in dilute Fe – Cu alloys,
+LCuV ¼ 2ðLCuCu þ LCuFeÞ is positive at low temperatures, because of the diffusion of Cu – V pairs. At higher temperatures, Cu – V pairs
+dissociate and LCuV becomes negative. 161,162 The resulting segregation behaviors have been simulated, with homogeneous for-
+mation of Frenkel pairs (i.e., conditions corresponding to electron irradiations). Only vacancy ﬂuxes are found to contribute to
+RIS, the coupling with self-interstitials is negligible. Copper concentration increases near the sinks at low temperatures and
+decreases at high temperatures. 161
+Co-precipitation of copper clusters with other solutes (Mn, Ni, and Si) has been modeled by Vincent et al.179,182 and Wirth and
+Odette188 under irradiation at very high radiation ﬂuxes and with formation of point defects in displacement cascades. AKMC
+simulations display the formation of vacancy clusters surrounded by copper atoms, which could result both from the Cu – V
+attraction (a purely thermodynamic factor) and from the dragging of Cu by vacancies (effect of kinetic coupling). The formation of
+Mn-rich clusters is favored by the positive coupling between ﬂuxes of self-interstitials and Mn (DFT calculations show that the
+formation of mixed Fe – Mn dumbbells is energetically favored).
+Similar AKMC simulations have been recently applied to bcc Fe – Cr alloys, as a model of ferritic steels. 14,20 They provide an
+estimation of the Onsager coefﬁcients, with their dependence on temperature and composition (Fig. 11(a)). According to Eq. (20),o n e
+expects an enrichment of Cr at low temperature ( LCrI=LFeI4LCrV =LFeV )a n dad e p l e t i o na thigh temperature (LCrI=LFeIoLCrV =LFeV ).
+Direct simulations of RIS at grain boundaries (Fig. 11(b) and (c))c o nﬁrm this prediction. These results are in qualitative agreement with
+those predicted by simpler approximations.114,173 It is worth noticing the contributions of self-interstitials and vacancies are quite close,
+especially above 600K (Fig. 11(a)). The balance between the two competing mechanisms is therefore delicate and small changes in the
+migration barriers could reverse it. The variability of RIS behaviors observed in ferritic steels probably results from this situation. These
+results are in qualitative agreement with the continuous RIS models and the experiments of Was et al.173
+The same simulations have been used to study the interaction between precipitate microstructure and RIS in under – as well as
+in super – saturated alloys. 14,20 Finally they have shown how RIS decreases with the density of grain boundary. 20
+1.08.5.4 Phase Field Models
+AKMC methods may be very time consuming and are limited to small systems. Phase Field (PF) models are able to tackle larger
+systems and easily include long-range elastic interactions in addition to the chemical interactions. The PF method is a coarse-
+grained method relying on a mesoscale diffusion equation. The solid is divided into cells, whose evolution is governed by a
+mesoscale diffusion equation. When applied to the modeling of ﬂux couplings and RIS, parameterization of the diffusion
+equation requires a careful methodology of the scale transfer from the PDs jump frequencies to the mesoscale thermodynamic and
+Fig. 11 AKMC simulations of radiation-induced segregation in Fe – Cr alloys Evolution of the fractions of Onsager coef ﬁcients LCrV =LFeV and
+LCrI =LFeI as a function of the temperature and alloy composition (a) and evolution of the Cr concentration pro ﬁle around a grain boundary in a
+Fe– 10%Cr alloy at (b) 650K and (c) 950K. Reproduced from Senninger, O., Soisson, F., Martínez, E., et al ., 2016. Acta Mater. 103, 1.
+Radiation-Induced Segregation 259
+
+===== PDF PAGE 26 =====
+kinetic parameters. This method easily includes mesoscopic features of the microstructure such as point defect sinks including their
+elastic interaction with point defects. The sink strength of the investigated microstructure features and its effect on the rate of
+elimination of point defects emerge naturally from the method. We may also introduce equilibrium point defect concentration as
+a boundary limit of a point defect sink. That way, the latter acts as a source of point defects. 107,189
+We derive a PF diffusion equation from a TPI-based equation of atomic ﬂuxes similarly to Eq. (4), provided local gradients of
+chemical potential are derived from a non-uniform free energy functional. This free energy depends on order parameters, which are
+here local concentrations of chemical species and point defects, and strain ﬁelds. The free energy includes a local and a non-local
+energy term including the long-range elastic interactions between cells. The non-local term (also called gradient energy term)
+depends on the thermodynamic interface-stiffness parameter and the composition gradients. Note that recently, one has shown
+kinetic contributions depending on the PD diffusion mechanism may contribute to the non-local term. 190 In principle, the free
+energy of a Phase Field method must depend on the size of the cell. 175 Accounting for the cell size is crucial whenever one adds to
+the diffusion equation a stochastic term for the modeling of concentration ﬂuctuations of atomic species or point defect clusters.
+There are PF methods introducing a mixed discrete-continuous approach to capture the stochastic character of defect cluster
+production in displacement cascades. 191
+In case of a monotonic RIS pro ﬁle spreading over several nanometers, the local energy contribution to the chemical potential
+mostly contributes to the free energy functional. In general, PF methods applied to RIS ignore the non-local contribution to the
+free energy. 107,189 Without the cell size correction and ignoring non-local contributions, the mesoscopic diffusion equation is
+equivalent to the standard RIS diffusion equation given by Eq. (16) . In a standard Cahn – Hilliard diffusion equation, there is a
+single driving force, the alloy chemical potential gradient, which is the derivative of the alloy free energy with respect to the alloy
+composition. One implicitly assumes PDs are instantaneously at equilibrium with respect to the local chemical species, which is
+equivalent to removing gradients of point defect chemical potentials. In systems under irradiation, point defects are not at local
+equilibrium. Therefore, in addition to the alloy driving force, we include the point defect driving forces and the corresponding off
+diagonal L-coefﬁcients LV
+Vb and LI
+Ib.10 In dilute systems, one may employ semi-analytical methods to deduce the L-coefﬁcients from
+ab initio data,8,139 whereas in concentrated systems one may rely on a computation of the L-coefﬁcients from AKMC simula-
+tions.107 A PF method dedicated to RIS includes a sink and its interaction with all point defects and atoms. Unless the sink is a free
+surface,189 one de ﬁnes a capture shape function of the sink, representing the capture zone of point defects (equal to 0 inside the
+matrix and 1 in the capture zone). Absorption of point defect may make them move and even change shape. Most studies assume
+sinks are immobile and do not change, meaning the shape function does not vary under irradiation. Although there are recent PF
+models simulating the displacement of a free surface, 189 and dislocation climb resulting from a vacancy ﬂow.192
+One has recently applied the PF method to the speci ﬁc study of RIS in Fe – Cr. The method relies on a diffusion equation fully
+parameterized from AKMC simulations including the calculation of the equilibrium point defect concentrations, the thermo-
+dynamic factors, the stiffness parameters, and the L-coefﬁcients.175 The resulting simulations of RIS are in good agreement with
+direct AKMC simulations. Therefore, we can rely on it to simulate RIS in Fe – Cr of larger size and physical time as compared to
+those of the AKMC simulations, and introduce the elastic interactions between point defects and sinks.
+Point defects may interact with various stress ﬁelds from internal sinks or applied stress. One may address these elastic
+interactions by relying on Eq. (4) and extending the set of order parameters in order to include the shape and elastic char-
+acteristics of a sink. 193 In addition to cell concentrations of all point defects and chemical species, the set of order parameters
+includes an elastic shape function of every sink associated with an eigen-strain deduced from the micro-elasticity theory. Main
+difﬁculty is the computation of the resulting strain which one usually performs in the Fourier space through an iterative
+procedure. This approach has been applied to the modeling of dislocation sink strengths 194 and RIS resulting from a bias sink
+strengths between interstitial and vacancy at a dislocation loop in Fe – Cr.175 Since split-interstitials are more sensitive than
+vacancy to a stress ﬁeld, the PD-sink interaction differs between both defects, leading to a stronger interstitial-sink interaction
+and a larger sink strength associated with interstitial absorption. However, close to the sink the stress ﬁeld is not uniform and
+one predicts a biased absorption of vacancy in compressive regions, leading to local changes of sign of RIS in Fe – Cr.175 Further,
+one may account for the elastic effect on the L-coefﬁcients relying on the elasto-diffusion formalism, 133 and the ﬁrst principles
+calculation of the elastic dipoles characterizing the elastic properties of a point defect in a speci ﬁc local environment. 176 An
+elasto-diffusion study of vacancy diffusion in dilute Ni(Si) alloys has highlighted the potential change of sign of the ﬂux
+coupling between vacancy and Si with respect to the strain ﬁeld and the direction of diffusion. The resulting Si ﬂow near a
+dislocation core is a complex spatial-and-temperature-dependent function of the vacancy ﬂow. It is mostly due to the interplay
+between the symmetry reduction of the migrating atom at the saddle point and the elastic ﬁeld.109 Incorporating elasto-
+diffusion into the split-interstitial diffusion mechanism should lead to even more complex ﬂux couplings due to the symmetry
+break generated by the elastic ﬁeld between dumbbells with different orientations.
+1.08.6 Conclusion
+We started this review with a summary of the experimental activity on RIS. Intensive experimental work has been devoted to
+austenitic steels and their model fcc alloys (Ni – Si, Ni– Cr, and Ni – Fe– Cr) and, more recently, to ferritic steels. RIS strongly depends
+on the radiation ﬂux and dose, temperature, composition, the grain boundary type, and the point defect sink microstructure. As
+RIS is a rather deleterious phenomenon, many research teams have focused on reducing it. Addition of large-sized impurities, such
+260 Radiation-Induced Segregation
+
+===== PDF PAGE 27 =====
+as Zr and Hf, was shown to preclude RIS. Impurities would trap point defects and enhance this way direct recombination reactions
+between point defects. 50 However, experimental observations and a systematic KineCluE calculation of ﬂux coupling from
+DFT-based vacancy jump frequencies tend to show the inhibitory role of most impurities is fading away after a radiation dose of a
+few dpa. On the other hand, the Cr depletion at grain boundaries was observed to be delayed when the grain boundary was
+enriched in Cr before irradiation. A ‘W-shaped’ transitory pro ﬁle could be maintained until a few dpa before the grain boundary
+was depleted in Cr. 40 Even though the development of RIS models was tightly related to the experimental investigations, the
+underlying mechanisms of an oscillatory pro ﬁle are still not well understood.
+Meantime, the main mechanisms controlling RIS were brought forward before the phenomenon was even observed. From the
+very ﬁrst models, one has introduced enhancement of diffusion, ﬂux couplings and point defect driving forces. A RIS model
+consists of a set of diffusion equations in which we write ﬂuxes of point defects and atoms as generalized Fick ’s laws. The partial
+diffusion coef ﬁcients of these Fick ’s laws are function of the phenomenological L-coefﬁcients of TIP.
+The formidable progress of the ab initio studies addressing point defect properties in alloys and the most recent development of
+automated calculation codes of the L-coefﬁcients (KineCluE8 and Onsager139), totally change the situation. First-principles methods
+relying on the DFT have improved so fast in the last decades that they are able to provide us with large databases of activation energies
+of both vacancy and interstitial jump freque ncies as a function of local environment. 8,12 Meanwhile, due to recent development of
+diffusion theories,8 it is now possible to overcome the arti ﬁcial dichotomy between dilute and concentrated diffusion models and for
+instance, develop a RIS model including a change of sign of the ﬂux coupling with local composition. As a consequence, nowadays, it
+seems easier to calculate theL-coefﬁcients and their associated partial diffusion coefﬁcients from ﬁrst-principles calculations rather than
+estimating them from diffusion experiments. Besides, the recent ab initio investigations of RIS in dilute alloys have demonstrated that
+an extrapolation of diffusion properties from high temperature diffusion experiments almost systematically leads to the wrong sign of
+the vacancy-solute ﬂux coupling in Fe-based alloys.
+While in dilute alloys, diffusion theories yield now ef ﬁcient codes to address the calculation of the L-coefﬁcients from atomic
+jump frequencies, in concentrated alloys one employs numerical approaches relying on AKMC simulations or mean ﬁeld
+approximate methods. In particular, diffusion models addressing RIS in austenitic steels have lost over the years the proper
+deﬁnition of the partial diffusion coef ﬁcients of the Fick ’s laws in terms of the phenomenological L-coefﬁcients. We explain it by
+the fact that both experimental diffusion data and ab initio investigations of thermodynamic and kinetic point defect properties
+are still lacking, especially for interstitials. For years, the available diffusion data consisted mainly of tracer diffusion coef ﬁcients,
+and the RIS models still rely on the empirical Manning relations 195 to get an estimation of the partial diffusion coef ﬁcients in
+function of tracer diffusion coef ﬁcients.61
+An alternative approach to continuous diffusion equations is the development of atomistic-scale simulations, such as Monte Carlo
+simulations, which are quite appropriate to study the nanoscale RIS phenomenon. Concerning the ferritic steels, atomistic modeling of
+RIS in model alloys of ferritic steels has at least contributed to explain the puzzling variety of Cr enrichments and depletions observed
+experimentally.14 As already noticed by Choudhury et al.,114 RIS of Cr depends on a subtle balance between an enrichment driven by
+the elimination of self-interstitials and a depletion driven by the elimination of vacancies. Moreover, the Onsager coefﬁcients controlling
+RIS are very sensitive to small differences in the migration barriers. 111 Therefore, even though the various models suggest a similar
+temperature dependence of RIS, the key point is probably that any other factor modifying these barriers (i.e., the magnetic transition,
+additional alloying elements, elastic stress between sinks and solutes, etc.) may change the ﬁnal result.
+Note that the situation is different in austenitic steels. We do systematically observe positive segregation of Ni and negative
+segregation Cr whatever the temperature and the composition of alloys. A possible explanation is that self-interstitials and
+vacancies do not compete; though, the interstitial coupling contribution is still debated. It is rather believed to be either negli-
+gible104 or to reinforce the vacancy contribution, 60 although a recent study tends to show the opposite. 61
+Monte Carlo simulations are now able to embrace the full complexity of RIS phenomena, including vacancy and split
+interstitial diffusion mechanisms, the whole ﬂux coupling, the resulting segregation, and eventual nucleation at grain bound-
+aries.14 However, these simulations become heavy time-consuming when correlation effects are important. Using this method or
+atomic diffusion theories to feed a PF method may be the most promising approach. One has successfully achieved it to simulate
+RIS in Fe – Cr.107 A PF method gives new insights on the isolated contribution to RIS of each physical parameter of the diffusion
+equation and on the interplay between the elastic point defect – sink interaction and RIS. 193 In the next future, we should be able
+to encompass the entire microstructure and its interaction with all point defects and atoms, provided the stochastic nature of point
+defect cluster and secondary phase precipitation are included in a proper way.
+Acknowledgments
+We are indebted to the Program NEEDS-France that supported part of this work through the MESIR project.
+See also : 1.04 Radiation-Induced Effects on Microstructure. 1.05 Effect of Radiation on Strength and Ductility of Metals and Alloys. 1.13 Radiation
+Damage Correlation. 1.25 Phase Field Methods. 1.26 Computational Thermodynamics: Application to Nuclear Materials. 1.27 Computational
+Kinetics: Application to Nuclear Materials
+Radiation-Induced Segregation 261
+
+===== PDF PAGE 28 =====
+References
+1. Russell, K.C., 1984. Prog. Mater. Sci. 28, 229.
+2. Holland, J.R., Mansur, L.K., Potter, D.I., 1981. Phase Stability During Radiation. Warrendale, PA: TMS-AIME.
+3. Nolﬁ, F.V., 1983. Phase Stability During Radiation. London and New York: Applied Science.
+4. Ardell, A.J., 2008. In: Ghetta, V., Gorse, D., Mazière, D., Pontikis, V. (Eds.), Materials Issues for Generation IV Systems. Netherlands: Springer, pp. 285 – 310.
+5. Was, G.S., 2007. Fundamentals of Radiation Materials Science: Metals and Alloys. Berlin Heidelberg: Springer-Verlag.
+6. Dong, Y., Sencer, B.H., Garner, F.A., Marquis, E.A., 2015. J. Nucl. Mater. 467, 692.
+7. Allnatt, A.R., Lidiard, A.B., 2003. Atomic Transport in Solids. Cambridge University Press.
+8. Schuler, T., Messina, L., Nastar, M., 2020. Comput. Mater. Sci. 172, 109191.
+9. Messina, L., Nastar, M., Sandberg, N., Olsson, P., 2016. Phys. Rev. B 93, 184302.
+10. Agarwal, R., Trinkle, D.R., 2018. Acta Mater. 150, 339.
+11. Schuler, T., Bellon, P., Trinkle, D.R., Averback, R.S., 2018. Phys. Rev. Mater. 2, 073605.
+12. Messina, L., Schuler, T., Nastar, M., Marinica, M.-C., Olsson, P., 2020. Acta Mater. 191, 166.
+13. Manning, J.R., 1971. Phys. Rev. B 4, 1111.
+14. Senninger, O., Soisson, F., Martínez, E., et al ., 2016. Acta Mater. 103, 1.
+15. Wolfer, W.G., 1983. J. Nucl. Mater. 114, 292.
+16. Soisson, F., 2005. Philos. Mag. 85, 489.
+17. Soisson, F., 2006. J. Nucl. Mater. 349, 235.
+18. Rottler, J., Srolovitz, D.J., Car, R., 2007. Philos. Mag. 87, 3945.
+19. Huang, C.-H., Marian, J., 2016. J. Phys. Condens. Matter. 28.
+20. Martínez, E., Senninger, O., Caro, A., et al ., 2018. Phys. Rev. Lett. 120, 106101.
+21. Anthony, T.R., 1969. Acta Metall. 17, 603.
+22. Anthony, T.R., 1970. J. Appl. Phys. 41, 3969.
+23. Anthony, T.R., 1970. Phys. Rev. B 2, 264.
+24. Anthony, T.R., 1970. Acta Metall. 18, 307.
+25. Anthony, T.R., Hanneman, R.E., 1968. Scripta Metall. 2, 611.
+26. Kuczynski, G.C., Matsumura, G., Cullity, B.D., 1960. Acta Metall. 8, 209.
+27. Aust, K.T., Hanneman, R.E., Niessen, P., Westbrook, J.H., 1968. Acta Metall. 16, 291.
+28. Anthony, T.R., 1972. In: Corbett, J.W., Ianniello, L.C. (Eds.), Proceedings of the 1971 International Conference Held at Albany, New York, June 9 – 11, 1971.
+29. Okamoto, P.R., Harkness, S.D., Laidler, J.J., 1973. Trans. Am. Nucl. Soc. 16, 70.
+30. Okamoto, P.R., Wiedersich, H., 1974. J. Nucl. Mater. 53, 336.
+31. Barbu, A., Ardell, A.J., 1975. Scripta Metall. 9, 1233.
+32. Okamoto, P.R., Rehn, L.E., 1979. J. Nucl. Mater. 83, 2.
+33. Marwick, A.D., 1978. J. Phys. F: Met. Phys. 8, 1849.
+34. Smigelskas, A., Kirkendall, E., 1947. Trans. AIME 171, 130.
+35. Rehn, L.E., Okamoto, P.R., Wiedersich, H., 1979. J. Nucl. Mater. 80, 172.
+36. Rehn, L.E., Okamoto, P.R., 1983. In: Nol ﬁ, F.V. (Ed.), Phase Transformations During Irradiation. London: Applied Science.
+37. Ardell, A.J., Bellon, P., 2016. Curr. Opin. Solid State Mater. Sci. 20, 115.
+38. Bakker, H., Bonzel, H.P., Bruff, C.M., Dayananda, M.A., 1990. Diffusion in Solid Metals and Alloys. Springer-Verlag.
+39. Legrand, B., Tréglia, G., Ducastelle, F., 1990. Phys. Rev. B 41, 4422.
+40. Busby, J.T., Was, G.S., Bruemmer, S.M., Edwards, D.J., Kenik, E.A., 1999. Mater. Res. Soc. Symp. Proc. 540, 451.
+41. Norris, D.I.R., Baker, C., Taylor, C., Titchmarsh, J.M., 1992. ASTM Special Technical Publication, pp. 603 – 620.
+42. Watanabe, S., Sakaguchi, N., Hashimoto, N., Takahashi, H., 1995. J. Nucl. Mater. 224, 158.
+43. Duh, T.S., Kai, J.J., Chen, F.R., 2000. J. Nucl. Mater. 283 – 287, 198.
+44. Watanabe, S., Takamatsu, Y., Sakaguchi, N., Takahashi, H., 2000. J. Nucl. Mater. 283 – 287, 152.
+45. Marwick, A.D., Piller, R.C., Sivell, P.M., 1979. J. Nucl. Mater. 83, 35.
+46. Martin, G., Bellon, P., 1996. In: Ehrenreich, H., Spaepen, F. (Eds.), Solid State Physics. Academic Press, pp. 189 – 331.
+47. Sizmann, R., 1978. J. Nucl. Mater. 69 – 70, 386.
+48. Norgett, M.J., Robinson, M.T., Torrens, I.M., 1975. Nucl. Eng. Des. 33, 50.
+49. Rehn, L.E., Okamoto, P.R., Averback, R.S., 1984. Phys. Rev. B 30, 3073.
+50. Kato, T., Takahashi, H., Izumiya, M., 1992. J. Nucl. Mater. 189, 167.
+51. Gan, J., Simonen, E.P., Bruemmer, S.M., et al ., 2004. J. Nucl. Mater. 325, 94.
+52. Han, W., Demkowicz, M.J., Mara, N.A., et al ., 2013. Adv. Mater. 25, 6975.
+53. Lee, E.H., Maziasz, P.J., Rowcliffe, A.F., 1980. Structure and Composition of Phases Occurring in Austenitic Stainless Steels in Thermal and Irradi ation Environments. Oak
+Ridge National Lab.
+54. Janghorban, K., Ardell, A.J., 1979. J. Nucl. Mater. 85 – 86, 719.
+55. Potter, D.I., Ryding, D.G., 1977. J. Nucl. Mater. 71, 14.
+56. Potter, D.I., Okamoto, P.R., Wiedersich, H., Wallace, J.R., McCormick, A.W., 1979. Acta Metall. 27, 1175.
+57. Cauvin, R., Martin, G., 1979. J. Nucl. Mater. 83, 67.
+58. Cauvin, R., Martin, G., 1981. Phys. Rev. B 23, 3322.
+59. Was, G.S., Wharry, J.P., Frisbie, B., et al ., 2011. J. Nucl. Mater. 411, 41.
+60. Nastar, M., Bellon, P., Martin, G., Ruste, J., 1998. Proceedings of the 1997 MRS Fall Meeting: Symposium B, Phase Transformations and Systems Driven F ar From
+Equilibrium, pp. 383 – 388.
+61. Yang, Y., Field, K.G., Allen, T.R., Busby, J.T., 2016. J. Nucl. Mater. 473, 35.
+62. Sethi, V.K., Okamoto, P.R., 1980. Radiation-Induced Segregation in Complex Alloys. IL: Argonne National Lab.
+63. Little, E.A., 2006. Mater. Sci. Technol. 22, 491.
+64. Lu, Z., Faulkner, R.G., Sakaguchi, N., et al ., 2006. J. Nucl. Mater. 351, 155.
+65. Lu, Z., Faulkner, R.G., Was, G., Wirth, B.D., 2008. Scripta Mater. 58, 878.
+66. Wharry, J.P., Was, G.S., 2013. J. Nucl. Mater. 442, 7.
+67. Marquis, E.A., Hu, R., Rousseau, T., 2011. J. Nucl. Mater. 413, 1.
+68. Kuksenko, V., Pareige, C., Genevois, C., Pareige, P., 2013. J. Nucl. Mater. 434, 49.
+262 Radiation-Induced Segregation
+
+===== PDF PAGE 29 =====
+69. Field, K.G., Barnard, L.M., Parish, C.M., et al ., 2013. J. Nucl. Mater. 435, 172.
+70. He, M.-R., Wang, S., Shi, S., et al ., 2017. Acta Mater. 126, 182.
+71. Barr, C.M., Nathaniel, J.E., Unocic, K.A., et al ., 2018. Scripta Mater. 156, 80.
+72. Kumar, N.A.P.K., Li, C., Leonard, K.J., Bei, H., Zinkle, S.J., 2016. Acta Mater. 113, 230.
+73. Yang, T., Xia, S., Guo, W., et al ., 2018. Scripta Mater. 144, 31.
+74. Lu, C., Yang, T., Jin, K., et al ., 2017. Acta Mater. 127, 98.
+75. Brailsford, A.D., Bullough, R., 1981. Philos. Trans. R. Soc. A: Math. Phys. Eng. Sci. 302, 87.
+76. Nichols, F.A., 1978. J. Nucl. Mater. 75, 32.
+77. Glansdorff, P., Prigogine, I., 1971. Thermodynamic Theory of Structure, Stability and Fluctuations. New York: Wiley.
+78. Onsager, L., 1931. Phys. Rev. 37, 405.
+79. Cahn, J.W., Hilliard, J.E., 1958. J. Chem. Phys. 28, 258.
+80. Wiedersich, H., Okamoto, P.R., Lam, N.Q., 1979. J. Nucl. Mater. 83, 98.
+81. Howard, R.E., Lidiard, A.B., 1964. Rep. Prog. Phys. 27, 161.
+82. Barbu, A., 1980. Acta Metall. 28, 499.
+83. Perks, J.M., Murphy, S.M., 1987. Materials for Nuclear Reactor Core Applications. London: BNES.
+84. Johnson, R.A., Lam, N.Q., 1976. Phys. Rev. B 13, 4364.
+85. Faulkner, R.G., Song, S., Flewitt, P.E.J., Fisher, S.B., 1997. J. Mater. Sci. Lett. 16, 1191.
+86. Lidiard, A.B., 1999. Philos. Mag. A 79, 1493.
+87. Murphy, S.M., Perks, J.M., 1990. J. Nucl. Mater. 171, 360.
+88. Barbu, A., Lidiard, A.B., 1996. Philos. Mag. A 74, 709.
+89. Saunders, N., Miodownik, A.P., 1998. CALPHAD (CALculation of PHase Diagrams). A Comprehensive Guide. Oxford: Elsevier.
+90. Franke, P., Seifert, H.J., 2011. Calphad 35, 148.
+91. Philibert, J., 1991. Atom Movements: Diffusion and Mass Transport in Solids. Les Ulis, France: Editions de Physique.
+92. Hanneman, R.E., Anthony, T.R., 1969. Acta Metall. 17, 1133.
+93. Schuler, T., Barouh, C., Nastar, M., Fu, C.-C., 2015. Phys. Rev. Lett. 115, 015501.
+94. Agarwala, P., 1992. Diffusion Processes in Nuclear Materials. Amsterdam: Elsevier Science.
+95. Acker, D., Beyeler, M., Brebec, G., Bendazzoli, M., Gilbert, J., 1974. J. Nucl. Mater. 50, 281.
+96. Dalla Torre, J., Fu, C.-C., Willaime, F., Barbu, A., Bocquet, J.-L., 2006. J. Nucl. Mater. 352, 42.
+97. Henry, J., Barbu, A., Hardouin-Duparc, A., 2000. 19th International Symposium on Effects of Radiation on Materials, pp. 816 – 815.
+98. Was, G.S., Wharry, J.P., Frisbie, B., et al ., 2011. J. Nucl. Mater. 411, 41.
+99. Murphy, S.M., 1991. J. Nucl. Mater. 182, 73.
+100. Bocquet, J.-L., 1987. Res Mech. 22, 1.
+101. Hashimoto, T., Isobe, Y., Shigenaka, N., 1995. J. Nucl. Mater. 225, 108.
+102. Shepelyev, O., Sekimura, N., Abe, H., 2004. J. Nucl. Mater. 329 – 333, 1204.
+103. Bocquet, J.L., 1994. Phys. Rev. B 50, 16386.
+104. Allen, T.R., Was, G.S., 1998. Acta Mater. 46, 3679.
+105. Sakaguchi, N., Watanabe, S., Takahashi, H., 2005. J. Mater. Sci. 40, 889.
+106. Sorokin, M.V., Ryazanov, A.I., 2006. J. Nucl. Mater. 357, 82.
+107. Piochaud, J.B., Nastar, M., Soisson, F., Thuinet, L., Legris, A., 2016. Comput. Mater. Sci. 122, 249.
+108. Vineyard, G.H., 1957. J. Phys. Chem. Solids 3, 121.
+109. Garnier, T., Manga, V.R., Trinkle, D.R., Nastar, M., Bellon, P., 2013. Phys. Rev. B 88, 134108.
+110. Garnier, T., Li, Z., Nastar, M., Bellon, P., Trinkle, D.R., 2014. Phys. Rev. B 90, 184301.
+111. Messina, L., Nastar, M., Garnier, T., Domain, C., Olsson, P., 2014. Phys. Rev. B 90, 104203.
+112. Fu, C.C., Willaime, F., 2008. Comptes Rendus Phys. 9, 335.
+113. Tucker, J.D., Najafabadi, R., Allen, T.R., Morgan, D., 2010. J. Nucl. Mater. 405, 216.
+114. Choudhury, S., Barnard, L., Tucker, J.D., et al ., 2011. J. Nucl. Mater. 411, 1.
+115. Domain, C., Becquart, C.S., 2001. Phys. Rev. B 65, 024103.
+116. Fu, C.-C., Willaime, F., Ordejón, P., 2004. Phys. Rev. Lett. 92, 175503.
+117. Jónsson, H., Mills, G., Jacobsen, K.W., 1998. In: Berne, B.J., Cicotti, G., Coker, D.F. (Eds.), Classical and Quantum Dynamics in Condensed Phase Sim ulations. World
+Scientiﬁc.
+118. Ruch, L., Sain, D.R., Yeh, H.L., Girifalco, L.A., 1976. J. Phys. Chem. Solids 37, 649.
+119. Senninger, O., Martínez, E., Soisson, F., Nastar, M., Bréchet, Y., 2014. Acta Mater. 73, 97.
+120. Barnard, L., Morgan, D., 2014. J. Nucl. Mater. 449, 225.
+121. Terentyev, D., Olsson, P., Klaver, T.P.C., Malerba, L., 2008. Comput. Mater. Sci. 43, 1183.
+122. Pechenkin, V.A., Molodtsov, V.L., Ryabov, V.A., Terentyev, D., 2013. J. Nucl. Mater. 433, 372.
+123. Bocquet, J.L., 2002. Defect Diffus. Forum 203-205, 81 – 112. doi:10.4028/www.scientiﬁc.net/DDF.203-205.81.
+124. Finel, A., Turchi, P.E.A., Gonis, A., 2000. Phase Transformations and Evolution in Materials. Warrendale, PA: TMS, p. 371.
+125. Castin, N., Malerba, L., 2010. J. Chem. Phys. 132, 074507.
+126. Castin, N., Malerba, L., Bonny, G., Pascuet, M.I., Hou, M., 2009. Nucl. Inst. Methods Phys. Res. Sec. B: Beam Inter. Mater. Atoms 267, 3002.
+127. Martin, G., Soisson, F., 2005. In: Yip, S. (Ed.), Handbook of Materials Modeling: Methods. Dordrecht, Netherlands: Springer, pp. 2223 – 2248.
+128. Becquart, C.S., Domain, C., 2010. Phys. Status Solidi (b) 247, 9.
+129. Bouar, Y.L., Soisson, F., 2002. Phys. Rev. B 65, 094103.
+130. Soisson, F., Martin, G., 2000. Phys. Rev. B 62, 203.
+131. Soisson, F., Fu, C.C., 2007. Solid State Phenom 129, 31 – 39. doi:10.4028/www.scientiﬁc.net/SSP.129.31.
+132. Clouet, E., Nastar, M., 2005. In: Turchi, P.E.A., Gonis, A., Rajan, K., Meike, A. (Eds.), Complex Inorganic Solids: Structural, Stability, and Magne tic Properties of Alloys.
+Boston, MA: Springer, pp. 215 – 239.
+133. Allnatt, A.R., Phys., J., Solid, C., 1982. State Phys. 15, 5605.
+134. Barbe, V., Nastar, M., 2007. Phys. Rev. B 76, 054206.
+135. Barbe, V., Nastar, M., 2007. Philos. Mag. 87, 1649.
+136. Ghate, P.B., 1964. Phys. Rev. 133, A1167.
+137. Doan, N.V., 1972. J. Phys. Chem. Solids 33, 2161.
+138. Bocquet, J.-L., Limoge, Y., Brébec, G., 1996. In: Cahn, R.W., Haasen, P. (Eds.), Physical Metallurgy 4th Edition. Amsterdam: North Holland, pp. 535 – 668.
+139. Trinkle, D.R., 2017. Philos. Mag. 97, 2514.
+Radiation-Induced Segregation 263
+
+===== PDF PAGE 30 =====
+140. Wu, H., Mayeshiba, T., Morgan, D., 2016. Sci. Data 3, 160054.
+141. Garnier, T., Trinkle, D.R., Nastar, M., Bellon, P., 2014. Phys. Rev. B 89, 144202.
+142. Schuler, T., Trinkle, D.R., Bellon, P., Averback, R., 2017. Phys. Rev. B 95, 174102.
+143. Schuler, T., Nastar, M., Messina L., 2020. Phys. Rev. M 4, 020401(R). doi:10.1103/PhysRevMaterials.4.020401.
+144. Schuler, T., Messina, L., Nastar, M., 2020. Comput. Mater. Sci. 172, 109191.
+145. Schuler, T., Nastar, M., 2016. Phys. Rev. B 93, 224101.
+146. Huang, L., Schuler, T., Nastar, M., 2019. Phys. Rev. B 100, 224103.
+147. Moleko, L.K., Allnatt, A.R., Allnatt, E.L., 1989. Philos. Mag. A 59, 141.
+148. Barbe, V., Nastar, M., 2006. Philos. Mag. 86, 1513.
+149. Barker, H., 1979. Philos. Mag. A 40, 525.
+150. Stolwijk, N.A., 1981. Phys. State Sol. (b) 105, 223.
+151. Kikuchi, R., Sato, H., 1970. J. Chem. Phys. 53, 2702.
+152. Kikuchi, R., Sato, H., 1972. J. Chem. Phys. 57, 4962.
+153. Sato, H., Kikuchi, R., 1976. Acta Metall. 24, 797.
+154. Nastar, M., 2005. Philos. Mag. 85, 3767.
+155. Nastar, M., 2008. Comptes Rendus Phys. 9, 362.
+156. Nastar, M., Barbe, V., 2007. Faraday Discuss. 134, 331.
+157. Nastar, M., Clouet, E., 2004. Phys. Chem. Chem. Phys. 6, 3611.
+158. Barbe, V., Nastar, M., 2007. Phys. Rev. B 76, 054205.
+159. Barbe, V., Nastar, M., 2006. Philos. Mag. 86, 3503.
+160. Meslin, E., Fu, C.-C., Barbu, A., Gao, F., Willaime, F., 2007. Phys. Rev. B 75, 094303.
+161. Soisson, F., Fu, C.C., 2008. Solid State Phenom. 139, 107 – 112. doi:10.4028/www.scientiﬁc.net/SSP.139.107.
+162. Barashev, A.V., Arokiam, A.C., 2006. Philos. Mag. Lett. 86, 321.
+163. Jönsson, B., 1992. Assessment of the Mobility of Carbon in C – Cr– Fe– Ni FCC Alloys.
+164. Stepanov, I.A., Pechenkin, V.A., Konobeev, Y.V., 2004. J. Nucl. Mater. 329 – 333, 1214.
+165. Benkaddour, A., Dimitrov, C., Dimitrov, O., 1994. J. Nucl. Mater. 217, 118.
+166. Piochaud, J.B., Klaver, T.P.C., Adjanor, G., et al ., 2014. Phys. Rev. B 89, 024101.
+167. Mansur, L.K., 1993. J. Nucl. Mater. 206, 306.
+168. Jiao, Z., Michalicka, J., Was, G.S., 2018. J. Nucl. Mater. 501, 312.
+169. Nastar, M., 2005. Philos. Mag. 85, 641.
+170. Mansur, L.K., Yoo, M.H., 1978. J. Nucl. Mater. 74, 228.
+171. Hackett, M.J., Najafabadi, R., Was, G.S., 2009. J. Nucl. Mater. 389, 279.
+172. Sakaguchi, N., Watanabe, S., Takahashi, H., Faulkner, R.G., 2004. J. Nucl. Mater. 329 – 333, 1166.
+173. Wharry, J.P., Was, G.S., 2014. Acta Mater. 65, 42.
+174. Soisson, F., Fu, C.-C., 2007. Phys. Rev. B 76, 214102.
+175. Bronchart, Q., Le Bouar, Y., Finel, A., 2008. Phys. Rev. Lett. 100, 015702.
+176. Garnier, T., Nastar, M., 2013. Phys. Rev. B 88, 134207.
+177. Nastar, M., Soisson, F., 2012. Phys. Rev. B 86, 220102.
+178. Grandjean, Y., Bellon, P., Martin, G., 1994. Phys. Rev. B 50, 4228.
+179. Vincent, E., Becquart, C.S., Domain, C., 2008. J. Nucl. Mater. 382, 154.
+180. Soisson, F., Meslin, E., Tissot, O., 2018. J. Nucl. Mater. 508, 583.
+181. Nastar, M., 2005. Philos. Mag. 85, 641.
+182. Vincent, E., Becquart, C.S., Domain, C., 2007. Nucl. Instrum. Methods Phys. Res. Sec. B: Beam Interact. Mater. Atoms 255, 78.
+183. Young, W.M., Elcock, E.W., 1966. Proc. Phys. Soc. 89, 735.
+184. Bortz, A.B., Kalos, M.H., Lebowitz, J.L., 1975. J. Comput. Phys. 17, 10.
+185. Krasnochtchekov, P., Averback, R.S., Bellon, P., 2007. Phys. Rev. B 75, 144107.
+186. Krasnochtchekov, P., Averback, R.S., Bellon, P., 2007. JOM 59, 46.
+187. Monasterio, P.R., Wirth, B.D., Odette, G.R., 2007. J. Nucl. Mater. 361, 127.
+188. Wirth, B.D., Odette, G.R., 1999. Mater. Res. Soc. Symp. Proc. 540, 637.
+189. Dubey, S., El-Azab, A., 2015. Comput. Mater. Sci. 106, 111.
+190. Nastar, M., 2014. Phys. Rev. B 90, 144101.
+191. Badillo, A., Bellon, P., Averback, R.S., 2015. Model. Simul. Mater. Sci. Eng. 23, 035008.
+192. Geslin, P.-A., Appolaire, B., Finel, A., 2014. Appl. Phys. Lett. 104, 011903.
+193. Thuinet, L., Nastar, M., Martinez, E., et al ., 2018. Comput. Mater. Sci. 149, 324.
+194. Thuinet, L., Rouchette, H., Legris, A., 2017. J. Nucl. Mater. 483, 62.
+195. Manning, J.R., 1971. Phys. Rev. B 4, 1111.
+264 Radiation-Induced Segregation

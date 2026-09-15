@@ -1,0 +1,778 @@
+===== PDF PAGE 1 =====
+Journal of Materials Science & Technology 65 (2021) 61–71
+Contents lists available at ScienceDirect
+Journal of Materials Science & Technology
+j ournal  homepage:  www.jmst.org
+Research Article
+Proton irradiation assisted localized corrosion and stress corrosion
+cracking
+ in 304 nuclear grade stainless steel in simulated primary
+PWR
+ water
+Ping Deng a,b, Qunjia Peng a,c,∗, En-Hou Han a, Wei Ke a, Chen Sun d
+a CAS Key Laboratory of
+ Nuclear Materials and Safety Assessment, Institute of Metal Research, Chinese Academy of Sciences, Shenyang 110016, China
+b Nuclear Power Institute of China, Chengdu 610213, China
+c Suzhou Nuclear Power Research Institute, Suzhou 215004, China
+d State Power Investment Corporation Research Institute, Beijing 102209, China
+a r t i c l e i n f o
+Article history:
+Received
+ 16 December
+ 2019
+Received
+ in revised form 19 March 2020
+Accepted
+ 3 April 2020
+Available
+ online 12 July 2020
+Keywords:
+Stainless
+ steel
+AFM
+TEM
+High
+ temperature corrosion
+Stress
+ corrosion
+a b s t r a c t
+Localized deformation and corrosion in irradiated 304 nuclear grade stainless steel in simulated primary
+water
+ were investigated. The investigation was conducted by comparing the deformation structure, the
+oxide
+ scale formed at the deformation structure, and their correlation with cracking. The results revealed
+that
+ increasing the irradiation dose promoted localized corrosion at the slip step and grain boundary,
+which
+ was primarily attributed to the strain concentration induced by enhanced localized deformation
+and
+ depletion of Cr at grain boundary. Further, a synergic effect of the enhanced localized deformation
+and
+ localized corrosion at the slip step and grain boundary caused a higher cracking susceptibility of the
+irradiated
+ steel.
+©
+ 2021 Published by Elsevier Ltd on behalf of The editorial ofﬁce of Journal of Materials Science &
+Technology.
+1. Introduction
+The austenitic stainless steel (SS) is widely used in the pri-
+mary circuit of pressurized water reactors (PWRs) for fabrication
+of core structural components. The steel, though typically corro-
+sion resistant, was found by both laboratory experiments and plant
+experiences to be susceptible to irradiation-assisted stress corro-
+sion cracking (IASCC) in primary PWR water [1–4]. Due to the
+radioactivity of neutrons, the effect of irradiation on materials is
+usually studied by using simulation irradition such as protons and
+Fe3+/ Fe2+. To date, a number of studies have been carried out to clar-
+ify the mechanism of IASCC of the austenitic SS [5–15]. Lear et al.
+compared the IASCC behavior of 13 alloys in two environments
+and suggested that the irradiation microstructure and irradiation
+hardening are very necessary for IASCC [14]. Miura et al. focused
+on the role of grain orientation on cracking formation in irradiated
+SS, which indicated pure mechanical strength can lead to crack-
+ing [15]. The deformation structures in the irradiated steel were
+∗ Corresponding author at: CAS Key Laboratory of Nuclear Materials and Safety
+Assessment,
+ Institute of Metal Research, Chinese Academy of Sciences, Shenyang
+110016,
+ China.
+E-mail
+ addresses: pengqunjia@yahoo.com, pengqunjia@cgnpc.com.cn (Q. Peng).
+usually
+ observed as surface slip steps because of formation of dis-
+location channels in the subsurface, in which the radiation-induced
+defects, such as dislocations and precipitates, can mitigate disloca-
+tion glide. As such the deformation was localized into the channel,
+which can be a potential contributor to IASCC by promoting dis-
+location pile-ups at the grain boundary region [6–8]. Further, the
+dislocation channeling may also cause a rupture of the oxide ﬁlm
+before the base metal cracking by promoting localized grain bound-
+ary deformation, which further leads to exposure of the metal to
+the high temperature water and subsequent corrosion and IASCC
+[7,16–19]. These investigations indicated that the change in defor-
+mation modes and the interaction of dislocation channels with the
+grain boundary were key factors promoting the IASCC.
+Similar to stress corrosion cracking (SCC), IASCC is also a syn-
+ergic effect of an aggressive environment, a susceptible material
+and the applied stress/strain. Since corrosion is one of the key fac-
+tors affecting the SCC [20,21], a better understanding of the role
+of corrosion in IASCC is needed in addition to the role of the local-
+ized deformation. This requires at ﬁrst to understand whether and
+how the irradiation affects the corrosion. In fact, the promotional
+effect of irradiation on corrosion has been conﬁrmed [22–24]. It
+was found that irradiation promoted both the overall and inter-
+granular corrosion of austenitic SS in primary PWR water, which
+was attributed to the radiation induced defects as well as the Cr
+https://doi.org/10.1016/j.jmst.2020.04.068
+1005-0302/© 2021 Published by Elsevier Ltd on behalf of The editorial ofﬁce of Journal of Materials Science & Technology.
+
+===== PDF PAGE 2 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Table 1
+Chemical
+ composition (wt.%) of 304NG SS.
+C Mn Si S P Ni Cr Co Fe
+0.04 1.73 0.27 0.002 0.021 8.87 19.51 0.04 Bal.
+Fig. 1. Geometry and dimension of the tensile specimen.
+depletion at the grain boundary [22]]. Secondly, as reported by lit-
+eratures [25–28], deformation could result in formation of areas
+with a high density of dislocations and accumulation of localized
+strain at the deformation area. Such changes promote corrosion of
+austenitic alloys in high temperature water by the enhanced diffu-
+sion of species through the dislocation [25,29,30]. Since the IASCC
+usually initiates locally at grain boundary regions with which the
+slip steps interact [5–7,17–19], the localized corrosion at the grain
+boundary region may also be affected by the localized deformation.
+This suggests that to fully clarify the mechanism of the promo-
+tion effect of localized deformation on IASCC, the synergic effect
+between the corrosion and localized deformation needs to be clar-
+iﬁed, in particular to the corrosion behavior at such deformation
+regions as the slip step and grain boundary. To date, the corro-
+sion at slip step and grain boundary as well as their correlation
+with IASCC has not received much attention. While one study con-
+cluded that no penetrative oxidation was observed along the slip
+step induced by pre-straining in air, the synergic effect between
+synchronized deformation and corrosion was not considered [31].
+In the actual process of SCC, corrosion occurs simultaneously with
+localized deformation in the vicinity of the crack tip [32,33], sug-
+gesting that the promoted corrosion at the slip step may occur in
+such a case.
+This study focused on the synergic effect of localized defor-
+mation and corrosion in irradiated 304 nuclear grade (NG) SS in
+simulated primary water of PWR. The objective is to correlate
+the localized deformation to the corrosion at the slip step and
+grain boundary, as well as the localized deformation and corro-
+sion to IASCC. The specimens irradiated to various doses by proton
+were strained by constant extension rate tensile (CERT) at a ﬁxed
+strain rate of 3 × 107/s in simulated primary PWR water, in efforts
+to investigate the localized corrosion and IASCC behavior during
+straining. Following the CERT test, characterization of the local-
+ized deformation, corrosion and IASCC behaviors was conducted by
+using atomic force microscopy (AFM), electron backscatter diffrac-
+tion (EBSD), transmission electron microscope (TEM) and scanning
+electron microscope (SEM).
+2. Experimental
+2.1. Material and specimens
+The material used was solution annealed (SA) 304NG SS with
+a chemical composition listed in Table 1. Average grain size of
+the material was in the range of about 2050 /H9262m. Small-sized ten-
+sile specimens with the geometry and dimension shown in Fig. 1
+were fabricated from the steel and used for the IASCC tests. Each
+specimen with two threaded ends had a 2 mm × 2 mm squared
+gauge section with a gauge length of 21 mm. The specimen was
+wet ground using SiC papers up to 4000 grit, followed by 1-/H9262m
+diamond paste polishing to obtain a mirror surface. Then the speci-
+men was exposed to 40-nm colloidal silica slurry polishing for over
+2 h to produce a surface free of residual strain prior to proton irra-
+diation. At last, all specimens were irradiated by protons of 2 MeV
+at 360 ◦C using the 3 MV pelletron accelerator at the Michigan Ion
+Beam Laboratory, to a dose of 0.5, 1.5 and 5 displacement per atom
+(dpa), respectively. It is worth noting that the dose here was calcu-
+lated with full cascade option. The proton beam was raster-scanned
+over a 10 mm length in the gauge section of the specimens, creat-
+ing a nearly uniform damage proﬁle within the ∼1 to ∼10 /H9262m of
+the whole 20 /H9262m-thick damaged layer [22]. The dose rate as cal-
+culated by using the Stopping and Range of Ions in Materials 2008
+(SRIM 2008) computer code was about 5.96 × 106 dpa per second
+(dpa/s). Detailed description of the irradiation process is available
+elsewhere [6,34].
+Following the irradiation, the irradiated specimens were pol-
+ished again by 40-nm colloidal silica slurry for about 1 h to get fresh
+surfaces, which removed the surface with a thickness of 12 /H9262m and
+could ensure that the specimen surfaces following diff ;erent doses
+of irradiation were consistent.
+2.2. High temperature water test
+A low ﬂow rate (∼100 mL/min) refreshed loop equipped with
+a 3-L autoclave made of 316 SS was used for the IASCC tests
+in simulated primary PWR water at 320 ◦C and 13 MPa. The
+ﬂow and pressure of water were maintained using a commercial
+high-pressure pump in connection with a backpressure valve. Tem-
+perature in the autoclave was achieved by one pre-heater at the
+autoclave inlet and two resistance heating bands at the autoclave
+surface, which was controlled by the k-type thermocouple with
+an accuracy of ±1 ◦C. The primary water was prepared by mixing
+deionized water with 1200 mg/L of B as H3BO3 and 2.3 mg/L of Li
+as LiOH·H2O. Before ramping the autoclave to target temperature,
+concentration of dissolved oxygen (DO) in the inlet water was con-
+trolled at less than 5 /H9262g/L by bubbling H2 gas into the water tank,
+followed by storing H2 in the tank with a hydrogen overpressure
+of 0.08 MPa, resulting in a dissolved hydrogen (DH) concentra-
+tion of 2.6 mg/L. DO, DH and conductivity of the inlet water were
+continuously monitored during the tests.
+The 0.5-, 1.5- and 5-dpa irradiated specimens as well as the SA
+specimen with no irradiation were employed for the IASCC tests.
+These specimens were strained by CERT at a ﬁxed strain rate of 3 ×
+107/s in the primary water using a 50 kN servo motor in the con-
+stant displacement rate mode. The servo motor was provided by
+Interactive Instruments Inc. The test was interrupted at the strain
+of 1% and 3% for all the specimens in an effort to study the effect
+of applied strain on IASCC initiation behavior. Prior to CERT, the
+specimens were exposed in the environment at a small load of
+approximate 50 N for a period of three days to stabilize the environ-
+mental condition. Throughout the test, the load, displacement and
+environmental parameters were collected and recorded in every
+thirty seconds using a personal computer equipped with a LabView
+software. At each interrupted strain, the specimens were removed
+from the autoclave for a characterization of the deformation and
+IASCC behavior on the irradiated region of the specimens. Following
+the interruption, the specimens were installed into the autoclave
+again and the test was continued to next targeted strain with the
+same condition as that employed before the interruption.
+To correlate the localized corrosion with the IASCC, following
+the strain of 3%, the oxide scale formed at grain boundary and slip
+step in the SA and irradiated specimens was characterized to clarify
+the localized corrosion behavior. Detailed description of the charac-
+62
+
+===== PDF PAGE 3 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 2. AFM observation and analysis of the slip steps in 0.5- and 5-dpa irradiated specimens following 3% straining. (a) and (b) Typical surface topographic images of slip
+steps.
+ (c) and (d) The corresponding three-dimensional morphology of the slip steps. (e) and (f) Surface height taken along the dashed line indicated in (a) and (b), respectively.
+terization of the corrosion behavior was presented below in Section
+2.4.
+2.3. Characterization of the localized deformation
+At each interrupted strain, characterization of the deformation
+behavior was conducted, including the height of slip step and local-
+ized residual strain at the slip step and grain boundary.
+2.3.1. Slip step height characterized by AFM
+The
+ slip step height is determined by the number of disloca-
+tion in the dislocation channel, and it corresponds to the amount
+of localized deformation [7,8], so that it was selected as the qual-
+ity indicator to quantify the localized deformation. Further, due to
+the grain orientation variation upon the tensile direction, the slip
+step height varied signiﬁcantly from grain to grain. Therefore, the
+weighted slip step height itself was employed as the weight factor
+[6]:
+h =
+∑n
+i=1hi
+2
+∑n
+i=1hi
+(1)
+where
+ h is the weighted slip step height and hi is the height of slip
+step i. The height of slip step was measured using a Pico Plus AFM
+equipped with an EV scanner. The resolution of the scanner was
+less than
+ 1 nm in the vertical direction, which is sufﬁcient for char-
+acterizing the slip step height. As the space between slip steps was
+generally a few micrometers, a suitable scan area of 25 /H9262m × 25 /H9262m
+was employed, covering a couple of steps for each scanning. More
+than 20 grains with a total of 100200 slip steps were characterized
+for each of the SA, 0.5-, 1.5-, and 5-dpa irradiated specimens after
+each interrupted strain.
+2.3.2.
+ Localized residual strain analyzed by EBSD
+A FEI XL30 Field Emission Gun SEM (FEG-SEM) was used for ana-
+lyzing the distributions of localized residual strain at slip step and
+grain boundary by EBSD in connection with the HKL-Tango soft-
+Fig. 3. Weighted average slip step height of 304NG SS as a function of irradiation
+dose.
+ware. The scanning step size for EBSD was set as 0.45 /H9262m using
+the voltage of 25 kV. The local change in the crystal orientation
+was evaluated by measuring the local misorientation (ML), which
+denoted local strain difference by indexing and averaging the mis-
+orientations between adjacent measured points within the grains
+[35]. The ML was an analogy of grain reference orientation devia-
+tion, and had a linear relationship with the degree of strain [35],
+which was used for describing the strain concentration at the grain
+boundary and slip step in the strained specimens. Details about
+the ML calculation and analysis were presented elsewhere [35].
+By setting the grain tolerance angle at 5◦, the two neighboring
+parts showing a misorientation within the tolerance value were
+considered to be in the same grain. The 0.5- and 5-dpa irradiated
+specimens following the strain of 3% in the simulated primary PWR
+water were selected for EBSD analysis. Prior to the analysis, the
+specimens were electropolished in an electrolyte (10 vol.% perchlo-
+ric acid of 70 wt.% concentration and 90 vol.% glacial acetic acid of
+63
+
+===== PDF PAGE 4 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 4. Typical SEM images and EBSD analysis for 0.5- (a) and 5-dpa (b) irradiated specimens following 3% straining in simulated primary PWR water at 320 ◦ C. (c), distribution
+of
+ local misorientations obtained from (a) and (b).
+98 wt.% concentration) at −10 ◦C and 20 V for 10 s to remove the
+surface oxide scale and surface residual strain.
+2.4. Analyses of the corrosion behavior
+Following the strain of 3%, cross-sections of the oxide scale
+formed on the specimens were characterized using a JEM-2100
+TEM. The TEM was equipped with a Gatan 4k charge coupled device
+camera for capturing high-resolution TEM images, and an energy
+dispersive X-ray spectroscopy (EDX) device for the composition
+analysis using both point- and line-scans. The high-resolution TEM
+images collected were analyzed using the Fast Fourier Transform
+(FFT) technique for crystallographic details of the oxide scale. The
+TEM samples were prepared using a dual-beam focus ion beam
+(FIB)-SEM technique with a Quanta 200 3D system, so that precise
+sampling of the cross-section of a selected slip step and/or grain
+boundary can be attained, allowing the observation and analysis
+of the corrosion at the slip step and grain boundary. The high-
+angle grain boundaries (HAGBs) were of interest to select, which
+ensured by using ion channeling contrast of the grains [36]. Before
+the TEM analysis, the selected grain boundaries were identiﬁed
+again by the electron diffraction pattern of TEM to ensure that
+they were HAGBs. A total of thirteen grain boundaries and thir-
+teen slip steps were analyzed, including three grain boundaries
+for the SA specimens, four grain boundaries and six slip steps
+for the 0.5-dpa irradiated specimens, and six grain boundaries
+and seven slip steps for the 5-dpa irradiated specimens. In addi-
+tion, depth of the oxide formed at the grain boundary in strained
+and strain-free specimens was compared to correlate localized
+deformation to the intergranular corrosion. The data of the oxide
+depth for strain-free specimens was available in a previous study
+[22].
+64
+
+===== PDF PAGE 5 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 5. (a) and (b) TEM observation of the cross-section of the oxide scale formed at two slip steps with a different height in 0.5-dpa irradiated 304NG SS. (c) and (d) The
+corresponding
+ EDX mappings for Cr, Fe, Ni, and O showing oxidation at surface and along the slip steps. (e) and (f) EDX point-scans collected along lines A and B shown in
+(b),
+ respectively. (g) and (h) High resolution TEM observation of the inner and the oxide formed at the slip step shown in (b).
+65
+
+===== PDF PAGE 6 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 6. (a) TEM observation of the localized corrosion at a slip step in 5-dpa irradiated 304NG SS, (b) the corresponding EDX mappings for Cr, Fe, Ni, and O showing oxidation
+along
+ the slip step. (c) EDX point-scans collected along line A shown in (a). (d) High resolution TEM observation of the oxide formed at the slip step shown in (a).
+Fig. 7. Depth of oxide along the slip step as a function of slip step height.
+2.5. Analyses of the IASCC behavior
+At each interrupted strain, the IASCC test was temporarily
+stopped and the specimens were removed from the autoclave for
+a characterization of the IASCC behavior. Following the ultrasonic
+cleaning in pure water and ethanol, the gage surface of each spec-
+imen was observed using the FEI XL30 FEG-SEM for counting the
+number of cracks and measuring the crack length over the irradi-
+ated region. Since the cracks only initiated in the irradiated region,
+the average crack length shown in the following equation can be
+deﬁned as the total length of observed cracks per unit area:
+ˇ = L/S (2)
+where ˇ is the crack length density, L is the total length of observed
+cracks in the irradiated region and S is the irradiated area. It is worth
+noting that only the cracks in the range of 10100 /H9262m were selected
+for the statistics of crack number and average crack length [37].
+3. Results
+3.1. Localized deformation in irradiated 304NG SS
+3.1.1. Weighted height of the slip step
+The
+ morphology and height of the slip step formed on the SA
+and irradiated specimens following the straining in the primary
+water as analyzed by AFM are shown in Fig. 2(a)-(f). The slip step
+observed was stripe in the surface and convex edge in the three-
+dimensional morphology. While the morphology of the slip step
+was similar, the height calculated by force-proﬁle across the slip
+step showed difference, as displayed in Fig. 2(e) and (f). Fig. 3 shows
+a comparison of weighted average height of the slip step formed
+on the SA and irradiated specimens strained to 1% and 3% in the
+primary water. As can be seen, despite the large step-to-step vari-
+ation in the slip step height, both the irradiation dose and applied
+66
+
+===== PDF PAGE 7 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 8. TEM observation of the localized corrosion at a grain boundary in SA (a), 0.5- (b) and 5-dpa (c) irradiated 304NG SS. (d), (e) and (f) the corresponding EDX mappings
+for
+ Cr, Fe, Ni, and O showing oxidation along the grain boundary shown in (a), (b) and (c), respectively. (g), (h) and (i) EDX point-scans collected along lines A, B and C shown
+in
+ (a), (b) and (c), respectively.
+strain promoted the weighted average slip step height. In particu-
+lar, the weighted average slip step height was always larger at 5 dpa
+for the same strain level, indicating that increasing the irradiation
+dose led to a higher deformation heterogeneity of the irradiated
+steel.
+3.1.2. Localized residual strain at grain boundary and slip step
+The typical SEM morphology and color-coded ML distribution
+mappings of the 0.5- and 5-dpa irradiated specimens following the
+3% straining in the primary water are shown in Fig. 4. As illustrated,
+the residual strain developed heterogeneously in the irradiated
+steel due to the applied strain. In particular, the strain tended to
+accumulate to slip steps and grain boundaries, suggesting a strain
+concentration at these regions. The level of residual strain concen-
+tration at the grain boundary was increased by the irradiation dose
+(Fig. 4(a) and (b)). In addition, the 5-dpa irradiated specimen also
+exhibited a higher strain concentration level than the 0.5-dpa irra-
+diated specimen at the slip step. This implies a correlation between
+the strain concentration and the height of the slip step, which is in
+agreement with the AFM analysis.
+Fig. 4(c) shows the statistical distribution of the local misori-
+entations with a regression curve optimized using the log-normal
+distribution. The ML distribution is seen to be well represented by
+the log-normal distribution, while the ML for frequency peak in 5-
+dpa irradiated specimen was higher than that in 0.5-dpa irradiated
+specimen. This suggested that increasing irradiation dose increased
+the mean value of ML and thus the strain concentration at the slip
+step and grain boundary.
+3.2. Localized corrosion in irradiated 304NG SS in simulated
+primary PWR water
+3.2.1. Localized corrosion at slip step
+Fig. 5 shows the TEM observation and analysis of the cross-
+section of the oxide scale formed at two typical slip steps with a
+different height in 0.5-dpa irradiated specimen. It was found that
+the morphology of the oxide scale differed with the slip step height,
+shown in Fig. 5(a) and (b). A ﬂat inner oxide ﬁlm was observed to
+form at the slip step with a height of 50 nm, while the slip step with
+a larger height of 100 nm showed a penetration of oxidation with
+a depth of ∼50 nm through the surface to the matrix, as displayed
+by the EDX mappings of Cr, Fe, Ni and O in Fig. 5(c) and (d). This
+suggested an acceleration of the localized corrosion by a larger slip
+step height. Both the EDX mappings and line scans revealed that the
+67
+
+===== PDF PAGE 8 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+composition of the inner oxide and the oxide formed at the slip step
+was similar (Fig. 5(e) and (f)). According to the high-resolution TEM
+as shown in Fig. 5(g) and (h), the oxides consisted of Fe-Cr-Ni spinel
+oxide [38,39]. In addition, there is no obvious difference in Cr con-
+centration of the inner oxide and the oxide formed at the slip step
+in the 0.5-dpa irradiated specimens. Nevertheless, further obser-
+vation and analysis by high-resolution TEM (Fig. 5(g) and (h)) also
+displayed a difference in structure of the inner oxide and the oxide
+formed at the slip step. The crystallographic pattern analyzed by FFT
+shown in the insets in the ﬁgures displayed a clear lattice character
+of the inner oxide, suggesting that the inner oxide was dominated
+by crystalline. On the other hand, the pattern of the oxide formed
+at the slip step showed a mixed character of polycrystalline diffrac-
+tion rings and speckled diffraction lattice, suggesting a ﬁner oxide
+grain in the oxide [38,40].
+The localized corrosion at another slip step with a similar height
+of 110 nm in 5-dpa irradiated specimen was also observed and
+analyzed by TEM, shown in Fig. 6. The depth and microstructure
+of the oxide formed at the slip step were both similar to that in
+the 0.5-dpa irradiated specimen. This result as well as TEM obser-
+vation shown in Fig. 5 suggested that the localized corrosion at
+the slip step was most likely dominated by the height of the slip
+step.
+Fig. 7 summarized depth of the oxide formed at the slip step in
+0.5- and 5-dpa irradiated specimens following the 3% straining. It
+showed that increasing the height promoted the localized corrosion
+along the slip step in irradiated 304NG SS in primary PWR water.
+This was in association with an increased deformation/strain at the
+slip step with a larger height.
+3.2.2. Localized corrosion at grain boundary
+The morphology and microstructure of the oxide formed at the
+grain boundary in SA, 0.5- and 5-dpa irradiated specimens follow-
+ing the 3% straining are shown in Fig. 8. A sharp oxide formed
+at the grain boundary was observed, suggesting a typical nature
+of intergranular corrosion. While the morphology of the oxide at
+the grain boundary was similar, the depth of the oxide showed
+difference in the specimens. In SA specimen, the oxide depth
+was approximately 60 nm, shown in Fig. 8(a). The oxide depth
+in 0.5- and 5-dpa irradiated specimens, however, was increased
+to ∼160 nm and ∼450 nm, respectively (shown in Fig. 8(b) and
+(c)).
+EDX mappings and line-scans shown in Fig. 8(d)-(i) revealed the
+composition proﬁles of the oxide formed at the grain boundaries
+in SA, 0.5- and 5-dpa irradiated specimens. While all the oxides
+were depleted in Fe and enriched in Cr, the EDX point-scan anal-
+ysis showed that the Cr content of the oxide at grain boundary
+was decreased by a higher irradiation dose of the specimen. This
+is attributed to the depletion of Cr at the primary grain boundary
+by the radiation induced segregation (RIS), as has been discussed
+in a previous study [22].
+Fig. 9(a) summarized depth of the oxide formed at the grain
+boundary in SA, 0.5- and 5-dpa irradiated specimens following the
+3% straining. A variation in oxidation depth was observed, which
+varied from ∼80 to ∼450 nm in the 5-dpa irradiated specimen, and
+from ∼60 to ∼160 nm in the SA and 0.5-dpa irradiated specimens.
+The variation was most likely due to the difference in the grain ori-
+entation with the tensile direction, which caused the difference in
+the localized deformation at the grain boundary. Nevertheless, the
+increase of the average oxidation depth by a higher irradiation dose
+was conﬁrmed, as summarized in Fig. 9(b). Further, data reported
+in a previous study [22] on the oxidation depth at the grain bound-
+ary in strain-free specimens was also shown in Fig. 9(a) and (b) for
+a comparison. As can be seen, the increase of the oxidation depth
+with the irradiation dose was much higher in the 3% strained spec-
+imens, although the exposure time for the 3% strained specimens
+Fig. 9. (a) Depth of intergranular oxide in strain-free and 3% strained specimens as
+a
+ function of irradiation dose. Each of the bars in the dose columns represents an
+analyzed
+ grain boundary at the corresponding dose level. (b) Dependence of average
+depth
+ of intergranular oxidation on irradiation dose.
+was shorter than that for the strain-free specimens (∼170 h for
+strained and 500 h for strain-free specimens). As shown in Fig. 9(b),
+the average oxidation depth in 0.5-dpa irradiated specimen was
+∼50
+ nm in the strain-free specimen, which was increased to ∼95
+nm by the 3% applied strain, and further to ∼220 nm by increasing
+the irradiation to 5 dpa at the same level of applied strain. These
+results suggested a synergic effect of irradiation and strain on the
+intergranular corrosion of the irradiated steel.
+3.3. IASCC in 304NG SS in simulated primary PWR water
+The SEM observation of the cracking behavior on surfaces of the
+SA and irradiated specimens following the 1% and 3% straining is
+shown in Fig. 10. Typical intergranular cracking and deformation
+induced slip steps were observed on the irradiated specimens fol-
+lowing the straining, while the SA specimen showed no such cracks
+but only a few slip steps. It was noting that intragranular cracking
+was also observed at the slip steps in the irradiated specimens,
+as shown in Fig. 11. Further, an observation of the 5-dpa irradi-
+ated specimen over the same region as shown in Fig. 10(g) and (h)
+revealed that the corroded and partly cracked grain boundaries at
+1% strain were fully separated by an increased strain of 3%, suggest-
+ing a promotion effect of strain on cracking. Fig. 12 summarizes the
+observation results, which shows that both the number and length
+of the intergranular cracks were increased by a higher irradiation
+dose and applied strain.
+68
+
+===== PDF PAGE 9 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 10. SEM observation of surface cracking of 304NG SS subjected to different irradiation doses following a strain of 1% (left) and 3% (right) in simulated primary PWR
+water
+ at 320 ◦ C. (a, b) solution annealed, (c, d) 0.5 dpa, (e, f) 1.5 dpa, (g, h) 5 dpa. (g) and (h) were imaged from the same location for the purpose of the correlation between
+the
+ applied strain and cracking initiation.
+4. Discussion
+4.1. Effect of irradiation on localized deformation of 304NG SS in
+primary PWR water
+The above description of AFM and EBSD analysis showed that
+the height of slip steps, as well as the strain concentration at the
+slip step and grain boundary in the 5-dpa irradiated specimen was
+larger than those in the 0.5-dpa irradiated specimen. These results
+indicated that increasing irradiation dose led to a higher level of
+localized deformation at slip step and grain boundary in 304NG
+SS.
+The effect of irradiation on localized deformation has been rec-
+ognized in multiple irradiated austenitic alloys [6–8]. The increase
+in slip step height for irradiated 304NG SS with irradiation dose
+is further conﬁrmed in this study as shown in Fig. 3. At a higher
+irradiation dose, more dislocations induced by the irradiation are
+accumulated to mitigate homogeneous deformation. As such more
+deformation was localized into the dislocation channel, leading to
+a higher slip step height [7,41,42]. On the other hand, since the
+slip step transmits or terminates at the grain boundary as shown
+in Fig. 10, it will eventually impact on the grain boundary and pro-
+mote localized grain boundary deformation [7,10,12]. As a result,
+the localized deformation in 5-dpa irradiated specimen is larger
+than that in 0.5-dpa irradiated specimen because a higher slip step
+is likely to have a stronger impact on the grain boundary, leading
+to a higher level of strain concentration at the grain boundary as
+illustrated in Fig. 4.
+69
+
+===== PDF PAGE 10 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+Fig. 11. (a) SEM observation of intragranular cracking at slip step in 1.5-dpa irradiated 304NG SS following a strain of 3% in simulated primary PWR water at 320 ◦ C. (b) High
+magniﬁcation SEM images of the selected region A in (a).
+Fig. 12. IASCC susceptibility as measured by crack number and crack length per unit
+area
+ as a function of irradiation dose.
+4.2. Effect of localized deformation on localized corrosion of
+304NG SS
+The
+ TEM observation and
+ analysis shown in Figs. 5 and 8
+revealed that increasing irradiation dose promoted localized cor-
+rosion along the
+ slip step and grain boundary. Further, as discussed
+above, increasing the irradiation dose also led to a higher localized
+deformation at the slip step and grain boundary. This indicated a
+correlation between the enhanced corrosion and localized defor-
+mation.
+The higher slip step corresponds to a highly deformed
+microstructure, in which enhanced corrosion could occur easily
+by the process of stress/strain assisted oxidation [30,43]. This is
+in accordance with the enhanced localized corrosion along defor-
+mation band in cold worked steel [25,26]. Further, according to the
+high resolution TEM analysis shown in Fig. 5(g) and (h), the grain
+size of the oxide formed at the slip step is much smaller than that
+of the inner oxide. This also suggested a higher localized corrosion
+rate along the slip step, since the ﬁner grain of the oxide could
+certainly promote the oxygen diffusion by providing more diffu-
+sion paths [44–46]. The formation of polycrystalline oxide could
+relate to the continuing changing of step height during deforma-
+tion and therefore induce breaking of the oxide and formation of
+small oxides.
+The above discussion suggests that the localized deformation
+assisted diffusion of oxygen is the primary cause for enhanced local-
+ized corrosion along the slip step. The deformation, on the other
+hand, also promotes the intergranular corrosion by means of strain
+concentration at the grain boundary. During the exposure in the
+primary water, a homogeneous and ﬂat oxide was formed at ﬁrst
+on
+ the surfaces of the 0.5- and 5-dpa irradiated specimens. Then
+enhanced intergranular corrosion occurred due to Cr-depletion
+induced by RIS at the grain boundary, as has been acknowledged
+in a previous study [22]. In the following process of straining, the
+intergranular corrosion is related to the combined effect of RIS and
+strain concentration at the grain boundary. Further, the strain con-
+centration at the grain boundary in 5-dpa irradiated specimen is
+heavier than that in 0.5-dpa irradiated specimen, as discussed pre-
+viously in section 4.1. As concluded in other studies [26,30,43,47],
+strain concentration could accelerate the oxygen diffusion along
+grain boundaries, causing a further grain boundary oxidation.
+4.3. Correlation of localized deformation and localized corrosion
+with IASCC
+The SEM observation and analysis shown in Figs. 10 and 11
+revealed that increasing the irradiation dose resulted in a higher
+IASCC susceptibility of 304NG SS. Further, the discussion in Sec-
+tions 4.1 and 4.2 suggested that increasing the irradiation dose
+also promoted the localized corrosion along the slip step and grain
+boundary, in correspondence with a localized residual strain con-
+centration in these regions. This indicated a correlation between
+the higher IASCC susceptibility and the enhanced localized defor-
+mation and corrosion along the slip step and grain boundary.
+As has been acknowledged, the residual strain concentration at
+grain boundary in austenitic alloys could promote the cracking sus-
+ceptibility in high temperature water [27,28,48–51]. As mentioned
+previously, straining could result in formation of a higher slip step
+and heavier lattice distortion at the grain boundary in the specimen
+subjected to a higher irradiation dose. This was correlated with the
+deformation heterogeneity and well described by the number of
+dislocations that were localized into the dislocation channel and
+accumulated to the grain boundary [7,8]. The slip step and dis-
+torted grain boundary indicated high dislocation density and strain
+concentration (Fig. 4), which accelerated the cracking initiation.
+The strain concentration, on the other hand, affected the local-
+ized corrosion behavior at the slip step and grain boundary. As the
+oxidation under stress/strain favors the formation of cracking initi-
+ation [32,33,43,52], a higher corrosion rate at the slip step and grain
+boundary in the steel with a higher irradiation dose caused a higher
+cracking susceptibility, shown in Figs. 10 and 11. The oxide at the
+grain boundary promoted the initiation of a typical intergranular
+SCC, while the oxide at slip step promoted the intragranular crack-
+ing initiation since most part of the slip step was within the grain.
+As such, increasing the irradiation dose promoted SCC initiation
+due to the enhanced localized corrosion at the grain boundary and
+slip step. Further, as a higher irradiation dose led to generation of
+more slip steps with a higher height (Figs. 2 and 3), increasing the
+70
+
+===== PDF PAGE 11 =====
+P. Deng et al. Journal of Materials Science & Technology 65 (2021) 61–71
+irradiation dose would favor formation of sites for SCC initiation as
+a result of the increased localized corrosion along the slip step.
+5. Conclusions
+Irradiation assisted localized corrosion and stress corrosion
+cracking in 304NG SS in simulated primary PWR water were
+investigated. The following conclusions can be drawn from the
+investigation:
+(1) Increasing the irradiation dose led to a higher localized defor-
+mation at grain boundary and slip step of 304NG SS due to the
+irradiation induced defects.
+(2) Irradiation and strain promote intergranular corrosion of
+304NG SS in simulated PWR primary water. This is attributed to
+the synergic effect of irradiation and strain, which resulted in a
+strain concentration and a depletion of Cr at the grain boundary
+by RIS.
+(3) The depth
+ of the oxidation at slip step of irradiated 304NG SS
+in primary PWR water is increased by a higher height of the
+slip step due to the accumulated localized strain by a higher
+irradiation dose.
+(4) Increasing irradiation dose within the studied dose range (0.55
+dpa) promoted IASCC initiation as a result of the synergic effect
+of the enhanced localized deformation and corrosion at the
+grain boundary and slip step.
+Acknowledgements
+This work was ﬁnancially supported by the International Science
+& Technology Cooperation Program of China (No. 2014DFA50800),
+and partly supported by the Essential Research Fund by SNPTC
+(No. 2015SN010-007). One author, Qunjia Peng, would thank
+the support of Natural Science Foundation of Jiangsu Province
+(BK20191178). The authors gratefully acknowledge the Michigan
+Ion Beam Laboratory at the University of Michigan for performing
+proton irradiation experiments.
+References
+[1] K.J. Stephenson, G.S. Was, J. Nucl. Mater. 444 (2014) 331–341.
+[2] Y. Chen, B. Alexandreanu, W.K. Soppet, W.J. Shack, K. Natesan, A.S. Rao, 15th
+International Conference on Environmental Degradation of Materials in
+Nuclear Power Systems-Water Reactors, Colorado, 2011, pp. 1277–1289.
+[3] H. Nishioka, K. Fukuya, K. Fujii, T. Torimaru, J. Nucl. Sci. Technol. 45 (2008)
+1072–1077.
+[4] Z. Jiao, G.S. Was, J.T. Busby, Whistler, British Columbia, April 19-23, 2007.
+[5] Z. Jiao, G.S. Was, J. Nucl. Mater. 382 (2008) 203–209.
+[6] Z. Jiao, G.S. Was, J. Nucl. Mater. 407 (2010) 34–43.
+[7] Z. Jiao, G.S. Was, J. Nucl. Mater. 408 (2011) 246–256.
+[8] Z. Jiao, G.S. Was, T. Miura, K. Fukuya, J. Nucl. Mater. 452 (2014) 328–334.
+[9] T. Miura, K. Fujii, K. Fukuya, Y. Ito, J. Nucl. Mater. 386-388 (2009) 210–213.
+[10] K. Fukuya, H. Nishioka, K. Fujii, T. Miura, T. Torimaru, J. Nucl. Mater. 417
+(2011) 958–962.
+[11] M.D. McMurtrey, G.S. Was, 15th International Conference on Environmental
+Degradation of Materials in Nuclear Power Systems-Water Reactors,
+Colorado, 2011, pp. 1383–1394.
+[12] K. Fukuya, H. Nishioka, K. Fujii, T. Miura, Y. Kitsunai, J. Nucl. Mater. 432 (2013)
+67–71.
+[13] P. Andresen, G.S. Was, J. Nucl. Mater. 517 (2019) 380–392.
+[14] C.R. Lear, M. Song, M. Wang, G.S. Was, C.R. Lear, J. Nucl. Mater. 515 (2019)
+125–134.
+[15] T. Miura, K. Fujii, K. Fukuya, K. Takashima, J. Nucl. Mater. 417 (2011) 984–987.
+[16] G.S. Was, 11th International Symposium on Environmental Degradation of
+Materials in Nuclear Power Systems-Water Reactors, Washington, 2003, pp.
+965–985.
+[17] G.S. Was, Proc. 11th International Symposium on Environmental Degradation
+of Materials in Nuclear Power Systems-Water Reactors, Washington, 2003,
+pp. 965–985.
+[18] D.C. Johnson, B. Kuhr, D. Farkas, G.S. Was, Scr. Mater. 116 (2016) 87–90.
+[19] M.D. McMurtrey, G.S. Was, B. Cui, I. Robertson, L. Smith, D. Farkas, Int. J. Plast.
+56
+ (2014) 219–231.
+[20] A. Turnbull, K. Mingard, J.D. Lord, B. Roebuck, D.R. Tice, K.J. Mottershead, N.D.
+Fairweather,
+ A.K. Bradbury, Corros. Sci. 53 (2011) 3398–3415.
+[21] J. Panter, B. Viguier, J.M. Cloué, M. Foucault, P. Combrade, E. Andrieu, J. Nucl.
+Mater.
+ 348 (2006) 213–221.
+[22] P. Deng, Q.J. Peng, E.-H. Han, W. Ke, C. Sun, Z. Jiao, Corros. Sci. 127 (2017)
+91–100.
+[23] S. Perrin, L. Marchetti, C. Duhamel, M. Sennour, F. Jomard, Oxid. Met. 80
+(2013) 623–634.
+[24] L. Marchetti, S. Perrinb, F. Jambon, M. Pijolat, Corros. Sci. 102 (2016)
+24–35.
+[25] P. Deng, Q.J. Peng, E.-H. Han, W. Ke, Corrosion 73 (2017) 1237–1249.
+[26] K. Kruska, S. Lozano-Perez, D.W. Saxey, T. Terachi, T. Yamada, T. Smith, D.W.
+George, Corros. Sci. 63 (2012) 225–233.
+[27] L.J. Dong, Q.J. Peng, E.-H. Han, W. Ke, L. Wang, Corros. Sci. 107 (2016) 172–181.
+[28] C. Ma, Q.J. Peng, J.N. Mei, E.-H. Han, W. Ke, J. Mater. Sci. Technol. 34 (2018)
+1823–1834.
+[29] N.K. Das, K. Suzuki, K. Ogawa, T. Shoji, Corros. Sci. 51 (2009) 908–913.
+[30] S. Lozano-Perez, K. Kruska, I. Iyengar, T. Terachi, T. Yamadac, Corros. Sci. 56
+(2012) 78–86.
+[31] Y. Chimi, Y. Kitsunai, S. Kasahara, K. Chatani, M. Koshiishi, Y. Nishiyama, J.
+Nucl. Mater. 475 (2016) 71–80.
+[32] Z. Shen, K. Arioka, S. Lozano-Perez, Corros. Sci. 132 (2018) 244–259.
+[33] S.M. Bruemmer, M.J. Olszta, M.B. Toloczko, D.K. Schreiber, Corros. Sci. 131
+(2018) 310–323.
+[34]
+ G. Gupta, Z. Jiao, A.N. Ham, J.T. Busby, G.S. Was, J. Nucl. Mater. 351 (2006)
+162–173.
+[35] M. Kamaya, Mater. Charact. 66 (2012) 56–67.
+[36] Z. Jiao, G.S. Was, Acta Mater. 59 (2011) 1220–1238.
+[37] L.J. Dong, Q.J. Peng, H. Xue, E.-H. Han, W. Ke, L. Wang, Corros. Sci. 132 (2018)
+9–20.
+[38] Y.L. Han, J.N. Mei, Q.J. Peng, E.-H. Han, W. Ke, Corros. Sci. 112 (2016) 625–634.
+[39] L.J. Dong, Q.J. Peng, Z.M. Zhang, T. Shoji, E.-H. Han, W. Ke, L. Wang, Nucl. Eng.
+Des. 295
+ (2015) 403–415.
+[40] T. Terachi, T. Yamada, T. Miyamoto, K. Arioka, K. Fukuya, J. Nucl. Sci. Technol.
+45 (2008) 975–984.
+[41] T.S. Byun, N. Hashimoto, J. Nucl. Mater. 354 (2006) 123–130.
+[42] I.M. Robertson, A. Beaudoin, K. Al-Fadhalah, L. Chun-Ming, J. Robach, B.D.
+Wirth, A. Arsenlis, D. Ahnc, P. Sofronis, Mater. Sci. Eng. A 400 (2005) 245–250.
+[43] Y.H. Lu, Q.J. Peng, T. Sato, T. Shoji, J. Nucl. Mater. 347 (2005) 52–69.
+[44] J. Robertson, Corros. Sci. 29 (1989) 1275–1291.
+[45] J. Robertson, Corros. Sci. 32 (1991) 443–465.
+[46] S. Cissé, L. Laffont, B. Tanguy, M.C. Lafont, E. Andrieu, Corros. Sci. 56 (2012)
+209–217.
+[47] S. Lozano-Perez, D.W. Saxey, T. Yamada, T. Terachi, Scr. Mater. 62 (2010)
+855–858.
+[48] Q.J. Peng, J. Hou, T. Yonezawa, T. Shoji, Z.M. Zhang, F. Huang, E.-H. Han, W. Ke,
+Corros. Sci. 57 (2012) 81–88.
+[49] J. Hou, Q.J. Peng, T. Shoji, J.Q. Wang, E.-H. Han, W. Ke, Corros. Sci. 53 (2011)
+2956–2962.
+[50] J. Hou, Q.J. Peng, Z.P. Lu, T. Shoji, J.Q. Wang, E.-H. Han, W. Ke, Corros. Sci. 53
+(2011) 1137–1142.
+[51] L.J. Dong, Q.J. Peng, E.-H. Han, W. Ke, L. Wang, J. Mater. Sci. Technol. 34 (2018)
+1281–1292.
+[52] Y.L. Han, E.-H. Han, Q.J. Peng, W. Ke, Corros. Sci. 121 (2017) 1–12.
+71

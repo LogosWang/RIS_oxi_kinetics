@@ -1,0 +1,772 @@
+===== PDF PAGE 1 =====
+Silicon segregation enhances IASCC of austenitic stainless steels via oxide 
+degradation: Decoupling from chromium depletion effects
+Donghai Du a,b,*, Shuai Chen b
+ , Lupeng Liu c, Tenghong Lin b, Hefei Huang a,**
+a State Key Laboratory of Thorium Energy, Shanghai Institute of Applied Physics, Chinese Academy of Sciences, Shanghai 201800, China
+b Institute of Clean Energy, Yangtze River Delta Research Institute of NPU, Northwestern Polytechnical University, Taicang 215400, China
+c CSSC Huangpu Wenchong Shipbuilding Company Limited, Guangzhou 510715, China
+ARTICLE INFO
+Keywords:
+Austenitic alloys
+Si enrichment
+Cr depletion
+Crack initiation
+IASCC
+ABSTRACT
+Grain boundary (GB) segregation plays a critical role in irradiation-assisted stress corrosion cracking (IASCC) by 
+influencing both intergranular oxidation and GB cohesive strength. To decouple the effects of Si enrichment and 
+Cr depletion on crack enhancement, four model alloys with systematically varied Si and Cr concentrations were 
+designed, and slow strain rate testing (SSRT) was performed on these alloys. The results demonstrate that the 
+cracking susceptibility increases significantly with increasing Si content. In contrast, the low-Cr alloy exhibited 
+only a marginal increase in cracking susceptibility compared to the alloy containing 0.85 wt% Si. These findings 
+indicate that Si segregation at GBs is a more important factor promoting IASCC.
+1. Introduction
+Irradiation-assisted stress corrosion cracking (IASCC) in materials, 
+which occurs early in the life of PWR core components (1–3 dpa), has 
+become a major degradation mechanism of light water reactors (LWRs) 
+[1,2]. IASCC is predominantly intergranular, making it somewhat more 
+difficult to detect via non-destructive testing (NDT) methods and often 
+leads to unexpected consequences. To date, failures have been reported 
+in over 20 core components-manufactured from stainless steels and 
+nickel-base alloys, including baffles, former bolts, fuel rods, control 
+blades, instrumentation tubes, and springs-in both pressurized water 
+reactors (PWRs) and boiling water reactors (BWRs) [3,4]. These in-
+cidents have significantly impaired economic efficiency and posed a 
+substantial safety risks to nuclear reactor power plants.
+Neutron irradiation is responsible for the premature or enhanced 
+cracking of reactor core components, as it concurrently induces micro-
+structural and microchemical changes in materials, along with water 
+radiolysis. Microstructure alterations, such as the formation of black 
+dots, dislocation loops, voids, and precipitates, lead to hardening and 
+increased strength, which have been correlated with IASCC suscepti-
+bility [5–7]. Microchemical changes typically involve elemental segre-
+gation, occurring both at grain boundaries (GBs) and within grains (e.g., 
+in clusters and precipitates). In austenitic stainless steels, segregation of 
+both minor and major elements has been observed at GBs, including 
+enrichment of Ni, Mn, Si, and P, and depletion of Fe, Cr, and Mo [8–11]. 
+Extensive research on the microstructural and microchemical evolution 
+of irradiated materials, as well as their effects on stress corrosion 
+cracking (SCC) behavior, has yielded significant progress in under-
+standing IASCC mechanisms. Grain boundary oxidation is widely 
+recognized as a precursor to IASCC crack initiation [12,13], as it 
+weakens GBs and reduces fracture resistance [14–17]. Applied stress 
+accelerates the oxidation process and promotes localized deformation in 
+grains with favorable orientations, further enhancing oxidation at the 
+intersection of dislocation channels (DCs) and GBs [14–17]. When DCs 
+terminate at GBs, they generate high local stress concentrations, suffi-
+cient to fracture the oxidized GBs, thereby initiating cracks [3,18–20].
+Given the critical roles of GB oxidation and fracture in IASCC, 
+considerable attention has been directed toward understanding 
+elemental segregation at GBs, particularly Si enrichment and Cr deple-
+tion. Studies on sensitized stainless steels have demonstrated that GB Cr 
+depletion can lead to severe SCC in oxygenated environment [21,22] as 
+insufficient Cr prevents the formation of a protective Cr-rich oxide film. 
+In contrast, the GB carbides formed during sensitization can inhibit SCC 
+cracking in hydrogenated high-temperature water [23]. Given that the 
+Cr depletion feature at GB induced by irradiation differs from that of 
+thermal sensitization (which involves carbide precipitation), its effect 
+* Corresponding author at: State Key Laboratory of Thorium Energy, Shanghai Institute of Applied Physics, Chinese Academy of Sciences, Shanghai 201800, China.
+** Corresponding author.
+E-mail addresses: dudonghai@sinap.ac.cn (D. Du), huanghefei@sinap.ac.cn (H. Huang). 
+Contents lists available at ScienceDirect
+Corrosion Science
+journal homepage: www.elsevier.com/locate/corsci
+https://doi.org/10.1016/j.corsci.2025.113424
+Received 27 August 2025; Received in revised form 15 October 2025; Accepted 17 October 2025  
+Corrosion Science 258 (2026) 113424 
+Available online 20 October 2025 
+0010-938X/© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies. 
+
+===== PDF PAGE 2 =====
+on SCC cracking in a simulated PWR environment is expected to be 
+distinct. Post-irradiation annealing which desegregates Cr and Si from 
+GBs has been correlated with reduced IASCC susceptibility [24–26]. SCC 
+tests on high-Si model alloys demonstrated that both crack initiation 
+[27,28] and crack propagation rates [29–32] increase with Si concen-
+tration. Although variations in Si (~1–5 %) and Cr (12–19 %) content 
+have been shown to exert limited influence on the electrochemical 
+behavior of materials in high-temperature water [33–35], irradiated 
+materials exhibit deeper GB oxidation compared to their unirradiated 
+counterparts [13,36], a phenomenon critical to IASCC.
+However, it remains unclear whether the preferential GB oxidation is 
+driven primarily by Si or Cr, as their segregation occurs simultaneously. 
+Previous studies employed model alloys with either low Cr/high Si or 
+variable Si/normal Cr, failing to effectively decouple the two effects. 
+Therefore, systematic experiments on two sets of model alloys are 
+necessary: one with a Cr content comparable to that of 304 stainless steel 
+and varying Si levels, and another with low Cr and normal Si. Such 
+studies would fill the knowledge gap and contribute to a more 
+comprehensive understanding of IASCC mechanisms.
+2. Experimental
+2.1. Materials and specimen preparation
+To isolate the effects of Cr depletion and Si enrichment on IASCC, 
+four model alloys with systematically varied Si and Cr content were 
+designed, based on the GB chemical composition of commercial nuclear- 
+grade 304 stainless steel after neutron irradiation. The Ni concentration 
+was fixed at 25 wt% in all alloys to simulate the Ni enrichment typically 
+observed under high dpa damage conditions. For alloys with varying Si 
+concentration (1, 2.5, 4.0 wt%), the Cr concentration was maintained at 
+19 wt%. The fourth alloy, with reduced Cr content (9 wt%), was 
+designed to have a Si level of 0.33 % comparable to that of standard 
+nuclear-grade 304 stainless steel. The Mn concentration was consis-
+tently maintained at 2.2 wt% across all alloys.
+Columnar ingots were prepared using a vacuum induction levitation 
+melting furnace. These ingots were then forged at 1150℃ into cuboids 
+with a thickness of approximately 50 mm, followed by quenching in ice 
+water. To verify the target compositions, chemical analyses were con-
+ducted using a wavelength-dispersive X-ray fluorescence spectrometer, 
+with results summarized in Table 1. Grain size characteristics were 
+evaluated via electron backscatter diffraction (EBSD), and data were 
+processed using AZtecCrystal software. The resulting inverse pole figure 
+(IPF) maps and grain size distributions are presented in Fig. 1. All alloys 
+exhibited comparable average grain sizes, ranging from 44 to 71 μm.
+Each alloy block was sectioned midway through its thickness. One 
+half underwent an additional one-step forging at 200 ◦C, achieving a 
+20 % reduction in thickness. This deformation treatment was applied to 
+enhance mechanical strength and increase susceptibility to SCC, thereby 
+facilitating crack initiation within a practical experimental timeframe. 
+Tensile specimens were fabricated from the forged plates using electrical 
+discharge machining (EDM), with the specimen geometry illustrated in 
+Fig. 2. These tensile specimens featured a gage length of 16 mm and a 
+rectangular gage cross-section of 2.2× 1.6 mm2. To ensure consistency, 
+all specimens used for slow strain rate testing (SSRT) were extracted 
+from equivalent positions within the deformed plates across different 
+alloys. Both the front and back surfaces of each tensile specimen were 
+mechanically polished up to 4000-grit SiC paper to achieve a uniform 
+surface finish and eliminate surface-related artifacts. The side surfaces of 
+the gauge sections were also carefully polished to remove any scratch- 
+like defects that could act as stress concentrators.
+Table 1 
+The chemical composition of four model alloys (wt%).
+Alloy Fe Cr Ni Mn Si C S
+H1 Bal. 19.84 24.94 2.25 0.85 < 0.03 < 0.03
+H2 Bal. 19.90 25.06 2.26 2.63 < 0.03 < 0.03
+H3 Bal. 18.29 23.06 2.10 4.08 < 0.03 < 0.03
+H4 Bal. 8.32 25.83 2.22 0.33 < 0.03 < 0.03
+Fig. 1. Inverse pole figure (IPF) maps of the four model alloys, including grain size distributions and average grain sizes.
+Fig. 2. Schematic diagram of the tensile specimen geometry (units: mm).
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+2 
+
+===== PDF PAGE 3 =====
+2.2. Grain boundary composition analysis
+To investigate whether Si or Cr naturally segregates to GBs, trans-
+mission electron microscopy (TEM) specimens were prepared from each 
+alloy. Small sections were extracted from the bulk material and me-
+chanically polished to a thickness of approximately 100 ~200 μm. Discs 
+with a diameter of 3 mm were then punched from the thinned foils and 
+subjected to double-jet electropolishing using a Struers TenuPol-5 sys-
+tem. The electrolyte consisted of 5 vol% perchloric acid in methanol, 
+maintained at a temperature below - 20 ◦C by cooling the solution with 
+liquid nitrogen. Scanning transmission electron microscopy (STEM) 
+coupled with energy-dispersive X-ray spectroscopy (STEM-EDS) map-
+ping was performed using a Talos F200X G2 microscope operated at 
+200 kV, with a probe size of approximately 1 nm.
+2.3. Slow strain rate tensile test
+SSRT tests were conducted in a 316 L stainless steel autoclave con-
+nected to a freshly refreshed water loop capable of providing simulated 
+PWR water conditions (320℃, 2.7 ppm H2). After achieving environ-
+mental equilibrium, four specimens (one from each alloy) were strained 
+simultaneously at a constant strain rate of 5× 10 8 s 1. Each specimen 
+was actuated by an independent servo motor, ensuring that the stress 
+and strain conditions of individual samples were not affected by others. 
+The load on each specimen and the displacement were continuously 
+recorded via the test control program. Two fiducial marks were inscri-
+bed outside the gauge section of each specimen to enable accurate 
+measurement of the actual plastic strain post-test. To account for system 
+compliance and ensure consistent crack initiation across all specimens, a 
+nominal total strain of more than 7 % was applied before stopping the 
+tests. This strain level was determined through preliminary tests, which 
+confirmed it reliably induced crack initiation in all specimens under the 
+specified environmental conditions.
+2.4. Post-strain characterization
+Stress–strain curves were generated from the recorded load and 
+displacement data, from which the yield stress was derived. The actual 
+plastic strain for each specimen was calculated based on the change in 
+distance between the two fluidical marks before and after testing, with 
+measurements obtained by capturing SEM images of the marks. Post-test 
+characterization included plane-view and cross-sectional imaging of the 
+deformed specimens using a GeminiSEM 460. Crack initiation behavior 
+was quantified by counting the number of cracks and measuring their 
+lengths and depths. From these measurements, crack number density, 
+length density, and depth distribution were determined. Additionally, 
+the morphology and composition of the oxide films were examined using 
+SEM and EDS.
+To analyze GB oxidation at crack tips, site-specific TEM specimens 
+were prepared using a dual-beam focused ion beam (FIB)-SEM system 
+(FEI). For deeply embedded cracks inaccessible via conventional surface 
+FIB milling, a plane lift-out technique was employed on pre-exposed 
+cross-sectional surfaces. The FIB lift-outs were sequentially thinned 
+using 30 kV voltage with currents of 5 nA and 1 nA, followed by final 
+thinning at 5 kV (60 pA), and a cleaning step at 2 kV. The resulting TEM 
+lamellae were characterized via STEM and EDS using an FEI Talos 
+F200X G2 microscope operating at 200 kV and equipped with a Super-X 
+EDS detector. Quantitative EDS analysis was performed using Velox 
+software.
+Fig. 3. Compositional profiles across a GB obtained by STEM-EDS line scan.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+3 
+
+===== PDF PAGE 4 =====
+3. Results
+3.1. Elemental composition of the grain boundary
+Fig. 3 presents compositional profiles of the main elements across a 
+random high-angle GB in the as-prepared model alloys. For alloys H1, 
+H2, H3, and H4, no segregation of Si or Ni was detected at the GBs, with 
+their concentrations remaining consistent with those in adjacent grain 
+interiors, indicating the absence of natural segregation in these alloys. 
+Similarly, no Cr depletion or precipitate formation was observed at the 
+GBs in the first three alloys. In contrast, nanoscale Cr23C6 carbides were 
+identified along GBs in alloy H4, with corresponding Cr depletion zones 
+evident in the regions between these precipitates. However, EDS line 
+scans across precipitate-free GB segments in alloy H4 confirmed the 
+absence of Cr depletion, as clearly illustrated in Fig. 3. Although nano-
+scale Cr23C6 carbides were observed along some GBs in alloy H4, their 
+size was limited, and their distribution was sparse and discontinuous.
+3.2. Stress-strain curves
+The stress-strain curves for all tested samples are shown in Fig. 4. An 
+initial stress of approximately 150 MPa is observed at the start of each 
+curve, arising from the autoclave pressure acting on the tensile speci-
+mens. Key mechanical properties, including yield strength, stress at the 
+target strain (7 %), measured actual plastic strain, and corrosion dura-
+tion, are summarized in Table 2. The actual plastic strains measured 
+after SSRT were 6.92 %, 7.06 %, 7.14 %, and 7.16 % for the four alloys, 
+respectively, all within 5 % of the target strain value. Yield strength 
+decreased progressively with increasing alloy number (from H1 to H4), 
+with a maximum difference of only 35 MPa between alloys H1 and H4. 
+The final engineering stresses at the target strain of 7 % were 356 MPa, 
+367 MPa, 346 MPa, and 315 MPa, respectively, with a maximum dif-
+ference of 42 MPa between alloys H2 and H4. The relatively small dif-
+ferences in strengths among the alloys provide a well-controlled 
+mechanical basis for evaluating and comparing their SCC susceptibility.
+3.3. Oxidation and crack initiation behavior
+3.3.1. Plan-view
+Fig. 5 presents an overview of SEM micrographs of the gauge surfaces 
+after SSRT, composed of stitched low-magnification images. The 
+absence of visible necking confirms uniform elongation of all specimens. 
+Surface-initiated cracks are marked with white arrows; although some 
+finer cracks are not clearly resolved at this magnification, the overall 
+distribution and quantity of cracks remain distinguishable. Alloy H3 
+exhibited the highest number of cracks, followed by alloy H2, while 
+alloys H1 and H4 showed comparatively fewer cracks. To quantitatively 
+assess SCC susceptibility, the total number of cracks in the entire gauge 
+section was counted, and the length and width of each crack were 
+measured. From these data, crack number density and crack length 
+density (total crack length per unit area) were calculated. Additionally, 
+the maximum crack width and length for each alloy were determined. 
+Fig. 4. Stress-strain curves of tensile samples strained at 5× 10 8 /s in 
+simulated PWR environment.
+Table 2 
+Mechanical properties and strain conditions of four specimens subjected to SSRT 
+testing in a PWR environment.
+SCC parameter H1 H2 H3 H4
+Yield strength (MPa) 310 296 285 275
+Plastic strain (%) 6.92 7.06 7.14 7.16
+Stress at target strain (MPa) 356 367 346 315
+Corrosion duration (h) 599 555 576 530
+Fig. 5. Post-SSRT overview SEM micrographs of the entire gauge sections for alloys (a) H1, (b) H2, (c) H3, and (d) H4.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+4 
+
+===== PDF PAGE 5 =====
+Table 3 
+Summary of SCC susceptibility metrics for four alloys after SSRT testing in a simulated PWR environment.
+Alloy H1 H2 H3 H4
+Max. crack width (μm) 5.1 14.9 35.1 7.9
+Max. crack length (μm) 139.6 218.8 469.5 181.6
+Average crack length (μm) 71.0± 9.7 84.6± 17.6 147.4± 25.4 67.7± 6.3
+Crack number density (mm 2) 3.0 5.2 7.1 4.0
+Crack length density (μm⋅mm 2) 210.0± 29.1 439.9± 91.5 1046.5± 180.3 270.8± 25.2
+Fig. 6. SEM images showing crack initiation behavior and oxide morphology on the gauge section surfaces of alloys H1, H2, H3, and H4 after SSRT in a simulated 
+PWR environment.
+Fig. 7. SEM-EDS elemental mapping of the surface oxide film on alloy H3 after SSRT, showing secondary electron image with regions of intact and exfoliated oxide, 
+and corresponding elemental distributions of O, Fe, Cr, Si, and Ni.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+5 
+
+===== PDF PAGE 6 =====
+All quantitative metrics are summarized in Table 3. Except for average 
+crack length, all parameters-including maximum crack width, maximum 
+crack length, crack number density, and crack length density-increase in 
+the order: H1< H4< H2< H3. This trend indicates a corresponding 
+increase in SCC susceptibility across the four alloys. The initiation site of 
+stress corrosion cracking (SCC) is strongly influenced by factors such as 
+the angle between the tensile axis and the grain trace, the Luster-Morris 
+m′ parameter, and grain boundary misorientation [37]. Consequently, in 
+a polycrystalline sample with a sufficient number of grains, the number 
+of initiated intergranular cracks is thus determined by the material’s 
+inherent SCC resistance.
+Fig. 6 shows higher-magnification SEM images of the gauge surfaces, 
+revealing detailed crack initiation sites and oxide morphology. Clear 
+differences in cracking behavior and oxidation characteristics are 
+observed among the alloys. The surface of alloy H1 remains relatively 
+smooth and intact, with minimal oxide spallation. In contrast, alloys H2 
+and H3 exhibit rough, irregular surfaces with extensive peeling and 
+flaking of oxide films, with alloy H3 showing more severe and wide-
+spread exfoliation compared to the localized spallation observed in H2. 
+Alloy H4 displays a moderately affected surface, featuring isolated re-
+gions of high-density oxide particles and minor exfoliation. Widespread 
+oxide exfoliation suggests poor adhesion of the oxide film or high sus-
+ceptibility to fracture under tensile stress, likely due to high defect 
+density or limited oxide ductility.
+To further investigate this behavior, SEM-EDS analysis was con-
+ducted on alloy H3, which exhibited the most severe exfoliation (Fig. 7). 
+The image includes both adherent and spalled oxide regions: the area 
+within the orange outline represents intact oxide, which is depleted in Cr 
+and Si; in contrast, the exfoliated region is enriched in Cr and Si, indi-
+cating a distinct compositional difference between the two oxide states. 
+The TEM-EDS analysis on the high-Si alloy performed by Han et al. [38]
+have demonstrated that the inner oxide film is rich in Si and Cr, which is 
+a good agreement with our results. Sparse oxide particles are visible in 
+the exfoliated zone, suggesting renewed corrosion occurred after spall-
+ation. From this comparison, it can be deduced that the spalled oxide 
+experienced depletion of Si and Cr before detachment, highlighting their 
+critical role in oxide film fracture and detachment. This cyclic process of 
+oxidation-exfoliation-reoxidation likely repeats throughout the corro-
+sion and straining process.
+In summary, the dissolution of Si-rich oxides in the surface oxide film 
+generates a high density of defects, which consequently weakens the 
+film’s fracture resistance under sustained tensile stress. Given that the 
+oxidation mechanisms and resulting oxide structures are similar be-
+tween the specimen surface and the GB, the GB oxides are expected to 
+undergo an analogous process during crack initiation.
+3.3.2. Cross-sectional view
+Fig. 8 presents cross-sectional views of the oxide films and inter-
+granular oxidation/cracks in the four alloys after SSRT. Due to the low 
+crack density and large spacing between cracks, representative images 
+of individual intergranular attacks are provided for each alloy. The 
+cross-sectional morphology of oxide films is consistent with plan-view 
+observations. As shown in Fig. 8a, alloy H1 exhibits sparse oxide parti-
+cles, while alloy H4 shows a high density of oxide particles on the 
+outermost surface. Cross-sectional analysis reveals that exfoliation oc-
+curs not directly at the metal-oxide interface, but within the inner oxide 
+layer itself, resulting in oxide thinning. Alloys H1 and H4 exhibit only 
+fine, vertically oriented cracks within the oxide. In contrast, alloys H2 
+and H3 developed horizontally propagating cracks that led to localized 
+spallation. Additionally, numerous voids are observed within the upper 
+oxide film on alloy H4, likely arising from continuous strain and 
+dissolution.
+Fig. 8. Cross-sectional BSE images of the four alloys, showing (a) surface oxides and (b) oxidized GB or intergranular crack.
+Fig. 9. Statistical distribution (box plot) of the inner oxide film thickness 
+formed on four alloys. The data are fitted to a lognormal distribution.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+6 
+
+===== PDF PAGE 7 =====
+To evaluate the influence of Si and Cr on oxidation behavior, oxide 
+thickness was statistically measured on polished side surfaces. Shen 
+et al. [39] demonstrated that the composition and microstructure of 
+surface oxides are similar to the SCC intergranular oxides; thus, the 
+oxidation behavior of the surface can reflect intergranular oxidation. 
+The measured thickness values and corresponding averages are sum-
+marized in Fig. 9. The data follow a lognormal distribution and exhibit 
+considerable scatter in alloys H2 and H3, likely due to oxide spallation, 
+yet a clear trend emerges: average oxide thickness increases significantly 
+with Si content. The thickness of the inner oxide layer generally reflects 
+oxidation resistance and correlates well with SCC susceptibility in 
+high-Si alloys; however, this trend does not hold for the low-Cr alloy 
+(H4). Despite having a thicker average oxide layer than alloy H2, alloy 
+H4 exhibits lower SCC susceptibility, indicating that uniform corrosion 
+resistance alone does not determine cracking behavior. This discrepancy 
+underscores the complexity of SCC mechanisms and suggests that dif-
+ferences in oxide evolution, such as stability under prolonged stress and 
+susceptibility to fracture, play a critical role in determining overall SCC 
+performance.
+Fig. 8b shows representative intergranular oxidation/cracks for each 
+alloy. Some GBs oxidation depths of up to several microns with a sharp 
+wedge shape, which is consistent with the characterization of neutron- 
+irradiated stainless steels that experience more severe GB oxidation 
+than the unirradiated counterparts, with GB oxidation depth increasing 
+with dose [36]. Part of the intergranular oxide cracked at a position 
+close to the surface. Based on the characteristics of intergranular 
+oxidation and cracks, it can be inferred that the cracks originate from 
+preferentially oxidized GBs. In other words, GB oxidation is a precursor 
+to intergranular cracking. This result is also consistent well with our 
+previous study on neutron-irradiated 304 and 316 stainless steels [12, 
+13,40]. Our model alloys replicate the severe GB oxidation behavior of 
+neutron-irradiated 304 and 316 stainless steels. Thus, the depth of 
+intergranular oxidation/crack can reflect the IASCC susceptibility of 
+alloys and was used to evaluate the cracking susceptibility of the model 
+alloys.
+Fig. 10 exhibits the depth distribution of intergranular cracks for 
+each alloy, and the average crack depths are calculated and presented in 
+the box plots. Due to the limited number of observed cracks, the dis-
+tribution of intergranular crack depths was also fitted with a lognormal 
+distribution. For the high-Si alloys, crack depth increases with Si 
+Fig. 10. Statistical distribution (box plot) of the cracking depth in alloys H1, 
+H2, H3, and H4. The data are fitted to a lognormal distribution.
+Fig. 11. STEM analysis of an intergranular oxide tip in alloy H1 after SSRT: (a) STEM-HAADF image and corresponding EDS elemental maps illustrating the oxide 
+structure and composition; (b, c) EDS line scan profiles across the GB oxide (Scan Line 1) and ahead of the oxide tip (Scan Line 2), showing elemental variations near 
+the oxidation front.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+7 
+
+===== PDF PAGE 8 =====
+concentration, while the low-Cr alloy (H4) has a slightly larger depth 
+than alloy H1. This result aligns well with the trends in crack length 
+density, maximum crack length/width, and oxidation thickness. 
+Although the average crack depths of alloys H1 and H4 are comparable, 
+the maximum depth for alloy H4 is about 13 μm - far greater than the 5.5 
+μm maximum depth for alloy H1. This indicates that alloy H4 has higher 
+SCC susceptibility than alloy H1, further supporting the prior conclu-
+sion. Among the Si-containing alloys, the maximum crack depth for 
+alloy H3 reaches approximately 85 μm, much higher than that of alloys 
+H1 and H2.
+3.4. STEM characterization of crack tips
+Intergranular oxidation and crack tips in alloys H1 to H4 were 
+examined using STEM, with results presented in Figs. 11–14. Each figure 
+includes an overview of the FIB-prepared sampled region, followed by 
+HAADF, BF, and EDS mapping images of the tip region (Figs. 11 -14a). A 
+high density of dislocations, introduced by warm working or slow strain 
+during testing, is evident surrounding the oxidation front in all alloys. 
+Quantitative EDS line scans across the GB oxide and ahead of the tip are 
+provided in Figs. 11–14(b, c).
+For the high-Si alloys (H1, H2, H3), the oxidized GB tip consists of Cr- 
+and Si-enriched oxide. The Si enrichment levels measured at the tip are 
+1.6 wt%, 6.4 wt%, and 17.5 wt% for alloys H1, H2, and H3, respec-
+tively, corresponding to 2.0, 2.5, and 4.4 times the matrix concentration. 
+This indicates that Si enrichment at the tip escalates with increasing bulk 
+Si content. Nickel enrichment is also observed ahead of the oxidized tip 
+in these alloys. Additionally, GB migration, attributed to significant 
+elemental diffusion [41,42], is notably present in H3. The length of the 
+Ni-enriched zones is 58 nm, 239 nm, and 232 nm for alloys H1, H2, and 
+H3, respectively. Although the Ni-enriched region is longer in alloy H2 
+than in H3, the higher enrichment ratio and observed DIMG in H3 
+suggest more extensive elemental outward diffusion. It should be noted 
+that the anomalously high Si signal at one location in the EDS map of the 
+H2 specimen is an artifact. A tungsten protective layer was deposited to 
+preserve the GB oxide during FIB preparation of the TEM specimen. 
+Therefore, the artifact is likely due to a peak overlap, specifically from 
+the W-Kα line (1.775 keV), which has an energy very close to that of the 
+Si-Kα line (1.740 keV)
+The low-Cr alloy H4 exhibits distinct GB oxidation behavior 
+compared to the high-Si alloys. No Si-rich oxide is formed along the GB. 
+Nanoscale Cr-rich oxides are present in alloy H4, likely originating from 
+pre-existing carbides. The Ni-enriched zone ahead of the oxide is narrow 
+but exceeds 1.1 µm in length, with no accompanying GB migration. The 
+apparent Si-rich region at the upper left corner of the Si map is also a 
+mis-indexing of tungsten.
+The carbides in this study are small and sparsely distributed. 
+Although GB carbides have been reported to mitigate oxidation and slow 
+SCC in hydrogenated water [43,44], their beneficial effect in this alloy is 
+likely less pronounced than in alloys with intentionally introduced 
+high-density carbides via thermal processing.
+4. Discussion
+Post-test analysis of surface oxide characteristics and crack 
+morphology, combined with statistical analysis of crack density and 
+depth, revealed distinct crack initiation behaviors among the four model 
+alloys. As shown in Fig. 15, both crack length density and average 
+intergranular crack depth increased across the alloy series. Crack length 
+density is commonly associated with resistance to crack initiation, while 
+crack depth reflects the tendency for crack propagation. Thus, the SCC 
+susceptibility of the alloys, in descending order, is determined to be: 
+Fig. 12. STEM analysis of an intergranular oxide tip in alloy H2 after SSRT: (a) STEM-HAADF image and corresponding EDS elemental maps illustrating the oxide 
+structure and composition; (b, c) EDS line scan profiles across the GB oxide (Scan Line 1) and ahead of the oxide tip (Scan Line 2), showing elemental variations near 
+the oxidation front.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+8 
+
+===== PDF PAGE 9 =====
+H3> H2> H4> H1. For the high-Si alloys, SCC susceptibility 
+increased with increasing Si concentration in the matrix. The low-Cr 
+alloy exhibited comparatively low susceptibility, only marginally 
+higher than that of alloy H1 (0.85 wt% Si). These results imply that in 
+hydrogenated water the effect of Cr depletion at GBs on IASCC is sec-
+ondary to the influence of Si enrichment, particularly when Si concen-
+trations exceed 2.63 wt%.
+The higher SCC susceptibility of the high-Si alloys compared to the 
+low-Cr alloy can be attributed to differences in oxidation kinetics and 
+oxide film evolution. The thickness of the surface oxide film was 
+observed to increase with Si content, indicating an accelerated corrosion 
+rate. This acceleration is likely driven by the oxidation of Si and sub-
+sequent degradation of the resulting Si-containing oxide film in high- 
+temperature water. Silicon has a high affinity for oxygen and forms 
+SiO2 [45,46]. Higher Si concentrations lead to increased SiO2 formation 
+within the oxide layer. Although SiO2 is protective in high-temperature 
+air, it becomes unstable in aqueous environments and tends to dissolve 
+preferentially [30,38,47–50], introducing defects into the oxide film. 
+Higher SiO2 content thus results in a more porous and less protective 
+oxide structure, which facilitates continued corrosion and leads to 
+thicker films. This porous oxide provides pathways for oxygen diffusion 
+along GBs, promoting intergranular oxidation. Furthermore, the defec-
+tive oxide is more prone to fracture under applied stress, which can 
+trigger crack initiation. Consistent with this mechanism, oxide film 
+exfoliation and Si depletion in the remaining oxide layers were observed 
+in the high-Si alloys. STEM characterization of intergranular oxides and 
+crack tips further confirmed that both GB diffusion rates and overall 
+corrosion rates increase with Si content. In summary, the rapid degra-
+dation of the oxide film in high-Si alloys, driven by SiO₂ dissolution, 
+accelerates corrosion and reduces the stress required for oxide fracture, 
+thereby explaining the positive correlation between Si content and SCC 
+susceptibility.
+In contrast, the low-Cr alloy (H4) exhibited low SCC susceptibility, 
+likely due to the slower degradation of its oxide film. Compositional 
+analysis suggests that its inner oxide layer is similar to those of the high- 
+Si alloys but with lower Cr and Si fractions [38]. Chromium is known to 
+reduce corrosion rates by forming a protective Cr-rich oxide that hinders 
+ion diffusion [51]. The composition and thickness of the inner oxide 
+layer depend strongly on the matrix Cr content, with higher Cr levels 
+leading to higher Cr fractions in the oxide and thinner films. The 
+measured oxide thickness on alloy H4 (~0.93 μm) is consistent with its 
+low Cr content and aligns with findings from Terachi et al. [51]. Despite 
+developing the second-thickest oxide film after H3, alloy H4’s inner 
+oxide layer, which had a low SiO2 content, retained its integrity and 
+resisted transformation into a porous structure. Thus, despite its thick-
+ness, the oxide on alloy H4 retained resistance to ion diffusion and 
+mechanical fracture, unlike the brittle oxide films on high-Si alloys.
+However, based on the above analysis, one might expect alloy H4 to 
+have the lowest SCC susceptibility, given its lower Si content compared 
+to H1 (0.85 wt% Si). This discrepancy is likely explained by the much 
+higher Cr content in H1 (19.84 wt%) and, consequently, the formation 
+of higher Cr containing inner oxide, which mitigates the detrimental 
+effects of SiO2 dissolution.
+Based on these findings, we conclude that Si enrichment at GBs, 
+rather than Cr depletion, is a mor important factor contributing to high 
+IASCC susceptibility in hydrogenated high-temperature water. There-
+fore, controlling Si concentration at low levels is essential for developing 
+advanced IASCC-resistant alloys. It should be noted, however, that these 
+conclusions are environment-specific. Since this study was conducted in 
+hydrogenated water, further validation in oxygenated conditions is 
+necessary, as different oxidation and dissolution behaviors may alter the 
+relative contributions of Si and Cr. Many researchers have reported that 
+Fig. 13. STEM analysis of an intergranular oxide tip in alloy H3 after SSRT: (a) STEM-HAADF image and corresponding EDS elemental maps illustrating the oxide 
+structure and composition; (b, c) EDS line scan profiles across the GB oxide (Scan Line 1) and ahead of the oxide tip (Scan Line 2), showing elemental variations near 
+the oxidation front.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+9 
+
+===== PDF PAGE 10 =====
+the Cr-rich oxide tends to be dissolved in oxygenated water [52,53]. 
+Previous studies indicate that both Cr depletion and SiO2 dissolution 
+play more pronounced roles in oxygenated environments [21,46,54], 
+which may lead to different trends.
+An additional observation in the low-Cr alloy was the presence of 
+fine carbides on GBs. Although their small size and sparse distribution 
+likely limited their impact on oxidation resistance compared to inten-
+tionally introduced thermal carbides, future studies using carbide-free 
+model alloys are still recommended to eliminate any potential 
+confounding effects of carbides.
+5. Conclusion
+To clarify the respective roles of GB Si enrichment and Cr depletion 
+in IASCC, four model alloys with systematically varied Si and Cr con-
+centrations were subjected to slow strain rate testing in simulated hy-
+drogenated high-temperature water, with testing stopped once 7 % 
+plastic strain was achieved. Distinct differences in crack initiation 
+behavior were observed, and these differences were correlated with 
+insights from comprehensive microstructural characterization. The 
+main findings are as follows: 
+1) SCC susceptibility in hydrogenated water increases significantly with 
+increasing Si content, while showing low dependency on Cr content. 
+This indicates that Si segregation at GBs, rather than Cr depletion, is 
+a more important factor controlling crack initiation in such envi-
+ronments. Cr depletion alone is insufficient to induce substantial 
+IASCC.
+2) The elevated SCC susceptibility of high-Si alloys is attributed to the 
+dissolution of SiO2 in the inner oxide layer, which leads to the for-
+mation of a porous and defective oxide film. This degraded oxide film 
+structure accelerates intergranular oxidation and compromises the 
+mechanical integrity of the film, thereby facilitating crack initiation 
+under applied stress.
+3) Based on these results, it is recommended that Si content be main-
+tained at a much lower level when developing advanced IASCC- 
+resistant structural materials for nuclear reactor core components.
+Fig. 14. STEM analysis of an intergranular oxide tip in alloy H4 after SSRT: (a) STEM-HAADF image and corresponding EDS elemental maps illustrating the oxide 
+structure and composition; (b, c) EDS line scan profiles across the GB oxide (Scan Line 1) and ahead of the oxide tip (Scan Line 2), showing elemental variations near 
+the oxidation front.
+Fig. 15. Crack length density and intergranular cracking depth for each alloy 
+after the SSRT.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+10 
+
+===== PDF PAGE 11 =====
+CRediT authorship contribution statement
+DU Donghai: Writing – original draft, Visualization, Project 
+administration, Investigation, Funding acquisition, Formal analysis, 
+Data curation, Conceptualization. Hefei Huang: Writing – review & 
+editing, Validation, Investigation, Formal analysis. Tenghong Lin: 
+Writing – review & editing, Investigation, Data curation. Lupeng Liu: 
+Visualization, Investigation, Data curation. Shuai Chen: Investigation, 
+Formal analysis, Data curation.
+Declaration of Competing Interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Acknowledgment
+This project was co-funded by the National Natural Science Foun-
+dation of China (grant numbers: 12105225, 12425511, 12375273,) and 
+Fundamental Research Funds for the Central Universities (23GH02021).
+Data Availability
+The authors do not have permission to share data.
+References
+[1] G.S. Was, D. Petti, S. Ukai, S. Zinkle, Materials for future nuclear energy systems, 
+J. Nucl. Mater. 527 (2019) 151837.
+[2] P.L. Andresen, G.S. Was, A historical perspective on understanding IASCC, J. Nucl. 
+Mater. 517 (2019) 380–392.
+[3] G.S. Was, C.B. Bahn, J. Busby, B. Cui, D. Farkas, M. Gussev, M. Rigen He, 
+J. Hesterberg, Z. Jiao, D. Johnson, W. Kuang, M. McMurtrey, I. Robertson, 
+A. Sinjlawi, M. Song, K. Stephenson, K. Sun, S. Swaminathan, M. Wang, E. West, 
+How irradiation promotes intergranular stress corrosion crack initiation, Prog. 
+Mater. Sci. 143 (2024) 101255.
+[4] M. Wang, M. Song, C.R. Lear, G.S. Was, Irradiation assisted stress corrosion 
+cracking of commercial and advanced alloys for light water reactor core internals, 
+J. Nucl. Mater. 515 (2019) 52–70.
+[5] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, Y. KitsunaiI, Separation of 
+microstructural and microchemical effects in irradiation assisted stress corrosion 
+cracking using post-irradiation annealing, J. Nucl. Sci. Technol. (2004).
+[6] H. Nishioka, K. Fukuya, K. Fujii, T. Torimaru, IASCC Prop. Mech. Behav. Stainl. 
+Steels Irradiat. 73dpa (2007).
+[7] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, IASCC susceptibility and slow tensile 
+properties of highly-irradiated 316 stainless steels, J. Nucl. Sci. Technol. 41 (2004) 
+673–681.
+[8] T. Toyama, Y. Nozawa, W. Van Renterghem, Y. Matsukawa, M. Hatakeyama, 
+Y. Nagai, A. Al Mazouzi, S. Van Dyck, Grain boundary segregation in neutron- 
+irradiated 304 stainless steel studied by atom probe tomography, J. Nucl. Mater. 
+425 (2012) 71–75.
+[9] S.M. Bruemmer, E.P. Simonen, P.M. Scott, P.L. Andresen, G.S. Was, Radiation- 
+induced material changes and susceptibility to intergranular failure of light-water- 
+reactor core internals, J. Nucl. Mater. 274 (1999) 299–314.
+[10] M. Song, K.G. Field, R.M. Cox, G.S. Was, Microstructural characterization of cold- 
+worked 316 stainless steel flux thimble tubes irradiated up to 100 dpa in a 
+commercial pressurized water reactor, J. Nucl. Mater. 541 (2020) 152400.
+[11] T.G. Lach, M.J. Olszta, S.D. Taylor, K.H. Yano, D.J. Edwards, T.S. Byun, P.H. Chou, 
+D.K. Schreiber, Correlative STEM-APT characterization of radiation-induced 
+segregation and precipitation of in-service BWR 304 stainless steel, J. Nucl. Mater. 
+549 (2021) 152894.
+[12] S. Swaminathan, K. Sun, G.S. Was, Decoupling the roles of grain boundary 
+oxidation and stress in IASCC of neutron-irradiated 304L stainless steel, J. Nucl. 
+Mater. 585 (2023) 154604.
+[13] D. Du, K. Sun, G.S. Was, Crack initiation of neutron-irradiated 304 l stainless steel 
+in PWR primary water, Corros. Sci. 193 (2021) 109902.
+[14] H. Dugdale, D.E.J. Armstrong, E. Tarleton, S.G. Roberts, S. Lozano-Perez, How 
+oxidized grain boundaries fail, Acta Mater. 61 (2013) 4707–4713.
+[15] K. Fujii, T. Miura, H. Nishioka, K. Fukuya. Degradation of grain boundary strength 
+by oxidation in Alloy 600. In: J.T. Busby, G. Ilevbare, P.L. Andresen, (Eds.). in: 
+Proceedings of 15th International Conference on Environmental Degradation in 
+Nuclear Power Systems-Water Reactor. TMS2011. pp. 1447-1458.
+[16] Z. Xiao, X. Bai, First-principle studies of oxidation effects on grain boundary 
+strength in nickel, Materialia 28 (2023) 101745.
+[17] T. Miura, K. Fujii, K. Fukuya, Characterization of fracture behavior of oxidized 
+grain boundary in neutron-irradiated stainless steel, INSS J. (2018).
+[18] D.C. Johnson, B. Kuhr, D. Farkas, G.S. Was, Quantitative linkage between the stress 
+at dislocation channel – grain boundary interaction sites and irradiation assisted 
+stress corrosion crack initiation, Acta Mater. 170 (2019) 166–175.
+[19] M.D. McMurtrey, G.S. Was, L. Patrick, D. Farkas, Relationship between localized 
+strain and irradiation assisted stress corrosion cracking in an austenitic alloy, 
+Mater. Sci. Eng. A 528 (2011) 3730–3740.
+[20] H. Liu, G. Lei, H. Huang, Review on synergistic damage effect of irradiation and 
+corrosion on reactor structural alloys, Nucl. Sci. Tech. 35 (2024).
+[21] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, Role of radiation-induced grain 
+boundary segregation in irradiation assisted stress corrosion cracking, J. Nucl. Sci. 
+TEchnol. 41 (2004) 594–600.
+[22] S.M. Bruemmer, W. A.B, A. C.L, Influence of chromium depletion on intergranular 
+stress corrosion cracking of 304 stainless steel, Corrosion 48 (1992) 42–49.
+[23] D.R. Tice, S. Nouraei, K.J. Mottershead, J.W. Stairmand. Effects of cold work and 
+sensitization on stress corrosion crack propagation of austenitic stainless steels in 
+PWR primary coolant conditions. in: Proceedings of the 14th International 
+Conference on Environmental Degradation of Materials in Nuclear Power Systems- 
+Water Reactors, Virginia,USA, 2009. pp. 158-171.
+[24] J. Hesterberg, Z. Jiao, G.S. Was, Effects of post-irradiation annealing on the IASCC 
+susceptibility of neutron-irradiated 304L stainless steel, J. Nucl. Mater. 526 (2019) 
+151755.
+[25] D. Du, S. Dasari, B. Kombaiah, P.D. Edmonson, J. Smith, P. Chou, G.S. Was, IASCC 
+of 304 SS in BWR environments: effects of post-irradiation annealing and surface 
+condition, Corros. Sci. 244 (2025) 112652.
+[26] J.T. Busby, G.S. Was, E.A. Kenik, Isolating the effect of radiation-induced 
+segregation in irradiation-assisted stress corrosion cracking of austenitic stainless 
+steels, J. Nucl. Mater. 302 (2002) 20–40.
+[27] T. Yonezawa, K. Fujimoto, H. Kanasaki, T. Iwamura, S. Nakada, K. Ajiki, S. Urata, 
+Investigation of irradiation induced inter-granular stress corrosion cracking 
+susceptibility on austenitic stainless steels for PWR by simulated radiation induced, 
+Zair. toKankyo 49 (2000) 437–444.
+[28] K. Fujimoto, T. Yonezawa, T. Iwamura, K. Ajiki, S. Urata, Simulation of radiation 
+induced segregation and PWSCC susceptibility for austenitic stainless steels, Zair. 
+toKankyo 49 (2000) 472–482.
+[29] C. Xie, D. Pan, H. Liu, Z. Lu, T. Cui, J. Chen, X. Xu, Impact of composition and cold 
+work on SCC of high Si-bearing stainless steel simulating radiation-induced 
+segregation under simulated PWR primary water, J. Nucl. Mater. 610 (2025) 
+155775.
+[30] P.L. Andresen, M.M. Morra. Effects of Si on SCC of irradiated and unirradiated 
+stainless steels and nickel alloys. Proceedings of the 12th International Conference 
+on Environmental Degradation of Materials in Nuclear Power System – Water 
+Reactors, Salt Lake City, UT, USA, 2005.
+[31] G.F. Li, Y. Kaneshima, T. Shoji, Effects of impurities on environmentally assisted 
+crack growth of solution-annealed austenitic steels in primary water at 325◦C, 
+Corrosion 56 (2000) 460–469.
+[32] W. Gong, S. Chen, L. Liu, D. Du, Effects of si on stress corrosion cracking properties 
+of austenitic stainless steel, Rare Met. Mat. Eng. 54 (2025) 109–117.
+[33] R.B. Rebak. Electrochemical behavior of silicon modified stainless steels in high 
+temperature water. CORROSION 2011. NACE2011.
+[34] P. Chou, P. Andresen, M. Pollick, R. Rebak. Repassivation behavior and stress 
+corrosion cracking susceptibility of stainless steels containing silicon. NACE 
+CORROSION. NACE2010.
+[35] P.L. Andresen, P.H. Chou, M.L. Pollick, J.L. Nelson, R.B. Rebak. Passivation 
+characteristics of stainless steels containing silicon. 14th Environmental 
+Degradation of Materials in Nuclear Power Systems–Water Reactor, Virginia Beach 
+VA, 2009.
+[36] T. Fukumura, K. Fukuya, K. Fujii, T. Miura, Y. Kitsunai. Grain boundary oxidation 
+of neutron irradiated stainless steels in simulated PWR water. Proceedings of the 
+18th International Conference on Environmental Degradation of Materials in 
+Nuclear Power Systems–Water Reactors. Springer, Boston, MA, 2019. pp. 2153- 
+2163.
+[37] Y. Zhou, J. Liu, K. Chen, H. Shi, X. Shang, Z. Que, Z. Shen, L. Zhang, X. Zeng, 
+Predicting intergranular stress corrosion cracking of stainless steels in high- 
+temperature water by incorporating crystallographic factor, Acta Mater. 297 
+(2025) 121322.
+[38] G. Han, Z. Lu, X. Ru, J. Chen, J. Zhang, T. Shoji, Properties of oxide films formed on 
+316L SS and model alloys with modified ni, cr and si contents in high temperature 
+water, Corros. Sci. 106 (2016) 157–171.
+[39] Z. Shen, D. Du, L. Zhang, S. Lozano-Perez, An insight into PWR primary water SCC 
+mechanisms by comparing surface and crack oxidation, Corros. Sci. 148 (2019) 
+213–227.
+[40] D. Du, K. Sun, G.S. Was, IASCC of neutron irradiated 316 stainless steel to 125 dpa, 
+Mater. Charact. 173 (2021) 110897.
+[41] S. Wang, S. Zhang, J. Xie, X. Feng, M. Song, G.S. Was, W. Kuang, Clarifying the 
+mitigation effect of proton irradiation on the intergranular oxidation of 316L 
+stainless steel in high temperature water, Acta Mater. 241 (2022) 118408.
+[42] R.W. Balluffi, J.W. Cahn, Mechanism for diffusion induced grain boundary 
+migration, Acta Metall. 29 (1981) 493–500.
+[43] F.O.M. Gaslain, H.T. Le, C. Duhamel, C. Guerre, P. Laghoutaris, The role of 
+intergranular chromium carbides on intergranular oxidation of nickel based alloys 
+in pressurized water reactors primary water, IOP Conf. Ser. Mater. Sci. Eng. 109 
+(2016) 12004.
+[44] W. Kuang, X. Feng, H. Yue, G.S. Was, X. Hao, Insights into the roles of intergranular 
+carbides in the initiation of intergranular stress corrosion cracking of alloy 690 in 
+simulated PWR primary water, Corros. Sci. 196 (2022) 110048.
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+11 
+
+===== PDF PAGE 12 =====
+[45] S. Wang, S. Zhang, J. Xie, M. Song, W. Kuang, The time dependence of proton 
+irradiation effect on the intergranular oxidation of 316 l stainless steel in high- 
+temperature hydrogenated water, Acta Mater. 260 (2023) 119340.
+[46] W. Kuang, J. Hesterberg, G.S. Was, The effect of post-irradiation annealing on the 
+stress corrosion crack growth rate of neutron-irradiated 304L stainless steel in 
+boiling water reactor environment, Corros. Sci. 161 (2019) 108183.
+[47] X. Lou, P.L. Andresen, R.B. Rebak, Oxide inclusions in laser additive manufactured 
+stainless steel and their effects on impact toughness and stress corrosion cracking 
+behavior, J. Nucl. Mater. 499 (2018) 182–190.
+[48] K.A. Terrani, Y. Yang, Y.J. Kim, R. Rebak, H.M. Meyer, T.J. Gerczak, Hydrothermal 
+corrosion of SiC in LWR coolant environments in the absence of irradiation, 
+J. Nucl. Mater. 465 (2015) 488–498.
+[49] R.O. Fournier, W.L. Marshall, Calculation of amorphous silica solubilities at 25◦ to 
+300◦C and apparent cation hydration numbers in aqueous salt solutions using the 
+concept of effective density of water, Geochim. Cosmochim. Ac. 47 (1983) 
+587–596.
+[50] K. Chen, Y. Zhou, Y. Zhao, J. Wang, Z. Shen, H. Wang, X. Zeng, Enhancing high- 
+temperature corrosion and cracking resistance of a dual-phase high entropy alloy 
+through surface grinding, Corros. Sci. 256 (2025) 113227.
+[51] T. Terachi, T. Yamada, T. Miyamoto, K. Arioka, K. Fukuya, Corrosion behavior of 
+stainless steels in simulated PWR primary water — effect of chromium content in 
+alloys and dissolved hydrogen, J. Nucl. Sci. Technol. (2008).
+[52] T. Terachi, K. Arioka. Characterization of oxide film behaviors on 316 stainless 
+steels in high-temperature water - influence of hydrogen and oxygen 
+considerations for initiation of SCC. Nace Corrosion. NACE2006.
+[53] T. Huang, Y. Zhou, K. Chen, T. Wei, S. Gao, H. Pang, H. Yue, K. Zhang, Z. Shen, 
+L. Zhang, The oxidation-dissolution behavior of Cr-coated zr alloy in high 
+temperature water, J. Nucl. Mater. 604 (2025) 155504.
+[54] S.M. Bruemmer, G.S. Was, Microstructural and microchemical mechanisms 
+controlling intergranular stress corrosion cracking in light-water-reactor systems, 
+J. Nucl. Mater. (1994).
+D. Du et al.                                                                                                                                                                                                                                       Corrosion Science 258 (2026) 113424 
+12 

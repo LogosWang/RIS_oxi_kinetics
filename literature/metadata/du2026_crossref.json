@@ -1,0 +1,947 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        1
+      ]
+    ],
+    "date-time": "2026-07-01T18:55:06Z",
+    "timestamp": 1782932106623,
+    "version": "3.54.5"
+  },
+  "reference-count": 54,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2026-01-01T00:00:00Z",
+        "timestamp": 1767225600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100012226",
+      "name": "Fundamental Research Funds for the Central Universities",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "23GH02021"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "23GH02021"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012226",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "12105225"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "12105225"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "12425511"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "12425511"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "12375273"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "12375273"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "short-container-title": [
+    "Corrosion Science"
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2026,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.corsci.2025.113424",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        10,
+        20
+      ]
+    ],
+    "date-time": "2025-10-20T22:04:40Z",
+    "timestamp": 1760997880000
+  },
+  "page": "113424",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 1,
+  "special_numbering": "C",
+  "title": [
+    "Silicon segregation enhances IASCC of austenitic stainless steels via oxide degradation: Decoupling from chromium depletion effects"
+  ],
+  "prefix": "10.1016",
+  "volume": "258",
+  "author": [
+    {
+      "given": "Donghai",
+      "family": "Du",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0009-0007-6614-4946",
+      "authenticated-orcid": false,
+      "given": "Shuai",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Lupeng",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Tenghong",
+      "family": "Lin",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-8839-8361",
+      "authenticated-orcid": false,
+      "given": "Hefei",
+      "family": "Huang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib1",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2019.151837",
+      "article-title": "Materials for future nuclear energy systems",
+      "volume": "527",
+      "author": "Was",
+      "year": "2019",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib2",
+      "doi-asserted-by": "crossref",
+      "first-page": "380",
+      "DOI": "10.1016/j.jnucmat.2019.01.057",
+      "article-title": "A historical perspective on understanding IASCC",
+      "volume": "517",
+      "author": "Andresen",
+      "year": "2019",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib3",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.pmatsci.2024.101255",
+      "article-title": "How irradiation promotes intergranular stress corrosion crack initiation",
+      "volume": "143",
+      "author": "Was",
+      "year": "2024",
+      "journal-title": "Prog. Mater. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib4",
+      "doi-asserted-by": "crossref",
+      "first-page": "52",
+      "DOI": "10.1016/j.jnucmat.2018.12.015",
+      "article-title": "Irradiation assisted stress corrosion cracking of commercial and advanced alloys for light water reactor core internals",
+      "volume": "515",
+      "author": "Wang",
+      "year": "2019",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib5",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1080/18811248.2004.9726351",
+      "article-title": "Separation of microstructural and microchemical effects in irradiation assisted stress corrosion cracking using post-irradiation annealing",
+      "author": "Fukuya",
+      "year": "2004",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib6",
+      "author": "Nishioka",
+      "year": "2007",
+      "journal-title": "IASCC Prop. Mech. Behav. Stainl. Steels Irradiat. 73dpa"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib7",
+      "doi-asserted-by": "crossref",
+      "first-page": "673",
+      "DOI": "10.1080/18811248.2004.9715532",
+      "article-title": "IASCC susceptibility and slow tensile properties of highly-irradiated 316 stainless steels",
+      "volume": "41",
+      "author": "Fukuya",
+      "year": "2004",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib8",
+      "doi-asserted-by": "crossref",
+      "first-page": "71",
+      "DOI": "10.1016/j.jnucmat.2011.11.072",
+      "article-title": "Grain boundary segregation in neutron-irradiated 304 stainless steel studied by atom probe tomography",
+      "volume": "425",
+      "author": "Toyama",
+      "year": "2012",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib9",
+      "doi-asserted-by": "crossref",
+      "first-page": "299",
+      "DOI": "10.1016/S0022-3115(99)00075-6",
+      "article-title": "Radiation-induced material changes and susceptibility to intergranular failure of light-water-reactor core internals",
+      "volume": "274",
+      "author": "Bruemmer",
+      "year": "1999",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib10",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2020.152400",
+      "article-title": "Microstructural characterization of cold-worked 316 stainless steel flux thimble tubes irradiated up to 100 dpa in a commercial pressurized water reactor",
+      "volume": "541",
+      "author": "Song",
+      "year": "2020",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib11",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2021.152894",
+      "article-title": "Correlative STEM-APT characterization of radiation-induced segregation and precipitation of in-service BWR 304 stainless steel",
+      "volume": "549",
+      "author": "Lach",
+      "year": "2021",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib12",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2023.154604",
+      "article-title": "Decoupling the roles of grain boundary oxidation and stress in IASCC of neutron-irradiated 304L stainless steel",
+      "volume": "585",
+      "author": "Swaminathan",
+      "year": "2023",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib13",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.corsci.2021.109902",
+      "article-title": "Crack initiation of neutron-irradiated 304 l stainless steel in PWR primary water",
+      "volume": "193",
+      "author": "Du",
+      "year": "2021",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib14",
+      "doi-asserted-by": "crossref",
+      "first-page": "4707",
+      "DOI": "10.1016/j.actamat.2013.05.012",
+      "article-title": "How oxidized grain boundaries fail",
+      "volume": "61",
+      "author": "Dugdale",
+      "year": "2013",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib15",
+      "doi-asserted-by": "crossref",
+      "unstructured": "K. Fujii, T. Miura, H. Nishioka, K. Fukuya. Degradation of grain boundary strength by oxidation in Alloy 600. In: J.T. Busby, G. Ilevbare, P.L. Andresen, (Eds.). in: Proceedings of 15th International Conference on Environmental Degradation in Nuclear Power Systems-Water Reactor. TMS2011. pp. 1447-1458.",
+      "DOI": "10.1002/9781118456835.ch151"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib16",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.mtla.2023.101745",
+      "article-title": "First-principle studies of oxidation effects on grain boundary strength in nickel",
+      "volume": "28",
+      "author": "Xiao",
+      "year": "2023",
+      "journal-title": "Materialia"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib17",
+      "article-title": "Characterization of fracture behavior of oxidized grain boundary in neutron-irradiated stainless steel",
+      "author": "Miura",
+      "year": "2018",
+      "journal-title": "INSS J."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib18",
+      "doi-asserted-by": "crossref",
+      "first-page": "166",
+      "DOI": "10.1016/j.actamat.2019.02.032",
+      "article-title": "Quantitative linkage between the stress at dislocation channel – grain boundary interaction sites and irradiation assisted stress corrosion crack initiation",
+      "volume": "170",
+      "author": "Johnson",
+      "year": "2019",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib19",
+      "doi-asserted-by": "crossref",
+      "first-page": "3730",
+      "DOI": "10.1016/j.msea.2011.01.073",
+      "article-title": "Relationship between localized strain and irradiation assisted stress corrosion cracking in an austenitic alloy",
+      "volume": "528",
+      "author": "McMurtrey",
+      "year": "2011",
+      "journal-title": "Mater. Sci. Eng. A"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib20",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1007/s41365-024-01415-3",
+      "article-title": "Review on synergistic damage effect of irradiation and corrosion on reactor structural alloys",
+      "volume": "35",
+      "author": "Liu",
+      "year": "2024",
+      "journal-title": "Nucl. Sci. Tech."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib21",
+      "doi-asserted-by": "crossref",
+      "first-page": "594",
+      "DOI": "10.1080/18811248.2004.9715522",
+      "article-title": "Role of radiation-induced grain boundary segregation in irradiation assisted stress corrosion cracking",
+      "volume": "41",
+      "author": "Fukuya",
+      "year": "2004",
+      "journal-title": "J. Nucl. Sci. TEchnol."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib22",
+      "doi-asserted-by": "crossref",
+      "first-page": "42",
+      "DOI": "10.5006/1.3315917",
+      "article-title": "Influence of chromium depletion on intergranular stress corrosion cracking of 304 stainless steel",
+      "volume": "48",
+      "author": "Bruemmer",
+      "year": "1992",
+      "journal-title": "Corrosion"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib23",
+      "unstructured": "D.R. Tice, S. Nouraei, K.J. Mottershead, J.W. Stairmand. Effects of cold work and sensitization on stress corrosion crack propagation of austenitic stainless steels in PWR primary coolant conditions. in: Proceedings of the 14th International Conference on Environmental Degradation of Materials in Nuclear Power Systems-Water Reactors, Virginia,USA, 2009. pp. 158-171."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib24",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2019.151755",
+      "article-title": "Effects of post-irradiation annealing on the IASCC susceptibility of neutron-irradiated 304L stainless steel",
+      "volume": "526",
+      "author": "Hesterberg",
+      "year": "2019",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib25",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.corsci.2024.112652",
+      "article-title": "IASCC of 304 SS in BWR environments: effects of post-irradiation annealing and surface condition",
+      "volume": "244",
+      "author": "Du",
+      "year": "2025",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib26",
+      "doi-asserted-by": "crossref",
+      "first-page": "20",
+      "DOI": "10.1016/S0022-3115(02)00719-5",
+      "article-title": "Isolating the effect of radiation-induced segregation in irradiation-assisted stress corrosion cracking of austenitic stainless steels",
+      "volume": "302",
+      "author": "Busby",
+      "year": "2002",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib27",
+      "doi-asserted-by": "crossref",
+      "first-page": "437",
+      "DOI": "10.3323/jcorr1991.49.437",
+      "article-title": "Investigation of irradiation induced inter-granular stress corrosion cracking susceptibility on austenitic stainless steels for PWR by simulated radiation induced",
+      "volume": "49",
+      "author": "Yonezawa",
+      "year": "2000",
+      "journal-title": "Zair. toKankyo"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib28",
+      "doi-asserted-by": "crossref",
+      "first-page": "472",
+      "DOI": "10.3323/jcorr1991.49.472",
+      "article-title": "Simulation of radiation induced segregation and PWSCC susceptibility for austenitic stainless steels",
+      "volume": "49",
+      "author": "Fujimoto",
+      "year": "2000",
+      "journal-title": "Zair. toKankyo"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib29",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2025.155775",
+      "article-title": "Impact of composition and cold work on SCC of high Si-bearing stainless steel simulating radiation-induced segregation under simulated PWR primary water",
+      "volume": "610",
+      "author": "Xie",
+      "year": "2025",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib30",
+      "doi-asserted-by": "crossref",
+      "unstructured": "P.L. Andresen, M.M. Morra. Effects of Si on SCC of irradiated and unirradiated stainless steels and nickel alloys. Proceedings of the 12th International Conference on Environmental Degradation of Materials in Nuclear Power System – Water Reactors, Salt Lake City, UT, USA, 2005.",
+      "DOI": "10.5006/C2005-05591"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib31",
+      "doi-asserted-by": "crossref",
+      "first-page": "460",
+      "DOI": "10.5006/1.3280550",
+      "article-title": "Effects of impurities on environmentally assisted crack growth of solution-annealed austenitic steels in primary water at 325°C",
+      "volume": "56",
+      "author": "Li",
+      "year": "2000",
+      "journal-title": "Corrosion"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib32",
+      "first-page": "109",
+      "article-title": "Effects of si on stress corrosion cracking properties of austenitic stainless steel",
+      "volume": "54",
+      "author": "Gong",
+      "year": "2025",
+      "journal-title": "Rare Met. Mat. Eng."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib33",
+      "doi-asserted-by": "crossref",
+      "unstructured": "R.B. Rebak. Electrochemical behavior of silicon modified stainless steels in high temperature water. CORROSION 2011. NACE2011.",
+      "DOI": "10.5006/C2011-11214"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib34",
+      "doi-asserted-by": "crossref",
+      "unstructured": "P. Chou, P. Andresen, M. Pollick, R. Rebak. Repassivation behavior and stress corrosion cracking susceptibility of stainless steels containing silicon. NACE CORROSION. NACE2010.",
+      "DOI": "10.5006/C2010-10285"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib35",
+      "unstructured": "P.L. Andresen, P.H. Chou, M.L. Pollick, J.L. Nelson, R.B. Rebak. Passivation characteristics of stainless steels containing silicon. 14th Environmental Degradation of Materials in Nuclear Power Systems–Water Reactor, Virginia Beach VA, 2009."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib36",
+      "doi-asserted-by": "crossref",
+      "unstructured": "T. Fukumura, K. Fukuya, K. Fujii, T. Miura, Y. Kitsunai. Grain boundary oxidation of neutron irradiated stainless steels in simulated PWR water. Proceedings of the 18th International Conference on Environmental Degradation of Materials in Nuclear Power Systems–Water Reactors. Springer, Boston, MA, 2019. pp. 2153-2163.",
+      "DOI": "10.1007/978-3-030-04639-2_144"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib37",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.actamat.2025.121322",
+      "article-title": "Predicting intergranular stress corrosion cracking of stainless steels in high-temperature water by incorporating crystallographic factor",
+      "volume": "297",
+      "author": "Zhou",
+      "year": "2025",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib38",
+      "doi-asserted-by": "crossref",
+      "first-page": "157",
+      "DOI": "10.1016/j.corsci.2016.02.001",
+      "article-title": "Properties of oxide films formed on 316L SS and model alloys with modified ni, cr and si contents in high temperature water",
+      "volume": "106",
+      "author": "Han",
+      "year": "2016",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib39",
+      "doi-asserted-by": "crossref",
+      "first-page": "213",
+      "DOI": "10.1016/j.corsci.2018.12.020",
+      "article-title": "An insight into PWR primary water SCC mechanisms by comparing surface and crack oxidation",
+      "volume": "148",
+      "author": "Shen",
+      "year": "2019",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib40",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.matchar.2021.110897",
+      "article-title": "IASCC of neutron irradiated 316 stainless steel to 125 dpa",
+      "volume": "173",
+      "author": "Du",
+      "year": "2021",
+      "journal-title": "Mater. Charact."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib41",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.actamat.2022.118408",
+      "article-title": "Clarifying the mitigation effect of proton irradiation on the intergranular oxidation of 316L stainless steel in high temperature water",
+      "volume": "241",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib42",
+      "doi-asserted-by": "crossref",
+      "first-page": "493",
+      "DOI": "10.1016/0001-6160(81)90073-0",
+      "article-title": "Mechanism for diffusion induced grain boundary migration",
+      "volume": "29",
+      "author": "Balluffi",
+      "year": "1981",
+      "journal-title": "Acta Metall."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib43",
+      "doi-asserted-by": "crossref",
+      "first-page": "12004",
+      "DOI": "10.1088/1757-899X/109/1/012004",
+      "article-title": "The role of intergranular chromium carbides on intergranular oxidation of nickel based alloys in pressurized water reactors primary water",
+      "volume": "109",
+      "author": "Gaslain",
+      "year": "2016",
+      "journal-title": "IOP Conf. Ser. Mater. Sci. Eng."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib44",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.corsci.2021.110048",
+      "article-title": "Insights into the roles of intergranular carbides in the initiation of intergranular stress corrosion cracking of alloy 690 in simulated PWR primary water",
+      "volume": "196",
+      "author": "Kuang",
+      "year": "2022",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib45",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.actamat.2023.119340",
+      "article-title": "The time dependence of proton irradiation effect on the intergranular oxidation of 316 l stainless steel in high-temperature hydrogenated water",
+      "volume": "260",
+      "author": "Wang",
+      "year": "2023",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib46",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.corsci.2019.108183",
+      "article-title": "The effect of post-irradiation annealing on the stress corrosion crack growth rate of neutron-irradiated 304L stainless steel in boiling water reactor environment",
+      "volume": "161",
+      "author": "Kuang",
+      "year": "2019",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib47",
+      "doi-asserted-by": "crossref",
+      "first-page": "182",
+      "DOI": "10.1016/j.jnucmat.2017.11.036",
+      "article-title": "Oxide inclusions in laser additive manufactured stainless steel and their effects on impact toughness and stress corrosion cracking behavior",
+      "volume": "499",
+      "author": "Lou",
+      "year": "2018",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib48",
+      "doi-asserted-by": "crossref",
+      "first-page": "488",
+      "DOI": "10.1016/j.jnucmat.2015.06.019",
+      "article-title": "Hydrothermal corrosion of SiC in LWR coolant environments in the absence of irradiation",
+      "volume": "465",
+      "author": "Terrani",
+      "year": "2015",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib49",
+      "doi-asserted-by": "crossref",
+      "first-page": "587",
+      "DOI": "10.1016/0016-7037(83)90280-6",
+      "article-title": "Calculation of amorphous silica solubilities at 25° to 300°C and apparent cation hydration numbers in aqueous salt solutions using the concept of effective density of water",
+      "volume": "47",
+      "author": "Fournier",
+      "year": "1983",
+      "journal-title": "Geochim. Cosmochim. Ac."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib50",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.corsci.2025.113227",
+      "article-title": "Enhancing high-temperature corrosion and cracking resistance of a dual-phase high entropy alloy through surface grinding",
+      "volume": "256",
+      "author": "Chen",
+      "year": "2025",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib51",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1080/18811248.2008.9711883",
+      "article-title": "Corrosion behavior of stainless steels in simulated PWR primary water — effect of chromium content in alloys and dissolved hydrogen",
+      "author": "Terachi",
+      "year": "2008",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib52",
+      "doi-asserted-by": "crossref",
+      "unstructured": "T. Terachi, K. Arioka. Characterization of oxide film behaviors on 316 stainless steels in high-temperature water - influence of hydrogen and oxygen considerations for initiation of SCC. Nace Corrosion. NACE2006.",
+      "DOI": "10.5006/C2006-06608"
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib53",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jnucmat.2024.155504",
+      "article-title": "The oxidation-dissolution behavior of Cr-coated zr alloy in high temperature water",
+      "volume": "604",
+      "author": "Huang",
+      "year": "2025",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2025.113424_bib54",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/0022-3115(94)90020-5",
+      "article-title": "Microstructural and microchemical mechanisms controlling intergranular stress corrosion cracking in light-water-reactor systems",
+      "author": "Bruemmer",
+      "year": "1994",
+      "journal-title": "J. Nucl. Mater."
+    }
+  ],
+  "container-title": [
+    "Corrosion Science"
+  ],
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0010938X2500753X?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0010938X2500753X?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        3,
+        11
+      ]
+    ],
+    "date-time": "2026-03-11T08:53:01Z",
+    "timestamp": 1773219181000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0010938X2500753X"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        1
+      ]
+    ]
+  },
+  "references-count": 54,
+  "alternative-id": [
+    "S0010938X2500753X"
+  ],
+  "URL": "https://doi.org/10.1016/j.corsci.2025.113424",
+  "relation": {},
+  "ISSN": [
+    "0010-938X"
+  ],
+  "issn-type": [
+    {
+      "value": "0010-938X",
+      "type": "print"
+    }
+  ],
+  "subject": [],
+  "published": {
+    "date-parts": [
+      [
+        2026,
+        1
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Silicon segregation enhances IASCC of austenitic stainless steels via oxide degradation: Decoupling from chromium depletion effects",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Corrosion Science",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.corsci.2025.113424",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "113424"
+}

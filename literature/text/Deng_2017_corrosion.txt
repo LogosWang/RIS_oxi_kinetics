@@ -1,0 +1,728 @@
+===== PDF PAGE 1 =====
+Contents lists available at ScienceDirect
+Corrosion Science
+journal homepage: www.elsevier.com/locate/corsci
+Eﬀect of irradiation on corrosion of 304 nuclear grade stainless steel in
+simulated PWR primary water
+Ping Deng a,b, Qunjia Peng a,c,⁎
+, En-Hou Han a, Wei Ke a, Chen Sun c, Zhijie Jiao d
+a Key Laboratory of Nuclear Materials and Safety Assessment, Institute of Metal Research, Chinese Academy of Sciences, Shenyang City, 110016, China
+b School of Materials Science and Engineering, University of Science and Technology of China, Shenyang City, 110016, China
+c State Power Investment Corporation Research Institute, Beijing, 102209, China
+d Department of Nuclear Engineering and Radiological Sciences, University of Michigan, Ann Arbor, MI, 48109, USA
+ARTICLE INFO
+Keywords:
+A. Stainless steel
+B. TEM
+C. High temperature corrosion
+C. Intergranular corrosion
+ABSTRACT
+Eﬀect of irradiation on corrosion of 304 nuclear grade stainless steel (304NG SS) in simulated primary water of
+pressurized water reactor was investigated. The investigation was conducted by comparing the microstructure of
+the oxide scale formed on the steel irradiated to di ﬀerent doses by proton. The results revealed that increasing
+irradiation dose promoted both the corrosion and intergranular corrosion of 304NG SS. This is attributed to the
+irradiation induced defects as well as the Cr depletion at the grain boundary in the steel.
+1. Introduction
+Irradiation-assisted stress corrosion cracking (IASCC) of austenitic
+stainless steel (SS) core components is one major concern for main-
+tenance of nuclear power plants. The IASCC is a complex phenomenon
+as a result of the synergic e ﬀect of irradiation induced damage of the
+material, corrosion and stress [1–4]. Studies showed that increasing
+irradiation dose resulted in a higher degree of intergranular cracking
+[1,5–7]. The irradiation induced damage of the material includes the
+formation of dislocation loops, grain boundary segregation and hard-
+ening etc., which occur simultaneously at comparable rates and are all
+correlated with the increased cracking susceptibility [7–9]. Further,
+deformation of irradiated alloys led to dislocation channeling as a result
+of dislocation glide [4,10]. As such, deformation was localized into the
+channels in which dislocations were fed into the grain boundary region
+[11–13]. The change in deformation modes and the interaction of lo-
+calized dislocation channels with the grain boundary promoted the
+IASCC [10–13].
+To date, studies on the e ﬀect of irradiation on IASCC had mainly
+focused on the irradiation induced changes in microstructure and me-
+chanical properties. The role of corrosion in IASCC, however, has not
+been paid su ﬃcient attentions. According to the internal oxidation and
+slip-dissolution/oxidation mechanisms for stress corrosion cracking
+(SCC), oxide ﬁlm rupture is the ﬁrst step in the SCC process and thereby
+the corrosion behavior is crucial to SCC initiation [14,15]. In fact, a
+study reported that the irradiated SS that was resistant to intergranular
+cracking in 288 °C argon was susceptible to intergranular cracking in
+high temperature water at the same temperature [11], suggesting an
+apparent e ﬀect of corrosion on IASCC. As such, attentions should also
+be paid on the corrosion behavior of irradiated alloys, in particular to
+the localized corrosion at grain boundary, in order to understand fur-
+ther the mechanism of IASCC.
+In recent years, the e ﬀect of irradiation on corrosion in high tem-
+perature water has received increased attentions, while only a few
+studies have been reported. Jiao found no obvious acceleration of
+corrosion by post-irradiation in high temperature water [16], while
+Perrin et al. concluded oppositely [17,18]. The promotion of corrosion
+by in-situ proton irradiation was also reported by Wang et al. [19].
+These studies suggest that the role of irradiation in corrosion has not
+been fully understood, particularly for the post-irradiation corrosion.
+Further, while studies by Perrin et al. concluded some e ﬀect of post-
+irradiation on corrosion of austenitic stainless steels in high tempera-
+ture water [17,18], discussions on the e ﬀect of irradiation had been
+focused on the irradiation induced structural defects. The e ﬀect of the
+possible change in chemical composition by radiation-induced segre-
+gation (RIS) on corrosion, particularly to the localized corrosion at
+grain boundary, however, has received limited attentions. In addition,
+there is still a lack of detailed understanding of the quantitative de-
+pendence of the corrosion behavior of austenitic SS in high temperature
+water on irradiation doses.
+This study focused on the e ﬀect of irradiation on corrosion of 304
+nuclear grade (NG) SS in simulated primary water of pressurized water
+reactor (PWR). The objective is to correlate the irradiation dose to the
+overall corrosion, as well as the RIS to localized corrosion at the grain
+http://dx.doi.org/10.1016/j.corsci.2017.08.010
+Received 29 April 2017; Received in revised form 29 July 2017; Accepted 13 August 2017
+⁎ Corresponding author at: Key Laboratory of Nuclear Materials and Safety Assessment, Institute of Metal Research, Chinese Academy of Sciences, Shenyang City, 110016, China.
+E-mail address: pengqunjia@yahoo.com (Q. Peng).
+Corrosion Science 127 (2017) 91–100
+Available online 16 August 2017
+0010-938X/ © 2017 Elsevier Ltd. All rights reserved.
+MARK
+
+===== PDF PAGE 2 =====
+boundary. Irradiation-induced structure of 304NG SS was characterized
+using transmission electron microscope (TEM). Corrosion behavior of
+the steel irradiated to various doses by proton was studied by exposure
+tests in simulated PWR primary water, followed by characterization of
+the oxide scale using scanning electron microscopy (SEM), X-ray pho-
+toelectron spectroscopy (XPS) and TEM.
+2. Experimental
+2.1. Material
+The material used was solution annealed (SA) 304NG SS with a
+chemical composition listed in Table 1. Bar-type specimens with a di-
+mension of 20 mm × 3 mm × 2 mm cut from the alloy were wet
+ground using SiC papers up to 3000 grit, and then polished by diamond
+pastes of 1.5- and 0.5- μm to obtain a mirror-like surface. After wet-
+polishing, the specimens were polished by 40-nm colloidal silica slurry
+for over 2 h to ensure the removal of residual strain prior to proton
+irradiation. Irradiations were conducted using the General Ionex Tan-
+detron accelerator at the Ion Beam Laboratory of the University of
+Michigan. The specimens were irradiated with 2 MeV protons at 360 °C
+at a rate of approximately 6 × 10 −6 displacement per atom (dpa) per
+second (dpa/s) to a dose of 0.5-, 1.5-, 3- and 5-dpa, respectively. The
+depth damage proﬁle as calculated by the Stopping and Range of Ions in
+Materials 2008 (SRIM 2008) computer code is shown in Fig. 1 [20]. The
+danage proﬁle is nearly uniform within the ∼1t o∼ 10 μm of the whole
+20 μm-thick damaged layer, and shows an implantation peak at
+∼18 μm. Details about the proton irradiation process are available
+elsewhere [12,21].
+2.2. TEM characterization of the irradiation induced defects and
+segregation
+The SA, 0.5- and 3-dpa irradiated specimens were selected for
+characterization of the irradiation induced defect and grain boundary
+segregation by TEM. The specimens were electropolished in an elec-
+trolyte at 30 °C and 30 mA for 5 s to remove a damage layer of 3 –4 μm
+thick from the irradiated surface. The electrolyte was prepared by 5 vol.
+% perchloric acid of 70 wt.% concentration and 95% vol.% ethanol of
+99 wt.% concentration. Then the non-irradiated face of the specimen
+was exposed for wet grinding to reduce the thickness to be less than
+60 μm. TEM discs were then drilled out through the thinned specimens
+by a drill bit with a 3-mm inner diameter. These discs were thinned
+further from the non-irradiated side to electron transparency with a
+TenuPol-5 single-jet electropolisher, using the same electrolyte at
+−20 °C and 30 V. Following the electro-thinning, microstructural
+characterization was conducted using a JEM-2100 TEM equipped with
+an energy dispersive X-ray spectroscope (EDX). Spot analyses with a
+probe beam diameter of 1 nm were carried out to determine composi-
+tion pro ﬁles across high-angle grain boundaries (HAGBs). Prior to the
+measurement, the grain boundary was aligned edge-on to the electron
+beam, which minimized the projected width of the grain boundary
+during sample tilting. In total more than 5 EDX line scans across the
+grain boundary were performed to calculate composition pro ﬁles for Cr
+and Ni. Faulted Frank dislocation loops were imaged by the rel-rod
+technique [22], and about 500 loops were imaged for each irradiation
+condition to obtain average loop diameters and number densities. Since
+the rel-rod image showed faulted loops from only one of the four sets of
+(1 1 1) planes, the number of faulted loops measured must be multi-
+plied by four to get the total number of faulted loops [12,22]. The total
+number of faulted loops then divided by the volume involved in the
+picture gave the number density of the faulted loops. Thickness of the
+local area where the dislocation loops were imaged was determined
+from the electron energy-loss spectrum (EELS) by measuring the ratio of
+the zero loss peak intensity to that of the total spectrum [23].
+2.3. Exposure test
+After irradiation, the specimens were polished again by 40-nm
+colloidal silica slurry for half an hour to get fresh surfaces, which re-
+moved the surface with a thickness of 1– 2 μm and could ensure that the
+specimen surfaces following di ﬀerent doses of irradiation were con-
+sistent. Then the exposure testing was conducted at 320 °C in simulate
+PWR primary water in a 3-L autoclave made of 316 SS, which is
+equipped with a refreshed water loop. The water contained 1200 mg/L
+of B as H 3BO3 and 2.3 mg/L of Li as LiOH %H2O, with a dissolved hy-
+drogen (DH) concentration of 2.6 mg/L at the inlet. The DH was
+achieved by applying a hydrogen overpressure of 0.08 MPa in the water
+tank of the loop, following removal of air in the water by bubbling
+hydrogen. To study the e ﬀect of irradiation dose on corrosion, in total
+four doses at 0.5, 1.5, 3 and 5 dpa as well as the SA specimens with no
+irradiation were employed for the exposure tests with a ﬁxed exposure
+period of 500 h. After the exposure, the specimens were removed from
+the autoclave for characterization of the oxide scale.
+2.4. Analysis of the oxide scale
+Following the exposure tests, characterization of the oxide scales
+formed on the SA, 0.5-, 1.5-, 3- and 5-dpa specimens were performed to
+clarify the corrosion behavior. The surface morphology of the oxide
+scale was examined by a FEI XL30 Field Emission Gun SEM operating at
+15 kV. The depth pro ﬁle of the oxide scale was analyzed with an
+ESCALAB 250 XPS system. A selected area of 2-mm diameter was se-
+quentially sputtered using a 2 keV Ar ion beam at a rate of 0.1 nm/s
+referred to Ta 2O5 layer. More details about the XPS analysis were
+presented elsewhere [24]. Since XPS sputtering is a homogeneous
+process, the depth pro ﬁles consist of average element concentrations,
+which depend on the local structure of the oxide scale. Therefore, the
+recorded depth pro ﬁles were only used to estimate the thickness of the
+oxide scale as a function of irradiation dose. The accurate depth pro ﬁle
+on the cross-section of the oxide scale was analyzed using a JEM-2100
+TEM operating at 200 kV. The TEM is equipped with scanning cap-
+abilities for producing chemical contrast images and the EDX device for
+the composition analysis. Both point- and area-scans were used to
+analyze the chemical composition of the oxide scale. High-resolution
+TEM images were captured by a Gatan 4k charge coupled device
+camera and analyzed using Fast Fourier Transform (FFT) technique to
+Table 1
+Chemical composition (wt.%) of 304NG SS.
+CM n S i S P N i C r C o F e
+0.04 1.73 0.27 0.002 0.021 8.87 19.51 0.04 Bal.
+0 5 10 15 20 25 30
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Fig. 1. Damage rate depth pro ﬁle for 304NG SS irradiated with 2.0 MeV protons as
+calculated by SRIM 2008 computer code [20].
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+92
+
+===== PDF PAGE 3 =====
+study crystallographic details of the oxide. The oxide scales formed on
+the SA, 0.5- and 3-dpa specimens were selected for the TEM observation
+and analysis. The TEM samples of the cross-section of the oxide scale
+were prepared using a focused ion beam with Ga ion sputtering (FEI
+Quanta 200 3D). Each sample contained a grain boundary to allow the
+observation and analysis of the intergranular corrosion. The grain
+boundary selected for the sample is HAGB, which was identi ﬁed by
+electron di ﬀraction pattern of TEM before the TEM analysis. In total
+seven grain boundaries were analyzed, including three for the 0.5-dpa,
+three for the 3-dpa and one for the SA specimens.
+3. Results
+3.1. Irradiation induced defect and segregation in 304NG SS
+TEM observation of the microstructure of the SA, 0.5-dpa and 3-dpa
+irradiated specimens is shown in Fig. 2. The irradiation resulted in
+formation of high density dislocation loops, while no such defects were
+observed in the SA specimen. Fig. 3 summarizes the observation results,
+which shows that the loop density was increased by a higher irradiation
+dose. Speci ﬁcally, the density was in the order of 10 −22 m−3 and the
+size was 6– 10 nm, both of which are well consistent with the literature
+date [12,25]. Fig. 4 presents typical concentration pro ﬁles of Cr and Ni
+across the grain boundaries in the SA, 0.5-dpa and 3-dpa irradiated
+specimens. While no change in composition was observed at the grain
+boundary in the SA specimen, the RIS at the grain boundary in the
+irradiated specimens increased with increasing the irradiation dose.
+3.2. Surface morphology of the oxide scale
+SEM observation of the oxide scale formed on the SA, 0.5-, 1.5-, 3-
+and 5-dpa specimens following the exposure is shown in Fig. 5. The
+oxide scale consists of a layer of polyhedral oxide particles with a size of
+∼0.2 to 2 μm and the underneath continuous oxide ﬁlm. Further, it is
+worthwhile to note that the number and size of the oxide particles were
+increased by a higher dose, suggesting a higher corrosion rate.
+3.3. Depth proﬁ le of the oxide scale analyzed by XPS
+XPS depth pro ﬁle of O 1s in the oxide scale formed on the SA, 0.5-,
+1.5-, 3- and 5-dpa specimens following the exposure is shown in
+Fig. 6(a). The thickness of the oxide scale is de ﬁned from the depth
+proﬁle where the intensity of oxygen level decreases to 50% of the
+value at the surface [24,26], which was highlighted by dash lines.
+Fig. 6(b) summarizes the measured oxide scale thickness as a function
+of irradiation dose. As can be seen, the thickness of the oxide scale
+increased with increasing the irradiation dose, indicating the irradia-
+tion promoted corrosion of 304NG SS in PWR primary water. Precise
+analyses of the structure and composition of the oxide scale by TEM are
+presented in the following section.
+3.4. Depth proﬁ le of the oxide scale analyzed by TEM
+3.4.1. Overall corrosion behavior
+Fig. 7 shows the TEM observation and analysis of the cross-sections
+of the oxide scale formed on the SA, 0.5-dpa and 3-dpa specimens. It
+Fig. 2. TEM bright ﬁeld observation of micro-
+structures of (a) solution annealed, (b) 0.5-dpa and
+(c) 3-dpa irradiated specimens of 304NG SS on a
+g = 200, 2-beam condition (z ∼ [110]).
+0
+2
+4
+6
+8
+ Size
+-0.5 0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5
+0.0
+0.5
+1.0
+1.5
+2.0 Density
+Fig. 3. Measured changes in density and size of dislocation loops as a function of irra-
+diation dose.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+93
+
+===== PDF PAGE 4 =====
+revealed a similar duplex-type oxide on both SA and irradiated speci-
+mens as that observed by SEM, i.e. the outer layer of polyhedral oxide
+particles and the inner continuous oxide ﬁlm. Further, both the EDX
+mappings and line scans revealed that the composition of the oxide
+formed on the SA, 0.5- and 3-dpa specimens was similar. The outer
+oxide particles mainly consist of Fe and Ni oxide, suggesting they were
+Fe-Ni spinel. The inner continuous oxide, on the other hand, consists of
+oxides of Ni, Cr and Fe, suggesting it was Fe-Cr-Ni spinel [24,27,28].I n
+addition, there is no obvious di ﬀerence in Cr concentration of the inner
+oxide formed on the SA, 0.5-dpa and 3-dpa specimens.
+Nevertheless, observation of the oxide scale also displayed di ﬀer-
+ences in thickness and structure of the inner continuous oxide ﬁlm. A
+thicker inner oxide ﬁlm was observed to form at a higher irradiation
+dose (Fig. 7). This result as well as the SEM observation shown in Fig. 5
+suggested that the irradiation promoted the overall corrosion of 304NG
+SS in PWR primary water. More detailed microstructure of the inner
+oxide ﬁlm for the SA, 0.5-dpa and 3-dpa specimens was observed and
+analyzed by using high-resolution TEM ( Fig. 8). The crystallographic
+analysis of the oxide by FFT (equivalent to electron di ﬀraction patterns)
+is shown in the insets in the ﬁgure. A weakened character of lattice was
+observed in the oxide ﬁlm of the irradiated specimens, particularly to
+the 3-dpa specimen, while the pattern of the oxide ﬁlm of the SA spe-
+cimen showed a clear lattice character. As concluded by previous stu-
+dies, the more speckled di ﬀraction lattice implies a larger grain size of
+the spinel oxide [27,29]. As such, a ﬁner oxide grain in the inner oxide
+ﬁlm of the oxide scale on 3-dpa specimen can be expected. In fact, a
+decreased size of grains of the oxide formed on Xe-implanted alloy 690
+in high temperature water has been observed [18].
+3.4.2. Localized corrosion at grain boundary
+The morphology and microstructure of the oxide formed at the grain
+boundary in SA, 0.5-dpa and 3-dpa specimens after the 500-h exposure
+were also observed and analyzed by TEM, shown in Figs. 9 through 11.
+It was found that hump-like oxide at the grain boundary was formed,
+suggesting the occurrence of localized corrosion. While the morphology
+of the oxide at the grain boundary was similar, the depth of the
+-20 -10 0 10 20
+5
+10
+15
+20
+25Ni or Cr, at%
+3 dpa
+ Cr
+ Ni
+(c)
+-20 -10 0 10 20
+5
+10
+15
+20
+25
+0.5 dpa
+ Cr
+ Ni
+(b)
+-20 -10 0 10 20
+5
+10
+15
+20
+ Cr
+ Ni
+(a) unirradiated
+Ni or Cr, at%
+Distance from grain boundary, nm
+Fig. 4. Composition pro ﬁles across high-angle grain
+boundaries on (a) solution annealed, (b) 0.5-dpa and
+(c) 3-dpa irradiated specimens of 304NG SS.
+Fig. 5. SEM observation of surface morphology of the oxide scales formed on 304NG SS subjected to di ﬀerent irradiation doses following the 500-h exposure in simulated PWR primary
+water at 320 °C. (a) solution annealed, (b) 0.5 dpa, (c) 1.5 dpa, (d) 3 dpa, (e) 5 dpa.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+94
+
+===== PDF PAGE 5 =====
+penetration oxidation through the surface oxide ﬁlm into the grain
+boundary showed di ﬀerence. On SA specimen, a penetration of oxida-
+tion with a depth of approximately 40 nm was observed, shown in
+Fig. 9(a). The oxide penetration at the grain boundary in 0.5-dpa and 3-
+dpa specimens, however, was much deeper. As shown in Figs. 10(a) and
+11(a), increasing the irradiation dose from 0.5 to 3 dpa caused an
+increase of the oxidation depth at the grain boundary from ∼60 to
+∼120 nm. This suggested a promoted intergranular corrosion by irra-
+diation. The crystallographic study by FFT shown in the insets in Figs.
+9(a), 10(a) and 11(a) indicated that the intergranular oxide in the SA,
+0.5-dpa and 3-dpa specimens had a similar di ﬀraction character of
+amorphous phase.
+Fig. 6. (a), XPS depth pro ﬁles of O 1s in the oxide
+scales formed on solution annealed, 0.5-, 1.5-, 3- and
+5-dpa irradiated specimens of 304NG SS following
+the 500-h exposure in simulated PWR primary water
+at 320 °C. The dashed lines highlighted the half-
+height of O 1s; (b), Thickness of the oxide scales on
+304NG SS as a function of irradiation dose.
+Fig. 7. TEM observation and analysis of the cross-section of the oxide scales formed on (a1, b1, c1) solution annealed, (a2, b2, c2) 0.5-dpa and (a3, b3, c3) 3-dpa irradiated specimens of
+304NG SS following the 500-h exposure in simulated PWR primary water. a1, a2 and a3 are TEM observations of the cross-section of the oxide scales. b1, b2 and b3 are corresponding
+mappings for Fe, O, Cr and Ni. c1, c2 and c3 are point-scans collected along the red line shown in a1, a2 and a3, respectively.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+95
+
+===== PDF PAGE 6 =====
+Fig. 8. High resolution TEM observation of the inner
+oxide ﬁlm formed on (a) solution annealed, (b) 0.5-
+dpa and (c) 3-dpa irradiated specimens of 304NG SS
+following the 500-h exposure in simulated PWR
+primary water.
+Fig. 9. (a), TEM observation of the localized corrosion at a grain boundary in solution annealed 304NG SS. (b), Mappings for Cr, Fe, Ni, and O showing oxidation along the grain
+boundary. (c) and (d), EDX point-scans collected along lines A and B shown in (a), respectively.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+96
+
+===== PDF PAGE 7 =====
+EDX line-scans and mappings as shown in Figs. 9 through 11 re-
+vealed the composition pro ﬁle of the oxide formed at the grain
+boundary in SA, 0.5-dpa and 3-dpa specimens. While the oxides were
+all depleted in Fe and enriched in Cr, the Cr content normalized by
+excluding the oxygen varied with the irradiation dose. It was 74.9 at.%
+on SA specimen, and decreased to 69.5 at.% by the 0.5-dpa irradiation
+and further to 58.3 at.% by the 3-dpa irradiation, shown in Figs. 9(a),
+10(a) and 11 (a). Further, Ni enrichment ahead of the oxide at the grain
+boundary in SA specimen was observed, while no such a phenomenon
+for 0.5-dpa and 3-dpa specimens (Figs. 9 (b), 10(b) and 11(b)).
+RIS at the grain boundary was also analyzed by EDX line-scans,
+shown in Figs. 9(d), 10(d) and 11(d). The composition pro ﬁle across the
+grain boundary beneath the oxide ﬁlm with a distance of over 100 nm
+in the 0.5- and 3-dpa specimens showed a depletion of Cr and an en-
+richment of Ni, while no such a segregation in the SA specimen was
+observed. The magnitude of depletion of Cr at the grain boundary on
+0.5- and 3-dpa specimens was 3.5 ± 0.9 at.% and 9.2 ± 0.9 at.%,
+respectively.
+Fig. 12 summarized results of the analysis on all the seven grain
+boundaries, which suggested that the irradiation promoted inter-
+granular corrosion of 304NG SS in PWR primary water. This was in
+association with a decreased Cr content at the primary grain boundary
+in the irradiated specimens.
+4. Discussion
+4.1. In ﬂuence of irradiation on overall corrosion of 304NG SS
+The previous SEM observation and XPS analysis showed that a
+thicker oxide scale with a higher density and a larger size of the discrete
+oxide particles in the outer layer was formed on irradiated specimens.
+Further, the TEM observation revealed that the thickness of the inner
+continuous oxide ﬁlm was also increased by a higher irradiation dose.
+These results indicated that increasing irradiation dose led to a higher
+corrosion rate of 304NG SS in PWR primary water.
+According to the SEM and TEM observations shown in Figs. 5 and 7,
+the thickness of the inner oxide ﬁlm is much smaller than that of the
+outer layer consisting of the oxide particles. As such, the change in the
+size and density of the discrete oxide particles was most likely the de-
+cisive factor for the change in the total thickness of the oxide scale. The
+size and density of dislocation loops generated by irradiation were in-
+creased by a higher dose ( Figs. 2 and 3). These loops are preferential
+sites for nucleation of the oxide particles in the outer layer of the oxide
+scale [17], which led to formation of an increased number of oxide
+particles. Further, the growth rate of the oxide particle is believed to be
+dependent on the di ﬀusion rate of Fe ion in the inner oxide ﬁlm ac-
+cording to the point defect model and dissolution-precipitation me-
+chanism [30–32]. The di ﬀusion of Fe ion in the inner oxide ﬁlm, on the
+other hand, is dominated by grain boundary di ﬀusion in accordance
+Fig. 10. (a), TEM observation of the localized corrosion at a grain boundary in 0.5-dpa irradiated 304NG SS. (b), Mappings for Cr, Fe, Ni, and O showing oxidation along the grain
+boundary. (c) and (d), EDX point-scans collected along lines A and B shown in (a), respectively.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+97
+
+===== PDF PAGE 8 =====
+with Robertson oxidation model [33–37]. The ﬁner grains in the inner
+oxide ﬁlm formed at a higher irradiation dose as con ﬁrmed by the high
+resolution TEM analysis ( Fig. 8) could certainly promote the Fe ion
+diﬀusion through the grain boundary. As such, the growth of the oxide
+particle was promoted, resulting in a larger size of the oxide particle. In
+general, the increased size of the oxide particles on specimens with a
+higher irradiation dose resulted from a less protective nature of the
+inner oxide ﬁlm. On the other hand, the ﬁner grains could also promote
+the inward diﬀusion rate of oxygen, leading to an increased thickness of
+the inner oxide.
+The diﬀerence in grain size of the inner oxide formed on the SA and
+irradiated specimen was likely caused by the promoted di ﬀusion of
+species by the high-density dislocation loops in the subsurface of the
+irradiated steel. Defects enhance the di ﬀusion of the ions of oxygen and
+metal into the subsurface, accelerating the oxidation in these regions
+[19,38,39]. As such, a higher irradiation dose results in ﬁner grain size
+of inner oxide by providing more sites of preferential oxidation.
+4.2. In ﬂuence of irradiation on localized corrosion at grain boundary
+The TEM observation and analysis as shown in Figs. 9– 11 revealed
+diﬀerence in the intergranular corrosion behavior of the SA, 0.5-dpa
+and 3-dpa specimens. While the intergranular corrosion occurred at the
+grain boundary in both the SA and irradiated specimens, the depth of
+oxide penetration is larger for the irradiated specimens.
+As has been acknowledged, a higher Cr content in an oxide ﬁlm
+formed on austenitic alloys in high temperature water could improve
+the protectability of the oxide [26,27,40]. As such, the di ﬀerence in the
+intergranular corrosion behavior of the SA and irradiated specimens is a
+combined eﬀect of a change in the protectability of the inner oxide ﬁlm
+and the Cr-depletion induced by RIS at the grain boundary. During
+exposure in the PWR primary water, a homogeneous and ﬂat oxide
+Fig. 11. (a), TEM observation of the localized corrosion at a grain boundary in 3-dpa irradiated 304NG SS. (b), Mappings for Cr, Fe, Ni, and O showing oxidation along the grain
+boundary. (c) and (d), EDX point-scans collected along lines A and B shown in (a), respectively.
+Fig. 12. Depth of intergranular oxide and the amount of Cr depletion ( Δ[Cr]) at the grain
+boundary by radiation-induced segregation as a function of irradiation dose.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+98
+
+===== PDF PAGE 9 =====
+scale was formed at ﬁrst on the SA and irradiated specimens. As men-
+tioned above, the inner oxide ﬁlm of the oxide scale formed on the
+irradiated specimens was less protective, which allowed oxygen to pe-
+netrate it and oxidize the underneath base metal [41,42]. As such, in-
+tergranular corrosion on irradiated specimens beneath the surface oxide
+scale occurred more easily. In the following process of the intergranular
+corrosion, the Cr-depletion induced by RIS at the grain boundary could
+then promote further the intergranular corrosion by lowering the Cr
+content and the protectability of the oxide formed at the grain
+boundary. As shown in Fig. 12 , the increase of intergranular oxidation
+depth with the irradiation dose is in correspondence with the increase
+of the magnitude of Cr depletion at the grain boundary. Since there is
+no Cr depletion at the grain boundary in the SA specimen, the oxide
+formed at the grain boundary had a higher Cr content and was more
+protective than that formed at the grain boundary in the irradiated
+specimens (shown in Figs. 9– 11). As a result, a smaller depth of the
+intergranular oxidation was observed in the SA specimen. In addition, a
+localized enrichment of Ni was observed ahead the tip of the oxide at
+the grain boundary in the SA specimen, while no such Ni enrichment
+was formed in the irradiated specimens, shown in Figs. 9(b), 10(b) and
+11(b). This also suggested a higher intergranular corrosion rate pro-
+moted by irradiation, since the Ni-enriched zone was attributed to a
+selective oxidation of Cr and Fe which removed Cr and Fe preferentially
+from the alloy [43–45]. The selective oxidation needs a long time, while
+a fast corrosion along the grain boundary could not provide su ﬃcient
+time for the selective oxidation to occur [40,43].
+The above discussion interprets the primary cause for the di ﬀerence
+in the corrosion behavior of SA and irradiated specimens, in terms of
+the eﬀect of the protectability of the oxide. The RIS, on the other hand,
+may also promote the intergranular corrosion by increasing the di ﬀu-
+sion rate of metal cations at the oxide/metal interface. According to the
+point-defect mechanism for Fe-Cr-Ni alloys [27,30,46], the growth of
+oxide is determined by the oxygen vacancies formed at the oxide/metal
+interface by the following reaction:
++− + ↔ +−
+++ +
+××
+× −
+xx x
+x
+2Cr (1 )Ni Fe 2Cr (1 )Ni
+Fe 4V 8e
+Cr Ni Fe Cr(oxide) Ni(oxide)
+Fe(oxide) O(oxide)
+··
+(1)
+where, the Cr Cr,N i Ni, and Fe Fe represent metal cation in cation site in
+the alloy, ×CrCr(oxide), ×NiNi(oxide), and ×FeFe(oxide) refer to normal metal ion
+lattice sites in oxide, and VO
+·· represents oxygen ion vacancy in oxide.
+During the process of oxide growth, the metal cations were consumed at
+the oxide/metal interface and replenished by counter di ﬀusion of metal
+vacancies [30]:
++↔+
+′ −xmV M ex
+M M (2)
+where, the m and M M are metal atom and metal cation in cation site in
+the alloy (m = Fe, Cr and Ni), respectively.
+′
+V x
+M represents metal va-
+cancies surrounding the grain boundary.
+Reactions (1) and (2) suggest that the formation of oxygen vacancy
+is limited by metal cations at the oxide/metal interface, and further
+determined by the amount of metal vacancy. As such, a change in the
+amount of metal vacancy near the grain boundary could a ﬀect the in-
+tergranular corrosion behavior. During irradiation, RIS occurred as a
+result of the unequal participation of solutes in the vacancy and inter-
+stitial ﬂuxes to sinks [7,47]. Consequently, a higher magnitude of Cr-
+depletion at the grain boundary by RIS suggested an increased amount
+of metal vacancy, which could promote outward di ﬀusion of metal
+cations to the oxide/metal interface. As a result, the enhanced inter-
+granular corrosion on the irradiated specimen occurred by a combined
+eﬀect of a faster di ﬀusion rate of oxygen ions in oxide and metal cations
+at the oxide/metal interface.
+The intergranular corrosion process for the SA and irradiated spe-
+cimens as discussed above are schematically shown in Fig. 13.
+The results of the current work provide insights into the mechanism
+of IASCC in austenitic SS in high temperature water. Since the corro-
+sion/oxidation under stress favors the formation of cracking initiation,
+the promoted intergranular corrosion by irradiation suggests that a
+higher intergranular cracking initiation susceptibility in the highly ir-
+radiated steel can be expected [48].
+Fig. 13. Schematics showing the di ﬀerence in the corrosion and intergranular corrosion behavior of (a –c) solution annealed and (d –f) irradiated specimens of 304NG SS in simulated PWR
+primary water.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+99
+
+===== PDF PAGE 10 =====
+5. Conclusions
+Eﬀect of irradiation on corrosion of 304NG SS in simulated PWR
+primary water was investigated. The following conclusions can be
+drawn from the investigation:
+1 A higher irradiation dose generates a higher density and a larger size
+of dislocation loops, in addition to an increased degree of Cr de-
+pletion at the grain boundary.
+2 The thickness of the oxide scale formed on 304NG SS is increased by
+a higher irradiation dose due to the promoted corrosion by irra-
+diation induced defects.
+3 Irradiation promotes intergranular corrosion of 304NG SS in simu-
+lated PWR primary water. This is attributed to the microstructural
+defects and depletion of Cr at the primary grain boundary induced
+by RIS.
+4 Increasing irradiation dose favors formation of sites for IASCC in-
+itiation as a result of the enhanced localized corrosion at the grain
+boundary due to RIS.
+Acknowledgements
+This work is ﬁnancially supported by International
+Science & Technology Cooperation Program of China (2014DFA50800),
+and partly supported by National Natural Science Foundation of China
+(Grant No.51571204). The authors are grateful to the Ion Beam
+Laboratory at the University of Michigan for performing proton im-
+plantation experiments and to Dr. X.L. Wang for her support to perform
+the TEM analysis.
+References
+[1] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, IASCC susceptibility and slow tensile
+properties of highly-irradiated 316 stainless steels, J. Nucl. Sci. Technol. 41 (2004)
+673–681.
+[2] K.J. Stephenson, G.S. Was, Crack initiation behavior of neutron irradiated model
+and commercial stainless steels in high temperature water, J. Nucl. Mater. 444
+(2014) 331 –341.
+[3] M.D. McMurtrey, G.S. Was, Role of slip behavior in the irradiation assisted stress
+corrosion cracking in austenitic steels, Proc, 15th International Symposium on
+Environmental Degradation of Materials in Nuclear Power Systems-Water Reactors,
+Colorado, 2011, pp. 1383 –1394.
+[4] Z. Jiao, G.S. Was, Localized deformation and IASCC initiation in austenitic stainless
+steels, J. Nucl. Mater. 382 (2008) 203 –209.
+[5] H. Nishioka, K. Fukuya, K. Fujii, T. Torimaru, IASCC initiation in highly irradiated
+stainless steels under uniaxial constant load conditions, J. Nucl. Sci. Technol. 45
+(2008) 1072 –1077.
+[6] K. Fukuya, K. Fujii, Y. Kitsunai, Deformation structure in 316 stainless steel irra-
+diated in a PWR, Proc, 12th International Conference on Environmental
+Degradation of Materials in Nuclear Power Systems-Water Reactors, Salt Lake City,
+2005, pp. 389 –393.
+[7] G.S. Was, Recent developments in understanding irradiation assisted stress corro-
+sion cracking, Proc, 11th International Symposium on Environmental Degradation
+of Materials in Nuclear Power Systems-Water Reactors, Washington, 2003, pp.
+965–985.
+[8] I. Ioka, Y. Ishijima, K. Usami, N. Sakuraba, Y. Kato, K. Kiuchi, Radiation hardening
+and IASCC susceptibility of extra high purity austenitic stainless steel, J. Nucl.
+Mater. 417 (2011) 887 –891.
+[9] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, Role of radiation-induced grain
+boundary segregation in irradiation assisted stress corrosion cracking, J. Nucl. Sci.
+Technol. 41 (2004) 594 –600.
+[10] Z. Jiao, G.S. Was, T. Miura, K. Fukuya, Aspects of ion irradiations to study localized
+deformation in austenitic stainless steels, J. Nucl. Mater. 452 (2014) 328 –334.
+[11] Z. Jiao, G.S. Was, Impact of localized deformation on IASCC in austenitic stainless
+steels, J. Nucl. Mater. 408 (2011) 246 –256.
+[12] Z. Jiao, G.S. Was, The role of irradiated microstructure in the localized deformation
+of austenitic stainless steels, J. Nucl. Mater. 407 (2010) 34 –43.
+[13] Z. Jiao, G.S. Was, J.T. Busby, The role of localized deformation in IASCC of proton-
+irradiated austenitic stainless steels, Proc, 13th International Conference on
+Environmental Degradation of Materials in Nuclear Power Systems, Whistler,
+British Columbia, April 19 –23, 2007 .
+[14] A. Turnbull, K. Mingard, J.D. Lord, B. Roebuck, D.R. Tice, K.J. Mottershead,
+N.D. Fairweather, A.K. Bradbury, Sensitivity of stress corrosion cracking of stainless
+steel to surface machining and grinding procedure, Corros. Sci. 53 (2011)
+3398–3415.
+[15] J. Panter, B. Viguier, J.M. Cloué, M. Foucault, P. Combrade, E. Andrieu, In ﬂuence of
+oxide ﬁlms on primary water stress corrosion cracking initiation of alloy 600, J.
+Nucl. Mater. 348 (2006) 213 –221.
+[16] Z. Jiao, G.S. Was, Oxidation of a proton-irradiated 316 stainless steel in simulated
+BWR NWC environment, Proc, 15th International Conference on Environmental
+Degradation of Materials in Nuclear Power Systems, Colorado Springs, Colorado,
+2011, pp. 1329 –1338.
+[17] S. Perrin, L. Marchetti, C. Duhamel, M. Sennour, F. Jomard, In ﬂuence of irradiation
+on the oxide ﬁlm formed on 316L stainless steel in PWR primary water, Oxid. Met.
+80 (2013) 623 –634.
+[18] H. Lefaix-Jeuland, L. Marchetti, S. Perrin, M. Pijolat, M. Sennour, R. Molins,
+Oxidation kinetics and mechanisms of Ni-base alloys in pressurised water reactor
+primary conditions: in ﬂuence of subsurface defects, Corros. Sci. 53 (2011)
+3914–3922.
+[19] P. Wang, G.S. Was, Oxidation of Zircaloy-4 during in situ proton irradiation and
+corrosion in PWR primary water, J. Mater. Res. 30 (2015) 1335 –1348.
+[20] R.E. Stoller, M.B. Toloczko, G.S. Was, A.G. Certain, S. Dwaraknath, F.A. Garner, On
+the use of SRIM for computing radiation damage exposure, Nucl. Instrum. Methods
+Phys. Res. Sect. B 310 (2013) 75 –80.
+[21] G. Gupta, Z. Jiao, A.N. Ham, J.T. Busby, G.S. Was, Microstructural evolution of
+proton irradiated T91, J. Nucl. Mater. 351 (2006) 162 –173.
+[22] D.J. Edwards, E.P. Simonen, S.M. Bruemmer, Evolution of ﬁne-scale defects in
+stainless steels neutron-irradiated at 275 °C, J. Nucl. Mater. 317 (2003) 13 –31.
+[23] R.F. Egerton, Electron Energy-loss Spectroscopy the Electron Microscope, second
+ed., Plenum Press, New York, 1996 .
+[24] L.J. Dong, Q.J. Peng, Z.M. Zhang, T. Shoji, E.-H. Han, W. Ke, L. Wang, E ﬀect of
+dissolved hydrogen on corrosion of 316NG stainless steel in high temperature
+water, Nucl. Eng. Des. 295 (2015) 403 –415.
+[25] J. Gan, D.J. Edwards, E.P. Simonen, S.M. Bruemmer, G.S. Was, Microstructural
+evolution and hardening in 300-series stainless steels: comparison between neutron
+and proton irradiations, Proc, 10th International Symposium on Environmental
+Degradation of Materials in Nuclear Power Systems-Water Reactors, Houston, 2002.
+[26] Y.L. Han, J.N. Mei, Q.J. Peng, E.-H. Han, W. Ke, E ﬀect of electropolishing on cor-
+rosion of Alloy 600 in high temperature water, Corros. Sci. 98 (2015) 72 –81.
+[27] Y.L. Han, J.N. Mei, Q.J. Peng, E.-H. Han, W. Ke, E ﬀect of electropolishing on cor-
+rosion of nuclear grade 316L stainless steel in deaerated high temperature water,
+Corros. Sci. 112 (2016) 625 –634.
+[28] M. da Cunha Belo, M. Walls, N.E. Hakiki, J. Corset, E. Picquenard, G. Sagon,
+D. Noël, Composition, structure and properties of the oxide ﬁlms formed on the
+stainless
+steel 316L in a primary type PWR environment, Corros. Sci. (1998)
+447–463.
+[29] T. Terachi, T. Yamada, T. Miyamoto, K. Arioka, K. Fukuya, Corrosion behavior of
+stainless steels in simulated PWR primary water-E ﬀect of chromium content in
+Alloys and dissolved hydrogen, J. Nucl. Sci. Technol. 45 (2008) 975 –984.
+[30] D.D. Macdonald, M.U. Macdonald, Theory of steady-state passive ﬁlms, J.
+Electrochem. Soc. 137 (1990) 2395 –2402.
+[31] D.H. Lister, R.D. Davidson, E. McAlpine, The mechanism and kinetics of corrosion
+product release from stainless steel in lithiated high temperature water, Corros. Sci.
+27 (1987) 113 –140.
+[32] Z. Szklarska-Smialowska, K.C. Chou, Z. Xia, The Composition and properties of
+oxide ﬁlms on type 304 stainless steel on exposure to lithiated water at 100 –350 °C,
+Corros. Sci. 32 (1991) 609 –619.
+[33] S. Cissé, L. La ﬀont, B. Tanguy, M.C. Lafont, E. Andrieu, E ﬀect of surface preparation
+on the corrosion of austenitic stainless steel 304L in high temperature steam and
+simulated PWR primary water, Corros. Sci. 56 (2012) 209 –217.
+[34] J. Robertson, The mechanism of high temperature aqueous corrosion of steel,
+Corros. Sci. 29 (1989) 1275 –1291.
+[35] J. Robertson, The mechanism of high temperature aqueous corrosion of stainless
+steels, Corros. Sci. 32 (1991) 443 –465.
+[36] B. Stellwag, The mechanism of oxide ﬁlm formation on austenitic stainless steels in
+high temperature water, Corros. Sci. 40 (1998) 337 –370.
+[37] G.S. Was, S. Teysseyre, Z. Jiao, Corrosion of austenitic alloys in supercritical water,
+Corrosion 62 (2006) 989 –1005.
+[38] S. Lozano-Perez, K. Kruska, I. Iyengar, T. Terachi, T. Yamadac, The role of cold work
+and applied stress on surface oxidation of 304 stainless steel, Corros. Sci. 56 (2012)
+78–86.
+[39] Q. Xue, E.K. Cerreta, G.T. Gray, Microstructural characteristics of post-shear loca-
+lization in cold-rolled 316L stainless steel, Acta Mater. 55 (2007) 691 –704.
+[40] Y.L. Han, E.-H. Han, Q.J. Peng, W. Ke, E ﬀects of electropolishing on corrosion and
+stress corrosion cracking of Alloy 182 in high temperature water, Corros. Sci. 121
+(2017) 1 –12.
+[41] B. Langelier, S.Y. Persaud, R.C. Newman, G.A. Botton, An atom probe tomography
+study of internal oxidation processes in Alloy 600, Acta Mater. 109 (2016) 55 –68.
+[42] S.
+Lozano-Perez, J.M. Titchmarsh, TEM investigations of intergranular stress cor-
+rosion cracking in austenitic alloys in PWR environmental conditions, Mater. High.
+Temp. 20 (2003) 573 –579.
+[43] L.J. Dong, Q.J. Peng, E.-H. Han, W. Ke, L. Wang, Stress corrosion cracking in the
+heat a ﬀected zone of a stainless steel 308L-316L weld joint in primary water,
+Corros. Sci. 107 (2016) 172 –181.
+[44] K. Kruska, S. Lozano-Perez, D.W. Saxey, T. Terachi, T. Yamada, T. Smith,
+D.W. George, Nanoscale characterisation of grain boundary oxidation in cold-
+worked stainless steels, Corros. Sci. 63 (2012) 225 –233.
+[45] P. Deng, Q.J. Peng, E.-H. Han, W. Ke, E ﬀect of the amount of cold work on corrosion
+of 304 nuclear grade stainless steel in high temperature water, Corrosion 73 (2017)
+1237–1249.
+[46]. L. Marchetti, S. Perrin, F. Jambon, M. Pijolat, Corrosion of nickel-base alloys in
+primary medium of pressurized water reactors: new insights on the oxide growth
+mechanisms and kinetic modelling, Corros. Sci. 102 (2016) 24 –35.
+[47] T.R. Allen, J.T. Busby, G.S. Was, E.A. Kenik, On the mechanism of radiation-induced
+segregation in austenitic Fe-Cr-Ni alloys, J. Nucl. Mater. 255 (1998) 44 –58.
+[48] Y.H. Lu, Q.J. Peng, T. Sato, T. Shoji, An ATEM study of oxidation behavior of SCC
+crack tips in 304L stainless steel in high temperature oxygenated water, J. Nucl.
+Mater. 347 (2005) 52 –69.
+P. Deng et al. Corrosion Science 127 (2017) 91–100
+100

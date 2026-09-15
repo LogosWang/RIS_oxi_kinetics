@@ -1,0 +1,793 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        21
+      ]
+    ],
+    "date-time": "2026-08-21T11:50:43Z",
+    "timestamp": 1787313043126,
+    "version": "build-2736575974"
+  },
+  "reference-count": 48,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2017,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2017-10-01T00:00:00Z",
+        "timestamp": 1506816000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    }
+  ],
+  "funder": [
+    {
+      "name": "International Science & Technology Cooperation Program of China",
+      "award": [
+        "2014DFA50800"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2014DFA50800"
+          ]
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "51571204"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "51571204"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "short-container-title": [
+    "Corrosion Science"
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2017,
+        10
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.corsci.2017.08.010",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2017,
+        8,
+        16
+      ]
+    ],
+    "date-time": "2017-08-16T12:45:34Z",
+    "timestamp": 1502887534000
+  },
+  "page": "91-100",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 114,
+  "special_numbering": "C",
+  "title": [
+    "Effect of irradiation on corrosion of 304 nuclear grade stainless steel in simulated PWR primary water"
+  ],
+  "prefix": "10.1016",
+  "volume": "127",
+  "author": [
+    {
+      "given": "Ping",
+      "family": "Deng",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Qunjia",
+      "family": "Peng",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "En-Hou",
+      "family": "Han",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Wei",
+      "family": "Ke",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Chen",
+      "family": "Sun",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Zhijie",
+      "family": "Jiao",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "673",
+      "DOI": "10.1080/18811248.2004.9715532",
+      "article-title": "IASCC susceptibility and slow tensile properties of highly-irradiated 316 stainless steels",
+      "volume": "41",
+      "author": "Fukuya",
+      "year": "2004",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "331",
+      "DOI": "10.1016/j.jnucmat.2013.10.008",
+      "article-title": "Crack initiation behavior of neutron irradiated model and commercial stainless steels in high temperature water",
+      "volume": "444",
+      "author": "Stephenson",
+      "year": "2014",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0015",
+      "series-title": "15th International Symposium on Environmental Degradation of Materials in Nuclear Power Systems-Water Reactors",
+      "first-page": "1383",
+      "article-title": "Role of slip behavior in the irradiation assisted stress corrosion cracking in austenitic steels, Proc",
+      "author": "McMurtrey",
+      "year": "2011"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "203",
+      "DOI": "10.1016/j.jnucmat.2008.08.032",
+      "article-title": "Localized deformation and IASCC initiation in austenitic stainless steels",
+      "volume": "382",
+      "author": "Jiao",
+      "year": "2008",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "1072",
+      "DOI": "10.1080/18811248.2008.9711894",
+      "article-title": "IASCC initiation in highly irradiated stainless steels under uniaxial constant load conditions",
+      "volume": "45",
+      "author": "Nishioka",
+      "year": "2008",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0030",
+      "series-title": "12th International Conference on Environmental Degradation of Materials in Nuclear Power Systems-Water Reactors",
+      "first-page": "389",
+      "article-title": "Deformation structure in 316 stainless steel irradiated in a PWR, Proc",
+      "author": "Fukuya",
+      "year": "2005"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0035",
+      "series-title": "11th International Symposium on Environmental Degradation of Materials in Nuclear Power Systems-Water Reactors",
+      "first-page": "965",
+      "article-title": "Recent developments in understanding irradiation assisted stress corrosion cracking, Proc",
+      "author": "Was",
+      "year": "2003"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "887",
+      "DOI": "10.1016/j.jnucmat.2010.12.154",
+      "article-title": "Radiation hardening and IASCC susceptibility of extra high purity austenitic stainless steel",
+      "volume": "417",
+      "author": "Ioka",
+      "year": "2011",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0045",
+      "doi-asserted-by": "crossref",
+      "first-page": "594",
+      "DOI": "10.1080/18811248.2004.9715522",
+      "article-title": "Role of radiation-induced grain boundary segregation in irradiation assisted stress corrosion cracking",
+      "volume": "41",
+      "author": "Fukuya",
+      "year": "2004",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "328",
+      "DOI": "10.1016/j.jnucmat.2014.05.058",
+      "article-title": "Aspects of ion irradiations to study localized deformation in austenitic stainless steels",
+      "volume": "452",
+      "author": "Jiao",
+      "year": "2014",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "246",
+      "DOI": "10.1016/j.jnucmat.2010.10.087",
+      "article-title": "Impact of localized deformation on IASCC in austenitic stainless steels",
+      "volume": "408",
+      "author": "Jiao",
+      "year": "2011",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "34",
+      "DOI": "10.1016/j.jnucmat.2010.07.006",
+      "article-title": "The role of irradiated microstructure in the localized deformation of austenitic stainless steels",
+      "volume": "407",
+      "author": "Jiao",
+      "year": "2010",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0065",
+      "series-title": "13th International Conference on Environmental Degradation of Materials in Nuclear Power Systems",
+      "article-title": "The role of localized deformation in IASCC of proton-irradiated austenitic stainless steels, Proc",
+      "author": "Jiao",
+      "year": "2007"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "3398",
+      "DOI": "10.1016/j.corsci.2011.06.020",
+      "article-title": "Sensitivity of stress corrosion cracking of stainless steel to surface machining and grinding procedure",
+      "volume": "53",
+      "author": "Turnbull",
+      "year": "2011",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0075",
+      "doi-asserted-by": "crossref",
+      "first-page": "213",
+      "DOI": "10.1016/j.jnucmat.2005.10.002",
+      "article-title": "Influence of oxide films on primary water stress corrosion cracking initiation of alloy 600",
+      "volume": "348",
+      "author": "Panter",
+      "year": "2006",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0080",
+      "series-title": "15th International Conference on Environmental Degradation of Materials in Nuclear Power Systems",
+      "first-page": "1329",
+      "article-title": "Oxidation of a proton-irradiated 316 stainless steel in simulated BWR NWC environment, Proc",
+      "author": "Jiao",
+      "year": "2011"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "623",
+      "DOI": "10.1007/s11085-013-9401-3",
+      "article-title": "Influence of irradiation on the oxide film formed on 316L stainless steel in PWR primary water",
+      "volume": "80",
+      "author": "Perrin",
+      "year": "2013",
+      "journal-title": "Oxid. Met."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0090",
+      "doi-asserted-by": "crossref",
+      "first-page": "3914",
+      "DOI": "10.1016/j.corsci.2011.07.024",
+      "article-title": "Oxidation kinetics and mechanisms of Ni-base alloys in pressurised water reactor primary conditions: influence of subsurface defects",
+      "volume": "53",
+      "author": "Lefaix-Jeuland",
+      "year": "2011",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "1335",
+      "DOI": "10.1557/jmr.2014.408",
+      "article-title": "Oxidation of Zircaloy-4 during in situ proton irradiation and corrosion in PWR primary water",
+      "volume": "30",
+      "author": "Wang",
+      "year": "2015",
+      "journal-title": "J. Mater. Res."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0100",
+      "doi-asserted-by": "crossref",
+      "first-page": "75",
+      "DOI": "10.1016/j.nimb.2013.05.008",
+      "article-title": "On the use of SRIM for computing radiation damage exposure",
+      "volume": "310",
+      "author": "Stoller",
+      "year": "2013",
+      "journal-title": "Nucl. Instrum. Methods Phys. Res. Sect. B"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "162",
+      "DOI": "10.1016/j.jnucmat.2006.02.028",
+      "article-title": "Microstructural evolution of proton irradiated T91",
+      "volume": "351",
+      "author": "Gupta",
+      "year": "2006",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "13",
+      "DOI": "10.1016/S0022-3115(03)00002-3",
+      "article-title": "Evolution of fine-scale defects in stainless steels neutron-irradiated at 275 °C",
+      "volume": "317",
+      "author": "Edwards",
+      "year": "2003",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0115",
+      "series-title": "Electron Energy-loss Spectroscopy the Electron Microscope",
+      "author": "Egerton",
+      "year": "1996"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0120",
+      "doi-asserted-by": "crossref",
+      "first-page": "403",
+      "DOI": "10.1016/j.nucengdes.2015.08.030",
+      "article-title": "Effect of dissolved hydrogen on corrosion of 316NG stainless steel in high temperature water",
+      "volume": "295",
+      "author": "Dong",
+      "year": "2015",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0125",
+      "series-title": "10th International Symposium on Environmental Degradation of Materials in Nuclear Power Systems-Water Reactors",
+      "article-title": "Microstructural evolution and hardening in 300-series stainless steels: comparison between neutron and proton irradiations, Proc",
+      "author": "Gan",
+      "year": "2002"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0130",
+      "doi-asserted-by": "crossref",
+      "first-page": "72",
+      "DOI": "10.1016/j.corsci.2015.05.026",
+      "article-title": "Effect of electropolishing on corrosion of Alloy 600 in high temperature water",
+      "volume": "98",
+      "author": "Han",
+      "year": "2015",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0135",
+      "doi-asserted-by": "crossref",
+      "first-page": "625",
+      "DOI": "10.1016/j.corsci.2016.09.002",
+      "article-title": "Effect of electropolishing on corrosion of nuclear grade 316L stainless steel in deaerated high temperature water",
+      "volume": "112",
+      "author": "Han",
+      "year": "2016",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0140",
+      "doi-asserted-by": "crossref",
+      "first-page": "447",
+      "DOI": "10.1016/S0010-938X(97)00158-3",
+      "article-title": "Composition, structure and properties of the oxide films formed on the stainless steel 316L in a primary type PWR environment",
+      "author": "da Cunha Belo",
+      "year": "1998",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0145",
+      "doi-asserted-by": "crossref",
+      "first-page": "975",
+      "DOI": "10.1080/18811248.2008.9711883",
+      "article-title": "Corrosion behavior of stainless steels in simulated PWR primary water-Effect of chromium content in Alloys and dissolved hydrogen",
+      "volume": "45",
+      "author": "Terachi",
+      "year": "2008",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0150",
+      "doi-asserted-by": "crossref",
+      "first-page": "2395",
+      "DOI": "10.1149/1.2086949",
+      "article-title": "Theory of steady-state passive films",
+      "volume": "137",
+      "author": "Macdonald",
+      "year": "1990",
+      "journal-title": "J. Electrochem. Soc."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0155",
+      "doi-asserted-by": "crossref",
+      "first-page": "113",
+      "DOI": "10.1016/0010-938X(87)90068-0",
+      "article-title": "The mechanism and kinetics of corrosion product release from stainless steel in lithiated high temperature water",
+      "volume": "27",
+      "author": "Lister",
+      "year": "1987",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0160",
+      "doi-asserted-by": "crossref",
+      "first-page": "609",
+      "DOI": "10.1016/0010-938X(91)90110-B",
+      "article-title": "The Composition and properties of oxide films on type 304 stainless steel on exposure to lithiated water at 100–350 °C",
+      "volume": "32",
+      "author": "Szklarska-Smialowska",
+      "year": "1991",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0165",
+      "doi-asserted-by": "crossref",
+      "first-page": "209",
+      "DOI": "10.1016/j.corsci.2011.12.007",
+      "article-title": "Effect of surface preparation on the corrosion of austenitic stainless steel 304L in high temperature steam and simulated PWR primary water",
+      "volume": "56",
+      "author": "Cissé",
+      "year": "2012",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0170",
+      "doi-asserted-by": "crossref",
+      "first-page": "1275",
+      "DOI": "10.1016/0010-938X(89)90120-0",
+      "article-title": "The mechanism of high temperature aqueous corrosion of steel",
+      "volume": "29",
+      "author": "Robertson",
+      "year": "1989",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0175",
+      "doi-asserted-by": "crossref",
+      "first-page": "443",
+      "DOI": "10.1016/0010-938X(91)90125-9",
+      "article-title": "The mechanism of high temperature aqueous corrosion of stainless steels",
+      "volume": "32",
+      "author": "Robertson",
+      "year": "1991",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0180",
+      "doi-asserted-by": "crossref",
+      "first-page": "337",
+      "DOI": "10.1016/S0010-938X(97)00140-6",
+      "article-title": "The mechanism of oxide film formation on austenitic stainless steels in high temperature water",
+      "volume": "40",
+      "author": "Stellwag",
+      "year": "1998",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0185",
+      "doi-asserted-by": "crossref",
+      "first-page": "989",
+      "DOI": "10.5006/1.3278237",
+      "article-title": "Corrosion of austenitic alloys in supercritical water",
+      "volume": "62",
+      "author": "Was",
+      "year": "2006",
+      "journal-title": "Corrosion"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0190",
+      "doi-asserted-by": "crossref",
+      "first-page": "78",
+      "DOI": "10.1016/j.corsci.2011.11.021",
+      "article-title": "The role of cold work and applied stress on surface oxidation of 304 stainless steel",
+      "volume": "56",
+      "author": "Lozano-Perez",
+      "year": "2012",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0195",
+      "doi-asserted-by": "crossref",
+      "first-page": "691",
+      "DOI": "10.1016/j.actamat.2006.09.001",
+      "article-title": "Microstructural characteristics of post-shear localization in cold-rolled 316L stainless steel",
+      "volume": "55",
+      "author": "Xue",
+      "year": "2007",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0200",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.corsci.2017.03.004",
+      "article-title": "Effects of electropolishing on corrosion and stress corrosion cracking of Alloy 182 in high temperature water",
+      "volume": "121",
+      "author": "Han",
+      "year": "2017",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0205",
+      "doi-asserted-by": "crossref",
+      "first-page": "55",
+      "DOI": "10.1016/j.actamat.2016.02.054",
+      "article-title": "An atom probe tomography study of internal oxidation processes in Alloy 600",
+      "volume": "109",
+      "author": "Langelier",
+      "year": "2016",
+      "journal-title": "Acta Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0210",
+      "doi-asserted-by": "crossref",
+      "first-page": "573",
+      "DOI": "10.1179/mht.2003.066",
+      "article-title": "TEM investigations of intergranular stress corrosion cracking in austenitic alloys in PWR environmental conditions",
+      "volume": "20",
+      "author": "Lozano-Perez",
+      "year": "2003",
+      "journal-title": "Mater. High. Temp."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0215",
+      "doi-asserted-by": "crossref",
+      "first-page": "172",
+      "DOI": "10.1016/j.corsci.2016.02.030",
+      "article-title": "Stress corrosion cracking in the heat affected zone of a stainless steel 308L-316L weld joint in primary water",
+      "volume": "107",
+      "author": "Dong",
+      "year": "2016",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0220",
+      "doi-asserted-by": "crossref",
+      "first-page": "225",
+      "DOI": "10.1016/j.corsci.2012.06.030",
+      "article-title": "Nanoscale characterisation of grain boundary oxidation in cold-worked stainless steels",
+      "volume": "63",
+      "author": "Kruska",
+      "year": "2012",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0225",
+      "doi-asserted-by": "crossref",
+      "first-page": "1237",
+      "DOI": "10.5006/2436",
+      "article-title": "Effect of the amount of cold work on corrosion of 304 nuclear grade stainless steel in high temperature water",
+      "volume": "73",
+      "author": "Deng",
+      "year": "2017",
+      "journal-title": "Corrosion"
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0230",
+      "doi-asserted-by": "crossref",
+      "first-page": "24",
+      "DOI": "10.1016/j.corsci.2015.09.001",
+      "article-title": "Corrosion of nickel-base alloys in primary medium of pressurized water reactors: new insights on the oxide growth mechanisms and kinetic modelling",
+      "volume": "102",
+      "author": "Marchetti",
+      "year": "2016",
+      "journal-title": "Corros. Sci."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0235",
+      "doi-asserted-by": "crossref",
+      "first-page": "44",
+      "DOI": "10.1016/S0022-3115(98)00010-5",
+      "article-title": "On the mechanism of radiation-induced segregation in austenitic Fe-Cr-Ni alloys",
+      "volume": "255",
+      "author": "Allen",
+      "year": "1998",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.corsci.2017.08.010_bib0240",
+      "doi-asserted-by": "crossref",
+      "first-page": "52",
+      "DOI": "10.1016/j.jnucmat.2005.07.006",
+      "article-title": "An ATEM study of oxidation behavior of SCC crack tips in 304L stainless steel in high temperature oxygenated water",
+      "volume": "347",
+      "author": "Lu",
+      "year": "2005",
+      "journal-title": "J. Nucl. Mater."
+    }
+  ],
+  "container-title": [
+    "Corrosion Science"
+  ],
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0010938X17307722?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0010938X17307722?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2019,
+        12,
+        3
+      ]
+    ],
+    "date-time": "2019-12-03T06:14:36Z",
+    "timestamp": 1575353676000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0010938X17307722"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2017,
+        10
+      ]
+    ]
+  },
+  "references-count": 48,
+  "alternative-id": [
+    "S0010938X17307722"
+  ],
+  "URL": "https://doi.org/10.1016/j.corsci.2017.08.010",
+  "relation": {},
+  "ISSN": [
+    "0010-938X"
+  ],
+  "issn-type": [
+    {
+      "value": "0010-938X",
+      "type": "print"
+    }
+  ],
+  "subject": [],
+  "published": {
+    "date-parts": [
+      [
+        2017,
+        10
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Effect of irradiation on corrosion of 304 nuclear grade stainless steel in simulated PWR primary water",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Corrosion Science",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.corsci.2017.08.010",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2017 Elsevier Ltd. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}

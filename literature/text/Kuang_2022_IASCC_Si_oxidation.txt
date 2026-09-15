@@ -1,0 +1,938 @@
+===== PDF PAGE 1 =====
+Corrosion Science 199 (2022) 110187
+Available online 19 February 2022
+0010-938X/© 2022 Elsevier Ltd. All rights reserved.
+A high-resolution characterization of irradiation-assisted stress corrosion 
+cracking of proton-irradiated 316L stainless steel in simulated pressurized 
+water reactor primary water 
+Wenjun Kuang a,*, Xingyu Feng a, Donghai Du b, Miao Song b,c, Mi Wang b,d, Gary S. Was b 
+a Center for Advancing Materials Performance from the Nanoscale (CAMP-Nano), State Key Laboratory for Mechanical Behavior of Materials, Xi’an Jiaotong University, 
+Xi’an 710049, PR China 
+b Department of Nuclear Engineering and Radiological Sciences, University of Michigan, Ann Arbor, MI 48109, USA 
+c School of Nuclear Science and Engineering, Shanghai Jiao Tong University, Shanghai 200240, PR China 
+d Studsvik Nuclear AB, SE 611-82 Nyk¨oping, Sweden   
+ARTICLE INFO  
+Keywords: 
+Stainless steel 
+STEM 
+Intergranular corrosion 
+Segregation 
+Stress corrosion 
+Reactor conditions 
+ABSTRACT  
+Irradiation-assisted stress corrosion cracks (IASCCs) from a proton-irradiated 316 L stainless steel (2.5 dpa) after 
+constant load test in simulated PWR primary water were analyzed. The irradiation damages are consistent with 
+those from neutron irradiations at similar dose. The IASCC cracks show microstructural and microchemical 
+features similar to those reported from neutron-irradiated samples, confirming that proton is effective in 
+emulating neutron for IASCC study. Si segregated at grain boundary gets oxidized preferentially beyond the crack 
+tip and then dissolves into solution, resulting in enhanced porosity within the intergranular oxide. The Si effect is 
+an important factor behind IASCC in reducing environment.   
+1. Introduction 
+Irradiation assisted stress corrosion cracking (IASCC) is a critical 
+mode of environmental degradation of in-core components in nuclear 
+power plants that greatly impacts their safety and economy [1,2]. A 
+prominent example of IASCC is the cracking of baffle/former bolts in 
+pressurized water reactors (PWRs) which has been systematically 
+investigated in many countries [3–6]. Clarifying the underlying mech-
+anism is imperative for mitigating IASCC. Despite extensive research 
+efforts, an understanding of IASCC still remains vague [1,7]. The main 
+reasons are: 1) multiple factors (e.g. radiolysis induced environmental 
+changes, radiation induced element segregation (RIS) at grain bound-
+aries, and localized deformation mode) are coupled in the processes of 
+IASCC and it is difficult to separate them out individually; 2) the limited 
+availability of neutron-irradiated materials for IASCC study along with 
+the added complications of handling the radioactive sample in the 
+laboratory. 
+Up to now, facilities for testing macro-scale neutron-radiated sam-
+ples exist only in a small number of labs and the research efforts have 
+been focused mainly on measuring the crack growth rate or crack 
+initiation threshold stress for IASCC [8–12]. Nevertheless, to gain a 
+deeper insight into the IASCC mechanism, it is of great importance to 
+examine the microstructure within the crack using modern analytical 
+instruments. Thomas et al. [13,14] examined the microstructural and 
+microchemical characteristics of IASCC cracks in stainless steel (SS) 
+in-core components extracted from a boiling water reactor (BWR) and 
+observed the following:  
+• a layer of epitaxial Cr-rich spinel oxide film along the crack wall  
+• Fe-rich coarse-grained spinel toward the crack center  
+• a segment of narrow Cr-rich spinel along the grain boundary beyond 
+the crack tip, and  
+• a highly Ni-enriched zone near the grain boundary ahead of the 
+intergranular oxide. 
+A study on cracks from a PWR baffle/former bolt by the same group 
+indicates similar structural and chemical features except that the spinel 
+oxide is mostly polycrystalline and porous with some shear bands 
+intersecting the crack wall [15]. Fukuya et al. [16] examined IASCC 
+crack tips in highly neutron-irradiated 316 SS after constant load tests in 
+both hydrogenated and oxygenated high temperature water environ-
+ments and found that there was no significant oxidation near the crack 
+* Corresponding author. 
+E-mail address: wjkuang66@gmail.com (W. Kuang).  
+Contents lists available at ScienceDirect 
+Corrosion Science 
+journal homepage: www.elsevier.com/locate/corsci 
+https://doi.org/10.1016/j.corsci.2022.110187 
+Received 8 December 2021; Received in revised form 30 January 2022; Accepted 17 February 2022   
+
+===== PDF PAGE 2 =====
+Corrosion Science 199 (2022) 110187
+2
+tips. More recently, Laurent et al. [17] investigated the microstructure of 
+IASCC crack tips from a PWR baffle former bolt with high-performance 
+transmission electron microscopes (TEMs) and found pronounced Ni 
+enrichment ahead of the crack tip in excess of the segregation due to RIS. 
+Moreover, they reported that Si was oxidized beyond the crack tip while 
+it was locally depleted along the grain boundary ahead of the oxide tip 
+and in the oxide within the crack center [17]. Although the investigation 
+into the microstructure of the IASCC crack from neutron-irradiated 
+samples helps to improve the understanding of IASCC, the available 
+data is still too limited to clarify the mechanism behind this complicated 
+issue. 
+Ion irradiation has been proposed to emulate neutron irradiation as it 
+can significantly reduce the time and cost of irradiation and subsequent 
+characterization. More importantly, many microstructure and property 
+features of neutron-irradiated samples can be successfully reproduced 
+with ion irradiation when the irradiation parameters are carefully 
+controlled [18–22]. Nevertheless, a major drawback of ion irradiation is 
+that the irradiation damage is only limited to a thin surface layer of 
+sample, posing challenges for assessing mechanical properties and 
+IASCC susceptibility of the irradiated material. For example, heavy ions 
+at 5 MeV only penetrate up to 2 µm in steels. Fortunately, protons can 
+generate much thicker irradiation damage zone (~20 µm at 2 MeV). 
+Given that SCC initiation occurs within one grain domain from the 
+sample surface, the acceleration effect of irradiation on this process can 
+be effectively captured on proton-irradiated samples. Hence, numerous 
+studies on IASCC have been performed with proton-irradiated samples 
+[23–27]. However, the microstructure and microchemistry character-
+ization of the IASCC cracks from proton-irradiated samples are sur-
+prisingly absent. Such analysis is of great importance because the 
+microstructural and microchemical features of IASCC cracks from 
+proton-irradiated samples should be compared with those in 
+neutron-irradiated samples to validate proton irradiation as a tool to 
+emulate neutron irradiation in IASCC study. Further, such 
+high-resolution analysis is critical for improving the understanding of 
+IASCC mechanism. 
+This work examines IASCC cracks from a proton-irradiated 316 L SS 
+after constant load test in simulated PWR primary water with the aid of 
+advanced analytical instruments. The acquired microstructural and 
+microchemical features near the crack tips were compared with those 
+from neutron-irradiated samples and the consistency between them was 
+evaluated. Thereafter, the insights into IASCC mechanism was 
+discussed. 
+2. Experimental 
+2.1. Material and sample preparation 
+The alloy used for the current study is a commercial 316 L SS (Heat 
+Fig. 1. (a) Inverse pole figure overlaid with grain boundaries from EBSD measurement (black-RHAB, green-twin boundary) of un-irradiated bulk sample, (b) phase 
+map overlaid with grain boundaries (red-austenite, blue-ferrite), (c) EDS line profile across a grain boundary (Mn, Si and P are displayed in red on the right axis) and 
+(d) the SRIM damage profile. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.) 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 3 =====
+Corrosion Science 199 (2022) 110187
+3
+857115) (10.11 wt.% Ni, 16.20% Cr, 2.06% Mo, 1.58% Mn, 0.37% Cu, 
+0.35% Si, 0.17% Co, 0.036% P, 0.017% Ta, 0.017% C, 0.001% S and 
+balance Fe), which was hot rolled and annealed above 1037 ºC. The 
+sample used for the crack initiation study is a tensile bar with a square 
+gauge section of 4 mm2, a gauge length of 21 mm, and threaded ends. 
+The tensile samples were machined with the tensile axis along the 
+rolling direction. After electrical discharge machining, the sample was 
+gradually mechanically polished with silicon carbide abrasive papers to 
+1200 grit, then electropolished in 10% perchloric acid in methanol so-
+lution at a temperature of   40 ºC. Electron backscatter diffraction 
+(EBSD) was performed on the gauge section of tensile bar in a TESCAN 
+MIRA3 FEG scanning electron microscope (SEM). The beam voltage and 
+scanning step size were set to 30 KV and 2 µm respectively. The grain 
+boundaries were also carefully examined to make sure they were not 
+preferentially attacked during electropolishing. 
+The proton irradiation experiment was conducted using a 3 MeV 
+Pelletron accelerator at the Michigan Ion Beam Laboratory (MIBL) at the 
+University of Michigan. The samples were irradiated with 2 MeV protons 
+at a damage rate around 1 × 10  5 dpa/s to a dose of 2.5 dpa at 360 ±
+10 ◦C. The damage was estimated using SRIM 2013 in the quick K-P 
+mode [28] with displacement energy of 40 eV for Fe, Cr, Ni, and 60 eV 
+for Mo. Only the central 10 mm of the gauge length was irradiated for 
+the tensile bar. Along with the tensile bars, some 21 mm-long square 
+bars were also irradiated for microstructure analysis. The micro Vickers 
+hardness was measured to increase from 201 to 386 kg/mm2 after 
+irradiation under a load of 25 g. 
+2.2. SCC initiation test 
+After proton irradiation, constant load experiment was performed in 
+a simulated PWR primary water at 320 ºC with 1000 ppm B as H3BO3, 2 
+ppm Li as LiOH, and 35 cc H2/kg H2O. A refreshed 4-L stainless steel 
+autoclave connected to a recirculation water loop was used in the irra-
+diated material testing lab (IMTL) at the University of Michigan. The 
+autoclave was refreshed approximately 3 times per hour. The sample 
+was loaded to 140 MPa using a servo installed below the autoclave. This 
+load is well below the irradiated yield strength (estimated to be ~700 
+MPa based on the measured change in hardness) to avoid any local 
+plastic deformation in the irradiated region. The test was stopped after 
+the sample had been constantly loaded for 4716 h. 
+2.3. Microstructure characterization 
+TEM specimens for post-irradiation analysis were extracted from the 
+bars by mechanical grinding, punching with a disc punch, and electro-
+polishing with a TenuPol-5 twinjet polisher. Before jet-polishing, the 
+flow rate was adjusted to ensure the solution from both sides were 
+balanced. The specimens were pre-polished to a thickness of ~20 µm on 
+the back side, and then polished from both sides until perforated. The 
+sample thinning was conducted to place the electron transparent region 
+of the sample at the relatively uniform damage region. Meanwhile, the 
+void size was checked against a cross-section sample to ensure that the 
+peak damage region was avoided. Post-irradiation characterization was 
+performed using a JEOL 3011 TEM operated at 300 kV. Voids were 
+Fig. 2. Microstructure and grain boundary segregation in 316 L SS irradiated with protons to 2.5 dpa at 360◦C. (a) Voids, (b) Frank loops, (c) Void size distribution, 
+(d) dislocation loop size distribution. 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 4 =====
+Corrosion Science 199 (2022) 110187
+4
+observed using through-focus bright-field imaging at a defocus value of 
+512 nm with an exposure time of 1 s. Frank loops were imaged using a 
+relrod technique. The exposure time was 4 s for dark-field imaging. Only 
+one quarter of the total loops was imaged at a time. More than 150 voids 
+or loops were measured. The standard deviations were reported as sta-
+tistic uncertainty for the size. The loop number density was multiplied 
+by a factor of 4 to account for those on other equivalent planes. The 
+electron energy loss spectroscopy (EELS) method was used for sample 
+thickness measurement. 
+In order to reveal the common microstructure features of IASCC, 
+both a deep crack and a shallow crack from the irradiated area were 
+sampled for analysis. The extent of cracking was estimated based on the 
+length and opening of crack from the sample surface. Cross sections of 
+the selected cracks were cut using focused ion beam (FIB) milling in a 
+FEI Helios 600 Nanolab according to the procedure described in a pre-
+vious work [29]. The misorientations of sampled grain boundaries were 
+measured using a Nordlys EBSD detector through transmission Kikuchi 
+diffraction (TKD) mode in the FIB system. The microstructures induced 
+by irradiation or corrosion were analyzed in a JEOL 2100F TEM using 
+bright field and dark field imaging methods. Additional characterization 
+was performed with a JEOL JEM-F200 (HR) scanning transmission 
+electron microscope (STEM) which is equipped with two 100 mm2 en-
+ergy dispersive spectroscopy (EDS) X-ray detectors, a secondary electron 
+(SE) detector and a high angle annular dark-field (HAADF) detector. EDS 
+mappings were acquired at 512 × 512 pixels with a acquisition time of 
+20 min. EDS line scans were conducted at a step size of 0.3 or 0.5 nm 
+depending on the line length. High-resolution bright field images were 
+taken in a FEI Talos F200X STEM under TEM mode. Fast Fourier 
+Transformation (FFT) was used to analyzed the high-resolution images. 
+3. Results 
+Fig. 1 shows the inverse pole figure and the phase map overlaid with 
+grain boundary network from the EBSD measurement on one un- 
+irradiated sample surface orthogonal to the irradiated one. The result 
+from the irradiated surface shows similar uniform and equiaxed grain 
+structure. The grain size is around 80 µm with the twin boundary 
+ignored. Some ferrite stringers were detected from the phase map 
+(Fig. 1b) which accounts for ~0.5% in area. Element segregation at 
+original grain boundary was analyzed. The EDS line profile across a 
+grain boundary shows that Cr, Mo and P are enriched while Fe and Ni are 
+depleted at the grain boundary (Fig. 1c). Mo is enriched up to 8 at% 
+which is well above the bulk level. There is no Si segregation at grain 
+boundary. From the SRIM damage profile (Fig. 1d), the proton damaged 
+depth is approximately 20 µm which is thick enough for study on IASCC 
+initiation and early-stage propagation. 
+Irradiation induced voids and Frank loops were characterized with 
+TEM, as shown in Fig. 2. Void was measured 6.0± 1.4 nm in diameter 
+with a number density of ~(5.9± 3.6)× 1021/m3, producing a void 
+swelling value of ~0.07%. The Frank loop size is 16.7± 8.2 nm, and the 
+number density is (5.6± 0.6) × 1022/m3, contributing to a dislocation 
+length density (the sum of all loop circumferences per volume) of 
+2.9× 1014/m2. The size distribution of voids and Frank loops are plotted 
+in Fig. 2c and d. 
+Multiple grain boundaries have been sampled from this material 
+after the corrosion test and only two representative cracks will be 
+Fig. 3. (a) Surface SEM image, (b) STEM-HAADF image of the cross section of crack A, (c) secondary-electron image of the crack tip and (d) the enlarged image from 
+the framed area in (b). The tensile direction is horizontal. 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 5 =====
+Corrosion Science 199 (2022) 110187
+5
+presented here. Fig. 3a and b show the surface SEM image and the STEM- 
+HAADF image of the cross section of crack A. The misorientation angle 
+of the grain boundary was measured to be 22.4º by TKD. To better 
+identify the crack tip, an image was taken using the SE detector in STEM 
+(as shown in Fig. 3c). The crack tip is marked at the end of hollow groove 
+along the grain boundary. The crack is around 3.3 µm deep and a 
+segment of intergranular oxide (~670 nm long) formed beyond the 
+crack tip. Both the sample surface and crack wall are fully covered by an 
+oxide layer (Fig. 3b). The oxide layer on the crack wall is almost uniform 
+except near the crack mouth. Beyond the oxide tip, there is a small grain 
+boundary migration zone (Fig. 3d), as have been reported in previous 
+work on alloy 690 [29–31]. The original grain boundary is denoted by a 
+broken red line and the current boundary is represented by a solid black 
+line. 
+The oxide layer was analyzed with TEM. Fig. 4a is a bright field 
+image taken from the crack mouth (circled area in Fig. 3b) and the inset 
+is the diffraction pattern taken from the circled area with the matrix 
+tilted to [110] zone axis. The pattern indicates that the oxide has a spinel 
+structure which is epitaxial with the matrix. The dark field image of the 
+oxide from the circled spot in the insert of Fig. 4a shows that both the 
+oxide layers on the sample surface and the crack wall are mainly 
+composed of spinel with uniform orientation (Fig. 4b). Under-focus 
+bright field imaging mode was used to characterize the distribution of 
+voids near the oxide/substrate interface. Some voids similar to those in 
+the substrate can be observed in the oxide after the consumption of 
+matrix (Fig. 4c). On the contrary, the dark field image of dislocation 
+loops indicates that they vanished in the oxide layer (Fig. 4d). 
+The crack tip area was further analyzed. The under-focus TEM bright 
+field image shows that voids cover both grains and the oxide layers along 
+the crack walls (Fig. 5a). The crack tip was marked based on the 
+secondary-electron image in Fig. 3c. It should be noted that there is a 
+porous interface within the intergranular oxide up to the oxide tip. The 
+porosity becomes less continuous toward the oxide tip. To check the 
+existence of dislocation channels, the in-focus bright field image was 
+taken near the crack tip. As shown in Fig. 5b, there is no sign of dislo-
+cation channel formation in both grains. The dark field image of dislo-
+cation loops in the lower right grain indicates that the distribution of 
+dislocation loops was not disturbed (Fig. 5c), further confirming that 
+dislocation channels have not formed yet. The high-resolution TEM 
+bright field image of the intergranular oxide (Fig. 5d) was taken with the 
+left grain titled to [100] zone axis. The lower right inset shows the po-
+sition of the imaged area (framed with a red box). FFT was performed 
+from the area framed with a dotted yellow box and shown in the upper 
+left corner. The oxide was confirmed to be spinel epitaxial with the 
+matrix. As the oxide maintains epitaxy with the matrix in both grains 
+along the boundary, the original grain boundary gradually evolves into 
+Fig. 4. (a) TEM bright field image of the mouth of crack A from circled area in Fig. 3b (the inset is the selected area electron diffraction pattern of the oxide combined 
+with matrix), (b) dark field image of the spinel oxide, (c) under-focus bright field image of the voids and (d) dark field image of the dislocation loops near the oxide/ 
+substrate interface. 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 6 =====
+Corrosion Science 199 (2022) 110187
+6
+an interface within the intergranular oxide. Such interface can be 
+roughly traced based on the change of lattice orientation of oxide which 
+is denoted by the yellow line in Fig. 5d. The oxide lattice near the 
+interface looks amorphous, indicating a highly-disordered structure. 
+Such amorphous oxide has also been observed in the grain boundary of 
+alloy 690 [29–31]. 
+The element distribution near the crack tip was characterized by 
+EDS. Fig. 6a shows the scanned area which covers the intergranular 
+oxide tip, the grain boundary migration zone and a segment of pristine 
+grain boundary. The pristine grain boundary is depleted in Fe, Cr and 
+Mn while enriched in Ni, Si and P (Fig. 6b-i). S was not counted here 
+because its content is very low and the signal peak overlaps with that of 
+Mo. The grain boundary migration zone contains even higher Ni content 
+(Fig. 6e) and shows depletion of Fe, Cr and Mn (Fig. 6c, d and g). The 
+enrichments of Si and P along the pristine grain boundary stop at the tip 
+of the migration zone (Fig. 6h and i). The intensities of Cr and Mo in the 
+oxide are equivalent to those in the matrix while Fe and Ni are depleted 
+in the oxide (Fig. 6c-f). Ni is slightly enriched at the interface between 
+oxide and matrix (Fig. 6e). Interestingly, Si is slightly enriched in the 
+center of oxide tip. The enrichment of Si is interrupted between the 
+oxide tip and the pristine grain boundary (Fig. 6h). To better reveal the 
+quantitative change of chemical composition, EDS line scans were per-
+formed across the intergranular oxide, the grain boundary migration 
+zone and the pristine grain boundary, as shown in Fig. 7a. Lines b and c 
+are across the intergranular oxide. The major metal elements in the 
+oxide are Fe and Cr (Fig. 7b and c). Fe, Ni and Mn contents significantly 
+decline as it moves from the matrix to oxide while Cr level remains quite 
+steady except that there is a trough near the original grain boundary. 
+The intergranular oxide tip follows the migrated grain boundary and is 
+slightly enriched in Cr, Si and P (Fig. 7d). The grain boundary migration 
+zone is highly enriched in Ni and depleted in Cr, Fe and Mn (Fig. 7d and 
+e). It should be noted that there is a slight enrichment of Si near the 
+original grain boundary while P mainly concentrates near the migrated 
+grain boundary (Fig. 7e). The pristine grain boundary shows typical RIS 
+features: Fe, Cr and Mn are depleted while Ni, Si and P are enriched 
+(Fig. 7f). Segregation of Mo at grain boundary prior to irradiation (as 
+shown in Fig. 1c) was almost eliminated while segregation of P was 
+further enhanced after irradiation (from 1% to 4%). Si and P contents 
+significantly drop as it moves from the pristine grain boundary to the 
+intergranular oxide. 
+Another sampled crack (crack B) is much shallower, as shown in 
+Fig. 8. Fig. 8a and b show the surface SEM image and the STEM-HAADF 
+image of cross section. TKD measurement shows that the misorientation 
+angle of this grain boundary is 16.3º which is a little above the limit for 
+low angle grain boundary. The crack tip was located in the EDS map of O 
+(Fig. 8c) which corresponds to the end of O depletion along the original 
+Fig. 5. (a) Under-focus, (b) in-focus TEM bright field images of the tip area of crack A, (c) dark field image of dislocation loops in the lower right grain and (d) high- 
+resolution TEM bright field image of intergranular oxide. (For interpretation of the references to colour in this figure, the reader is referred to the web version of 
+this article.) 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 7 =====
+Corrosion Science 199 (2022) 110187
+7
+grain boundary. The length of crack is 219 nm and the intergranular 
+oxide extends 386 nm further ahead of the crack tip. There is an oxide 
+nodule near the left crack wall (Fig. 8b) which has been occasionally 
+observed within the inner oxide layer. Fig. 8d shows the STEM-HAADF 
+image of the enlarged crack tip. The center of intergranular crack which 
+is along the original grain boundary appears darker, indicating that the 
+local mass density is lower. The matrix around the intergranular oxide is 
+dispersed with some scattering internal oxide. In contrast to crack A, 
+there is no apparent grain boundary migration zone ahead of the 
+intergranular oxide (Fig. 8d). 
+Under-focus TEM bright field image was taken to check the porosity 
+within the oxide. As shown in Fig. 9a, there is a porous interface within 
+the oxide along the original grain boundary. The enlarged image from 
+the framed area in Fig. 9a clearly shows that the porosity almost extends 
+Fig. 6. (a) STEM-HAADF image of the tip area of crack A and (b-i) corresponding EDS maps of O, Fe, Cr, Ni, Mo, Mn, Si and P.  
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 8 =====
+Corrosion Science 199 (2022) 110187
+8
+Fig. 7. (a) STEM-HAAF image of the tip of crack A and (b-f) EDS line profiles along the lines in (a). Mn, Si and P are displayed in red on the right axis. (For 
+interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.) 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 9 =====
+Corrosion Science 199 (2022) 110187
+9
+to the oxide tip (Fig. 9b). The voids in the matrix can be observed as well. 
+The selected area electron diffraction patterns taken from the circled 
+areas also confirm that the formed oxide has a spinel structure which is 
+epitaxial with the matrix (Fig. 9c and d). The dark field images (taken 
+using the circled dots in the diffraction patterns) show that the oxide 
+covers both the sample surface and the crack wall, as in crack A. High- 
+resolution TEM bright field images were taken from the intergranular 
+oxide and the oxide tip beyond crack B (as shown in Fig. 10). The imaged 
+areas are denoted in the inset in Fig. 10a. The upper right grain was 
+titled to [110] zone axis, as confirmed by the FFT inset in Fig. 10b (taken 
+from the area framed in a dotted yellow box). The spinel oxides maintain 
+epitaxy with the grain matrixes on both sides. From Fig. 10a, the 
+intergranular oxide right beyond the crack shows a highly-disordered 
+interface as observed in crack A (shown in Fig. 5d). In addition to 
+amorphization in oxide lattice near the interface, scattering bright spots 
+are also observed which indicate some degree of porosity in the inter-
+face. The interface in oxide tip also shows amorphous structure 
+(Fig. 10b), albeit with lower degree of porosity than the area right 
+beyond the crack tip. 
+EDS mapping was taken on the intergranular oxide, as shown in 
+Fig. 11. Similar to crack A, the pristine grain boundary is enriched in Ni, 
+Si, P while depleted in Cr, Fe and Mn. Nevertheless, the degree of 
+segregation is not as high as in crack A. There is no sign of grain 
+boundary migration zone ahead of the oxide tip although the local Ni is 
+more enriched than in the pristine grain boundary (Fig. 11e). There is a 
+transition zone between the oxide and matrix which is partially oxidized 
+and enriched in Ni. Interestingly, Si enrichment along the pristine grain 
+boundary was carried into a segment of intergranular oxide and grad-
+ually vanished as it moves outwards to the crack mouth (Fig. 11h). 
+Quantitative EDS line profiles were also measured as indicated in 
+Fig. 11a and shown in Fig. 12. Fe, Ni contents decrease drastically while 
+Cr content barely changes as it moves from the matrix to oxide (Fig. 12a- 
+b), consistent with the results from crack A (Fig. 7). It should be noted 
+that Ni in the transition zone between matrix and oxide can be enriched 
+above 20% (Fig. 12 b-d). Ni is also concentrated in the oxide tip with a 
+local content higher than that in the pristine grain boundary, showing an 
+M-shaped profile (Fig. 12d and f). Ni content in the oxide diminishes 
+rapidly as it moves outwards from the oxide tip (Fig. 12c and d). The 
+grain boundary immediately beyond the oxide tip is highly enriched in 
+Ni (Fig. 12e), with a content much higher than that in the pristine grain 
+boundary (47% vs 16%). In contrast, other elements decrease in content 
+compared with the pristine composition. The Si in the center of oxide tip 
+where the original grain boundary resides is even higher than that in the 
+pristine grain boundary (5% vs 3.8%) (Fig. 12d and f), while the 
+boundary just beyond the oxide tip shows a Si content as low as 2.3% 
+(Fig. 12e). The local Si peak decreases gradually from the oxide tip to the 
+crack mouth and the enrichment of Si almost disappears in Fig. 12a. P 
+content in the intergranular oxide is much lower than that in the pristine 
+grain boundary (Fig. 12d and f). It should be noted that the degree of RIS 
+in the pristine grain boundary (Fig. 12f) is lower than that from crack A 
+Fig. 8. (a) Surface SEM image, (b) STEM-HAADF image of the cross section of crack B, (c) EDS mapping of oxygen and (d) the enlarged image of crack tip.  
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 10 =====
+Corrosion Science 199 (2022) 110187
+10
+(Fig. 7f). 
+4. Discussion 
+The proton irradiation induced microstructure changes in this ma-
+terial will be firstly compared with those from neutron-irradiated ma-
+terials. Then the microstructural and microchemical features of both 
+cracks will be analyzed in reference with IASCC cracks from neutron- 
+irradiated stainless steels. Afterwards, the IASCC mechanism will be 
+discussed based on the results. 
+4.1. Irradiation damage 
+For neutron-irradiated samples (damage ranges from 6 to 25 dpa and 
+irradiation temperature ranges from 310 to 330◦C), the size and density 
+were reported to be 6.4–11.6 nm and 1.2–14.9× 1022/m3 for Frank 
+loops respectively, and 2–6 nm and 2–30.9× 1021/m3 for voids [17]. 
+The stainless steel in this work was irradiated to 2.5 dpa at 360◦C. The 
+Frank loop is 16.7± 8.2 nm in size with a number density of (5.6± 0.6) 
+× 1022/m3 and the void is 6.0± 1.4 nm in size with a number density of 
+(5.9± 3.6)× 1021/m3. Thus, the major microstructure features induced 
+by proton irradiation in this sample are quantitatively consistent with 
+those measured from neutron-irradiated stainless steels in PWR 
+conditions. The RIS at grain boundary (Fig. 7f) is also very comparable 
+with that measured from neutron-irradiated samples [17,32,33]. It 
+should be noted that Mo depletion, which is normally detected at the 
+grain boundary in neutron-irradiated samples [17,32,33], is not found 
+in this sample (Fig. 7f). That is probably because Mo was enriched at the 
+grain boundaries prior to proton irradiation (Fig. 1c). Although P seg-
+regates in the un-irradiated grain boundary as well, it is enriched even 
+more after irradiation. Overall, proton irradiation conducted in this 
+work yields comparable microstructure damage with neutron 
+irradiation. 
+4.2. Crack microstructure analysis 
+Grain boundary A has a higher misorientation angle than grain 
+boundary B (22.4º vs 16.3º). So grain boundary A is a random high angle 
+boundary while grain boundary B has a misorientation angle that is very 
+close to the limit for low angle grain boundary. The difference in 
+misorientation angle may result in notable difference in cracking pro-
+pensity and microstructure between these two cracks. From Fig. 12f, 
+grain boundary B shows a lower degree of RIS than grain boundary A 
+(Fig. 7f). It has been reported that low angle grain boundary is more 
+resistant to RIS than random high angle grain boundary and the resis-
+tance decreases with increasing misorientation angle [34,35]. In 
+Fig. 9. (a) Under-focus TEM bright field image of the cross section of crack B, (b) enlarged image from the framed area in (a) and (c, d) dark field images of the oxide 
+(the insets are the selected area electron diffraction patterns of the oxide combined with matrix). 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 11 =====
+Corrosion Science 199 (2022) 110187
+11
+addition, there is a small grain boundary migration zone beyond the 
+oxide tip in crack A (Fig. 3) while no migration zone was observed in 
+crack B (Fig. 8). The intergranular oxide tip follows the migrated grain 
+boundary in crack A (Fig. 3d) while it forms along the original grain 
+boundary in crack B (Fig. 8d). Crack A is much deeper than crack B and 
+the thickness of oxide layer along the flanks of crack A is more uniform 
+than that of crack B, suggesting that the variation in the exposure time of 
+the flank along the crack depth is smaller for crack A. Thus, it is believed 
+that crack A was growing faster than crack B when the test was stopped. 
+Although there is notable difference in cracking propensity between 
+these two cracks, they still share some common microstructure features. 
+4.2.1. Crack flank 
+Both cracks contain a single layer of epitaxial spinel oxide along the 
+crack walls which extends all the way to the oxide tip (Figs. 4, 5, 9 and 
+10). The spinel oxide contains large fractions of Fe and Cr and a small 
+amount of Ni (Figs. 7b and c, 12a-c). The study on the IASCC crack of 
+baffle former bolt reveals that magnetite forms in the crack center which 
+is also a type of spinel and contains large amounts of Fe and Cr [17]. The 
+earlier work by Thomas et al. also suggests Cr-Fe spinel forms next to 
+metal substrate in IASCC crack of PWR baffle bolt [15]. Concentrated Ni 
+near the oxide/metal interface is evident in crack B (Figs. 11 and 12) and 
+has also been observed by Legras et al. [17]. Such Ni enrichment is 
+insignificant in crack A (Fig. 6) probably because this crack was still 
+actively growing and the exposure time was not long enough to develop 
+such feature near the crack tip. Interestingly, Thomas et al. also found 
+that epitaxial Cr-Fe spinel forms along the crack wall up to crack tip in 
+boiling water reactor (BWR) service components and Ni enrichment 
+exists near the oxide/metal interface [13,14]. Such similarity suggests 
+that the local environment condition within the crack may not differ too 
+much between these two types of water chemistry. 
+Thomas et al. [15] reported that the crack flanks were intersected by 
+shear bands from the matrix and proposed a discontinuous cracking 
+mode. However, there is no shear band or dislocation channel in either 
+the cracks presented here (Figs. 5 and 9) or in the work of Legras et al. 
+[17]. Thus, the generation of such localized deformation zone should be 
+related to the stress state and the deformability of material, but is not 
+essential to the occurrence of IASCC. 
+4.2.2. Crack tip 
+Grain boundary migration was detected in grain boundary A but not 
+in boundary B, which is attributed to the difference in grain boundary 
+structure. Grain boundary migration beyond the oxide tip in IASCC 
+crack of PWR baffle bolt was not evident in the previous works [15]. 
+Actually it is challenging to confirm grain boundary migration when the 
+migration zone is very narrow. In the work of Legras et al. [17], the Ni 
+enrichment zone beyond the oxide shows a tapered shape which sug-
+gests that grain boundary migration probably has occurred. Grain 
+boundary migration has also been observed in some but not all IASCC 
+cracks of 304 SS from BWR component [13]. For un-irradiated materials 
+tested in PWR primary water, grain boundary migration was barely 
+observed in the SCC cracks of stainless steel [36] but can be easily 
+detected in alloy 600 [37] and alloy 690 [30,31]. Also, the susceptibility 
+to migration is closely related to the grain boundary structure [29]. 
+Therefore, whether the grain boundary migrates depends on the 
+boundary structure and the alloy composition. Grain boundary migra-
+tion may be promoted by irradiation due to enhanced diffusion of solute 
+atoms, but it is not a prerequisite for the occurrence of SCC. For grain 
+boundary A, the migration zone is highly enriched in Ni and depleted in 
+Fe, Cr and Mn (Fig. 6). Si and P concentrate in either the original 
+boundary or the migrated grain boundary with contents lower than 
+those in the pristine boundary (Fig. 7e). As for grain boundary B, a 
+segment of boundary just beyond the oxide has higher Ni content and 
+lower contents of Fe, Cr, Si and P (Fig. 12e) compared with the pristine 
+boundary. Therefore, regardless of the occurrence of grain boundary 
+migration, the region just ahead of the oxide tip contains more Ni and 
+less other elements than the as-irradiated grain boundary, which is 
+consistent with the previous analytical results of IASCC cracks from 
+either PWR or BWR components [13–15,17]. That is probably due to the 
+combined effects of Ni expulsion from oxidation [38–40] and prefer-
+ential outward diffusion of Fe, Cr, Si and P which are prone to either 
+oxidation or dissolution. 
+Whether the grain boundary migrates affects the composition of 
+oxide tip to some extent. For grain boundary A, although Si is enriched 
+at the oxide tip (Fig. 7d and c), the maximum Si concentration in the 
+oxide is lower than that in the pristine boundary. As to grain boundary B, 
+Fig. 10. High-resolution TEM bright field images of (a) the intergranular oxide 
+and (b) the oxide tip beyond crack B. The inset in (a) shows the imaged areas 
+and that in (b) is the FFT of upper right grain with oxide. (For interpretation of 
+the references to colour in this figure, the reader is referred to the web version 
+of this article.) 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 12 =====
+Corrosion Science 199 (2022) 110187
+12
+Si is also enriched in the oxide tip and to a level higher than that in the 
+pristine boundary (Fig. 12d). The enrichment of Si in the oxide tip re-
+sults from the preferential outward diffusion of Si along grain boundary 
+as mentioned above. Si would be gathered at the oxide tip to a level 
+higher than the original concentration if it were not lost elsewhere, as in 
+grain boundary B. For grain boundary A, as some of the Si was locked in 
+the original grain boundary during the migration (Fig. 7e), Si that finally 
+accumulates in the oxide tip is less than that caused by RIS. In addition, 
+the oxide tip formed along the migrated boundary is slightly enriched in 
+Cr but depleted in Ni (Fig. 7d). In contrast, no Cr enrichment but Ni 
+enrichment was observed in the oxide tip of grain boundary B (Fig. 12d). 
+Grain boundary migration results from outward diffusion of Cr and Fe 
+and the migration zone can be thought as a sink for superfluous Ni. As 
+grain boundary B didn’t migrate, the superfluous Ni would accumulate 
+in the grain boundary. The accumulated Ni inevitably enters into the 
+oxide at the initial stage of oxidation and then gradually gets expelled to 
+Fig. 11. (a) STEM-HAADF image of the tip area of crack B and (b-i) corresponding EDS maps of O, Fe, Cr, Ni, Mo, Mn, Si and P.  
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 13 =====
+Corrosion Science 199 (2022) 110187
+13
+Fig. 12. EDS line profiles along the corresponding lines in Fig. 11a. Mn, Si and P are displayed in red on the right axis. (For interpretation of the references to colour 
+in this figure legend, the reader is referred to the web version of this article.) 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 14 =====
+Corrosion Science 199 (2022) 110187
+14
+the neighboring matrixes and also the grain boundary ahead. That is 
+why there is a trough in the Ni profile near the center of intergranular 
+oxide (Fig. 12d) and the area surrounding the oxide is enriched in Ni 
+(Fig. 11e). 
+4.3. Insights into IASCC mechanism 
+The microstructures of IASCC crack of stainless steel revealed in this 
+work are summarized in Fig. 13. Spinel oxide layer epitaxial with the 
+matrix covers both the sample surface and crack flank and extends 
+beyond the crack tip. A layer of Ni-enriched transition zone forms be-
+tween oxide and matrix. Radiation-induced voids may be retained in the 
+oxide layer. Si diffuses out preferentially along grain boundary and 
+concentrates in the oxide tip temporarily. Then the oxidized Si gradually 
+dissolves into solution and leads to a porous interface within the oxide 
+beyond crack tip. The boundary zone right beyond the oxide tip contains 
+higher concentration of Ni and lower contents of other elements 
+compared to the pristine grain boundary. 
+Although there are some variations in microstructure between these 
+two cracks due to the difference in grain boundary structure, the main 
+features of the sampled cracks are similar to those from neutron- 
+irradiated samples, further confirming the validity of using proton 
+irradiation for IASCC study. Irrespective of the length of crack, inter-
+granular oxidation always extends beyond the crack tip, suggesting that 
+grain boundary oxidation is an inevitable precursor of IASCC, as in the 
+case of SCC of Fe-Cr-Ni alloys [30,36,37]. The strength of grain 
+boundary decreases as intergranular oxide forms and the oxidized grain 
+boundary fractures when its strength drops below the applied stress. 
+However, Fukuya et al. reported that there is no significant oxidation 
+near the crack tip of highly irradiated (38 dpa) stainless steel [41]. 
+Nishioka et al. also found that intergranular cracking could occur on 
+highly irradiated (35 dpa) stainless steel in inert environment [42]. So it 
+seems that intergranular cracking without oxidation only applies to the 
+highly irradiated stainless steel. While for structural materials used in 
+the reactor core of nuclear plants, it normally takes many years to 
+accumulate a high dose during which intergranular oxidation and IASCC 
+can occur. 
+Intergranular oxidation is closely linked to the element segregation 
+at grain boundary. Si has the highest affinity for oxygen among the el-
+ements segregated at the grain boundary. Thus, Si is consumed fast near 
+the oxidation front and chemical gradient develops along the grain 
+boundary. The chemical gradient drives Si preferentially diffuses to the 
+oxide front and gets oxidized. That is why Si is enriched in the 
+intergranular oxide tip and depleted in the grain boundary immediately 
+beyond the oxide tip (Figs. 7 and 12). As pointed out in the previous 
+works [12,43,44], Si containing oxide is not stable in high temperature 
+water and is subject to dissolution, which explains the depletion of Si in 
+the oxide behind the oxide tip (Figs. 7b and 12a). The depletion of Si in 
+oxide formed in high temperature water has also been found on Si 
+containing model alloys [45] and additively manufactured stainless 
+steel with Si-rich oxide inclusions [46]. Consistently, the preferential 
+oxidation of Si at the grain boundary and subsequent dissolution of 
+oxidized Si have been revealed in oxidized grain boundaries from 
+proton-irradiated stainless steel [47] and in IASCC cracks from baffle 
+former bolts as well [17]. P shows similar trend as Si except that it is not 
+accumulated in the oxide tip (Fig. 12d), indicating that P dissolves 
+directly into solution during intergranular oxidation. As P does not 
+participate in the oxidation, it would not degrade the property of oxide 
+and affect the cracking susceptibility. In addition, it has been reported 
+that doping with P did not promote the intergranular cracking of model 
+stainless steel in simulated PWR primary water [48]. Thus, the disso-
+lution of oxidized Si probably leads to porosity observed in the center of 
+intergranular oxide (Figs. 5a, 9b and 10a), which can accelerate the 
+diffusion of oxidant and significantly reduce the strength of grain 
+boundary, thus increasing the propensity to grain boundary fracture and 
+the susceptibility to SCC. Consistently, the crack growth rate tests 
+indicate that elevated Si (either added in bulk or adjusted by 
+post-irradiation annealing) can significantly promote the crack growth 
+rate of stainless steel in hydrogenated water [12,48,49]. It has also been 
+reported that the length of intergranular oxide increases with increasing 
+irradiation dose for both proton and neutron irradiated stainless steels in 
+simulated PWR water [50–52], and Deng et al. linked the accelerated 
+oxidation rate with the irradiation-induced Cr depletion at grain 
+boundary [50,52]. Such conclusion needs to be further confirmed as the 
+influence of the grain boundary structure was not considered. In this 
+work, the Cr in intergranular oxide tip is not depleted due to the outward 
+diffusion of Cr. Cr is even enriched at the oxide tip in crack A (Fig. 7d). 
+Our recent finding reveals that the oxide along irradiated grain bound-
+ary even contains higher Cr content than its counterpart in un-irradiated 
+region in spite of irradiation-induced Cr depletion [53]. In addition, 
+previous works suggest that the change of SCC susceptibility of stainless 
+steel in simulated PWR water does not correlate with Cr depletion at 
+grain boundary [54,55]. Thus, it is believed that the segregation of Si is a 
+more important element of IASCC mechanism for stainless steel in 
+simulated PWR primary water. 
+Fig. 13. Schematic of IASCC crack from proton-irradiated 316 L stainless steel tested in simulated PWR primary water.  
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 15 =====
+Corrosion Science 199 (2022) 110187
+15
+5. Conclusions 
+This work studied the microstructural and microchemical features of 
+IASCC cracks from a proton-irradiated 316 L SS (2.5 dpa) after constant 
+load crack initiation test in simulated PWR primary water. The conclu-
+sions are summarized as follows: 
+1. The irradiation damage induced by proton irradiation (void, dislo-
+cation loop and RIS) are qualitatively and quantitatively consistent 
+with those from neutron-irradiated samples at similar doses.  
+2. The IASCC cracks studied in this work show microstructural and 
+microchemical features similar to those reported from neutron- 
+irradiated samples: the crack flank is covered with an epitaxial 
+layer of Cr-Fe spinel oxide which extends to the crack tip; the 
+intergranular oxide tip is enriched in Si and the boundary just 
+beyond the oxide is further enriched in Ni and leaner in other ele-
+ments compared to the as-irradiated grain boundary.  
+3. Cracking was shown to initiate in the oxide of a grain boundary after 
+intergranular oxidation, after which the crack progressed down the 
+grain boundary. Grain boundary oxidation is a necessary precursor of 
+IASCC for stainless steel irradiated to low doses while grain boundary 
+migration is not essential to the occurrence of IASCC.  
+4. Si segregated at grain boundary tends to diffuse out and get oxidized 
+preferentially during intergranular oxidation. The oxidize Si tends to 
+dissolve into solution, leading to a porous interface along the center 
+of intergranular oxide. The Si effect is likely a key element of IASCC 
+mechanism for stainless steel in PWR primary water. 
+CRediT authorship contribution statement 
+Wenjun Kuang: Conceptualization, Data curation, Funding acqui-
+sition, Investigation, Methodology, Project administration, Supervision, 
+Writing – review & editinn; Xingyu Feng: Data curation, Investigation, 
+Methodology, Visualization; Donghai Du: Methodology, Data curation; 
+Miao Song: Methodology, Data curation; Mi Wang: Methodology, Data 
+curation; Gary S. Was: Funding acquisition, Investigation, Project 
+administration, Draft reviewing. 
+Declaration of Competing Interest 
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper. 
+Acknowledgements 
+The authors gratefully acknowledge the financial support of National 
+Natural Science Foundation of China (No. 51971172) and the Young 
+Talent Support Plan of Xi’an Jiaotong University. The authors thank Dr. 
+Chao Li at Instrument Analysis Center of Xi’an Jiaotong University for 
+his assistance with STEM and EDS analysis. 
+References 
+[1] G. Was, Y. Ashida, P. Andresen, Irradiation-assisted stress corrosion cracking, 
+Corros. Rev. 29 (2011) 7–49, https://doi.org/10.1515/corrrev.2011.020. 
+[2] A. Hojn´a, Irradiation-assisted stress corrosion cracking and impact on life 
+extension, Corrosion 69 (2013) 964–974, https://doi.org/10.5006/0803. 
+[3] P.M. Scott, M.-C. Meunier, D. Deydier, S. Silvestre, A. Trenty, An analysis of baffle/ 
+former bolt cracking in French PWRs, in: Environmentally Assisted Cracking: 
+Predictive Methods for Risk Assessment and Evaluation of Materials, Equipment, 
+and Structures, ASTM 1401, American Society for Testing and Materials, West 
+Conshohocken, PA, 2000. 
+[4] M.R. Ickes, J. McKinley, J.-K. Lee, J.M. Smith, A.M. Ruminski, M.A. Burke, 
+Irradiation-assisted stress corrosion cracking of Type 347 and Type 316 steels 
+irradiated in commercial pressurized water reactors, J. Nucl. Mater. 536 (2020), 
+152182, https://doi.org/10.1016/j.jnucmat.2020.152182. 
+[5] R. Ge´rard, F.d.r. Somville, Situation of the baffle-former bolts in Belgian units, in: 
+17th International Conference on Nuclear Engineering, (2009). 
+[6] R.-W. Bosch, W. Van Renterghem, S. Van Dyck, R. Chaouadi, R. G´erard, 
+F. Somville, Microstructure, mechanical properties and IASCC susceptibility of 
+stainless steel baffle bolts after 30 years of operation in a PWR, J. Nucl. Mater. 543 
+(2021), 152615, https://doi.org/10.1016/j.jnucmat.2020.152615. 
+[7] K. Fukuya, Current understanding of radiation-induced degradation in light water 
+reactor structural materials, J. Nucl. Sci. Technol. 50 (2013) 213–254, https://doi. 
+org/10.1080/00223131.2013.772448. 
+[8] O.K. Chopra, A.S. Rao, A review of irradiation effects on LWR core internal 
+materials – IASCC susceptibility and crack growth rates of austenitic stainless 
+steels, J. Nucl. Mater. 409 (2011) 235–256, https://doi.org/10.1016/j. 
+jnucmat.2010.12.001. 
+[9] R.W. Bosch, M. Vankeerberghen, R. G´erard, F. Somville, Crack initiation testing of 
+thimble tube material under PWR conditions to determine a stress threshold for 
+IASCC, J. Nucl. Mater. 461 (2015) 112–121, https://doi.org/10.1016/j. 
+jnucmat.2015.02.038. 
+[10] T.M. Karlsen, P. Bennett, N.W. Høgberg, In-core crack growth rate studies on 
+irradiated austenitic stainless steels in BWR and PWR conditions in the Halden 
+Reactor, in: Proceedings of the 12th International Conference on Environmental 
+Degradation of Materials in Nuclear Power System, (2005). 
+[11] J. Anders, BWR vessels and internals project, crack growth in high fluence BWR 
+materials-phase 1: crack growth rate testing of types 304L and 316L at doses 
+ranging from 3.5 to 13 dpa. EPRI, Palo Alto, CA: 2009, 1019079, (2009). 
+[12] W. Kuang, J. Hesterberg, G.S. Was, The effect of post-irradiation annealing on the 
+stress corrosion crack growth rate of neutron-irradiated 304L stainless steel in 
+boiling water reactor environment, Corros. Sci. 161 (2019), 108183, https://doi. 
+org/10.1016/j.corsci.2019.108183. 
+[13] L.E. Thomas, S.M. Bruemmer, Microstructural and microchemical characterization 
+of intergranular stress corrosion cracks in irradiated type 304SS removed from a 
+BWR top guide, in: Proceedings of the 11th Int. Conf. on Environmental 
+Degradation of Materials in Nuclear Power Systems, Stevenson, WA, (2003). 
+[14] L.E. Thomas, D. Edwards, K. Asano, S. Ooki, S. Bruemmer, Crack-tip characteristics 
+in BWR service components, in: Proceedings of the 13th International Conference 
+on Environmental Degradation of Materials in Nuclear Power Systems, Whistler, 
+British Columbia, (2007). 
+[15] L.E. Thomas, S. Bruemmer, L. Greenwood, F. Garner, B. Oliver, Crack-tip 
+characteristics in BWR service components, in Analytical Transmission Electron 
+Microscopy (ATEM) Characterization of Stress-Corrosion Cracks in LWR-Irradiated 
+Austenitic Stainless Steel Core Components—Revision 22006, EPRI: Palo Alto, CA. 
+[16] K. Fukuya, H. Nishioka, K. Fujii, Characterization of IASCC crack tip in highly 
+irradiated stainless steels, in: Proceedings of the 14th Int. Conf. on Environmental 
+Degradation of Materials in Nuclear Power Systems, Virginia Beach, VA, (2009). 
+[17] L. Legras, B. Marylou, F. Elodie, C. Priscille, M. Remi, M. Salem, T. Jinane, R. 
+Menand, TEM investigations of the microstructure and oxides at the tip of 
+intergranular cracks of a baffle former bolt irradiated up to 10 dpa, in: 
+FONTEVRAUD 9, Avignon, France, (2018). 
+[18] G.S. Was, Z. Jiao, E. Getto, K. Sun, A.M. Monterrosa, S.A. Maloy, O. Anderoglu, B. 
+H. Sencer, M. Hackett, Emulation of reactor irradiation damage using ion beams, 
+Scr. Mater. 88 (2014) 33–36, https://doi.org/10.1016/j.scriptamat.2014.06.003. 
+[19] G.S. Was, Challenges to the use of ion irradiation for emulating reactor irradiation, 
+J. Mater. Res. 30 (2015) 1158–1182, https://doi.org/10.1557/jmr.2015.73. 
+[20] G.S. Was, J.T. Busby, T. Allen, E.A. Kenik, A. Jensson, S.M. Bruemmer, J. Gan, A. 
+D. Edwards, P.M. Scott, P.L. Andreson, Emulation of neutron irradiation effects 
+with protons: validation of principle, J. Nucl. Mater. 300 (2002) 198–216, https:// 
+doi.org/10.1016/S0022-3115(01)00751-6. 
+[21] J.C. Haley, S. de Moraes Shubeita, P. Wady, A.J. London, G.R. Odette, S. Lozano- 
+Perez, S.G. Roberts, Microstructural examination of neutron, proton and self-ion 
+irradiation damage in a model Fe9Cr alloy, J. Nucl. Mater. 533 (2020), 152130, 
+https://doi.org/10.1016/j.jnucmat.2020.152130. 
+[22] S.J. Zinkle, L.L. Snead, Opportunities and limitations for ion beams in radiation 
+effects studies: bridging critical gaps between charged particle and neutron 
+irradiations, Scr. Mater. 143 (2018) 154–160, https://doi.org/10.1016/j. 
+scriptamat.2017.06.041. 
+[23] J.T. Busby, G.S. Was, E.A. Kenik, Isolating the effect of radiation-induced 
+segregation in irradiation-assisted stress corrosion cracking of austenitic stainless 
+steels, J. Nucl. Mater. 302 (2002) 20–40, https://doi.org/10.1016/S0022-3115 
+(02)00719-5. 
+[24] Z. Jiao, G.S. Was, Localized deformation and IASCC initiation in austenitic stainless 
+steels, J. Nucl. Mater. 382 (2008) 203–209, https://doi.org/10.1016/j. 
+jnucmat.2008.08.032. 
+[25] D.C. Johnson, B. Kuhr, D. Farkas, G.S. Was, Quantitative linkage between the stress 
+at dislocation channel – grain boundary interaction sites and irradiation assisted 
+stress corrosion crack initiation, Acta Mater. 170 (2019) 166–175, https://doi.org/ 
+10.1016/j.actamat.2019.02.032. 
+[26] M. Wang, M. Song, C.R. Lear, G.S. Was, Irradiation assisted stress corrosion 
+cracking of commercial and advanced alloys for light water reactor core internals, 
+J. Nucl. Mater. 515 (2019) 52–70, https://doi.org/10.1016/j. 
+jnucmat.2018.12.015. 
+[27] P. Deng, Q. Peng, E.-H. Han, W. Ke, C. Sun, Proton irradiation assisted localized 
+corrosion and stress corrosion cracking in 304 nuclear grade stainless steel in 
+simulated primary PWR water, J. Mater. Sci. Technol. 65 (2021) 61–71, https:// 
+doi.org/10.1016/j.jmst.2020.04.068. 
+[28] R.E. Stoller, M.B. Toloczko, G.S. Was, A.G. Certain, S. Dwaraknath, F.A. Garner, On 
+the use of SRIM for computing radiation damage exposure, Nucl. Instrum. Methods 
+B 310 (2013) 75–80, https://doi.org/10.1016/j.nimb.2013.05.008. 
+[29] W. Kuang, G.S. Was, The effect of grain boundary structure on the intergranular 
+degradation behavior of solution annealed alloy 690 in high temperature, 
+W. Kuang et al.                                                                                                                                                                                                                                 
+
+===== PDF PAGE 16 =====
+Corrosion Science 199 (2022) 110187
+16
+hydrogenated water, Acta Mater. 182 (2020) 120–130, https://doi.org/10.1016/j. 
+actamat.2019.10.041. 
+[30] W. Kuang, M. Song, G.S. Was, Insights into the stress corrosion cracking of solution 
+annealed alloy 690 in simulated pressurized water reactor primary water under 
+dynamic straining, Acta Mater. 151 (2018) 321–333, https://doi.org/10.1016/j. 
+actamat.2018.04.002. 
+[31] W. Kuang, G.S. Was, A high-resolution characterization of the initiation of stress 
+corrosion crack in Alloy 690 in simulated pressurized water reactor primary water, 
+Corros. Sci. 163 (2020), 108243, https://doi.org/10.1016/j.corsci.2019.108243. 
+[32] D. Edwards, E. Simonen, S. Bruemmer, Radiation-induced segregation behavior in 
+austenitic stainless steels: fast reactor versus light water reactor irradiations, in: 
+Proceedings of the 13th International Conference on Environmental Degradation of 
+Materials in Nuclear Power Systems, Whistler, British Columbia, (2007). 
+[33] M. Song, K.G. Field, R.M. Cox, G.S. Was, Microstructural characterization of cold- 
+worked 316 stainless steel flux thimble tubes irradiated up to 100 dpa in a 
+commercial Pressurized Water Reactor, J. Nucl. Mater. 541 (2020), 152400, 
+https://doi.org/10.1016/j.jnucmat.2020.152400. 
+[34] T.S. Duh, J.J. Kai, F.R. Chen, Effects of grain boundary misorientation on solute 
+segregation in thermally sensitized and proton-irradiated 304 stainless steel, 
+J. Nucl. Mater. 283–287 (2000) 198–204, https://doi.org/10.1016/S0022-3115 
+(00)00255-5. 
+[35] S. Watanabe, Y. Takamatsu, N. Sakaguchi, H. Takahashi, Sink effect of grain 
+boundary on radiation-induced segregation in austenitic stainless steel, J. Nucl. 
+Mater. 283–287 (2000) 152–156, https://doi.org/10.1016/S0022-3115(00) 
+00204-X. 
+[36] M. Meisnar, A. Vilalta-Clemente, M. Moody, K. Arioka, S. Lozano-Perez, 
+A mechanistic study of the temperature dependence of the stress corrosion crack 
+growth rate in SUS316 stainless steels exposed to PWR primary water, Acta Mater. 
+114 (2016) 15–24, https://doi.org/10.1016/j.actamat.2016.05.010. 
+[37] Z. Shen, M. Meisnar, K. Arioka, S. Lozano-Perez, Mechanistic understanding of the 
+temperature dependence of crack growth rate in alloy 600 and 316 stainless steel 
+through high-resolution characterization, Acta Mater. 165 (2019) 73–86, https:// 
+doi.org/10.1016/j.actamat.2018.11.039. 
+[38] K. Kruska, S. Lozano-Perez, D.W. Saxey, T. Terachi, T. Yamada, G.D.W. Smith, 
+Nanoscale characterisation of grain boundary oxidation in cold-worked stainless 
+steels, Corros. Sci. 63 (2012) 225–233, https://doi.org/10.1016/j. 
+corsci.2012.06.030. 
+[39] B. Langelier, S.Y. Persaud, R.C. Newman, G.A. Botton, An atom probe tomography 
+study of internal oxidation processes in Alloy 600, Acta Mater. 109 (2016) 55–68, 
+https://doi.org/10.1016/j.actamat.2016.02.054. 
+[40] Z. Shen, D. Du, L. Zhang, S. Lozano-Perez, An insight into PWR primary water SCC 
+mechanisms by comparing surface and crack oxidation, Corros. Sci. 148 (2019) 
+213–227, https://doi.org/10.1016/j.corsci.2018.12.020. 
+[41] K. Fukuya, H. Nishioka, K. Fujii, Characterization of IASCC crack tip in highly 
+irradiated stainless steel, in: Proceedings of the 14th international conference on 
+environmental degradation of materials in nuclear power systems, Virginia Beach, 
+VA, (2009). 
+[42] H. Nishioka, K. Fukuya, K. Fujji, Y. Kitsunai, Deformation structure in highly 
+irradiated stainless steels, J. Nucl. Sci. Technol. 45 (2008) 274–287, https://doi. 
+org/10.3327/jnst.45.274. 
+[43] P.J. Doyle, S.S. Raiman, R. Rebak, K.A. Terrani, Characterization of the 
+Hydrothermal corrosion behavior of ceramics for accident tolerant fuel cladding, 
+in: Proceedings of the 18th international conference on environmental degradation 
+of materials in nuclear power systems-water reactors, Portland, OR, USA, (2017). 
+[44] K.A. Terrani, Y. Yang, Y.J. Kim, R. Rebak, H.M. Meyer, T.J. Gerczak, Hydrothermal 
+corrosion of SiC in LWR coolant environments in the absence of irradiation, 
+J. Nucl. Mater. 465 (2015) 488–498, https://doi.org/10.1016/j. 
+jnucmat.2015.06.019. 
+[45] G. Han, Z. Lu, X. Ru, J. Chen, J. Zhang, T. Shoji, Properties of oxide films formed on 
+316L SS and model alloys with modified Ni, Cr and Si contents in high temperature 
+water, Corros. Sci. 106 (2016) 157–171, https://doi.org/10.1016/j. 
+corsci.2016.02.001. 
+[46] X. Lou, P.L. Andresen, R.B. Rebak, Oxide inclusions in laser additive manufactured 
+stainless steel and their effects on impact toughness and stress corrosion cracking 
+behavior, J. Nucl. Mater. 499 (2018) 182–190, https://doi.org/10.1016/j. 
+jnucmat.2017.11.036. 
+[47] M. Boisson, L. Legras, E. Andrieu, L. Laffont, Role of irradiation and irradiation 
+defects on the oxidation first stages of a 316L austenitic stainless steel, Corros. Sci. 
+161 (2019), 108194, https://doi.org/10.1016/j.corsci.2019.108194. 
+[48] G.F. Li, Y. Kaneshima, T. Shoji, Effects of impurities on environmentally assisted 
+crack growth of solution-annealed austenitic steels in primary water at 325◦C, 
+Corrosion 56 (2000) 460–469, https://doi.org/10.5006/1.3280550. 
+[49] P.L. Andresen, M.M. Morra, Effects of Si on SCC of irradiated and unirradiated 
+stainless steels and nickel alloys, in: Proceedings of the 12th International 
+Conference on Environmental Degradation of Materials in Nuclear Power System, 
+(2005). 
+[50] P. Deng, Q. Peng, E.-H. Han, W. Ke, C. Sun, Z. Jiao, Effect of irradiation on 
+corrosion of 304 nuclear grade stainless steel in simulated PWR primary water, 
+Corros. Sci. 127 (2017) 91–100, https://doi.org/10.1016/j.corsci.2017.08.010. 
+[51] T. Fukumura, K. Fukuya, K. Fujii, T. Miura, Y. Kitsunai, Grain boundary oxidation 
+of neutron irradiated stainless steels in simulated PWR water, in: Proceedings of 
+the 18th international conference on environmental degradation of materials in 
+nuclear power systems-water reactors, Portland, OR, USA, (2017). 
+[52] P. Deng, Q. Peng, E.-H. Han, Grain boundary oxidation of proton-irradiated nuclear 
+grade stainless steel in simulated primary water of pressurized water reactor, Sci. 
+Rep. 11 (2021) 1371, https://doi.org/10.1038/s41598-020-80600-x. 
+[53] S. Wang, X. Feng, M. Song, G. Was, W. Kuang, Determining the role of proton 
+irradiation in the intergranular oxidation of 316L stainless steel in simulated PWR 
+primary water, to be submitted. 
+[54] K. Arioka, T. Yamada, T. Terachi, G. Chiba, Influence of carbide precipitation and 
+rolling direction on intergranular stress corrosion cracking of austenitic stainless 
+steels in hydrogenated high-temperature water, Corrosion 62 (2006) 568–575, 
+https://doi.org/10.5006/1.3280670. 
+[55] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, Y. Kitsunai, Separation of 
+microstructural and microchemical effects in irradiation assisted stress corrosion 
+cracking using post-irradiation annealing, J. Nucl. Sci. Technol. 41 (2004) 
+1218–1227, https://doi.org/10.1080/18811248.2004.9726351. 
+W. Kuang et al.                                                                                                                                                                                                                                 

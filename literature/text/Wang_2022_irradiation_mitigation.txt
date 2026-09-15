@@ -1,0 +1,1020 @@
+===== PDF PAGE 1 =====
+Acta Materialia 241 (2022) 118408 
+Contents lists available at ScienceDirect 
+Acta Materialia 
+journal homepage: www.elsevier.com/locate/actamat 
+Full length article 
+Clarifying the mitigation effect of proton irradiation on the 
+intergranular oxidation of 316L stainless steel in high temperature 
+water 
+Shengkai Wang a , Shihao Zhang a , Jiayu Xie a , Xingyu Feng a , Miao Song b , Gary S. Was c , 
+Wenjun Kuang a , ∗
+a Center for Advancing Materials Performance from the Nanoscale (CAMP-Nano), State Key Laboratory for Mechanical Behavior of Materials, Xi’an Jiaotong 
+University, Xi’an 710049, PR China. 
+b School of Nuclear Science and Engineering, Shanghai Jiao Tong University, Shanghai 200240, PR China 
+c Department of Nuclear Engineering and Radiological Sciences, University of Michigan, Ann Arbor, MI 48109, USA 
+a r t i c l e i n f o 
+Article history: 
+Received 17 June 2022 
+Revised 24 August 2022 
+Accepted 29 September 2022 
+Available online 1 October 2022 
+Keywords: 
+Stainless steel 
+Radiation-induced segregation 
+Intergranular oxidation 
+Si-enriched oxide 
+Scanning transmission electron microscopy 
+a b s t r a c t 
+The role of proton irradiation in the intergranular oxidation of 316L stainless steel after long-term immer- 
+sion in simulated PWR primary water was clariﬁed by comparing the microstructural and microchemical 
+features of oxide between the irradiated grain boundary (GB) and its un-irradiated counterpart. As such, 
+the interference from difference in GB structure can be ruled out. Surprisingly, the results reveal that the 
+intergranular oxide penetration in the irradiated region is shallower than that in the un-irradiated region. 
+It is found that Si segregated at the irradiated GB diffuses outwards preferentially and gets oxidized due 
+to its high diffusivity and aﬃnity to oxygen. The Si-enriched oxide in the intergranular oxide tip of ir- 
+radiated GB can act as a temporary diffusion barrier for oxygen, although it tends to dissolve near the 
+sample surface. Meanwhile, the eﬃciency of elements (especially Cr) transport along irradiated GB to the 
+oxidation front is promoted mainly due to the vacancies created by preferential diffusion of Si, resulting 
+in higher Cr content at the intergranular oxide tip. The combination of Si and Cr enrichments in the in- 
+tergranular oxide tip can enhance the resistance to oxidation and eventually leads to a lower oxidation 
+rate for the irradiated GB. For the ﬁrst time, our study determines that irradiation can enhance the in- 
+tergranular oxidation resistance of stainless steel after long-term immersion in simulated PWR primary 
+water when the sample is not stressed. 
+©2 0 2 2 Acta Materialia Inc. Published by Elsevier Ltd. All rights reserved. 
+1. Introduction 
+Austenitic stainless steels have been widely used as core in- 
+ternals in light water reactors (LWRs) due to the high resistance 
+to corrosion and excellent mechanical properties. However, the 
+stainless steels were found to be susceptible to irradiation-assisted 
+stress corrosion cracking (IASCC), which is a major failure mode 
+for reactor internal components [ 1–5 ]. IASCC is an environmental 
+degradation mode under the synergistic action of radiation dam- 
+age, mechanical stress, and corrosive environment [ 1 , 5–7 ]. Under- 
+standing IASCC is challenging as multiple factors are involved. Irra- 
+diation accelerates stress corrosion cracking (SCC) as it aggravates 
+the corrosiveness of the environment (e.g., water radiolysis), and 
+changes the mechanical properties and corrosion resistance of a 
+material by inducing displacement damage (e.g., dislocation loops, 
+∗ Corresponding author. 
+E-mail address: wjkuang66@gmail.com (W. Kuang) . 
+voids et al.) and elemental segregation (i.e., radiation-induced seg- 
+regation (RIS) and precipitations). Radiolysis of water causes an in- 
+crease in corrosion potential due to the formation of oxidizing ra- 
+diolysis products such as H 2 O 2 [ 8 , 9 ]. The increase in corrosion po- 
+tential leads to the dissolution of Cr-enriched inner oxides layer on 
+stainless steel in high temperature water [ 10–12 ]. The defect clus- 
+ters induced by irradiation result in localized heterogeneous defor- 
+mation in the form of dislocation channels (DCs). The DCs cause 
+stress accumulation at grain boundaries (GBs) and further result in 
+a degradation of protective oxide ﬁlm [ 13–15 ]. However, the role 
+of RIS in corrosion and SCC has not been well understood yet. It 
+should be pointed out that although some works show that highly- 
+irradiated stainless steel is susceptible to intergranular cracking 
+under mechanical loading in an inert environment [ 6 , 16 ], corrosion 
+is still an essential element for the occurrence of IASCC in most 
+cases [ 17 , 18 ]. Actually, the formation of oxide ﬁlm has been well 
+recognized as a crucial precursor in the process of SCC based on 
+the internal oxidation and slip-dissolution/oxidation mechanisms 
+https://doi.org/10.1016/j.actamat.2022.118408 
+1359-6454/© 2022 Acta Materialia Inc. Published by Elsevier Ltd. All rights reserved. 
+
+===== PDF PAGE 2 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+[ 19–22 ]. More importantly, recent results suggest that intergran- 
+ular oxidation is a crucial precursor for SCC initiation and prop- 
+agation of the austenitic stainless steels [ 4 , 23 , 24 ] and nickel base 
+alloys [ 25–27 ] in high temperature water. Therefore, intergranular 
+oxidation of irradiated stainless steels in LWRs is a vital step in 
+IASCC. Determining the role of RIS in intergranular oxidation be- 
+havior would be critical in understanding IASCC. 
+Currently, studies on the inﬂuences of radiation damage on the 
+corrosion behavior of stainless steel are still very limited. In the 
+case of the general corrosion behavior of irradiated stainless steel, 
+researchers have not yet reached a consensus on the role of ra- 
+diation damage [ 28–31 ]. As to intergranular oxidation, the most 
+relevant radiation damage is RIS which refers to radiation-induced 
+microchemical segregation on GB, such as depletion of Cr, Fe, Mo 
+and enrichment of Si, Ni, P [ 32 , 33 ]. Deng et al. [28] studied the 
+intergranular oxidation behavior of high angle grain boundaries 
+(HAGBs) from the solution annealed (SA), 0.5 and 3 dpa proton- 
+irradiated specimens in simulated pressurized water reactor (PWR) 
+primary water environment with an exposure period of 500 h and 
+found that the degree of oxidation increases with increasing radia- 
+tion dose due to the enhanced RIS. Fukumura et al. [34] also found 
+the GB oxidation depth of neutron-irradiated stainless steels, after 
+service in a PWR water environment with an immersion time of 
+1149 h, increased with increasing dose (3 dpa, 19 dpa and 73 dpa). 
+Boisson et al. [29] performed an exposure experiment for 24 h on 
+1.5 dpa proton-irradiated stainless steel in simulated PWR primary 
+water and pointed out that the intergranular oxide penetration is 
+deeper in the irradiated area (141 ± 2 nm) than in the unirradiated 
+area (42 ± 2 nm). These studies appear to support that irradiation 
+promotes intergranular oxidation due to the radiation-induced Cr 
+depletion at GB. It seems reasonable that lower Cr content at GB 
+would lead to lower corrosion resistance and thus higher suscepti- 
+bility to SCC. However, the previous work suggests that Cr deple- 
+tion at GB does not promote SCC in non-irradiated stainless steels 
+in PWR primary water [32] . Other microchemical features induced 
+by irradiation may also play a critical role in the resistance to inter- 
+granular oxidation of irradiated stainless steel and should be paid 
+more attention. More importantly, in the previous study of inter- 
+granular oxidation behavior, the differences in GB structure that 
+would result in different resistances to RIS [ 35 , 36 ] and intergranu- 
+lar corrosion [37] have not been accounted for, making it impossi- 
+ble to single out the effect of irradiation. 
+This study aims to determine the effects of the radiation- 
+induced microchemical changes at GB on the intergranular oxida- 
+tion behavior of stainless steel after long-term immersion in sim- 
+ulated PWR primary water. Proton irradiation, which can pene- 
+trate deep enough for studying the intergranular oxidation behav- 
+ior, will be used as an effective and economic surrogate to sim- 
+ulate the reactor irradiation [38] . The proton-irradiated and non- 
+irradiated regions of the same random high angle grain boundaries 
+(RHABs) were sampled from the cross-section of irradiated surface 
+for microstructure analysis after the exposure test. This enables di- 
+rect comparative studies of the intergranular oxidation behavior 
+between the irradiated and non-irradiated regions of a single GB. 
+The interference due to the difference in GB structure can be elim- 
+inated, which is necessary for singling out the effect of irradiation 
+on intergranular oxidation. In addition, the intergranular oxidation 
+depths were measured on the cross-sections of both irradiated and 
+unirradiated regions to obtain results with statistical signiﬁcance. 
+2. Experimental 
+2.1. Material 
+The material used in this study is a solution-annealed (SA) 
+316L stainless steel with a chemical composition listed in Table 1 . 
+Fig. 1. Damage proﬁle for 316L stainless steels irradiated with 2.0 MeV protons as 
+calculated by SRIM 2013 computer code. A: Uniform damage region (UDR); B: Dam- 
+age peak region (DPR); C: Non-irradiated region (NIR). 
+Square bars with a dimension of 10 mm × 2 mm × 2 mm were 
+machined by electrical discharge machining (EDM). The samples 
+were mechanically ground with SiC papers up to 20 0 0 grit and 
+electropolished for 20 s in a solution consisting of 10% perchloric 
+acid and 90% alcohol at -40 °C. 
+2.2. Proton irradiation 
+The samples were irradiated using 2 MeV protons at a damage 
+rate around 1 × 10 −5 dpa/s at 360 ± 10 °C with a 3 MeV Na- 
+tional Electronics Corporation Pelletron accelerator at the Michigan 
+Ion Beam Laboratory (MIBL) at University of Michigan. The SRIM 
+2013 [39] calculation was adopted with quick Kinchin–Pease op- 
+tion using a displacement energy of 40 eV, and the depth damage 
+proﬁle is given in Fig. 1 . About half of the sample surface area was 
+directly irradiated. The damage layer is about 20 μm thick with 
+nearly 10 μm thick uniformly-damaged region (UDR) which has a 
+damage dose of about 2.5 dpa. The proton irradiation procedures 
+were described in more detail elsewhere [40] . 
+2.3. Exposure test 
+The cross-section of proton-irradiated 316L stainless steel bar 
+was polished for exposure test. During polishing, the irradiated 
+sample was mounted next to another stainless steel square bar to 
+avoid deformation and rounded corners near the edge of cross- 
+section. The sample was wet ground with SiC papers up to 30 0 0 
+grit, polished with 1.5 μm, 0.5 μm diamond polishing pastes, 
+and ﬁnally vibration-polished with 60 nm colloidal silica polish- 
+ing suspension (3 h) to remove the deformed surface layer. Before 
+the exposure, an FEI Helios Nanolab 600 system equipped with 
+a Nordlys electron back scattering diffraction (EBSD) detector was 
+used to characterize the GB network across the irradiated and non- 
+irradiated regions on the cross section. The EBSD mapping was ob- 
+tained at a step size of 2 μm with a voltage of 25 kV and a probe 
+current of 5.5 nA. The exposure test was performed in a refreshed 
+3.6 L autoclave made of 316 stainless steel at a ﬂow rate of 12 L/h 
+in the laboratory of Xi’an Jiao tong University. The sample was ex- 
+posed to 320 °C, 150 bar high-purity water containing 2.7 ppm H 2 
+(30 cc H 2 /kg H 2 O) for 10 0 0 h. Conductivity and dissolved oxygen 
+(DO) of both inlet and outlet water were continuously monitored 
+with Mettler Toledo sensors during the test. 
+2.4. Analysis of intergranular oxidation 
+After the exposure test, the sample was removed from the auto- 
+clave for further characterization. Only three straight RHABs span- 
+2 
+
+===== PDF PAGE 3 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Table 1 
+Chemical composition of the 316L stainless steels. 
+Element Cr Ni Mo Mn Si Co Ta S P Cu C Fe 
+wt.% 16.20 10.11 2.06 1.58 0.35 0.17 0.017 0.001 0.036 0.37 0.017 Bal. 
+Table 2 
+Details about the appropriate three RHABs. 
+GB 
+GB Plane indices Euler angles: <ϕ1 , /Phi1, ϕ2 > in ( °) 
+MA ∗ in ( °) Grain 1 Grain 2 Grain 1 Grain 2 
+GB A GB A1 (-1 -3 1) ∼3.21 ° (0 4 -3) ∼1.05 ° (278.8;34.8;11.0) (45.9;24.4;53.2) 49.9 
+GB A2 (-1 -3 1) ∼2.94 ° (0 4 -3) ∼1.22 °
+GB B GB B1 (0 -8 5) ∼2.62 ° (-2 2 -1) ∼1.85 ° (214.0;51.1;43.4) (358.6;27.1;31.2) 34.9 
+GB B2 (0 -8 5) ∼2.82 ° (-2 2 -1) ∼1.39 °
+GB C GB C1 (-6 7 -5) ∼1.40 ° (1 6 -7) ∼3.07 ° (16.2;47.8;61.3) (49.1;38.7;80.6) 49.6 
+GB C2 (-6 7 -5) ∼1.02 ° (1 6 -7) ∼2.97 °
+∗ MA represents misoriention angle. 
+Fig. 2. Schematic of GB A1 and GB A2 lamellae extraction on the cross section of the irradiated surface. 
+ning both the irradiated and un-irradiated regions were used for 
+this study and were named GB A , GB B and GB C , respectively. A 
+novel approach was developed in our previous work to determine 
+the GB plane index of a site-speciﬁc GB by measuring the Euler 
+angles <ϕ 1 , /Phi1, ϕ 2 > and GB trace angles [41] . The details of these 
+RHABs are summarized in Table 2 . Six site-speciﬁc transmission 
+electron microscopy (TEM) lamellae ( ∼90 nm thick, polished with 
+5 kV and 46 pA Ga + ions) were prepared in a FEI Helios Nanolab 
+600 Dual Beam focused ion beam (FIB) according to a procedure 
+used before [42] . For each GB, two TEM lamellae were extracted 
+(one from the UDR and the other from non-irradiated region (NIR)) 
+and were designated as GB X1 and GB X2 (X is A, B or C), respec- 
+tively. Fig. 2 shows the schematic of GB A1 and GB A2 lamellae ex- 
+traction on the cross section of the irradiated surface. The trace of 
+sampled GB is fairly straight, indicating that the indexes of coupled 
+GB planes should be nearly constant along the trace. Microstruc- 
+ture analyses were conducted in a JEOL 2100F TEM under bright 
+ﬁeld imaging mode along with selected area electron diffraction 
+(SAED) at 200 kV. High-angle annular dark-ﬁeld (HAADF) images 
+were obtained under scanning TEM (STEM) mode in a JEOL JEM- 
+F200(HR) microscope. The oxide appears darker than the matrix 
+in HAADF images due to its lower average atomic number. The 
+STEM-HAADF images were used to measure the depth of inter- 
+granular oxidation with the aid of Image J software. The depths 
+of intergranular oxidation of GB A , GB B , and GB C were marked on 
+the STEM-HAADF images, as shown in Fig. 3 . Moreover, elemen- 
+tal distribution was studied using two 100 mm 2 energy dispersive 
+spectroscopy (EDS) detectors equipped in the JEOL JEM-F200(HR). 
+Before the STEM-EDS measurement, the GB was tilted to edge on 
+position to minimize the broadening of the grain boundary. Both 
+STEM-EDS mapping (image resolution: 512 × 512 pixel, dwell time: 
+between 0.5 and 2 ms) and line scanning (step size: between 0.5 
+and 1 nm, probe size: 5) were conducted to analyze the micro- 
+chemical features of the intergranular oxide and grain boundary 
+region. It should be noted that the counts of identiﬁed elements 
+were used for EDS mapping. 
+2.5. Measurement of intergranular oxidation depths from cross 
+section 
+To measure the intergranular oxidation depths from irradiated 
+and unirradiated regions, the corrosion bar was cross sectioned. 
+The oxidized bar was Ni plated to protect the oxide ﬁlms. Then 
+they were mounted using conductive hot mounting, progressively 
+ground using SiC papers, and then polished using diamond paste 
+and polishing suspension to remove the deformation layer. The 
+cross-section sample was examined across both the irradiated and 
+unirradiated regions using a FEI Verios 460 in back-scattered elec- 
+3 
+
+===== PDF PAGE 4 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 3. Characterization of intergranular oxide penetration. (a–c) EBSD band contrast maps show the schematic of GB A , GB B and GB C lamellae extraction on the cross section 
+of the irradiated surface, respectively. (d–f) STEM-HAADF images indicate the intergranular oxidation depths of GB A1 , GB B1 and GB C1 respectively, which were extricated from 
+UDR. (g–i) STEM-HAADF images indicate the intergranular oxidation depths of GB A2 , GB B2 and GB C2 respectively, which were extracted from NIR. 
+tron (BSE) mode. The beam voltage and probe current size were set 
+to 5 kV and 0.4 nA. It is easy to identify the irradiated and non- 
+irradiated regions as the damage peak region (DPR) can be readily 
+identiﬁed in back-scattered electron (BSE) mode. A total of 50 GBs 
+and 38 GBs were measured in the irradiated and unirradiated re- 
+gions, respectively. The means and standard deviations of the mean 
+were calculated to determine if the intergranular oxidation depths 
+are statistically different between irradiated and unirradiated re- 
+gions. 
+3. Results 
+Fig. 3 shows the traces of sampled GBs on the cross section of 
+the irradiated surface and the STEM-HAADF images of the cross 
+sections of GB A , GB B and GB C . The traces of these three RHABs on 
+the orthogonal surfaces are fairly straight, indicating the GB struc- 
+ture should be nearly constant along the traces. The sample sur- 
+faces, which were speciﬁed as outer oxide layer/inner oxide layer 
+interface, were marked on the STEM-HAADF images by straight 
+yellow dashed lines. The depths of intergranular oxidation of GB A1 , 
+GB B1 and GB C1 , which were extracted from UDR, were marked on 
+Fig. 3 d–f, respectively. Meanwhile, the depths of intergranular ox- 
+idation of GB A2 , GB B2 and GB C2 , which were extracted from NIR, 
+were marked on Fig. 3 g–i. Quite unexpectedly, the intergranular 
+oxide from UDR is consistently shallower than that from NIR for 
+each GB. The GB plane indices of GB A , GB B and GB C were marked 
+on the inverse pole ﬁgure (IPF) and the corresponding misorienta- 
+tion angles were also denoted on the IPF ( Fig. 4 a). The depth of ox- 
+idation penetration corresponds to the length of intergranular ox- 
+ide. Thus, the oxide tip was deﬁned as the point where the oxygen 
+signal decreases signiﬁcantly in the EDS mapping. The EDS map- 
+ping of the enlarged intergranular oxide tip was used to conﬁrm 
+the intergranular oxide tip. Fig. 4 b summarizes the depths of inter- 
+granular oxidation of these three RHABs. The average intergranular 
+oxide depth of the three GBs in UDR is 477 ± 45 nm while that in 
+NIR is 599 ± 22 nm. In term of percentage, the difference in depths 
+of intergranular oxidation between UDR and NIR ranges from 17% 
+to 35%, which is consistently signiﬁcant. This conclusion would be 
+compromised by the fact that there is variation in the oxidation 
+depth along a single GB [43] . In order to estimate such variation, 
+two TEM lamellae, which were several microns apart on one GB 
+from irradiated region, were extracted. The results show that the 
+intergranular oxidation depths of these two samples are almost 
+identical (608 nm vs. 612 nm). It appears that the intergranular ox- 
+idation depth is quite constant when the GB structure is ﬁxed. To 
+be more statistically signiﬁcant, measurement of intergranular oxi- 
+dation depths from cross section was conducted to further conﬁrm 
+the difference in intergranular oxidation depth between UDR and 
+NIR. The results of this measurement will be shown later. The mi- 
+crochemical and microstructural characterizations of GB A , GB B and 
+GB C were conducted and the results show very consistent features. 
+Only the results from GB A were presented here. 
+Fig. 5 shows the TEM bright ﬁeld images (under-focus mode) of 
+GB A1 and GB A2 , respectively. The straight yellow dashed lines mark 
+the sample surface, and the solid yellow arrows point to pristine 
+GB A . Radiation-induced voids were observed in the matrix on both 
+4 
+
+===== PDF PAGE 5 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 4. (a) GB plane indices of GB A , GB B and GB C were marked on the inverse pole ﬁgure (IPF) and the corresponding misoriention angles were also denoted on the IPF. (b) 
+Depths of intergranular oxide in UDR and NIR of GB A , GB B and GB C . (GB plane indices are represented by solid circle and each GB plane pairs belonging to the same GB are 
+connected by solid lines). 
+Fig. 5. Under-focused bright ﬁeld TEM images of the sampled (a) GB A1 and (b) GB A2 from UDR and NIR, respectively, (c) SAED pattern of intergranular oxide of GB A1 and 
+matrix, (d) SAED pattern of intergranular oxide of GB A2 and matrix. 
+sides of GB A1 (as marked in Fig. 5 a), while none was observed in 
+the matrix surrounding GB A2 . Corresponding SAED patterns on the 
+GBs were taken to verify that they have the same GB structure. 
+As shown in the insets in Fig. 5 a and b, the SAED patterns taken 
+from the circled areas show the same diffraction patterns. Consis- 
+tently, the indices of coupled GB planes for GB A1 were calculated 
+to be (-1 -3 1) ∼3.21 ° and (0 4 -3) ∼1.05 ° and those of GB A2 were (-1 - 
+3 1) ∼2.94 ° and (0 4 -3) ∼1.22 °, as listed in Table 2 . The above results 
+conﬁrm that GB A1 and GB A2 have almost the same GB structure. 
+Fig. 5 c and d show the SAED patterns of intergranular oxide com- 
+bined with matrix from the two samples. The SAED patterns reveal 
+that the intergranular oxide has a spinel structure that is epitaxial 
+with the matrix, and the structure of intergranular oxide was not 
+changed by proton irradiation. Such intergranular oxide structure is 
+similar to that of neutron-irradiated 316L stainless steel tested in 
+simulated PWR primary environment [44] . It should be noted that 
+porous interfaces within the intergranular oxide near the sample 
+surface were observed along original GB both in UDR and NIR. 
+Fig. 6 a and b show the STEM-HAADF images and EDS mappings 
+of GB A1 and GB A2 . From the HAADF images shown in Fig. 6 a and b, 
+the oxide ﬁlms consist of large outer oxide particles and an inner 
+continuous oxide layer in both UDR and NIR. As shown in Fig. 6 , 
+for both UDR and NIR, the intensities of Fe and Ni in the inner 
+continuous oxide layer are lower than those in the matrix while 
+Cr almost maintains similar intensity from matrix to inner oxide. 
+As such, the relative content of Cr ([Cr]/([Fe] + [Cr] + [Ni])) in the in- 
+ner continuous oxide layer in both UDR and NIR should be much 
+larger than that in the matrix. Thus, the inner continuous oxide 
+5 
+
+===== PDF PAGE 6 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 6. STEM-HAADF images with EDS mappings of (a) GB A1 and (b) GB A2 from UDR and NIR, respectively. 
+layer is enriched in Cr. Interestingly, the inner oxide on UDR is 
+more uniform and thinner with a relatively even Ni-enriched tran- 
+sition zone beneath the oxide, as compared to that on NIR. The in- 
+tergranular oxides in both regions are clearly tapered. The depth of 
+intergranular oxide along GB A1 is around 427 nm, while that along 
+GB A2 is around 575 nm. A difference in the element composition of 
+the intergranular oxide is noticeable between these two samples. 
+The oxide along GB A1 is more enriched in Cr in spite of radiation- 
+induced Cr depletion beyond the oxide. More interestingly, Si seg- 
+regates at the intergranular oxide tip of GB A1 , and the degree of 
+enrichment gradually vanishes when approaching the sample sur- 
+face, suggesting that silicon in oxide near the sample surface was 
+preferentially dissolved into high temperature water. Beyond the 
+intergranular oxide, Si depletion is observed along a GB segment 
+( ∼250 nm long) in GB A1, although Si was originally enriched due to 
+RIS. Meanwhile, Ni is further enriched in addition to RIS while Fe is 
+depleted. In contrast, GB A2 only shows Fe depletion and Ni enrich- 
+ment beyond the oxide tip. Such chemical segregation results from 
+oxidation and is termed as oxidation affected zone (OAZ) hereafter. 
+It should be noted that the length of OAZ beyond the intergran- 
+ular oxide along GB A1 is larger than that along GB A2 (250 nm vs. 
+94 nm). Beyond the OAZ segment, element segregation due to irra- 
+diation is clearly visible along GB A1, which is not observed at GB A2 . 
+The pristine segment of GB A1 is enriched in Ni, Si while depleted 
+in Cr and Mn from the EDS mapping ( Fig. 6 a). 
+In fact, the irradiation effect on intergranular oxidation is not 
+only reﬂected by the variation in oxidation depth, but also more 
+fundamentally by the striking difference in features of intergran- 
+ular oxide tip and OAZ. To further reveal the differences in mi- 
+crochemistry between GB A1 and GB A2 , the intergranular oxide tips 
+were analyzed with STEM-EDS at higher magniﬁcation, as shown 
+in Figs. 7 and 8 . Some EDS line proﬁles were taken as indicated in 
+Figs. 7 a and 8 a. The intergranular oxide tips of GB A1 and GB A2 are 
+all enriched in Cr while depleted in Fe and Ni ( Figs. 7 a and 8 a). 
+Most of the intergranular oxides of GB A1 and GB A2 are depleted 
+in Mn except that in the oxide tips ( Figs. 7 b–d and 8b and c), in- 
+dicating that Mn has mostly dissolved into water. Moreover, a re- 
+markable Si enrichment was observed in the intergranular oxide 
+tip of GB A1, while none was found in the intergranular oxide tip 
+of GB A2 ( Figs. 7 a and d and 8a and c). As for the Cr content in 
+the intergranular oxide, it is higher in GB A1 than in GB A2 (28.0 at.% 
+vs. 20.2 at.%) ( Figs. 7 a and d and 8a and c). In addition, the com- 
+position proﬁles of Cr across the intergranular oxide of GB A1 and 
+GB A2 show an “M” shape and an inverted “V” shape ( Figs. 7 c and 
+8 c), respectively. The results from GB B and GB C also show similar 
+features. 
+6 
+
+===== PDF PAGE 7 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 7. (a) STEM-HAADF image and EDS mappings of the enlarged intergranular oxide tip of GB A1 (shown in Fig. 4 a with red dotted line) in UDR and (b–g) EDS line proﬁles 
+along the lines in (a). 
+The EDS line proﬁles across the intergranular oxide along GB A1 
+are presented in Fig. 7 b–d. As shown in Fig. 7 b and d, the Si con- 
+tent in the intergranular oxide tip of GB A1 decreases gradually from 
+7.4 at.% ( Fig. 7 d) to 3.5 at.% ( Fig. 7 b) when approaching the sample 
+surface. As mentioned above, intergranular oxidation causes addi- 
+tional composition changes in GB just beyond the intergranular ox- 
+ide. It results in further depletion of Fe, Cr and enrichment of Ni 
+compared to RIS ( Fig. 7 e–g). The OAZ extends over 250 nm long 
+and 15 nm wide beyond the oxide tip ( Fig. 7 a and e). More in- 
+terestingly, the enrichment of Si due to RIS vanished in the OAZ 
+( Fig. 7 a, e and f). The RIS of pristine GB in UDR is shown in Fig. 7 g. 
+The GB is depleted in Fe, Cr and Mn and enriched in Ni, Si, and 
+P. The degree of element segregation is deﬁned as the difference 
+in content between GB and matrix. The magnitudes of Cr deple- 
+tion and Si enrichment at the GB A1 are 5.7 at.% and 2.5 at.%, re- 
+spectively. The magnitude of P enrichment at the GB A1 is 1.5 at.% 
+( Fig. 7 g) and the P content signiﬁcantly decreases from the pris- 
+tine GB to the oxide tip ( Fig.7e –g). P enrichment was not detected 
+in the intergranular oxides of GB A1 ( Fig. 7 b–d), suggesting that P 
+has directly dissolved into water. S was not counted here because 
+7
+
+===== PDF PAGE 8 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 8. (a) STEM-HAADF image and EDS mappings of the enlarged intergranular oxide tip of GB A2 (shown in Fig. 4 b with red dotted line) in NIR and (b–e) EDS line proﬁles 
+along the lines in (a). 
+its content is very low and the signal peak overlaps with that of 
+Mo. 
+The EDS line proﬁles across the intergranular oxide along GB A2 
+are presented in Fig. 8 b and c. As shown in Fig. 8 c, the Si content 
+in the intergranular oxide tip of GB A2 is 1.2 at.%, which is compa- 
+rable to that in the matrix and doesn’t show much variation along 
+the GB. It should be noted that the Si content in the intergranu- 
+lar oxide tip of GB A1 is much higher than that for GB A2 (7.4 at.% 
+vs. 1.2 at.%). The composition proﬁles of Si across the intergranular 
+oxide of GB A1 show an inverted “V” shape ( Fig. 7 c). Considering the 
+notable enrichment of Si at the intergranular oxide tip of GB A1 and 
+the disappearance of Si enrichment just beyond the oxide tip, it is 
+believed that Si can diffuse rapidly to the oxidation front along GB 
+and gets oxidized. A similar phenomenon seems to apply to P at 
+GB A1 except that P enrichment was not detected in the intergran- 
+ular oxide ( Fig. 7 a-d). For GB A2 , intergranular oxidation also caused 
+element segregation just beyond the intergranular oxide. It results 
+in depletion of Fe, Cr, and enrichment of Ni. The OAZ is around 
+94 nm long and 5 nm wide beyond the intergranular oxide ( Fig. 8 a 
+and d). The chemical composition of pristine GB in NIR is signiﬁ- 
+cantly different from that in UDR. Unexpectedly, Mo enrichment 
+was observed at GB A2 (4.0 at.% in magnitude) ( Fig. 8 e), while none 
+was detected at GB A1 ( Fig. 7 g). Mo enrichment occurred at the GBs 
+of the as-received sample prior to proton irradiation ( Fig. 8 a). This 
+phenomenon has also been found in our previous study [40] . The 
+Mo content in the OAZ of GB A2 is comparable with that in the 
+pristine segment (5.1 at.% vs. 5.3 at.%) ( Fig. 8 d and e), suggesting 
+that there should be no migration of Mo element along GB dur- 
+ing intergranular oxidation. However, Mo segregation was not ob- 
+served at intergranular oxide of GB A2 except that at the oxide tip. 
+It appears that Mo has dissolved into water near the sample sur- 
+face. It should be noted that Mo enrichment was only observed 
+at GB A2 and GB C2 while none was detected at GB B2 . According to 
+the microchemical results, the intergranular oxidation of GB A , GB B 
+and GB C have consistent features, indicating that Mo at GB does 
+not change the intergranular oxidation behavior. This may be re- 
+lated to the lowest oxidation tendency of Mo among Fe, Cr, Ni, Si, 
+Mn, P, and Mo [45] . The magnitude of P enrichment at the GB A2 
+is 0.8 at.% ( Fig. 8 e). Thus, radiation induces depletion of Mo and 
+further enrichment of P from the original state. Unlike in irradi- 
+ated GB A1 , the P content in the OAZ is barely changed compared 
+to the pristine GB A2 ( Fig. 8 d and e). The P element in the inter- 
+granular oxide of GB A2 has also dissolved into water ( Fig. 8 b and 
+c). Fig. 9 a and b show the STEM-HAADF images and EDS mappings 
+of the enlarged intergranular oxide tips of GB B1 and GB B2 , respec- 
+tively. From the STEM-HAADF images of cross section, there are 
+two much wider OAZs beyond the intergranular oxides. These two 
+OAZs show the characteristics of diffusion-induced grain boundary 
+migration (DIGM). The original grain boundaries are marked with 
+dashed yellow lines and the migrated boundaries are represented 
+by broken black lines. The EDS mappings conﬁrm that these two 
+DIGM zones are enriched in Ni and depleted in Cr and Fe. A no- 
+table Si enrichment was also observed at the intergranular oxide 
+tip of GB B1 ( Fig. 9 a) along the migrated GB rather than the original 
+GB. The sizes of DIGM zone in GB B1 ( Fig. 9 a) are much larger than 
+that in GB B2 ( Fig. 9 b). The features of intergranular oxide, oxidation 
+affected zone (OAZ), and pristine GB in UDR and NIR are summa- 
+rized in Table 3 . In summary, these three pairs of GBs consistently 
+8 
+
+===== PDF PAGE 9 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 9. STEM-HAADF images and EDS mappings of the enlarged intergranular oxide tips of (a) GB B1 in UDR and (b) GB B2 in NIR. 
+Table 3 
+Features of intergranular oxide tip, oxidation affected zone (OAZ) and pristine GB in UDR and NIR. 
+Features 
+Intergranular 
+oxide tip OAZ ∗ Pristine GB 
+Similarities Enriched in Cr; 
+Depleted in Fe 
+and Ni; 
+Depleted in Fe, 
+Cr and Mn; 
+Enriched in P 
+Depleted in 
+Mn and P 
+Enriched in Ni 
+Differences UDR Cr across the 
+oxide show an 
+“M” shape; 
+Length and 
+width in UDR 
+are much 
+larger than 
+that in NIR 
+Depleted in Fe, 
+Cr and Mn; 
+Si across the 
+oxide show an 
+inverted “V”
+shape; 
+Enriched in Ni 
+and Si; 
+More enriched 
+in Cr 
+More enriched 
+in P 
+NIR Cr across the 
+oxide show an 
+inverted “V”
+shape; 
+No Si 
+enrichment 
+Occasionally 
+enriched in 
+Mo; 
+Occasionally 
+enriched in Mo 
+Slightly 
+enriched in P 
+∗ Oxidation affected zone (OAZ) beyond the intergranular oxide. 
+show shallower intergranular oxidation depths in the irradiated re- 
+gion than in the unirradiated one. 
+The intergranular oxidation depths from the irradiated and 
+unirradiated regions were measured from the BSE images obtained 
+from the cross-section sample. Fig. 10 a shows some of the oxi- 
+dized GBs from irradiated and unirradiated regions. Fig. 10 b shows 
+the bar charts of measured intergranular oxidation depths from 
+the irradiated and unirradiated regions. The average depths of in- 
+tergranular oxidation in irradiated and unirradiated regions are 
+428 ± 17 nm and 537 ± 19 nm, respectively. The difference in 
+intergranular oxidation depth obtained from BSE images between 
+UDR and NIR is 25%, which is quite consistent with that observed 
+from the previous sampled GBs, conﬁrming that the resistance 
+to intergranular oxidation after long-term immersion can be en- 
+hanced by irradiation. 
+4. Discussion 
+Surprisingly, the results presented here indicate that proton ir- 
+radiation retards the intergranular oxidation after long-term im- 
+mersion, which is opposite to the conclusion achieved in previous 
+relevant work [ 28 , 29 , 34 ]. Unlike in the previous work, the effect of 
+irradiation on oxidation was determined from the direct compari- 
+son between irradiated and un-irradiated regions of the same grain 
+boundaries in this work. Thus, the inﬂuence due to the difference 
+in GB structure can be eliminated. The inhibition effect of proton 
+irradiation on intergranular oxidation will be discussed from the 
+microchemical features of the formed oxide and the enhanced dif- 
+fusivity of solute atoms along GB. 
+4.1. Effect of irradiation on the microchemistry of intergranular oxide 
+The STEM-HAADF images, EDS mappings, and line proﬁles 
+shown in Figs. 3 and 6 –8 reveal differences in the microchem- 
+istry of intergranular oxide of the same GB between UDR and 
+NIR. A remarkable Si enrichment was observed at the intergran- 
+ular oxide tip in UDR which was not detected in NIR. The oxide 
+along GB in UDR is more enriched in Cr in spite of radiation- 
+induced Cr depletion in pristine GB. According to the Ellingham- 
+Richardson diagram, the aﬃnity to oxygen for the relevant ele- 
+ment is as follows: Si > Mn > Cr > Fe > Ni [ 45 , 46 ]. In addition, Si has 
+the largest diffusion coeﬃcient in austenitic alloys among these el- 
+ements (D Si > D Cr > D Ni ) [ 47 , 48 ]. Therefore, Si segregated at the irra- 
+diated GB can diffuse outwards preferentially and get oxidized at 
+9
+
+===== PDF PAGE 10 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 10. (a) BSE images of cross-sectioned specimen showing some of the oxidized GBs from irradiated and unirradiated regions, (b) bar charts of measured intergranular 
+oxidation depths from the irradiated and unirradiated regions. 
+the intergranular oxide tip [49] . The Si-enriched oxide can serve 
+as a protective barrier layer in high temperature gaseous environ- 
+ment, but tends to dissolve in high temperature water [ 33 , 49 , 50 ]. 
+Therefore, with the increase of intergranular oxidation depth, the 
+Si-enriched oxide near the sample surface gradually dissolved into 
+high temperature water. A small amount of Si-enriched oxide re- 
+mains at the intergranular oxide tip due to inadequate exposure to 
+high temperature water. Finally, Si-enriched oxide about 206 nm 
+long is formed at the intergranular oxide tip of GB A1 after 10 0 0 h 
+immersion experiment (shown in Fig. 6 a) and the Si content de- 
+creases signiﬁcantly when moving from the oxide tip to the sample 
+surface (shown in Fig. 7 b–d). The undissolved Si-enriched oxide at 
+the intergranular oxide tip can still act as a diffusion barrier and 
+mitigate further intergranular oxidation in high temperature water. 
+Meanwhile, as will be discussed in the next section, the transport 
+of Cr element to the reaction front is enhanced by irradiation and 
+Cr-enriched intergranular oxide forms. As a result, although GB A1 
+is depleted in Cr due to RIS, the maximum Cr content in the in- 
+tergranular oxide tip of GB A1 is much higher than that of GB A2 
+(28.0 at.% vs. 20.2 at.%) ( Figs. 7 d and 8 c). Since the Si-enriched ox- 
+ide formed preferentially along the original GB and the Cr-enriched 
+oxides developed thereafter at both sides of the original GB, the 
+composition proﬁles of Si and Cr across the intergranular oxide of 
+GB A1 show an inverted “V” shape and an “M” shape ( Fig. 7 c), re- 
+spectively. Given that these two types of oxides are complemen- 
+tarily distributed in intergranular oxide (shown in Fig. 7 c), it is 
+believed that both oxides should contribute to the improved re- 
+sistance to intergranular oxidation. As the volume of Cr-rich oxide 
+at the intergranular oxide tip is much larger than that of Si-rich 
+oxide, the Cr-rich oxide may play a greater role in improving the 
+resistance to oxidation of irradiated GB. In contrast, as there is no 
+Si enrichment in the un-irradiated GB, the composition proﬁle of 
+Cr across the intergranular oxide of GB A2 shows an inverted “V”
+shape with no Si enrichment in the oxide ( Fig. 8 c). In summary, 
+the elevated Cr content in combination with Si enrichment in the 
+intergranular oxide tip can enhance the resistance to intergranular 
+oxidation when the sample is not stressed and eventually leads to 
+a lower oxidation rate for the irradiated GB. 
+4.2. Effect of irradiation on solute diffusivity along grain boundary 
+As discussed above, the mixture of Cr and Si enriched oxides at 
+the intergranular oxide tip can act as a temporary protective bar- 
+rier and result in a lower oxidation rate at irradiated GB A1 . The 
+kinetic factor should also be taken into account to explain the sup- 
+pressed intergranular oxidation along irradiated GB, i.e., enhanced 
+solute diffusivity by irradiation. The enhanced solute diffusivity by 
+irradiation can be veriﬁed by the fact that the size of OAZ (quanti- 
+ﬁed by length and width) beyond the intergranular oxide is much 
+larger in GB A1 than that in GB A2 , as shown in Figs. 7 a and 8 a. Due 
+to the outward diffusion of Si and Cr beyond the intergranular ox- 
+ide tip, the local composition is remarkably affected. Ni was further 
+enriched while Cr was further depleted in addition to RIS beyond 
+the intergranular oxide tip of GB A1 and the OAZ is around 250 nm 
+long and 15 nm wide ( Fig. 7 a and e). In comparison, the OAZ ex- 
+tends only about 94 nm long and 5 nm wide beyond the inter- 
+granular oxide tip of GB A2 ( Fig. 8 a and d). It should be noted that 
+the widths of OAZ beyond the intergranular oxide of GB B are much 
+larger than those of GB A , and it is easier to identify the diffusion- 
+induced grain boundary migration (DIGM) zone ( Fig. 9 ). Anyway, 
+the sizes of OAZ in UDR are always larger than those in NIR for all 
+the sampled GBs, as listed in Table 4 . Meanwhile, the maximum Cr 
+10 
+
+===== PDF PAGE 11 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Table 4 
+Sizes of oxidation affected zone (OAZ), maximum Cr content in intergranular oxide and intergranular oxide penetration of GB A , 
+GB B and GB C , respectively. 
+GB OAZ ∗ (nm) Max. Cr 
+content ∗∗(at. %) 
+Intergranular oxide 
+penetration(nm) 
+Length Width 
+GB A GB A1 250 15 28.0 427 
+GB A2 94 5 20.0 575 
+GB B GB B1 150 25 34.0 490 
+GB B2 92 13 23.7 618 
+GB C GB C1 169 18 30.2 515 
+GB C2 0 0 21.5 604 
+∗ Oxidation affected zone (OAZ) beyond the intergranular oxide. 
+∗∗ The maximum Cr content in the intergranular oxide. 
+content at the intergranular oxide tip of GB in UDR is much higher 
+than that of GB in NIR. Therefore, the eﬃciency of element (espe- 
+cially Cr) transport along GB has been promoted by irradiation. 
+It should be noted that the only diffusion path for Cr to the ox- 
+idation front is through GB which then migrates. The migration of 
+GB is accompanied by the diffusion of Cr from the ﬁrst few mono- 
+layers of one grain near the new migrated GB. Thus, the amount 
+of diffused Cr can be measured by the size of the DIGM (or OAZ) 
+zone. It should be noted that vacancy is the dominant carrier for 
+diffusion because the concentration of interstitial is much lower 
+than that of vacancy after the irradiation. As discussed above, Si 
+segregated at the irradiated GB can diffuse outwards preferentially 
+due to its high diffusivity and leaves behind many vacancies which 
+can promote the diffusion of other solute atoms. The diffusivity of 
+lattice atoms by vacancy mechanism is given by: D = f v D v C v , where 
+D v is the vacancy diffusion coeﬃcient, C v is the vacancy concentra- 
+tion and f v is the correlation coeﬃcient. Thus, increased vacancy 
+concentration can increase the diffusion coeﬃcient of atoms. It is 
+believed that the situation is similar for diffusion at GB as vacancy 
+is also the major participant in the process of GB diffusion [51] . 
+That is, vacancies produced by preferential diffusion of Si beyond 
+the oxide tip at irradiated GB can enhance the diffusion of other 
+slow-moving elements like Cr. This forms a concentration gradient 
+of Cr between matrix (one grain near the migrated GB) and GB 
+which further drives its diffusion to GB. That is why the intergran- 
+ular oxide tip contains higher content of Cr in UDR than in NIR 
+even when Cr is already depleted in UDR due to RIS. Diffusivity 
+of P was also promoted in UDR as remarkable depletion of P oc- 
+curred in the OAZ of irradiated GB while signiﬁcant P could still be 
+detected in the OAZ of un-irradiated GB although P segregated at 
+GB after irradiation (Figs.7 and 8). Similarly, it has been reported 
+that a high entropy alloy (HEA) (28%Fe-27%Ni-27%Mn-18%Cr) can 
+form a Cr-rich oxide ﬁlm over GB in 320 °C hydrogenated water 
+[52] while austenitic stainless steel containing a similar amount of 
+Cr is normally susceptible to intergranular oxidation. That is be- 
+cause Cr diffusion along grain boundary in the HEA was promoted 
+due to the fast diffusion of Mn. Irradiation induced defects may 
+also affect elements diffusion along the grain boundary. It is be- 
+lieved that vacancies or voids should have little effect on the dif- 
+fusivity along grain boundary as there is a denuded zone adjacent 
+to the grain boundary [ 53 , 54 ]. Nevertheless, dislocation loops were 
+observed near the grain boundary which can facilitate the diffusion 
+of elements like Cr. 
+The enhanced diffusivity of Cr along irradiated GB helps to mit- 
+igate the intergranular oxidation to some extent. Some previous 
+works also suggest that the eﬃciency of Cr transport is vital to 
+the resistance to corrosion. Zhou et al. [55] reported that in-situ 
+proton irradiation enhances the diffusion of Cr and Ni from matrix 
+to GBs and compensates the dissolution of Cr from GB to molten 
+salt, which eventually decelerates the intergranular corrosion of 
+Ni-Cr alloys. Similar effect was also found in general corrosion. 
+Hanbury and Was [12] reported that in-situ proton irradiation pro- 
+moted diffusion of Cr element and resulted in a decrease of inner 
+oxide thickness of stainless steels in 320 °C hydrogenated water. 
+Thus, the diffusivity of Cr is vital to the resistance to corrosion. 
+Furthermore, the effect of Cr diffusivity on the protectiveness of 
+oxide would be eventually linked to the SCC resistance. He et al. 
+[56] found that the eﬃciency of Cr transport along GB is closely 
+related to the site-speciﬁc susceptibility to SCC of a Fe-13Cr-15Ni 
+alloy in simulated boiling water reactor normal water. Kuang et al. 
+[ 25 , 57 ] demonstrated that the eﬃciency of Cr diffusion along GB in 
+alloy 690 dictates the ability to form a compact chromia ﬁlm over 
+the GB in high temperature hydrogenated water, and also the com- 
+pactness of oxide beyond the crack tip. Therefore, the diffusivity of 
+Cr is an important factor affecting the corrosion and SCC resistance 
+of material. 
+4.3. Relevance of intergranular oxidation to SCC 
+It should be noted that the exposed sample was not stressed 
+during the test. The current results indicate that the Si-enriched 
+oxide formed at the intergranular oxide tip in UDR can serve as 
+a temporary protective barrier and retard the inward diffusion 
+of oxygen along the GB. It is quite unexpected since the previ- 
+ous studies suggested that elevated bulk Si content promotes SCC 
+growth rate in simulated PWR primary water [ 49 , 58 ]. Moreover, 
+Kuang et al. [ 33 ] found that the decreasing SCC growth rate of 
+neutron-irradiated 304L stainless steel in reducing high tempera- 
+ture water was correlated with the reduced GB Si content which 
+was achieved through annealing treatments. Such inconsistency 
+should result from the stress condition. It has been reported that 
+the adhesion of oxide decreases with addition of Si into the stain- 
+less steel [ 59 , 60 ]. The brittle character of the silica formed on 
+stainless steel is often considered as the primary cause of oxide 
+scale spallation [ 59 , 60 ]. Similarly, it is believed that Si-enriched 
+oxide formed at the intergranular oxide tip in UDR would de- 
+grade the strength of GB and can be easily breached under stress. 
+The Si-enriched oxide would dissolve in solution quickly once the 
+crack initiates, hence accelerating the crack propagation. Indeed, 
+the length and maximum Si content of Si-enriched oxide at inter- 
+granular oxide tip in UDR in this work (206 nm, 7.4 at.%) are much 
+larger than those beyond an IASCC crack from the same material 
+which has been reported in our previous work ( ∼50 nm, 3.2 at.%) 
+[40] . Thus, the SCC susceptibility depends not only on the degree 
+of intergranular oxidation but also on the property of the formed 
+oxide. 
+Fig. 11 depicts the process of intergranular oxidation for the ir- 
+radiated GB and its un-irradiated counterpart. For the irradiated 
+GB ( Fig. 11 a), Si segregated at the GB can diffuse outwards pref- 
+erentially and get oxidized at the intergranular oxide tip due to 
+its high diffusivity and aﬃnity to oxygen. The fast diffusion of Si 
+creates vacancies which enhance the diffusion of Cr to the oxida- 
+11 
+
+===== PDF PAGE 12 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+Fig. 11. Schematic of intergranular oxidation behavior for the (a) irradiated GB and 
+its (b) un-irradiated counterpart. 
+tion front. Hence, the oxide along irradiated GB is more enriched 
+in Cr in spite of Cr depletion induced by RIS at pristine GB. The 
+combination of Si and Cr enrichments in the intergranular oxide 
+tip leads to a lower oxidation rate in irradiated GB than in un- 
+irradiated GB ( Fig. 11 b). In addition, the OAZ formed beyond the 
+intergranular oxide tip of irradiated GB is much larger than that 
+of un-irradiated GB ( Fig. 11 a and b) due to the enhanced diffu- 
+sion of solute atoms (especially Cr) along the irradiated GB. This 
+work demonstrates that it is crucial to eliminate the interference 
+from the difference in GB structure when studying the irradiation 
+effect on intergranular oxidation. By doing so, the mitigation of in- 
+tergranular oxidation by irradiation was determined here for the 
+ﬁrst time. The mitigating effect of irradiation on intergranular oxi- 
+dation is in contrast to the irradiation-assisted SCC, indicating that 
+the property of formed oxide is also important to SCC resistance. 
+Furthermore, the mitigation of intergranular oxidation by irradia- 
+tion may be inﬂuenced by the irradiation dose and oxidation time 
+which necessitates further detailed study. 
+5. Conclusions 
+The effect of proton irradiation on the intergranular oxidation 
+of 316L stainless steel after exposure to simulated PWR primary 
+water for 10 0 0 h was clariﬁed by ruling out the interference from 
+the difference in GB structure. The following conclusions can be 
+drawn in this study. 
+(1) The intergranular oxide penetration in non-irradiated region 
+(NIR) is deeper than that in uniformly-damaged region (UDR), 
+indicating that proton irradiation has a mitigation effect on in- 
+tergranular oxidation after long-term immersion. 
+(2) Due to its high diffusivity and aﬃnity to oxygen, Si enriched 
+in UDR due to radiation-induced segregation (RIS) diffuses out 
+preferentially and promotes the formation of Si-enriched oxide 
+at the intergranular oxide tip. The Si-enriched oxide at the in- 
+tergranular oxide tip can act as a temporary diffusion barrier 
+for oxygen although it tends to dissolve into high temperature 
+water near the sample surface. 
+(3) The eﬃciency of elements (especially Cr) transport along grain 
+boundary to oxidation front is promoted in UDR mainly due to 
+vacancies created by the preferential diffusion of Si, resulting 
+in a larger oxidation affected zone (OAZ) beyond the intergran- 
+ular oxide tip. Meanwhile, the maximum Cr content at the in- 
+tergranular oxide tip in UDR is much higher than that in NIR. 
+(4) The elevated Cr content in combination with Si enrichment in 
+the intergranular oxide in UDR can enhance the resistance to 
+intergranular oxidation when the sample is not stressed, even- 
+tually leading to a lower intergranular oxidation rate in UDR 
+compared in NIR. 
+Declaration of Competing Interest 
+The authors declare that they have no known competing ﬁnan- 
+cial interests or personal relationships that could have appeared to 
+inﬂuence the work reported in this paper. 
+Acknowledgements 
+The authors gratefully acknowledge the ﬁnancial support of 
+National Natural Science Foundation of China (No. 51971172 ) and 
+the Young Talent Support Plan of Xi’an Jiaotong University. The au- 
+thors thank Dr. Jiao Li at Instrument Analysis Center of Xi’an Jiao- 
+tong University for her assistance with STEM and EDS analysis. The 
+authors also thank Prof. Genshu Zhou and Dr. Shaojun Wu at Xi’an 
+Jiaotong University for their assistance in Ni plating, and research 
+fellow Wei Wang for his assistance in SEM characterization. 
+References 
+[1] Z. Jiao, G.S. Was, Localized deformation and IASCC initiation in austenitic stain- 
+less steels, J. Nucl. Mater. 382 (2008) 203–209 . 
+[2] K.F.H. Nishioka, K. Fujii, T. Torimaru, IASCC initiation in highly irradiated stain- 
+less steels under uniaxial constant load conditions, J. Nucl. Sci. Technol. 45 
+(2008) 1072–1077 . 
+[3] Y. Chen, B. Alexandreanu, W.K. Soppet, W.J. Shack, K. Natesan, A.S. Rao, Slow 
+strain rate tensile tests of irradiated austenitic stainless steels in simulated 
+PWR environment, in: Proceedings of the 15th International Conference on En- 
+vironmental Degradation of Materials in Nuclear Power Systems-Water Reac- 
+tors, Colorado Springs, Colorado, USA, 2011 . 
+[4] D. Du, K. Sun, G.S. Was, IASCC of neutron irradiated 316 stainless steel to 125 
+dpa, Mater. Charact. 173 (2021) 110897 . 
+[5] K.J. Stephenson, G.S. Was, Crack initiation behavior of neutron irradiated model 
+and commercial stainless steels in high temperature water, J. Nucl. Mater. 4 4 4 
+(2014) 331–341 . 
+[6] K. Fukuya, M. Nakano, K. Fujii, T. Torimaru, IASCC susceptibility and slow ten- 
+sile properties of highly-irradiated 316 stainless steels, J. Nucl. Sci. Technol. 41 
+(2004) 673–681 . 
+[7] M.D. Mcmurtrey, G.S. Was, Role of slip behavior in the irradiation assisted 
+stress corrosion cracking in austenitic steels, in: Proceedings of the 15th In- 
+ternational Conference on Environmental Degradation of Materials in Nuclear 
+Power Systems-Water Reactors, Colorado Springs, Colorado, USA, 2011 . 
+[8] G.P. Marsh, K.J. Taylor, G. Bryan, S.E. Worthington, The inﬂuence of radiation 
+on the corrosion of stainless steel, Corros. Sci. 26 (1986) 971–982 . 
+[9] B. Pastina, J.A. LaVerne, Hydrogen peroxide production in the radiolysis of wa- 
+ter with heavy ions, J. Phys. Chem. A. 103 (1999) 1592–1597 . 
+[10] S.S. Raiman, G.S. Was, Accelerated corrosion and oxide dissolution in 316L 
+stainless steel irradiated in situ in high temperature water, J. Nucl. Mater. 493 
+(2017) 207–218 . 
+[11] S.S. Raiman, D.M. Bartels, G.S. Was, Radiolysis driven changes to oxide stability 
+during irradiation-corrosion of 316L stainless steel in high temperature water, 
+J. Nucl. Mater. 493 (2017) 40–52 . 
+[12] R.D. Hanbury, G.S. Was, Oxide growth and dissolution on 316L stainless steel 
+during irradiation in high temperature water, Corros. Sci. 157 (2019) 305–311 . 
+[13] K. Stephenson, G.S. Was, The role of dislocation channeling in IASCC initiation 
+of neutron irradiated stainless steel, J. Nucl. Mater. 481 (2016) 214–225 . 
+12 
+
+===== PDF PAGE 13 =====
+S. Wang, S. Zhang, J. Xie et al. Acta Materialia 241 (2022) 1 18408 
+[14] G.S. Was, J.T. Busby, Role of irradiated microstructure and microchemistry in 
+irradiation-assisted stress corrosion cracking, Philos. Mag. 85 (2005) 443–465 . 
+[15] M.D. McMurtrey, B. Cui, I. Robertson, D. Farkas, G.S. Was, Mechanism of dislo- 
+cation channel-induced irradiation assisted stress corrosion crack initiation in 
+austenitic stainless steel, Curr. Opin. Solid State Mater. Sci. 19 (2015) 305–314 . 
+[16] H. Nishioka, K. Fukuya, K. Fujji, Y. Kitsunai, Deformation structure in highly 
+irradiated stainless steels, J. Nucl. Sci. Technol. 45 (2008) 274–287 . 
+[17] Z. Jiao, G.S. Was, Impact of localized deformation on IASCC in austenitic stain- 
+less steels, J. Nucl. Mater. 408 (2011) 246–256 . 
+[18] D. Du, K. Sun, G.S. Was, Crack initiation of neutron-irradiated 304L stainless 
+steel in PWR primary water, Corros. Sci. 193 (2021) 109902 . 
+[19] J. Panter, B. Viguier, J.M. Cloué, M. Foucault, P. Combrade, E. Andrieu, Inﬂuence 
+of oxide ﬁlms on primary water stress corrosion cracking initiation of alloy 
+600, J. Nucl. Mater. 348 (2006) 213–221 . 
+[20] P.M. Scott, An overview of internal oxidation as a possible explanation of inter- 
+granular stress corrosion cracking of alloy 600 in PWRS, in: Proceedings of the 
+Ninth International Symposium on Environmental Degradation of Materials in 
+Nuclear Power Systems-Water Reactors, Newport Beach, USA, 1999 . 
+[21] P.L. Andresen, F.P. Ford, Life prediction by mechanistic modeling and system 
+monitoring of environmental cracking of iron and nickel alloys in aqueous sys- 
+tems, Mater. Sci. Eng. A 103 (1988) 167–184 . 
+[22] P.L. Andresen, Fracture mechanics data and modeling of environmental crack- 
+ing of nickel-base alloys in high-temperature water, Corrosion 47 (1991) 
+917–938 . 
+[23] M. Meisnar, A. Vilalta-Clemente, M. Moody, K. Arioka, S. Lozano-Perez, A 
+mechanistic study of the temperature dependence of the stress corrosion crack 
+growth rate in SUS316 stainless steels exposed to PWR primary water, Acta 
+Mater. 114 (2016) 15–24 . 
+[24] Y.Z. Huang, J.M. Titchmarsh, TEM investigation of intergranular stress corrosion 
+cracking for 316 stainless steel in PWR environment, Acta Mater. 54 (2006) 
+635–641 . 
+[25] W. Kuang, M. Song, G.S. Was, Insights into the stress corrosion cracking of so- 
+lution annealed alloy 690 in simulated pressurized water reactor primary wa- 
+ter under dynamic straining, Acta Mater. 151 (2018) 321–333 . 
+[26] W. Kuang, G.S. Was, A high-resolution characterization of the initiation of 
+stress corrosion crack in Alloy 690 in simulated pressurized water reactor pri- 
+mary water, Corros. Sci. 163 (2020) 108243 . 
+[27] P.M. Scott, P. Combrade, General corrosion and stress corrosion cracking of 
+Alloy 600 in light water reactor primary coolants, J. Nucl. Mater. 524 (2019) 
+340–375 . 
+[28] P. Deng, Q. Peng, E.H. Han, W. Ke, C. Sun, Z. Jiao, Effect of irradiation on cor- 
+rosion of 304 nuclear grade stainless steel in simulated PWR primary water, 
+Corros. Sci. 127 (2017) 91–100 . 
+[29] M. Boisson, L. Legras, E. Andrieu, L. Laffont, Role of irradiation and irradiation 
+defects on the oxidation ﬁrst stages of a 316L austenitic stainless steel, Corros. 
+Sci 161 (2019) 108194 . 
+[30] Z. Jiao, G. Was, Oxidation of a proton-irradiated 316 stainless steel in simulated 
+BWR NWC environment, in: Proceedings of the 15th International Conference 
+on Environmental Degradation of Materials in Nuclear Power Systems-Water 
+Reactors, Colorado Springs, Colorado, USA, 2011 . 
+[31] S. Perrin, L. Marchetti, C. Duhamel, M. Sennour, F. Jomard, Inﬂuence of irradi- 
+ation on the oxide ﬁlm formed on 316L stainless steel in PWR primary water, 
+Oxid. Metal 80 (2013) 623–633 . 
+[32] S.M. Bruemmer, E.P. Simonen, P.M. Scott, P.L. Andresen, G.S. Was, J.L. Nelson, 
+Radiation-induced material changes and susceptibility to intergranular failure 
+of light-water-reactor core internals, J. Nucl. Mater. 274 (1999) 299–314 . 
+[33] W. Kuang, J. Hesterberg, G.S. Was, The effect of post-irradiation annealing on 
+the stress corrosion crack growth rate of neutron-irradiated 304L stainless 
+steel in boiling water reactor environment, Corros. Sci. 161 (2019) 108183 . 
+[34] T. Fukumura, K. Fukuya, K. Fujii, T. Miura, Y. Kitsunai, Grain Boundary Oxida- 
+tion of Neutron Irradiated Stainless Steels in Simulated PWR Water, in: Pro- 
+ceedings of the 18th International Conference on Environmental Degradation 
+of Materials in Nuclear Power Systems-Water Reactors, Portland, Oregon, USA, 
+Marriott Portland Downtown Waterfront, 2017 . 
+[35] C.M. Barr, G.A. Vetterick, K.A. Unocic, K. Hattar, X.M. Bai, M.L. Taheri, 
+Anisotropic radiation-induced segregation in 316L austenitic stainless steel 
+with grain boundary character, Acta Mater. 67 (2014) 145–155 . 
+[36] S. Watanabe, Y. Takamatsu, N. Sakaguchi, H. Takahashi, Sink effect of grain 
+boundary on radiation-induced segregation in austenitic stainless steel, J. Nucl. 
+Mater. 283–287 (20 0 0) 152–156 . 
+[37] Y.S. Lim, S.W. Kim, S.S. Hwang, H.P. Kim, C. Jang, Intergranular oxidation of 
+Ni-based Alloy 600 in a simulated PWR primary water environment, Corros. 
+Sci. 108 (2016) 125–133 . 
+[38] G.S. Was, J.T. Busby, T. Allen, E.A. Kenik, A. Jensson, S.M. Bruemmer, J. Gan, 
+A.D. Edwards, P.M. Scott, P.L. Andreson, Emulation of neutron irradiation effects 
+with protons: validation of principle, J. Nucl. Mater. 30 0 (20 02) 198–216 . 
+[39] R.E. Stoller, M.B. Toloczko, G.S. Was, A.G. Certain, S. Dwaraknath, F.A. Garner, 
+On the use of SRIM for computing radiation damage exposure, Nucl. Instrum. 
+Methods Phys. Res. Sect. B 310 (2013) 75–80 . 
+[40] W. Kuang, X. Feng, D. Du, M. Song, M. Wang, G.S. Was, A high-resolution char- 
+acterization of irradiation-assisted stress corrosion cracking of proton-irradi- 
+ated 316L stainless steel in simulated pressurized water reactor primary water, 
+Corros. Sci. 199 (2022) 110187 . 
+[41] X. Feng, J. Xie, W. Kuang, A novel approach to index site-speciﬁc grain bound- 
+ary plane, Mater. Charact. 174 (2021) 110999 . 
+[42] W. Kuang, G.S. Was, The effect of grain boundary structure on the intergran- 
+ular degradation behavior of solution annealed alloy 690 in high temperature, 
+hydrogenated water, Acta Mater. 182 (2020) 120–130 . 
+[43] S. Lozano-Perez, K. Kruska, I. Iyengar, T. Terachi, T. Yamada, The role of cold 
+work and applied stress on surface oxidation of 304 stainless steel, Corros. Sci. 
+56 (2012) 78–85 . 
+[44] L. Legras, B. Marylou, F. Elodie, C. Priscille, M. Remi, M. Salem, T. Jinane, 
+R. Menand, TEM Investigations of the Microstructure and Oxides at the Tip 
+of Intergranular Cracks of a Baﬄe Former Bolt Irradiated up to 10 dpa, 
+FONTEVRAUD 9, Avignon, France, 2018 . 
+[45] C.V. Robino, Representation of mixed reactive gases on free energy (Elling- 
+harn-Richardson) diagrams, Metall. Mater. Trans. B 27 (1996) 65–69 . 
+[46] Z. Zhang, E.H. Han, C. Xiang, Effect of helium ion irradiation on short-time 
+corrosion behavior of two novel high-entropy alloys in simulated PWR primary 
+water, Corros. Sci. 191 (2021) 109742 . 
+[47] P.R. Okamoto, L.E. Rehn, Radiation-induced segregation in binary and ternary 
+alloys, J. Nucl. Mater. 83 (1979) 2–23 . 
+[48] J.T. Busby, G.S. Was, E.A. Kenik, Isolating the effect of radiation-induced seg- 
+regation in irradiation-assisted stress corrosion cracking of austenitic stainless 
+steels, J. Nucl. Mater. 302 (2002) 20–40 . 
+[49] P.L. Andresen, M.M. Morra, Effects of Si on SCC of irradiated and unirradiated 
+stainless steel and nickel alloys, in: Proceedings of the 12th International Con- 
+ference on Environmental Degradation of Materials in Nuclear Power Systems: 
+Water Reactors, Salt Lake City, Utah, USA, 2005 . 
+[50] R.O. Fournier, J.J. Rowe, The solubility of amorphous silica in water at high 
+temperatures and high pressures, Am. Mineral. 62 (9–10) (1977) 1052–1056 . 
+[51] A. Suzuki, Y. Mishin, Atomic mechanisms of grain boundary diffusion: Low ver- 
+sus high temperatures, J. Mater. Sci. 40 (2005) 3155–3161 . 
+[52] J. Dong, X. Feng, X. Hao, W. Kuang, The environmental degradation behavior 
+of FeNiMnCr high entropy alloy in high temperature hydrogenated water, Scr. 
+Mater. 204 (2021) 114127 . 
+[53] B.N. Singh, S.J. Zinkle, Inﬂuence of irradiation parameters on damage accumu- 
+lation in metals and alloys, J. Nucl. Mater. 217 (1994) 161–171 . 
+[54] Y. Sekio, S. Yamashita, N. Sakaguchi, H. Takahashi, Void denuded zone forma- 
+tion for Fe–15Cr–15Ni steel and PNC316 stainless steel under neutron and elec- 
+tron irradiations, J. Nucl. Mater. 458 (2014) 355–360 . 
+[55] W. Zhou, Y. Yang, G. Zheng, K.B. Woller, P.W. Stahle, A.M. Minor, M.P. Short, 
+Proton irradiation-decelerated intergranular corrosion of Ni-Cr alloys in molten 
+salt, Nat. Commun. 11 (2020) 3430 . 
+[56] M.R. He, D.C. Johnson, G.S. Was, I.M. Robertson, The role of grain boundary mi- 
+crochemistry in irradiation-assisted stress corrosion cracking of a Fe-13Cr-15Ni 
+alloy, Acta Mater. 138 (2017) 61–71 . 
+[57] W. Kuang, G.S. Was, The effect of grain boundary structure on the intergranu- 
+lar degradation behavior of solution annealed Alloy 690 in high temperature, 
+hydrogenated water, Acta Mater. 182 (2020) 120–130 . 
+[58] G.F. Li, Y. Kaneshima, T. Shoji, Effects of impurities on environmentally assisted 
+crack growth of solution-annealed austenitic steels in primary water at 325 °C, 
+Corrosion 56 (20 0 0) 460–469 . 
+[59] H.E. Evans, D.A. Hilton, R.A. Holm, S.J. Webster, Inﬂuence of silicon additions 
+on the oxidation resistance of a stainless steel, Oxid. Metal 19 (1983) 1–18 . 
+[60] G. Bamba, Y. Wouters, A. Galerie, F. Charlot, A. Dellali, Thermal oxidation ki- 
+netics and oxide scale adhesion of Fe–15Cr alloys as a function of their silicon 
+content, Acta Mater. 54 (2006) 3917–3922 . 
+13 
