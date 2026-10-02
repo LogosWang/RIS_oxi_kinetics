@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+% Same macros as main.tex
+\newcommand{\Vac}{\mathrm{V}}          % vacancy
+\newcommand{\Int}{\mathrm{I}}          % self-interstitial
+\newcommand{\GB}{\mathrm{GB}}
+\newcommand{\eq}{\mathrm{eq}}
+\newcommand{\eff}{\mathrm{eff}}
+\newcommand{\intf}{\mathrm{int}}       % interface
+\newcommand{\thr}{\mathrm{th}}         % threshold
+\newcommand{\lat}{\mathrm{lat}}
+\newcommand{\ox}{\mathrm{ox}}
+\newcommand{\Ox}{\mathrm{O}}           % oxygen
+
+
+\usepackage[
+  backend=biber,
+  style=numeric-comp,
+  sorting=none
+]{biblatex}
+
+\addbibresource{refs/Oplinger_RIS.bib}
+
+\title{mode revision note}
+
+
+\begin{document}
+\maketitle
+
+\section*{finite sink for GB}
+In the previous model, the V/I concentration was set to be thermal-equalibrium concentration at the GB, which is a Dirichlet BC indicating the GB is a perfect sink for V/I:
+\begin{equation}
+C_{\Vac}^{\GB}=C_{\Vac}^{\eq},
+\end{equation}
+\begin{equation}
+C_{\Int}^{\GB}=C_{\Int}^{\eq},
+\end{equation}
+With this Dirichlet BC, the results are mesh-dependent. With the refinement of the mesh, the defects profiles show a steeper gradient near the GB. Both the gradient and the magnitude of the solute segregation are higher than coarse mesh. Thess results are also observed in other RIS models using Onsager equation. \cite{RN486} 
+
+
+
+\printbibliography
+\end{document}
+
