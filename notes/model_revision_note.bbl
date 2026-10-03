@@ -1,0 +1,122 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{RN396}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=4017078e8e02bef06318a4aec1575d84}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bd9e2cb7038d9eb5bc2e0ef3e55ecdd3}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=b6029e0705fa8c7f583e46656b0c528b}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={E.\bibnamedelimi H.},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{fullhash}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{fullhashraw}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{bibnamehash}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{authorbibnamehash}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{authornamehash}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{authorfullhash}{e2b00da8c1759dd3c1df849e92ef569d}
+      \strng{authorfullhashraw}{e2b00da8c1759dd3c1df849e92ef569d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Grain boundary (GB) oxidation of proton-irradiated 304 nuclear grade stainless steel in primary water of pressurized water reactor was investigated. The investigation was conducted by studying microstructure of the oxide and oxide precursor formed at GB on an "atom-by-atom" basis by a combination of atom-probe tomography and transmission electron microscope. The results revealed that increasing irradiation dose promoted the GB oxidation, in correspondence with a different oxide and oxide precursor formed at the GB. Correlation of the oxide and oxide precursor with the GB oxidation behavior has been discussed in detail.}
+      \field{issn}{2045-2322 (Electronic) 2045-2322 (Linking)}
+      \field{journaltitle}{Sci Rep}
+      \field{note}{Deng, Ping Peng, Qunjia Han, En-Hou eng England Sci Rep. 2021 Jan 14;11(1):1371. doi: 10.1038/s41598-020-80600-x.}
+      \field{number}{1}
+      \field{title}{Grain boundary oxidation of proton-irradiated nuclear grade stainless steel in simulated primary water of pressurized water reactor}
+      \field{type}{期刊文献}
+      \field{volume}{11}
+      \field{year}{2021}
+      \field{pages}{1371}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-020-80600-x
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pubmed/33446760
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pubmed/33446760
+      \endverb
+    \endentry
+    \entry{RN486}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a820e4fcf6aa6920175a894c957af16f}{%
+           family={Oplinger},
+           familyi={O\bibinitperiod},
+           given={Russell},
+           giveni={R\bibinitperiod}}}%
+        {{hash=be1e432afb5b8a611beb3afcc5f94d5b}{%
+           family={Bachhav},
+           familyi={B\bibinitperiod},
+           given={Mukesh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=99a33ca9c31b673c671f123f84ecc0aa}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Karim},
+           giveni={K\bibinitperiod}}}%
+        {{hash=396ddad43b1c116491f00a86e8034e6d}{%
+           family={Kadambi},
+           familyi={K\bibinitperiod},
+           given={Sourabh\bibnamedelima Bhagwan},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ae837f1b3281f21cf95d1a0d77261a4}
+      \strng{fullhash}{f952a3ec3e328371c9330d7e3ff8b354}
+      \strng{fullhashraw}{f952a3ec3e328371c9330d7e3ff8b354}
+      \strng{bibnamehash}{1ae837f1b3281f21cf95d1a0d77261a4}
+      \strng{authorbibnamehash}{1ae837f1b3281f21cf95d1a0d77261a4}
+      \strng{authornamehash}{1ae837f1b3281f21cf95d1a0d77261a4}
+      \strng{authorfullhash}{f952a3ec3e328371c9330d7e3ff8b354}
+      \strng{authorfullhashraw}{f952a3ec3e328371c9330d7e3ff8b354}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0021-8979 1089-7550}
+      \field{journaltitle}{Journal of Applied Physics}
+      \field{number}{15}
+      \field{title}{Radiation-induced segregation in dilute Fe–Cr: A rate-theory framework for the Cr enrichment–depletion transition at the grain boundary}
+      \field{type}{期刊文献}
+      \field{volume}{139}
+      \field{year}{2026}
+      \verb{doi}
+      \verb 10.1063/5.0323296
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
