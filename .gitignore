@@ -1,2 +1,23 @@
-
+# macOS
 .DS_Store
+
+# Bibliography exports (Zotero auto-export, regenerated locally)
+*.bib
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.xdv

@@ -25,16 +25,20 @@
   style=numeric-comp,
   sorting=none
 ]{biblatex}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\DeclareSIUnit{\dpa}{dpa}
 
-\addbibresource{refs/ref.bib}
 
-\title{mode revision note}
+\addbibresource{refs/304IASCC.bib}
+
+\title{model revision note}
 
 
 \begin{document}
 \maketitle
 
-\section*{finite sink for GB}
+\section{Finite Sink for GB}
 
 \begin{figure}[!ht]\centering
 \begin{subfigure}[t]{0.32\textwidth}\centering
@@ -76,11 +80,10 @@
   \caption{}\label{fig:Si-doses}
 \end{subfigure}
 \caption{
-Comparison of RIS profiles with Dirichlet BC and Robin BC for GB. (a-c) show the RIS profiles with Dirichlet BC for different mesh sizes. (d-f) show the RIS profiles with Robin BC for different mesh sizes. (g-i) show the RIS profiles with Robin BC for different doses convolved with 1 nm FWHM compared with the experimental data\cite{RN396}.
+Comparison of RIS profiles with Dirichlet BC and Robin BC for GB. (a-c) show the RIS profiles with Dirichlet BC for different mesh sizes. (d-f) show the RIS profiles with Robin BC for different mesh sizes. (g-i) show the RIS profiles with Robin BC for different doses convolved with 1 nm FWHM compared with the experimental data\cite{deng2021grain}.
 }
-\label{fig:finite-sink}
+\label{fig:finite-sinkz}
 \end{figure}
-
 
 
 In the previous model, the V/I concentration was set to be thermal-equalibrium concentration at the GB, which is a Dirichlet BC indicating the GB is a perfect sink for V/I:
@@ -90,7 +93,7 @@ C_{\Vac}^{\GB}=C_{\Vac}^{\eq},
 \begin{equation}
 C_{\Int}^{\GB}=C_{\Int}^{\eq},
 \end{equation}
-With this Dirichlet BC, the results are mesh-dependent. With the refinement of the mesh, the defects profiles show a steeper gradient near the GB. Both the gradient and the magnitude of the solute segregation are higher than coarse mesh. Thess results are also observed in other RIS models using Onsager equation. \cite{RN486} 
+With this Dirichlet BC, the results are mesh-dependent. With the refinement of the mesh, the defects profiles show a steeper gradient near the GB. Both the gradient and the magnitude of the solute segregation are higher than coarse mesh. Thess results are also observed in other RIS models using Onsager equation. \cite{oplinger2026radiationinduced} 
 The width of RIS is also mesh-dependent, and do not converge with mesh refinement. The solution is to use a finite sink for the GB, which is a Robin BC:
 \begin{equation}
 J_{\Vac}^{\GB}=-k_{\Vac}^{\GB}\left(C_{\Vac}^{\GB}-C_{\Vac}^{\eq}\right),
@@ -98,12 +101,181 @@ J_{\Vac}^{\GB}=-k_{\Vac}^{\GB}\left(C_{\Vac}^{\GB}-C_{\Vac}^{\eq}\right),
 \begin{equation}
 J_{\Int}^{\GB}=-k_{\Int}^{\GB}\left(C_{\Int}^{\GB}-C_{\Int}^{\eq}\right),
 \end{equation}
-where $k_{\Vac}^{\GB}$ and $k_{\Int}^{\GB}$ are the sink strength for V/I at the GB. The sink strength and the defect-mediated transport coefficients are calbrated to reproduce both the experimental RIS magnitude and width. 
+where $k_{\Vac}^{\GB}$ and $k_{\Int}^{\GB}$ are the sink strength for V/I at the GB. The sink strength and the defect-mediated transport coefficients are calbrated to reproduce both the experimental RIS magnitude and width. The results are shown in Fig.~\ref{fig:finite-sinkz}.
 
 
+\section{Interfacial Mass Redstribution}
+\begin{figure}[!ht]\centering
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Cr_across_interface_dose0}
+  \caption{}\label{fig:Cr-across-0}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Ni_across_interface_dose0}
+  \caption{}\label{fig:Ni-across-0}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Fe_across_interface_dose0}
+  \caption{}\label{fig:Fe-across-0}
+\end{subfigure}
+\par\smallskip
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Cr_across_interface_dose0.5}
+  \caption{}\label{fig:Cr-across-0.5}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Ni_across_interface_dose0.5}
+  \caption{}\label{fig:Ni-across-0.5}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Fe_across_interface_dose0.5}
+  \caption{}\label{fig:Fe-across-0.5}
+\end{subfigure}
+\par\smallskip
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Cr_across_interface_dose3}
+  \caption{}\label{fig:Cr-across-3}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Ni_across_interface_dose3}
+  \caption{}\label{fig:Ni-across-3}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Fe_across_interface_dose3}
+  \caption{}\label{fig:Fe-across-3}
+\end{subfigure}
+\caption{
+Comparison of atomic composition profiles across the intergranular oxide with experimental EDX line-scan results\cite{deng2017effect}. (a-c) SA sample without irradiation. (d-f) 0.5 dpa irradiation. (g-i) 3 dpa irradiation.
+}
+\label{fig:EDX-line-compare}
+\end{figure}
 
+In the previous model, the selective oxidation is formulated as below:
+\begin{align}
+J_{\mathrm{r}}^{\mathrm{Cr}}
+ &= \tfrac{2}{3}J_{\mathrm{r}}^{\mathrm{Cr_2O_3}}
+   +\tfrac{2}{4}J_{\mathrm{r}}^{\mathrm{FeCr_2O_4}},
+\label{eq:sink-cr}\\
+J_{\mathrm{r}}^{\mathrm{Fe}}
+ &= \tfrac{3}{4}J_{\mathrm{r}}^{\mathrm{Fe_3O_4}}
+   +\tfrac{1}{4}J_{\mathrm{r}}^{\mathrm{FeCr_2O_4}},
+\label{eq:sink-fe}\\
+J_{\mathrm{r}}^{\mathrm{Si}}
+ &= \tfrac{1}{2}J_{\mathrm{r}}^{\mathrm{SiO_2}} .
+\label{eq:sink-si}
+\end{align}
+\begin{align}
+J_{\mathrm{r}}^{\mathrm{Cr_2O_3}}
+ &= k_{\mathrm{r}}^{\mathrm{Cr_2O_3}}\,
+    C_{\Ox}^{\intf}\,C_{\mathrm{Cr}}^{\GB},
+\label{eq:rate-cr2o3}\\
+J_{\mathrm{r}}^{\mathrm{Fe_3O_4}}
+ &= k_{\mathrm{r}}^{\mathrm{Fe_3O_4}}
+    \left(C_{\Ox}^{\intf}-C_{\Ox}^{\thr}\right)
+    C_{\mathrm{Fe}}^{\GB},
+\label{eq:rate-fe3o4}\\
+J_{\mathrm{r}}^{\mathrm{FeCr_2O_4}}
+ &= k_{\mathrm{r}}^{\mathrm{FeCr_2O_4}}\,
+    C_{\Ox}^{\intf}
+    \left(\frac{1}{C_{\mathrm{Fe}}^{\GB}}
+         +\frac{2}{C_{\mathrm{Cr}}^{\GB}}\right)^{-1},
+\label{eq:rate-fecr2o4}\\
+J_{\mathrm{r}}^{\mathrm{SiO_2}}
+ &= k_{\mathrm{r}}^{\mathrm{SiO_2}}\,
+    C_{\Ox}^{\intf}\,C_{\mathrm{Si}}^{\GB},
+\label{eq:rate-sio2}
+\end{align}
+\begin{equation}
+\mathbf{v}_{\lat}^{\ox}=\left(J_{\mathrm{r}}^{\mathrm{Cr}}+J_{\mathrm{r}}^{\mathrm{Fe}}
+  +J_{\mathrm{r}}^{\mathrm{Si}}\right)\hat{\mathbf{n}}
+\label{eq:vlat-ox}
+\end{equation}
+These equations include the different elements' surface reaction rates and the movement of the oxide/metal interface. The assumption that the un-oxidized metal is always rejected to the metal side of the interface is made. With much higher surface reaction rate of Cr, the Cr is extremely depleted at the interface, and Fe is extremely enriched with this assumption, which is not consistent with the experimental EDX line-scan results\cite{deng2017effect}. The experimental results show that the Cr is enriched and Fe is depleted in the oxide, which is expected for the selective oxidation of Cr. However, there is no significant depletion of Cr or enrichment of Fe in the metal side of the interface. Only slightly enriched Ni is observed at the interface. There is a minimum of Cr profile in the middle of the oxide in the irradiated sample and the minimum deepens with increasing dose, which indicates that with the interface moving into the metal, the interfacial concentration of Cr is not modulated by the selective oxidation. The shape of RIS profile is kept when the oxidation front moving. The excess Fe and Ni must have a exit path besides being rejected to the metal side or being oxidized. \textcite{deng2020corrosion} proposed that the excess Fe and Ni can diffuse along the oxide grain boundary to the oxide surface and Fe can participate in forming outer layer oxide particles further. Small amount of Ni is detected in the oxide, but no Ni oxide is observed in experimental results\cite{deng2021grain}. Ni is expected to be un-oxidized solute in the oxide and there are some remaining Ni staying in the intergranular oxide, which is observed in the EDX line-scan results. To be consistent with this physical picture, the model is revised as below:
+The maximum oxidation front moving velocity is defined as the moving velocity due to maximum surface reaction:
+\begin{equation}
+v_{\lat}^{\ox,\max}=\max{\left(\frac{J_{\mathrm{r}}^i}{C_i^{\GB}}\right)}.
+\end{equation}
+The front sweeps element $i$ at the rate $v_{\lat}^{\ox,\max}C_i^{\GB}$, of which
+$J_{\mathrm{r}}^{i}$ is oxidized. The remainder,
+\begin{equation}
+E_i=\max\!\left(v_{\lat}^{\ox,\max}\,C_i^{\GB}-J_{\mathrm{r}}^{i},\;0\right),
+\qquad i\in\{\mathrm{Cr},\mathrm{Fe},\mathrm{Ni},\mathrm{Si}\},
+\label{eq:excess}
+\end{equation}
+is zero for the element that sets $v_{\lat}^{\ox,\max}$ and equals the full swept
+amount $v_{\lat}^{\ox,\max}C_{\mathrm{Ni}}^{\GB}$ for Ni, which is not oxidized. In the
+previous model $E_i$ was rejected entirely to the metal side. It is now partitioned
+between rejection to the metal and removal through the oxide, where the element is
+either retained as unoxidized solute or transported along the oxide grain boundaries
+to the surface \cite{deng2020corrosion}. The partition is controlled by a
+redistribution velocity $v_i^{\mathrm{r}}$ for each element, the characteristic
+velocity at which element $i$ can be rejected into the metal ahead of the moving
+front. The fraction removed through the oxide is
+\begin{equation}
+\lambda_i=\frac{v_{\lat}^{\ox,\max}}{v_{\lat}^{\ox,\max}+v_i^{\mathrm{r}}},
+\label{eq:capture-fraction}
+\end{equation}
+so that the previous model is recovered for $v_i^{\mathrm{r}}\to\infty$
+($\lambda_i\to0$, full rejection), while for $v_i^{\mathrm{r}}\ll v_{\lat}^{\ox,\max}$
+the front outruns the rejection and the excess is carried into the oxide
+($\lambda_i\to1$), leaving the grain-boundary profile unmodulated by the selective
+oxidation. The removed flux is added to the metal sink of element $i$,
+\begin{equation}
+J_{\mathrm{r}}^{i}\;\leftarrow\;J_{\mathrm{r}}^{i}+\lambda_i E_i .
+\label{eq:sink-capture}
+\end{equation}
+With the postprocessing assuming that the prior formed oxide is located at the middle of the intergranular oxide, the simulated results reproduced the minimum of Cr profile in the middle of the oxide. The dose dependence of the Cr/Fe concentration in the oxide is also reproduced.
 
+\section{Time Dependence of Intergranular Oxide Penetration}
+\begin{figure}[!ht]\centering
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{front_vs_time_all_doses}
+  \caption{}\label{fig:front-vs-time}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+  \includegraphics[width=\linewidth]{front_vs_time_normalized}
+  \caption{}\label{fig:front-vs-time-normalized}
+\end{subfigure}\hfill
 
+\caption{
+Comparison of the intergranular oxide penetration depth with experimental results\cite{deng2020corrosion}. (a) The absolutepenetration depth vs. time for different doses. (b) The normalized penetration depth vs. normalized time.
+}
+\label{fig:front-vs-time-compare}
+\end{figure}
+The model is calibrated by the experimental data of intergranular 500 h exposure oxide penetration depth vs. dose from \textcite{deng2017effect}. The calibrated model is then used to predict the time dependence of intergranular oxide penetration depth. The predicted penetration depth vs. time for different doses is compared with the experimental data from \textcite{deng2020corrosion}. The model underestimates the penetration depth for both 0.5 dpa and 1.5 dpa compared with the 2021 experimental data. However, this might because the 2020 experimental data is from a different series of exposure experiments though the authors claimed the same material and irradiation and exposure conditions. The apparent effective diffusivity of the oxygen in the intergranular oxide in \textcite{deng2020corrosion} experiment 0.5 dpa sample is higher than the \textcite{deng2017effect} experiment 3 dpa sample. Apparent effective diffusivity is defined as below:
+\begin{equation}
+\bar{D}_{\mathrm{eff}}=L^2/(2t),
+\end{equation}
+where $L$ is the penetration depth and $t$ is the exposure time. 
+
+\begin{table}[htbp]
+\centering
+\caption{Apparent effective diffusivities of the grain-boundary oxidation
+front, $\bar{D}_{\mathrm{eff}}=L^{2}/2t$, computed from the reported final
+penetration depth $L$ and total exposure time $t$. Depths for
+\textcite{deng2017effect} are digitized from Fig.~12 therein (mean over reported
+boundaries;
+depths for \textcite{deng2020corrosion} are the values reported in the text.}
+\label{tab:deff}
+\begin{tabular}{llS[table-format=4.0]S[table-format=3.0]S[table-format=2.1]S[table-format=2.1]}
+\toprule
+Source & Dose & {$t$ (\si{h})} & {$L$ (\si{nm})} & {$\bar{D}_{\mathrm{eff}}$ (\si{nm^2/h})} & {$\bar{D}_{\mathrm{eff}}$ ($10^{-22}$~\si{m^2/s})} \\
+\midrule
+\textcite{deng2017effect} & SA             & 500  & 40  & 1.6  & 4.4  \\
+\textcite{deng2017effect} & \SI{0.5}{\dpa} & 500  & 60  & 3.6  & 10.0 \\
+\textcite{deng2017effect} & \SI{3.0}{\dpa} & 500  & 100 & 10.0 & 27.8 \\
+\textcite{deng2020corrosion} & \SI{0.5}{\dpa} & 1500 & 190 & 12.0 & 33.4 \\
+\textcite{deng2020corrosion} & \SI{1.5}{\dpa} & 1500 & 240 & 19.2 & 53.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In Table~\ref{tab:deff}, the oxide penetarate faster in the 2020 experiment than the 2017 experiment for the same dose. It is expected to underestimate the penetration depth for 0.5 dpa and 1.5 dpa in the 2020 experiment with the model calibrated by the 2017 experiment data. However, the normalized penetration depth vs. time shows that the model predicts a reasonable time dependence of the intergranular oxide penetration depth. The normalized penetration depth is defined as:
+\begin{equation}
+L_{\mathrm{norm}}=\frac{L}{L_{\max}},
+\end{equation}
+where $L_{\max}$ is the maximum penetration depth for all samples. The normalized penetration depth of 0.5 dpa sample agrees well with the experimental data, which indicates that the model predicts an accurate ratio of the penetration depth at different dose.
 
 \printbibliography
 \end{document}
