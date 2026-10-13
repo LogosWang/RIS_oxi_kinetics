@@ -15,6 +15,7 @@
 *.out
 *.run.xml
 *.synctex.gz
+*-SAVE-ERROR
 *.toc
 *.lof
 *.lot
