@@ -114,21 +114,21 @@ resistance to oxygen diffusion \cite{deng2017effect}.
 
 % ---- 3. Si oxidation and dissolution add free volume to the same transport quantity ----
 Si oxidation and dissolution alter this transport resistance by changing
-the structure through which oxygen moves. The role of Si identified by
-\textcite{du2026silicon} established with model alloys of systematically
-varied Cr and Si contents in hydrogenated water, which allowed the
-contributions of Cr depletion and Si enrichment to be separated. They
+the structure through which oxygen moves. The role of Si was established by
+\textcite{du2026silicon} with model alloys of systematically varied Cr and
+Si contents in hydrogenated water, which allowed the contributions of Cr
+depletion and Si enrichment to be separated. They
 attributed the greater oxide degradation and cracking susceptibility at
 higher Si content to dissolution of \ce{SiO2} in the inner oxide and the
 resulting porous, defective film, and their STEM analysis of intergranular
 oxides indicated faster grain-boundary diffusion at higher Si content. Related microscopy on
 proton-irradiated 316L identified Si enrichment at oxide tips and
 porosity behind them, consistent with preferential Si oxidation followed
-by dissolution \cite{kuang2022highresolution}. Although 316L differs from 304SS in
-bulk composition, this observation is used here as mechanistic support
-rather than as a quantitative reference; the same oxidation and
-dissolution of segregated Si appears as a step in the IASCC mechanism
-summarized by \textcite{was2024how}. Together, these studies provide
+by dissolution \parencite{kuang2022highresolution}. Although that alloy
+differs from 304SS in bulk composition, the sequence itself is not
+alloy-specific: oxidation and dissolution of segregated Si appears as a
+step in the IASCC mechanism summarized by \textcite{was2024how} for
+austenitic stainless steels generally. Together, these studies provide
 a basis for including dissolution-generated free volume in the transport
 description. With the dependence on Cr content, they motivate
 representing the evolving oxide composition and free volume through a
@@ -138,7 +138,7 @@ multiple elements to a common quantity governing oxygen transport.
 % ---- 4. Existing models and the gap ----
 Each half of this sequence has been modeled separately, and the two
 halves are not equally developed. The segregation half is settled enough
-that the boundary composition can be computed rather than only measured.
+that the grain boundary composition can be computed rather than only measured.
 Since the inverse-Kirkendall and rate-theory descriptions of RIS in
 concentrated alloys \parencite{marwick1978segregation,wiedersich1979theory},
 the composition profile at a grain boundary has been obtained from the
@@ -149,18 +149,15 @@ dependence of Cr depletion and Ni enrichment
 resolve the sink itself, predicting segregation at grain boundaries and
 dislocation cell walls \parencite{kadambi2025phasefield} and the
 conditions under which Cr switches from enrichment to depletion
-\parencite{oplinger2026radiationinduceda}. What all of these models return
-is the segregation profile. None carries that profile into what the
-boundary does next: the profile is an end point, not the initial
-condition for a subsequent process.
-% Keys not yet in the Zotero export (guessed in Better-BibTeX style; rename
-% to match once added): marwick1978segregation, wiedersich1979theory.
+\parencite{oplinger2026radiationinduceda}. All of these models return the segregation profile as their final output;
+none includes how the modified boundary composition affects the subsequent
+grain-boundary oxidation.
 
 On the oxidation side, the dependence of intergranular penetration depth
 on dose and exposure time has been characterized
 experimentally \parencite{deng2017effect,deng2020corrosion}, but existing
-kinetic models of grain-boundary oxidation do not respond to the boundary
-chemistry. Models that resolve oxygen transport along the boundary treat
+kinetic models of grain-boundary oxidation do not respond to the grain boundary
+chemistry. Models that resolve oxygen transport along the grain boundary treat
 the oxygen diffusivity as a single constant: in analytical or
 semi-analytical solutions that give the penetration depth in closed form
 \parencite{fisher1951calculation,xu2015modeling,evans2013mechanism}, in
@@ -194,7 +191,7 @@ To our knowledge, no model connects the segregated composition to the
 advance of the oxidation front through a transport quantity computed from
 both. Establishing this connection requires tracking how the segregated
 alloy supplies the interfacial reactions, how those reactions change the
-oxide, and how the resulting diffusivity affects subsequent oxygen
+oxide composition, and how the resulting diffusivity affects subsequent oxygen
 delivery. Segregation profiles, oxide composition, interfacial Ni
 enrichment, and penetration depth then provide complementary observables
 for assessing the coupling.
