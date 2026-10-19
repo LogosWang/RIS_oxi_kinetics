@@ -786,17 +786,7 @@ about \SI{0.3}{\atpct} to about 1.4 and \SI{2.8}{\atpct}, against measured
 maxima of about 2.0 and \SI{2.8}{\atpct} (Fig.~\ref{fig:profile-si}). The
 boundary values at \SI{3.0}{\dpa} are reproduced for all three elements; at
 \SI{0.5}{\dpa} the model overestimates the Cr depletion.
-%% Values read from Fig.~\ref{fig:profiles}; replace with the exact simulation
-%% output when available.
 
-The widths of the profiles differ between the two doses. The measured profiles
-return to their matrix values within roughly \SI{5}{nm} of the boundary at
-\SI{0.5}{\dpa} and within roughly \SI{8}{nm} at \SI{3.0}{\dpa}. The calculated
-\SI{0.5}{\dpa} profiles reproduce this width, whereas the calculated
-\SI{3.0}{\dpa} profiles are broader than measured: \SI{15}{nm} from the boundary
-the calculated Cr and Ni have not yet returned to their matrix values. The dose
-dependence of the segregation magnitude is therefore captured, while the width
-of the segregated zone at the higher dose is overestimated.
 
 \subsection{Oxide Composition and Interfacial Chemistry}
 \label{sec:resultsNiEnrichment}
@@ -849,52 +839,80 @@ EDX probe; measurements are the line scans of \textcite{deng2017effect}.}
 \end{figure}
 
 Figure~\ref{fig:edx-compare} compares the calculated composition across the
-intergranular oxide with the EDX line scans of \textcite{deng2017effect}. The postprocess assumes that the early formed oxide is located at the centre of the intergranular oxide and the subsequent oxide grows from the centre to the oxide/metal interface. The
-measurements show the signature of selective oxidation: Cr is enriched and Fe
-depleted in the oxide relative to the matrix. On the metal side of the interface,
-however, the scans show no significant Cr depletion or Fe enrichment, and only a
-slight Ni enrichment. In the irradiated specimens the Cr profile exhibits a
-minimum at the centre of the oxide that deepens with increasing dose. This
-indicates that the Cr concentration at the advancing interface is set by the
-radiation-induced segregation profile and is not modulated by the selective
-oxidation: the shape of the segregation profile is retained as the front moves
-into the metal.
+intergranular oxide with the EDX line scans of \textcite{deng2017effect} after
+the \SI{500}{h} exposure. The calculated profiles are plotted with the oxide
+formed first at the centre of the intergranular oxide and the later oxide
+growing outward to the oxide/metal interface on both sides, consistent with
+symmetric growth into the two grains.
 
-A model in which all unoxidized metal is rejected to the metal side cannot
-reproduce this behaviour. Because Cr reacts much faster than Fe, such a model
-depletes Cr and enriches Fe strongly at the interface, in conflict with the
-scans. With the interfacial mass redistribution of
-Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture}, the excess Fe and Ni
-swept by the front are carried away through the oxide instead, as proposed by
-\textcite{deng2020corrosion}, and the calculated profiles reproduce both the
-retained segregation shape and the central Cr minimum, whose depth increases
-with dose in the measurements and in the model. The calculated Cr and Fe contents
-of the oxide follow the measured dose dependence: less Cr is available at the
-front after irradiation, so the oxide that forms there is poorer in Cr and richer
-in Fe. No Ni oxide is observed experimentally \parencite{deng2021grain}; the small
-amount of Ni detected in the oxide is treated as unoxidized solute retained in
-the oxide, which the model represents through the Ni fraction
-\(\lambda_{\mathrm{Ni}}\). The calculated profiles are plotted with the oxide
-formed first located at the centre of the intergranular oxide, consistent with
-symmetric growth into both grains.
+The measurements show the signature of selective oxidation at all three doses:
+Cr is enriched and Fe depleted in the oxide relative to the matrix. The Cr
+content of the oxide, normalized to exclude oxygen, decreases with dose, from
+\SI{74.9}{\atpct} in the solution-annealed specimen to 69.5 and
+\SI{58.3}{\atpct} at 0.5 and \SI{3.0}{\dpa} \parencite{deng2017effect}. On the
+metal side of the interface the scans show no significant Cr depletion or Fe
+enrichment, and only a slight Ni enrichment. In the irradiated specimens the Cr
+profile exhibits a minimum at the centre of the oxide that deepens with
+increasing dose.
 
-Silica formed at the boundary is not retained: the segregated Si is oxidized
-preferentially and the resulting \ce{SiO2} dissolves into the water, leaving
-porosity in the intergranular oxide \parencite{du2026silicon,kuang2022highresolution}. The model adopts
-this behaviour explicitly. All \ce{SiO2} produced is treated as dissolved and the
-volume it occupied is retained as free volume available for oxygen transport, so
-the calculated \ce{SiO2} volume fraction is a measure of the porosity generated
-within the intergranular oxide rather than of a phase present in it.
+The calculated profiles reproduce these features. With the interfacial mass
+redistribution of Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture}, the
+calculated Cr profile retains the shape of the segregation profile across the
+interface, with neither Cr depletion nor Fe enrichment on the metal side, and
+shows the central Cr minimum whose depth increases with dose. The calculated
+Cr and Fe contents of the oxide follow the measured dose dependence: the oxide
+formed on irradiated boundaries is poorer in Cr and richer in Fe. The small
+amount of Ni in the oxide is carried by the Ni fraction \(\lambda_{\mathrm{Ni}}\)
+of Eq.~\eqref{eq:capture-fraction} as unoxidized solute; no Ni oxide forms in
+the model, consistent with \textcite{deng2021grain}. The calculated \ce{SiO2}
+volume fraction, which the model converts to free volume
+(Sec.~\ref{sec:methodGBOxidation}), is reported with the oxide composition as the
+porosity generated within the intergranular oxide.
 
-\subsection{Dose-Dependent Grain-Boundary Oxidation Kinetics}
+\begin{figure}[!ht]\centering
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{Cr_minimum_in_oxide_vs_dose}
+  \caption{}\label{fig:Cr-min}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{porosity_SiO2_dissolution_vs_dose}
+  \caption{}\label{fig:poro-doses}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{porosity_across_oxide_rel0.5}
+  \caption{}\label{fig:poro-across}
+\end{subfigure}
+\caption{
+  Comparing the Cr content and porosity created by \ce{SiO2} dissolution volume fraction between SA sample and irradiated sample. (a) Comparing the calculated minimum of the Cr content in the intergranular oxide with that in experiments \cite{deng2017effect}. (b) Comparison of porosity volume fraction between different doses. (c) Comparison of the porosity volume fraction profile across the intergranular oxide section between different doses.
+}
+\end{figure}
+
+Figure~\ref{fig:Cr-min} shows that the Cr content in the intergranular oxide decreases with doses, which is consistent with experimental results \cite{deng2017effect}. Assuming all formed \ce{SiO2} is dissolved immediately, the intergranular oxide have higher porosity volume fraction in GB irradiated by higher doses which is showed in figure~\ref{fig:poro-doses}. Figure~\ref{fig:poro-across} shows that the porosity induced by silica dissolution is concentrated at the center of intergranular oxide, which is consistent with the observation of \textcite{kuang2022highresolution} by under-focus TEM characterization.
+
+
+\subsection{Intergranular Oxide Penetration Depth}
 \label{sec:resultsOxi}
 \begin{figure}[!ht]\centering
-\includegraphics[width=0.6\textwidth]{front_vs_dose}
-\caption{Calculated and measured oxidation front depth after the \SI{500}{h}
-exposure as a function of dose, taken at a total oxide thickness of
-\SI{1}{nm}. These measurements, from \textcite{deng2017effect}, are the ones
-used to calibrate the oxidation parameters.}
-\label{fig:front-dose}
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{front_vs_dose}
+  \caption{}\label{fig:front-dose}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{front_vs_time_all_doses}
+  \caption{}\label{fig:front-time-abs}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+  \includegraphics[width=\linewidth]{front_vs_time_normalized}
+  \caption{}\label{fig:front-time-norm}
+\end{subfigure}
+\caption{Intergranular oxide penetration depth, calculated and measured.
+(a) Dose dependence after \SI{500}{h}; these data calibrate the oxidation
+parameters. Measurements from \textcite{deng2017effect}.
+(b) Time dependence at 0.5 and \SI{1.5}{\dpa}, predicted with the calibrated
+parameters held fixed. Measurements from \textcite{deng2020corrosion}.
+(c) As (b), with depths normalized by the maximum over both doses,
+\(L/L_{\max}\), separately for calculations and measurements.}
+\label{fig:front}
 \end{figure}
 %% TODO: front_vs_dose.pdf predates the finite-sink and redistribution revisions;
 %% regenerate it with the revised model before submission.
@@ -911,29 +929,10 @@ the irradiation stage, Eq.~\eqref{eq:handoff}.
 
 \subsection{Predictions against Independent Experiments}
 \label{sec:resultsPredictiveValidation}
-\begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.48\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_time_all_doses}
-  \caption{}\label{fig:front-time-abs}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.48\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_time_normalized}
-  \caption{}\label{fig:front-time-norm}
-\end{subfigure}
-\caption{Predicted and measured time dependence of the intergranular oxide
-penetration depth at 0.5 and \SI{1.5}{\dpa}, obtained with the calibrated
-parameters held fixed; neither the \SI{1.5}{\dpa} dose nor the exposure times
-shown enter the calibration. (a) Penetration depth versus exposure time.
-(b) Penetration depth normalized by the maximum depth over both doses,
-\(L/L_{\max}\), taken separately for the calculations (\(L_{\max}=\SI{110}{nm}\))
-and the measurements (\(L_{\max}=\SI{231}{nm}\)). Measurements from
-\textcite{deng2020corrosion}.}
-\label{fig:front-time}
-\end{figure}
 
 With the parameters fixed by the calibration of Fig.~\ref{fig:front-dose}, the
 model is used to predict the time dependence of the penetration depth, which is
-compared in Fig.~\ref{fig:front-time} with the measurements of
+compared in Fig.~\ref{fig:front} with the measurements of
 \textcite{deng2020corrosion} at 0.5 and \SI{1.5}{\dpa} after 100 and
 \SI{1500}{h}. At \SI{100}{h} the calculated and measured depths are of the same
 order, 20--\SI{40}{nm}. At \SI{1500}{h} the model gives about 95 and
@@ -965,8 +964,41 @@ series used for calibration.
 \subsection{Effect of Radiation-Induced Segregation on Grain-Boundary Oxidation}
 \label{sec:discussionRIS}
 
+The composition profiles of Sec.~\ref{sec:resultsNiEnrichment} show that the
+Cr concentration at the advancing interface is set by the radiation-induced
+segregation profile and is not modulated by the selective oxidation: the shape
+of the segregation profile is retained as the front moves into the metal, and
+the central Cr minimum of the oxide is the segregation minimum of the boundary
+that was oxidized first. This retention is not reproduced by a model in which
+all unoxidized metal is rejected to the metal side. Because Cr reacts much
+faster than Fe, such a model depletes Cr and enriches Fe strongly ahead of the
+front, in conflict with the scans. The interfacial redistribution of
+Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture} resolves this by
+carrying the excess Fe and Ni swept by the front away through the oxide, along
+its grain boundaries to the surface, as proposed by \textcite{deng2020corrosion}
+from the outer-layer oxide particles observed on irradiated specimens. The
+agreement with the measured profiles therefore supports the picture in which
+selective oxidation consumes Cr at the rate the segregation profile supplies
+it, while the elements it does not consume leave through the oxide rather than
+accumulating in the metal.
+
 \subsection{Rate-Controlling Transport and Oxide Chemistry}
 \label{sec:discussionTransport}
+
+Silica formed at the boundary is not retained. The segregated Si is oxidized
+preferentially and the resulting \ce{SiO2} dissolves into the water, leaving a
+porous interface along the centre of the intergranular oxide
+\parencite{kuang2022highresolution}; the same dissolution degrades the inner
+oxide film on high-Si model alloys and accelerates intergranular oxidation
+\parencite{du2026silicon}. The model adopts this behaviour as a limiting case:
+all \ce{SiO2} produced is treated as dissolved and the volume it occupied is
+retained as free volume available for oxygen transport
+(Sec.~\ref{sec:methodGBOxidation}). The calculated \ce{SiO2} volume fraction
+reported in Sec.~\ref{sec:resultsNiEnrichment} is therefore a measure of the
+porosity generated within the intergranular oxide rather than of a phase
+present in it, and its contribution to \(D_{\Ox}^{\eff}\) through
+Eq.~\eqref{eq:Deff} is the route by which Si enrichment enters the oxidation
+kinetics.
 
 \subsection{Implications of Concurrent Irradiation and Oxidation}
 \label{sec:discussionConcurrent}
