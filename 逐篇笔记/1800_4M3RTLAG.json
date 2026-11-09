@@ -1,0 +1,63 @@
+{
+ "item":"1800","key":"4M3RTLAG","cite":"Wu 2026 Corros. Sci. 272, 114255","type":"simulation",
+ "read_coverage":{"total_lines":1507,"read_through_line":1507,"pages_rendered":[10,15,17,18]},
+ "section_map":[
+  {"section":"1 Introduction","page":1,"gist":"回顾 mechano-electrochemical、phase-field、CPFEM-CZM 三类模型，指出它们未把滑移-电化学-GB 退化统一，提出 CPECM-CZM。"},
+  {"section":"2.1 EBSD-based model","page":3,"gist":"1570×1154 μm EBSD 截面平面应变 CPFEM，2 μm 网格；力学场投影到三维电解液域界面；水化学取自 Ref.[3]（2 ppm DO）。"},
+  {"section":"2.2 Crack initiation","page":3,"gist":"Faraday 电荷转 Dc（href=64 nm），i(t) 幂律衰减（t0=158 s, nD=0.8），Dc 经 Reuss 式混合降低 K（121/180 GPa），双线性 TSL 给 Dm，δf=2 μm。"},
+  {"section":"3.1-3.3 Results","page":6,"gist":"nominal 0.1/5/8% 下应力、滑移、ρm、V、iloc 与离子分布；统计得 γtr≈0.45；路径分析比较晶粒尺寸组合（51.2°）。"},
+  {"section":"4.1-4.2 Discussion","page":13,"gist":"ia0 变 0.1/1/10 倍和孪晶阻力 Δg_tw,0=20/40/60 MPa 的模型内敏感性；V 差 2.3→6.5 mV。"},
+  {"section":"4.3-4.4","page":16,"gist":"按取向差分箱统计 γmax,a 与 anodic GB fraction（40-55° 最高）；Dc=0.12/0.48/0.94 下 Dm 演化，垂直加载方向 GB 优先开裂。"},
+  {"section":"4.5 Validation","page":17,"gist":"Dm≥0.9 判裂；与 Ref.[3] 同一 CW316L 实验按取向差分箱比较，RMSE=0.036；文献数据只作定性背景。"},
+  {"section":"5 Conclusions","page":17,"gist":"四条结论：细晶富滑移→阳极电流、载荷/水化学、40-55° 非单调、氧化-变形正反馈。"}
+ ],
+ "contribution":{
+  "primary":"FRAMEWORK","secondary":"MECHANISM","neither_type":"",
+  "claimed":"统一 CPFEM-电化学-CZM 框架，可分辨 GB 特异的 SCC 萌生敏感性，并揭示晶粒尺寸和取向差依赖。",
+  "quote":"The model uniquely combines crystallography-dependent deformation, local electrochemical response, and corrosion-induced interfacial damage",
+  "quote_page":18,
+  "novelty_test":"新增的是耦合方式：CP 输出的位错量作为界面态变量进入 Gutman 型力化学极化（来自 Ref.[18-21]），阳极电荷经幂律衰减（前作 Ref.[43]）转 Dc，再用 Reuss 混合（Ref.[42]）降低 CZM 刚度（CPFEM-CZM 见 Ref.[31,34,35]）。各组件都是旧的，新在串联。所称机制（细晶处滑移→负移电位→阳极电流；氧化→软化→开裂）都是耦合结构预设的。",
+  "mechanism_evidence":"事后解释为主。因果操控只在模型内部（ia0×0.1/1/10、Δg_tw,0），且未做最关键的反事实：关掉电化学（Dc 均匀或 Dc=0）后取向差-开裂曲线是否改变，也没和纯力学 CPFEM-CZM 比较。γtr≈0.45 是该模型内的统计量。Eq.(4) 把氧化软化上限限定为 K 下降 33%，电化学进入断裂的唯一通道很窄，取向差依赖可能主要来自力学场或孪晶处理，但文中未检验。",
+  "reuse_test":"原则上可复用（COMSOL/CPFEM 串接思路），但数据仅“on request”，本构与电化学方程在 Supplement（手边没有），需要 i0、href、t0 等体系专用输入。相对已有方法的增量是耦合工作流，不是新算法。"
+ },
+ "parameters":[
+  {"name":"href（Dc 归一化深度）","value":"64.0 nm","provenance":"FIT_TO_SAME_DATA","page":5,"basis":"取自 Ref.[3] 同一 CW316L 实验观察到的氧化渗透；Fig.16 的验证用同一实验。严格说是测量值而非拟合，但属同一数据集。"},
+  {"name":"t0, nD（电流衰减）","value":"158 s, 0.8","provenance":"LITERATURE_FIT","page":6,"basis":"同组前作 Ref.[43]（EFM 2024）电化学建模研究，Fig.S2 敏感性。"},
+  {"name":"Ec, Es","value":"121, 180 GPa","provenance":"INDEPENDENT_EXPT","page":5,"basis":"Dohr 2016 thesis [36]，微悬臂测量来源，未能核对。"},
+  {"name":"δf, θf","value":"2 μm","provenance":"TUNED_OR_ASSUMED","page":6,"basis":"Based on previous CZM studies [36]；是假定的 CZM 参数。δ0（或界面强度）正文未给。"},
+  {"name":"Dm 判裂阈值","value":"0.9","provenance":"TUNED_OR_ASSUMED","page":17,"basis":"作者称 operational criterion，引的是混凝土和 TRIP 钢 CZM [54,55]。直接决定 cracked-GB fraction。"},
+  {"name":"比较时的模拟状态（Dc=0.94 / 8% 名义应变）","value":"未明说何时统计","provenance":"TUNED_OR_ASSUMED","page":17,"basis":"Fig.16 未写明统计时刻或应变。fraction 随 Dc 和应变单调升高，所选状态实质是绝对标度的调节量。"},
+  {"name":"Δg_tw,0","value":"20/40/60 MPa（Fig.13 用 40）","provenance":"TUNED_OR_ASSUMED","page":15,"basis":"参数化扫描，无独立约束。"},
+  {"name":"CP 硬化及初始 SSD/GND 参数","value":"正文未给（Sect. S2）","provenance":"UNKNOWN","page":3,"basis":"Supplement 未见，无法溯源。"},
+  {"name":"水化学初值（DO 6.25e-2 mol/m3 等）","value":"见 Sect.2.1","provenance":"INDEPENDENT_EXPT","page":3,"basis":"Ref.[3] 实验条件，属输入。"}
+ ],
+ "dof":{"free_or_tuned":5,"independent_constraints":10,"note":"我数的主文可见调节量：Dm 阈值、比较时刻/应变、δf/δ0、href、孪晶阻力，外加未见的 CP 与电化学参数（Sect.S2）。约束是 Fig.16d 约 10 个分箱 fraction。这些分箱形状由 CP 场主导，真实自由度无法从主文确定。"},
+ "comparisons":[
+  {"id":"C1","quantity":"各取向差区间 cracked-GB fraction（Fig.16d）","target_data":"Ref.[3] Wang 2022 Corros. Sci. 同组 CW316L 高温含氧水 SCC，Region A","authors_language":"the predicted cracked-GB fractions agree well with the experimental results, with an RMSE of 0.036","page":17,"where":"Fig. 16c,d","used_in_construction":"YES_INDIRECT","construction_evidence":"同一实验提供 EBSD 几何、水化学、href；文中明说 Ref.[3] 条件“used for model development and validation”。阈值 Dm≥0.9 和统计时刻未独立确定。未发现 fraction 被直接拟合。","temporal":"数据 2022 年先于模型发表，同组，非盲测。","metric":"我从 Fig.16d 读 10 点，算得 RMSE≈0.040（作者 0.036），R²≈0.92，常数零模型 RMSE≈0.138，单点相对误差 3-57%（0.07→0.11）。无误差棒，每箱实验 GB 数和裂纹数未报。","discriminating":"中等偏弱。曲线形状=低角低、随角度升高、Σ3 附近（55-60°）骤降，是文献里普遍的经验规律（Fig.16c 的其它合金也如此）。任何把 LAGB 和孪晶处理成弱驱动的模型都可能通过；未与纯力学模型比较。绝对幅值靠阈值和统计时刻。","verdict":"CALIBRATION","verdict_reason":"分箱曲线本身没有被证明用于拟合，但数据同实验、阈值和统计状态未独立固定、文中承认该实验用于 model development，且 Fig.16c/d 之间读数还不自洽。判为事实上的标定而不是 POSTDICTION；若 Supplement 证明比较时刻独立确定，可升到 CONSISTENCY/POSTDICTION 边缘。"},
+  {"id":"C2","quantity":"取向差依赖趋势 vs 其它合金文献数据（SR/SA/HIP/CM 316L, Fe-P, 304L）","target_data":"Ref.[4,52,53]","authors_language":"they are not used for quantitative validation","page":17,"where":"Fig. 16c","used_in_construction":"NO","construction_evidence":"作者明确只作定性背景。","temporal":"数据先于模型","metric":"未算。304L 点在 45-50° 高达 ~78（纵轴 0-80），Fe-P 是晶间腐蚀，标度不统一。","discriminating":"无，散点带覆盖任何合理曲线。","verdict":"CONSISTENCY","verdict_reason":"作者自己声明不作定量。"},
+  {"id":"C3","quantity":"裂纹优先出现在近垂直加载方向 GB","target_data":"Ref.[3]","authors_language":"This predicted cracking preference is in good agreement with our experimental observations","page":16,"where":"Sect. 4.4, Fig. 15","used_in_construction":"UNCLEAR","construction_evidence":"结果直接来自 CZM 的 Mode I 开启，未给统计。","temporal":"数据在先","metric":"无定量数据。","discriminating":"无，任何含法向牵引判据的模型都给出同样结果。","verdict":"CONSISTENCY","verdict_reason":"只有定性陈述。"},
+  {"id":"C4","quantity":"低载荷不裂、高载荷裂纹增多","target_data":"Ref.[3]","authors_language":"This coupling effect explains our previous experimental observation that no cracks formed under low loading","page":8,"where":"Fig. 6 讨论","used_in_construction":"UNCLEAR","construction_evidence":"Fig.6 只显示电势/电流随名义应变增大，未算不同载荷下的裂纹数。","temporal":"事后解释","metric":"无，未算裂纹数-载荷。","discriminating":"无，任何载荷单调模型都满足。","verdict":"CONSISTENCY","verdict_reason":"事后解释。"},
+  {"id":"C5","quantity":"裂纹沿线应变局域（KAM 插图）","target_data":"Ref.[3] 插图 Fig.15(b4)","authors_language":"is consistent with our experimental observations","page":16,"where":"Fig. 15(b4)","used_in_construction":"YES_INDIRECT","construction_evidence":"同组实验，只放一张插图。","temporal":"数据在先","metric":"无定量，KAM 和 γ 不是同一量。","discriminating":"无。","verdict":"CONSISTENCY","verdict_reason":"图形相似性。"},
+  {"id":"C6","quantity":"位错累积-电极电势偏移","target_data":"Fig.S3 “independent experimental measurements”（Supplement）","authors_language":"is further assessed against independent experimental measurements","page":8,"where":"Fig. S3","used_in_construction":"UNCLEAR","construction_evidence":"Supplement 不在手边。","temporal":"未知","metric":"读不出。","discriminating":"未知。","verdict":"CONSISTENCY","verdict_reason":"无法核实，按弱档处理；列入 unverifiable。"},
+  {"id":"C7","quantity":"GB 处应力集中和滑移局域","target_data":"Chen 2024 [44]、Ref.[45,46,47]","authors_language":"have been widely reported in both experimental observations and CPFE-based simulations","page":6,"where":"Sect. 3.1","used_in_construction":"NO","construction_evidence":"背景引用。","temporal":"数据在先","metric":"无定量。","discriminating":"无，所有 CPFEM 都给出。","verdict":"CONSISTENCY","verdict_reason":"文献定性类比。"}
+ ],
+ "paper_verdict":{"label":"CALIBRATION_PLUS_CONSISTENCY","why":"最强证据是 Fig.16d 的 10 点 RMSE=0.036，但它与模型开发用同一实验，阈值和统计状态未独立确定，且没有误差棒和纯力学对照。主体其余都是定性一致，“individual GBs”的声称没有逐晶界比较支持。","best_comparison":"C1","fraction_note":"7 条：1 条 CALIBRATION（最接近定量），6 条 CONSISTENCY。POSTDICTION/盲测 0 条。"},
+ "checks_performed":[
+  {"what":"放大 Fig.16d 读 10 点复算 RMSE、R² 和常数零模型","result":"RMSE≈0.040（文中 0.036，读数误差内相符），R²≈0.92，常数 RMSE≈0.138，低端相对误差可达 57%（0.07→0.11）。"},
+  {"what":"对照 Fig.16c 与 Fig.16d 的同一比较","result":"不自洽：16c 纵轴“Crack density” 0-80（正文说 fraction），16d 为 0-0.5；16c 有 11 颗星（含 60°），16d 只有 10 点；16c 峰值处模型低于实验（星≈48、53，曲线≈41、44），但 16d 最高两点 predicted>true（0.418→0.485，0.466→0.495）。按 16c 读数比例换算 x 值也对不上 0.296/0.31/0.315。无法确认两图为同一组数。"},
+  {"what":"用 Eq.(1-5) 和 Table 1 复算 Dc=1 所需电荷和时间","result":"M=55.38, ρ=7.86 g/cm3, z=2, href=64 nm 时 Q=1753 C/m²。若 i0 取文中报告的最大 iloc=0.09 A/m²（净电流）积分，1e6 s 仅 Dc≈0.20，到 Dc≈1 需约 1.7e9 s（54 年）。文中 Dc=0.94 必须依赖正文没报的阳极 i0（比 iloc 高约一个量级以上）或很长时间；Fig.15 的时间尺度未给。z=2 为我假定，正文未给 z 和 i0。"},
+  {"what":"估算电化学与氧化通道的动力学幅度","result":"正文 V 全场差 2.3-6.5 mV；300 °C 按 α=0.5 假设，exp(αFΔV/RT) 约 1.03-1.07，若只靠此 ΔV 阳极速率空间差异只有几个百分点；iloc 变号是净电流差。Eq.(4) 上限 K=121 GPa，即下降 33%。因此电化学对断裂的通道幅度有限，应做关闭电化学的对照。温度和 α 为我的假设，真实动力学式在 Supplement。"},
+  {"what":"核对 Ref.[3] 题名和本文加载方式","result":"Ref.[3] 题名明确是 'at constant loads'；本文 4.4 节却称 'During the SSRT process'，且模型按名义应变 0.1/5/8% 加载。验证对象和模拟加载历史不一致，且正文未说明换算。"},
+  {"what":"查“individual GB”声称的数据","result":"Fig.16 只比较分箱统计；实验 Region A（表面 EBSD）与模拟的 1570×1154 μm 区域未显示为同一组 GB，未做逐 GB 命中率/混淆矩阵。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"框架捕捉到单个 GB 的相对敏感性","quote":"captures both the misorientation-dependent trend and the relative susceptibility of individual GBs","page":17,"reality":"比较只到取向差分箱（10 个 fraction），没有逐 GB 对照。","consistent":false},
+  {"claim":"定量验证基于匹配条件的本实验","quote":"under closely matched conditions","page":17,"reality":"Ref.[3] 是恒载实验，本文 4.4 称 SSRT，模型为 8% 名义应变；2D 平面应变，且 Dm≥0.9 的时刻未明。条件匹配的只是材料和水化学。","consistent":false},
+  {"claim":"验证独立于模型开发","quote":"used for model development and validation","page":3,"reality":"作者自己说同一实验条件既用于开发也用于验证，href 也来自该实验。","consistent":false},
+  {"claim":"RMSE 0.036","quote":"with an RMSE of 0.036","page":17,"reality":"读点算得≈0.040，数值基本一致，但 Fig.16c 与 16d 正负偏差方向相反，且没有样本量或误差棒。","consistent":true},
+  {"claim":"取向差 40-55° 最强，55-60° 下降","quote":"with the strongest coupled response concentrated primarily in the 40–55","page":16,"reality":"Fig.14c/d 确实如此（anodic fraction 50-55° 约 0.75，55-60° 约 0.29；γmax,a 1.11→0.90）。但文中自述不区分 CSL，55-60° 下降和 Σ3 孪晶的关系未检验，是模型统计量。","consistent":true},
+  {"claim":"模拟揭示孪晶依赖说明 GB 敏感性取决于边界特征而不只是取向差角","quote":"demonstrating that GB susceptibility depends on boundary character","page":19,"reality":"只做了 Δg_tw,0 的参数扫描（20-60 MPa），且 Sect.4.3 明说统计未分 CSL；'demonstrating' 过强。","consistent":false}
+ ],
+ "unverifiable":["Supplement 不在手边：Sect.S2 本构和全部电化学方程、i0 数值、Fig.S2 敏感性、Fig.S3 ΔV 实验比较、Fig.S4/S5/S6。","Ref.[3] 的实验裂纹统计原值、每箱 GB 数；Ref.[43] 中 t0、nD 的来源是否也拟合了同一批实验。","模拟与 Region A 是否同一 EBSD 区域。"],
+ "one_line":"串联 CP-力化学电化学-CZM 的耦合框架；核心“定量验证”只是 10 个取向差分箱对同组同实验的 RMSE≈0.04，阈值 Dm≥0.9 和统计时刻未独立确定，Fig.16c/d 自相矛盾，也无关电化学对照，声称的单晶界预测未被检验。"
+}

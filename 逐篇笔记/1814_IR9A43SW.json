@@ -1,0 +1,458 @@
+{
+ "item": "1814",
+ "key": "IR9A43SW",
+ "cite": "Becquart et al. 2010 J. Nucl. Mater. 403:75",
+ "type": "simulation",
+ "read_coverage": {
+  "total_lines": 2119,
+  "read_through_line": 2119,
+  "pages_rendered": [
+   6,
+   7,
+   9,
+   10,
+   11,
+   12
+  ]
+ },
+ "section_map": [
+  {
+   "section": "1 Introduction",
+   "page": 1,
+   "gist": "W-He 无可用势函数，所以 OKMC 参数化依靠大量 DFT 加一组等时退火 He 脱附实验；BCA 见配套论文"
+  },
+  {
+   "section": "2.1 OKMC code",
+   "page": 1,
+   "gist": "LAKIMOCA（文中 [2]）扩展到 FIA；事件、时间算法，前因子取常数量级 Debye"
+  },
+  {
+   "section": "2.2 Assessment of empirical potentials",
+   "page": 3,
+   "gist": "综述 W 和 W-He 势；Table 1 对比；结论是没有势函数能正确描述 He，所以不用 MD，改用 BCA"
+  },
+  {
+   "section": "2.3.1-2.3.2",
+   "page": 5,
+   "gist": "DFT 设置；明确把 Soltan 9 组退火实验列为参数化依据（Fig.2）"
+  },
+  {
+   "section": "2.3.3 Pure He objects",
+   "page": 6,
+   "gist": "He 团簇结合能到 n=18；把 He 迁移从 DFT 0.06 eV 改设为 0.01 eV，按 Fig.4 线性增长；模拟 13 和 350 ppm，Fig.5-8；350 ppm 脱附偏低，起始 55 K 对实验 25 K"
+  },
+  {
+   "section": "2.3.4 Pure vacancy",
+   "page": 8,
+   "gist": "Ef 3.23 eV，Em 1.66 eV；双空位不稳定，与其他计算冲突，用级联直接成簇或 C 稳定来解释"
+  },
+  {
+   "section": "2.3.5-2.3.7 Mixed and SIA",
+   "page": 9,
+   "gist": "He-v 结合能表（Fig.10-11），混合团簇迁移设为零；SIA 迁移取 Derlet 0.013 eV；He-SIA 结合能定为 0.94 eV，不随尺寸变化且不能动"
+  },
+  {
+   "section": "2.3.8 Impurities and Tables 5-7",
+   "page": 10,
+   "gist": "杂质结合能；捕获半径、前因子 q=1000、s=0.5、capillary 常数"
+  },
+  {
+   "section": "2.4 Above-threshold",
+   "page": 11,
+   "gist": "12 ppm 3 keV He，每 He 0.29 FP，100 ppm C 陷阱；Fig.13 Marlowe 对 Random；Fig.14 团簇分布；结论是移动团簇与不动团簇竞争"
+  },
+  {
+   "section": "3 Conclusions",
+   "page": 13,
+   "gist": "参数化可正确重现缺陷数演化，前提是注入分布正确；He 脱附由移动与不动团簇竞争决定"
+  },
+  {
+   "section": "References",
+   "page": 13,
+   "gist": "[1] 配套 Marlowe 论文；[79] Soltan 1991；[82][92] 私人通讯；[93] 前作（1816 本组 2009）"
+  }
+ ],
+ "contribution": {
+  "primary": "NEITHER",
+  "secondary": "FRAMEWORK",
+  "neither_type": "参数数据生成：W-He 的 OKMC 参数集（DFT 加半经验调参）",
+  "claimed": "把 OKMC 参数化到 DFT 上，并指出 He 脱附由移动与不动团簇的竞争决定",
+  "quote": "The OKMC simulations indicate that He desorption results from a competition between the formation of mobile clusters and sessile ones",
+  "quote_page": 1,
+  "novelty_test": "实质新增：Table 2-7 的扩展参数集（He 团簇到 n=18，SIA 团簇到 7，He-v 大团簇）和 BCA 注入分布耦合。旧的：LAKIMOCA（[2]）、小团簇结合能（[93]，自引）、SIA 迁移（[25]）。算法没有新东西。所谓竞争机制是预设：纯 He 可动（Table 6）、混合团簇迁移设为零。该结论并非发现。",
+  "mechanism_evidence": "唯一的因果操控是 Marlowe 与 Random 分布对比，属于模型内反事实。它只在 Fig.13 中有明显差别（RMSE 0.065 vs 0.144），在 Fig.5a 中 Random 反而更好（0.060 vs 0.070），在 Fig.5b 中两者几乎相同。移动/不动的竞争本身没有被开关测试，没有 He 脱附的直接观测，竞争解释（如杂质捕获、陷阱突变）作者自己承认未含入。",
+  "reuse_test": "参数表可被他人复用（作为 W-He OKMC 输入），这是 secondary 取 FRAMEWORK 的原因。但新东西只在参数上，方法形式没有新增。"
+ },
+ "parameters": [
+  {
+   "name": "He 迁移能",
+   "value": "0.01 eV（DFT 为 0.06 eV）",
+   "provenance": "FIT_TO_SAME_DATA",
+   "page": 6,
+   "basis": "原文写明为重现低浓度结果而设定；改动 6 倍"
+  },
+  {
+   "name": "He 团簇迁移能",
+   "value": "n=2 0.03，n=3 0.05，n>3 每 He +0.01 eV",
+   "provenance": "FIT_TO_SAME_DATA",
+   "page": 11,
+   "basis": "Table 6、Fig.4；无 DFT 势垒，AIMD 只确认可动。复算步骤温度正好对应实验台阶"
+  },
+  {
+   "name": "He 类前因子",
+   "value": "1e-2 × 6e12 /s",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 11,
+   "basis": "Table 6；无来源，比其他物种低 100 倍"
+  },
+  {
+   "name": "SIA 迁移能、转向能",
+   "value": "0.013 / 0.38 eV",
+   "provenance": "MD_EMPIRICAL",
+   "page": 9,
+   "basis": "Derlet [25]；实验范围有争议"
+  },
+  {
+   "name": "空位迁移能、形成能",
+   "value": "1.66 / 3.23 eV",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 9,
+   "basis": "VASP"
+  },
+  {
+   "name": "He-SIA 团簇结合能",
+   "value": "0.94 eV，与尺寸无关，不能动",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 10,
+   "basis": "DFT 只算了单 He-单 SIA，扩展到尺寸 10 是假定"
+  },
+  {
+   "name": "混合 He-v 迁移",
+   "value": "设为零",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 9,
+   "basis": "直接设置，是竞争结论的前提"
+  },
+  {
+   "name": "3 keV He 的 FP 数",
+   "value": "0.29 FP/He",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 12,
+   "basis": "Marlowe，加配套论文的复合模型。原文说复合模型可以直接按实验调。2009 年前作同一实验用的是 3.3 FP/He，相差 11 倍"
+  },
+  {
+   "name": "C 陷阱",
+   "value": "100 ppm，捕获半径 5 Å",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 12,
+   "basis": "浓度无测量来源，只作用于 SIA 和空位，不作用于 He"
+  },
+  {
+   "name": "capillary He 常数",
+   "value": "Efor=4 eV，Eb(2)=1.02 eV",
+   "provenance": "LITERATURE_FIT",
+   "page": 11,
+   "basis": "Table 7；对 Fig.3 DFT 点的拟合。4 eV 不像独立 DFT 形成能；复算 n=18 给 2.70 eV，与红线相符"
+  },
+  {
+   "name": "SIA 偏置 γ",
+   "value": "1.15",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 11,
+   "basis": "Table 5，无来源"
+  }
+ ],
+ "dof": {
+  "free_or_tuned": 10,
+  "independent_constraints": 3,
+  "note": "我数出：He Em、团簇 Em 斜率、He 前因子、He-SIA 能量、混合团簇不动、FP 数或复合模型、C 浓度、C 捕获半径、团簇前因子 q 和 s、γ，约 10 个。约束是 3 条退火曲线（约 32 点），都来自同一 Soltan 系列。Soltan 另外 6 条未用。"
+ },
+ "comparisons": [
+  {
+   "id": "C1",
+   "quantity": "13 ppm 400 eV He 退火曲线",
+   "target_data": "Soltan 1991 [79] Fig.2 中 400 eV 13 ppm",
+   "authors_language": "The agreement between the experimental results and the OKMC data is rather good",
+   "page": 7,
+   "where": "Fig. 5a，半对数",
+   "used_in_construction": "YES_DIRECT",
+   "construction_evidence": "原文写明为重现低浓度结果把 He 迁移设为 0.01 eV，并按 Fig.4 定团簇规律（第 6 页）；该节标题就是 parameterisation",
+   "temporal": "数据 1991，事后调参",
+   "metric": "看图读 10 个点，T 从 5 到 44 K。Marlowe：RMSE 0.070，最大 -14%。Random：RMSE 0.060，最大 +21%。T≤25 K 时 Random 0.013，Marlowe 0.052。ln T 线性零模型 0.041。模型曲线一直到 100 K，实验点到约 44 K 就没有了",
+   "discriminating": "无，且 Random 不比 Marlowe 差。台阶温度 E/(23k) 与设定的 0.01/0.03 eV 直接对应",
+   "verdict": "CALIBRATION",
+   "verdict_reason": "目标数据直接决定 He 迁移参数"
+  },
+  {
+   "id": "C2",
+   "quantity": "350 ppm 400 eV He 退火曲线",
+   "target_data": "Soltan 1991 [79]",
+   "authors_language": "At larger doses however, the desorption rate is underestimated",
+   "page": 7,
+   "where": "Fig. 5b",
+   "used_in_construction": "YES_INDIRECT",
+   "construction_evidence": "列入 2.3.3 参数化节和 Fig.2 参数化实验；作者看到不符后又试了另一种迁移规律（第 7 页），结论用于判断参数化满意度",
+   "temporal": "事后",
+   "metric": "读 10 个点。200 K：Marlowe 0.89，实验 0.73，+22%。脱附量 0.11 vs 0.27，少 2.5 倍。起始 55 K vs 25 K（作者自己也写了）。RMSE 0.077；常数零模型 0.096；ln T 线性 0.039",
+   "discriminating": "Random 和 Marlowe 在 100 K 以下几乎重合（0.091 vs 0.077），分不开",
+   "verdict": "CALIBRATION",
+   "verdict_reason": "数据属于参数化集合，并且引发过调规律的尝试，调了还没拟合上。不算独立验证"
+  },
+  {
+   "id": "C3",
+   "quantity": "随剂量的脱附向高温移动",
+   "target_data": "Soltan 1991 [79]，13 对 350 ppm",
+   "authors_language": "they reproduce the shift in He desorption observed for the higher dose implantation",
+   "page": 7,
+   "where": "Fig. 5",
+   "used_in_construction": "YES_INDIRECT",
+   "construction_evidence": "He 聚集抑制迁移的解释来自 [64] 和 Soltan 本人，低浓度曲线已用于调参",
+   "temporal": "事后",
+   "metric": "实验起始约 5 K 到 25 K；模型约 5 K 到 55 K。方向对，幅度不对，量值大一倍以上",
+   "discriminating": "任何带聚集的模型都有这个趋势",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "趋势相符，无定量标准"
+  },
+  {
+   "id": "C4",
+   "quantity": "12 ppm 3 keV He（加 FP）退火曲线",
+   "target_data": "Soltan 1991 [79]",
+   "authors_language": "follows quite nicely the experimental results of Soltan",
+   "page": 12,
+   "where": "Fig. 13",
+   "used_in_construction": "YES_INDIRECT",
+   "construction_evidence": "同一组前作（文中 [93]，即 2009 年 Becquart & Domain）已比较过这同一条曲线，当时用 3.3 FP/He；这里改为 0.29 FP/He，He Em 也从 0.06 改为 0.01 eV。配套论文的复合模型可以按实验调（第 5 页）",
+   "temporal": "数据 1991，模型 2010，2009 年已看过该曲线",
+   "metric": "读 12 个点。Marlowe：RMSE 0.065，最大 +19%（190 K，0.70 vs 0.59），290 K 处 0.64 vs 0.55，+16%；7.5 K 处 -7%。Random：RMSE 0.144，最大 +47%。ln T 线性零模型 0.032。模型在 T>50 K 全线偏高，温度依赖趋势不同",
+   "discriminating": "能分开 Marlowe 和 Random，这是全文最有判别力的一处。但 FP 改了 11 倍两版都声称符合，说明该曲线约束不住 FP 数。零模型更好",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "最接近 POSTDICTION 的一条，但不够：同一曲线在前作已出现且参数随后被改，配套论文复合模型可能按实验调，所以独立性无法证实；陷阱无独立来源。我没有配套论文，判较弱档"
+  },
+  {
+   "id": "C5",
+   "quantity": "空位形成能 3.23 eV",
+   "target_data": "文献 [44,45]，3.1-4.0 eV",
+   "authors_language": "It lies within the experimental range",
+   "page": 8,
+   "where": "2.3.4",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 直算",
+   "temporal": "实验在先",
+   "metric": "在 30% 宽的范围内，靠近下界，比 4.0 低 19%",
+   "discriminating": "范围太宽，无判别力；作者也指出多种势同样落在范围内",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "只是落在宽范围内，而且不检验 OKMC"
+  },
+  {
+   "id": "C6",
+   "quantity": "空位迁移能 1.66 eV",
+   "target_data": "Balluffi [49] 1.7，Mundy [50] 2.02，外推 0 K 1.50 [51]",
+   "authors_language": "in very good agreement with the experimental data",
+   "page": 9,
+   "where": "2.3.4",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 直算，来自 [35]",
+   "temporal": "实验在先",
+   "metric": "相对 1.7 -2.4%，相对 2.02 -18%，相对 1.50 +10.7%。严格说 1.66 落在作者所写的 1.7-2.02 范围之外",
+   "discriminating": "低，Table 1 多个势给 1.44-2.0",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "very good 说法宽松；未经 OKMC"
+  },
+  {
+   "id": "C7",
+   "quantity": "双空位不稳定 对比 其他计算与 TEM/FIM 空位团观测",
+   "target_data": "Derlet [25] 0.41 eV，TEM [84-88]，FIM [89]",
+   "authors_language": "This is in contradiction with the data predicted by other groups",
+   "page": 9,
+   "where": "Table 2，Fig.9",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 直算",
+   "temporal": "事后解释",
+   "metric": "-0.1 eV 对比 +0.41 eV，差 0.51 eV，符号相反；同是 DFT 也不一致",
+   "discriminating": "用两种事后解释（级联直接成簇、C 稳定）消除矛盾，未作检验。C 稳定 2v 的 3.23 eV 是总结合能，与 Table 4 中 C-v 2.01 eV 对比才有净增",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "原本是矛盾，靠事后解释化解，属于最弱的相符"
+  },
+  {
+   "id": "C8",
+   "quantity": "He 成簇与片状构型",
+   "target_data": "Nicholson & Walls [80]，Evans（Mo）[3]，Iwakiri [81]",
+   "authors_language": "was indeed observed in Mo by Evans",
+   "page": 6,
+   "where": "2.3.3",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 独立",
+   "temporal": "事后",
+   "metric": "无数值",
+   "discriminating": "无；Mo 数据并不是 W",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性"
+  },
+  {
+   "id": "C9",
+   "quantity": "H-He 结合 对比 He 预辐照增 H 滞留",
+   "target_data": "[95,96]",
+   "authors_language": "in agreement with the experimental findings",
+   "page": 11,
+   "where": "2.3.8",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 独立；OKMC 中没有 H",
+   "temporal": "事后",
+   "metric": "无数值",
+   "discriminating": "无",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性"
+  },
+  {
+   "id": "C10",
+   "quantity": "Re-v、Re-SIA 正结合 对比 WRe 辐照析出",
+   "target_data": "[97-100,22]",
+   "authors_language": "These results are in very good agreement with the general",
+   "page": 11,
+   "where": "2.3.8",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 独立",
+   "temporal": "事后",
+   "metric": "无数值；同段又说 SIA 是 crowdion 难以解释溶质输运，削弱了论证",
+   "discriminating": "无",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性；very good 无依据"
+  },
+  {
+   "id": "C11",
+   "quantity": "capillary 近似 对比 DFT 结合能",
+   "target_data": "本文 DFT，Fig.3、9、12",
+   "authors_language": "At larger clus-ter sizes (i.e. for clusters containing more than 18 He atoms), a cap-illary approximation was used",
+   "page": 6,
+   "where": "Fig.3，Fig.9，Fig.12，Table 7",
+   "used_in_construction": "YES_DIRECT",
+   "construction_evidence": "Table 7 的常数直接取 DFT 锚点（v：Eb(2)=-0.1、Ef=3.23；SIA：2.12、9.96）；He 的 Efor=4 eV 看不出 DFT 来源，更像贴合 Fig.3",
+   "temporal": "同时",
+   "metric": "Fig.3（He）DFT 在 n=10-19 范围 1.9-2.8 eV，波动约 ±0.4 eV，曲线 n=18 为 2.70 eV，复算相符。Fig.9（v）曲线系统偏高：m=3 为 0.44 对 0.04 eV，m=8 为 1.30 对 0.88 eV（+48%，复算相符），而 m>8 正是用这条曲线。Fig.12（SIA）m=4-6 高约 0.5 eV，m=7 低约 0.4 eV",
+   "discriminating": "无；平滑曲线不反映波动，且空位支在使用区间的起点已偏高约 0.4 eV",
+   "verdict": "CALIBRATION",
+   "verdict_reason": "MD/DFT 是该近似的参数来源"
+  },
+  {
+   "id": "C12",
+   "quantity": "AIMD 检查 He 小团簇可动及 SIA 踢出反应",
+   "target_data": "本组 AIMD",
+   "authors_language": "We did check using ab initio molec-ular dynamics calculations that small He clusters were indeed mobile",
+   "page": 6,
+   "where": "2.3.3，2.3.5",
+   "used_in_construction": "YES_INDIRECT",
+   "construction_evidence": "用来支持设定",
+   "temporal": "同一工作",
+   "metric": "未给数据；只确认可动，没有给出势垒",
+   "discriminating": "无，可动不等于 0.03/0.05 eV",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "只是自己的高保真计算，定性"
+  },
+  {
+   "id": "C13",
+   "quantity": "各经验势的点缺陷性质",
+   "target_data": "Table 1 所列文献",
+   "authors_language": "no potential at the moment appears to be capable of modelling correctly",
+   "page": 5,
+   "where": "Table 1，2.2 节",
+   "used_in_construction": "NO",
+   "construction_evidence": "背景比较，用于选 DFT 路径",
+   "temporal": "背景",
+   "metric": "表列，无本文模型值",
+   "discriminating": "NA",
+   "verdict": "NOT_A_MODEL_TEST",
+   "verdict_reason": "比较的是别人的势"
+  }
+ ],
+ "paper_verdict": {
+  "label": "CALIBRATION_PLUS_CONSISTENCY",
+  "why": "主体证据是 Soltan 同一系列 3 条电阻曲线，低浓度曲线明确用于调 He 迁移；最接近验证的 Fig.13 RMSE 0.065，但劣于 ln T 零模型（0.032），且前作用 3.3 FP/He 已比过同一曲线，现在 0.29 FP/He 仍称符合。9 条实验中未用 6 条。",
+  "best_comparison": "C4",
+  "fraction_note": "13 条：CALIBRATION 3，CONSISTENCY 8，VERIFICATION 1，NOT_A_MODEL_TEST 1，无 POSTDICTION"
+ },
+ "checks_performed": [
+  {
+   "what": "渲染第 7 和 12 页，读 Fig.5a、5b、Fig.13 的实验点和两条模型曲线，python 算 RMSE 和与零模型比较",
+   "result": "Fig.5a：Marlowe 0.070，Random 0.060，ln T 0.041。Fig.5b：Marlowe 0.077，Random 0.091，ln T 0.039。Fig.13：Marlowe 0.065，Random 0.144，ln T 0.032。读数精度约 ±0.01"
+  },
+  {
+   "what": "用 Table 6 复算迁移起动温度：v=6e10/s",
+   "result": "速率 1/s 对应 0.01 eV→4.7 K，0.03 eV→14 K，0.05 eV→23 K，0.06 eV→28 K。文中 5 K、15 K 台阶就是这些调定值的回声；未调的 DFT 0.06 eV 明显错过 5 K 的起动"
+  },
+  {
+   "what": "对比本文与前作 1816（本文 [93]）的同一实验设置",
+   "result": "3 keV He：3.3 FP/He（2009）变为 0.29 FP/He（2010），11 倍；He Em：0.06 变为 0.01 eV。He 占缺陷总数：13% 变为 63%。两篇都声称重现同一条实验曲线，这条曲线的判别力很低"
+  },
+  {
+   "what": "数未使用的数据",
+   "result": "Fig.2 列 9 条曲线，模拟只用 3 条。未用的有 3 keV 0.28 ppm（到 60 K 降到约 0.05，形状完全不同）、3 ppm、1.69 keV 4.7 ppm、250 eV 2.3/39 ppm、400 eV 17 ppm。这些是天然的留出集，但未测试"
+  },
+  {
+   "what": "复算几何、通量与表格公式",
+   "result": "2×399×400×1001 = 3.2e8 位点，1e15 He/m²/s × 1.60e-14 m² = 16 He/s，与文中一致；厚度 1001×0.317 = 317 nm 相符。Table 6 n=50 给 0.52 eV，与 Fig.4 相符。capillary n=18 给 2.70 eV，与 Fig.3 相符"
+  },
+  {
+   "what": "对照第 12 页 500 K 状态百分数",
+   "result": "单空位 90% 加混合团簇中 20% 超过 100%，单 SIA 30% 加混合团簇中 100% 超过 100%。如作者另有基准未说明，文字本身不自洽"
+  }
+ ],
+ "claim_vs_reality": [
+  {
+   "claim": "题目和摘要称 ab initio 参数化",
+   "quote": "an object kinetic Monte Carlo code has been parameterised on ab initio calculations",
+   "page": 1,
+   "reality": "决定低温脱附的关键参数不是 ab initio：He Em 从 0.06 调到 0.01 eV，团簇迁移规律、前因子、C 陷阱都是人为设定。引言其实也提到还依赖一组退火实验，但摘要未说",
+   "consistent": false
+  },
+  {
+   "claim": "He 迁移的降低是实验驱动",
+   "quote": "To reproduce the low concentration results, we thus set the mobility of the He atom to 0.01 eV",
+   "page": 6,
+   "reality": "作者如实承认调参，正文与实际一致",
+   "consistent": true
+  },
+  {
+   "claim": "只有正确注入分布才能达成一致",
+   "quote": "It is important to emphasise that this agreement can only be reached if the He",
+   "page": 7,
+   "reality": "Fig.5a Random RMSE 0.060 优于 Marlowe 0.070，T≤25 K 差距更大（0.013 vs 0.052）；Fig.5b 两者几乎相同。只有 Fig.13 支持",
+   "consistent": false
+  },
+  {
+   "claim": "参数化能正确重现",
+   "quote": "based parameterisation is able to reproduce correctly the evolution",
+   "page": 13,
+   "reality": "Fig.5b 200 K 脱附少 2.5 倍，起始 55 vs 25 K；Fig.13 高温段偏高 15-19%；模型量是个数，实验量是电阻率。作者还承认了纯 He 团簇都可动不物理",
+   "consistent": false
+  },
+  {
+   "claim": "竞争机制是模拟的结果",
+   "quote": "Because He desorption results from a competition between mobile and ses-sile clusters",
+   "page": 13,
+   "reality": "Table 6 和第 9 页：纯 He 可动、混合 He-v 迁移设为零，He-SIA 不能动。结论是输入的复述，没有直接 He 脱附测量（Soltan 测的是电阻）",
+   "consistent": false
+  },
+  {
+   "claim": "实验 SIA 迁移能范围",
+   "quote": "spans from 0.08 eV [39] to",
+   "page": 4,
+   "reality": "后面数字印作 0.054 eV，小于 0.08；1816 同一句写的是 0.54 eV，这里应是印错",
+   "consistent": false
+  },
+  {
+   "claim": "vacancy Em 与实验范围很吻合",
+   "quote": "in very good agreement with the experimental data which lie between",
+   "page": 9,
+   "reality": "1.66 eV 低于所写范围下界 1.7 eV；相对 0 K 外推 1.50 高 10.7%，作者后面也承认比较应以 0 K 值为准",
+   "consistent": false
+  }
+ ],
+ "unverifiable": [
+  "配套论文 [1]（Hou 等）不在本批次：0.29 FP/He 的复合模型是否按 Soltan 调参无法确认，这决定 C4 能否升一档",
+  "Soltan 1991 原文不在手边，Fig.2 为本文转绘",
+  "实验注入率来自私人通讯 [82]",
+  "Efor(He)=4 eV 是否等于 DFT 形成能：本文未给 DFT 值；我记忆中 [64] 约 6 eV，但未核实，不作为证据",
+  "Fig.10 三维柱图的具体结合能无法精确读出；它们是 DFT 输入，不涉及模型与外部数据的比较"
+ ],
+ "one_line": "标题称 ab initio，但关键的 He Em 被从 0.06 调到 0.01 eV 以匹配 Soltan；只测了 9 条中的 3 条，最好的 Fig.13 RMSE 0.065 还不如 ln T 零模型（0.032），FP 从 3.3 改 0.29 仍称符合，竞争机制是模型预设"
+}

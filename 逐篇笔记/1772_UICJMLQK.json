@@ -1,0 +1,457 @@
+{
+ "item": "1772",
+ "key": "UICJMLQK",
+ "cite": "Messina, Schuler, Nastar, Marinica, Olsson 2020 Acta Mater. 191:166-185",
+ "type": "simulation",
+ "read_coverage": {
+  "total_lines": 3710,
+  "read_through_line": 3710,
+  "pages_rendered": [
+   8,
+   9,
+   10,
+   11,
+   14
+  ]
+ },
+ "section_map": [
+  {
+   "section": "1 Introduction",
+   "page": 1,
+   "gist": "RIS 与溶质团簇；空位 drag 已知，SIA 输运只有粗略研究；Choudhury 对 Ni 的预测因忽略 flux coupling 与实验不符；Fe-Cr 的 switchover 来自 Senninger 等。"
+  },
+  {
+   "section": "2 方法",
+   "page": 2,
+   "gist": "SCMF 团簇展开 + KineCluE（Ref. [56]）；rkin=4a0、rth=5nn，94 构型/260 跳跃，其中 13 个 DFT；VASP PBE 251 原子，3 中间像 NEB，v0、v1 频率用 frozen phonon。"
+  },
+  {
+   "section": "3 DFT 结果",
+   "page": 4,
+   "gist": "Table 1 纯 Fe 哑铃；Table 2 结合能和势垒，与此前 DFT 比较；MD 对 P、Mn、Cr 稳定，Si 约 0，Ni、Cu 排斥；Fig. 4 Meyer-Neldel 拟合。"
+  },
+  {
+   "section": "4 溶质输运",
+   "page": 7,
+   "gist": "Table 3 Arrhenius 拟合；Fig. 6 MFP；Fig. 7 D_I/D_V；Fig. 8 G 和 g；Fig. 9 PDC 比。P、Mn、Cr 哑铃主导，Cu 空位，Ni、Si 竞争（C_V=C_I 归一时）。"
+  },
+  {
+   "section": "5 RIS",
+   "page": 10,
+   "gist": "Wiedersich 稳态 alpha（Eq. 16）；Fig. 10：P、Mn、Si 恒富集，Cu、Ni <1085 K 富集，Cr 在 543 K 变号；逐元素归因。"
+  },
+  {
+   "section": "6 Discussion",
+   "page": 11,
+   "gist": "与 RR 实验、Choudhury、Senninger AKMC（Fig. 11）、Wharry 等实验（Fig. 12）对比；局限：稀释极限、无驱动力、无磁、无汇偏置和应变。"
+  },
+  {
+   "section": "7 Conclusions + Appendix",
+   "page": 14,
+   "gist": "6 条结论与框架声明；Appendix A-D 给构型、团簇浓度、多组分配分函数、alpha 公式。"
+  }
+ ],
+ "contribution": {
+  "primary": "MECHANISM",
+  "secondary": "FRAMEWORK",
+  "neither_type": "",
+  "claimed": "系统分析 SIA 驱动的溶质输运和 intrinsic RIS 趋势，同时建立通用框架",
+  "quote": "This study was the first application of a novel, multi-scale framework",
+  "quote_page": 14,
+  "novelty_test": "实质新增：6 种溶质的 13 个 DFT 哑铃跳跃、长 kinetic radius 的 SIA 输运系数，以及按机制拆分的归因（P、Mn 靠哑铃，Si、Cu、Ni 靠空位 drag，Cr 由两者抵消）；Ni、Si 的 MD 不稳定却仍有哑铃扩散，与“MD 不稳定就无输运”的假设相反。旧的部分：SCMF（Nastar Ref. [33]）、KineCluE 代码（Schuler Ref. [56,57] 另文发表）、空位系数（Messina 2014 Ref. [42]）、Cr 平衡和 switchover（Wharry Ref. [51]、Senninger Ref. [52]、Choudhury Ref. [50]）。框架声明指本文“首次应用”，方法本身先于本文，所以不判 FRAMEWORK 为主。",
+  "mechanism_evidence": "模型内反事实拆分（令另一机制的 PDC 比为 1，Sec. 4.4），两种机制都在模型中，方向是算出的，并非预设，这是比事后解释强的证据。但只到“在稀释模型内”。没有实验能直接把 drag 和哑铃分开（作者称哑铃扩散实验不可得），对比实验只有符号。竞争解释（热力学偏析、团簇、应变、汇偏置、Ni 环绑定）未被排除，作者自己列为局限。文中 prove/confirm 超出证据。",
+  "reuse_test": "KineCluE 可用于任意晶体、任意扩散机制（Ref. [56]），文中结果数据公开（Ref. [90]）；本文的贡献是 SIA 案例、rkin 收敛和 Appendix C 的多组分修正，可复用。"
+ },
+ "parameters": [
+  {
+   "name": "哑铃结合能 Table 2",
+   "value": "M 构型 P +1.025，Mn +0.555，Cr +0.045，Si -0.002，Ni -0.191，Cu -0.380 eV",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 6,
+   "basis": "VASP PBE 251 原子；Cr 用 4x4x4 和 400 eV 细化。"
+  },
+  {
+   "name": "MD 迁移势垒 w1",
+   "value": "P 0.217，Cr 0.241，Mn 0.316，Cu 0.364，Ni 0.464，Si 0.568；w0=0.335 eV",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 6,
+   "basis": "NEB，3 中间像；作者称精度 <5 meV（数值收敛，不含泛函误差）。"
+  },
+  {
+   "name": "尝试频率",
+   "value": "n0=4.445 THz；n_v1 2.685-19.268 THz；其余跳跃 = n0",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 4,
+   "basis": "v0、v1 为 frozen phonon（FIRST_PRINCIPLES）；所有其他跳跃假定用 n0。结合熵未计（p.13）。"
+  },
+  {
+   "name": "K=C_I/C_V",
+   "value": "D_V(Fe)/D_I(Fe)，300 C 约 1e-3",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 11,
+   "basis": "假定无复合、无偏置。影响 alpha 幅值，不影响符号；决定 Fig. 7 的“竞争”是否成立。"
+  },
+  {
+   "name": "rkin, rth",
+   "value": "4a0, 5nn",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 3,
+   "basis": "按收敛研究选择；收敛数据未展示。超过 rth 用 KRA。"
+  },
+  {
+   "name": "磁性",
+   "value": "不含磁模型",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 13,
+   "basis": "铁磁 0 K DFT 用到 1600 K；Cu、Ni 的 1085 K 阈值位于 Tc=1043 K（1820 Choudhury 文中值）以上。"
+  },
+  {
+   "name": "Meyer-Neldel 参数",
+   "value": "a=1.625，n*=2.830 THz，e*=0.38 eV",
+   "provenance": "FIT_TO_SAME_DATA",
+   "page": 5,
+   "basis": "拟合 4 点；不进入输运计算，只用于解释。"
+  }
+ ],
+ "dof": {
+  "free_or_tuned": 0,
+  "independent_constraints": 0,
+  "note": "我数：对实验调节的连续参数 0。选择性假定 4 项（共用 n0、无磁、K、rth/rkin）。没有用实验约束；对实验的定量比较在 Fig. 12 无实验值，T_RIS 只有一个数（543 K vs 约 900 K，且体系不同）。"
+ },
+ "comparisons": [
+  {
+   "id": "C1",
+   "quantity": "纯 Fe 哑铃性质",
+   "target_data": "此前 DFT 与经验势 Refs. [30,44,50,65,75,80,84,86,88]",
+   "authors_language": "The migration barriers of the different jump types are in good agreement with previous calculations",
+   "page": 5,
+   "where": "Table 1",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立计算。",
+   "temporal": "事后。",
+   "metric": "E_f(110) 4.082 vs 3.64、3.94（+12%、+4%）；E_f(111) 4.832 vs 4.34、4.66；t0 0.785 vs 0.78-0.84；vR0 0.611 vs 0.63；2nn 0.459 vs 0.50；S_f 0.05 kB vs 0.24（文献 DFT）；D0 3.745e-7 vs 2.268e-6（经验势 MD，6 倍）。",
+   "discriminating": "低。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "与同类计算比较，检验设置。"
+  },
+  {
+   "id": "C2",
+   "quantity": "v0 势垒 vs 电阻恢复实验",
+   "target_data": "Takaki 1983 Ref. [89]",
+   "authors_language": "compared with previous calculations [30,44,50,93] and resistivity-recovery experiments [89]",
+   "page": 6,
+   "where": "Table 1（p.5）, Table 2",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT NEB，无拟合。Ref. [89] 的值是表中唯一实验数。",
+   "temporal": "实验 1983 年，先于计算。",
+   "metric": "0.335 vs 0.32 eV，+4.7%。单点。",
+   "discriminating": "低。其他 DFT 给 0.34-0.37，都在 15% 内。",
+   "verdict": "POSTDICTION",
+   "verdict_reason": "定量、独立，但只有一个纯 Fe 数据点，不涉及本文主要结论（溶质 RIS）。作为边缘 POSTDICTION 记录。Ref. [89] 原文未核实。"
+  },
+  {
+   "id": "C3",
+   "quantity": "Table 2 溶质哑铃势垒和结合能",
+   "target_data": "DFT Refs. [30,44,45,50,93]",
+   "authors_language": "The binding energies are in good agreement with previous DFT calculations that were limited to 1nn sites",
+   "page": 5,
+   "where": "Table 2（p.6）",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立 DFT。",
+   "temporal": "事后。",
+   "metric": "我算差：w1：P 0.217/0.18，Mn 0.316/0.34，Cr 0.241/0.23、0.25，Si 0.568/0.52，Ni 0.464/0.41，Cu 0.364/0.32（差 ≤0.054）。t1：P 0.493/0.24（0.25），Si 0.575/0.37（0.21），Ni 0.634/0.69、0.46，Cu 0.368/0.26。vM-1b：P 0.230/1.26（1.03 eV）。",
+   "discriminating": "低。多数 ≤0.05 eV 的差值可接受，但 P 的 vM-1b 差 1 eV，作者只说明 P 的扩散路径 p.11 待研究。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "DFT 互比。"
+  },
+  {
+   "id": "C4",
+   "quantity": "Fe-P、Fe-Cr 哑铃移动性排序",
+   "target_data": "Abe & Kuramoto Ref. [48] 电阻恢复",
+   "authors_language": "These results confirm previous RR experiments according to which the Fe–P dumbbell has a higher mobility than self-interstitials",
+   "page": 11,
+   "where": "Table 2, Fig. 6",
+   "used_in_construction": "NO",
+   "construction_evidence": "无拟合。",
+   "temporal": "实验先于计算。",
+   "metric": "w1 排序 P 0.217 < Cr 0.241 < Fe 0.335。只比排序，无 RR 温度换算。",
+   "discriminating": "低。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性排序。"
+  },
+  {
+   "id": "C5",
+   "quantity": "Fe-Mn、Fe-Cr 移动性；Si、Ni、Cu 捕获",
+   "target_data": "RR Refs. [46,47,101]，AKMC Ref. [99]，MD Ref. [100]",
+   "authors_language": "to be the cause for the observed disappearance of the single-SIA migration peak in RR experiments",
+   "page": 12,
+   "where": "Sec. 6.1",
+   "used_in_construction": "NO",
+   "construction_evidence": "无拟合。AKMC [99] 也基于 DFT。",
+   "temporal": "实验先于计算。",
+   "metric": "无定量。Si、Ni 的 RR 解释原本就有冲突，作者选择其中与模型一致的部分（1b 捕获）。",
+   "discriminating": "低。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "事后对照，文献解释本身不唯一。"
+  },
+  {
+   "id": "C6",
+   "quantity": "Cr 的 PDC 比和 T_RIS",
+   "target_data": "Senninger 2016 Ref. [52] AKMC（0.25% Cr）",
+   "authors_language": "very well with Senninger’s results [52] both in terms of switchover temperature TRIS and magnitude",
+   "page": 12,
+   "where": "Fig. 11（p.11）",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立模型，但两者都来自 DFT。",
+   "temporal": "Senninger 先发表。",
+   "metric": "T_RIS 都约 540 K。差值 (V-I) 在 800 K 约 0.55 vs 0.7（图读）。但单个比值差：空位 700 K 2.7 vs 3.7，1000 K 2.2 vs 3.0；哑铃 800 K 1.8 vs 2.5。差约 1.3-1.4 倍，方向相同而相互抵消。",
+   "discriminating": "低。不同参数化的差值吻合可来自抵消。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "模型对模型。"
+  },
+  {
+   "id": "C7",
+   "quantity": "T_RIS vs T91 实验",
+   "target_data": "Wharry & Was 2013 Ref. [54]，Fe-8.9Cr，600-700 C",
+   "authors_language": "The mismatch in switchover temperature (543 K vs 900 K) can be ascribed to its dependence on solute concentration",
+   "page": 13,
+   "where": "Fig. 11, Table 3",
+   "used_in_construction": "NO",
+   "construction_evidence": "无拟合。Fig. 11 中只有 Senninger 的浓度曲线（5% 约 830 K，10% 约 870 K，我读），KineCluE 没有浓度依赖。",
+   "temporal": "实验先于计算。",
+   "metric": "-357 K（-40%）。模型 0.1 at.%，实验 8.9% Cr。",
+   "discriminating": "这是唯一有可算误差的 RIS 比较，直接失败，靠另一模型解释。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "体系不匹配，不判 POSTDICTION；若按 POSTDICTION 判，结果为不通过。"
+  },
+  {
+   "id": "C8",
+   "quantity": "T_RIS 随 Cr 有极大值",
+   "target_data": "Wharry Ref. [54]；Senninger Ref. [52]",
+   "authors_language": "in striking agreement with Wharry’s experimental observations [54]",
+   "page": 13,
+   "where": "Fig. 11",
+   "used_in_construction": "NO",
+   "construction_evidence": "结果不是本文模型算的，是 Senninger。",
+   "temporal": "事后。",
+   "metric": "Senninger 10% 约 870 K，处于 873-973 K 窗口下缘；15% 在图示 720-1480 K 全贫化。KineCluE 无法验证。",
+   "discriminating": "NA",
+   "verdict": "NOT_A_MODEL_TEST",
+   "verdict_reason": "比较的是他人的模型。"
+  },
+  {
+   "id": "C9",
+   "quantity": "P、Si 富集",
+   "target_data": "Rehn & Okamoto Ref. [109]，Ardell Ref. [5]",
+   "authors_language": "no case of depletion of undersized solute species in dilute alloys has ever been reported",
+   "page": 13,
+   "where": "Fig. 10",
+   "used_in_construction": "NO",
+   "construction_evidence": "未拟合。",
+   "temporal": "早已知道。",
+   "metric": "2 个元素的符号。",
+   "discriminating": "无。尺寸规则（作者 p.2 批评的简单假设）也能过。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "符号比较。"
+  },
+  {
+   "id": "C10",
+   "quantity": "Si、Cu、Ni 富集及 Cr 变号",
+   "target_data": "Wharry 2013 Ref. [54]",
+   "authors_language": "Furthermore, our results match well those of Wharry’s RIS study",
+   "page": 13,
+   "where": "Fig. 10, Table 3",
+   "used_in_construction": "NO",
+   "construction_evidence": "未拟合。作者引用 Wharry 作为动机之一（p.2），但无参数调节。",
+   "temporal": "实验 2013，事后。",
+   "metric": "符号 4/4，其中 Cr 的温度差 357 K。实验为 Fe-Cr 基 9% Cr，模型为 Fe-X 二元稀释。",
+   "discriminating": "低。Si、Cu、Ni 富集也能由尺寸、热力学偏析解释；未包含汇的热力学相互作用，作者也承认。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性符号。作者据此写 prove 过强。"
+  },
+  {
+   "id": "C11",
+   "quantity": "多组分 alpha 排序",
+   "target_data": "Wharry Ref. [54]，Ringhals Ref. [113]，Pareige Ref. [7]，Gomez-Ferrer Ref. [8]",
+   "authors_language": "the segregation magnitudes compare well with Wharry’s study [54], in which Si, Ni and Cu segregation (in decreasing order of magnitude) was observed",
+   "page": 14,
+   "where": "Fig. 12（p.14）, 正文 p.13",
+   "used_in_construction": "NO",
+   "construction_evidence": "未拟合。",
+   "temporal": "事后。",
+   "metric": "图中只有 alpha，无实验值；T 未在图注中说明。Wharry 组 alpha：Si 4.7e-3、Ni 1.5e-3、Cu 1.2e-3，排序 3 元素。但 alpha/C_B：0.85、0.75、0.80（Ringhals 也类似），排序基本由名义成分决定。Ringhals：预测 Ni>Si>Mn，实测 Ni>Mn>Si，作者承认不符。",
+   "discriminating": "无。零模型“按名义浓度排序”也给 Si>Ni>Cu。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "称 more quantitative，但没有实验数字，且零模型通过。"
+  },
+  {
+   "id": "C12",
+   "quantity": "Ni 富集、Ni-环复合体",
+   "target_data": "Belkacemi 2018 Ref. [16] Fe-3Ni",
+   "authors_language": "Our results suggest that such mobile defect-Ni complexes are likely to be vacancy-Ni pairs",
+   "page": 13,
+   "where": "Sec. 6.5",
+   "used_in_construction": "NO",
+   "construction_evidence": "未拟合。",
+   "temporal": "事后。",
+   "metric": "符号。观察到的 Ni 环与缺陷-Ni 复合体未被直接分辨。",
+   "discriminating": "这里与 Choudhury 的预测不同，所以比 C9 有一点判别力。但作者的改进方向在看到实验后已知。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性。"
+  },
+  {
+   "id": "C13",
+   "quantity": "Cr、Ni 的 PDC 比 vs Choudhury",
+   "target_data": "Choudhury 2011 Ref. [50]",
+   "authors_language": "compare qualitatively well with Choudhury’s results concerning Cr-dumbbell, Ni-dumbbell, and Cr-vacancy diffusion",
+   "page": 12,
+   "where": "Fig. 9",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立。",
+   "temporal": "事后。",
+   "metric": "定性；Ni 空位方向相反：本文 D_pd<1（drag 到 1074 K），Choudhury >1。",
+   "discriminating": "低。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "模型互比；Ni 的差异归因于 flux coupling，但作者未单独验证这一归因（也有 1nn 和长程相互作用差异）。"
+  },
+  {
+   "id": "C14",
+   "quantity": "空位-溶质 pair 性质和声子谱",
+   "target_data": "Messina 2015 Ref. [96] AKMC；Lucas Ref. [80]",
+   "authors_language": "The results compare qualitatively well with previous AKMC calculations of vacancy-solute properties",
+   "page": 7,
+   "where": "Table 3, Fig. 5, 6",
+   "used_in_construction": "NO",
+   "construction_evidence": "同作者早期 DFT 势垒，非独立的势垒来源。",
+   "temporal": "事后。",
+   "metric": "无数字。",
+   "discriminating": "低。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "同能量模型不同解法。"
+  },
+  {
+   "id": "C15",
+   "quantity": "Meyer-Neldel 规则",
+   "target_data": "本文 P、Cr、Mn、Si 的 n 和 E",
+   "authors_language": "achieved by excluding the Fe, Cu, and Ni data points from the fitting",
+   "page": 7,
+   "where": "Fig. 4, Eq. 10",
+   "used_in_construction": "YES_DIRECT",
+   "construction_evidence": "3 参数拟合 4 点，3 点被排除。",
+   "temporal": "NA",
+   "metric": "我复算：P 4.23/4.229，Mn 5.94/5.93，Cr 4.56/4.555，Si 19.33/19.268。被排除的：Fe 6.39/4.445（+44%），Ni 11.29/2.828（4 倍），Cu 7.19/2.685（2.7 倍）。文中称 Fe not far。",
+   "discriminating": "无。1 个自由度。",
+   "verdict": "CALIBRATION",
+   "verdict_reason": "文称 perfect correlation；不影响输运结果。"
+  },
+  {
+   "id": "C16",
+   "quantity": "空位扩散系数 vs 实验",
+   "target_data": "Refs. [37,42] 中的比较",
+   "authors_language": "were already successfully compared to experimental measurements in previous publications",
+   "page": 13,
+   "where": "Sec. 6.4",
+   "used_in_construction": "UNCLEAR",
+   "construction_evidence": "不在本文内；前文用了磁模型 [107]，本文未用。",
+   "temporal": "NA",
+   "metric": "文中只称前因子差 ≤1 个数量级。本文无图。",
+   "discriminating": "NA",
+   "verdict": "NOT_A_MODEL_TEST",
+   "verdict_reason": "背景引用；本文的 SIA 部分没有实验 D 对比，作者如实说明。"
+  }
+ ],
+ "paper_verdict": {
+  "label": "CONSISTENCY_ONLY",
+  "why": "主要结论（各溶质 RIS 方向和归因）只和实验比符号，Fig. 12 没有实验数字且按名义成分排序就能过。唯一边缘 POSTDICTION 是纯 Fe v0 0.335 vs 0.32 eV，主要结论不靠它；唯一涉及 RIS 的定量数 T_RIS 543 K vs 约 900 K 不通过，靠另一模型解释。作者摘要用了 qualitative agreement，比正文 prove 更准确。",
+  "best_comparison": "C2",
+  "fraction_note": "16 条：VERIFICATION 5，POSTDICTION 1，CONSISTENCY 7，NOT_A_MODEL_TEST 2，CALIBRATION 1；POSTDICTION 为边缘单点。"
+ },
+ "checks_performed": [
+  {
+   "what": "Table 3 Arrhenius 复算 D_V/D_I（Ni、Si、Cr），并代入作者 p.12 的 C_V/C_I 约 1e3（300 C）",
+   "result": "Ni：5.0（573 K）、1.96（903 K），与结论 3 吻合。但用 1e3 校正后 log10(D_I C_I/D_V C_V)：Cr +0.23（约 1.7 倍），Ni -3.7，Si -3.4，Mn +3.0，P +6.4。摘要中 Ni、Si 的“竞争”只在 C_V=C_I 时成立；用本文 RIS 同一 K 时差 3-4 个数量级，Cr “dominated by dumbbell”变成接近持平。"
+  },
+  {
+   "what": "Si 的 D_V=D_I 温度",
+   "result": "Table 3 给约 897 K；573 K 时 D_V/D_I 约 2.3。结论 3 的 perfectly equivalent at RPV temperatures 与表不符。"
+  },
+  {
+   "what": "Table 2 M-1b 细致平衡（vM1b - v1bM = Eb(M) - Eb(1b)）",
+   "result": "6 元素全部吻合到 0.001 eV，内部自洽。"
+  },
+  {
+   "what": "用 Fig. 9 粗估 T_RIS 对 Cr-哑铃能量误差的敏感性",
+   "result": "PDC_I 斜率约 -0.005/K，PDC_V 平坦。±5 meV 约 ±20 K；±20 meV 约 445-700 K。Table 3 的 ±30 K 只是 C_B 变化，不是不确定度。作者说敏感，但未传播误差；Table 2 中不同计算对 Cr 势垒差 0.01-0.07 eV。"
+  },
+  {
+   "what": "放大 Fig. 11，读 T_RIS 和单项比值，对比 Fig. 9 的同一量",
+   "result": "5% 约 830 K，10% 约 870 K。单项比值 Senninger 高 1.3-1.4 倍。Fig. 9 中 Cr 空位 PDC 400 K 约 4.1、1000 K 约 2.75，而 Fig. 11 粗线 400 K 约 3.0、1000 K 约 2.2，同一量差约 25-35%，文中未解释（C_B 0.1 vs 0.25% 难以解释）。"
+  },
+  {
+   "what": "Fig. 12 读 alpha 并除以 C_B，检验排序的判别力",
+   "result": "Wharry 组 alpha/C_B：Si 0.85、Ni 0.75、Cu 0.80、P 0.62、Mn 0.20、Cr 0.004。Si>Ni>Cu 的排序来自名义成分，模型没有区分这三个元素。"
+  },
+  {
+   "what": "阈值温度核查",
+   "result": "Cr drag 上限三个值：p.2 约 300 K，p.10 260 K，Table 3 243 K。Cu、Ni 约 1085 K 在 Tc 之上，模型无磁；Ni 空位 enrichment 到 2218 K、P drag 到 2060 K 超过 Fe 熔点，是外推。"
+  }
+ ],
+ "claim_vs_reality": [
+  {
+   "claim": "本文证明了 Si/Cu/Ni 由 drag，Cr 由哑铃",
+   "quote": "prove that Si/Cu/Ni enrichment is due to vacancy drag, while Cr enrichment to dumbbell transport",
+   "page": 13,
+   "reality": "这是稀释二元模型内的拆分。实验只比符号，无热力学偏析、团簇和汇相互作用。摘要的 qualitative agreement 是准确的说法，prove 不是。",
+   "consistent": false
+  },
+  {
+   "claim": "T_RIS 差异由 Cr 浓度造成已被证明",
+   "quote": "mismatch in TRIS between KineCluE and the experimental observation is at least partially due to Cr concentration effects",
+   "page": 13,
+   "reality": "证据是 Senninger 模型的浓度依赖，本模型未算。Senninger 10% 约 870 K 只到窗口下缘。该推论合理但不是证明；其他因素未分离。",
+   "consistent": false
+  },
+  {
+   "claim": "Ni、Si 两种机制竞争",
+   "quote": "be in competition for Ni and Si, despite the fact that the corresponding mixed dumbbells are not stable",
+   "page": 1,
+   "reality": "Fig. 7 是除以各自缺陷浓度后的比。用作者同文 C_V/C_I 约 1e3（p.12），300 C 时哑铃比空位低约 3.4-3.7 个数量级。作者 p.12 也说明此时空位为主，但摘要和结论 3 未说明。",
+   "consistent": false
+  },
+  {
+   "claim": "Si 在 RPV 温度完全相等",
+   "quote": "perfectly equivalent to dumbbell diffusion at RPV temperatures",
+   "page": 14,
+   "reality": "Table 3 算出 573 K 时 D_V/D_I 约 2.3，等值温度约 897 K；Fig. 7 也显示未相等。",
+   "consistent": false
+  },
+  {
+   "claim": "Cr 0.25% 与 Senninger 吻合很好",
+   "quote": "compares very well",
+   "page": 12,
+   "reality": "T_RIS 和差值吻合，单项比值差 1.3-1.4 倍；差值吻合部分来自抵消。而 Fig. 9 与 Fig. 11 同一量又差约 30%。",
+   "consistent": false
+  },
+  {
+   "claim": "发现 P、Mn 输运由哑铃主导",
+   "quote": "P, Mn, and Cr form stable mixed dumbbells",
+   "page": 14,
+   "reality": "对 P、Mn 成立，且不受 K 影响（差 3-6 个数量级）；这是本文最稳健的结果。",
+   "consistent": true
+  },
+  {
+   "claim": "Cr 符号由两相反机制平衡",
+   "quote": "The RIS behavior of Cr is the outcome of a fine balance between",
+   "page": 14,
+   "reality": "模型内算出（与 Choudhury 只讨论 D* 不同），T_RIS 约 540 K。Fig. 11 下面板 >700 K 接近 0，敏感。实验量化不足，但本文确实计算了净值。",
+   "consistent": true
+  }
+ ],
+ "unverifiable": [
+  "Ref. [89] 的 0.32 eV 未核对原文；Refs. [42,37,56] 的方法和实验比较不在本文内。",
+  "rkin 收敛数据未展示。补充数据库 Ref. [90] 未在手边。",
+  "Fig. 9 与 Fig. 11 差异的原因无法确定（可能 C_B 或版本）。",
+  "“RIS 幅度在哑铃 regime 更小”的 back diffusion 解释作者用 might，未检验；我未能确定 alpha/C_B 约 0.18 的平台是否只是结构极限。"
+ ],
+ "one_line": "对 6 种溶质按机制拆分 RIS 的稀释 DFT+SCMF 研究：P、Mn 哑铃主导稳健（差 3-6 个数量级），但 Ni、Si“竞争”在 C_V/C_I 约 1e3 时消失，实验对比只有符号；Cr T_RIS 543 K 比 T91 约 900 K 低 357 K，靠另一模型解释。"
+}

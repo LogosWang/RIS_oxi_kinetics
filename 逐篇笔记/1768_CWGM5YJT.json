@@ -1,0 +1,71 @@
+{
+ "item":"1768","key":"CWGM5YJT","cite":"Zhao 2017 Acta Mater","type":"simulation",
+ "read_coverage":{"total_lines":902,"read_through_line":902,"pages_rendered":[3,4,5,6,8]},
+ "section_map":[
+  {"section":"Intro","page":1,"gist":"间隙原子扩散决定 CSA 辐照响应；经验势不可靠，因此用 AIMD"},
+  {"section":"2 Methods","page":2,"gist":"VASP PBE，108 原子 SQS，Γ 点，300 eV，自旋极化，NVT 定体积（0 K 晶格常数），Ni 800-1400 K，合金 1200-1800 K，>100 ps，每温度 3 条轨迹；CMD 用 3 个 Bonny EAM，8×8×8，3 ns"},
+  {"section":"3.1 Pure Ni","page":3,"gist":"Ea=0.13 eV，D0=4.31e-8；与 Barnard AIMD、Bonny 势和 NEB 0.11 eV 比较"},
+  {"section":"3.2 NiFe","page":3,"gist":"D_Ni/D_Fe>1；Bonny 三个势比值从 0.015 到 20；Ni-Ni/Ni-Fe 哑铃占时多"},
+  {"section":"3.3 NiCo","page":3,"gist":"Co 快于 Ni，Ni-Co 占时最多；与 [12] 0 K 形成能比较"},
+  {"section":"3.4 NiCoCr","page":4,"gist":"Ea Ni 0.60、Co 0.26、Cr 0.35；Co-Cr 占时最多；fc 随温度变化"},
+  {"section":"4 Discussion","page":6,"gist":"缓慢扩散由 Ef/Em 解释；化学偏置由形成能决定；推测对肿胀、偏聚的影响，与实验只作定性联系"},
+  {"section":"App A-C","page":7,"gist":"ASD/MSD 定义；32 vs 108 原子比较和收敛；Bonny2011 CMD 检验短轨迹"}
+ ],
+ "contribution":{
+  "primary":"MECHANISM","secondary":"NONE","neither_type":"",
+  "claimed":"AIMD 显示 CSA 中间隙扩散既缓慢又化学非均匀，存在优先扩散通道，由形成能决定",
+  "quote":"not only slower than that in pure components, i.e. sluggish diffusion, but also chemically non-homogeneous",
+  "quote_page":1,
+  "novelty_test":"实质新增：首次对 NiFe/NiCo/NiCoCr 的间隙介导分扩散系数做 AIMD 直接计算，得到元素选择性方向（Ni>Fe；Co>Ni；Co,Cr>Ni）。旧的：方法来自 Barnard 2014 [15]（Ni-Cr AIMD），缓慢扩散和偏置趋势已有 CMD [29,33] 和静态 DFT [12]。‘形成能决定通道’来自同组 [12] 的事后对应。",
+  "mechanism_evidence":"结果是模拟中直接涌现的（不是模型预设），这是真实的观测证据：Co/Cr 比 Ni 快，NiCoCr 中 2-5 倍。但因果归因‘形成能决定通道’只是相关：无迁移/形成能分离的操控，未排除迁移势垒或动力学关联，且 NiCoCr 没有形成能数据（[12] 不含 NiCoCr），‘Co-Cr 优先’靠占时本身推断，循环。无实验佐证。",
+  "reuse_test":"NA"
+ },
+ "parameters":[
+  {"name":"DFT 设置","value":"PBE-PAW，108 原子，Γ 点，300 eV","provenance":"FIRST_PRINCIPLES","page":2,"basis":"Methods，Appendix B 指出 Γ 点/尺寸误差约 0.12 eV（形成能）"},
+  {"name":"体积","value":"0 K Murnaghan 拟合后固定","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"NVT 定体积，高温热膨胀未计"},
+  {"name":"磁性","value":"Ni/Fe/Co 铁磁，Cr 反铁磁初始化","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"1200-1800 K 远高于 Tc，顺磁态未专门处理"},
+  {"name":"构型","value":"每合金一个 SQS（文中未写多个），三条轨迹只改间隙起始位置","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"Methods"},
+  {"name":"NiFe Ea","value":"Ni 0.36, Fe 0.44, total 0.39 eV","provenance":"FIRST_PRINCIPLES","page":4,"basis":"Table 2，Arrhenius 4 点，未给不确定度"},
+  {"name":"NiCoCr Ea","value":"Ni 0.60, Co 0.26, Cr 0.35 eV","provenance":"FIRST_PRINCIPLES","page":5,"basis":"Table 4；Fig.7a 可见 Ni 点偏离直线明显"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"我数的：DFT 不调参。每条分扩散 Arrhenius 2 参数对 4 个温度点（每点 3 轨迹）。全文没有实验扩散数据作约束。"},
+ "comparisons":[
+  {"id":"C1","quantity":"纯 Ni Ea、D0","target_data":"Barnard & Morgan 2014 [15] AIMD","authors_language":"are in good agreement with the earlier data","page":2,"where":"Table 1, Fig. 11","used_in_construction":"NO","construction_evidence":"独立计算，但同方法（VASP AIMD），32 原子","temporal":"[15] 先于本文","metric":"Ea 0.13 vs 0.14（-7%）；D0 4.31e-8 vs 3.95e-8（+9%）；1400 K D 相差 +19%（我算 1.47e-8 vs 1.24e-8）；Fig.11 中 Barnard 误差棒 ±30-40%","discriminating":"低：同方法；验证的是实现，不是物理。Barnard 的误差棒足以覆盖所有本文点。","verdict":"VERIFICATION","verdict_reason":"AIMD 对 AIMD。"},
+  {"id":"C2","quantity":"Ni 间隙 Ea vs 0 K 迁移能","target_data":"ab initio NEB [12]（同组）0.11 eV","authors_language":"consistent with Ea obtained from AIMD","page":3,"where":"正文","used_in_construction":"NO","construction_evidence":"同组 DFT，但不进入 AIMD","temporal":"先于本文","metric":"0.13 vs 0.11（+18%，差 0.02 eV）","discriminating":"低：同一 DFT 层级","verdict":"VERIFICATION","verdict_reason":"高保真自洽。"},
+  {"id":"C3","quantity":"Ni Ea、D0 对 Bonny 势","target_data":"Bonny 2009/2011/2013 [26-28] CMD（本文跑）","authors_language":"Bonny2011 and Bonny2013 potentials both overestimate Ea","page":3,"where":"Table 1, Fig. 1","used_in_construction":"NO","construction_evidence":"AIMD 不用这些势；Bonny 拟合目标未在文中给出","temporal":"势先于本文","metric":"0.13 vs 0.13/0.27/0.15（0%/+108%/+15%）","discriminating":"NA：方向是以 AIMD 为基准测势函数","verdict":"VERIFICATION","verdict_reason":"测的是经验势，不验证 AIMD。"},
+  {"id":"C4","quantity":"NiFe 分扩散 D_Ni/D_Fe","target_data":"Bonny 三个势（CMD）","authors_language":"Bonny2013 is the closest to the result from AIMD simulations","page":3,"where":"Fig. 2b, Table 2","used_in_construction":"NO","construction_evidence":"同 C3","temporal":"势先于本文","metric":"我用 Table 2 算：AIMD 1.59(1200 K)-1.23(1800 K)；Bonny2013 2.30-2.15；Bonny2009 0.019-0.10，方向相反；Bonny2011 表值给 181-86，Fig.2b 读数约 20-8，疑 D0 7.56e-7 为 7.56e-8 之误。","discriminating":"显示经验势比值散布 3 个数量级，正是文章选 AIMD 的动机，但不能说 AIMD 正确","verdict":"VERIFICATION","verdict_reason":"跨方法比较，无实验裁决。"},
+  {"id":"C5","quantity":"合金 Ea 落入 NEB 势垒分布","target_data":"Zhao 2016 [12]（同组）","authors_language":"fall into the range of migration energy distributions","page":3,"where":"正文","used_in_construction":"NO","construction_evidence":"同组同方法，未显式输入","temporal":"先于本文","metric":"未给区间数值，只说在范围内","discriminating":"低：分布宽，几乎任何值都落入","verdict":"CONSISTENCY","verdict_reason":"无量化标准。"},
+  {"id":"C6","quantity":"NiFe 哑铃占时与 0 K 形成能排序","target_data":"Zhao 2016 [12]","authors_language":"This result is consistent with the chemically-biased diffusion","page":3,"where":"Fig. 3, Fig. 4","used_in_construction":"NO","construction_evidence":"同组前作，但结果不是拟合的。动机上是先有 [12]","temporal":"先于本文","metric":"读 Fig.3：Ni-Ni ~0.40，Ni-Fe ~0.46，Fe-Fe ~0.13；随机 0.25/0.5/0.25。只比排序，未用 Boltzmann 从 Ef 算占时；Ni-Ni 最低但占时不最高。","discriminating":"中：排序可错，但只有 3 类","verdict":"CONSISTENCY","verdict_reason":"定性排序，没有定量预测。"},
+  {"id":"C7","quantity":"NiCo 哑铃占时与形成能","target_data":"Zhao 2016 [12]","authors_language":"These results are fully consistent with earlier DFT results at 0 K","page":3,"where":"Fig. 6","used_in_construction":"NO","construction_evidence":"同 C6","temporal":"先于本文","metric":"读 Fig.6：Ni-Co ~0.48，Co-Co ~0.37，Ni-Ni ~0.15；随机 0.5/0.25/0.25。Ni-Co 几乎等于随机值，而 Co-Co 才是真正富集。讨论 p6 又说‘Co-Co’形成能低，与 p3-4 所述 Ni-Co 最低不一致。","discriminating":"中低","verdict":"CONSISTENCY","verdict_reason":"定性；文内对哪类能量最低说法不一。"},
+  {"id":"C8","quantity":"NiCoCr Co-Cr 优先与形成能决定通道","target_data":"无直接数据（[12] 不含 NiCoCr）","authors_language":"indicating the preference of Co-Cr dumbbells","page":6,"where":"Fig. 8","used_in_construction":"NO","construction_evidence":"无形成能数据，占时结果用来‘指示’优先，再用优先解释扩散","temporal":"NA","metric":"读 Fig.8：Co-Cr 0.47-0.63 vs 随机 0.22；无 Ef 对比","discriminating":"无","verdict":"NOT_A_MODEL_TEST","verdict_reason":"循环推断，没有外部比较。"},
+  {"id":"C9","quantity":"fc 随温度的合金行为","target_data":"Osetsky 2016 [29] CMD NiFe","authors_language":"Similar behaviors were also observed in CMD simulations for NiFe","page":5,"where":"Fig. 9","used_in_construction":"NO","construction_evidence":"不同方法，作者重叠","temporal":"先于本文","metric":"无 [29] 数值；Fig.9 合金 0.33→0.42，Ni 0.44→0.43，无误差棒","discriminating":"低","verdict":"CONSISTENCY","verdict_reason":"定性。"},
+  {"id":"C10","quantity":"减少肿胀、抑制 cluster 迁移","target_data":"实验 [6,8]","authors_language":"These expected effects are in line with experimental observations","page":6,"where":"讨论","used_in_construction":"NO","construction_evidence":"实验独立，同合作者群","temporal":"实验先于本文","metric":"本文未计算肿胀或团簇迁移，只是推论","discriminating":"无","verdict":"CONSISTENCY","verdict_reason":"这是摘要唯一触及实验的地方，且量不相同。"},
+  {"id":"C11","quantity":"优先扩散的普遍性","target_data":"Terentyev 2008 [33]（Fe-Cr）","authors_language":"Similar diffusion behaviors are also observed in Fe-Cr alloys","page":6,"where":"讨论","used_in_construction":"NO","construction_evidence":"他组 CMD","temporal":"先于本文","metric":"无数","discriminating":"无","verdict":"CONSISTENCY","verdict_reason":"类比，不是检验；‘general feature’是外推。"},
+  {"id":"C12","quantity":"32 原子 vs Barnard；108 vs 32","target_data":"本文 32 原子；Barnard [15]","authors_language":"Our results obtained from small supercell are in good agreement with those","page":7,"where":"Fig. 11","used_in_construction":"NO","construction_evidence":"收敛性测试","temporal":"NA","metric":"读 Fig.11：800 K 32 原子 ~4.8e-9 vs 108 原子 ~6.5e-9（-26%）；1400 K 几乎相同。形成能 4.64(32)、4.23(108 Γ)、4.11(256)、4.06(108, 2×2×2)。","discriminating":"NA","verdict":"VERIFICATION","verdict_reason":"数值收敛；作者写的 0.12 eV 比 NiFe 的 Ea 差（0.08 eV）大。"},
+  {"id":"C13","quantity":"短轨迹 ASD 与 MSD","target_data":"Bonny2011 CMD 2 ns（Table 5）","authors_language":"both methods give consistent diffusivities as long as the simulation time is long enough","page":8,"where":"Fig. 12, Table 5","used_in_construction":"NO","construction_evidence":"精度分析","temporal":"NA","metric":"相对 2000 ps：20 ps MSD +16%；50 ps +23%；200 ps -13%；ASD -15~+9%。AIMD 只有约 100 ps。这个分析只在纯 Ni 上做，不在合金分扩散上做。","discriminating":"NA","verdict":"VERIFICATION","verdict_reason":"给出 ±约 20% 的统计噪声，比 NiFe 比值偏离 1 的幅度（1.2-1.6）不小很多。"}
+ ],
+ "paper_verdict":{
+  "label":"CONSISTENCY_ONLY",
+  "why":"全文没有与实验扩散数据的比较。最强比较是纯 Ni 对 Barnard AIMD（Ea 差 0.01 eV），只算实现验证。核心的化学偏置结果只和同组 0 K 形成能做定性排序相符；NiCoCr 甚至没有形成能数据。结果本身是 AIMD 直接得到，属于有价值的第一性原理数据，但未经实验检验。",
+  "best_comparison":"C1",
+  "fraction_note":"13 条：VERIFICATION 6，CONSISTENCY 6，NOT_A_MODEL_TEST 1；无实验定量。"
+ },
+ "checks_performed":[
+  {"what":"用 Table 2 的 Arrhenius 参数计算 AIMD D_Ni/D_Fe，并与文中和 Fig.2b 对照","result":"1200 K 1.59，1400 K 1.42，1600 K 1.31，1800 K 1.23。文中写‘about two times’，高估约 25-60%；Fig.2b 中 1200 K 误差棒跨越 1（约 0.6-2）。"},
+  {"what":"用 Table 2、3、4 比较 total 与 partial","result":"NiFe 1400 K：Ni 4.8e-9，Fe 3.4e-9，total 8.4e-9；NiCo：3.5e-9，6.2e-9，9.4e-9；NiCoCr：1.2e-9，4.2e-9，2.8e-9，8.4e-9。total ≈ 分系数之和，而 Eq.A3 按 Ns 归一后 total 应是 c 加权平均（差 2-3 倍）。说明分系数实际是按总原子数归一，或者 total 不是全体平均；文中未交代。这直接影响 Fig.10 的比较。"},
+  {"what":"比对 Fig.10 与 Fig.7a/Table 4 的 Co in NiCoCr","result":"Fig.10 在 1200/1400 K 读约 8.5e-9、1.25e-8；Table 4 给 Co 2.95e-9、4.2e-9，Fig.7a 也约 3e-9、4.5e-9。Fig.10 高约 3 倍，恰为 1/c(Co)。Ni in NiFe、Co in NiCo 在 Fig.10 没有乘以 2。同一图中三条合金线归一不一致，因此‘最高分系数低于纯 Ni’的比较不可靠；NiCoCr 看起来比 NiFe、NiCo 快只是这个因子造成的。"},
+  {"what":"核查 Fig.9 与文字","result":"文字：Ni 从 ~0.5 降至 ~0.4，合金从 ~0.2 升至 >0.4。图：Ni 0.44→0.43，合金 0.33→0.42（1800 K 才到 0.42）。文字夸大了变化幅度，无误差棒。"},
+  {"what":"按 Table 5 噪声估算 Ea 不确定度","result":"x=1/kT 四点（1200-1800 K），Σ(x-x̄)²≈6.1 eV^-2；若 lnD 噪声 ±0.15，σ(Ea)≈0.06 eV。NiFe Ni vs Fe 的 ΔEa=0.08 eV 约 1σ；NiCo Δ=0.15 约 2σ；NiCoCr Ni vs Co Δ=0.34 显著。文中都未给 Ea 不确定度。"},
+  {"what":"用 Fig.12 复算 Table 5","result":"ASD 2000 ps≈125 Å²，D=125/(6×2000)=0.0104 Å²/ps；×108（单缺陷归一）=1.13，与 Table 5 的 1.193 相符。附录的单位和归一自洽。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"NiFe 中 Ni 的位移约为 Fe 的两倍快","quote":"produces displacements of Ni atoms about two times faster than Fe atoms","page":3,"reality":"Table 2 给 1.23-1.59，Fig.2b 同样；1200 K 误差棒跨越 1。","consistent":false},
+  {"claim":"结果明确表明间隙主要经 Ni 子系统扩散","quote":"All these results indicate unambiguously that interstitial atoms in NiFe alloys diffuse mainly via a Ni subsystem","page":3,"reality":"Fig.3 Ni-Fe 混合哑铃占时最多（~0.46），Ni-Ni ~0.40；Fe 分系数只比 Ni 低 20-40%。‘unambiguously’和‘mainly’都过强。","consistent":false},
+  {"claim":"形成能趋势决定优先扩散通道","quote":"Therefore, the trend of dumbbell formation energy determines the preferential diffusion channel","page":6,"reality":"只有排序相关，无定量；p6 说 NiCo 为 Co-Co 低，p3-4 说 Ni-Co 最低，文内矛盾；NiCoCr 无 Ef 数据。","consistent":false},
+  {"claim":"所有合金 fc 从 ~0.2 增至 >0.4","quote":"it increases from ~0.2 to >0.4","page":5,"reality":"Fig.9 下限约 0.33，不是 0.2。","consistent":false},
+  {"claim":"Bonny2011 比值高达 10","quote":"up to 10 at low temperature","page":3,"reality":"Fig.2b 读约 20；Table 2 代入得 181（D0 疑打错）。","consistent":false},
+  {"claim":"结果可用于预测偏聚与相分离","quote":"can be used to understand and predict atomic segregation and phase separation","page":1,"reality":"本文未做偏聚计算，也没有 RIS 实验对比，属展望。","consistent":false}
+ ],
+ "unverifiable":["Barnard 2014 的表格数值只从本文引用；[12] 的形成能数值未见。","NiCoCr 是否使用多个 SQS 未写明，按单个推测。","实验熔点未在文中给出，但 1800 K 接近或超过这类合金的熔点，定体积 108 原子不能判定是否仍是固溶晶体。"],
+ "one_line":"AIMD 直接给出 Co,Cr>Ni（NiCoCr 中 Ea 0.26/0.35 vs 0.60 eV）的化学偏置是真实结果，但无实验检验；NiFe‘两倍’实为 1.2-1.6，Fig.10 中 Co in NiCoCr 比表值高约 3 倍，‘形成能决定通道’只是同组 0 K 排序相关。"
+}

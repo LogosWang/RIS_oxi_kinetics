@@ -1,0 +1,73 @@
+{
+ "item":"1842","key":"JMMJB8A3","cite":"Taylor, Lu, Saal, Frankel, Scully 2018 npj Mater. Degrad. 2:6","type":"review",
+ "read_coverage":{"total_lines":1272,"read_through_line":1272,"pages_rendered":[4,5,6,7,8]},
+ "section_map":[
+  {"section":"Introduction","page":1,"gist":"CRA 依赖经验开发，Cr-Mo 等协同作用无法先验预测；需要科学驱动设计。"},
+  {"section":"Challenges; ICME paradigm","page":2,"gist":"缺统一模型和唯一耐蚀指标；PREN 纯经验；ICME 四类工作（Table 1）；Ferrium S53 是 SCC 设计案例；列出 (a)-(i) 建模方法。"},
+  {"section":"Compositional and microstructure control","page":3,"gist":"微电偶、晶界、渗流分离限；HEA 的 CALPHAD 相图（Fig.1）。"},
+  {"section":"Promotion of passivity","page":4,"gist":"Inconel 600 的 CALPHAD Pourbaix（Fig.2）；Cr 富集理论，Shibata 软硬酸碱，Macdonald PDM；钝化膜性质清单。"},
+  {"section":"Salt films, reactive electrochemistry","page":5,"gist":"Anderko 再钝化模型；OQMD 氧化物-氯化物能量交叉图（Fig.3），Mo 为离群点；HER 火山曲线。"},
+  {"section":"Cathodic control","page":6,"gist":"设计反向火山图以抑制 ORR，纯定性。"},
+  {"section":"New metrics","page":6,"gist":"改造 Marcus 图（Fig.4）；Cr 表面富集（Fig.5）；提出 CRF_tot=Σf(CRF_i)，6 项均未定义数值；数据驱动和第一性原理两条路线。"},
+  {"section":"Conclusions","page":8,"gist":"重述三个知识域可由 ICME 统一，用 HEA 作例子。"},
+  {"section":"References","page":8,"gist":"107 条，多条重复（6=54, 21=90, 18=27, 69=104），部分引用号与内容错位。"}
+ ],
+ "contribution":{"primary":"NEITHER","secondary":"NONE","neither_type":"review/perspective：综述加上一个未实现的指标设想",
+  "claimed":"回顾三个知识域并提出统一它们的 ICME 路线，包括 CRF 指标。",
+  "quote":"A path forward for integrated computational materials engineering (ICME) of CRAs that unites these three knowledge domains is introduced",
+  "quote_page":1,
+  "novelty_test":"实质新增只有几张示例图（Fig.1-5）和 Eq.1 的 CRF_tot。Eq.1 只有 6 个未定义的名称和未指定的 f，无数值、无权重、无校准集，其他人无法直接使用。Fig.4 是 Marcus 1994 (ref.83) 的改造版，Fig.5 是 Kirchheim、Marcus-Grimal 的旧式公式；Table 1 来自同一作者 Taylor 2015 (ref.26)。",
+  "mechanism_evidence":"NA",
+  "reuse_test":"NA"},
+ "parameters":[
+  {"name":"Fig.3 和 Fig.4 氧化物、氯化物形成能","value":"OQMD，读图如 Mo (8.6, 3.5), Re (7.6, 3.75), Cr (5.3, 5.5) eV/atom","provenance":"FIRST_PRINCIPLES","page":6,"basis":"OQMD 数据库。文中说选最富金属化合物，但未列出具体化合物。"},
+  {"name":"Fig.4 内聚能","value":"Kittel 表","provenance":"INDEPENDENT_EXPT","page":7,"basis":"ref.99，作为 M-M 键能代理。"},
+  {"name":"σ (Kirchheim)","value":"500（硫酸中测得），7（传输控制），5（作图使用）","provenance":"TUNED_OR_ASSUMED","page":8,"basis":"Fig.5 图注。文中明说 500 和 7，但得到 10 at.% 的却是 'Using 5'。"},
+  {"name":"Marcus-Grimal 系数","value":"x_e=12x/(1+11x)","provenance":"UNKNOWN","page":8,"basis":"Fig.5 标注，来源 ref.102，手头没有。"},
+  {"name":"Fig.2 离子浓度","value":"图注 Ni 7.394e-5, Cr 1.76e-5, Fe 8.46e-6 M；图头 N(NI)=7.25031e-5, N(CR)=3.01596e-5, N(FE)=8.3929e-6","provenance":"TUNED_OR_ASSUMED","page":5,"basis":"总量 1e-4 M 是常规假定；图注与图头不一致。"},
+  {"name":"CRF 权重 f 和 CRF_1-6","value":"未定义","provenance":"UNKNOWN","page":7,"basis":"文中只说 might be summed in some linear or non-linear weighted function。"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"我数的：综述没有拟合。Eq.1 自由度不确定：6 个未定义指标加任意函数 f，实际不可计数。Fig.4 的椭圆边界是手绘，无定量判据。"},
+ "comparisons":[
+  {"id":"C1","quantity":"CALPHAD Pourbaix（Inconel 600）","target_data":"Beverskog & Puigdomenech 1999 (ref.65)","authors_language":"has considerable overlap with those developed by Beverskog and Puigdomenech","page":4,"where":"Fig. 2","used_in_construction":"UNCLEAR","construction_evidence":"Thermo-Calc 水溶液数据库 TCAQ3/SSUB3 的热力学数据与 ref.65 的来源很可能部分相同，文中未说明，因此不是独立的。","temporal":"ref.65 在前","metric":"无数值，未叠加对比图，ref.65 不在手边。","discriminating":"低。两者都基于类似热力学数据，而且是计算比计算。","verdict":"VERIFICATION","verdict_reason":"只和另一个计算图比，不检验真实钝化。没有一个实验钝化或点蚀数据。"},
+  {"id":"C2","quantity":"AlxCoCrFeNi 的 FCC 单相界","target_data":"无","authors_language":"we show how CALPHAD can be used to generate phase diagrams for hypothetical alloys","page":4,"where":"Fig. 1","used_in_construction":"NO","construction_evidence":"无比较。","temporal":"NA","metric":"无实验点。我读图 FCC 上限 x≈0.47（约 1330 °C）到约 0.03（700 °C）。","discriminating":"NA。","verdict":"NO_EXTERNAL_TEST","verdict_reason":"示例，未与实验比。"},
+  {"id":"C3","quantity":"Ferrium S53 的 SCC 模型设计","target_data":"DFT 和晶界化学、SCC 实验","authors_language":"Model calibration was performed with DFT data plus experimental measurements of grain boundary chemistry and SCC performance","page":2,"where":"Text","used_in_construction":"YES_DIRECT","construction_evidence":"作者明说用 SCC 性能标定。","temporal":"标定后设计，合金成功是事后说法","metric":"无数值，没有预测对实测的比较。","discriminating":"文中未给。","verdict":"CALIBRATION","verdict_reason":"校准目标含 SCC 性能；'successful' 无定量证据；ref 不在手边。"},
+  {"id":"C4","quantity":"ICME 加速至少 2 倍","target_data":"Holdren 2011 MGI 白皮书 (ref.30)","authors_language":"has been said to accelerate materials design projects by a factor of at least","page":2,"where":"Text","used_in_construction":"NO","construction_evidence":"背景引用。","temporal":"NA","metric":"政策文件的说法，无案例对比，且作者用 'has been said'。","discriminating":"无。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"背景引用。"},
+  {"id":"C5","quantity":"Mo 在氧化物-氯化物能量图上离群，对应其点蚀强化","target_data":"文献中 Mo 提高抗点蚀的共识，无具体数据","authors_language":"This distinction could be related to the observed extraordinary effect of Mo on boosting pitting resistance of alloys","page":6,"where":"Fig. 3","used_in_construction":"YES_INDIRECT","construction_evidence":"Mo 的效果早已知道，作者是在看到图后挑出它解释，属事后归因，没有预先定义判据。","temporal":"事后","metric":"我读 23 点：r=0.88（全部），r=0.95（去 Mo、Re），斜率 0.79/0.83。相对 y=x 残差：Mo -5.1，Re -3.85，Nb、Ti -2.3，W -1.8，Ta -1.35，Al -1.05，Cr +0.2，Ni -0.05。没有将残差与点蚀性能作图。","discriminating":"低。Re 的残差几乎和 Mo 一样大，但文中没有 Re 的点蚀证据；主元素 Cr 的残差约 0。残差对已知有益元素的排序并不一致。没有与 PREN 系数做相关性检验（Cr 权重 1、Mo 权重约 3.3）。","verdict":"CONSISTENCY","verdict_reason":"单点事后相符，无定量标准。"},
+  {"id":"C6","quantity":"改造 Marcus 图重现促钝化和阻溶解分组","target_data":"Marcus 1994 (ref.83)","authors_language":"Regions containing similar elements are circled","page":7,"where":"Fig. 4","used_in_construction":"YES_INDIRECT","construction_evidence":"椭圆是作者绕已知分组手绘的，分组结果是构图时已知的。","temporal":"Marcus 在前","metric":"蓝点 12 个（Ti, Al, Cr, Fe, Zn, Cu, Ni, Pt, Mo, Nb, Ta, W），与文中 'twelve metals' 相符。Cr (395, 5.2) 落在绿色椭圆边缘，距离其下方的 Fe (420, 4.1) 只有约 1.1 eV；Mn 在边界上。","discriminating":"无定量判据。Cr 和 Fe 差异靠手绘边界。","verdict":"CALIBRATION","verdict_reason":"分组目标决定了边界。"},
+  {"id":"C7","quantity":"V, Zr, Hf, Sc, Y, Re 可能有益","target_data":"无","authors_language":"Assuming the general Marcus rule of corrosion resistant alloying metals holds for these elements","page":7,"where":"Fig. 4","used_in_construction":"NO","construction_evidence":"预测，未检验。","temporal":"预测，无后续数据","metric":"无。","discriminating":"未检验。","verdict":"NO_EXTERNAL_TEST","verdict_reason":"只是假说，且以规则成立为前提。"},
+  {"id":"C8","quantity":"Cr 临界含量","target_data":"Kirchheim, Marcus-Grimal（refs.68,102-104）","authors_language":"Using 5 the critical alloying content is great than 10 at.","page":8,"where":"Fig. 5","used_in_construction":"YES_INDIRECT","construction_evidence":"σ 取 5，而文中测得值为 500 和 7。显然要靠 σ 取值才能落到 10 at.% 附近。","temporal":"Fe-Cr 约 12 at.% 的临界值早已知道","metric":"我算（若以 x_e=0.5 为判据，文中未给阈值）：σ=500→0.2 at.%，σ=50→2 at.%，σ=12→7.7 at.%，σ=7→12.5 at.%，σ=5→16.7 at.%。测得的 σ=500 与 10-15 at.% 差约 60 倍。","discriminating":"σ 可调，什么都能拟合。","verdict":"CALIBRATION","verdict_reason":"σ 和阈值决定结果；图中无实验点。"},
+  {"id":"C9","quantity":"PDM、Anderko 再钝化模型、Shibata 软硬酸碱","target_data":"原论文（refs.43,77,87-89）","authors_language":"has been applied to predict the steady-state properties of the passive film","page":5,"where":"Text","used_in_construction":"UNCLEAR","construction_evidence":"Anderko 模型依赖 'database of adsorption parameters and activation energies'，综述中未说明是否拟合过同类数据。","temporal":"NA","metric":"无数值。","discriminating":"文中未讨论。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"背景转述，综述未评价它们的验证质量。"},
+  {"id":"C10","quantity":"HEA 具有良好耐蚀性","target_data":"refs.61-63","authors_language":"such HEAs demonstrate good corrosion and oxidation resistance","page":4,"where":"Text","used_in_construction":"NO","construction_evidence":"背景引用。","temporal":"NA","metric":"无数值。ref.61 题目是低温抗断裂，未提腐蚀。","discriminating":"无。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"背景引用，且引用与声称不匹配。"}
+ ],
+ "paper_verdict":{"label":"REVIEW_NA","why":"综述没有预测模型或验证。自带的 5 张图没有一张叠加了腐蚀实验数据。Eq.1 的 CRF 只是提纲。最接近证据的 Fig.3 也只是对 Mo 的单点事后归因。","best_comparison":"C5","fraction_note":"10 条：CALIBRATION 3，VERIFICATION 1，CONSISTENCY 1，NO_EXTERNAL_TEST 2，NOT_A_MODEL_TEST 3。无 POSTDICTION。"},
+ "checks_performed":[
+  {"what":"用公式 x_e=σx/(1+(σ-1)x) 对照 Fig.5 四条曲线","result":"黑（log x=0，0.83）和红（0.335）符合 σ=500、50。绿线标 σ=5，但读值 log x=0 为 0.105，log x=1 为 0.57，符合 σ=12（0.108, 0.571）。蓝线标 12x/(1+11x)，读值 0.048 和 0.36 符合 σ=5（0.048, 0.357）。两条标签互换。"},
+  {"what":"放大 Fig.2 图头，对照图注的离子浓度","result":"图头 N(CR)=3.01596e-5，N(NI)=7.25031e-5，N(FE)=8.3929e-6（总 1.11e-4，约 25 wt% Cr）。图注 Cr 1.76e-5（总 1.00e-4）。Cr 差 1.71 倍。按 76.5Ni-15.5Cr-8Fe 我算为 Ni 7.47e-5, Cr 1.71e-5, Fe 8.21e-6，接近图注，但不等于图头。图显示的计算不是图注所说的 Inconel 600 组成。"},
+  {"what":"从 Fig.3 读 23 个点算相关和残差","result":"r=0.88，去掉 Mo、Re 后 0.95。Mo -5.1，Re -3.85；至少 13 个元素在 y=x 下方；Cr +0.2。图中没有文中所说的 S，只有 Sr（残差最大正值 +2.25）。"},
+  {"what":"计算不同 σ 对应的 x_e=0.5 临界含量","result":"σ=500 给 0.2 at.%，σ=5 给 16.7 at.%。测得值与 10-15 at.% 相差约 60 倍。"},
+  {"what":"用 ΔHf 量级（凭记忆，非文中数据）粗核 Fig.3 的化合物","result":"Ti≈9.8 接近 TiO2，Cu≈1.6 接近 CuO，Mn≈4.9 接近 Mn2O3，看起来不像'最富金属'化合物。每金属原子能量随价态变化，氧化物和氯化物价态不同，因此 y=x 没有化学意义，Mo 和 Re 的离群可能部分来自价态。此点无法从文中证实，已列入 unverifiable。"},
+  {"what":"核对引用号与参考文献表","result":"S53 段的 '(15)' 和 '(12)'：Rice-Wang 是 ref.14，ref.12 是砷对黄铜脱锌。Fig.4 图注 ref.82 是 Newman，Marcus 是 ref.83。Kirchheim 理论引 ref.68 为 Castle & Asami。ref.61 为低温抗断裂。重复：6=54, 18=27, 21=90, 69=104。"},
+  {"what":"对照摘要和正文的内部逻辑","result":"摘要说自由度过多，不能用高通量方法；p.2 又说 ICME 适合 'exhaustively examine'。p.2 说 ICME 未用于 CRA，同页 S53 就是耐蚀钢案例。"},
+  {"what":"逐图检查是否叠加实验腐蚀数据","result":"Fig.1-5 没有一张有实验腐蚀或钝化数据点。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"ICME 尚未用于设计 CRA","quote":"until now has not been applied for designing CRAs","page":2,"reality":"同页称 ICME 设计了目标为耐蚀和耐 SCC 的 Ferrium S53 不锈钢。最多只能说未用于抗点蚀设计，后文也确实这样说。","consistent":false},
+  {"claim":"高通量不够用，而 ICME 能穷尽搜索","quote":"The degrees of freedom in alloy design are too numerous","page":1,"reality":"p.2 又写 'exhaustively examine a myriad of possible CRA compositions'。而且 ICME 中没有可计算的耐蚀目标函数，文中自己也说缺这个。","consistent":false},
+  {"claim":"Fig.5 曲线标注","quote":"Example plots are shown in Fig. 4 where Cr enrichment","page":7,"reality":"应为 Fig.5。Fig.5 里绿线和蓝线标签互换：标 σ=5 的是 σ=12，标 12x/(1+11x) 的是 σ=5。'Using 5' 的结论实际依赖哪条线因此不清楚。","consistent":false},
+  {"claim":"Fig.2 为 Inconel 600","quote":"The composition used for calculation is 76.5Ni-15.5Cr-8Fe (wt%)","page":5,"reality":"图头 Cr 为 3.016e-5，比图注高 1.71 倍，相当于约 25 wt% Cr。","consistent":false},
+  {"claim":"灰色是免蚀区","quote":"the gray region is the immunity region where oxidation of metals is predicted to occur","page":5,"reality":"写反了，免蚀区不发生氧化。正文的氧化物清单中还把 Ni 列为氧化物。","consistent":false},
+  {"claim":"离群点包括 S","quote":"Other outliers such as Re, Nb, Ti, and S may warrant further study","page":6,"reality":"Fig.3 没有 S，可能是 Sr。若是 Sr，它和 Mo 方向相反。Mo 不是唯一的 '氧化物更稳定'，至少 13/23 个元素位于 y=x 下方。","consistent":false},
+  {"claim":"六类指标来自上文","quote":"These could be conceivably based around the six categories discussed above","page":7,"reality":"上文列的是 5 类（含 SCC），其中 SCC 明确不讨论。六类清单中 'fast HER kinetics' 到 CRF6 变成 'hydrogen tolerance'，这是两个不同的量，且快 HER 与耐氢往往相反。CRF_tot 无任何数值实例。","consistent":false},
+  {"claim":"协同作用无法先验预测，是缺的关键","quote":"there is no way a priori to predict such synergies","page":1,"reality":"一致：全文没有提出能预测 Cr-Mo 协同的量，Eq.1 是加和形式，反而不天然包含协同。","consistent":true},
+  {"claim":"用 σ 估算 Cr 临界含量","quote":"the critical Cr content is ~15 at. % Cr","page":8,"reality":"文中没有给 x_e 判据；σ=500、7、5 三个数并存，只有 5-7 能靠近已知 Fe-Cr 临界值。这是标定，不是预测。","consistent":false}
+ ],
+ "unverifiable":[
+  "Fig.3 所选化合物和价态（OQMD 列表文中未给），我的价态判断凭记忆的 ΔHf，不是文中数据。",
+  "Beverskog & Puigdomenech 图（ref.65）与 Fig.2 的实际重合程度。",
+  "S53 模型的预测对实测数据（refs.15,18,27 不在手边）。",
+  "Thermo-Calc 数据库与 ref.65 的共同来源。",
+  "Marcus-Grimal 的 12x/(1+11x) 判据和阈值来源（ref.102）。"
+ ],
+ "one_line":"综述加设想（CRF_tot=Σf(CRF_i)，6 项无定义无数值）：5 张图没有一张叠加腐蚀数据，Mo 离群（残差 -5.1）是事后归因且 Re（-3.85）同样离群，Fig.5 两条标签互换，Fig.2 图头 Cr 比图注高 1.7 倍。"
+}

@@ -47,7 +47,9 @@
       {mirror image};
 
 % ----- intergranular oxide, and the open GB ahead of it ----------------
-\fill[cOx,eg] (-\wo,\yS) -- (\wo,\yS) -- (\g,\yf) -- (-\g,\yf) -- cycle;
+\fill[cOx] (-\wo,\yS+0.08) -- (\wo,\yS+0.08) -- (\wo,\yS) -- (\g,\yf) -- (-\g,\yf) -- (-\wo,\yS) -- cycle;
+\draw[eg] (-\wo,\yS) -- (-\g,\yf);
+\draw[eg] ( \wo,\yS) -- ( \g,\yf);
 \fill[cFree] (-\g,\yB) rectangle (\g,\yf);
 \draw[eg] (-\g,\yf) -- (-\g,\yB);
 \draw[eg] ( \g,\yf) -- ( \g,\yB);

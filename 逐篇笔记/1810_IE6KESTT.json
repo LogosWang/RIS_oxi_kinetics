@@ -1,0 +1,62 @@
+{
+ "item":"1810","key":"IE6KESTT","cite":"Das 2009 Corros Sci","type":"simulation",
+ "read_coverage":{"total_lines":693,"read_through_line":693,"pages_rendered":[5,6]},
+ "section_map":[
+  {"section":"Introduction","page":1,"gist":"SS 双层氧化膜背景；MD 与 DFT 的限制；同组 [22] 已用紧束缚 QCMD 算 Fe、Fe-Cr，本文扩展到 Fe-Cr-Ni"},
+  {"section":"2 Method","page":2,"gist":"Colors 代码、扩展 Hückel 型紧束缚；48 或 46 金属原子 (111) 板、6 H2O、Cr 6 个、Ni 2~4 个；x 向 1% 应变；5000 步×0.2 fs = 1 ps，NVT 561 K"},
+  {"section":"3.1 Surface morphology","page":2,"gist":"水几百 fs 内解离；Cr-O 成键；Fe 比 Cr、Ni 快；顶部 Fe-Cr-O、其下 Fe-Cr-Ni-O，解释成双层氧化膜和富铁尖晶石"},
+  {"section":"3.2 Atomic trajectories","page":3,"gist":"Ni 基本不动，解释为内层/裂尖 Ni 富集，与 Terachi EDS 对照"},
+  {"section":"3.3 O and H diffusion","page":4,"gist":"Fig.4 12 个模型的单原子最大穿透深度；把它当扩散率讨论应变、缺陷和 Ni 的影响"},
+  {"section":"3.4 Mulliken population","page":4,"gist":"Table 1 平均电荷；Fig.5 H 电荷随深度变负；提出 H 接受电子、削弱金属键、助 O 进入；呼吁实验量化"},
+  {"section":"4 Conclusions","page":5,"gist":"结论：Ni 降低 O、H 扩散，应变增大，H 作氧载体并在 SCC 萌生中起关键作用；条件写成 hydrostatic strain"},
+  {"section":"References","page":6,"gist":"35 条，含同组 [22]；H 影响氧化实验 [29-34]；电荷转移 Jiang&Carter [27]、Juan&Hoffmann [28]"}
+ ],
+ "contribution":{
+  "primary":"NEITHER","secondary":"MECHANISM","neither_type":"常规应用：同组既有 QCMD 代码加新参数，算 12 个 1 ps 小模型；机制只是假说",
+  "claimed":"用 QCMD 揭示 SCC 萌生机制：Fe、Cr 快、Ni 富集，应变促进 O、H 扩散，深层 H 带负电，作氧载体",
+  "quote":"It seems that hydrogen effectively functions as an oxygen carrier",
+  "quote_page":1,
+  "novelty_test":"新增：Fe-Ni、Cr-Ni、Ni-Ni、NiO、NiH 紧束缚参数（文中未列）及 12 个小板模拟。旧的：代码和流程来自同组 [22]；Fe 快 Cr、Ni 慢、Ni 富集和双层膜都是 Intro 已述实验常识；H 影响氧化来自 [29-34]。",
+  "mechanism_evidence":"事后解释。氧载体假说没有对照：无不含 H 的模拟、无 H 与 O 穿透相关性的统计、无键级或键能变化数据、无反事实。Ni、应变影响来自 12 条单轨迹的单原子最大深度，差值不足一个原子层。作者自己要求实验量化。未排除竞争解释，也不可能排除：1 ps、单次轨迹、无统计。",
+  "reuse_test":"NA"
+ },
+ "parameters":[
+  {"name":"紧束缚 Hamiltonian 参数","value":"未列出（Fe-Ni、Cr-Ni、Ni-Ni、NiO、NiH 等）","provenance":"FIT_TO_SAME_DATA","page":2,"basis":"Sec 2：按双原子和块体性质开发，并与实验和 DFT 比较；未给拟合目标表和迁移势垒校验"},
+  {"name":"模拟时长","value":"5000 步×0.2 fs = 1 ps","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"Sec 2；机制结论全部基于此时间窗"},
+  {"name":"尺寸与成分","value":"48/46 金属原子，Cr 6 个（12.5%），Ni 2~4 个（4.2~8.3%），6 H2O","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"Sec 2，随机放置；只有 1 组随机构型，无重复"},
+  {"name":"应变","value":"1% 单轴（x）","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"Sec 2；结论写 hydrostatic，不一致"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"我数的：TB 参数个数未披露，无法计数（free_or_tuned 记 0 表示本文未交代，不代表没有）。对机制结论没有任何定量外部约束：12 条轨迹，每个工况 1 次，无重复和误差棒。"},
+ "comparisons":[
+  {"id":"C1","quantity":"Ni 内聚能","target_data":"实验 4.44 eV（未给出处）","authors_language":"nickel cohesive energy is 4.42 and 4.44 eV, respectively showing good agreement","page":2,"where":"Sec 2 正文","used_in_construction":"YES_DIRECT","construction_evidence":"文中说参数集是为 Hamiltonian 开发并与实验和 DFT 比较；块体内聚能是这类参数化的典型拟合目标，未说明是否被排除在拟合外","temporal":"同期参数化","metric":"4.42 vs 4.44 eV，-0.45%","discriminating":"无。这个量不约束 O、H 的扩散势垒、解离势垒","verdict":"CALIBRATION","verdict_reason":"该量几乎肯定是参数化的目标，且文中未证明其独立；举例只此一项。"},
+  {"id":"C2","quantity":"其他新参数的双原子和块体性质","target_data":"实验和 DFT，未列","authors_language":"compared with experimental and DFT calculated values","page":2,"where":"Sec 2","used_in_construction":"YES_DIRECT","construction_evidence":"同上","temporal":"同期","metric":"没给数","discriminating":"无从判断","verdict":"CALIBRATION","verdict_reason":"无数据，只有一句话。"},
+  {"id":"C3","quantity":"顶部 Fe-Cr-O / 下层 Fe-Cr-Ni-O 对应富铁尖晶石","target_data":"Lozano-Perez [13]、Kanazaki [14] ATEM","authors_language":"the formation of an iron rich spinel which is consistent with several experimental studies","page":3,"where":"Sec 3.1","used_in_construction":"NO","construction_evidence":"实验未进入参数；但对比方式为定性","temporal":"实验先于模拟，事后对照","metric":"无数。我算：48 金属原子只有 6 个 O（O/M=0.125），尖晶石 O/M=1.33，O 量差 10 倍，且只有 1 ps，无法形成任何尖晶石晶格。实验膜厚为数十至数百 nm。","discriminating":"无。任何含 Fe、Cr、Ni、O 的模型都会给出这些元素共处","verdict":"CONSISTENCY","verdict_reason":"定性类比，没有结构或成分指标。"},
+  {"id":"C4","quantity":"膜中元素 O、Fe、Cr、Ni","target_data":"Ziemniak 2002 [9] XPS","authors_language":"the major elements of the films were oxygen, iron, chromium and nickel","page":3,"where":"Sec 3.1","used_in_construction":"NO","construction_evidence":"元素由建模时给定","temporal":"实验先于模拟","metric":"无","discriminating":"无，模型只含这些元素","verdict":"CONSISTENCY","verdict_reason":"元素由模型决定，对比是平凡的。"},
+  {"id":"C5","quantity":"H 扩散进入金属","target_data":"Da Cunha Belo [23] GDOES；Totsuka [24]、Hall [25]","authors_language":"this is in good agreement with previous experimental studies","page":3,"where":"Sec 3.1","used_in_construction":"NO","construction_evidence":"定性","temporal":"实验先于模拟","metric":"无定量。我估：0.9 nm/1 ps 对应 x^2/(6t) 约 1.4e-7 m2/s，而奥氏体中 H 在 561 K 的实验估值约 1e-11~1e-12 m2/s，相差约 4~5 个量级，说明这是解离放热后的瞬态弹道，不是扩散。","discriminating":"无，且 [23] 测的是 200 nm 氧化膜中的 H，与 1 nm 金属板不是同一量","verdict":"CONSISTENCY","verdict_reason":"定性存在性比较；good agreement 不成立于任何定量意义。"},
+  {"id":"C6","quantity":"Ni 在裂尖或内层富集","target_data":"Terachi 2005 [26] EDS","authors_language":"The results here are fully consistent with the EDS results","page":4,"where":"Sec 3.2；Fig.3","used_in_construction":"NO","construction_evidence":"实验未用于拟合","temporal":"实验先于模拟","metric":"无浓度剖面。Ni 只是在 1 ps 内几乎不动；富集是由它不动外推的。实验富集是长时间腐蚀累积。无裂尖几何。","discriminating":"无：Fe、Cr 优先成 O 键的任何模型都会有此结果；Ni 原子一个甚至放在顶层","verdict":"CONSISTENCY","verdict_reason":"事后解释，1 ps 轨迹与实验时间尺度差很多个量级，且没有计算 Ni 浓度。"},
+  {"id":"C7","quantity":"Cr 向界面移动形成尖晶石型氧化物","target_data":"[13,14]","authors_language":"show perfect consistency with these calculated results","page":4,"where":"Sec 3.2","used_in_construction":"NO","construction_evidence":"定性","temporal":"事后","metric":"无。Intro 称实验内层富 Cr，而 Sec 3.1 说模拟中 Cr-O 在最表层与 Fe 成氧化物，Cr 分布与实验方向不直接相同。","discriminating":"无","verdict":"CONSISTENCY","verdict_reason":"perfect consistency 没有任何量化支持。"},
+  {"id":"C8","quantity":"H 负电荷与本组前作","target_data":"Das 2008 [22]","authors_language":"The simulated negative charge on absorbed hydrogen is perfectly consistent with our previous study","page":4,"where":"Sec 3.4","used_in_construction":"YES_INDIRECT","construction_evidence":"同一代码和参数族","temporal":"前作","metric":"无数","discriminating":"无，自比","verdict":"VERIFICATION","verdict_reason":"同方法自比，不检验物理。"},
+  {"id":"C9","quantity":"金属到 H 的电荷转移","target_data":"Jiang & Carter 2004 [27] 0.10 e；Juan & Hoffmann 1999 [28] 0.40 e","authors_language":"Jiang and Carter found 0.10 e charge transfer from Fe to H","page":4,"where":"Sec 3.4；Fig.5；Table 1","used_in_construction":"NO","construction_evidence":"NiH、FeH 类参数有拟合，但未显示用这些数据","temporal":"文献在先","metric":"Fig.5 读数：深度 7~10 Å 处 -0.10~-0.20 e；Table 1 平均 -0.04~-0.11 e。相对 0.10 e 差 0~100%，相对 0.40 e 差 2~4 倍。文献两值本身差 4 倍。","discriminating":"低。Mulliken 依赖基组，作者也承认没有唯一分析方式；Fig.5 数据点在 7~10 Å 分散 0.05~0.2 e","verdict":"CONSISTENCY","verdict_reason":"量级相符。文献跨 4 倍，且为 bcc Fe 体系，不能算定量后验。"},
+  {"id":"C10","quantity":"H 增强氧化或 O 扩散","target_data":"Tomlinson、Wallinder、Tveten、Hultquist、Essuman [29-34]","authors_language":"experimental studies have shown that hydrogen influences the oxidation process or enhances oxygen diffusion in metals","page":4,"where":"Sec 3.4","used_in_construction":"NO","construction_evidence":"假说来自这些文献，靠它选了解释（选机制）","temporal":"事后","metric":"无。模拟没有不含 H 的对照，因此没有计算出 H 增强了 O 穿透","discriminating":"无。H 和 O 都来自同样的水解离，共现不等于因果","verdict":"CONSISTENCY","verdict_reason":"模拟没有测试这个效应。"},
+  {"id":"C11","quantity":"Fe 比 Cr、Ni 快","target_data":"Intro [2,3,15,16]；Geng 2003 [20]","authors_language":"iron atoms segregate faster than the chromium and nickel atoms","page":3,"where":"Sec 3.1；Fig.2-3","used_in_construction":"NO","construction_evidence":"参数未直接用","temporal":"文献在先","metric":"无速度或位移数表；Fig.3 只有定性轨迹。摘要却称 Fe、Cr 都比 Ni 快；Intro 引 Geng 称 Cr 甚至高浓度也不偏聚，未回头讨论。","discriminating":"无，单条轨迹","verdict":"CONSISTENCY","verdict_reason":"定性，无统计。"}
+ ],
+ "paper_verdict":{"label":"CALIBRATION_PLUS_CONSISTENCY","why":"唯一给出数值的对比是 Ni 内聚能 4.42 vs 4.44 eV（参数化目标）。其余全是用 fully/perfectly consistent 或 good agreement 表述的定性类比，模拟的 1 ps、6 个 O 不足以形成氧化膜。关键结论（H 氧载体、Ni 降低扩散、应变增强）没有对照模拟和统计，Fig.4 甚至不完全支持。","best_comparison":"C9","fraction_note":"11 条：CALIBRATION 2、VERIFICATION 1、CONSISTENCY 8；无 POSTDICTION。"},
+ "checks_performed":[
+  {"what":"从 Fig.4b 读 12 个工况的 H 最大深度，检验 Ni 和应变结论","result":"regular 工况：Ni4 0.925、Ni3 0.87、Ni2 0.86 nm，Ni 增多 H 深度反而大（到达时间 950、940、950 fs，无差别）；Ni2、Ni3 的 def+strain 与 def 差 +0.02、-0.06。Ni 降 H 扩散的结论不被支持。"},
+  {"what":"从 Fig.4a、b 算应变带来的深度变化","result":"O：regular +0.06、+0.02、-0.01；defect +0.11、+0.15、0.00。H：regular -0.07、+0.04、+0.06；defect 0.00、-0.06、+0.02 nm。O 6 组有 4 增 1 减 1 平；H 3 增 2 减 1 平。H 深度顶到 0.85~0.93 nm，文中说到了板底，属于饱和指标。差值多数小于一个 (111) 层间距。到达时间这一指标（缺陷+应变最小）才部分支持。"},
+  {"what":"用 Table 1 乘原子数检验电荷中性（负号以渲染页为准）","result":"11 组净电荷 -0.14~+0.36 e，属舍入范围。Fe-Cr-Ni3 regular with strain 为 +1.86 e；把 Ni 0.70 改成 0.07 得 -0.03 e，说明表中 0.70 是打印错误。"},
+  {"what":"按 Fig.4 估算表观扩散系数并与实验量级比","result":"H 0.9 nm/1 ps 约 1.4e-7 m2/s；O 0.5 nm/1 ps 约 4e-8 m2/s。奥氏体中 H 在 561 K 量级约 1e-11~1e-12 m2/s（一般文献估值），差 4 个量级以上；固态 O 差更多。说明指标不是扩散系数，而文中反复称 diffusivity，全文未计算 D。"},
+  {"what":"算 O/M 比，核对双层氧化膜说法","result":"6 O/48 金属=0.125，尖晶石 1.33，不够构成一层氧化物，遑论 outer+inner film。"},
+  {"what":"对比 Methods 和 Conclusions 的条件","result":"Sec 2 为单轴 1% 应变，结论写 hydrostatic；Sec 2 还写 NVT 同时设压力为大气压，不相容。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"增加 Ni 降低 O 和 H 的扩散","quote":"Increasing the nickel content reduced the oxygen and hydrogen diffusivity into the surface","page":5,"reality":"Fig.4b：H regular 工况随 Ni 增多深度增大（0.86→0.925 nm）；O 也只在 regular 和 defect 两组单调，strain 组 0.52、0.52、0.51 不变，defect+strain 组 Ni3 最高。Sec 3.3 只对 O 作此说法，结论扩展到了 H。","consistent":false},
+  {"claim":"H 作氧载体、并削弱金属键","quote":"It seems that hydrogen effectively functions as an oxygen carrier","page":1,"reality":"没有 H-free 对照，没有键级数据，也没有 O 穿透与 H 的相关。纯假说。","consistent":false},
+  {"claim":"应变增大 O、H 的 diffusivity","quote":"The oxygen and hydrogen diffusivity increased when one percent hydrostatic strain was applied to the surface","page":5,"reality":"Fig.4：H 6 组里 2 减 1 平，O 6 组里 1 减 1 平。没有计算 D；方法是单轴不是 hydrostatic；单条轨迹。","consistent":false},
+  {"claim":"H 浓度深度后变负","quote":"The deeply diffused hydrogen becomes negatively charged by taking electron from metal atoms","page":1,"reality":"Fig.5 确实显示深度 >5 Å 多为负（-0.05~-0.2 e），浅层多为正，这部分与数据一致；但由此推出启动氧化没有证据。Mulliken 与基组相关。","consistent":true},
+  {"claim":"过程在裂尖分子区起关键作用","quote":"This process plays a key role in subsequent localized corrosion nucleation","page":5,"reality":"模型没有裂尖、没有应力集中（1% 平板应变）、没有持续水环境（一层 6 H2O），1 ps。从摘要的 can 到讨论的 plays，没有证据支持。","consistent":false},
+  {"claim":"Fe 向表面偏聚而 Cr 不偏聚（Intro 所引 DFT）","quote":"found that Fe segregates to the surface whereas chromium does not even at high concentrations","page":2,"reality":"本文称 Fe 和 Cr 都从表面偏聚（Sec 3.1 称顶层 Cr 偏聚），未讨论差异。氧化环境不同也许可解释，但文中未说。","consistent":false}
+ ],
+ "unverifiable":["TB 参数值和拟合目标未披露，前作 [22] 未在手边","[13,14,23-26,29-34] 原文未核对，判断基于本文描述","实验 H 在奥氏体中的 D 为一般文献量级，非本文给出"],
+ "one_line":"12 条 1 ps、48 原子、6 个 H2O 的单轨迹 QCMD；唯一数值对比是拟合量 Ni 内聚能 4.42/4.44 eV，其余全定性；Fig.4b 中 Ni 增加 H 深度反而大（0.86→0.925 nm），氧载体说无 H-free 对照。"
+}

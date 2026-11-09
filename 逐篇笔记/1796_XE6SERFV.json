@@ -1,0 +1,420 @@
+{
+ "item": "1796",
+ "key": "XE6SERFV",
+ "cite": "Wrobel 2021 Comput Mater Sci",
+ "type": "simulation",
+ "read_coverage": {
+  "total_lines": 2695,
+  "read_through_line": 2695,
+  "pages_rendered": [
+   9,
+   11,
+   14,
+   15
+  ]
+ },
+ "section_map": [
+  {
+   "section": "1 Intro",
+   "page": 1,
+   "gist": "偶极张量/弛豫体积决定缺陷长程弹性场，此前主要研究纯金属；本文研究 Cr<=35% 的无序 Fe-Cr。"
+  },
+  {
+   "section": "2 Methodology",
+   "page": 2,
+   "gist": "Eq. 2 应力法、Eq. 3 全弛豫法、Eq. 5 Omega=S:P、不变量和 von Mises 应力；VASP PBE PAW 无 semicore，共线磁性，250 原子超胞。"
+  },
+  {
+   "section": "2.4 Computational details",
+   "page": 3,
+   "gist": "结构取自 Castin 2017 的 ANN 训练数据库；固定 a=2.831 A、300 eV 算应力法；400 eV 算全弛豫。"
+  },
+  {
+   "section": "3.1 Chemical potentials and formation energies",
+   "page": 4,
+   "gist": "mu_Cr 在约 10% Cr 分段；约 300 空位、400 哑铃构型的形成能随 c(Cr)、N_Cr 变化；5%Cr 额外 120 次计算。"
+  },
+  {
+   "section": "3.2 Elastic properties",
+   "page": 7,
+   "gist": "21 个结构的 a 和 C11、C12、C44；与实验（纯 Fe）及其他理论比较，多项式插值。"
+  },
+  {
+   "section": "3.3 Pure Fe/Cr",
+   "page": 8,
+   "gist": "Table 1 数值；Cr 在 Fe 中约 +18%，Fe 在 Cr 中 -5%；推论 Cr 偏聚到间隙环外侧，与 APT 相符但 DFT [78] 不完全支持。"
+  },
+  {
+   "section": "3.4 Random alloys",
+   "page": 10,
+   "gist": "Fig 6-9：P_ij、不变量、sigma_vM、Omega_rel 大涨落；按 10% Cr 和 N_Cr=3 分段拟合。"
+  },
+  {
+   "section": "4.1 Dumbbell orientation",
+   "page": 13,
+   "gist": "Fe-Fe、Fe-Cr 弛豫后为 <110>；Cr-Cr 取向多样，<221> 占 48%。"
+  },
+  {
+   "section": "4.2 Magneto-volume",
+   "page": 14,
+   "gist": "Omega_rel 与超胞 Delta M 的相关（Fig 11、12，R2 0.157-0.813）；未做去磁或约束磁矩对照。"
+  },
+  {
+   "section": "4.3 Stress vs cell relaxation",
+   "page": 15,
+   "gist": "160 个结构；Omega 差约 2.5%，E_form 差在低 Cr 达 -4%；列出若干可能原因，未分离。"
+  },
+  {
+   "section": "5 Conclusions + Appendix",
+   "page": 17,
+   "gist": "总结上述发现；Tables A.2-A.6 是趋势线方程。"
+  }
+ ],
+ "contribution": {
+  "primary": "NEITHER",
+  "secondary": "MECHANISM",
+  "neither_type": "参数数据生成：对已有 DFT+弹性方法的系统计算，产出浓缩 Fe-Cr 中点缺陷 P、Omega、E_form 数据库和趋势线",
+  "claimed": "首次系统研究浓缩 Fe-Cr 中点缺陷的偶极张量和弛豫体积，并指出磁性是影响弹性场的重要因素。",
+  "quote": "have never been systematically explored",
+  "quote_page": 2,
+  "novelty_test": "实质新增是 Fe-Cr 浓缩合金的 P、Omega 统计数据和趋势线。方法全是旧的：应力法和 Eq. 2 来自 Dudarev & Ma [14]、Varvenne & Clouet [12,13]，结构库来自 Castin [59]，弹性修正来自 [45]。把现成方法第一次用于新体系，不算 FRAMEWORK。机制部分只有相关，未达到 MECHANISM 主贡献的标准。",
+  "mechanism_evidence": "事后解释。磁性作用只靠 Omega 与 Delta M 的相关（R2 0.157-0.813），没有非磁对照或约束磁矩计算，也未排除化学环境/参考态混杂。Fig 11 的 9 点来自 5 个独立结构，Fe 位和 Cr 位的差别主要是参考态扣除（见 checks）。",
+  "reuse_test": "NA"
+ },
+ "parameters": [
+  {
+   "name": "DFT 设置",
+   "value": "PBE、PAW 无 semicore、共线、3x3x3 k 点、250 原子",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 3,
+   "basis": "p3-4；初始磁矩 Fe +3、Cr -1 uB 是人为起点，非共线效应未处理。"
+  },
+  {
+   "name": "固定晶格常数 a",
+   "value": "2.831 A（Fe、Cr、合金全用）",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 4,
+   "basis": "承袭 Castin 数据库。合金平衡值可到 2.842 A，Cr 自身 2.862 A，所以 Cr 基结果处于压缩态。"
+  },
+  {
+   "name": "截断能",
+   "value": "应力法 300 eV，全弛豫 400 eV",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 4,
+   "basis": "两法使用不同截断，与方法差异混杂，作者承认。"
+  },
+  {
+   "name": "C11, C12, C44（Fe）",
+   "value": "277.29, 151.29, 96.93 GPa；插值式 x=0 处为 270, 154.66, 92.40",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 7,
+   "basis": "本文 DFT；Omega 由其换算。比实验 C11 高约 14-19%（Fig 5b），Omega_rel 正比于 1/(C11+2C12)。"
+  },
+  {
+   "name": "mu_Cr(c)",
+   "value": "3.8323x-9.606（x<=0.1）；-0.2328x-9.2251（x>0.1）",
+   "provenance": "FIT_TO_SAME_DATA",
+   "page": 16,
+   "basis": "Table A.2，20 个结构的分段拟合，进入每个 E_form，且决定 Cr 相关 E_form 的斜率折点。"
+  },
+  {
+   "name": "分段点 c=10% 和 N_Cr=3",
+   "value": "10 at.%；3",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 4,
+   "basis": "10% 依据 mu_Cr 和文献预设；N_Cr=3 按拟合最佳选取（p6）。未给折点显著性检验。"
+  }
+ ],
+ "dof": {
+  "free_or_tuned": 216,
+  "independent_constraints": 1000,
+  "note": "我数的：Tables A.2、A.4、A.5、A.6 约 99 条直线，每条 2 参数，加 A.3 的 18 个多项式系数，共约 216 个描述性拟合参数。约束约 300 空位+400 哑铃+120（5%Cr）+160（对比）+21 个弹性结构，约 1000 次 DFT，部分重复使用。DFT 本身没有对实验调参；这些趋势线不是预测模型，也没有留出验证集。"
+ },
+ "comparisons": [
+  {
+   "id": "C1",
+   "quantity": "纯 Fe、Cr 的 E_form、P_ij、Omega_rel/Omega_0 对比 Ma & Dudarev",
+   "target_data": "Ref. [15] Ma & Dudarev 2019，DFT",
+   "authors_language": "These values are larger (i.e. more negative) than the values found in Ref. [15]",
+   "page": 8,
+   "where": "Table 1",
+   "used_in_construction": "NO",
+   "construction_evidence": "不同 DFT 设置下的独立计算；同一作者参与。",
+   "temporal": "数据先于本文",
+   "metric": "Fe 空位 P -3.682 vs -3.081（+19.5%），Omega_at -0.268 vs -0.220（+22%），E_f 2.183 vs 2.190。Fe-Fe <110> P11 24.853 vs 25.832（-3.8%），Omega_at 1.602 vs 1.620（-1.1%），E_f 4.019 vs 4.321（-7.0%）。Cr 空位 P -7.753 vs -5.777（+34%）。Omega_11 Fe-Fe 6.851 vs 9.777（-30%），见 C2。",
+   "discriminating": "作者把差别归于 Cr 的晶格常数，这解释不了 Fe 空位 19.5% 的差别（未说明 Ref. 15 的 Fe 晶格差异）。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "DFT 对 DFT，只检验设置和实现。"
+  },
+  {
+   "id": "C2",
+   "quantity": "Table 1 的 Omega_ij 张量元素对比 Ref. [15] 和本文 Eq. 5",
+   "target_data": "Ref. [15]；本文 Eq. 5 的解析关系",
+   "authors_language": "In agreement with the analysis given in Ref. [15]",
+   "page": 8,
+   "where": "Table 1, Eq. 5",
+   "used_in_construction": "NO",
+   "construction_evidence": "我用 Table 1 的 P 和 C 按 Eq. 5 复算。",
+   "temporal": "本文内部",
+   "metric": "Eq. 5 给 Fe-Fe <110> Omega=(9.73,4.24,4.24)、Omega_23=3.82，接近 Ref. 15 的 (9.777,4.294,4.302)、3.819。Table 1 却是 (6.851,5.660,5.660)、1.274。所有行的 P_ij/Omega_ij 都恒为 3.628（Fe）或 3.485（Cr）eV/A3，等于 C11+2C12。作者的 agreement 只针对符号。",
+   "discriminating": "解析关系，判别力强：Table 1 的偏离张量部分不符合 Eq. 5；迹正确。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "这是对解析关系的数值检查，结果不通过；作者未提及。SI 中的 I2、I3 是否受影响无法核实。"
+  },
+  {
+   "id": "C3",
+   "quantity": "合金晶格常数 a(c) 对比实验",
+   "target_data": "Preston 1932 [69]；Sutton & Hume-Rothery 1955 [70]",
+   "authors_language": "are significantly higher than all the predicted values",
+   "page": 7,
+   "where": "Fig. 5a",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 未对这些数据调参。",
+   "temporal": "数据早于计算很久，非盲测",
+   "metric": "看图：c=0 DFT 2.832 vs 实验 2.8605-2.862（-1.0%）；c=0.1 2.841 vs 约 2.866（-0.9%）。初始斜率：DFT 0.164 A（Table A.3），实验约 0.05-0.06 A，相差约 3 倍。约 12 个实验点，无误差棒，室温 vs 0 K。",
+   "discriminating": "定量比较且模型失败：绝对值系统偏低，斜率也偏大。作者只归因于 XC 泛函，也提到实验的峰不那么明显。",
+   "verdict": "POSTDICTION",
+   "verdict_reason": "独立参数、定量、数据先于模型；但结果是不吻合，且这不是主结论的检验。"
+  },
+  {
+   "id": "C4",
+   "quantity": "纯 Fe 弹性常数对比实验",
+   "target_data": "Speich [71], Rayne [72], Dever [73], Ghosh [74]",
+   "authors_language": "theoretical predictions often overestimate the experimental values",
+   "page": 7,
+   "where": "Fig. 5b-d",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 未用这些数据。",
+   "temporal": "数据早于计算",
+   "metric": "看图：C11 本文 277（拟合起点 270）vs 实验约 232-243（+14-19%）；C12 151-155 vs 约 135-138（+10-15%）；C44 约 91-97 vs 约 117-122（-20%）。图中实验点只在 c=0；合金比较在 SI，手头没有。",
+   "discriminating": "这些误差影响 Omega，因为 Omega_rel 与 1/(C11+2C12) 成正比，用实验值约改变 15%。",
+   "verdict": "POSTDICTION",
+   "verdict_reason": "定量、独立，只覆盖纯 Fe，且系统偏差约 15-20%。"
+  },
+  {
+   "id": "C5",
+   "quantity": "a(c)、C_ij 对比其他理论",
+   "target_data": "Razumovskiy 2011 [67]、Zhang 2009 [68]",
+   "authors_language": "in agreement with earlier DFT results obtained using special quasi-random structures",
+   "page": 7,
+   "where": "Fig. 5",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立 DFT。",
+   "temporal": "文献先于本文",
+   "metric": "看图：Fig 5a 与 VASP-PAW 三角点（c=0.125，约 2.840）接近，差 <0.05%；C11 与同一 VASP-PAW（约 234-242）差约 10%。文中称差异可达 30-40 GPa。",
+   "discriminating": "方法之间 C_ij 分歧大于文中 Fe-Cr 的成分变化（约 20 GPa）。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "DFT 对 DFT。"
+  },
+  {
+   "id": "C6",
+   "quantity": "Cr 溶质体积与金属半径的比较",
+   "target_data": "Greenwood & Earnshaw [76] 金属半径",
+   "authors_language": "The origin of the difference is likely related to the magnetic state of a Cr atom",
+   "page": 9,
+   "where": "Sec. 3.3",
+   "used_in_construction": "NO",
+   "construction_evidence": "半径是外部简单估计。",
+   "temporal": "事后解释",
+   "metric": "半径给 (1.28/1.26)^3-1=+4.8%；本文 +18.4%，确实约 4 倍。我从 Fig 5a 读实验 Vegard 斜率，得 3*(da/dc)/a 约 5-6%，接近半径估计，而不是 18%；DFT 自身斜率给 17.3%。Fe 在 Cr 中 -5.5% vs -4.6%，但这是在 a=2.831 的压缩 Cr 中算的。",
+   "discriminating": "本文未将 18% 与自己的实验晶格数据直接比较；这项比较反而不支持 18%。注意室温与 0 K、溶质磁矩的区别，所以这只是粗略检验。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "作者的磁性归因是事后解释，无对照计算；没有 Cr 非磁计算。"
+  },
+  {
+   "id": "C7",
+   "quantity": "Cr 偏聚到间隙环外侧的推断对比 APT",
+   "target_data": "Jiao & Was 2011 [77]",
+   "authors_language": "This is consistent with the interpretation of experimental data obtained using atom probe tomography",
+   "page": 9,
+   "where": "Sec. 3.3",
+   "used_in_construction": "NO",
+   "construction_evidence": "定性推理。",
+   "temporal": "数据先于本文，事后对照",
+   "metric": "无定量比较，只有符号：过大溶质去张应变区。[77] 是铁素体-马氏体合金离子辐照（标题），不是模型 Fe-Cr。作者自己指出 DFT [78] 发现 Cr 与 <111> 环结合不明显。",
+   "discriminating": "任何过大溶质都给同样预测；且有相反的 DFT。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性、无判别力。"
+  },
+  {
+   "id": "C8",
+   "quantity": "缺陷相对稳定性和取向",
+   "target_data": "[15,18,26,64,65,66] DFT",
+   "authors_language": "agrees with the earlier results by Klaver",
+   "page": 14,
+   "where": "Table 1, Fig. 10",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立 DFT。",
+   "temporal": "文献先于本文",
+   "metric": "<110> Fe-Fe 比 <111> 低 0.743 eV；Fe-Cr 比 Fe-Fe 低 0.044/0.055 eV；Cr 中 xi=0.345。Cr-Cr <221> 占 48%；文中未给 Klaver 的占比或 Ref. 66 的数值。",
+   "discriminating": "定性相符，未给对方的数。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "DFT 文献间定性对照，没有定量标准。"
+  },
+  {
+   "id": "C9",
+   "quantity": "哑铃原子磁矩",
+   "target_data": "[29,34,42,66] DFT",
+   "authors_language": "are in agreement with the values given in Refs.",
+   "page": 15,
+   "where": "Sec. 4.2",
+   "used_in_construction": "NO",
+   "construction_evidence": "独立 DFT。",
+   "temporal": "文献先于本文",
+   "metric": "只给本文值（-0.207, 0.326, -0.946, -0.347 uB），未列对方数值，读不出误差。",
+   "discriminating": "无。",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "无定量比较。"
+  },
+  {
+   "id": "C10",
+   "quantity": "应力法对比全弛豫法",
+   "target_data": "本文 160 个结构，自身高保真计算",
+   "authors_language": "are on average 2.5% larger",
+   "page": 15,
+   "where": "Fig. 13",
+   "used_in_construction": "NO",
+   "construction_evidence": "同一批结构，不同边界条件和截断。",
+   "temporal": "本文内部",
+   "metric": "看图：Omega 差主体 0 到 -6%，少数到 -8%，一点 +6%；E_form 差低 Cr 约 -4%，高 Cr 约 +1%。4 种弹性常数下 Fe-5%Cr 单例 Omega=17.56-17.96 A3（2.3%）。",
+   "discriminating": "300/400 eV、a 不同、弹性常数不同混杂，非谐解释未被分离。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "只检验数值方法，不检验物理真实性。"
+  },
+  {
+   "id": "C11",
+   "quantity": "mu_Cr 折点与溶解度极限及 10% 文献",
+   "target_data": "Hultgren [61]；[3,4,30,33,62]",
+   "authors_language": "which corresponds to the Cr solubility limit in Fe-Cr alloys at low temperature",
+   "page": 4,
+   "where": "Fig. 1",
+   "used_in_construction": "YES_INDIRECT",
+   "construction_evidence": "Sec. 3.1 明说，由于文献认为 10% 是分界，所有后续分析按 10% 分段，所以折点是预设，不是发现。",
+   "temporal": "文献先于本文",
+   "metric": "未给折点的统计检验，未给实验溶解度数值。",
+   "discriminating": "分段模型必然比单线拟合得更好；E_form 折点还继承自 mu_Cr（见 checks）。",
+   "verdict": "CALIBRATION",
+   "verdict_reason": "分界由该认知决定后又被报告为结果；本身也只是定性相符。"
+  },
+  {
+   "id": "C12",
+   "quantity": "低 Cr 外推与纯 Fe 值",
+   "target_data": "本文 Table 1",
+   "authors_language": "are similar to the values computed for pure bcc Fe",
+   "page": 12,
+   "where": "Fig. 8d, Table A.5, Table 1",
+   "used_in_construction": "NO",
+   "construction_evidence": "纯 Fe 值未进入合金趋势线（这些点不在 Fig 8d 中）。",
+   "temporal": "本文内部",
+   "metric": "x->0：Fe-Fe 17.93 vs 18.171（-1.3%）；Cr-Cr 17.71 vs 17.644（+0.4%）；Fe-Cr 17.41 vs Cr 位 16.356、Fe 位 18.581（差 1.05 和 1.17，几乎等距，文中说更接近 Cr 位）；空位 Fe 位 -3.126 vs -3.045（+2.7%）。",
+   "discriminating": "内部一致性；同一 DFT。",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "内部自洽性检查。"
+  }
+ ],
+ "paper_verdict": {
+  "label": "CONSISTENCY_ONLY",
+  "why": "主要结论（合金中 P、Omega 涨落、10% 分界、磁性作用）没有任何实验或独立预测的定量检验。C3、C4 是可算误差的 POSTDICTION，但只涉及 a 和纯 Fe 的 C_ij，且结果是系统偏差 1% 和 15-20%，不支撑主结论。其余都是 DFT 对 DFT 的 VERIFICATION 或定性 CONSISTENCY。",
+  "best_comparison": "C3",
+  "fraction_note": "12 条：VERIFICATION 5（C2 为不通过的解析检查），CONSISTENCY 4，POSTDICTION 2（只涉及 a 和纯 Fe C_ij），CALIBRATION 1（10% 分段预设）。"
+ },
+ "checks_performed": [
+  {
+   "what": "按 Eq. 5 用 Table 1 的 P 和 C 复算 Omega_ij，并计算 P_ij/Omega_ij。",
+   "result": "12 行比值恒为 3.628（Fe）或 3.485（Cr）eV/A3，等于 C11+2C12（Cr 为 3.485，Fe 3.619，差 0.2%）。即 Table 1 用标量除法，未用 Eq. 5 的剪切柔度；Fe-Fe <110> Eq. 5 给 9.73、4.24、3.82，而 Table 给 6.851、5.660、1.274。Ref. 15 同行 9.777、4.294、3.819，支持 Eq. 5。只有 Omega_rel（迹）不受影响。"
+  },
+  {
+   "what": "由 Table 1 计算旋转不变的 von Mises 应力和特征值，检验各向异性说法。",
+   "result": "Eq. 13 复算 Fe-Fe <110> 514 MPa，与 Fig 8b 约 500 一致。Fe-Cr 472，Cr-Cr <110> 623，Cr-Cr <11xi> 540，且 <111> 的 P11/P22=1.00 却有 882 MPa。Table A.5 在 c=0.05：Fe-Fe 519、Cr-Cr 492、Fe-Cr 460。所以 P11/P22 不衡量各向异性；Fe-Cr 并不比 Cr-Cr 更各向异性，Fe-Fe 仅高约 5-20%。"
+  },
+  {
+   "what": "比较同一最终结构在 Fe 位和 Cr 位的值（Table 1）。",
+   "result": "(Fe-Cr)Fe 与 (Fe-Cr)Cr 的 P23 都是 4.691，对角差 2.69 eV，Omega_rel 差 18.581-16.356=2.225 A3；(Cr-Cr) 三种取向同样差约 2.22。代换 Cr 自身 P=2.531、Omega=2.093。这说明两者是同一 Fe250Cr1 结构，差别几乎是参考态多一个 Cr 的扣除。Sec. 4.2 却用磁矩解释这个差别。Fig 11 的 9 点只有 5 个独立结构。"
+  },
+  {
+   "what": "从 Fig 5a 读实验点估计 Vegard 斜率，并与 Omega_at(Cr) 比较；再由 Table A.3 算 DFT 斜率。",
+   "result": "DFT 3*0.1636/2.8325=17.3%，与 18.4% 自洽。实验（看图）A 组 c=0-0.06 约 0.05 A，B 组约 0.06 A，对应 5-6%，约为 DFT 的 1/3，接近金属半径估计 4.8%。文中没有做这一比较。读图精度约 ±0.001 A，且是室温数据。"
+  },
+  {
+   "what": "比较 E_form 斜率与 mu_Cr 斜率（Table A.2）。",
+   "result": "mu_Cr 斜率在 10% 处从 3.83 变为 -0.23（差 4.07）。E_Fe-Cr 斜率从 -4.75 变为 -0.35（差 4.40），约 92% 可由 mu_Cr 折点解释；E_Fe-Fe 无折点（-2.47、-2.10）。所以 Cr 相关 E_form 的 10% 折点主要继承自分段的参考化学势。"
+  },
+  {
+   "what": "对照正文引用数字与 Table 1、Fig 8、Table A.5。",
+   "result": "正文 p8 Cr 空位 -6.513 vs Table -6.675；p10 Fe-Fe 18.181 vs 18.171，Cr-Cr 16.402 vs 16.809；p12 称低 Cr 平均 Omega 为 -2.4 A3 且比纯 Fe 的 -3.045 更负 50%，自相矛盾，Fig 8c 该处数据全在 -3 到 -5.5。"
+  },
+  {
+   "what": "看 Fig 8b 判断旋转不变量的涨落是否随取向固定而消失；检查 Fig 11、12 和 R2。",
+   "result": "Fe-Fe、Fe-Cr 取向都固定为 <110>，但 sigma_vM 仍散布约 330-760 MPa，Omega_rel 约 15-19 A3。Omega-Delta M 的 R2：0.157、0.813、0.293、0.396、0.453、0.351，只有 Cr 位空位较高，每组仅约 15 点，且都是 5%Cr。"
+  },
+  {
+   "what": "用简单可加零模型检验空位的位点依赖。",
+   "result": "Omega(Cr 位空位) 约等于 Omega(Fe 位空位)-Omega(Cr 溶质)=-3.045-2.093=-5.14，低 Cr 趋势线截距 -4.74，差 8%。位点差异的大部分可由移走一个过大原子解释，不需要额外机制。"
+  }
+ ],
+ "claim_vs_reality": [
+  {
+   "claim": "SIA 张量涨落主要来自哑铃取向变化。",
+   "quote": "are primarily associated with the variable crystallographic orientations of the",
+   "page": 1,
+   "reality": "没有方差分解。正文 p11 只说 Cr-Cr 非对角涨落 may be related。旋转不变的 sigma_vM、Omega_rel 也大幅涨落，取向固定的 Fe-Fe、Fe-Cr（p14）sigma_vM 仍约 330-760 MPa（Fig 8b），取向不能解释。",
+   "consistent": false
+  },
+  {
+   "claim": "Fe-Fe、Fe-Cr 比 Cr-Cr 更各向异性。",
+   "quote": "Fe-Fe and Fe-Cr SIA dumbbells are more anisotropic than Cr-Cr dumbbells",
+   "page": 1,
+   "reality": "依据是非不变量 P11/P22。Table 1 的 <111> 比值为 1.00 但 sigma_vM 882 MPa；Fe 基中 Cr-Cr <11xi> 540 MPa > Fe-Fe 514 > Fe-Cr 472。合金 Table A.5：c=0.05 Fe-Cr 460 < Cr-Cr 492。作者 p11 也承认比值接近 1 不等于各向同性。",
+   "consistent": false
+  },
+  {
+   "claim": "磁性是影响弹性场的重要因素。",
+   "quote": "suggests that magnetism is a significant factor influencing",
+   "page": 1,
+   "reality": "只有相关，R2 0.157-0.813，4/6 组低于 0.46，无非磁对照。Fig 11 的位点差是参考态扣除造成的（差 2.225 A3，P23 相同）。说的是 suggests，但 p15 用了 influences 这种因果措辞。",
+   "consistent": false
+  },
+  {
+   "claim": "Cr 比 Fe 原子大约 18%。",
+   "quote": "is approximately 18% larger than the volume of a host Fe atom",
+   "page": 1,
+   "reality": "与本文 DFT 斜率自洽（17.3%），但 Fig 5a 实验斜率读数只有约 5-6%；文中归因磁性，没有比较实验。这是 0 K、a=2.831 下的 DFT 值。",
+   "consistent": false
+  },
+  {
+   "claim": "性质在 10% Cr 上下显著不同。",
+   "quote": "point defects differ significantly in alloys containing below and above 10% at",
+   "page": 1,
+   "reality": "10% 是 p4 预设的分段，趋势线没有显著性检验，且 Fig 8d 散布约 ±1 A3 大于分段差异；E_form 折点约 92% 继承自 mu_Cr 分段。说的是 suggesting，结论 p17 升级为 showing。",
+   "consistent": false
+  },
+  {
+   "claim": "Table 1 按 Eq. 5 给出 Omega 张量。",
+   "quote": "It is related to the elastic dipole tensor through the tensor of elastic",
+   "page": 2,
+   "reality": "Table 1 的 Omega_ij=P_ij/(C11+2C12)，不符合 Eq. 5 的偏离部分，Omega_rel 正确。",
+   "consistent": false
+  },
+  {
+   "claim": "低 Cr 下空位平均弛豫体积。",
+   "quote": "limit the mean value of",
+   "page": 12,
+   "reality": "正文写 -2.4 A3 且比 -3.045 更负 50%，自相矛盾；Fig 8c 与 Table A.5 均不支持 -2.4。",
+   "consistent": false
+  },
+  {
+   "claim": "应力法 Omega 平均大 2.5%。",
+   "quote": "are on average 2.5% larger",
+   "page": 15,
+   "reality": "看 Fig 13c 中心约 -2.5%，一致；但成因未分离。",
+   "consistent": true
+  }
+ ],
+ "unverifiable": [
+  "SI 的 Fig S3、S4、Table S3（不变量）和合金弹性实验比较不在手头；因此 Table 1 的标量除法是否也影响 I2、I3 无法判断。",
+  "Ref. [15] 的 Fe 设置（晶格、semicore）未对照原文。",
+  "Jiao & Was [77] 的材料详情只看到标题；我未读原文。",
+  "实验 Vegard 斜率是我的读图值，Preston 和 Sutton 原始数值未核对。"
+ ],
+ "one_line": "常规 DFT+弹性的 Fe-Cr 数据生成：主结论无实验定量检验，Table 1 的 Omega_ij 全等于 P_ij/(C11+2C12)（Fe-Fe Omega_11 6.85 vs Eq. 5 的 9.73），18% 的 Cr 过大约为 Fig 5a 实验斜率（5-6%）的 3 倍，且取向说和各向异性说被自身不变量否定。"
+}

@@ -1,0 +1,68 @@
+{
+ "item":"1788","key":"Y6SNYP7Z","cite":"Jiménez & Ortiz 2016 Comput. Mater. Sci. 113:178","type":"simulation",
+ "read_coverage":{"total_lines":1049,"read_through_line":1049,"pages_rendered":[5,6,7]},
+ "section_map":[
+  {"section":"1 Introduction","page":1,"gist":"BKL 每步一事件，盒子受限约 (200a0)^3；Martinez MPI 版速度增益饱和；提出 GPU 并行"},
+  {"section":"2 Parallel OkMC","page":2,"gist":"固定 dt=ω/Rmax，每粒子按 Poisson 抽事件数，并行执行，再用 GPU Gems 3 碰撞检测反应；选最近邻和列表序的组合"},
+  {"section":"2.1 Time step","page":3,"gist":"dt 不依赖粒子数，比 BKL 大 Npart 倍；多跳可能漏相互作用，与 tau-leaping 同类问题；后续取 ω=1"},
+  {"section":"3.1 Non-interacting","page":4,"gist":"5 百万 SIA 一维平面源对比 Gaussian（Fig.3）；4 百万粒子 1.9 s 对 LAKIMOCA 563 s，约 296 倍"},
+  {"section":"3.2 Absorbing surfaces","page":5,"gist":"(400a0)^3，5 百万 SIA，Fig.4 总数、Fig.5 深度分布对比扩散方程"},
+  {"section":"3.3 Recombination","page":5,"gist":"4 百万 I+V，130-140 K，对比 LAKIMOCA（Fig.6、7），Table 1、2 速度增益；GPU 上 BKL 对新算法约 17100 倍"},
+  {"section":"3.4 RR application","page":7,"gist":"1 千万 SIA 加 1 千万 V，随机分布，77-140 K；Fig.8 ID 107 K、IE 120-130 K，IE 随浓度下降移向高温；作者声明不是物理模型"},
+  {"section":"4 Conclusions","page":8,"gist":"速度增益 30-40（ω=1），精度良好；可用于真实尺寸样品"},
+  {"section":"References","page":8,"gist":"[32] Fu 2005；[53] Martinez 2008；[57] Takaki 1983；[58] Matsui 1988；[60] Gillespie 2001；[61] GPU Gems 3"}
+ ],
+ "contribution":{
+  "primary":"FRAMEWORK","secondary":"NONE","neither_type":"",
+  "claimed":"GPU 上的并行 OkMC 算法，时间步与粒子数无关，速度比串行代码快 30-100 倍",
+  "quote":"In this work we present a parallel Object kinetic Monte Carlo (OkMC) computational model implemented",
+  "quote_page":1,
+  "novelty_test":"实质新增：把 OkMC 改写为固定步长、每粒子 Poisson 抽样的时间步方案，并在 GPU 上实现。旧的：思路属于 tau-leaping（文中 [60] Gillespie 2001，作者自己指出类同），碰撞检测直接取 GPU Gems 3（文中 [61]）。代价是放弃严格主方程，相比 Martinez [53]（作者说它求解同一主方程，这一点来自 1786 的表述，本文未提）属于近似算法。",
+  "mechanism_evidence":"NA",
+  "reuse_test":"能复用：算法通用，不依赖 Fe 或特定物种。但测试只有单物种迁移加 I+V 湮灭，没有成簇、解离、捕获、多尺度速率差。dt=ω/Rmax 由最快粒子决定，在快慢速率悬殊的实际问题中优势会减弱，文中未测试，也没有公开代码信息。"
+ },
+ "parameters":[
+  {"name":"SIA 迁移能","value":"0.34 eV","provenance":"FIRST_PRINCIPLES","page":4,"basis":"Fu 2005 [32]；决定 Fig.8 峰位"},
+  {"name":"V 迁移能","value":"0.67 eV","provenance":"FIRST_PRINCIPLES","page":5,"basis":"[32,15]；140 K 下速率约 7.6e-12 /s，实际不动"},
+  {"name":"前因子","value":"1e13 /s","provenance":"TUNED_OR_ASSUMED","page":4,"basis":"取常用值"},
+  {"name":"I-V 捕获半径","value":"3.3 a0","provenance":"LITERATURE_FIT","page":5,"basis":"文中称普遍接受，引 [32,15]"},
+  {"name":"ω","value":"1（Fig.7 扫 0.1-5）","provenance":"TUNED_OR_ASSUMED","page":4,"basis":"数值参数，按误差与速度折衷"},
+  {"name":"跳跃距离 λ","value":"未给","provenance":"UNKNOWN","page":5,"basis":"Eq.9 有 λ，文中无数值；由 Fig.3 宽度反推约 a0"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"算法文章，未拟合任何实验。物理参数（Em、ν0、rc）取自文献，ω 是数值旋钮。RR 应用没有拟合，但也没有定量约束。"},
+ "comparisons":[
+  {"id":"C1","quantity":"一维平面源扩散分布","target_data":"解析 Gaussian，Eq.8","authors_language":"are in very good agreement with the analytical solution","page":5,"where":"Fig. 3，纵轴对数 7 个量级","used_in_construction":"NO","construction_evidence":"解析解，未拟合","temporal":"NA","metric":"峰区重合。140 K 尾部 10 nm 和 50 nm 处数据比线高约 10 倍，但约 1e9 就是单粒子下限（我估算），属于噪声下限不是错误","discriminating":"检验随机游走实现，非物理","verdict":"VERIFICATION","verdict_reason":"解析解对比"},
+  {"id":"C2","quantity":"吸收面下粒子总数随时间","target_data":"扩散方程数值解","authors_language":"are in excellent agreement with those obtained with diffusion equations","page":5,"where":"Fig. 4","used_in_construction":"NO","construction_evidence":"连续解","temporal":"NA","metric":"目视差约 <1%，图中无差值，纵轴 4.0-5.0e6","discriminating":"数值检验","verdict":"VERIFICATION","verdict_reason":"解析/连续解"},
+  {"id":"C3","quantity":"吸收面下深度分布","target_data":"扩散方程","authors_language":"clearly evidences that our GPU-OkMC accurately accounts for the","page":5,"where":"Fig. 5","used_in_construction":"NO","construction_evidence":"连续解","temporal":"NA","metric":"目视重合，无量化","discriminating":"数值检验","verdict":"VERIFICATION","verdict_reason":"解析/连续解"},
+  {"id":"C4","quantity":"I+V 湮灭 SIA 数随时间（3 个温度）","target_data":"LAKIMOCA（C. Domain 提供）","authors_language":"Clearly, the agreement between both models is excellent","page":6,"where":"Fig. 6","used_in_construction":"NO","construction_evidence":"同参数跑另一代码","temporal":"同期","metric":"高分辨率裁切读图：GPU 系统偏高。130 K 500 s 约 0.89 对 0.82e6（+8%）；135 K 500 s 约 4.4 对 3.9e5（+13%）；140 K 500 s 约 2.1 对 2.0e5（+5%）。统计噪声对 4e5 粒子约 0.2%，所以这是系统差","discriminating":"检验实现；所有偏差同号（反应偏少）","verdict":"VERIFICATION","verdict_reason":"两代码互比，不涉物理真实性"},
+  {"id":"C5","quantity":"ω 和密度敏感性","target_data":"LAKIMOCA","authors_language":"only a slight deviation of the results is observed for","page":6,"where":"Fig. 7，对数","used_in_construction":"NO","construction_evidence":"同上","temporal":"同期","metric":"500 s 读图：6.1e19 下 ω=5 约 4.9e5，ω=0.1 和 1 约 4.3e5，LAKIMOCA 约 4.0e5（+22%、+7%）。6.1e20 下 ω=5 约 1.04e5，ω=0.1 和 1 约 0.97e5，LAKIMOCA 约 0.92e5（+13%、+5%）。ω=0.1 和 ω=1 重合但仍高于 LAKIMOCA：步长缩小并未收敛到 BKL","discriminating":"显示出步长之外的系统差（可能是反应选择规则、λ 或捕获实现），作者没有注意","verdict":"VERIFICATION","verdict_reason":"代码互比；其收敛性问题未被作者讨论"},
+  {"id":"C6","quantity":"与 LAKIMOCA 的运行时间","target_data":"LAKIMOCA，Opteron 6174 @2.2 GHz","authors_language":"our algorithm shows a signiﬁcant speedup","page":6,"where":"Table 1，Table 2","used_in_construction":"NO","construction_evidence":"实测","temporal":"同期","metric":"Table 1：38.4、32.1、28.9 倍，复算一致。Table 2：3.3-375.6 倍。密度升高增益下降：ω=1 从 88.4 到 20.5。不同硬件世代、一颗 CPU 核对一块 GPU","discriminating":"比较的是硬件加实现，只有 GPU-BKL 那一个测试尝试分离算法","verdict":"VERIFICATION","verdict_reason":"性能比较，不是物理检验"},
+  {"id":"C7","quantity":"与 Martinez MPI 的速度增益","target_data":"Martinez 2008 [53]，64 处理器约 30 倍","authors_language":"This corresponds to a speedup of about 296","page":5,"where":"3.1 节","used_in_construction":"NO","construction_evidence":"文献数值","temporal":"不同年代硬件","metric":"563/1.9=296，复算相符。但这是无相互作用情形，跳过了算法中最贵的碰撞检测；Martinez 相对其自身串行基准，本文相对 LAKIMOCA，不同物理时间和不同代码","discriminating":"不可比","verdict":"NOT_A_MODEL_TEST","verdict_reason":"并非同条件对比"},
+  {"id":"C8","quantity":"同一 GPU 上 BKL 对新算法","target_data":"自己的 GPU-BKL 实现","authors_language":"Hence, it is not surprising that","page":7,"where":"3.3 节","used_in_construction":"NO","construction_evidence":"实测","temporal":"同期","metric":"1493/0.087=17161 倍，复算相符。步数：BKL 10×4e4×0.658≈2.6e5 步，新算法 10×0.658≈6.6 步，比值正好是 N=4e4。每步耗时 BKL 5.7 ms，新算法 13 ms。所以约 17000 倍就是 N 除以每步耗时比（约 2.3），与 30000 线程无关","discriminating":"作者的线程解释站不住：换一个 N，这个比值就变了","verdict":"VERIFICATION","verdict_reason":"内部性能测试"},
+  {"id":"C9","quantity":"Fe RR ID 峰温度约 107 K","target_data":"Takaki 1983 [57]，Fu 2005 [32]","authors_language":"is in perfect agreement with what is observed experimentally","page":7,"where":"Fig. 8，图中无实验曲线","used_in_construction":"YES_INDIRECT","construction_evidence":"Em=0.34 eV 和 rc=3.3a0 取自 [32]，而 [32] 本身就是用这些参数解释同一 Takaki RR 数据的；文中是把同一来源的结果当验证","temporal":"数据早于模型","metric":"模型 106-108 K，文中实验值 107 K 单点，无实验曲线。1 行公式：300 s 内一跳，T=0.34/(k ln(1e13×300))=110.7 K，差 3%。峰位就是 Arrhenius 回声","discriminating":"无判别力。此外模型粒子是随机分布，根本没有关联对；峰只在高密度下出现（6.11e18 时几乎消失），高度随密度变化。作者把它解释为关联复合，但关联复合不应依赖全局密度。这个峰是随机近邻复合，与实验 ID 机制不同，温度相同只是因为 Em 相同","verdict":"CONSISTENCY","verdict_reason":"单点、参数来源相同、机制标签不适用；作者本身声明不提物理模型"},
+  {"id":"C10","quantity":"Fe RR IE 峰温度 120-130 K","target_data":"[57,32]","authors_language":"in very good agreement to what is reported in the literature","page":7,"where":"Fig. 8","used_in_construction":"YES_INDIRECT","construction_evidence":"同 C9","temporal":"数据早于模型","metric":"模型 117-130 K（随 1.53e20 到 6.11e18）。文中未给实验 IE 数值，读不出误差。100 跳估算 127 K","discriminating":"浓度是自由选的；范围内某个浓度总能落在实验值附近。无实验曲线","verdict":"CONSISTENCY","verdict_reason":"无实验数值"},
+  {"id":"C11","quantity":"IE 峰随初始浓度下降向高温移动","target_data":"Matsui 1988 [58]","authors_language":"This is expected and experimentally observed","page":7,"where":"Fig. 8","used_in_construction":"NO","construction_evidence":"结果来自基本扩散控制反应，未调参","temporal":"数据早于模型","metric":"定性，文中无实验点；6.11e18 处 130 K，3.82e19 处 122 K，1.53e20 处 117 K（读图）","discriminating":"任何二级扩散控制反应或均场 rate theory 都给出同样趋势","verdict":"CONSISTENCY","verdict_reason":"定性趋势，零模型可得"}
+ ],
+ "paper_verdict":{"label":"VERIFICATION_ONLY","why":"主要证据是解析解和 LAKIMOCA 对比，这对算法文章合适。但 Fig.6-7 中 GPU 比 LAKIMOCA 系统高 5-13%，且不随 ω 缩小而收敛，作者说 excellent。RR 应用是唯一接触实验的部分，文中无实验曲线，作者也声明不是物理模型，所以不算验证。","best_comparison":"C5","fraction_note":"11 条：7 条 VERIFICATION（含 3 条性能测试），3 条 CONSISTENCY，1 条 NOT_A_MODEL_TEST"},
+ "checks_performed":[
+  {"what":"按 a0=2.86 Å 复算所有密度","result":"3.34e21、6.84e19、6.11e19、Table 3 全部相符。但 GPU-BKL 算例 200×200×700a0 加 4e4 粒子是 6.11e19，不是文中的 6.11e20，错 10 倍"},
+  {"what":"按 N=4e4 和 r(130K)=0.658/s 分解 17100 倍增益","result":"dt 和 3.79e-5 s 复算一致。步数比正好是 N；每步耗时比 2.3；这个增益与 30000 线程无关。新算法只跑约 6.6 步，所以 87 ms"},
+  {"what":"高分辨率裁切 Fig.6、7 读数","result":"GPU 系统偏高 5-13%（Fig.6），ω=0.1 也不收敛到 LAKIMOCA（Fig.7），4e5 粒子的统计噪声只有约 0.2%"},
+  {"what":"用 Arrhenius 估算 RR 峰位，零模型比较","result":"300 s 内 1 跳 110.7 K，10 跳 118 K，100 跳 127 K，与 ID、IE 温度区间相合，无需 OKMC"},
+  {"what":"按捕获体积算 Fig.8 重叠","result":"6.11e20 下平均间距 4.1 a0，rc=3.3 a0，捕获体积占比 2.15，意味着大多粒子一开始就处于捕获范围；相当于 0.7 at% FP。6.11e18 下占比 0.02（71 appm）。这解释了 ID 峰随密度而非关联对变化"},
+  {"what":"比较摘要、结论和表中的速度增益范围","result":"摘要 30-100；结论 30-40；Table 1 28.9-38.4；Table 2 ω=1 时 20.5-88.4，ω=0.1 时 3.3-12.9；§3.1 约 296"},
+  {"what":"由 Fig.3 峰值与宽度反推面积","result":"130 K 峰约 1.5e15 cm-3，σ约 1.2 nm，5e6 粒子，需 A≈1e-2 cm²；文中盒子 (36a0)²=1.06e-12 cm²，差 1e10 倍。按文中尺寸峰值应约 1e25 cm-3。因线和点同尺度，不影响验证结论"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"与串行代码吻合极好","quote":"show to be in excellent agreement with sequential OkMC codes and analytical solutions","page":1,"reality":"解析解部分属实；对 LAKIMOCA 系统偏高 5-13%（Fig.6 读图），ω 减小不收敛（Fig.7）","consistent":false},
+  {"claim":"速度增益 30-100 倍","quote":"were in the range [30–100]","page":1,"reality":"Table 2 中 ω=1 时 20.5-88.4，Table 1 最低 28.9；ω=0.1 时只有 3.3-12.9。结论又写 30-40。范围取决于条件","consistent":false},
+  {"claim":"17100 倍是由于 30000 线程","quote":"approximately 30,000 particles can move simultaneously","page":7,"reality":"实际比值是 N（4e4）除以每步耗时比（2.3）；并且按 Eq.3 所有粒子都可动。线程数只影响每步耗时。算例密度还写错 10 倍","consistent":false},
+  {"claim":"准确预测 RR 主要特征","quote":"was able to accurately predict","page":8,"reality":"第 7 页作者自称不是物理模型；无实验曲线；只有 Em 决定的峰位和二级反应趋势；随机分布没有关联对，ID 峰标签不当","consistent":false},
+  {"claim":"ID 峰温度完全吻合","quote":"in perfect","page":7,"reality":"单点比较，Em 取自把同一实验解释过的 [32]，1 行 Arrhenius 给 110.7 K","consistent":false},
+  {"claim":"结论称在反射或吸收面下吻合","quote":"under reﬂective or absorbing surfaces","page":8,"reality":"第 3 节只测试了吸收面和周期边界，没有反射面","consistent":false},
+  {"claim":"结论的 20 million I-V pairs","quote":"containing 20 million I–V pairs","page":8,"reality":"第 7 页写 1 千万 SIA 和 1 千万 V，总数 2 千万粒子，即 1 千万对","consistent":false},
+  {"claim":"BKL 需数天","quote":"several days of computa-tion would have been necessary","page":8,"reality":"未实测。按 30-88 倍和 3481 s，约 29-85 h，属于推测，不算错但不是测量","consistent":true}
+ ],
+ "unverifiable":["Takaki 1983 和 Matsui 1988 的具体数据未在本文中出现，IE 数值无法比较","Fu 2005 [32] 的参数选择是否使用 Takaki 数据：来自我对该文的一般了解，本文只说 predicted theoretically；未回查，所以 C9 标 YES_INDIRECT 有一定推断成分","Martinez 算法是否严格求解主方程：本文未说明","GPU 代码未见公开","Fig.2 中 ω 概率图是 Poisson 解析式，未渲染第 4 页，不涉及外部数据对比"],
+ "one_line":"真正的算法贡献（固定步长 Poisson 的 GPU OkMC，属 tau-leaping 家族），解析解检验站得住；但对 LAKIMOCA 系统偏高 5-13% 且 ω→0.1 不收敛，17100 倍是 N/2.3 不是 3 万线程，RR 无实验曲线，峰位约等于 Arrhenius 110.7 K"
+}

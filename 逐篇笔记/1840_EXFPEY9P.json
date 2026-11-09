@@ -1,0 +1,60 @@
+{
+ "item":"1840","key":"EXFPEY9P","cite":"Ansari 2019 npj Mater. Degrad. 3:28","type":"simulation",
+ "read_coverage":{"total_lines":1263,"read_through_line":1263,"pages_rendered":[3,4,9]},
+ "section_map":[
+  {"section":"Introduction","page":1,"gist":"综述 sharp-interface 和 PF 腐蚀模型，指出尚无 PF 模型把 ICP 作为新相；ALE 已有 ICP [17,26,27]。"},
+  {"section":"Electrochemical reactions","page":2,"gist":"Bockris 机制 Eq.2-4；只取 Fe(OH)3 为 ICP Eq.7，声称在 pH 2-14 稳定。"},
+  {"section":"1-D MPF","page":2,"gist":"Fig.2 无 ICP 模型对 Melchers & Jeffrey [30] SPW 28 天失重；Fig.3 电位影响；Fig.4 孔隙率影响，KL=0.11, Kp=0.30。"},
+  {"section":"2-D MPF","page":4,"gist":"Fig.5-7 有无 ICP 的蚀坑、pH、电位分布，孔隙率形貌；ICP 种子人为放置。"},
+  {"section":"Corrosion in sensitized alloys","page":5,"gist":"3-D IGC，GB 的 E0 低 200 mV (来自 Al-Mg 的 [35])，无 ICP；与 SS304 刻蚀光学图并列。"},
+  {"section":"Under-deposit corrosion","page":7,"gist":"四分之一圆 deposit 下的腐蚀，pH<0；定性。"},
+  {"section":"Microstructure-dependent corrosion","page":7,"gist":"假定 [110], [100] 腐蚀电位低 5%, 10%，蚀坑不对称。"},
+  {"section":"Methods","page":8,"gist":"Gibbs 能 Eq.8-13，Moelans f0，Bazant 动力学 Eq.14-16，Eq.20-25 序参量方程，Sc 饱和因子，Nernst-Planck Eq.26，Bruggeman Eq.28，Poisson Eq.31，COMSOL 型 FEM。"},
+  {"section":"References","page":12,"gist":"51 条；[20] 前作含实验比较；[30] Melchers；Table S1 和 Supplement 不在手边。"}
+ ],
+ "contribution":{"primary":"FRAMEWORK","secondary":"NONE","neither_type":"","claimed":"首个把 ICP 作为新相显式处理的多相场腐蚀模型。","quote":"no PF model in the literature explicitly considers the formation of ICP as a new phase","quote_page":2,
+  "novelty_test":"实质新增：把 Ansari 2018 [20] 的两相 PF 扩成 Moelans 三相，加 Eq.21 ICP 反应、Eq.23-24 界面局部化函数、Bruggeman 扩散系数、ICP 中的电导率。旧的部分：Bazant 动力学、Nernst-Planck、Sc 因子 [46-48]；含 ICP 的腐蚀模型已有 ALE 工作 [17,26,27]，所以新的是 PF 下的表示方法，物理内容不新。",
+  "mechanism_evidence":"摘要的结论 (腐蚀速率和形貌显著依赖 ICP 和孔隙率) 由 Eq.28 把 D 作为 ε^1.5 输入后的直接结果。反应控制到扩散控制的转变是 Sc 和 D_ICP 比值的结果，未与实验对照。不算机制发现。",
+  "reuse_test":"可被复用，后来的 Ansari 2020 (1678) 把它用于 IGC。但 Eq.7 假定 ICP 的唯一性，种子人工放置，pH 没有约束 Fe(OH)3 的稳定性，物理保真度有限。"},
+ "parameters":[
+  {"name":"E_app (Fig.2)","value":"-200 mV vs SCE","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"文中列出的实验参数只有 T, pH, 盐度, 电导率；Melchers 数据是海水挂片。-200 mV 不在实验清单中。"},
+  {"name":"T, pH, 盐度, σ_e (Fig.2)","value":"18.7 °C, 8.2, 0.55 M NaCl, 4.7 S/m","provenance":"INDEPENDENT_EXPT","page":2,"basis":"实验报告 [30]"},
+  {"name":"Lσ, Lψ1, Lψ3, r0","value":"Table S1，未在手边","provenance":"UNKNOWN","page":10,"basis":"Supplement 未提供；同组后续 1678 的 notes 记录 L_r 是 fitted"},
+  {"name":"εp","value":"0.05, 0.1, 0.2, 0.3","provenance":"TUNED_OR_ASSUMED","page":3,"basis":"参数扫描；无测量对应"},
+  {"name":"Bruggeman 指数","value":"1.5","provenance":"LITERATURE_FIT","page":11,"basis":"Eq.28 [39,49]；ε=0.05 时超出适用范围，作者说可 safely 使用"},
+  {"name":"D_e","value":"1.0e-9 m2/s (由 Fig.4d 反算)","provenance":"UNKNOWN","page":4,"basis":"Table S1；反算 4 个值一致"},
+  {"name":"c_sat","value":"约 5.1 M (Fig.3c,4c 读)","provenance":"UNKNOWN","page":3,"basis":"Table S1"},
+  {"name":"ΔE0 GB","value":"200 mV","provenance":"LITERATURE_FIT","page":7,"basis":"[35] 是 Al-4.4Mg，却用于 SS304 对比"},
+  {"name":"取向腐蚀电位差","value":"5%, 10%","provenance":"TUNED_OR_ASSUMED","page":8,"basis":"原文 assumed，取自 [43] 极端情况"}
+ ],
+ "dof":{"free_or_tuned":6,"independent_constraints":1,"note":"我数出的 Fig.2 相关的可调量：E_app, Lψ1, α, r0, c_sat, D_e；在线性区速率只由 E_app 和 Lψ1 的组合决定，等效 1 个斜率。约束：一条失重曲线。ICP 相关的 Lψ3, εp 等约束为 0。"},
+ "comparisons":[
+  {"id":"C1","quantity":"28 天 mild steel 失重 (无 ICP)","target_data":"Melchers & Jeffrey 2005 [30] SPW","authors_language":"Figure 2a shows that overall the simulation results agree well with the experimental results","page":2,"where":"Fig.2a","used_in_construction":"YES_INDIRECT","construction_evidence":"实验是自然海水，文中所列实验参数无外加电位，E_app=-200 mV 是建模者给定；Butler-Volmer 对电位指数敏感 (我估 α=0.5, n=2 时每 10 mV 变 1.49 倍，8% 对应 2 mV)。没说明 -200 mV 如何选定，也不知道 Lψ1 是否由此定。Table S1 不可得。","temporal":"数据先于模型 (2005)","metric":"我读 23 个实验点。模型 28 天 48.5 μm，实验约 45 μm (+7.8%)。模型斜率 1.73 μm/d，过原点最优线 1.67 μm/d，只差 3.4%，等于最佳拟合。RMSE 2.48 μm (MAPE 13.9%)；2 天处 3.5 vs 7 μm (-50%)。自由幂律 A t^0.77 的 RMSE 为 1.25 μm，比模型好一倍，说明实验曲线明显非线性而模型只有直线。无误差棒。","discriminating":"无。任何恒定速率模型都一样，只需一个斜率。不能检验相场或电迁移。","verdict":"CALIBRATION","verdict_reason":"实质是用 E_app 确定一条直线的斜率；作者称 validated。证据缺口是 Table S1 未读，故 used_in 为 YES_INDIRECT。即使不是有意调参，也没有证据表明独立性。"},
+  {"id":"C2","quantity":"ICP 内低 pH (2-D 坑)","target_data":"Beck 1984 [25] (Al 盐膜)","authors_language":"have also been reported in experimental studies","page":5,"where":"Fig.6j-l","used_in_construction":"NO","construction_evidence":"pH 由 Eq.30 产生，不是拟合。","temporal":"数据先于模型","metric":"无数值比较，文献标题说明是铝的盐膜。","discriminating":"低。Eq.7 产生 H+ 必然酸化。","verdict":"CONSISTENCY","verdict_reason":"定性。"},
+  {"id":"C3","quantity":"ICP 降低腐蚀速率","target_data":"Wang 2017 [26] 等 ALE 工作","authors_language":"the pit is significantly shallower in the presence of ICP","page":4,"where":"Figs.5-6, S2","used_in_construction":"YES_INDIRECT","construction_evidence":"D_ICP<D_e 是输入，降低速率是结构性结果。","temporal":"后于 [26]","metric":"无实验数值。","discriminating":"无。","verdict":"CONSISTENCY","verdict_reason":"定性且内建。"},
+  {"id":"C4","quantity":"敏化 GB 优先腐蚀","target_data":"SS304 光学图 Fig.8c，未标实验条件细节和来源","authors_language":"consistent with the etching experiment","page":7,"where":"Fig.8","used_in_construction":"YES_INDIRECT","construction_evidence":"ΔE=200 mV 是预设，且取自 Al-Mg [35]；几何由该图绘制。","temporal":"NA","metric":"无沟深或刻蚀速率；模拟只有 9 s，图像并列。","discriminating":"无。","verdict":"CONSISTENCY","verdict_reason":"输入决定输出，几何来自目标。"},
+  {"id":"C5","quantity":"Under-deposit 腐蚀，pH<0","target_data":"[25,37-39]","authors_language":"Such low values of pH are often reported in experimental studies","page":7,"where":"Fig.9","used_in_construction":"NO","construction_evidence":"无拟合。","temporal":"数据先于模型","metric":"无数值。","discriminating":"低。","verdict":"CONSISTENCY","verdict_reason":"定性；且文中同一段自相矛盾。"},
+  {"id":"C6","quantity":"取向依赖蚀坑","target_data":"[41,43] 的排序","authors_language":"This example illustrates the ability of the MPF model","page":8,"where":"Fig.10","used_in_construction":"YES_DIRECT","construction_evidence":"排序直接作为输入。","temporal":"NA","metric":"无比较。","discriminating":"无。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"输入演示。"},
+  {"id":"C7","quantity":"KL=0.11, Kp=0.30","target_data":"线性和抛物线形式 [31]","authors_language":"This case follows parabolic kinetics","page":4,"where":"Fig.4a","used_in_construction":"NO","construction_evidence":"拟合自身结果。","temporal":"NA","metric":"读图：22/200=0.11 与文相符；L^2/t=0.245 (50 s), 0.25 (100 s), 0.274 (200 s)，文 0.30 略高。我的零模型：Kp=2 D_ICP c_sat/(r C_Fe)，r=ICP/金属比=3，C_Fe=141 M，得 0.27 μm2/s，与模拟同量级，说明这条结果可由一维扩散估算得到。","discriminating":"结果不需要相场。","verdict":"VERIFICATION","verdict_reason":"与解析形式比；无实验。"}
+ ],
+ "paper_verdict":{"label":"CALIBRATION_PLUS_CONSISTENCY","why":"摘要说 validated，唯一定量实验比较 C1 是不含 ICP 的模型配一条直线，E_app 不来自实验。本文的新物理 (ICP) 完全没有定量比较，作者也承认缺乏数据。其余都是定性。","best_comparison":"C1","fraction_note":"7 条：CALIBRATION 1 (C1)，CONSISTENCY 4，VERIFICATION 1，NOT_A_MODEL_TEST 1。POSTDICTION 和 BLIND 为 0。"},
+ "checks_performed":[
+  {"what":"读 Fig.2a 23 点计算误差并拟合过原点直线和幂律","result":"模型斜率与最优相差 3.4%，RMSE 2.48 μm；幂律 1.25 μm；早期 -50%。"},
+  {"what":"用 Eq.28 反算 D_e","result":"4 个 (ε, D) 都给 1.0e-9 m2/s，表格自洽。"},
+  {"what":"BV 灵敏度估算","result":"α=0.5, n=2, 291.85 K：39.8 /V，每 10 mV 约 1.49 倍。"},
+  {"what":"Kp 量纲和一维估算","result":"0.27 μm2/s vs 图读 0.245-0.274 vs 文 0.30。"},
+  {"what":"读 ICP 与金属比","result":"Fig.4：ε=0.05 约 3，ε=0.3 约 8 (175/22)。按 Fe(OH)3 的一般密度估计 PBR/(1-ε)≈6，略低于 8；Supplementary Note 3 不可得，无法确认。"},
+  {"what":"核对 pH 稳定范围与模拟 pH","result":"Eq.7 的 ICP 依据是 pH 2-14 稳定，但模拟中 ICP 内 pH 低于 0，超出作者自己的稳定范围，模型未对此响应。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"模型经实验验证","quote":"The model is validated with experimental results","page":1,"reality":"只有 Fig.2a，且明说不含 ICP，所以 ICP 模型未被验证。","consistent":false},
+  {"claim":"MPF 给出良好定量吻合","quote":"this MPF model produces good quantitative","page":10,"reality":"只有一个斜率；后面所有案例都没有实验数值。原句的 examples 复数不实。","consistent":false},
+  {"claim":"过程是反应控制，因离子浓度远低于饱和","quote":"The linear relation in Fig. 2a shows that the","page":3,"reality":"线性是模型的结果；实验曲线本身非线性。Fig.2b 中 0.3 M 从界面到 150 μm 平坦，我算扩散所需梯度约 0.4 mM，所以 0.3 M 很可能由初值或边界决定，不是该判断的独立证据。模型没有阴极，也就无法检验海水腐蚀常被认为受氧扩散限制的情况 (一般知识)。","consistent":false},
+  {"claim":"Fe(OH)3 在 pH 2-14 稳定，是唯一 ICP","quote":"only Fe(OH)3 is a stable compound for an","page":2,"reality":"模拟内 pH<0，超出范围仍然继续生成，未处理。","consistent":false},
+  {"claim":"界面处 pH 很高，又称低于 0","quote":"the pH of the solution is very high","page":7,"reality":"同段下一句说 deposit 内 pH 低于零；前句应指 H+ 浓度高，是表述错误。","consistent":false},
+  {"claim":"Bruggeman 可放心用","quote":"the Bruggeman relation can be safely used","page":11,"reality":"理由是模型不考虑结构；这是回避，不是论证。ε=0.05 附近接近渗流，指数常变化。","consistent":false},
+  {"claim":"作者承认无法定量比较 ICP","quote":"it is difficult to quantitatively compare the experimental results","page":3,"reality":"这与摘要 validated 对照，这句是诚实的。","consistent":true}
+ ],
+ "unverifiable":["Table S1、Supplementary Notes 1-3 和 Fig.S1-S2 不在手边，L 值、α、初值和边界无法核对；是否调过 E_app 或 L 不能完全确定。","Melchers [30] 与 Ansari 2018 [20] 未核对原文。Fig.8c 的来源没有引用。"],
+ "one_line":"三相 PF 的形式扩展；摘要的 validated 仅指不含 ICP 的模型配 28 天失重 (斜率 1.73 vs 最优 1.67 μm/d，早期 -50%，E_app=-200 mV 不来自实验)，ICP 新物理零定量比较，模拟 pH<0 还超出作者给的 Fe(OH)3 稳定范围。"
+}

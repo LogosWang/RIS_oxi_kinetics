@@ -1,0 +1,70 @@
+{
+ "item":"1784","key":"VRSTLUH9","cite":"Piochaud, Nastar, Soisson, Thuinet, Legris 2016 Comput. Mater. Sci. 122:249-262","type":"simulation",
+ "read_coverage":{"total_lines":1799,"read_through_line":1799,"pages_rendered":[7,8,9,10,11,12,13]},
+ "section_map":[
+  {"section":"1 Introduction","page":1,"gist":"RIS 需要化学势和完整 Onsager 矩阵；AKMC 精确但慢且不含汇发射；目标是从原子尺度参数化的定量 PF。"},
+  {"section":"2.1 PF 方程","page":2,"gist":"Xa、Xd 五场；Onsager 通量加 Cahn-Hilliard 式驱动力，点缺陷按保守量处理；Eq. 15；复合 Eq. 17-18，汇 Eq. 20；1D 有限差分，多时间步算法（Fig. 1-2）。"},
+  {"section":"2.2 Monte Carlo 参数","page":6,"gist":"以 Senninger 2016 Ref. [13] 跳跃模型算 X_eq（Fig. 3-4）、l_ab（Fig. 5，五阶多项式）、Phi（Fig. 6）、kappa（Fig. 7，700 K）；AKMC RIS 设置为 512x64x64，汇间距 100 nm。"},
+  {"section":"3 Validation","page":9,"gist":"PF 与 AKMC 比 Cr 剖面（Fig. 8）、x=1、4、30 nm 的 Cr（Fig. 10-11）、16Cr 900 K 稳态（Fig. 12）；PF 与解析速率理论比点缺陷浓度（Fig. 13）。"},
+  {"section":"4 Discussion","page":11,"gist":"PF 内开关：Phi=1 使剖面变宽（Fig. 14-15）；常数 l 增强偏析或发散（Fig. 16）；X_S=X_eq 在高温抑制 RIS（Fig. 17-18）；低汇密度剖面更宽（Fig. 19）。"},
+  {"section":"5 Conclusions","page":13,"gist":"PF 与 AKMC 吻合，约 10 min 对 >48 CPU-h；称能给出 RIS 的定量预测；未来处理应变和不同汇。"}
+ ],
+ "contribution":{
+  "primary":"FRAMEWORK","secondary":"NONE","neither_type":"",
+  "claimed":"定量 RIS 相场方法，Onsager 系数和驱动力参数都由原子 Monte Carlo 提取",
+  "quote":"We present a quantitative phase-field modeling of radiation-induced segregation in Fe–Cr alloys.",
+  "quote_page":1,
+  "novelty_test":"新增：把完整 Onsager 通量、成分相关 Phi、X_eq、kappa 和多时间步算法组合进 CH 式方程，并给出一条从 AKMC 到 PF 的参数化路线。旧的部分：Onsager/TIP 通量（Allnatt & Lidiard Ref. [4]、Nastar & Soisson Ref. [2]）、kappa 的 SCMF 定义（Nastar Ref. [19]）、PF 算法（Rouchette Refs. [29-31]）、跳跃模型（Senninger Ref. [13]）。作者自己说 kappa 对本文范围没有显著影响，因此本文条件下实际上是带成分相关系数的有限差分 Onsager 扩散方程，“相场”项的作用尚未体现。与 Dubey & El-Azab Ref. [16] 相比差异在参数来源，而不是方程结构。",
+  "mechanism_evidence":"NA",
+  "reuse_test":"可复用：方程和算法与合金无关，给定新体系的 l_ab、Phi、X_eq 即可；作者称 drag 情况也可纳入，但本文未演示。限制：多项式系数未列出，无法直接复现本文结果；每个合金要先跑 AKMC；不含团簇、弹性、偏置、析出。"
+ },
+ "parameters":[
+  {"name":"l_ab^V, l_ab^I","value":"五阶多项式，600-1000 K，0-20% Cr；Fig. 5 只给比值之差，系数未列","provenance":"MD_EMPIRICAL","page":6,"basis":"AKMC 广义 Einstein 关系，跳跃模型是 Ref. [13] 拟合 DFT 的对势。分类最接近的是基于拟合模型的模拟数据。"},
+  {"name":"Phi（热力学因子）","value":"最高约 3（600 K, X 约 0.09）","provenance":"MD_EMPIRICAL","page":7,"basis":"MCM + Widom。Fig. 6 多项式；p.12 承认 15%Cr 以上不成立，30%Cr 时为 -200。"},
+  {"name":"X_V^eq, X_I^eq","value":"X_V^eq 700 K 约 1.2e-14，1000 K 约 6e-10","provenance":"MD_EMPIRICAL","page":6,"basis":"AKMC + 纯 Fe Gibbs 能（Ref. [13]），Fig. 3-4。"},
+  {"name":"kappa_V, kappa_I","value":"-0.6 到 0，-1.25 到 -0.15 eV（/a^2，700 K）","provenance":"MD_EMPIRICAL","page":8,"basis":"Fig. 7；只给 700 K；文中称误差 <10%，且对 RIS 无显著影响，但未展示对比。"},
+  {"name":"d_rec","value":"0.994 nm","provenance":"TUNED_OR_ASSUMED","page":4,"basis":"称对应四近邻。我算 bcc 四近邻距离约 0.475 nm，0.994 nm 约等于 4 倍第一近邻距离，可能差 2 倍。"},
+  {"name":"汇密度 rho","value":"1e7 m-1（盒长 100 nm）；只用于 AKMC 对比","provenance":"TUNED_OR_ASSUMED","page":13,"basis":"AKMC 可承受的最小值。文中称此时复合不影响 X_RT。"},
+  {"name":"K0","value":"1e-5 dpa/s；Fig. 18 另有 1e-3","provenance":"TUNED_OR_ASSUMED","page":9,"basis":"模拟电子辐照条件。"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"对 RIS 目标调节的参数为 0（文中无此类调节）。但多项式系数数量很大：我估计 6 个 l 加 Phi、X_V^eq、X_I^eq 共 9 个函数，5 个温度，每个约 6 系数，约 270 个，全部由 AKMC 确定。对实验的独立约束 0：全文没有与实验数据的定量比较。"},
+ "comparisons":[
+  {"id":"C1","quantity":"多项式 vs AKMC 输入（X_eq、l_ab 比值差、Phi、kappa）","target_data":"本文 AKMC/MCM","authors_language":"along with their fifth-order polynomial adjustments","page":8,"where":"Fig. 3-7","used_in_construction":"YES_DIRECT","construction_evidence":"这些数据就是拟合对象。","temporal":"NA","metric":"图上曲线穿过点，偏差小于点大小（Fig. 5 最大值约 0.85，内插视觉偏差约 0.01）。Phi 在 700 K 高 X 端点外偏。系数未列。","discriminating":"无。五阶多项式配 8-15 个点。","verdict":"CALIBRATION","verdict_reason":"直接拟合。"},
+  {"id":"C2","quantity":"Cr 剖面随剂量演化","target_data":"本文 AKMC RIS，Fe-15Cr 900 K，Fe-10Cr 700 K，K0=1e-5","authors_language":"Phase-field simulations are able to quantitatively reproduce the evolution of segregation profiles obtained from direct atomistic kinetic Monte Carlo simulations","page":1,"where":"Fig. 8（p.9）","used_in_construction":"YES_INDIRECT","construction_evidence":"AKMC 跳跃模型是 PF 全部参数的来源，但 RIS 轨迹未进入拟合。","temporal":"同一作者并行，无盲测。","metric":"两个条件，每个 3 个剂量。AKMC 点散布约 ±0.008，相当于 700 K 信号（约 0.02）的 40%；PF 穿过点云。图上无定量误差，作者未给。AKMC 在 x=0 有一孤立点，700 K 约 0.08（低于名义 0.10），PF 约 0.12，方向相反，文中未讨论。","discriminating":"对“耦合方程 + 成分相关系数”有判别力（Phi=1 和常数系数都明显变差），但只检验粗粒化，不检验物理。","verdict":"VERIFICATION","verdict_reason":"AKMC 与 PF 共用同一跳跃模型。RIS 输出未被拟合，所以不判 CALIBRATION；无实验，不能称为物理验证。"},
+  {"id":"C3","quantity":"x=1 nm 的 Cr vs X_Cr, T","target_data":"本文 AKMC","authors_language":"A good agreement between PF and AKMC is obtained although Cr segregation at GB predicted by the PF method is in most cases above the AKMC","page":10,"where":"Fig. 10（p.9）","used_in_construction":"YES_INDIRECT","construction_evidence":"同 C2。","temporal":"同上。","metric":"我读 30 点：|X| RMSE 0.0067，无 RIS 零模型 0.040。但偏析量 dX=X-X0 的中位相对误差：600 K 43%，700 K 50%，800 K 22%，900 K 20%，1000 K 16%。符号相反：700 K X0=0.12（PF +0.003，AKMC -0.004），800 K X0=0.10（+0.001，-0.005）。600 K X0=0.03 时 PF 0.052，AKMC 0.069。","discriminating":"优于零模型。相对偏析量的误差比绝对值表面看起来大得多。","verdict":"VERIFICATION","verdict_reason":"同 C2；good 对应 X 的绝对差，偏析量差 20-50%。900、1000 K 按作者 §4.3 属于 AKMC 不物理的区间（K0=1e-5 下约 880 K 以上）。"},
+  {"id":"C4","quantity":"x=4、30 nm 的 Cr","target_data":"本文 AKMC","authors_language":"A good agreement between PF and AKMC results is obtained except at Cr composition above 15 at.%","page":11,"where":"Fig. 11（p.10）","used_in_construction":"YES_INDIRECT","construction_evidence":"同 C2。","temporal":"同上。","metric":"读 Fig. 11 左：X0=0.2，900 K PF 约 0.117，AKMC 约 0.135（-13%）；1000 K PF 约 0.11，AKMC 约 0.135（-19%）。30 nm 处全部接近对角线，只是总量守恒。","discriminating":"30 nm 面板几乎不提供信息，任何守恒方法都能过。","verdict":"VERIFICATION","verdict_reason":"同 C2；作者明说 15% 以上不好。"},
+  {"id":"C5","quantity":"Fe-16Cr 900 K 稳态剖面","target_data":"本文 AKMC","authors_language":"the width of the depletion profile is overestimated","page":11,"where":"Fig. 12（p.10）","used_in_construction":"YES_INDIRECT","construction_evidence":"同 C2。","temporal":"同上。","metric":"50 nm 处 PF 0.198、AKMC 约 0.17（名义 0.16），超量 0.038 vs 0.010，3.8 倍；10 nm 处 PF 约 0.125，AKMC 约 0.15。","discriminating":"这是全文最能暴露 PF 失败的对比。","verdict":"VERIFICATION","verdict_reason":"定量不通过。作者归因于 Phi 难测（may be），未检验。"},
+  {"id":"C6","quantity":"点缺陷稳态浓度","target_data":"解析速率理论 Eq. 33","authors_language":"The results are in excellent agreement for both investigated temperatures in the whole composition range","page":11,"where":"Fig. 13（p.10）","used_in_construction":"YES_DIRECT","construction_evidence":"Eq. 33 用同一 l_ab 算 D，只是另一种解法。","temporal":"NA","metric":"对数坐标，两组符号基本重合；900 K X_V 在 X=0.13 差约 20%。我核对 Eq. 33 与标准两缺陷平衡方程代数一致。","discriminating":"只检验数值实现。复合不起作用，所以也没检验复合项。","verdict":"VERIFICATION","verdict_reason":"解析解对比。"},
+  {"id":"C7","quantity":"Fig. 5 符号判据 vs PF 偏析方向","target_data":"本文 Fig. 5（Eq. 29）","authors_language":"the trends of RIS behavior predicted in Fig. 5 are reproduced in Fig. 10","page":11,"where":"Fig. 5, 10","used_in_construction":"YES_DIRECT","construction_evidence":"Fig. 5 的 l 比值就是 PF 输入。","temporal":"NA","metric":"800 K 过零：Fig. 5 约 0.115，Fig. 10 PF 约 0.10，AKMC 约 0.09（我读）；因为局部成分变化后判据不再严格。","discriminating":"无。","verdict":"VERIFICATION","verdict_reason":"输入决定输出。"},
+  {"id":"C8","quantity":"Phi=1 时的 PF vs AKMC","target_data":"本文 AKMC","authors_language":"is used as input of the PF method while a large discrepancy is observed with","page":12,"where":"Fig. 14, 15（p.11）","used_in_construction":"YES_INDIRECT","construction_evidence":"同 C2。","temporal":"同上。","metric":"Fig. 15 8Cr 700 K：峰值都约 0.124；20 nm 处 Phi=1 约 0.08，PF 约 0.075，AKMC 约 0.075；远场 Phi=1 约 0.061，PF 约 0.071，AKMC 约 0.075。Fig. 14：1000 K X0=0.2 Phi=1 约 0.07，AKMC 约 0.094。","discriminating":"这是真正的模型内开关，明确说明 Phi 必要。","verdict":"VERIFICATION","verdict_reason":"以 AKMC 为基准的敏感性检验；是全文最强的证据，但不涉及实验。"},
+  {"id":"C9","quantity":"Cr 富集窗口与 flux 方向","target_data":"Wharry & Was Refs. [36,37]","authors_language":"These results are consistent with the previous experimental and modeling works of Wharry et al.","page":7,"where":"Fig. 5 讨论","used_in_construction":"UNCLEAR","construction_evidence":"Ref. [13] 的模型此前已被比较（见 C12），无法判断；本文未给 Wharry 的任何数。","temporal":"Wharry 2012、2014 先发表。","metric":"无数值。","discriminating":"无。","verdict":"CONSISTENCY","verdict_reason":"全文唯一涉及实验的物理比较，只有一句话。"},
+  {"id":"C10","quantity":"达到稳态的剂量","target_data":"实验（Wharry Ref. [36]）：几个 dpa","authors_language":"the present results suggest that the kinetics of RIS at a stationary sink is indeed very rapid and that the experimental delay is due to the evolution of the PD sink microstructure","page":10,"where":"Fig. 9","used_in_construction":"NO","construction_evidence":"实验未用于构建。","temporal":"事后解释。","metric":"模型约 1e-2 dpa（GB）到 0.1-0.5 dpa（全剖面），实验几 dpa，差 1-2 个数量级。Fig. 9 是汇间距 100 nm；未测试 rho 对动力学的影响，Fig. 19 只比稳态。","discriminating":"无。把不符归因于模型未包含的因素，未排除盒子尺度效应或电子/质子差异。","verdict":"CONSISTENCY","verdict_reason":"实为不符，由事后解释带过；我归入此档。"},
+  {"id":"C11","quantity":"高温 RIS 被抑制的温度","target_data":"Fig. 17 速率理论","authors_language":"The results plotted in Fig. 17 are consistent with the results shown in Fig. 18","page":13,"where":"Fig. 17, 18（p.12）","used_in_construction":"YES_DIRECT","construction_evidence":"都由本文同一参数给出。","temporal":"NA","metric":"交叉 880 K（1e-5）、1000 K（1e-3）；Fig. 18 中 900 K 以上 1e-5 线几乎落在对角线上。定性吻合。","discriminating":"无。没有 AKMC 或实验基准；AKMC 不含汇发射。","verdict":"VERIFICATION","verdict_reason":"模型内自洽。"},
+  {"id":"C12","quantity":"Ref. [13] AKMC 与扩散、RIS 实验","target_data":"Senninger 2016 Ref. [13] 中的对比","authors_language":"These simulations have been shown to be in agreement with diffusion experiments and consistent with RIS observations performed in industrial Fe–Cr alloys.","page":2,"where":"正文转引","used_in_construction":"UNCLEAR","construction_evidence":"不在本文内。","temporal":"NA","metric":"本文无数。","discriminating":"NA","verdict":"NOT_A_MODEL_TEST","verdict_reason":"背景引用，本文没有检验。"}
+ ],
+ "paper_verdict":{"label":"VERIFICATION_ONLY","why":"所有定量比较都是 PF 对同一跳跃模型的 AKMC 或对解析式，最强的是 Fig. 10-15，包括 Phi=1 开关和常数系数开关。全文没有实验定量比较；只有一句与 Wharry 一致和一处把实验不符归因于汇演化。这是合格的数值与粗粒化验证，不能支持“定量预测 RIS”的物理含义。","best_comparison":"C8","fraction_note":"12 条：VERIFICATION 8，CALIBRATION 1（多项式），CONSISTENCY 2，NOT_A_MODEL_TEST 1，POSTDICTION 0"},
+ "checks_performed":[
+  {"what":"读 Fig. 10 的 30 个 AKMC/PF 点，用 python 算 X 的 RMSE、偏析量 dX 的相对误差、符号翻转、零模型","result":"RMSE 0.0067，零模型 0.040；dX 中位误差 16-50%；700 K X0=0.12 和 800 K X0=0.10 符号相反。“定量”只在 X 绝对值上成立。"},
+  {"what":"放大 Fig. 8 右列，看 AKMC 噪声和 x=0","result":"散布约 ±0.008；三个剂量都有 x=0 处约 0.08 的孤立 AKMC 点，PF 给 0.12。作者比较从 x=1 nm 开始，正文未解释该点。"},
+  {"what":"读 Fig. 12 算远场超量","result":"PF 0.038，AKMC 0.010，3.8 倍。结论中 at all investigated Cr compositions 不成立。"},
+  {"what":"核查 K0 范围：比较 AKMC 图的 K0","result":"所有 AKMC 对比图都是 K0=1e-5、rho=1e7；K0=1e-3（Fig. 18）和 rho=2.5e6（Fig. 19）只有 PF。p.10 的 PD generation rates 范围没有图支持。"},
+  {"what":"计算 d_rec、Fig. 19 比例、速度比","result":"四近邻 0.475 nm，4 倍第一近邻 0.993 nm，文中 0.994 nm 可能取了后者；由于复合不起作用未影响对比。Fig. 19 峰值 X_V、X_I 比 16 与 (400/100)^2 一致。速度比 288 倍，但未计入产生参数的 AKMC 成本（每个 T, X 需 1e5 x 1e5 MCS）。"},
+  {"what":"用 §4.3 对照 §3 的验证条件","result":"作者说 880 K 以上（K0=1e-5）AKMC 的 RIS 不物理，而 Fig. 10-11 五个温度中 900、1000 K 在此范围内，这些点只能算数值对比。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"结论称能定量预测 RIS","quote":"is able to produce quantitative predictions of RIS","page":14,"reality":"定量只相对于同一跳跃模型的 AKMC，且在 100 nm 汇间距、1e-5 dpa/s、电子辐照条件。没有与实验数据比较。","consistent":false},
+  {"claim":"所有 Cr 成分和温度都吻合","quote":"is in good agreement with direct AKMC simulations of RIS, at all investigated Cr compositions and temperatures","page":14,"reality":"§3 自己写 15 at.% 以上不好，Fig. 12 宽度明显高估。偏析量误差 20-50%，X0=0.10-0.12 的符号在 700、800 K 与 AKMC 相反。","consistent":false},
+  {"claim":"在所有产生率下吻合","quote":"in the whole range of temperatures, compositions, and PD generation rates investigated","page":10,"reality":"AKMC 对比图只有 K0=1e-5。其他 K0 的对比未展示。","consistent":false},
+  {"claim":"实验延迟源于汇的演化","quote":"the experimental delay is due to the evolution of the PD sink microstructure","page":10,"reality":"模型汇固定，无法检验；未测试汇间距对动力学的影响，也未考虑级联或粒子差异。这是假说，不是结果。","consistent":false},
+  {"claim":"约两个数量级的速度提升","quote":"while being typically two orders of magnitude faster","page":1,"reality":"10 min 对 >48 CPU-h 是 288 倍，符合；但未计入参数化成本，PF 是 1D，AKMC 是 3D 且有涨落。","consistent":true},
+  {"claim":"Phi=1 会高估 RIS","quote":"It is demonstrated that a thermodynamic factor approximated by one leads to an overestimation of RIS.","page":14,"reality":"Fig. 14 与 15 支持，Fig. 15 主要是剖面变宽，sink 处峰值几乎相同。","consistent":true},
+  {"claim":"kappa 影响可忽略","quote":"The stiffness parameter is observed to have a negligible effect on RIS.","page":14,"reality":"没有展示对比图，只给了一个 T=700 K 的 kappa；无法核对。这也说明本文条件下相场梯度项不是关键贡献。","consistent":true}
+ ],
+ "unverifiable":[
+  "多项式系数未列，无法复算 PF。",
+  "Ref. [13] 与实验的吻合程度不在本文内；Wharry 对比无数值。",
+  "kappa 对 RIS 影响的对比未展示。kappa 是否只用 700 K 值外推到其他 T，文中未说。",
+  "Fig. 8 中 x=0 的孤立 AKMC 点可能是汇平面的采样或定义问题，文中未解释。"
+ ],
+ "one_line":"真正的 RIS 相场框架，但全部定量验证都是对同一跳跃模型的 AKMC（K0=1e-5，汇间距 100 nm）：X 的 RMSE 0.0067，偏析量误差 16-50%，16Cr 900 K 宽度高估约 3.8 倍；无实验定量比较，“定量预测”只指复现 AKMC。"
+}

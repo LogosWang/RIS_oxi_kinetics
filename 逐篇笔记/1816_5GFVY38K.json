@@ -1,0 +1,332 @@
+{
+ "item": "1816",
+ "key": "5GFVY38K",
+ "cite": "Becquart & Domain 2009 J. Nucl. Mater. 385:223",
+ "type": "simulation",
+ "read_coverage": {
+  "total_lines": 525,
+  "read_through_line": 525,
+  "pages_rendered": [
+   3,
+   4
+  ]
+ },
+ "section_map": [
+  {
+   "section": "Introduction",
+   "page": 1,
+   "gist": "目标：DFT 参数化 OKMC，模拟 W 中 He 脱附/缺陷演化，后续预测肿胀"
+  },
+  {
+   "section": "2 Methodology",
+   "page": 1,
+   "gist": "LAKIMOCA（前作 [1]）加入 He；Arrhenius 事件、residence time；VASP PAW-GGA，128 原子，350 eV，声称不确定度 0.01 eV；结合能定义 Eq.3-4"
+  },
+  {
+   "section": "3.1 He and vacancy clustering",
+   "page": 2,
+   "gist": "He T 位，迁移 0.06 eV；Table 1-2 结合能；大团簇外推；SIA 踢出 He（AIMD 检查）；Fig.2 离解能交点约 4 eV、He/v=1"
+  },
+  {
+   "section": "3.2 Impurities",
+   "page": 3,
+   "gist": "Table 3 H/He/C/Mo/Re 与 SIA/v/He 结合能；C 与 v 2.01 eV、SIA 0.62 eV；与 He 预辐照增 H 滞留和 WRe 辐照析出定性比较"
+  },
+  {
+   "section": "3.3 SIA migration",
+   "page": 4,
+   "gist": "实验 Em 0.08-0.54 eV 且 stage I 子峰数量有争议；直接采用 Derlet MD 0.013 eV、转向 0.38 eV；团簇不能转向；未含 D 对 T 的线性依赖"
+  },
+  {
+   "section": "3.4 OKMC of He desorption",
+   "page": 4,
+   "gist": "模拟 Soltan 实验：12 appm 3 keV He，每 He 3.3 FP，100 ppm C 型陷阱，63 nm 薄膜，每 60 s 升 2 K；Fig.3 缺陷数对比电阻回复；Fig.4 各物种演化"
+  },
+  {
+   "section": "4 Conclusions",
+   "page": 5,
+   "gist": "声称 ab initio 参数化能正确重现 He 脱附实验中的缺陷数演化"
+  },
+  {
+   "section": "References",
+   "page": 5,
+   "gist": "[1] LAKIMOCA 前作；[10][13] 同组 DFT 前作；[11] Soltan 1991；[29] Derlet 2007；[31] Hou 私人通讯"
+  }
+ ],
+ "contribution": {
+  "primary": "NEITHER",
+  "secondary": "NONE",
+  "neither_type": "常规应用 + 参数数据生成：已有 OKMC 代码加入 He 物种，配上 DFT 结合能表，模拟单个退火实验",
+  "claimed": "把 He 加入 LAKIMOCA，DFT 参数化后能正确重现 He 脱附实验中的缺陷数演化",
+  "quote": "The ab initio based parameterization is capable of reproducing correctly the evolution of the defect population during an He desorption experiment in tungsten.",
+  "quote_page": 5,
+  "novelty_test": "实质新增：Table 2/3 的 He-v 与杂质结合能 DFT 表，以及 OKMC 里 He 的事件集。旧的：OKMC 方法与代码（文中 [1]）、He-He 结合（文中 [10]）、SIA 迁移（文中 [29]）、He 迁移被团簇掩盖的解释（文中 [10][11]）。算法本身没有新东西，不满足 FRAMEWORK。",
+  "mechanism_evidence": "文中机制（SIA 把 He 从空位踢出、C 陷阱释放 SIA、He 约 25 K 起动）都是预设进事件表再读出的。没有开关某效应的敏感性分析，未排除竞争解释。踢出反应虽有 AIMD 检查，但没有给出数据。",
+  "reuse_test": "NA"
+ },
+ "parameters": [
+  {
+   "name": "He 间隙迁移能",
+   "value": "0.06 eV",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 3,
+   "basis": "本组 DFT；实验值高得多，作者解释为实验测的是小团簇"
+  },
+  {
+   "name": "SIA 及 SIA 团簇迁移能",
+   "value": "0.013 eV",
+   "provenance": "MD_EMPIRICAL",
+   "page": 4,
+   "basis": "Derlet [29] 的 MD，势函数由 DFT 导出。实验范围 0.08-0.54 eV，本值在其外。团簇直接沿用单 SIA 的值"
+  },
+  {
+   "name": "SIA 转向能",
+   "value": "0.38 eV",
+   "provenance": "MD_EMPIRICAL",
+   "page": 4,
+   "basis": "Derlet [29]"
+  },
+  {
+   "name": "空位迁移能",
+   "value": "1.66 eV",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 3,
+   "basis": "本组 [13]"
+  },
+  {
+   "name": "He-v/He 团簇结合能",
+   "value": "He+v 4.57 eV，He+He 1.03 eV 等",
+   "provenance": "FIRST_PRINCIPLES",
+   "page": 3,
+   "basis": "Table 1-2；大团簇由外推得到，外推公式未给"
+  },
+  {
+   "name": "陷阱浓度",
+   "value": "100 ppm",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 5,
+   "basis": "无来源、无测量依据、无敏感性分析；决定了 Fig.3 约 220 K 的台阶高度"
+  },
+  {
+   "name": "陷阱结合能",
+   "value": "取 C：SIA 0.62，v 2.01，He 0.37 eV",
+   "provenance": "TUNED_OR_ASSUMED",
+   "page": 3,
+   "basis": "数值来自 Table 3 DFT，但把全部杂质假定为 C 是建模选择，所以整体判为假定"
+  },
+  {
+   "name": "每个 3 keV He 产生的 Frenkel 对",
+   "value": "3.3",
+   "provenance": "LITERATURE_FIT",
+   "page": 5,
+   "basis": "Marlowe 按 Seidman 级联数据库调整，来源标为 Hou 私人通讯 [31]"
+  },
+  {
+   "name": "跃迁前因子",
+   "value": "未给数值",
+   "provenance": "UNKNOWN",
+   "page": 1,
+   "basis": "Eq.1 有 mi，文中没有数值，无法独立复算"
+  }
+ ],
+ "dof": {
+  "free_or_tuned": 3,
+  "independent_constraints": 1,
+  "note": "我数出：明确假定 3 个（陷阱浓度、陷阱物种、未披露的前因子）；3.3 FP 来自调整过的 Marlowe。约束只有 1 条约 11 个点的归一化退火曲线。没有拟合过程的陈述，但也没有说参数未调。"
+ },
+ "comparisons": [
+  {
+   "id": "C1",
+   "quantity": "退火时归一化缺陷总数 (pd+He) 对比归一化电阻回复 (R-R0)/(R-R1)，3-400 K",
+   "target_data": "Soltan, Vassen, Jung 1991 [11]",
+   "authors_language": "quite close to the experimental data",
+   "page": 5,
+   "where": "Fig. 3，半对数",
+   "used_in_construction": "UNCLEAR",
+   "construction_evidence": "DFT 能量未用该曲线。但模拟条件专门取自此实验，100 ppm C 陷阱和 3.3 FP 无独立来源，文中未声明是否调过；Soltan 同时被用来支持 He 迁移值的解释（第 3 页）",
+   "temporal": "数据 1991，模型 2009，事后比较，无盲测",
+   "metric": "看图读 11 个点。模型相对误差：12 K -22%，17 K -20%，60 K -21%，200 K +2%，290 K -38%（0.33 vs 0.53）。RMSE 约 0.14，平均相对误差约 16%。模型比实验平均偏低",
+   "discriminating": "判别力差。常数 0.78 的零模型 RMSE 为 0.16，与 OKMC 的 0.14 几乎一样；ln T 线性零模型 RMSE 为 0.026，反而明显更好。实验曲线平滑，模型是分立台阶",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "量不同：模型是物种数等权求和，实验是电阻，作者只用 ~ 号等同，没有每种缺陷的电阻率贡献。作者无定量标准，且陷阱参数独立性无法证实，所以够不上 POSTDICTION"
+  },
+  {
+   "id": "C2",
+   "quantity": "He 迁移能 0.06 eV 对比实验扩散数据",
+   "target_data": "Wagner & Seidman 1979 [8]，Amano & Seidman 1984 [9]",
+   "authors_language": "a priori in contradiction with the experimental values",
+   "page": 3,
+   "where": "3.1 节正文",
+   "used_in_construction": "NO",
+   "construction_evidence": "0.06 eV 来自 DFT，但矛盾靠引用聚集效应解释，未在本文计算",
+   "temporal": "事后解释",
+   "metric": "未给实验数值；实验在 90 K 以上观察到迁移",
+   "discriminating": "无，定性",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "DFT 与实验不符，由事后聚集解释消解；本文没有用 OKMC 去检验这一解释"
+  },
+  {
+   "id": "C3",
+   "quantity": "He 低温即可迁移的结论",
+   "target_data": "Soltan 1991 [11]",
+   "authors_language": "This is in perfect agreement with the results of",
+   "page": 3,
+   "where": "3.1 节正文",
+   "used_in_construction": "NO",
+   "construction_evidence": "参数来自 DFT",
+   "temporal": "数据先于模型",
+   "metric": "Soltan：He 在 5 K 以下已可动。本模型自述约 25 K 起动。按 0.06 eV、前因子 1e13 复算，60 s 内跳一次对应约 20 K；5 K 下要动需 Em 约 0.015 eV。相差约 4 倍温度",
+   "discriminating": "无",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "只在“聚集抑制迁移”这一定性层面相符；起动温度本身与所谓 perfect agreement 相矛盾"
+  },
+  {
+   "id": "C4",
+   "quantity": "He-He 结合导致无预损伤气泡形成",
+   "target_data": "Nicholson & Walls 1978 [7]",
+   "authors_language": "is possible as was ob-served by Nicholson",
+   "page": 3,
+   "where": "Table 1 后正文",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 独立",
+   "temporal": "事后",
+   "metric": "无数值",
+   "discriminating": "无，定性",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "只有定性对应"
+  },
+  {
+   "id": "C5",
+   "quantity": "H 与 He 团簇结合 对比 He 预辐照增 H 滞留",
+   "target_data": "Picraux 1976 [17]，Nagata 2006 [18]",
+   "authors_language": "in agreement with the experimental findings",
+   "page": 3,
+   "where": "3.2 节",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 独立；OKMC 未模拟 H",
+   "temporal": "事后",
+   "metric": "无数值",
+   "discriminating": "无",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "定性，且未经 OKMC"
+  },
+  {
+   "id": "C6",
+   "quantity": "Re-v、Re-SIA 正结合 对比 WRe 辐照诱导析出",
+   "target_data": "文献 [19-22]",
+   "authors_language": "These results are in very good agreement with the general finding",
+   "page": 4,
+   "where": "3.2 节",
+   "used_in_construction": "NO",
+   "construction_evidence": "DFT 独立",
+   "temporal": "事后",
+   "metric": "无数值；作者自己承认还缺迁移能",
+   "discriminating": "无，正结合能并不能决定 RIP",
+   "verdict": "CONSISTENCY",
+   "verdict_reason": "very good 无依据，只是定性对应，没有动力学计算"
+  },
+  {
+   "id": "C7",
+   "quantity": "SIA 迁移能 0.013 eV 对比 stage I 实验值 0.08-0.54 eV",
+   "target_data": "文献 [9,23-28]",
+   "authors_language": "the migration energy deduced by the different authors varies from 0.08",
+   "page": 4,
+   "where": "3.3 节",
+   "used_in_construction": "NO",
+   "construction_evidence": "参数取自 MD，未拟合实验",
+   "temporal": "背景引用",
+   "metric": "0.013 eV 比实验下限 0.08 eV 低 6 倍，仅接近 Tanimoto（1.5 K 以下可动）",
+   "discriminating": "无",
+   "verdict": "NOT_A_MODEL_TEST",
+   "verdict_reason": "列举争议后选了 MD 值，没有检验"
+  },
+  {
+   "id": "C8",
+   "quantity": "SIA 踢出空位中 He 的反应",
+   "target_data": "本组 AIMD",
+   "authors_language": "This reaction was checked using ab initio molecular dynamics",
+   "page": 3,
+   "where": "3.1 节",
+   "used_in_construction": "YES_DIRECT",
+   "construction_evidence": "AIMD 就是把该反应写进事件表的依据",
+   "temporal": "同一工作",
+   "metric": "未给数据",
+   "discriminating": "无",
+   "verdict": "VERIFICATION",
+   "verdict_reason": "与自己的高保真计算对比，且未给结果"
+  }
+ ],
+ "paper_verdict": {
+  "label": "CONSISTENCY_ONLY",
+  "why": "唯一的动力学对比是 Fig.3：把物种数等权求和当作归一化电阻，RMSE 约 0.14，相当于常数零模型，也差于 ln T 线性（0.026）。其余对比都是定性的文献对应。作者自己也写了模型还应在别的条件下测试。",
+  "best_comparison": "C1",
+  "fraction_note": "8 条：6 条 CONSISTENCY，1 条 VERIFICATION，1 条 NOT_A_MODEL_TEST，无 POSTDICTION"
+ },
+ "checks_performed": [
+  {
+   "what": "渲染第 4 页读 Fig.3 全部 11 个实验点和模型在同一 T 的值，用 python 算误差并与零模型比较",
+   "result": "模型 RMSE 0.144；常数 0.164；ln T 线性 0.026。290 K 处 0.33 vs 0.53，-38%；12 K 处 0.745 vs 0.96，-22%。读数精度约 ±0.01"
+  },
+  {
+   "what": "用 Arrhenius（假定前因子 1e13，60 s 步长）复算起动温度",
+   "result": "SIA 0.013 eV 约 4.4 K，与 5 K 首个台阶相符；He 0.06 eV 约 20 K，与文中 25 K 相符；SIA-C 释放 0.633 eV 约 216 K，正好对应模型 220 K 大台阶。可见该台阶完全由假定的 C 陷阱决定，而实验 200-290 K 只从 0.56 降到 0.53"
+  },
+  {
+   "what": "用 Table 1/2 做热力学循环检查",
+   "result": "2He·v 和 3He·v 两条路径一致（7.68、10.96 eV）；4He·v 不闭合：1.03+1.36+1.52+10.22=14.13 eV，对比 4.57+3.11+3.28+2.61=13.57 eV，差 0.56 eV，远超声称的 0.01 eV 不确定度。3He·2v 差 0.14 eV。可能因团簇构型不同，文中未说明"
+  },
+  {
+   "what": "逐对比较 Table 2 中同一团簇的 He 结合能和 v 结合能，检查 always 声明",
+   "result": "3He·v 处 He 2.61 eV < v 2.65 eV，是一个反例；其余都成立。另外 Table 2 中 He+2He·3v→3He·3v 出现两次（3.97 和 5.08），3.97 那行应为 2He·2v，表内有笔误"
+  },
+  {
+   "what": "核对几何和计量",
+   "result": "2×199×200×201≈1.6e7 原子，12 ppm≈192 He，×3.3≈634 FP，厚度 200a0≈63 nm，与 Fig.4a 初值（He 约 200，v 约 670）相符。但 Soltan 薄膜厚度文中记为 80-320 nm，模拟只有 63 nm，比最薄的还薄 21%"
+  }
+ ],
+ "claim_vs_reality": [
+  {
+   "claim": "模型正确重现 He 脱附",
+   "quote": "indicating that our model reproduces correctly He desorption under these conditions",
+   "page": 5,
+   "reality": "Fig.3 的实验量是电阻回复，不是 He 脱附量。Fig.4a 模型 He 总数约从 200 降到 90，但没有任何 He 脱附数据可比。曲线误差最大 38%，模型水平和常数零模型一样",
+   "consistent": false
+  },
+  {
+   "claim": "He 迁移结论与 Soltan 完全一致",
+   "quote": "This is in perfect agreement with the results of",
+   "page": 3,
+   "reality": "同段写 Soltan 中 He 在 5 K 以下可动，而本模型 He 在约 25 K 才动（第 5 页）。0.06 eV 算出约 20 K。起动温度相差约 4 倍",
+   "consistent": false
+  },
+  {
+   "claim": "He 总比空位结合得更强",
+   "quote": "always binds more strongly with a mixed He-vacancy",
+   "page": 3,
+   "reality": "Table 2 的 3He·v 处 2.61 < 2.65 eV，差 0.04 eV，大于声称的 0.01 eV 不确定度。除此以外成立",
+   "consistent": false
+  },
+  {
+   "claim": "DFT 不确定度 0.01 eV",
+   "quote": "The uncertainty on the ab initio results is 0.01 eV.",
+   "page": 2,
+   "reality": "4He·v 循环不闭合 0.56 eV，3He·2v 差 0.14 eV。0.01 eV 只可能指数值收敛，不能当物理不确定度",
+   "consistent": false
+  },
+  {
+   "claim": "作者承认需要更多测试",
+   "quote": "The model should of course be tested under different conditions",
+   "page": 5,
+   "reality": "与实际相符：全文只有一个条件的对比",
+   "consistent": true
+  }
+ ],
+ "unverifiable": [
+  "Soltan 1991 原文不在手边：实验的薄膜厚度、He 分布、电阻归一化方式无法核实",
+  "100 ppm 陷阱是否调过：文中未说明",
+  "Marlowe 的 3.3 FP 来源是私人通讯 [31]",
+  "OKMC 前因子和捕获半径未给，无法独立复算曲线",
+  "大团簇外推公式未给"
+ ],
+ "one_line": "DFT 参数化的 LAKIMOCA 应用：只与 Soltan 一条 11 点退火曲线比，把物种数当电阻率，RMSE 约 0.14（290 K 处偏低 38%），比 ln T 线性零模型（0.026）差得多，“correctly reproduces”没有支撑"
+}

@@ -75,21 +75,22 @@ sensitivity has been reported for other Onsager-type RIS models
 To remove this dependence the boundary is treated as a sink of finite
 efficiency, i.e.\ a Robin condition on the defect fluxes,
 \begin{align}
-\left.\mathbf{J}_{\Vac}\!\cdot\!\hat{\mathbf{e}}_{x}\right|_{x=0}
+\left.\mathbf{J}_{\Vac}\!\cdot\!\mathbf{n}\right|_{x=0}
  &= k_{\Vac}^{\GB}\left(\left.C_{\Vac}\right|_{x=0}-C_{\Vac}^{\mathrm{eq}}\right),
 \label{eq:si-robin-vac}\\
-\left.\mathbf{J}_{\Int}\!\cdot\!\hat{\mathbf{e}}_{x}\right|_{x=0}
+\left.\mathbf{J}_{\Int}\!\cdot\!\mathbf{n}\right|_{x=0}
  &= k_{\Int}^{\GB}\left(\left.C_{\Int}\right|_{x=0}-C_{\Int}^{\mathrm{eq}}\right),
 \label{eq:si-robin-int}
 \end{align}
-where \(k_{\Vac}^{\GB}\) and \(k_{\Int}^{\GB}\) are the boundary transfer
-coefficients of vacancies and self-interstitials and the flux is counted positive
-towards the boundary. Equation~\eqref{eq:si-dirichlet} is the limit
+where \(k_{\Vac}^{\GB}\) and \(k_{\Int}^{\GB}\) are the grain-boundary sink
+efficiencies of vacancies and self-interstitials and \(\mathbf{n}\) is the unit
+normal of the boundary plane pointing from the metal towards the boundary, so
+that the flux is counted positive towards the boundary. Equation~\eqref{eq:si-dirichlet} is the limit
 \(k^{\GB}\to\infty\). With the Robin condition the profiles converge under
-refinement, Fig.~\ref{fig:si-mesh}(d--f). The transfer coefficients
+refinement, Fig.~\ref{fig:si-mesh}(d--f). The sink efficiencies
 and the defect-mediated transport coefficients are calibrated jointly against the
 magnitude and the width of the measured segregation profiles; the resulting
-comparison at 0.5 and \SI{3.0}{\dpa} is shown in Fig.~2 of the main text.
+comparison at 0.5 and \SI{3.0}{\dpa} is shown in Fig.~3 of the main text.
 
 \begin{figure}[!ht]\centering
 \begin{subfigure}[t]{0.32\textwidth}\centering
@@ -132,7 +133,7 @@ spacings \(\Delta x\) = 0.25, 0.5, 1 and \SI{2}{nm}. (d--f) Robin
 \subsection{Motivation}
 
 In an earlier version of the model the metal removed at the oxidation front was
-exactly the metal consumed by the four interfacial reactions, and all unoxidized
+exactly the metal consumed by the three interfacial reactions, and all unoxidized
 metal swept by the advancing front was rejected to the metal side of the
 interface. Because the interfacial rate constant of Cr is much larger than that
 of Fe, this assumption depletes Cr and enriches Fe strongly in the metal at the
@@ -210,11 +211,39 @@ v_{\ox}=\sum_i\tilde{J}_{\mathrm{r}}^{i}
   \item Intermediate values give \(\sum_iJ_{\mathrm{r}}^{i}\le v_{\ox}\le v_{\lat}^{\ox,\max}\),
         with the partition set element by element.
 \end{itemize}
-The form of Eq.~\eqref{eq:si-lambda} is that of a solute-trapping law: the
-fraction carried along by a moving interface is the ratio of the interface
-velocity to the sum of the interface velocity and the velocity at which the
-solute can escape ahead of it. The redistribution velocities are treated as
-element-specific parameters; the element that sets \(v_{\lat}^{\ox,\max}\)
+Equation~\eqref{eq:si-lambda} is the partition law of nonequilibrium solute
+capture. In the solute-trapping theory of rapid solidification
+\parencite{aziz1982model,aziz1988continuous} a solute atom swept by the
+interface escapes into the parent phase only by a diffusive exchange jump of
+length \(\lambda\) with interface diffusivity \(D_i\); the competition between
+the advance of the interface by one monolayer, in a time \(\lambda/v\), and the
+escape, in a time \(\lambda^{2}/D_i\), gives the continuous-growth partition
+coefficient
+\begin{equation}
+k(v)=\frac{v/v_D+k_e}{v/v_D+1},\qquad v_D=\frac{D_i}{\lambda},
+\label{eq:si-aziz}
+\end{equation}
+which goes from the equilibrium value \(k_e\) for \(v\ll v_D\) to complete
+trapping, \(k=1\), for \(v\gg v_D\). \textcite{aziz1988continuous} note that
+the model is not specific to solidification and applies to solid-state
+transformations. \textcite{yu2018nonequilibrium} and
+\textcite{sherman2019thermodynamics} transposed it to the oxide/metal
+interface as nonequilibrium solute capture: oxides form with compositions
+outside their equilibrium solubility limits when (i) the captured oxide has a
+lower free energy than the alloy it forms from and (ii) the effective velocity
+of cation incorporation exceeds the diffusive velocity of cation exchange
+across the interface, \(v_a/v_D\gg1\) with \(v_D=D_i/a\) and \(a\) the hop
+distance. They argue that for the oxidation of Ni--Cr alloys condition (i) is
+met over essentially the whole composition range, so that the oxide
+composition is set by the kinetics, and that condition (ii) holds for most
+high-temperature and almost all aqueous oxidation. Equation~\eqref{eq:si-lambda}
+is Eq.~\eqref{eq:si-aziz} with \(k_e=0\), since the excess \(E_i\) is metal
+that the oxide does not accommodate at equilibrium, with the sweep velocity
+\(v_{\lat}^{\ox,\max}\) as the interface velocity and \(v_i^{\mathrm{r}}\) as
+the diffusive velocity of element \(i\). The interface exchange diffusivities
+that would fix \(v_D\) are not known for the Fe--Cr--Ni oxide/metal interface
+\parencite{yu2018nonequilibrium}, so the redistribution velocities are treated
+as element-specific parameters; the element that sets \(v_{\lat}^{\ox,\max}\)
 (Cr under the present conditions) has \(E_i=0\) and is unaffected by its value.
 
 \subsection{Comparison with the line scans}
@@ -223,7 +252,7 @@ With the calculated oxide formed first placed at the centre of the intergranular
 oxide, consistent with symmetric growth into both grains, the revised model
 reproduces the central minimum of the Cr profile in the irradiated specimens and
 its deepening with dose, together with the measured dose dependence of the Cr and
-Fe contents of the oxide (Fig.~3 of the main text).
+Fe contents of the oxide (Fig.~4 of the main text).
 
 \section{Cross-Section-Averaged Oxygen Transport and the Lateral Closure}
 \label{sec:si-closure}
@@ -270,9 +299,11 @@ in the same way as the series-resistance closure of the earlier model was solved
         (plane of symmetry). Only the half-domain $0\le x\le L$ is considered.
   \item $L(y,t)$: distance from the mid-plane to the oxide/metal interface. After the original boundary channel is filled.
   \item $C_{\Ox}(x,y,t)$: concentration of mobile (dissolved) oxygen in the oxide.
-  \item $\D(y,t)$: effective oxygen diffusivity of the locally mixed oxide,
-        Eq.~(15) of the main text. It is uniform across the section,
-        because the phases are mixed locally rather than layered.
+  \item $\D(y,t)$: effective oxygen diffusivity for transport across the
+        section, $D_{\Ox}^{\eff,x}$ of the main text, the harmonic mean of the
+        diffusivity profile across the oxide. The lateral problem is solved for
+        an equivalent uniform oxide with the same series resistance; the balance
+        along the boundary uses the arithmetic mean $D_{\Ox}^{\eff,y}$.
   \item Cross-section average, mid-plane value and interface value:
         \begin{equation}
         \Cb(y,t)=\frac{1}{L}\int_{0}^{L} C_{\Ox}\,\dd x,\qquad
@@ -295,8 +326,12 @@ in the same way as the series-resistance closure of the earlier model was solved
 \label{sec:assumptions}
 
 \begin{enumerate}
-  \item[A1.] Two-dimensional Fickian diffusion of oxygen in the oxide with a single,
-        isotropic $\D$ that does not vary across the section.
+  \item[A1.] Two-dimensional Fickian diffusion of oxygen in an equivalent
+        uniform oxide: the oxide of the main text, whose diffusivity varies
+        across the section, is replaced, for the lateral problem, by a uniform
+        oxide with the across-section diffusivity $\D=D_{\Ox}^{\eff,x}$, the
+        harmonic mean of the profile, which carries the same steady flux across
+        the section.
   \item[A2.] Symmetry at the mid-plane: $\partial C_{\Ox}/\partial x=0$ at $x=0$.
   \item[A3.] Slow variation along the boundary of the half-width, the diffusivity and
         the metal concentrations that enter the reaction law:
@@ -526,8 +561,8 @@ g(0^+)=-\Jr(\Cb),
 g(\pi/2)=\frac{\pi^2\D\,\Cb}{4L}-\Jr(0).
 \end{equation}
 If $\Jr(\Cb)>0$ (oxidation possible at the local average concentration) and
-$\Jr(0)\le0$ (no consumption at zero oxygen, which holds for all four rate laws,
-including the magnetite law below its threshold), there is exactly one root
+$\Jr(0)\le0$ (no consumption at zero oxygen, which holds for all three rate laws),
+there is exactly one root
 $\mu^\ast\in(0,\pi/2)$. If $\Jr(\Cb)\le0$, no oxygen is consumed: set $\mu=0$,
 $\Jr=0$, $\Ci=\Cb$.
 
@@ -539,8 +574,8 @@ g'(\mu)=\frac{2\D\,\mu\,\Cb}{L}
 \frac{\dd}{\dd\mu}\bigl(\mu\cot\mu\bigr)=\frac{\sin\mu\cos\mu-\mu}{\sin^2\mu}<0,
 \end{equation}
 so $g'>0$ throughout and Newton's method converges from any bracketed start. A
-safeguarded Newton (fall back to bisection if an iterate leaves $(0,\pi/2)$) handles
-the kink of the magnetite law at $\Ci=C_{\Ox}^{\mathrm{th}}$. A good initial guess is
+safeguarded Newton (fall back to bisection if an iterate leaves $(0,\pi/2)$) is
+used. A good initial guess is
 the linearized value of Sec.~\ref{sec:linear}.
 
 \paragraph{Algorithm per grid point and time step.}
@@ -628,9 +663,15 @@ the algorithm.
         decay length is comparable to $L$ and the whole problem is two-dimensional.
         The one-dimensional description is meaningful only once the oxidized zone is
         slender; the initial aspect-ratio-one stage lies outside its scope.
-  \item \textbf{Uniform $\D$ across the section (A1).} This is what allows the same
-        $\D$ in \eqref{eq:1d-working} and \eqref{eq:laplace}. It follows from the
-        local mixing of phases assumed in the main text.
+  \item \textbf{Equivalent uniform oxide (A1).} The diffusivity of the oxide
+        varies across the section, and the lateral problem is solved with the
+        harmonic mean $D_{\Ox}^{\eff,x}$, which is exact for a one-dimensional
+        steady flux across the section. For a nonuniform $\D(x)$ the
+        fundamental mode is not a pure cosine; the deviation is neglected. The
+        conductance along the boundary in \eqref{eq:1d-working} uses the
+        arithmetic mean $D_{\Ox}^{\eff,y}$, exact for flux along the direction
+        in which $\D$ is uniform; the two means are the Wiener bounds of
+        effective-medium theory.
 \end{enumerate}
 
 \subsection{Summary of the model change}
@@ -670,7 +711,7 @@ incubation correction. At the same dose the oxide penetrates faster in the serie
 of \textcite{deng2020corrosion} than in that of \textcite{deng2017effect}; the
 \SI{0.5}{\dpa} value of the former exceeds the \SI{3.0}{\dpa} value of the
 latter. A model calibrated on the 2017 series is therefore expected to
-underestimate the absolute depths of the 2020 series, as observed in Fig.~5 of
+underestimate the absolute depths of the 2020 series, as observed in Fig.~8 of
 the main text. The normalized depth used there is
 \begin{equation}
 L_{\mathrm{norm}}=\frac{L}{L_{\max}},

@@ -1,0 +1,69 @@
+{
+ "item":"1776","key":"QV3583TY","cite":"He 2017 Acta Mater","type":"experiment",
+ "read_coverage":{"total_lines":854,"read_through_line":854,"pages_rendered":[4,5,7,8,9,10]},
+ "section_map":[
+  {"section":"Intro","page":1,"gist":"SP-CSA 在辐照下高熵构型的稳定性和 RIS 机制未知"},
+  {"section":"2 Experimental","page":2,"gist":"CrFeCoNi 单晶，CrFeCoNiMn、CrFeCoNiPd 粗晶；1250 kV 电子，400 °C，约 30 min 到 1 dpa，5e18 e/cm2/s；STEM-EDS"},
+  {"section":"3.1 Loops","page":2,"gist":"都是间隙型 Frank 和 perfect 环；五元合金环密度低、尺寸大"},
+  {"section":"3.2 RIS at loops","page":2,"gist":"CrFeCoNi Cr/Fe 贫 2-3 at.%、Co/Ni 富；Mn/Pd 合金 Mn/Pd 贫、Co 富 5-7 at.%；用 Δa 和 ΔHmix 定性解释并承认反例"},
+  {"section":"3.3 CrFeCoNiMn matrix","page":4,"gist":"grainy ADF 对比，{100}{110} 超点，EDS 多点 DOC 显示 Ni-Mn、Cr-Fe 正相关，判 L10(NiMn)"},
+  {"section":"3.4 CrFeCoNiPd matrix","page":6,"gist":"<001> tweed，5 nm，6 点 EDS，Co/Ni-Pd 反相关，Eq.2 正弦模型与 {220} 肩峰比较，判 spinodal"},
+  {"section":"4.1 Discussion","page":8,"gist":"Δa 主导环上 RIS，ΔHmix 触发基体失稳；提出更严判据；推测重离子压制 ΔHmix 作用"},
+  {"section":"4.2","page":9,"gist":"Fig.8a 把 CrFeCoNi 与不锈钢、二元合金跨文献比较，称‘unambiguously’更抗 RIS"},
+  {"section":"App A,B","page":10,"gist":"电子束升温估计 <30 K；CrFeCoNi 基体无变化"}
+ ],
+ "contribution":{
+  "primary":"MECHANISM","secondary":"NONE","neither_type":"",
+  "claimed":"首次实验揭示 CrFeCoNi 基合金 RIS 机制：环上由原子尺寸差决定，基体失稳由混合焓决定",
+  "quote":"mechanisms of RIS in CrFeCoNi, CrFeCoNiMn, and CrFeCoNiPd equiatomic alloys are experimentally revealed, to our knowledge, for the first time",
+  "quote_page":10,
+  "novelty_test":"实质新增：第一手观测。这些合金环上元素分布，以及 Mn、Pd 五元合金在电子辐照下出现 L10 超点和 <001> tweed，而同条件 CrFeCoNi 不出现。旧的部分：Δa 判据来自 Wiedersich 1979 [31]，L10 NiMn 退火已知 [14,17]，<001> 方向判据来自 Cahn 1962 [41]。‘新判据’只是对三个合金的事后总结。",
+  "mechanism_evidence":"观测 + 对照：同一 foil 的未辐照区提供辐照因果对照（Fig.4c,d, Fig.6d-f），合金对比提供成分对比。这部分是坚实的。但 Δa/ΔHmix 是事后定性解释，没有扩散数据、没有 IK vs 间隙结合的判别（p9 承认 GB 上两者都能解释），环上未算结合能或通量，作者自己列了多处反例（p3-4），后文却写‘only exception’。",
+  "reuse_test":"NA"
+ },
+ "parameters":[
+  {"name":"原子半径","value":"Cr 127.1, Fe 128.2, Co 125.3, Ni 124.6, Mn 130.7, Pd 137.5 pm","provenance":"LITERATURE_FIT","page":4,"basis":"Table 1，Takeuchi&Inoue [32]，CN12 金属半径，非合金内实测"},
+  {"name":"ΔHmix","value":"Ni-Mn -8/-11，Co-Mn -5，Co-Pd -1，Ni-Pd 0/+4，Cr-Pd -15 kJ/mol","provenance":"LITERATURE_FIT","page":4,"basis":"Table 1，Miedema 类 [32]/[23]/DFT [33]，等原子二元"},
+  {"name":"Eq.2 λ, A","value":"λ=5 nm，A=0.2","provenance":"FIT_TO_SAME_DATA","page":6,"basis":"作者说来自同一区域 Fig.7a,b"},
+  {"name":"剂量率","value":"1 dpa/约 30 min，约 5.6e-4 dpa/s（我算）","provenance":"INDEPENDENT_EXPT","page":2,"basis":"Methods"},
+  {"name":"温升","value":"<30 K","provenance":"INDEPENDENT_EXPT","page":11,"basis":"Eq.A.5，我复算 28.7 K（k=10.3 W/m/K）"}
+ ],
+ "dof":{"free_or_tuned":2,"independent_constraints":1,"note":"我数的：实验文章无模型。唯一拟合是 Fig.7c 的 Eq.2（λ、A）加上 Lorentz 中心峰拟合；对应的独立检验是肩峰位置，但位置由 λ 决定。Δa/ΔHmix 是定性规则，三个合金上可任意组合解释。"},
+ "comparisons":[
+  {"id":"C1","quantity":"环上 Ni 富集与 MD 预测","target_data":"Aidhy 2015 [29]，Osetsky 2016 [30]（NiFe、NiCr 的 MD）","authors_language":"accord with recent molecular dynamics simulations","page":2,"where":"Fig. 2b,d","used_in_construction":"NO","construction_evidence":"文献 MD，不涉及本实验","temporal":"MD 先发表，但预测是 NiFe、NiCr 体系，不是 CrFeCoNi","metric":"实验 Co/Ni +2-3 at.%，误差棒约 ±1 at.%；MD 无 CrFeCoNi 数值。且 Co>Ni，MD 没有给 Co。","discriminating":"低：不同合金的定性趋势","verdict":"CONSISTENCY","verdict_reason":"定性、跨体系。"},
+  {"id":"C2","quantity":"RIS 由尺寸差决定（Wiedersich 机制）","target_data":"Wiedersich 1979 [31]，Table 1 半径","authors_language":"RIS behavior of CrFeCoNi also agrees well with the interstitial-binding mechanism","page":2,"where":"Fig. 2, 3, 8b，Table 1","used_in_construction":"NO","construction_evidence":"理论先于实验，但判断是事后的，且判据随结果调整（遇反例引入 ΔHmix）","temporal":"理论先于数据，无盲测","metric":"我读 Fig.8b 与半径算 Spearman：CrFeCoNi -0.6（n=4），Mn 合金 -0.4（n=5），Pd 合金 -0.9（n=5）。Ni 最小但三个合金都是 Co 富集最大；Pd 比 Mn 大 6.8 pm，但 Mn 贫化 -0.36 大于 Pd -0.26。","discriminating":"中：符号大体正确，幅度和排序不对。IK 机制未排除。","verdict":"CONSISTENCY","verdict_reason":"定性符号相符，Pearson 看似高主要靠 Mn/Pd 这个端点，排序多处失败。"},
+  {"id":"C3","quantity":"环上 Ni、Co 偏差用 ΔHmix 解释","target_data":"Table 1","authors_language":"This competition might eventually neutralize the variation of Ni concentration","page":3,"where":"Fig. 3b,d","used_in_construction":"YES_INDIRECT","construction_evidence":"ΔHmix 是在看到 Mn 合金 Ni 不变之后才引入","temporal":"事后","metric":"无量化。作者自己指出 Ni-Pd vs Co-Pd 和 Cr-Pd 都与解释相反（p3-4）。","discriminating":"无：Δa 和 ΔHmix 二者可组合解释任意结果","verdict":"CONSISTENCY","verdict_reason":"事后双参数定性解释，失败时不被视为否证。"},
+  {"id":"C4","quantity":"L10 NiMn","target_data":"退火 [14,17]","authors_language":"accorded well with previous reports","page":5,"where":"Fig. 4, 5","used_in_construction":"NO","construction_evidence":"实验之间","temporal":"先于本文","metric":"[17] 还有 BCC Cr-rich 和 B2 FeCo，本文未见（p2）；Cr-Fe 正相关而 Co 不参与，与 B2 FeCo 不同。温度、时间不同（500 °C 500 天 vs 400 °C 30 分钟辐照）。","discriminating":"NA","verdict":"NOT_A_MODEL_TEST","verdict_reason":"实验与实验比较，无预测模型。"},
+  {"id":"C5","quantity":"SADP 超点强度 I{100}>I{110}>0","target_data":"运动学模拟 WebEMAPS [34]（L10, L12, B2, σ）","authors_language":"can only be explained by a mixture of L10-type ordered domains","page":5,"where":"Fig. 4b, e-h","used_in_construction":"NO","construction_evidence":"标准模拟；不过选相是事后枚举","temporal":"事后比较","metric":"只比强度排序，定性。运动学近似在 TEM [001] 带轴下明显受动态衍射影响；作者承认 [001] 取向畴缺失的原因不明，而 Fig.4e 需要三种取向。","discriminating":"中：可排除 L12、B2、σ，但‘only’过强，且未考虑其他相。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"这是相鉴定，不是预测模型检验。"},
+  {"id":"C6","quantity":"{220} 肩峰与 spinodal 正弦模型","target_data":"本文 SADP，Fig.7c","authors_language":"according well with the calculated diffraction of spinodal decomposition","page":7,"where":"Fig. 7c, Eq. 2","used_in_construction":"YES_DIRECT","construction_evidence":"λ=5 nm、A=0.2 由同一区域 Fig.7a,b 取得（p6）；中心峰也是拟合","temporal":"同一数据","metric":"Eq.2 位置 1/λ=0.2 nm^-1 与肩峰 ~0.2 nm^-1 相符，但这是 λ 的直接反映。图上实验肩峰宽（FWHM 约 0.2-0.3 nm^-1）且不对称（×10 后 0.56/0.75），计算只有极窄小肩。Eq.2 系数应为 A²/4，少了 4 倍。A=0.2 是元素含量相对振幅（Pd ±17%），而按 Fig.7b 算平均 Z 只变 ±2.5%。","discriminating":"低：任何 5 nm 周期都给同样位置；强度不匹配，未讨论应变调制","verdict":"CALIBRATION","verdict_reason":"位置由 λ 决定，非独立；强度本身不相符。"},
+  {"id":"C7","quantity":"<001> 取向 vs 弹性各向异性","target_data":"Cahn 1962 [41]，Simmons&Wang [40]（Ni、Pd）","authors_language":"was known to self-organize along the soft <001> directions","page":7,"where":"Fig. 6","used_in_construction":"NO","construction_evidence":"理论独立","temporal":"理论先于实验","metric":"方向相符，定性。未测本合金 C11, C12, C44（用 Ni、Pd 代理）。","discriminating":"较高：能把 spinodal 与 <110> 的 pre-martensitic tweed [37-39] 区分开","verdict":"CONSISTENCY","verdict_reason":"是全文判别力最强的比较，但只比方向，不定量。"},
+  {"id":"C8","quantity":"Ni-Pd 的 <001> 团簇","target_data":"X 射线漫散射 Lin&Spruiell 1971 [43]","authors_language":"still contained <001>-oriented segregating clusters","page":7,"where":"正文","used_in_construction":"NO","construction_evidence":"实验独立","temporal":"先于本文","metric":"2-5 晶胞 vs 本文 5 nm（约 14 晶胞）；未直接比","discriminating":"低","verdict":"NOT_A_MODEL_TEST","verdict_reason":"背景支持，无模型。"},
+  {"id":"C9","quantity":"CrFeCoNi RIS 幅度 vs 不锈钢和二元","target_data":"[48,49,52-56]","authors_language":"unambiguously manifests an improved RIS-resistance","page":10,"where":"Fig. 8a","used_in_construction":"NO","construction_evidence":"文献数据","temporal":"文献先于本文","metric":"我读 Fig.8a：CrFeCoNi Ni +0.08，Cr -0.11。304 SS 环约 Ni +0.19~+0.21、Cr -0.15~-0.18。换算为 at.%（用 304 名义 Ni≈9、Cr≈18.5，非文中给出）：CrFeCoNi Ni +2.0、Cr -2.75；304 Ni +1.7~+1.9、Cr -2.8~-3.3，几乎相等。相对量指标受基体浓度影响。还混有 e-/p+/离子/中子、1-5 dpa、环/GB 差异。","discriminating":"低：条件未对齐；剂量率约 5.6e-4 dpa/s 和 foil 表面都压低 RIS","verdict":"CONSISTENCY","verdict_reason":"跨条件比较，而且结论依赖相对指标。不是模型验证，但作者下了‘unambiguously’结论。"},
+  {"id":"C10","quantity":"FeNiMnCr 离子辐照 RIS","target_data":"Kumar 2016 [19]","authors_language":"These features can be well explained by the interstitial-binding mechanism","page":9,"where":"讨论","used_in_construction":"NO","construction_evidence":"文献","temporal":"先于本文","metric":"[19] Ni +5, Mn -5, Cr/Fe -2 at.%，与本文 Mn 合金 Ni≈0 不同；作者提出重离子抑制 ΔHmix 作用来调和，引用未发表 [51]","discriminating":"无：作者说 IK 也能解释","verdict":"CONSISTENCY","verdict_reason":"事后调和差异，未检验。"},
+  {"id":"C11","quantity":"相稳定性判据","target_data":"Guo 2013 [46] 及本文三合金","authors_language":"Therefore, a new and stricter criterion may exist","page":8,"where":"讨论","used_in_construction":"YES_DIRECT","construction_evidence":"三个合金就是判据来源（-7≤ΔHmix≤0 恰好把 CrFeCoNi 分开）","temporal":"事后","metric":"n=3；无新合金","discriminating":"无：Mn、Pd 也是超尺寸，Δa 也能分开这三个合金","verdict":"CALIBRATION","verdict_reason":"判据由同一数据决定。"}
+ ],
+ "paper_verdict":{
+  "label":"EXPERIMENT_NOT_MODEL",
+  "why":"实质是对三种合金的第一手电子辐照观测，有未辐照区作对照，这部分可靠。没有可检验的预测模型：Δa/ΔHmix 是事后定性解释，唯一的定量计算（Eq.2）用同一区域的参数。最强判别的是 <001> 方向对 spinodal，但只是方向。",
+  "best_comparison":"C7",
+  "fraction_note":"11 条：CONSISTENCY 6，NOT_A_MODEL_TEST 3，CALIBRATION 2；无 POSTDICTION。"
+ },
+ "checks_performed":[
+  {"what":"用 Eq.A.5 复算温升（Je=5e18, Re=3 μm, R0=1.5 mm, Q=1.37 MeV cm2/g, k=10.3 W/m/K）","result":"得 28.7 K，与文中 ≤30 K 相符。k 取 300 K 值偏保守。"},
+  {"what":"读 Fig.8b 算 Spearman（富集 vs 半径）并对照 p9 ‘only exception’","result":"CrFeCoNi -0.6，Mn -0.4，Pd -0.9。Co>Ni 在三个合金都反于半径排序（Ni 最小）；Mn 贫化大于 Pd，反于半径差；Cr 比 Fe 小，但 CrFeCoNi 中 Cr、Fe 贫化相近。p3-4 作者自己也列了 Ni-Pd、Cr-Pd 反例，p8 又写 Ni in CrFeCoNiMn 是唯一例外，前后不一致。"},
+  {"what":"用 Fig.7b 算相关性和平均 Z","result":"Pd-Co r=-0.96，Pd-Ni r=-0.86（n=6，特选亮暗点）。Pd 振幅 ±3.35 at.%（±17%），平均 Z 29.4-30.9（±2.5%）。因此‘scattering factor’调制 A 应约 0.02-0.03，而不是 0.2；强度差约 50-100 倍。Eq.2 系数本身应为 A²/4（p7 原式为 A²）。"},
+  {"what":"对照 Table 1 与 ΔHmix 驱动 spinodal 的说法","result":"Co-Pd=-1 kJ/mol，Ni-Pd=0/+4，但最强反相关是 Pd-Co（-0.96）。p8 说由 positive ΔHmix between Co/Ni and Pd 驱动，与 Table 1 中 Co-Pd 为负矛盾；Ni-Pd 更正，但作用更弱。"},
+  {"what":"把 Fig.8a 分数换算为 at.%（304 名义成分为我自取）","result":"CrFeCoNi Ni +2.0、Cr -2.75 at.%；304 SS Ni +1.7~+1.9、Cr -2.8~-3.3 at.%。绝对量几乎相等，‘improved RIS-resistance’在相对指标下才明显。"},
+  {"what":"检查 EDS 结果是否由表面氧化造成","result":"Fig.5：Mn 与 Cr、Fe 反相关，Cr-Fe 正，而 spinel 氧化应把 Mn、Cr、Fe 绑在一起，因此氧化不解释基体分离，对作者有利。基体 EDS 约 12 个点，误差棒约 ±1 at.%。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"RIS 由尺寸差主导，只有 Ni in Mn 合金例外","quote":"with the only exception of Ni in CrFeCoNiMn","page":8,"reality":"p3-4 作者自己列了 Ni-Pd、Cr-Pd 反例；Co>Ni 三个合金全都反于半径；Mn 贫化大于 Pd。","consistent":false},
+  {"claim":"spinodal 由 Co/Ni-Pd 正混合焓驱动","quote":"is driven by the positive","page":8,"reality":"Table 1 Co-Pd=-1，且反相关最强。Ni-Pd 只有在 [33] 值下为 +4。Co-Pd 二元相图 400 °C 也无 spinodal（p7 承认）。","consistent":false},
+  {"claim":"CrFeCoNi 明确更抗 RIS","quote":"unambiguously manifests an improved RIS-resistance","page":10,"reality":"相对指标下成立；换算为 at.% 与 304 SS 接近，条件未对齐。归因 [28] 是超尺寸元素的结果，而 CrFeCoNi 没有超尺寸元素；§3.1 自己也把 [28] 用于 Mn/Pd。","consistent":false},
+  {"claim":"正弦模型很好吻合 {220} 肩峰","quote":"according well with the calculated diffraction of spinodal decomposition","page":7,"reality":"Fig.7c 中位置相符（由 λ 决定），但形状和强度不符；Eq.2 少 1/4，A 取值偏大。","consistent":false},
+  {"claim":"电子辐照诱发基体有序和 tweed，未辐照区无变化","quote":"merely showed slight oxidation on the surface of the TEM foil","page":4,"reality":"Fig.4c,d、Fig.6d-f 与之相符，文中有对照。这是全文最可靠的部分。","consistent":true},
+  {"claim":"首次实验揭示机制","quote":"experimentally revealed, to our knowledge, for the first time","page":10,"reality":"揭示的是现象；同一结论段也承认定量解释和预测是‘great challenge’。","consistent":false}
+ ],
+ "unverifiable":["Fig.8a 中各文献数值的条件和误差未逐一核对，引文不在手边。","304/316 名义成分不是本文给出，at.% 换算仅为量级。","环上 EDS 统计的环数未写明，只给代表性 line scan；Fig.8 误差棒定义未说明。","[51] 未发表。"],
+ "one_line":"1250 kV/400 °C/1 dpa 电子辐照下 Mn、Pd 合金出现 L10 超点和 5 nm <001> tweed 而 CrFeCoNi 不出现，有未辐照对照，观测可靠；但 Δa/ΔHmix 规则多处反例（Co>Ni 全反，Co-Pd 为 -1 却最强），Eq.2 差 1/4 且 A 偏大约 10 倍，‘更抗 RIS’在 at.% 下与 304 SS 相近。"
+}

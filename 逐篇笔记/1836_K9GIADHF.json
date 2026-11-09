@@ -1,0 +1,69 @@
+{
+ "item":"1836","key":"K9GIADHF","cite":"Mason, Sand & Dudarev 2019 Modelling Simul. Mater. Sci. Eng. (arXiv 1904.04089)","type":"simulation",
+ "read_coverage":{"total_lines":1425,"read_through_line":1425,"pages_rendered":[14,15,17,20,21]},
+ "section_map":[
+  {"section":"1 Introduction","page":2,"gist":"常规 okMC 把复杂构型简化成少数参数，在缺陷靠近时不再可靠；on-the-fly 方法对低势垒竞争不过 MD；提出用原子构型作为 object"},
+  {"section":"2 / 2.1 Atomistic object","page":3,"gist":"对象是带缓冲区的离格原子构型，a0/4 细网格占据加 128 位 Zobrist 哈希索引，存入数据库"},
+  {"section":"2.2 Finding a transition","page":6,"gist":"不搜鞍点，用 4 类预设动作（原子-空位交换、转动、拉串、整团簇平移），主动放弃未知路径；团簇前因子取 ν/√N"},
+  {"section":"2.3 Parameterization","page":9,"gist":"Kang-Weinberg 势垒；能量差由切区、Hessian 嵌入、周期自能、偶极张量四部分组成；Table 1 势垒与前因子"},
+  {"section":"3.1 Individual defects","page":12,"gist":"600 K 势垒直方图（Fig.3），13i 速度和布朗运动（Fig.4），扩散系数对比文献（Fig.5）"},
+  {"section":"3.2 Cascade annealing","page":15,"gist":"5 个 20 keV PARCAS 级联，40³ 晶胞，吸收边界，300/600/900 K；约 1 ns 后超过 MD 速度线；能量三阶段（Fig.7）；Fig.8-9 单次事例，含滑移-不动-滑移转变"},
+  {"section":"3.3 Discussion","page":19,"gist":"随机摆放 N 间隙原子并弛豫，能谱宽（Fig.10）；MNB 势与 DFT 比较；推断碰撞先形成不动亚稳团簇"},
+  {"section":"4 Conclusions","page":22,"gist":"总结四级弹性处理；前 1 ns 用 MD 更好；统计不足，不能对各模式相对速率下强结论"},
+  {"section":"References","page":23,"gist":"[46] Derlet 2007；[51] MNB 势；[67] Swinburne 2017；[74] DFT；[76] 投稿中"}
+ ],
+ "contribution":{
+  "primary":"FRAMEWORK","secondary":"MECHANISM","neither_type":"",
+  "claimed":"新 okMC 代码，以离格原子构型为基本对象，事件在线生成并重用；并得出级联退火中不动对象内部弛豫决定长时演化",
+  "quote":"We describe the development of a new object kinetic Monte Carlo code where the elementary defect objects are off-lattice atomistic",
+  "quote_page":1,
+  "novelty_test":"实质新增：对象是原子构型（哈希索引）、固定类别动作代替鞍点搜索、Hessian 加偶极张量处理多尺度弹性的组合。旧的：Zobrist 回溯（文中 [40]，作者自己的工作）、Lanczos 响应（[53,54]）、Varvenne 自能（[55]）、偶极相互作用（[56,59]）、Mean Rate Method（[65]）、akMC-okMC 混合思路（[37,38]，作者说明自己的不同之处）。创新在集成和表示上，是实质性的。",
+  "mechanism_evidence":"滑移→不动→滑移并非预设对象规则，而是由原子动作涌现，这比预设强。但它只有个例（Fig.9 一次运行），未做碰撞后结果的计数；没有用 DFT、MD 或实验对同一路径检验；没有开关对照，文中未实际运行常规 okMC。此外动作集不含多串协同运动，作者也说明这一局限，长寿命不动态可能部分是缺失动作的伪像，未被排除。证据弱，所以仅列 secondary。",
+  "reuse_test":"原理上可复用，方法不限于 W；合金留待后续。但代码未见公开（数据只留联系邮箱），动作集依赖 bcc 手工编码，换结构需重写；串行，12 Gb 内存，每次运行数十小时；适用于小团簇和稀极限。"
+ },
+ "parameters":[
+  {"name":"空位-原子交换势垒、前因子","value":"1.75 eV，6.45 THz","provenance":"FIRST_PRINCIPLES","page":12,"basis":"势垒来自 DFT [62]；频率称为 Debye，引 [61]，而本批次 1814 Table 6 其实写的是 6e12 /s"},
+  {"name":"拉串势垒","value":"0.013 eV","provenance":"FIT_TO_SAME_DATA","page":15,"basis":"Table 1 称来自 DFT [46]；本批次 1814 第 4 页说这是 Derlet 势函数值；第 15 页原文写它和频率是为给出好的 crowdion D 而固定"},
+  {"name":"拉串前因子","value":"0.75 kBT（单位标 THz，kBT 单位未明）","provenance":"FIT_TO_SAME_DATA","page":12,"basis":"同上；线性 T 依赖取自 friction 假定 [60]"},
+  {"name":"转动势垒","value":"0.40 eV，1.0 THz","provenance":"FIRST_PRINCIPLES","page":12,"basis":"称来自 DFT [46]；1.0 THz 无来源"},
+  {"name":"高能原子阈值","value":"0.25、1.10、0.50 eV","provenance":"TUNED_OR_ASSUMED","page":12,"basis":"Table 1；决定候选动作，无来源"},
+  {"name":"团簇平移规则","value":"ν/√N，尺寸无关势垒","provenance":"TUNED_OR_ASSUMED","page":8,"basis":"以文献 √N 规律为依据的直接施加，所以不能算结果"},
+  {"name":"势垒下限和缓冲","value":"ΔEm/2，m=2，切区 2-3 晶胞","provenance":"TUNED_OR_ASSUMED","page":9,"basis":"作者称 empirical choice"},
+  {"name":"KMC 势函数","value":"MNB [51]","provenance":"MD_EMPIRICAL","page":12,"basis":"作者自己的势，针对空位；级联却用 Derlet 势加硬化 [46,69]，两者不同"},
+  {"name":"箱子和边界","value":"40³ 晶胞（约 12.7 nm），吸收边界","provenance":"TUNED_OR_ASSUMED","page":16,"basis":"决定可动缺陷何时离开；文中说用于加速"}
+ ],
+ "dof":{"free_or_tuned":7,"independent_constraints":1,"note":"我数出：3 个高能阈值，拉串势垒与频率，转动频率，势垒下限，约 7 个手工设定，以及 Fig.5 的一个目标（crowdion D），且文献 D 彼此差 100 倍以上。其余量无实验约束。"},
+ "comparisons":[
+  {"id":"C1","quantity":"单 crowdion 扩散系数","target_data":"Swinburne 2017 [67]，Derlet 2007 [46]（MD 和理论）","authors_language":"The string-pull attempt frequency and energy barrier are ﬁxed to give a good crowdion diﬀusion constant","page":15,"where":"Fig. 5，对数坐标","used_in_construction":"YES_DIRECT","construction_evidence":"原文明说频率和势垒被固定以得到好的 crowdion D","temporal":"文献在先，事后定参","metric":"读图 √N·D（Å²/ps）。600 K：模型约 1.45，Derlet 约 0.09（模型高 16 倍），Swinburne 约 11（模型低 7.6 倍）。150 K：0.17 对 0.011 和 3（15 倍和 18 倍）。两文献彼此差 105-273 倍。模型落在两线中间，谁也没对上","discriminating":"无；文献本身不一致，可选目标范围很大。图中灰线未说明","verdict":"CALIBRATION","verdict_reason":"明文按此定参；且定参后对任一文献还差约 1 个量级"},
+  {"id":"C2","quantity":"2、7、13、19 间隙团簇的 √N·D","target_data":"同上","authors_language":"The computed diﬀusion constant for clusters is within an order of magnitude of literature results","page":15,"where":"Fig. 5","used_in_construction":"YES_INDIRECT","construction_evidence":"ν/√N 规律和尺寸无关势垒由文献的结论施加（第 8 页），Fig.5 图中纵轴又乘 √N","temporal":"文献在先","metric":"13i@600 K 约 0.12：Derlet 的 1.3 倍，Swinburne 的 1/92。19i 在 450 K 约 0.015，150 K 约 0.35，低温反而高 23 倍，统计噪声明显。1、2、7i 与 13、19i 相差约 10 倍，即 √N 塌缩并没有实现，文中未讨论","discriminating":"文献本身差两个量级，所以说一个量级内没有判别力；作者说是为避免过拟合，这一说法合理","verdict":"CONSISTENCY","verdict_reason":"量级相符，且标准宽松"},
+  {"id":"C3","quantity":"空位迁移势垒","target_data":"DFT [62]，实验 [63]","authors_language":"which is in good agreement with experiment","page":12,"where":"Table 1 注","used_in_construction":"YES_DIRECT","construction_evidence":"1.75 eV 直接取自 DFT；Fig.3 单空位 1.75 eV 是作者说的 by construction","temporal":"输入","metric":"未给实验数值","discriminating":"NA","verdict":"NOT_A_MODEL_TEST","verdict_reason":"对输入参数的文献对比"},
+  {"id":"C4","quantity":"偶极张量相互作用能与全原子弛豫","target_data":"本文全原子弛豫","authors_language":"adequate to reproduce the elastic interaction energy between pairs of defects to within 10%","page":5,"where":"2.1 节正文，无图","used_in_construction":"YES_DIRECT","construction_evidence":"用这个比较确定 m=2 缓冲","temporal":"同期","metric":"只给 10%，没有数据或配置列表","discriminating":"数值近似测试","verdict":"VERIFICATION","verdict_reason":"与自己的高保真计算比较，也用于选取参数"},
+  {"id":"C5","quantity":"13i 质心布朗运动无漂移","target_data":"预期随机行走","authors_language":"showing expected Brownian motion with no signiﬁcant drift","page":14,"where":"Fig. 4 右","used_in_construction":"NO","construction_evidence":"理论预期","temporal":"NA","metric":"单一轨迹，2 μs 内位移约 -200 到 +50 Å，未算统计量；一条轨迹不足以判断漂移","discriminating":"低","verdict":"VERIFICATION","verdict_reason":"数值自检"},
+  {"id":"C6","quantity":"与 MD 的速度","target_data":"标称 MD 速度线，1 fs/百万原子/秒","authors_language":"faster than an equivalent molecular dynamics simulation","page":1,"where":"Fig. 4，Fig. 6","used_in_construction":"NO","construction_evidence":"标称线，不是实测 MD 同算例","temporal":"同期","metric":"Fig.4 65536 原子，15 fs/s，复算相符；MD 1 μs 约 2 年，模型约 500 s。Fig.6 128000 原子，1 ns 约 35.6 h（线），文中 24 h 过线。部分运行结束时仍在线下（600 K、900 K）","discriminating":"性能比较。但 equivalent 不成立：Fig.5 中 D 与 MD 差约 1 个量级，不是同样的动力学","verdict":"VERIFICATION","verdict_reason":"性能比较，没有跑 MD"},
+  {"id":"C7","quantity":"滑移缺陷碰撞形成不动缺陷","target_data":"文献 [34,35,36]，MD","authors_language":"Our results using okMC are, however, in accord with previous MD observations of sessile defects","page":3,"where":"正文，Fig.9","used_in_construction":"UNCLEAR","construction_evidence":"不是拟合目标；动作集按 MD 已知动作构造（第 3 页）","temporal":"文献在先","metric":"无数值；从题目看这些文献针对 Fe 等，不是同一 W 同势函数，也没有比较产额或寿命","discriminating":"低，同一现象可来自多种模型","verdict":"CONSISTENCY","verdict_reason":"定性相符"},
+  {"id":"C8","quantity":"空位辅助脱陷","target_data":"Puigví 2007 [35]，MD","authors_language":"A similar observation of vacancy-assisted detrapping was made previously using MD by Puigvi","page":19,"where":"Fig. 9","used_in_construction":"NO","construction_evidence":"未用于拟合","temporal":"文献在先","metric":"一次运行，约 102.65 s 到 104.42 s 发生；时间尺度受空位跳跃决定（600 K 单方向约 78 s，由输入 1.75 eV 和 6.45 THz 算出）","discriminating":"单例；时间是输入的回声","verdict":"CONSISTENCY","verdict_reason":"定性，单一事例"},
+  {"id":"C9","quantity":"Eb/N，MNB 对 DFT","target_data":"Alexander 2016 [74]","authors_language":"We conclude that the MNB empirical potential","page":22,"where":"Fig. 10 插图","used_in_construction":"UNCLEAR","construction_evidence":"MNB [51] 是作者的势，主要针对空位；间隙原子数据是否进入拟合不清楚，[76] 仍在投稿中","temporal":"[74] 2016 早于 [51] 2017","metric":"插图读数：MNB 接近对角线，Eb/N 约 4.4 处约 4.3（约 -3%），其他势差别更大（CEA-4 差很多）。无表格","discriminating":"能分开不同势函数，这一点是实在的","verdict":"VERIFICATION","verdict_reason":"比较的是势函数与 DFT，不是 akMC-okMC；独立性未知"},
+  {"id":"C10","quantity":"常规 okMC 无法得到这些效应","target_data":"无实际运行；引 Arakawa [33] 的规则","authors_language":"These eﬀects would not be seen in earlier okMC models","page":3,"where":"引言","used_in_construction":"NO","construction_evidence":"推断","temporal":"NA","metric":"文中没有用常规 okMC 跑同一输入，所以没有反事实","discriminating":"未检验","verdict":"NOT_A_MODEL_TEST","verdict_reason":"断言，无比较"},
+  {"id":"C11","quantity":"低能致密态和宽亚稳带","target_data":"Marinica 2011 [75]（Fe）","authors_language":"This same conclusion about distinct low energy clusters","page":19,"where":"Fig. 10","used_in_construction":"NO","construction_evidence":"不同金属和势函数","temporal":"文献在先","metric":"定性；Fig.10 频率未去重（作者说明），不是玻尔兹曼或动力学权重","discriminating":"随机放置结果对多数势都会有宽谱","verdict":"CONSISTENCY","verdict_reason":"定性，跨材料"}
+ ],
+ "paper_verdict":{"label":"VERIFICATION_ONLY","why":"全文无实验比较；虽然声称可达实验时间尺度，但没有与任何实验数据比较。唯一外部物理量是 Fig.5 的 D，已明文按其定参，且模型距两篇文献各差约 1 个量级。其余是速度、弹性能的自检和定性文献相符。","best_comparison":"C9","fraction_note":"11 条：4 条 VERIFICATION，4 条 CONSISTENCY，1 条 CALIBRATION，2 条 NOT_A_MODEL_TEST，无 POSTDICTION，无实验目标"},
+ "checks_performed":[
+  {"what":"裁切 Fig.5 读 4 个温度的 1i、Derlet、Swinburne","result":"1i/Derlet = 17.5、16、21、15.5；Swinburne/1i = 6、7.6、7.3、17.6；Swinburne/Derlet = 105-273。第 15 页“within an order”对 13i@Derlet 成立，对 13i@Swinburne 是 92 倍。文中未说哪条线对应哪种尺寸"},
+  {"what":"按 Fig.5 D 和 40³ 箱估算缺陷逸出时间","result":"半宽 6.3 nm，D=1-1.45 Å²/ps，L²/2D≈1.4-2 ns，正好与能量下降的前几 ns 和作者结论相符。因此阶段划分依赖人为的箱尺寸加吸收边界，不能直接当物理时间尺度"},
+  {"what":"用 Table 1 算空位事件时间","result":"600 K：0.0129 /s 单方向，78 s；900 K：1022 /s，约 1 ms。与 Fig.9 中 102 s 触发和第 19 页的 1 ms@900 K，1 s@600 K 起动相符，也是输入的回声"},
+  {"what":"复算文中数字","result":"m>20、m>53（8 鞍点）复算相符；a0/4 网格 50% 和 61% 复算相符；Fig.4 15 fs/s 相符"},
+  {"what":"放大 Fig.9，读屏幕时间和文本","result":"时间 0、48.8 ps、102.65 s、104.42 s、104.42 s、299.09 s，etot 131→40 eV，与图注一致。只有一次运行。图注说 9 空位在约 1000 s，最后一张只到 299 s。第 19 页 8i⟨100⟩ 与图注“无清晰 Burgers 矢量”不一致"},
+  {"what":"对照摘要和结论的强度","result":"摘要写 We also conclude ... establish the conditions；结论写统计不足，不能下强结论。Fig.6 中部分运行到结束都未过线"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"同一参数，无额外调参","quote":"with no additional tuning","page":9,"reality":"字面上成立（模拟之间不再改），但第 15 页承认拉串参数按 crowdion D 确定；阈值和下限为手工选择","consistent":true},
+  {"claim":"拉串参数给出好的 crowdion D","quote":"ﬁxed to give a good crowdion diﬀusion constant","page":15,"reality":"Fig.5 中单 crowdion 距 Derlet 约 16 倍，距 Swinburne 约 7.6 倍（600 K）","consistent":false},
+  {"claim":"比等价 MD 快","quote":"faster than an equivalent molecular dynamics simulation","page":1,"reality":"速度比是真的，但没有真跑 MD，且 D 与 MD 相差约 1 个量级，所以 equivalent 不成立。前 1 ns 反而更慢","consistent":false},
+  {"claim":"摘要结论：不动对象内部弛豫决定长时演化","quote":"internal relaxations of sessile objects","page":1,"reality":"结论节自述没有足够统计（下一条）；证据是个例","consistent":false},
+  {"claim":"作者承认统计不足","quote":"we do not have sufficient statistical information","page":23,"reality":"与实际相符：5 个 20 keV 级联，事件未计数","consistent":true},
+  {"claim":"8i⟨100⟩ 是稳定不动缺陷","quote":"This is a stable sessile defect, which would not then further evolve if simulated in isolation.","page":19,"reality":"未展示孤立模拟；同一缺陷的图注写作 too small to identify a clear Burgers vector，与 ⟨100⟩ 冲突","consistent":false},
+  {"claim":"6.45 THz 是 Debye 频率，引 [61]","quote":"is the Debye frequency for tungsten","page":12,"reality":"[61] 即 1814，其 Table 6 用的是 6e12 /s，没有 6.45。差约 7%，影响很小，但引用不严","consistent":false}
+ ],
+ "unverifiable":["[76] 投稿中，MNB 间隙原子性能详情未见","MNB [51] 的拟合目标是否含 [74]","Derlet 和 Swinburne 线分别针对什么尺寸，图注没说","[34-36] 没有回查，只由题目判断为 Fe 等材料","Fig.8 和 Fig.3 我未单独渲染页面 18、13；它们是模型内部快照或直方图，非外部比较","代码未公开，运行结果无法重复"],
+ "one_line":"真正的方法贡献（原子构型作为 okMC 对象，哈希重用，四级弹性）；但全文无实验比较，唯一物理对比 crowdion D 已定参，仍距两文献各约 7.6 和 16 倍（600 K），且两文献互差 120 倍；滑移-不动-滑移只是个例，作者自己也说统计不足"
+}

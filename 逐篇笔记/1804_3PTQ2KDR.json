@@ -1,0 +1,58 @@
+{
+ "item":"1804","key":"3PTQ2KDR","cite":"Gwinner 2016 Corros. Sci. 107, 60-75","type":"mixed",
+ "read_coverage":{"total_lines":1426,"read_through_line":1426,"pages_rendered":[4,6,10,11,12,13,14]},
+ "section_map":[
+  {"section":"1 Introduction","page":1,"gist":"区分敏化和非敏化两类 IGC；加速失重归因有争议（掉晶 vs 面积增大）；目标是给定量外推工具。"},
+  {"section":"2-3 Experiment","page":2,"gist":"310L（D=84 μm），沸腾 8 M HNO3+200 mg/L V(V)，2564 h；失重 Fig.5 约 1000 h 后速率恒定约 1200 μm/y；100 槽统计。"},
+  {"section":"4 Geometrical model","page":4,"gist":"Beaunier 关系 Vgb/Vs=1/sin(α/2)，2D 方形晶粒，唯一输入 D、Vgb*、Vs；Ttransition=3/2·D/Vgb*；Fig.17 溶解/掉晶占比，18° 相等。"},
+  {"section":"4.4 Application","page":10,"gist":"只用 320 h 槽深 47.1 μm 和角 9.7° 得 Vgb*=1409、Vs=119 μm/y，与长期失重、速率、面积比较。"},
+  {"section":"5 Semi-empirical","page":11,"gist":"速率线性升到平台（Eq.7-9），用前 4 点拟合得 Vgb*=1287、Vs=92 μm/y。"},
+  {"section":"6 Application example","page":13,"gist":"Ref.[80] 304L 与石墨耦合 10 d，两模型外推到 20 d，互相比较，无长期数据。"}
+ ],
+ "contribution":{
+  "primary":"FRAMEWORK","secondary":"MECHANISM","neither_type":"",
+  "claimed":"提出两种 IGC 动力学定量模型（几何、半经验），可由短期数据外推长期。",
+  "quote":"to extrapolate quantitatively the IGC kinetics obtained experimentally in short duration",
+  "quote_page":2,
+  "novelty_test":"新增：几何模型推广到全角度（前作 Ref.[79] 只适用小角），解析式 Eq.(7)-(9) 和 Ttransition=3/2·D/Vgb*，以及用 320 h 形貌给无调节参数的长期预测。旧的：Beaunier 关系 Ref.[78]，短期外推思路 Ref.[70]。",
+  "mechanism_evidence":"Fig.17 的溶解/掉晶占比和 18° 相等点是模型输出，无实验分离。瞬态等于掉第一层晶粒，有形貌（Fig.6）和时间吻合（781-857 h vs 约 1000 h）的支持，属观察+事后几何解释，未直接排除面积贡献。",
+  "reuse_test":"可复用。公式简单、输入只需 D 和槽形貌或早期速率；Guiso 2022（同库 1802）直接用了该半经验提取和 Eq.(2) 瞬态。只适用于 α、V 恒定且槽形规则的 IGC，文中假设了常氧化势。"
+ },
+ "parameters":[
+  {"name":"Vgb*, Vs（几何模型）","value":"1409±76, 119±16 μm/y","provenance":"INDEPENDENT_EXPT","page":11,"basis":"320 h 的 100 槽形貌（H'*=47.1±2.2 μm, α=9.7±0.8°）经 Eq.(3)(5)，未用失重。同一试验同批样品。"},
+  {"name":"Vgb*, Vs（半经验）","value":"1287±152, 92±46 μm/y","provenance":"FIT_TO_SAME_DATA","page":12,"basis":"Fig.5 前 4 个速率点线性拟合。"},
+  {"name":"D","value":"84 μm（310L）；60±10（304L）","provenance":"INDEPENDENT_EXPT","page":2,"basis":"NF EN ISO 643；304L 由作者从 Ref.[80] 照片读。"},
+  {"name":"3/2 系数","value":"Ttransition=3/2·D/Vgb*","provenance":"TUNED_OR_ASSUMED","page":10,"basis":"方形晶粒几何推出，不是拟合，但依赖几何假设；半经验模型也用。"},
+  {"name":"304L 形貌","value":"H'*=63±6 μm, α=26±7°","provenance":"INDEPENDENT_EXPT","page":13,"basis":"作者从 Ref.[80] 1971 年显微照片读，'Only few grooves'。"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":3,"note":"我数的：几何模型无调节参数，3 个输入（D, H', α）都是测量；约束是 3 条长期曲线（失重、速率、相对面积）。半经验模型 2 个拟合参数对前 4 点，约 12 个后续点留作外推；模型形式取自 Fig.5 形状。"},
+ "comparisons":[
+  {"id":"C1","quantity":"几何模型：长期等效减薄","target_data":"本文 310L 试验 Fig.5","authors_language":"is in relatively good agreement with the longer term experimental data","page":11,"where":"Fig. 19","used_in_construction":"NO","construction_evidence":"Vgb*、Vs 只来自 320 h 形貌。假设（α 恒定、前沿线性）由同一试验观察得到，属形式层面。同一试验不同量。","temporal":"数据和模型同篇；非盲；输入时间早于被比较的长期点。","metric":"107 d：模型约 340，实验 300±16（+13%）；按 Eq.(8) 算 2564 h 得 355 μm。60 d：约 160 vs 146（+10%）。趋势稳定高估。","discriminating":"对平台斜率判别力有限，直接令 Vgb*=H'/t=1289 μm/y 的简单线性前沿更接近实验（+7%），1/(1-sin α/2) 修正反而变差。但初期曲率是几何模型给的。","verdict":"POSTDICTION","verdict_reason":"无调参，跨观测量，误差可算。"},
+  {"id":"C2","quantity":"几何模型：腐蚀速率 vs 时间","target_data":"本文 Fig.5","authors_language":"despite slightly (20%) overestimating the corrosion rate","page":11,"where":"Fig. 20","used_in_construction":"NO","construction_evidence":"同 C1。","temporal":"同 C1。","metric":"平台 1409 vs 约 1200±50（+17%），超出模型自报 ±76 带（1330-1480 不含 1200）。上升段：10 d 约 320 vs 440（-27%），17 d 约 480 vs 670（-28%）。形状有系统偏差：前低后高。","discriminating":"有，曲线形状可检验，且部分未通过。","verdict":"POSTDICTION","verdict_reason":"独立参数、定量；作者如实报告 20%。"},
+  {"id":"C3","quantity":"几何模型：相对面积","target_data":"本文剖面量测","authors_language":"Relative surface","page":11,"where":"Fig. 21","used_in_construction":"NO","construction_evidence":"α=9.7° 决定平台（Fig.16），未用面积数据。","temporal":"同篇。","metric":"平台约 310% vs 305-315%（≤2%），但实验 2σ 约 ±15-20%（40、67、107 d 只有 3 点）；13 d 约 225 vs 260（-13%）。","discriminating":"低，误差棒太大。","verdict":"POSTDICTION","verdict_reason":"独立且定量；数据少，判别力低。"},
+  {"id":"C4","quantity":"半经验：前 4 速率点","target_data":"Fig.5","authors_language":"By construction (the ﬁt is made on these points), the simulation is in good agreement","page":12,"where":"Fig. 24","used_in_construction":"YES_DIRECT","construction_evidence":"作者自述。","temporal":"同篇。","metric":"从 Fig.5 读 4 点（190、440、670、860）复算 Vgb*≈1281，文中 1287。","discriminating":"无。","verdict":"CALIBRATION","verdict_reason":"直接拟合。"},
+  {"id":"C5","quantity":"半经验：长期平台和减薄","target_data":"Fig.5 后续约 12 点","authors_language":"the simulated and experimental data are in accordance, taking into account the error bars of both data","page":12,"where":"Fig. 23, 24","used_in_construction":"YES_INDIRECT","construction_evidence":"参数只用前 4 点，后续点未进拟合；但线性-平台的形式 'based on the shape' 由 Fig.5 选出，且瞬态与几何推导相连。","temporal":"同篇。","metric":"平台 1287 vs 1200（+7%）；107 d 约 320 vs 300（+7%），Eq.(8) 算 2564 h 得 318。±152 的带很宽（1135-1440）。","discriminating":"中等：平台由斜率和 3/2·D 关系推出，这是非平凡约束，常速外推（600 h 处约 850 μm/y）会低 30%。形式也来自同一数据。","verdict":"POSTDICTION","verdict_reason":"数值确实外推；形式选择是间接利用，故只算 POSTDICTION 且边缘。"},
+  {"id":"C6","quantity":"瞬态时间约 1000 h vs 3/2·D/Vgb*","target_data":"Fig.5, Fig.6","authors_language":"seems to correspond to the time required to make drop the ﬁrst grain layer","page":4,"where":"Sect. 3, 4.3","used_in_construction":"NO","construction_evidence":"Vgb* 分别来自形貌或前 4 点。","temporal":"同篇。","metric":"几何 783 h，半经验 858 h，实验约 1000 h（-22%，-14%）。平台实测 Vgb 1200 算出 920 h。","discriminating":"中等，D/V 量纲估计自带接近。","verdict":"CONSISTENCY","verdict_reason":"作者未直接给数比较；我算的结果偏低。"},
+  {"id":"C7","quantity":"304L 半经验：Ref.[80] 失重和速率","target_data":"Brunet/Coriou 1971 [80]（5 个速率点）","authors_language":"Both models are in good agreement with the experimental data","page":13,"where":"Fig. 27, 28","used_in_construction":"YES_DIRECT","construction_evidence":"'Eq. (9) was used to ﬁt the corrosion rate kinetics'，全部 5 点拟合。","temporal":"数据 1971 年，先于模型。","metric":"几乎重合，无误差棒。","discriminating":"无，2 参数 5 点直线。","verdict":"CALIBRATION","verdict_reason":"直接拟合。"},
+  {"id":"C8","quantity":"304L 几何：由 10 d 显微图预测失重和速率","target_data":"Ref.[80] Fig.2","authors_language":"give a similar extrapolation for longer term","page":13,"where":"Fig. 27, 28, Table 3","used_in_construction":"NO","construction_evidence":"Vgb*、Vs 来自 Fig.26 的形貌。复算 Eq.(3)(5)：2967、667，一致。","temporal":"已发表数据。作者读图，非盲。","metric":"10 d 约 42 vs 41 μm（+2%）；速率点偏差 <15%。输入不确定大（Vs ±44%，Vgb* ±17%），无实验误差棒。","discriminating":"低，输入带宽，只覆盖未达稳态的 10 d。","verdict":"POSTDICTION","verdict_reason":"不同观测量且无调参，不同钢、不同介质；但只 5 点、少量槽。"},
+  {"id":"C9","quantity":"10 d 后的长期预测（两模型互比）","target_data":"两模型自身","authors_language":"brings a quite high conﬁdence degree to the extrapolation","page":14,"where":"Fig. 27, 28","used_in_construction":"NO","construction_evidence":"20 d 没有实验数据。","temporal":"无实验。","metric":"20 d 约 123 vs 117 μm（5%）；平台 2966 vs 2796（6%）。","discriminating":"无，两模型共享 Beaunier 图像和 3/2 系数。","verdict":"VERIFICATION","verdict_reason":"模型互比，不检验物理。"},
+  {"id":"C10","quantity":"Ttransition 解析 vs 几何数值","target_data":"Fig.15 模拟","authors_language":"the transition time calculated is 45 days","page":10,"where":"Fig. 15","used_in_construction":"NO","construction_evidence":"自身模型。","temporal":"NA。","metric":"1.5×90/3=45 d，Fig.15 约 45 d。","discriminating":"NA。","verdict":"VERIFICATION","verdict_reason":"解析与数值自检。"},
+  {"id":"C11","quantity":"Vs 与 Ref.[70] 的速率放置问题","target_data":"Dunnett & Whillock 2003 [70]","authors_language":"is not consistent with the semi-empirical model and with the physical reality","page":13,"where":"Sect. 6","used_in_construction":"NO","construction_evidence":"对方法的批评，未重算其数据。","temporal":"NA。","metric":"无具体数。","discriminating":"NA。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"方法学评论。"}
+ ],
+ "paper_verdict":{"label":"POSTDICTIVE_VALIDATION","why":"最强证据：几何模型零调参，只用 320 h 形貌，预测 2564 h 的失重和速率平台，偏差 +13%/+17%，作者如实报告。半经验模型由前 4 点外推平台 +7%。但都是同一试验，形状有偏（早期 -28%），超出自报不确定度；长期外推到 304L 只有模型互比。","best_comparison":"C1","fraction_note":"11 条：5 POSTDICTION（其中 1 边缘），2 CALIBRATION，1 CONSISTENCY，2 VERIFICATION，1 NOT_A_MODEL_TEST。"},
+ "checks_performed":[
+  {"what":"用文中数值复算 Eq.(3)(4)(5)、Eq.(8)、Eq.(9)、Table 3","result":"47.1 μm/320 h→1289；/(1-sin4.85°)=1408（文 1409），Vs=119。Eq.(4) 不计 Δt 时 ΔV/V≈5.4%→76，一致，但说明 ±76 只含 H、α 误差。Eq.(9) 与 Eq.(7) 代数一致，Eq.(8) 在 T 处连续。304L：2967、667，对。"},
+  {"what":"用简单线性前沿作零模型","result":"H'/t=1289 μm/y，比几何模型的 1409 更接近实测 1200（+7% vs +17%）。几何修正对平台变差；模型的增量价值在初期曲率。"},
+  {"what":"读 Fig.20、23、24 算偏差和带宽","result":"几何平台带 1330-1480 不含 1200±50，所以自报不确定度未覆盖真值；早期 -27~-28%。半经验带 1135-1440 含真值。"},
+  {"what":"核对'完全独立'声称","result":"半经验 Eq.(7) 直接使用几何部分推出的 Ttransition=3/2·D/Vgb*，且共享 Vs/Vgb* 物理图像；只有输入数据独立，结构不独立。"},
+  {"what":"核对试验条件一致性","result":"200 mg/L V = 357 mg/L V2O5 复算一致；Fig.4 图注写 270 mg/L V2O5 不一致。Sect.2 'E°=0.934 mV/SHE' 应为 V。同一 Uranus 65 在 Guiso 2022 给 Vgrn=273、Vign*=1656、面积 238%（V(V) 150 或 300 mg/L，CA），本文 119、1409、310%（200 mg/L），差异未在本文可解释。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"两模型完全独立","quote":"This approach is completely independent of the geometrical model","page":11,"reality":"Eq.(7) 用几何部分的 3/2·D/Vgb*，并共享 Vs→Vgb* 图像；只有输入独立。'Two independent models' 给外推的置信度被夸大。","consistent":false},
+  {"claim":"模型复现实验","quote":"Both models reproduce successfully the experimental corrosion kinetics","page":1,"reality":"定量上半经验 +7%；几何 +13~17%，早期 -28%。大致成立，作者已写 20%。","consistent":true},
+  {"claim":"长期外推高置信","quote":"brings a quite high conﬁdence degree to the extrapolation","page":14,"reality":"304L 案例无长期实验；一致只说明两式共享图像。310L 自身长期验证才算证据，但同一试验。","consistent":false},
+  {"claim":"假设 α 恒定、2D=3D","quote":"the observed 2D angle is considered to be equal to the real 3D angle","page":4,"reality":"作者承认是近似；后来 Ref 为 Gwinner 2017 专门研究。对 V 比值影响未量化，Vs 对此敏感。","consistent":true}
+ ],
+ "unverifiable":["Ref.[80] 原始数据和显微图只能从本文转引。","Fig.8、9 中不同时间的单独 H'、α 数值未列表，无法评估选 320 h 是否最佳或是否受选择影响。"],
+ "one_line":"FRAMEWORK：只用 320 h 槽深 47.1 μm 和角 9.7° 的零调参几何模型预测 2564 h 失重和平台 +13%/+17%，半经验由前 4 点外推平台 +7%；所称'两模型独立'结构上不成立，304L 长期外推无实验检验。"
+}

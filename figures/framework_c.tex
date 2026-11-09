@@ -44,28 +44,29 @@
 \node[anchor=east] at (\xI-0.16,\H-0.30) {Oxide};
 \node[anchor=west] at (\xI+0.16,\H-0.30) {Metal};
 
-% ----- oxygen arriving along the GB -------------------------------------
-\draw[odiff] (0.32,4.35) -- (0.32,0.42);
-\node[cAcc,font=\scriptsize,rotate=90] at (0.52,2.45)
-      {$J_{\Ox}$: transport along the GB};
+% ----- oxygen transported along the boundary through the whole oxide ----
+% parallel arrows spanning the oxide cross-section (0 < x < \xI)
+\foreach \xx in {0.45,1.15,1.85,2.55,3.25}{
+  \draw[odiff,line width=1.0pt] (\xx,4.45) -- (\xx,0.40);}
+\node[cAcc,font=\scriptsize,align=center,anchor=north,fill=cOx,inner sep=1.5pt]
+      at (1.95,4.40) {$J_{\Ox}$: transport along\\ the boundary through\\ the whole oxide};
 
 % ----- one split arrow: smooth fan, ends parallel -----------------------
 \draw[cAcc,line width=6pt,line cap=butt] (1.05,2.30) -- (4.05,2.30);
-\foreach \yy in {3.60,2.75,1.85,1.00}{
+\foreach \yy in {3.50,2.30,1.10}{
   \draw[cAcc,line width=6pt,line cap=round,
         -{Stealth[length=9pt,width=9pt]}]
     (3.85,2.30) .. controls (4.70,2.30) and (4.95,\yy) .. (5.80,\yy)
     -- (6.35,\yy);}
 
 % centred at 2.30: the free span runs from the rotated label (0.70) to \xI
-\node[key,anchor=south,align=center] at (2.30,2.50)
+\node[key,anchor=south,align=center,fill=cOx,inner sep=1.5pt] at (2.30,2.50)
       {Oxygen diffusion\\ across the oxide layer};
 
 \node[key,anchor=east]  at (8.66,4.20) {interfacial reactions};
-\node[anchor=west,cAcc] at (6.52,3.60) {$J_{\mathrm{r}}^{\mathrm{Cr_2O_3}}$};
-\node[anchor=west,cAcc] at (6.52,2.75) {$J_{\mathrm{r}}^{\mathrm{Fe_3O_4}}$};
-\node[anchor=west,cAcc] at (6.52,1.85) {$J_{\mathrm{r}}^{\mathrm{FeCr_2O_4}}$};
-\node[anchor=west,cAcc] at (6.52,1.00) {$J_{\mathrm{r}}^{\mathrm{SiO_2}}$};
+\node[anchor=west,cAcc] at (6.52,3.50) {$J_{\mathrm{r}}^{\mathrm{Cr_2O_3}}$};
+\node[anchor=west,cAcc] at (6.52,2.30) {$J_{\mathrm{r}}^{\mathrm{Fe_3O_4}}$};
+\node[anchor=west,cAcc] at (6.52,1.10) {$J_{\mathrm{r}}^{\mathrm{SiO_2}}$};
 
 % ----- metal consumed: the lattice drifts towards the interface ---------
 % label is 2.66 cm wide; anchored at 6.90 it clears the interface by 0.34 cm

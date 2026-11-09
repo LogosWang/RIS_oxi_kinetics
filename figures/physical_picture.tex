@@ -39,17 +39,20 @@
 \def\xc{2.80}                            % grain-boundary plane
 
 % ----- panel background: #1 = surface-oxide thickness ---------------------
+\def\oxfill{cOx}                         % colour of the inner (surface) oxide layer
 \newcommand{\base}[1]{%
   \fill[cWater] (0,\yWb) rectangle (\W,\H);
   \fill[cMetal] (0,0)    rectangle (\W,\yWb);
-  \ifdim #1pt>0pt \fill[cOx,eg] (0,\yWb-#1) rectangle (\W,\yWb);\fi
+  \ifdim #1pt>0pt \fill[\oxfill,eg] (0,\yWb-#1) rectangle (\W,\yWb);\fi
   \draw[eg] (0,0) rectangle (\W,\H);
 }
 % ----- segregated zone along the boundary: #1 = top y -------------------
 \newcommand{\risband}[1]{\fill[cRISBg] (\xc-0.42,0.02) rectangle (\xc+0.42,#1);}
 % ----- intergranular oxide wedge: #1 top y, #2 depth, #3 half-width, #4 fill
 \newcommand{\wedgeox}[4]{%
-  \fill[#4,eg] (\xc-#3,#1) -- (\xc+#3,#1) -- (\xc+0.04,#1-#2) -- (\xc-0.04,#1-#2) -- cycle;}
+  \fill[#4] (\xc-#3,#1+0.08) -- (\xc+#3,#1+0.08) -- (\xc+#3,#1) -- (\xc+0.04,#1-#2)
+            -- (\xc-0.04,#1-#2) -- (\xc-#3,#1) -- cycle;
+  \draw[eg] (\xc-#3,#1) -- (\xc-0.04,#1-#2) -- (\xc+0.04,#1-#2) -- (\xc+#3,#1);}
 % ----- outer oxide particle on the surface: #1 x, #2 radius --------------
 \newcommand{\particle}[2]{\fill[cOx,eg] (#1-#2,\yWb) arc (180:0:#2) -- cycle;}
 % ----- pore -------------------------------------------------------------
@@ -84,18 +87,18 @@
 \begin{scope}[shift={(6.30,6.30)}]
   \base{0.26}
   \def\ys{4.14}
-  \wedgeox{\ys}{1.10}{0.22}{cOx}
-  \draw[gbline] (\xc,\ys-1.10) -- (\xc,0.12);
+  \wedgeox{\ys}{0.70}{0.22}{cOx}
+  \draw[gbline] (\xc,\ys-0.70) -- (\xc,0.12);
   \particle{4.30}{0.14}
   \node[anchor=north west,font=\footnotesize\bfseries] at (0.08,\H-0.04) {(b)};
   % oxygen in
-  \draw[flux] (\xc,\H-0.12) -- (\xc,\ys-0.78);
+  \draw[flux] (\xc,\H-0.12) -- (\xc,\ys-0.42);
   \node[anchor=east,cAcc] at (\xc-0.10,\yWb+0.30) {O};
   % Cr-rich oxide
   \node[key,anchor=east,align=right] at (\xc-0.40,2.95) {Cr-rich\\ oxide};
-  \draw[lead] (\xc-0.36,2.95) -- (\xc-0.12,3.12);
+  \draw[lead] (\xc-0.36,2.95) -- (\xc-0.10,3.78);
   \node[key,anchor=west,align=left] at (\xc+0.25,1.95) {selective\\ Cr oxidation};
-  \draw[lead] (\xc+0.22,1.95) -- (\xc+0.05,2.60);
+  \draw[lead] (\xc+0.22,1.95) -- (\xc+0.03,3.42);
   \node[anchor=east,font=\scriptsize] at (\W-0.12,0.30) {Metal};
 \end{scope}
 
@@ -105,19 +108,19 @@
 \begin{scope}[shift={(12.60,6.30)}]
   \base{0.36}
   \def\ys{4.04}
-  \wedgeox{\ys}{2.00}{0.25}{cOx}
-  \draw[gbline] (\xc,\ys-2.00) -- (\xc,0.12);
+  \wedgeox{\ys}{1.20}{0.25}{cOx}
+  \draw[gbline] (\xc,\ys-1.20) -- (\xc,0.12);
   \particle{1.10}{0.16}\particle{4.40}{0.20}
   \node[anchor=north west,font=\footnotesize\bfseries] at (0.08,\H-0.04) {(c)};
-  \draw[flux] (\xc,\H-0.12) -- (\xc,\ys-1.50);
+  \draw[flux] (\xc,\H-0.12) -- (\xc,\ys-0.85);
   \node[anchor=east,cAcc] at (\xc-0.10,\yWb+0.30) {O};
   % protective oxide
   \node[key,anchor=west,align=left] at (\xc+0.42,2.30) {Cr-rich oxide:\\ slow O\\ transport};
-  \draw[lead] (\xc+0.38,2.30) -- (\xc+0.12,2.90);
+  \draw[lead] (\xc+0.38,2.30) -- (\xc+0.06,3.00);
   % depth
   \draw[{Stealth[length=3pt]}-{Stealth[length=3pt]},line width=0.5pt]
-        (0.40,\ys) -- (0.40,\ys-2.00);
-  \node[key,anchor=west] at (0.50,\ys-0.80) {shallow};
+        (0.40,\ys) -- (0.40,\ys-1.20);
+  \node[key,anchor=west] at (0.50,\ys-0.60) {shallow};
   \node[anchor=east,font=\scriptsize] at (\W-0.12,0.30) {Metal};
 \end{scope}
 
@@ -153,10 +156,11 @@
 % (e) irradiated, early exposure
 % =========================================================================
 \begin{scope}[shift={(6.30,0)}]
+  \def\oxfill{cOxLow}
   \base{0.36}
   \def\ys{4.04}
-  \wedgeox{\ys}{1.60}{0.28}{cOxLow}
-  \draw[gbline] (\xc,\ys-1.60) -- (\xc,0.12);
+  \wedgeox{\ys}{1.90}{0.28}{cOxLow}
+  \draw[gbline] (\xc,\ys-1.90) -- (\xc,0.12);
   \particle{1.00}{0.16}\particle{4.30}{0.20}
   \pore{\xc-0.10}{3.70}\pore{\xc+0.09}{3.40}\pore{\xc-0.06}{3.05}\pore{\xc+0.05}{2.75}
   \node[anchor=north west,font=\footnotesize\bfseries] at (0.08,\H-0.04) {(e)};
@@ -166,7 +170,7 @@
   \node[anchor=east,cAcc] at (\xc-0.22,\yWb+0.30) {O};
   % labels
   \node[key,anchor=east,align=right] at (\xc-0.50,2.95) {Cr-poor,\\ Fe-rich oxide};
-  \draw[lead] (\xc-0.46,2.95) -- (\xc-0.18,3.20);
+  \draw[lead] (\xc-0.46,2.95) -- (\xc-0.14,3.20);
   \node[key,anchor=west,align=left] at (\xc+0.30,2.35) {\ce{SiO2} dissolves:\\ pores};
   \draw[lead] (\xc+0.27,2.35) -- (\xc+0.08,2.72);
   \node[anchor=east,font=\scriptsize] at (\W-0.12,0.30) {Metal};
@@ -176,10 +180,10 @@
 % (f) irradiated, extended exposure
 % =========================================================================
 \begin{scope}[shift={(12.60,0)}]
+  \def\oxfill{cOxLow}
   \base{0.50}
   \def\ys{3.90}
   \wedgeox{\ys}{3.30}{0.34}{cOxLow}
-  \draw[eg] (\xc-0.34,\ys) -- (\xc+0.34,\ys) -- (\xc+0.04,\ys-3.30) -- (\xc-0.04,\ys-3.30) -- cycle;
   \draw[gbline] (\xc,\ys-3.30) -- (\xc,0.12);
   \particle{0.90}{0.18}\particle{2.00}{0.14}\particle{4.20}{0.24}\particle{5.05}{0.14}
   \pore{\xc-0.19}{3.45}\pore{\xc+0.17}{3.10}\pore{\xc-0.15}{2.60}\pore{\xc+0.13}{2.10}\pore{\xc-0.10}{1.55}

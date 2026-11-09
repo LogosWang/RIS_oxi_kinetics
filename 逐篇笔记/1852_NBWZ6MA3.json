@@ -1,0 +1,57 @@
+{
+ "item":"1852","key":"NBWZ6MA3","cite":"Mukhopadhyay 2026 npj Mater. Degrad. 10:130","type":"experiment",
+ "read_coverage":{"total_lines":586,"read_through_line":586,"pages_rendered":[2,3,4,5]},
+ "section_map":[
+  {"section":"Introduction","page":1,"gist":"全局应变指标无法解释 RHAGB 随机开裂；目标是建立局部变形子结构与 GB 氧化形貌的因果联系。"},
+  {"section":"Results: morphology","page":2,"gist":"Fe-18Cr-14Ni，SA 与 27% 冷拉伸（CTS），300 °C 216 h；SA 楔形氧化 160 nm，CTS 波纹状 340 nm，DIGM Ni 31 vs 45 at.%。"},
+  {"section":"Results: GND","page":2,"gist":"HR-TKD：UD-1（57°）32×10^14 m-2；D-1（27°）60×10^14 m-2 的尖峰；基线相同，作者归因于噪声底。"},
+  {"section":"Results: tilt series","page":3,"gist":"三个角度 STEM-EDS：UD-1 平面，D-1 羽状、DIGM 扭曲；作者承认不是全层析。"},
+  {"section":"Results: D-2 chemistry","page":3,"gist":"D-2（44°）丝状物 Cr 约 30 at.%，内氧化物 18-20 at.%；前方 20 nm DIGM，45 at.% Ni。"},
+  {"section":"Discussion","page":3,"gist":"提出 Leading Filament 机制：应变局域→GND→位错核氧化物形核→管扩散→DIGM；D_eff 3.9e-20 vs 8e-21 m²/s；类比虫孔腐蚀；承认结果为唯象。"},
+  {"section":"Methods","page":5,"gist":"27% 工程应变后无载荷暴露，H2 5.2 cc/kg；1 个 SA、3 个 CTS 晶界；TKD 步长 10 nm；GB 由表面氧化物不连续定位。"}
+ ],
+ "contribution":{
+  "primary":"NEITHER","secondary":"MECHANISM","neither_type":"纯实验表征：四个晶界的形貌比较，机制是未检验的假说",
+  "claimed":"预应变触发从平面到丝状的拓扑转变，由 Leading Filament 机制和管扩散控制，动力学快近 5 倍。",
+  "quote":"We propose a “Leading Filament” mechanism to explain this transition",
+  "quote_page":1,
+  "novelty_test":"新增：在模型合金中，CTS 晶界上 Cr 富集丝状氧化物的多角度 EDS 图像和 Cr 约 30 at.% 的线扫。冷加工加速 IG 氧化和'指状'氧化物已有（Ref.[3,5,11,12,16,17]）。管扩散、位错核形核、应力集中、Kirkendall 过饱和都没有测量，只是组合解释。",
+  "mechanism_evidence":"宏观操控只有 SA vs 27% CTS（真实但粗）；局部因果只是 1 vs 1 的 GND 对比，且 GND 在氧化后的薄片上测，与 DIGM 重合，存在反向因果。未排除：晶界类型差异（57°/27°/44° 未匹配）、表面滑移台阶、氧化物/DIGM 自身产生的应变。作者后面也写 'phenomenological'。没有示踪或时间序列。",
+  "reuse_test":"NA"
+ },
+ "parameters":[
+  {"name":"冷拉伸应变","value":"27% 工程应变","provenance":"INDEPENDENT_EXPT","page":5,"basis":"实验设定。"},
+  {"name":"暴露条件","value":"300 °C, 15.5 MPa, 216 h, 5.2 cc H2/kg, 1000 ppm B, 2 ppm Li","provenance":"INDEPENDENT_EXPT","page":5,"basis":"实验设定。"},
+  {"name":"D_eff（CTS, SA）","value":"3.9e-20, 8e-21 m²/s","provenance":"FIT_TO_SAME_DATA","page":4,"basis":"由单时间深度按 x≈√(4Dt) 反算，非独立测量。"},
+  {"name":"氧化深度","value":"349±38 nm（3 CTS）, 160 nm（1 SA）","provenance":"INDEPENDENT_EXPT","page":4,"basis":"文内量测；D-2 单值未给。"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"无预测模型。D_eff 是单时间点的一一换算。证据样本：1 SA、3 CTS 晶界，单一强度、单一时长。"},
+ "comparisons":[
+  {"id":"C1","quantity":"D_eff 加速 vs 管扩散活化能","target_data":"Stechauner 2014 [18]、Čermák 1990 [19]","authors_language":"This acceleration is consistent with studies of Fe-based FCC alloys","page":4,"where":"Discussion","used_in_construction":"NO","construction_evidence":"未用于计算，只作定性引用；没有比较 D 的数值或 Q。","temporal":"文献在先。","metric":"复算：x=349 nm→3.92e-20，x=160 nm→8.2e-21，比值 4.76。文献 D 未代入比较。","discriminating":"无：任何含缺陷的增强都能'一致'。只有单时间点，未证实 √t。","verdict":"CONSISTENCY","verdict_reason":"定性，无数值比较。"},
+  {"id":"C2","quantity":"CTS 氧化物突起","target_data":"Ref.[3,11,17]","authors_language":"The observed oxide protrusions are consistent with prior reports","page":3,"where":"Discussion","used_in_construction":"NO","construction_evidence":"实验比较。","temporal":"在先。","metric":"无。","discriminating":"低。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"实验之间，无模型。"},
+  {"id":"C3","quantity":"SA 平面氧化和 DIGM","target_data":"Ref.[3,5,13,26,27]","authors_language":"Consistent with prior reports","page":3,"where":"Discussion","used_in_construction":"NO","construction_evidence":"实验比较。","temporal":"在先。","metric":"无；只有 1 个晶界。","discriminating":"低。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"基线确认。"},
+  {"id":"C4","quantity":"丝状物解释已有'指状'氧化物","target_data":"Ref.[12,21]、Kuang 2020 [16]","authors_language":"it provides a resolution to prior observations of deep, discontinuous oxide “ﬁngers”","page":5,"where":"Discussion","used_in_construction":"NO","construction_evidence":"事后解释。","temporal":"在先。","metric":"无。","discriminating":"无。文献指状物在其它合金上，未比较。","verdict":"CONSISTENCY","verdict_reason":"事后解释；'resolution' 无数据。"},
+  {"id":"C5","quantity":"与熔盐虫孔腐蚀的类比","target_data":"Yang 2023 [20]","authors_language":"resemble the “1D wormhole corrosion” mechanism reported in molten salts","page":5,"where":"Discussion","used_in_construction":"NO","construction_evidence":"类比。","temporal":"在先。","metric":"只有长径比 >5。","discriminating":"无，体系完全不同。","verdict":"CONSISTENCY","verdict_reason":"形貌类比。"},
+  {"id":"C6","quantity":"SA vs CTS 氧化深度","target_data":"本文","authors_language":"Across the three CTS boundaries, the depth of oxide penetration is remarkably uniform","page":4,"where":"Fig. 1, S2","used_in_construction":"NO","construction_evidence":"纯实验。","temporal":"NA。","metric":"349±38 nm（CV 11%, n=3）vs 160 nm（n=1），比值 2.18。SA 晶界间离散未知，无法评估显著性。","discriminating":"NA。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"实验对比。"},
+  {"id":"C7","quantity":"表面 Cr 尖晶石与 Fe 岛","target_data":"Cissé 2012 [25]","authors_language":"in agreement with prior reports","page":5,"where":"Methods","used_in_construction":"NO","construction_evidence":"实验比较。","temporal":"在先。","metric":"无。","discriminating":"低。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"实验之间。"}
+ ],
+ "paper_verdict":{"label":"EXPERIMENT_NOT_MODEL","why":"四个晶界的形貌和成分表征，没有可检验的预测模型。最强证据是 CTS 深度 2.2 倍（n=3 vs 1）和多角度图像；机制的每一步都未测，也无开裂数据。","best_comparison":"C6","fraction_note":"7 条：3 CONSISTENCY，4 NOT_A_MODEL_TEST。"},
+ "checks_performed":[
+  {"what":"复算 D_eff 和样本统计","result":"t=7.776e5 s：3.92e-20、8.23e-21，比 4.76，一致。深度比只有 2.18；'五倍' 是平方产物。用 340、320 反推 D-2≈387 nm，SD 约 34（文 38），文中未给 D-2 单值。"},
+  {"what":"检查丝状物对加速的贡献","result":"文中氧化前沿定义已不含丝状物，CTS 的'一般内氧化物'就是 340 nm 级；Fig.3e 的丝状物只有几十 nm。所以深度差主要在连续氧化物本身，把加速归给丝状物内的管扩散没有数据支持。"},
+  {"what":"核对 Fig.3f 线扫位置和化学计量","result":"箭头是从内氧化物横向穿到基体，并未经过标注的 'Leading Cr-rich Oxide Filament' 尖端；30 at.% 来自氧化物内部的富 Cr 带。Cr 约 31、O 约 61：M/O≈0.62，与 FeCr2O4（Cr 28.6 at.%）或 Cr2O3（40 at.%）都不矛盾，所以 'Cr supersaturation' 无依据。EDS 是投影，薄片厚度未报。"},
+  {"what":"检查 GND 测量时序与图","result":"方法说薄片取自'oxidized samples'，HR-TKD 在 STEM 之前，都在暴露之后，因此不是'pre-existing strain landscape'。Fig.2ii 的高 GND 带与 Ni 富集 DIGM 同位，可能是结果不是原因。色标 0-250×10^14，带内亮像素目视明显高于文中 60×10^14（目视，未数字化）。基线相同被归因于噪声底，说明 27% 应变的基线未被分辨。"},
+  {"what":"计算晶界类型（我算的）","result":"UD-1 57°<234> 对 Σ3 的偏差约 15°，超过 Brandon 8.7°，确属随机，但比较组 27°、44° 不匹配。文中有 3 个不同晶界却把差别归给应变，唯一 SA 样本无法分离。"},
+  {"what":"追踪措辞漂移","result":"p2 'low-intensity regions potentially suggestive of Kirkendall voids' → p5 'supported by our observations of Kirkendall voids'。p2 目标 'establish a causal link' → p5 'phenomenological'。标题 'topological transition' → p3 承认 'do not constitute a full tomographic reconstruction'。另 Ref 同库 1844（Weiser 2023 p8）说明未变形 Ni-Cr 在氢化水中也有氧化物分支，丝状物未必需要预应变，本文只比较了 1 个 SA 晶界。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"预应变根本上转变氧化机制，经管扩散使动力学快近 5 倍","quote":"This morphology achieves almost ﬁve-fold faster kinetics through pipe-diffusion pathways","page":5,"reality":"单时间点、n=3 vs 1；深度比 2.18；管扩散无任何测量。未测动力学。","consistent":false},
+  {"claim":"建立局部变形与形貌的因果联系","quote":"aims to establish a causal link","page":2,"reality":"GND 只比较 UD-1 和 D-1，且在氧化后测量，与 DIGM 重合；后文称 'phenomenological'。","consistent":false},
+  {"claim":"氧化物调制应力局域","quote":"modulates subsequent stress localization at the reaction front","page":5,"reality":"摘要结论写为事实，文中未测应力；讨论里只是 'may act as stress concentrators'。无外载无开裂数据。","consistent":false},
+  {"claim":"宏观应变控制氧化深度","quote":"While macroscopic strain controls oxidation depth","page":1,"reality":"只有两个应变水平，SA 只有一个晶界，'控制'无法成立。","consistent":false},
+  {"claim":"Kirkendall 空洞的观察支持机制","quote":"as supported by our observations of Kirkendall voids","page":5,"reality":"结果部分只说 'potentially suggestive'；未鉴定是空洞、孔隙或 FIB 伪影。","consistent":false},
+  {"claim":"倾转显示平面几何","quote":"This stability under tilt conﬁrms a simple 2D planar geometry","page":3,"reality":"只有三个角度，Fig.2a-c 中 DIGM 随倾转确有变化；与'不是全层析'共存。形貌差异确实可见。","consistent":true}
+ ],
+ "unverifiable":["Supplement（Fig.S1-S4，D-3 形貌，TKD 与丝状物形核的对应）不在手边。","D-2 的深度单值和 lamella 厚度未给；Fig.2、3 的视野未包含完整 340 nm，无法直接由图核对深度。","Ref.[16,20] 中形貌的可比性未核。"],
+ "one_line":"四个晶界（1 SA、3 CTS，300 °C 216 h）的形貌表征：CTS 深度 349±38 vs 160 nm（比 2.2，所谓五倍 D 只是平方），丝状氧化物可见；'Leading Filament'、管扩散和因果 GND 均未测，GND 在氧化后测且与 DIGM 重合。"
+}

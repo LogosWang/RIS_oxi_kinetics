@@ -1,0 +1,54 @@
+{
+ "item":"1844","key":"KF5QIKMY","cite":"Weiser 2023 npj Mater. Degrad. 7:70","type":"experiment",
+ "read_coverage":{"total_lines":1477,"read_through_line":1477,"pages_rendered":[4,5,6,7]},
+ "section_map":[
+  {"section":"Introduction","page":1,"gist":"内氧化的氧路径缺乏直接证据；Stott 提出界面快速传输；用 CO/CO2 低氧势加 18O 两段氧化和 APT 直接看。"},
+  {"section":"Results: morphology","page":2,"gist":"600 °C，Ni-5Cr/20Cr：有的 GB 被 Cr2O3 帽保护，有的被 IG 氧化穿透（1 h 约 220 nm），孪晶不氧化；Ni 结节；氧化物多孔，孔互连。"},
+  {"section":"Results: EDX","page":4,"gist":"无 NiCr 尖晶石；Ni-5Cr GB Cr 贫化约 20 nm，Ni-20Cr 约 12 nm；Cr 主要沿 GB 供给。"},
+  {"section":"Results: SIMS","page":4,"gist":"ToF-SIMS 深度谱中 18O/Cr18O 最大值位于约 95 s，比 Cr16O（52 s）深；平面图 18O 沿 GB。"},
+  {"section":"Results: APT","page":5,"gist":"Fig.7c、9：16O 氧化物与合金之间有 8-10 nm 18O 富集层；Fig.8、10：靠近 IOF 的氧化物整体 18O；Fig.10 有 14 nm 无 Cr 带和 DIGM。"},
+  {"section":"Discussion","page":7,"gist":"称首次直接证据支持界面 O 传输，同时承认孔隙气体传输不能排除；Cr 只靠 GB 供给；讨论 Ni 结节和与 Alloy 600 的关联。"},
+  {"section":"Methods","page":9,"gist":"CO/CO2=1:10，800 mbar；40 min 自然 + 80 min C18O2（97%）；APT LEAP 4000X HR，80 pJ；自写 Octave 工具箱。"}
+ ],
+ "contribution":{
+  "primary":"MECHANISM","secondary":"NONE","neither_type":"",
+  "claimed":"首次用 APT+18O 示踪直接显示 O 沿内氧化物/合金界面短路传输，支持 Stott 的提议。",
+  "quote":"is the ﬁrst visual evidence for the proposed transport mechanism",
+  "quote_page":7,
+  "novelty_test":"新增：把两段 18O 与 APT 结合，在 16O 氧化物和合金之间看到 8-10 nm 新生 18O 氧化物，且 16O 氧化物内 18O 只有约 2-3 at.%。界面传输本身是旧假说（Stott Ref.[9,36]、Martinez-Villafañe Ref.[10]）。真正确立的是：第二阶段 O 能穿过已形成的 IG 氧化物到合金界面，并在那里反应。'路径就是界面'是推断。",
+  "mechanism_evidence":"直接观测（示踪），但无因果操控。结果确实排除了 O 经 16O 氧化物晶格大量传输（内部 18O 低）。未排除：氧化物 GB、互连孔隙气体（作者承认）。'界面处新氧化物'只说明反应位置，不能区分路径；需要沿界面 18O 随深度的梯度，文中没有。样本：Fig.7、8、9、10 四个 APT 针尖。",
+  "reuse_test":"NA"
+ },
+ "parameters":[
+  {"name":"温度与气氛","value":"600 °C, CO/CO2=1:10, 800 mbar","provenance":"INDEPENDENT_EXPT","page":9,"basis":"实验设定。"},
+  {"name":"两段时间与同位素","value":"40 min 自然 + 80 min, c(18O)=97%","provenance":"INDEPENDENT_EXPT","page":9,"basis":"实验设定。"},
+  {"name":"界面定义阈值","value":"6 at.% O 等浓面","provenance":"TUNED_OR_ASSUMED","page":5,"basis":"未说明选择依据；用于 proxigram，并手动划分区域。"},
+  {"name":"SIMS 溅射速率","value":"0.20±0.01 nm/s（纯 Ni）","provenance":"INDEPENDENT_EXPT","page":4,"basis":"文中给出，氧化物上未校准。"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":0,"note":"无模型，无拟合。分析自由度是等浓面阈值和手动划分 proxigram 区域（Fig.7：93/307 个顶点）。"},
+ "comparisons":[
+  {"id":"C1","quantity":"界面 O 短路传输（Stott 提议）","target_data":"Stott 1984, 1988 [9,36]","authors_language":"The diffusion of O along the alloy/oxide interface was unequivocally proven","page":8,"where":"Fig. 7c, 9b","used_in_construction":"NO","construction_evidence":"本文无模型；实验检验既有定性假说。","temporal":"假说在先，实验检验。","metric":"无扩散系数或通量；只有层厚约 8-10 nm（Fig.9b 峰值 18O 约 32 at.%，Fig.7c 约 25 at.%，半高宽约 4-5 nm）。","discriminating":"对'氧化物晶格传输'有判别力；对'氧化物 GB'和'孔隙气体'没有。下一句作者即承认气体不能排除。","verdict":"CONSISTENCY","verdict_reason":"定性符合；不是定量模型检验。"},
+  {"id":"C2","quantity":"SIMS 深度分布","target_data":"本文","authors_language":"this shows that O has diffused through the pre-formed","page":5,"where":"Fig. 5","used_in_construction":"NO","construction_evidence":"实验。","temporal":"NA。","metric":"Fig.5b：18O/Cr18O 峰约 95 s，Cr16O 约 52 s。按 0.2 nm/s 约 19 vs 10 nm，而 IG 氧化前沿在 140 nm。平面范围 300 μm，主要反映表面氧化物。18O/16O 在 Fig.5b 约 0.1，而 APT 选区约 3-7。","discriminating":"显示 O 内向传输，对路径无判别。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"纯实验。"},
+  {"id":"C3","quantity":"氧化物化学计量","target_data":"Cr2O3 理论 Cr40O60","authors_language":"which is consistent with the expected value for chromia","page":6,"where":"Fig. 7b, 8b, 9b","used_in_construction":"NO","construction_evidence":"理论化学计量。","temporal":"NA。","metric":"读图：Fig.7b Cr 41、O 45+14=59；Fig.8b Cr 42、O 48+7=55；Fig.9b Cr 40、O 54+2=56。O 偏低 2-5 at.%，APT 常见。","discriminating":"低。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"测量质量核对。"},
+  {"id":"C4","quantity":"IG 氧化网络连续性","target_data":"Rhines pack 文献 [9,11,50]","authors_language":"This aligns well with our results","page":8,"where":"Discussion","used_in_construction":"NO","construction_evidence":"文献对比。","temporal":"在先。","metric":"无。","discriminating":"低，温度不同。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"实验之间。"},
+  {"id":"C5","quantity":"Cr 主要沿 GB、DIGM","target_data":"Schreiber 2013 [35]、Volpe 2019 [41]","authors_language":"the well-explained mechanism is not considered in detail","page":8,"where":"Fig. 3a, 10","used_in_construction":"NO","construction_evidence":"文献对比。","temporal":"在先。","metric":"14 nm 无 Cr 带（<0.05 at.%）；无迁移量统计。","discriminating":"低。","verdict":"NOT_A_MODEL_TEST","verdict_reason":"实验之间。"}
+ ],
+ "paper_verdict":{"label":"EXPERIMENT_NOT_MODEL","why":"无预测模型；最强证据是 Fig.7c、9b 的界面 18O 层和 16O 氧化物内低 18O，确立了 O 内向到达界面并排除晶格路径。界面作为路径属于推断。","best_comparison":"C1","fraction_note":"5 条：1 CONSISTENCY，4 NOT_A_MODEL_TEST。"},
+ "checks_performed":[
+  {"what":"用一般热力学值估算 pO2（我算的，文中未给数）","result":"600 °C、CO/CO2=1:10 时 pO2≈2e-23 atm，低于 NiO 约 7e-20 atm，高于 Cr2O3 约 2e-36 atm。设计成立，但这不是'CO2 可排除'的说明。"},
+  {"what":"从 proxigram 读 18O 分数并与气体比较","result":"含 CO 的 1:10 气体 18O 分数约 92%（2×10×0.97/21）。Fig.7b 45/(45+14)=76%，Fig.8b 48/55=87%，Fig.10c 46/52=88%。'nearly identical' 只对 8b、10c 成立；76% 的 16O 来源文中未讨论（残留气氛、部分交换或 16O 氧化物，或峰分解）。"},
+  {"what":"对照'unequivocally proven'和孔隙证据","result":"文中同段写 '...unequivocally proven. However, the additional contribution of gaseous transport cannot be excluded'，且 Fig.2 的 tilt series 证明孔互连。18O 在界面只表示反应位置，不等于走界面。文中没有测量 18O 沿界面随深度变化，也未检查 16O 氧化物内 GB。"},
+  {"what":"估算 Cr 体扩散长度（我的估算，D 取一般文献值）","result":"Cr 在 Ni 中取 D0≈1e-4 m²/s，Q≈270 kJ/mol，600 °C、2 h 得 2√(Dt)≈13 nm，与 Fig.9b 的约 15 nm 贫化同量级。故'negligible'说得过满；不同 Q 取值给 4-56 nm。"},
+  {"what":"核对文中 SIMS 描述和图、方法","result":"正文称 'no speciﬁc (sputter) depth ... is given in the ﬁgure'，但 Fig.5 顶轴有 'Estimated sputter depth'。正文写 Bi3++ 77 nA，方法里 77 nA 是 Cs+，Bi3++ 只有 0.10 pA。Bi 束直径约 5 μm，插图不能解析 GB 宽度。"},
+  {"what":"检查分辨率声称与图","result":"摘要说 'sub-nanometer resolution'，但实际可见特征是 proxigram 约 4-5 nm 半高宽、Fig.10 2.5 nm bin；氧化物/金属界面还有 APT 局部放大伪影，文中未评估。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"界面 O 扩散被毫无疑义地证明","quote":"unequivocally proven","page":8,"reality":"同段承认气体传输不能排除；孔隙互连；氧化物 GB 未测；只有 4 个针尖。证明的是 O 到达界面并生成氧化物。","consistent":false},
+  {"claim":"Cr 体扩散可忽略","quote":"proving that Cr diffusion through the metal interior is negligible","page":7,"reality":"与 p3 的 'lattice diffusion of Cr occurs at the considered temperature, however to a limited extent' 及 Fig.9b 的 15 nm 贫化区并存。Fig.10 只说明局部 DIGM 带无 Cr。","consistent":false},
+  {"claim":"界面 Cr 2 at.% 说明合金 Cr 贡献可忽略","quote":"indicates a negligible contribution of Cr transport from the alloy to sustain oxide growth","page":6,"reality":"界面浓度非零并不说明通量小；Fig.9b 贫化梯度明确存在。结论推理不足。","consistent":false},
+  {"claim":"氧化物组成为 Cr2O3","quote":"expected exclusive growth of Cr2O3","page":5,"reality":"FFT 'consistent with M2O3'，EDX 和 APT Cr/O 约 2:3 支持，整体成立；FFT 本身不区分。","consistent":true},
+  {"claim":"支持经典理论","quote":"support classical theories of internal oxidation","page":1,"reality":"只支持 Stott 的定性路径；Wagner 的 O 过饱和、动力学未测，IG 内氧化深度未与理论比较。","consistent":false}
+ ],
+ "unverifiable":["Supplement（tilt series、峰分解）不在手边；Ref.[31] 的 STEM-EDX 只能转引；APT 的总针尖数和失败数未报。"],
+ "one_line":"纯实验：600 °C CO/C18O2 两段氧化后 APT 看到 16O 氧化物与合金之间有 8-10 nm 18O 层，排除晶格路径，确立 O 内向到达界面；'unequivocally proven' 的界面路径因孔隙互连和只有 4 个针尖而未被唯一证实。"
+}

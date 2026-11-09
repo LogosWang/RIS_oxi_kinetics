@@ -1,0 +1,74 @@
+{
+ "item":"1828","key":"B8ZA355P","cite":"Bonny 2013 Modelling Simul Mater Sci Eng 21:085004","type":"simulation",
+ "read_coverage":{"total_lines":1353,"read_through_line":1353,"pages_rendered":[8,9,10,11,12]},
+ "section_map":[
+  {"section":"Abstract + 1 Introduction","page":2,"gist":"为 PERFORM60 开发 FeNiCr EAM-13，聚焦点缺陷；目标成分 Fe-10Ni-20Cr；人为稳定 fcc，因此不能研究相稳定性"},
+  {"section":"2.1 Interatomic potential","page":3,"gist":"EAM 形式；纯元素拟合结构、Cij、空位、SIA、SFE，交叉项重点是 fcc Ni 中结合能和 Ni、Fe 中迁移能垒"},
+  {"section":"2.2 AKMC","page":4,"gist":"ANN 回归 NEB 能垒，ν0=6e12 常数，单空位 AKMC，一旦出现有序或析出就停止；D 用 MSD"},
+  {"section":"3.1 Pure elements","page":5,"gist":"Table 1：SIA 形成能高估，归因于与空位迁移能的 trade-off；Fe、Cr 的 fcc 能量按 bcc+120 meV 设定"},
+  {"section":"3.2 Dilute alloys","page":6,"gist":"Table 2-3：Ni 基吻合，Fe 基多数落在 DFT 范围外且称 DFT 不可靠；能垒按大权重拟合"},
+  {"section":"3.3 Concentrated alloys","page":8,"gist":"Fig.1-4：fcc-bcc 90-110 meV；SFE 13 mJ/m2；Ef 1.8 eV；Cij 354/167/155 GPa；稳定滑移；Frank 环"},
+  {"section":"4 Vacancy diffusion","page":10,"gist":"ANN 误差 4-5%；Fig.6-7 1373 K 下 D；比实验低约 1 个量级；DCr>DNi>DFe"},
+  {"section":"5 Conclusions + Appendix + refs","page":12,"gist":"推荐用于级联和 AKMC；Table A1 参数；Appendix 承认手调硬化节点和截断"}
+ ],
+ "contribution":{
+  "primary":"NEITHER","secondary":"FRAMEWORK","neither_type":"常规应用：已有 EAM 形式和同组拟合流程在 FeNiCr 上的势函数参数化",
+  "claimed":"开发面向辐照缺陷的 FeNiCr EAM 势，性质接近 316L，并以 AKMC 扩散做首次验证",
+  "quote":"we developed an embedded atom method type interatomic potential","quote_page":2,
+  "novelty_test":"EAM 形式来自 Daw & Baskes [4]，线性化拟合和有效规范来自先行工作 [55-58]，ANN-AKMC 来自 Castin [6-8]，本身是 EAM-11 [5] 的后续。实质新增是一组公开参数（Table A1），把点缺陷放进了目标；代价是 Cij 变差。作为工具可被他人使用，但没有新的形式或算法。",
+  "mechanism_evidence":"NA",
+  "reuse_test":"参数全部公开，可用于模型不锈钢的级联或 AKMC，但作者限定不能用于相稳定性，且未测试级联。方法复用的是前作。"
+ },
+ "parameters":[
+  {"name":"Fe、Cr 的 fcc 内聚能目标","value":"bcc + 约 120 meV（Fe fcc 4.40，bcc 4.28 eV/at）","provenance":"TUNED_OR_ASSUMED","page":5,"basis":"人为设定使 fcc 稳定；决定 Fig.1 的结论"},
+  {"name":"Cr 弹性常数和 SFE 目标","value":"C11=249 等；SFE 156-341","provenance":"TUNED_OR_ASSUMED","page":5,"basis":"fcc Cr 不稳定；用 Ni-Cr 固溶体外推或 private communication"},
+  {"name":"硬化节点和截断","value":"如 CrCr 2.0e4、-1030、1000；FeNi 40、-200；NiCr 180、-180","provenance":"TUNED_OR_ASSUMED","page":15,"basis":"Appendix：were manually tuned；Table A1 中的整数系数可见"},
+  {"name":"空位迁移能目标","value":"Fe 0.62，Ni 1.09 eV","provenance":"FIRST_PRINCIPLES","page":5,"basis":"Fe 取 [20] 中最低值，Ni 取 [21]；为此牺牲 SIA 形成能"},
+  {"name":"ν0","value":"6e12 /s 常数","provenance":"TUNED_OR_ASSUMED","page":4,"basis":"Fe 的 Debye 频率，直接线性影响 D"},
+  {"name":"熵因子","value":"Creal=3 exp(-Ef/kT)","provenance":"LITERATURE_FIT","page":11,"basis":"教科书 [41]，直接线性影响 D"},
+  {"name":"Ef(靶成分)","value":"1.8 eV","provenance":"MD_EMPIRICAL","page":9,"basis":"模型值进入 Eq.5-6；相差 0.1 eV 使 D 变 2.3 倍（1373 K）"}
+ ],
+ "dof":{"free_or_tuned":70,"independent_constraints":4,"note":"我数的 Table A1：ak 共 7+7+10+9+7+12=52，非零 A、C、D 6 个，共 58；其中约 12 个整数硬化系数显然手调；另有节点 rk 和截断。目标约 79 个（Table 1 约 44、Table 2 29、Table 3 6），部分是外推或人工设定。拟合后的独立外部约束我只数到 4 类：靶成分 Ef、靶成分 Cij、SFE（但与目标来源重叠）、1373 K 的 D。"},
+ "comparisons":[
+  {"id":"C1","quantity":"纯元素性质 vs 目标","target_data":"Table 1 目标列（[19-21,22,23,25,26,27] 等）","authors_language":"we can conclude that overall agreement is good, except for the interstitial formation energy","page":6,"where":"Table 1","used_in_construction":"YES_DIRECT","construction_evidence":"§2.1 和 §3.1 列为拟合目标","temporal":"构建前","metric":"Ni Em 1.09 vs 1.09；Fe Em 0.64 vs 0.62；SIA：Fe<100> 5.25 vs 3.20-3.62 (+45~64%)，Ni<100> 5.83 vs 4.07-4.11 (+42%)，Fe Tetra 7.06 vs 3.66-4.32 (+63~93%)。作者只说 SIA 例外，但 di-Vac 1nn 也出界：Fe 0.24 vs ≤0.18，Ni 0.12 vs 0.02，Ni 2nn +0.04 vs -0.08 (符号错)","discriminating":"拟合目标","verdict":"CALIBRATION","verdict_reason":"目标本身"},
+  {"id":"C2","quantity":"fcc Ni 中点缺陷-溶质结合能","target_data":"Tucker 2010 [21]","authors_language":"All the observed DFT trends are reproduced by EAM-13","page":6,"where":"Table 2","used_in_construction":"YES_DIRECT","construction_evidence":"§2.1：emphasis on point-defect binding energies in the fcc Ni matrix","temporal":"构建前","metric":"我算 MAE 0.034 eV (EAM-13) vs 0.33 eV (EAM-11)。只算成对项 0.041 vs 0.064。符号错误 EAM-13 2 个（Cr-Vac 2nn、Fe-Cr 2nn），Fe-Vac 1nn -0.11 vs -0.02 (5 倍)，Fe-Cr 1nn -0.07 vs -0.16","discriminating":"EAM-11 不以此为目标，比较不公平","verdict":"CALIBRATION","verdict_reason":"摘要的 benchmarked against DFT 正是拟合目标"},
+  {"id":"C3","quantity":"fcc Fe 中结合能","target_data":"Klaver 2012 [20]","authors_language":"While some values computed with the potential are within the DFT range, most are not","page":6,"where":"Table 2","used_in_construction":"YES_INDIRECT","construction_evidence":"作者说优先 Ni，Fe 基低权重","temporal":"构建前","metric":"我数：15 项中 EAM-13 在 DFT 范围内 4 项，EAM-11 也 4 项。Ni-Ni 哑铃 +0.62 vs -0.76~-0.08（符号相反），Cr-Cr -0.78 vs -0.31~0.20","discriminating":"DFT 分散大（fct 反铁磁基态），作者判断不可比。靶成分是 70 at% Fe，这部分却基本没有约束","verdict":"CALIBRATION","verdict_reason":"低权重目标，结果不理想"},
+  {"id":"C4","quantity":"空位-溶质迁移能垒","target_data":"[21] Ni，[20] Fe（取最低值）","authors_language":"Clearly, EAM-13 reproduces the DFT values well","page":6,"where":"Table 3","used_in_construction":"YES_DIRECT","construction_evidence":"The latter properties were fitted with large weight，且要求保持排序","temporal":"构建前","metric":"EAM-13：Ni 基 +6.2%，0%，-14.5%；Fe 基 +3.2%，-10.1%，0%。EAM-11：+23%，+7%，+25%，-2%，+33%，+37%","discriminating":"目标；EAM-11 失败是因为它没以此拟合","verdict":"CALIBRATION","verdict_reason":"大权重目标"},
+  {"id":"C5","quantity":"fcc-bcc 差和 fcc 稳定","target_data":"实验相图 Tomiska 2004 [28]，仅作区域标注","authors_language":"this conservative estimate is far above the reactor","page":8,"where":"Fig.1","used_in_construction":"YES_DIRECT","construction_evidence":"人为把 Fe、Cr 的 fcc 能设为 bcc+120 meV，Intro 说这是必需的","temporal":"构建前","metric":"90 meV→1044 K，110 meV→1277 K（文中 1050、1280）；复算吻合。fcc 在全成分稳定，含实验不稳定区","discriminating":"设计结果，不是预测；而且靶成分 1280 K 低于后面用的 1373 K","verdict":"CALIBRATION","verdict_reason":"按设计满足"},
+  {"id":"C6","quantity":"靶成分 SFE","target_data":"[25, 29-31]，10-30 mJ/m2","authors_language":"which is consistent with experiments","page":8,"where":"Fig.2","used_in_construction":"YES_INDIRECT","construction_evidence":"Intro 将合理 SFE 列为要求；[25] 同时是纯元素 SFE 目标的来源和这里的“实验”，且 [25] 是热力学计算","temporal":"构建前","metric":"13 落在 10-30 内（低端，范围宽 3 倍）。全成分：作者说 agreement is poor","discriminating":"宽窗口；同样的 EAM-11 也通过","verdict":"CALIBRATION","verdict_reason":"要求内且来源重叠"},
+  {"id":"C7","quantity":"靶成分 Ef 和成分依赖","target_data":"Delczeg 2012 [32]，DFT 1.9-2.3 eV","authors_language":"which is slightly underestimated by EAM-13","page":9,"where":"Fig.3","used_in_construction":"UNCLEAR","construction_evidence":"纯元素 Ef 在目标内；靶成分未明确入拟合，但摘要称 ensured","temporal":"[32] 早于本文","metric":"1.8 vs 1.9-2.3：-5%~-22%。结论称 well reproduced。成分趋势：DFT 随 Cr 增加、随 Ni 减少。文字称 EAM-13 随 Ni、Cr 减少而减少；但 Fig.3 读图是向 Fe 角（Ni、Cr 都小）Ef 变大（1.87），随 Ni 增加而变小，在 Ni=10 时随 Cr 由 0 到 20 也变小。所以 Cr 趋势与 DFT 相反","discriminating":"EAM-11 的 2.0 eV 更好，作者称 excellent，同时结论推荐 EAM-13","verdict":"VERIFICATION","verdict_reason":"对 DFT；单点加定性"},
+  {"id":"C8","quantity":"靶成分 Cij vs 316L","target_data":"Silk [33]，Ledbetter [34,35]","authors_language":"agreement is poor","page":9,"where":"§3.3","used_in_construction":"YES_INDIRECT","construction_evidence":"Intro 将合理 Cij 列为要求，但未达到","temporal":"数据在先","metric":"C11 354 vs 204-226 (+57~74%)，C12 167 vs 132-134 (+25~27%)，C44 155 vs 111-122 (+27~40%)。KH 229 vs 156-165 (+39~47%)，C′ 93.5 vs 36-46 (2-2.6 倍)，Zener 1.66 vs 2.65-3.08。EAM-11 204、136、129 接近实验","discriminating":"定量失败，EAM-11 通过","verdict":"CONSISTENCY","verdict_reason":"作者判定 within reason 和 acceptable，无标准；不是通过的预测"},
+  {"id":"C9","quantity":"ANN vs NEB 能垒","target_data":"本文 NEB + EAM-13","authors_language":"the average error for Fe–Vac exchange is 4.4%","page":10,"where":"Fig.5","used_in_construction":"UNCLEAR","construction_evidence":"写 randomly chosen LAEs，未说明是否与 ANN 训练集分离","temporal":"同期","metric":"4.4%、4.1%、4.6%。按 1 eV 约 0.044 eV，1373 K 时率差 1.45 倍，600 K 时 2.3 倍。读图散点带约 ±0.1 eV，大于 1.01、0.98、0.90 eV 的物种差异","discriminating":"检验数值 surrogate","verdict":"VERIFICATION","verdict_reason":"同模型内部"},
+  {"id":"C10","quantity":"Cr 最快","target_data":"[42-47]","authors_language":"in broad agreement with experiments that all claim Cr to be the fast diffuser","page":12,"where":"Fig.7","used_in_construction":"YES_INDIRECT","construction_evidence":"Vac→Cr 能垒排序以大权重拟合（Ni 基 0.71 最低）；EAM-11 因排序不对被排除，不进入扩散研究","temporal":"实验 1969-1978，早于模型","metric":"Fig.6 靶成分 4.8/4.45/4.13e-12 cm2/s，Cr/Fe 只差 16%；Fig.7 靶成分三点几乎重合。平均能垒差 0.11 eV 预期 2.5 倍，实际 1.16 倍。无误差棒，且作者称实验散布大","discriminating":"结果由拟合能垒直接决定；靶成分差异小于任何合理不确定度","verdict":"CALIBRATION","verdict_reason":"摘要称 validation，但排序在拟合时已被强制"},
+  {"id":"C11","quantity":"DNi>DFe","target_data":"支持 DFe>DNi 的 [42,45,46,48-52]（8 篇）vs 支持 DNi>DFe 的 [53,54]（2 篇）","authors_language":"The results from these simulations are consistent with experiments, i.e., DCr > DNi > DFe","page":2,"where":"Abstract, §4, Fig.7","used_in_construction":"NO","construction_evidence":"DFT 稀溶能垒两基体都是 Fe 比 Ni 快（Ni 基 0.97 vs 1.09，Fe 基 0.62 vs 0.89），浓合金平均能垒翻转成 Ni 0.98 < Fe 1.01，未拟合","temporal":"实验在先","metric":"靶成分 DNi/DFe=1.08。文中自己引用 8 篇相反，2 篇（同作者 Smith & Gibbs）相同。摘要和结论都写 consistent with experiments","discriminating":"这才是拟合外的唯一排序预测，结果与多数实验相反","verdict":"CONSISTENCY","verdict_reason":"作者声称相符；实情是只与少数相符，放在定性档并在此标明不支持"},
+  {"id":"C12","quantity":"1373 K 下 D 绝对值","target_data":"Million 1985 [42] 及其引文","authors_language":"Such agreement is very reasonable","page":12,"where":"Fig.7（实验点未画）","used_in_construction":"NO","construction_evidence":"D 未入拟合；但 Ef、ν0、熵因子 3 都是选定值","temporal":"实验在先","metric":"文字：实验都高约 1 个量级。图中无实验点，我不能读数核实。1 个量级在 1373 K 相当于 0.27 eV，外推到 600 K 同样能差约 194 倍。单一温度，无激活能比较","discriminating":"ν0 或 Ef 改变就能吸收；常数 D 也无法被排除","verdict":"CONSISTENCY","verdict_reason":"量级比较、未作图、无可算误差"},
+  {"id":"C13","quantity":"D 随成分趋势","target_data":"[42] Figs.5-6","authors_language":"are qualitatively reproduced","page":12,"where":"Fig.7","used_in_construction":"NO","construction_evidence":"未入拟合","temporal":"实验在先","metric":"20% Cr：CFe 70→20 时 D 增约 15 倍（读图）。其中 Ef 1.75→约 1.55 eV 就贡献约 5 倍。局部极小 Fe50Ni20Cr 作者承认未再现。Fig.7 左 stable 区只有 3 个点","discriminating":"趋势二值，低；未作实验叠图","verdict":"CONSISTENCY","verdict_reason":"定性、高阶趋势失败"},
+  {"id":"C14","quantity":"Frank 环比完美环稳定","target_data":"316L TEM [36-38]","authors_language":"consistent with the low stacking fault energy reproduced by EAM-13 and experimental observations of Frank loops","page":10,"where":"Fig.4","used_in_construction":"YES_INDIRECT","construction_evidence":"低 SFE 是要求，Frank 环能量直接依赖 SFE","temporal":"实验在先","metric":"读图 d≈3.5-5 nm：CIR 约 0.55-0.45，perfect 约 0.60-0.50 eV/SIA，差约 0.05 eV/SIA；≤6 nm，远小于实验环","discriminating":"SFE 低的任何势都通过，EAM-11 亦同","verdict":"CONSISTENCY","verdict_reason":"定性，由 SFE 决定"},
+  {"id":"C15","quantity":"稳定滑移和 Frank 环不解层","target_data":"与 EAM-11 比较 [5]","authors_language":"Similar to EAM-11, we found that EAM-13 provides stable glide","page":10,"where":"§3.3","used_in_construction":"NO","construction_evidence":"无外部数据","temporal":"同组","metric":"5-100 m/s，100-900 K，2.5 GPa；无数字对比","discriminating":"稳定性 sanity check","verdict":"NOT_A_MODEL_TEST","verdict_reason":"无外部数据"}
+ ],
+ "paper_verdict":{"label":"CALIBRATION_PLUS_CONSISTENCY","why":"Table 1-3、fcc 稳定、SFE、Cr 最快都在拟合目标或要求之内；唯一拟合外的量是 D：绝对值低约 1 个量级且未作图，Ni/Fe 排序与文中引用的 8 篇对 2 篇相反，所以作者的 first validation 不成立。声称适合级联却未做级联、Ed 或 SIA 迁移。","best_comparison":"C12","fraction_note":"15 条：CALIBRATION 7，VERIFICATION 2，CONSISTENCY 5，NOT_A_MODEL_TEST 1；POSTDICTION 0。"},
+ "checks_performed":[
+  {"what":"统计 §4 中 Fe、Ni 排序的引文","result":"[42,45,46,48-52] 共 8 篇称 DFe>DNi，[53,54] 共 2 篇称 DNi>DFe。摘要与结论只写 consistent。"},
+  {"what":"对比目标列表与“验证”","result":"Table 1-3 是拟合目标；Cr 最快由能垒排序强制；SFE 的 [25] 同时是目标来源和“实验”；只有 Ni/Fe 排序和 D 绝对值是拟合外量。"},
+  {"what":"复算 Table 2-3 的误差、范围内项数","result":"Ni 基 MAE 0.034 vs 0.33 eV；Fe 基 15 项中各 4 项在范围内；能垒 EAM-13 最大 -14.5%，EAM-11 最大 +37%。"},
+  {"what":"复算 Eq.5-6 和 Fig.6→Fig.7 的换算","result":"42³×4=296352；Ef=1.8 eV 时 Creal=7.4e-7，比值 0.22；4.1-4.8e-12→9e-13~1.05e-12，而 Fig.7 约 7e-13，对应 Ef≈1.84 eV，基本一致。"},
+  {"what":"用 Cij 算 KH、C′、Zener","result":"KH +39~47%，C′ 2-2.6 倍，Zener 1.66 vs 2.65-3.08；poor 是实情，结论 acceptable 无依据。"},
+  {"what":"用文中 Fig.1 估算对照扩散温度","result":"靶成分估算 fcc→bcc 1280 K，稳定性只检验到 900 K，而 D 计算在 1373 K。AKMC 为刚性晶格，不会转变，但验证温度在作者自己的估算之上。"},
+  {"what":"检查 AKMC 停止条件与实验相图","result":"作者让 AKMC 在有序或析出前停止；1373 K 在 Fe10Ni20Cr 处实验为单相（作者自己标注），即模型倾向相分离，与实验相反，文中未讨论。"},
+  {"what":"看 Fig.3 对照文字","result":"Fe 角（0,0）黄色约 1.87，靶成分绿色约 1.75。文字称随 Ni、Cr 减少而减小，图中是增大。"},
+  {"what":"计数 Table A1 参数","result":"52 个 ak + 6 个非零 A/C/D=58，另约 12 个系数是手调整数，rk 和截断也调过。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"AKMC 首次验证与实验相符","quote":"The results from these simulations are consistent with experiments","page":2,"reality":"Cr 最快已由拟合强制；Ni>Fe 与文中 8 篇相反，只与 2 篇同；靶成分三者差 <16%，无误差棒。","consistent":false},
+  {"claim":"靶合金性质被保证接近 316L","quote":"whose properties were ensured to be close to those of 316L","page":2,"reality":"C11 +57~74%，正文说 agreement is poor；Ef 也低；fcc 是人为的。结论改口 acceptable。","consistent":false},
+  {"claim":"适合级联和缺陷演化","quote":"suitable for studying the defect production","page":12,"reality":"全文无级联、无 Ed、无 SIA 迁移、无短程测试；SIA 形成能高 42~93%。","consistent":false},
+  {"claim":"D 差 1 个量级很合理","quote":"Such agreement is very reasonable","page":12,"reality":"实验点未画；0.27 eV 当量；在 600 K 同量误差约 194 倍。","consistent":false},
+  {"claim":"纯元素除 SIA 外都吻合","quote":"overall agreement is good, except for the interstitial formation energy","page":6,"reality":"di-Vac 1nn 三元素都高，Ni 0.12 vs 0.02，Ni 2nn 符号错。","consistent":false},
+  {"claim":"所有 Ni 基 DFT 趋势都再现","quote":"All the observed DFT trends are reproduced by EAM-13","page":6,"reality":"对哑铃和主要项成立；Cr-Vac 2nn、Fe-Cr 2nn 符号错，Cr-Cr 2nn 0.01 vs 0.11。","consistent":false},
+  {"claim":"EAM-13 预测 Ni-Cr、Cr-Cr 哑铃不稳定","quote":"EAM-13 predicts the Ni–Cr and Cr–Cr","page":6,"reality":"Table 2 中 EAM-13 为 +0.51、+0.92 与 DFT 吻合；EAM-11 才是 -0.34、-0.65。正文应为 EAM-11，属笔误。","consistent":false},
+  {"claim":"手动调节存在","quote":"were manually tuned","page":15,"reality":"作者如实披露，Table A1 整数系数可见。","consistent":true},
+  {"claim":"不能用于相稳定性","quote":"not suitable to model thermodynamic phase stabilities","page":8,"reality":"如实披露。但题目是 ageing，文中又未讨论 AKMC 中的相分离。","consistent":true}
+ ],
+ "unverifiable":["D 的实验值（[42] 不在手边且图中未叠加）；一量级只来自作者文字","316L 与 Fe-10Ni-20Cr 的差异对 Cij 的影响","ANN 测试构型是否独立于训练","[32] 的 DFT 方法细节","AKMC 中观察到的相分离具体是哪些成分和时间（文中只提及停止条件）"],
+ "one_line":"EAM-13 的 Ni 基结合能（MAE 0.034 eV）和能垒都是拟合目标；唯一“验证”D 在 1373 K 低约 10 倍、未叠实验图，且 DNi>DFe 与文中 8 篇对 2 篇相反；C11 +57~74%、SIA +42~93%，级联完全未测却被推荐。"
+}

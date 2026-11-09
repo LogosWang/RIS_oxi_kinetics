@@ -1,0 +1,68 @@
+{
+ "item":"1792","key":"ACWB4KFQ","cite":"Liu 2024 Comput Mater Sci 233:112693","type":"simulation",
+ "read_coverage":{"total_lines":957,"read_through_line":957,"pages_rendered":[1,2,3,4,5,6,7]},
+ "section_map":[
+  {"section":"Abstract + 1 Introduction","page":1,"gist":"批评 Tersoff/GW/MEAM 等分析势在缺陷能、迁移能上不一致；用 DP-ZBL [35] 训练 3C-SiC 势，宣称可终结争议"},
+  {"section":"2.1 Training","page":2,"gist":"Table 2 初始训练集含体相、压缩/拉伸、位移、弹性形变、应变空位/反位/间隙、液相、二聚体、辐照轨迹；PBE，600 eV；DP-GEN 主动学习 50 轮，33898 个构型，300-4000 K；未给网络结构和测试集"},
+  {"section":"2.2 ZBL interpolation","page":2,"gist":"ZBL 表 + 0.5-5 Å DFT 二聚体，1.0-1.2 Å 接合；Fig.1 只显示 Si-C"},
+  {"section":"3.1 Near-equilibrium","page":3,"gist":"Fig.2-3 训练集 parity，RMSE 0.01 meV/atom 和 0.16 eV/Å；Table 3 晶格/弹性/缺陷能；Fig.4 EOS；Fig.5 声子含 IXS 实验"},
+  {"section":"3.2 Threshold displacement","page":4,"gist":"Table 4 与 Zhao 2012 CPMD [60] 比较 8 个方向 Ed，9600 原子，300 K，0.5 eV 步长"},
+  {"section":"3.3 Single PKA","page":5,"gist":"Fig.6-7 一次 5 keV Si PKA，[135] 方向，172.8 万原子，4 种势的缺陷数，无参照数据"},
+  {"section":"4-5 Discussion/Conclusions + refs","page":5,"gist":"强调拟合能力更强所以更准；计算慢约 100 倍；结论复述"}
+ ],
+ "contribution":{
+  "primary":"NEITHER","secondary":"FRAMEWORK","neither_type":"常规应用：已有 DP-ZBL/DP-GEN 方法在新体系上的势函数参数化",
+  "claimed":"开发并验证 3C-SiC 高精度深度势，解决分析势长期差异问题，达到量子力学精度",
+  "quote":"solved the long-standing dilemma","quote_page":1,
+  "novelty_test":"方法全部已有：DP-ZBL 来自同组 Wang 2019 [35]，主动学习 DP-GEN [43]，接合流程来自 Stoller [44]，文中明说 We refer to our previous work。实质新增只是针对 3C-SiC 的一组训练数据和权重，以及与分析势的表格比较，模型形式没变。",
+  "mechanism_evidence":"NA",
+  "reuse_test":"势本身可被用于 SiC 模拟（数据 on request，未公开势文件），但不能用于别的问题；方法复用的是前作。"
+ },
+ "parameters":[
+  {"name":"DP 权重","value":"未报告（文中无网络结构、无损失权重）","provenance":"FIT_TO_SAME_DATA","page":2,"basis":"全部拟合自本文 PBE 数据"},
+  {"name":"训练集","value":"33898 构型，PBE/600 eV/KSPACING 0.15","provenance":"FIRST_PRINCIPLES","page":2,"basis":"Table 2 + DP-GEN；停止准则只有 good enough"},
+  {"name":"ZBL 接合区","value":"1.0-1.2 Å","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"按前作与 Stoller 流程选择，未显示敏感性"},
+  {"name":"NAC 参数","value":"Z*=2.69, ε0=6.99","provenance":"FIRST_PRINCIPLES","page":4,"basis":"LO-TO 分裂由 DFT 给，不来自 DP，即 Γ 点光学支的一部分不是 DP 预测"},
+  {"name":"化学势条件","value":"Si-rich，μSi=μSi(bulk)","provenance":"TUNED_OR_ASSUMED","page":3,"basis":"影响 Table 3 的所有缺陷能，尤其对未拟合纯 Si 的经验势"}
+ ],
+ "dof":{"free_or_tuned":null,"independent_constraints":2,"note":"权重数未报告（DP 通常 1e4-1e5 量级，这是我的一般知识，不是文中数字）。我数的独立外部约束只有两组：Zhao Ed 的 8 个值和 Serrano 声子色散；其余对比量都在 Table 2 的训练类别内。全文没有独立测试集。"},
+ "comparisons":[
+  {"id":"C1","quantity":"训练集上能量/力 RMSE","target_data":"本文 DFT","authors_language":"for all the configurations in the training dataset","page":3,"where":"Fig.2, Fig.3","used_in_construction":"YES_DIRECT","construction_evidence":"图注明说 final training set","temporal":"训练集本身","metric":"文中 E RMSE 0.01 meV/atom，F 0.16 eV/Å。Fig.2 在 -6 eV/atom 附近点带可见扩散约数十 meV/atom。Table 3 Ecoh 差 1.3 meV/对=0.65 meV/atom，已比 0.01 大 65 倍，故此数应为错（可能单位错）","discriminating":"无，训练误差","verdict":"CALIBRATION","verdict_reason":"训练集，无 held-out 数据"},
+  {"id":"C2","quantity":"Si-C 二聚体曲线","target_data":"本文 DFT 和 ZBL 公式","authors_language":"DP-ZBL is consistent with pure ZBL potential","page":3,"where":"Fig.1","used_in_construction":"YES_DIRECT","construction_evidence":"ZBL 直接接入，二聚体 DFT 在训练集","temporal":"构建内","metric":"<1 Å 与 ZBL 重合属定义。读图：0.5 Å 处 DFT 约 178 eV vs ZBL 约 228 eV，差约 28%，作者未讨论；只给 Si-C，未给 Si-Si 和 C-C","discriminating":"无","verdict":"CALIBRATION","verdict_reason":"按构造相同"},
+  {"id":"C3","quantity":"a0、Ecoh、Cij、KH/EH/GH vs 本文 DFT","target_data":"DFTCurrent","authors_language":"All results were in excellent agreement with DFT data computed in this work","page":3,"where":"Table 3","used_in_construction":"YES_DIRECT","construction_evidence":"Table 2 含 Equilibrium、Compressed、Stretched、Elastically distorted","temporal":"同一 DFT","metric":"a0 -0.01%，Ecoh -0.01%，C11 -1.4%，C12 -2.2%，C44 -7.1%，KH -1.8%，EH -4.1%，GH -4.7%，ν +6%","discriminating":"低；Tersoff-ZBL 的 GH(+2.4%) 比 DP 好，EH(+4.8%) 和 C44(-8.4%) 与 DP 相当","verdict":"CALIBRATION","verdict_reason":"量在训练类别内，且 C44 差 7% 不算 excellent"},
+  {"id":"C4","quantity":"同上 vs 文献 DFT","target_data":"Pizzagalli 2021 [47]","authors_language":"referred from other works","page":3,"where":"Table 3","used_in_construction":"YES_INDIRECT","construction_evidence":"文献值未入训练，但与训练同泛函级别、同一性质，只差计算细节；不算独立物理检验","temporal":"先于本文","metric":"C44 223.1 vs 239.5 (-6.8%)，C11 -2.2%，GH -4.9%，a0 -0.06%","discriminating":"低","verdict":"CALIBRATION","verdict_reason":"事实上由同级 DFT 决定"},
+  {"id":"C5","quantity":"8 个点缺陷形成能 vs 本文 DFT","target_data":"DFTCurrent","authors_language":"match well with the DFT results for all the defect configurations","page":3,"where":"Table 3","used_in_construction":"YES_DIRECT","construction_evidence":"Table 2 列出 Vacancies/Antisites/Interstitials with strain","temporal":"同一 DFT","metric":"MAE 0.07 eV，最大 0.13 eV。对比：经验势 MAE 2.4-11.4 eV","discriminating":"拟合目标，不具判别力","verdict":"CALIBRATION","verdict_reason":"摘要把它称为 radiation damage 性质的验证，但缺陷构型在训练集"},
+  {"id":"C6","quantity":"缺陷形成能 vs 文献 DFT","target_data":"Hu 2014 [48]，Sun 2017 [49]","authors_language":"referred from other works","page":3,"where":"Table 3","used_in_construction":"YES_INDIRECT","construction_evidence":"DP 跟随本文 DFT；DP 与 DFTCurrent 差 0.07 eV，而 DFTCurrent 与文献差 0.21 eV，说明对文献的偏差就是 DFT 设置差异","temporal":"先于本文","metric":"MAE 0.24 eV，最大 SiTC -0.70 eV，SiTSi -0.61 eV","discriminating":"低","verdict":"CALIBRATION","verdict_reason":"同一性质、同级 DFT"},
+  {"id":"C7","quantity":"EOS","target_data":"本文 DFT","authors_language":"well reproduces the DFT results","page":3,"where":"Fig.4","used_in_construction":"YES_DIRECT","construction_evidence":"Table 2 Compressed/Stretched","temporal":"同一 DFT","metric":"0.8-1.2 a/a0 上读图与 DFT 点重合到线宽；无数值","discriminating":"低","verdict":"CALIBRATION","verdict_reason":"训练类别内；不能证明 capable to cover 其他构型"},
+  {"id":"C8","quantity":"声子 vs 本文 DFT","target_data":"本文 DFPT","authors_language":"are close to the DFT results","page":4,"where":"Fig.5","used_in_construction":"YES_INDIRECT","construction_evidence":"Table 2 Atom displaced 对应 Thermo properties；力常数来自同一 PES；LO-TO 用 DFT 的 Z*、ε0","temporal":"同一 DFT","metric":"读图：K 点 LA 17.7 vs 18.6 THz (-5%)，L 点 TA 8.5 vs 7.8 THz (+9%)，其他约 ≤0.5 THz","discriminating":"低","verdict":"CALIBRATION","verdict_reason":"位移构型在训练集"},
+  {"id":"C9","quantity":"声子 vs IXS 实验","target_data":"Serrano 2002 [56]","authors_language":"match well with the experimental data","page":4,"where":"Fig.5","used_in_construction":"NO","construction_evidence":"文中写 Data used to train the neural network were all generated by DFT，实验未入","temporal":"实验早于模型 21 年，非盲","metric":"读图约 30 个点，多数 ≤0.5 THz (~3%)；最大 K 点 LA 17.7 vs 19.4 THz (-9%，此处 DFT 18.6，-4%)；Γ-L TA 靠近 L 处约 7.7 vs 6.4 THz (+20%，DFT 约 +12%)。DP 在这几处比 DFT 更差。未给 RMSE","discriminating":"任何 PBE 水准模型都能通过；图中没有经验势对照线，无法说明 DP 优势","verdict":"POSTDICTION","verdict_reason":"数据独立，有可读误差，但检验的主要是 PBE 谐振近平衡性质，不涉及辐照"},
+  {"id":"C10","quantity":"Z*、ε0 vs 实验","target_data":"Olego 1982 [54]，Madelung [55]","authors_language":"are in agreement with the experimental value","page":4,"where":"正文","used_in_construction":"NO","construction_evidence":"DFT 量，与 DP 无关","temporal":"实验在先","metric":"Z* 2.69 vs 2.69 (0%)，ε0 6.99 vs 6.52 (+7.2%)","discriminating":"不涉 DP","verdict":"NOT_A_MODEL_TEST","verdict_reason":"这是 DFT 对实验，不检验 DP"},
+  {"id":"C11","quantity":"Ed（8 方向）vs CPMD","target_data":"Zhao 2012 [60]，含本文通讯作者 Xue","authors_language":"are close to the DFT calculations","page":5,"where":"Table 4","used_in_construction":"UNCLEAR","construction_evidence":"Zhao 的 Ed 未列入训练；但 Table 2 有 Irradiation damage frames；主动学习的停止准则只写 good enough，不知是否以 Ed 为判断","temporal":"数据先于模型，非盲","metric":"我算：DP MAE 4.5 eV，MAPE 14.3%，最大 +32% (Si[-1-1-1] 43.5 vs 33)；EDIP 20.6%，Tersoff 25.1%，MEAM 27.3%，GW 38.7%，Vashishta 172%","discriminating":"DP 总体最好，但并非逐方向：Si[100] 和 Si[111] 上 EDIP 优于 DP（+2/+2% vs -18/+10%），Si[100] 上 Tersoff 和 MEAM 也更好，C[-1-1-1] 上 Tersoff 更好。无实验 Ed，泛函、T、判据与 [60] 是否相同未核实","verdict":"VERIFICATION","verdict_reason":"对比对象是别的高保真模拟，检验 surrogate，不是物理真实性；是本文最有价值的非训练对比，但差 14% 不算量子力学精度"},
+  {"id":"C12","quantity":"DP 比分析势更接近 DFT","target_data":"Table 3, Table 4 中分析势列","authors_language":"gave closer predictions to the DFT criterion than analytical potentials","page":1,"where":"Table 3, Table 4","used_in_construction":"YES_DIRECT","construction_evidence":"比赛尺度正是 DP 的训练目标，而分析势有不同的拟合目标（多为实验）","temporal":"事后比较","metric":"缺陷能 MAE 0.07 vs 2.4-11.4 eV。Ecoh 列 DFT -15.06 vs 分析势 -12.67 到 -12.86，但 -12.68 与常引的 SiC 实验内聚能（6.34 eV/atom，这是我的一般知识）一致；-15.06 看来是未扣孤立原子的 VASP 总能（Fig.2 轴也是 -7.5 eV/atom），即该列比较的可能不是同一量","discriminating":"结构性有利于 DP，不能证明对物理更准","verdict":"CALIBRATION","verdict_reason":"尺子是自己的训练目标"},
+  {"id":"C13","quantity":"单次 5 keV 级联缺陷数比较","target_data":"无外部参照，只有 4 种势彼此比较","authors_language":"Defect yields and ratios predicted by the four potentials are distinguishing","page":5,"where":"Fig.6, Fig.7","used_in_construction":"NO","construction_evidence":"无参照","temporal":"NA","metric":"读图稳定缺陷：DP 约 52，Tersoff 60，MEAM 85，GW 105；每势仅一次 PKA、一个方向。无误差棒","discriminating":"无真值；DP 与 Tersoff 只差 15%，单次运行不足以区分","verdict":"NOT_A_MODEL_TEST","verdict_reason":"摘要 more realistic depiction 所依赖的这部分没有任何数据可比"},
+  {"id":"C14","quantity":"GW 缺陷多归因于 Ed 低估","target_data":"Table 4 内部","authors_language":"We infer this is because the GW-ZBL potential","page":5,"where":"Fig.6, Table 4","used_in_construction":"NO","construction_evidence":"无","temporal":"事后","metric":"反例：Tersoff 的 Ed 与 DP 相近（MAE 6.6 vs 4.5 eV），峰值却只有约 90 vs 205，差 2.3 倍，Ed 不足以解释峰值","discriminating":"未对 Ed 做开关，无因果","verdict":"CONSISTENCY","verdict_reason":"事后解释，且本文数据已有反例"}
+ ],
+ "paper_verdict":{"label":"CALIBRATION_PLUS_POSTDICTION","why":"唯一站得住的 POSTDICTION 是声子对 IXS（多数 ≤3%，K 点 -9%），但它检验的是 PBE 近平衡性质，主要结论不靠它，属边缘。Ed 对 CPMD 的 14% MAPE 是最接近辐照的独立对比，只算 surrogate verification。Table 3、EOS、缺陷能全部在训练类别内却被写成验证；全文无测试集；单次级联无任何参照。","best_comparison":"C11","fraction_note":"14 条：CALIBRATION 9，VERIFICATION 1，POSTDICTION 1，CONSISTENCY 1，NOT_A_MODEL_TEST 2。"},
+ "checks_performed":[
+  {"what":"对照 Table 2 训练类别与 Table 3/Fig.4/Fig.5 验证量","result":"a0、Ecoh、Cij、EOS、空位、反位、间隙、声子位移全部在训练类别内。只有 Ed 和 IXS 不在。"},
+  {"what":"用 Table 3 复算所有误差和 MAE","result":"DP vs DFTCurrent 缺陷 MAE 0.07 eV，DP vs 文献 0.24 eV，DFTCurrent vs 文献 0.21 eV。C44 -7.1%。KH=(C11+2C12)/3 复算：DP 207.8 与表 207.7 一致，DFT 211.5 一致。"},
+  {"what":"复算 Table 4 的 MAE/MAPE 和逐方向排序","result":"DP 14.3%，EDIP 20.6%，Tersoff 25.1%，MEAM 27.3%，GW 38.7%，Vashishta 172%；最大 C[111] Vashishta 150.5 eV。DP 不是逐方向最好。"},
+  {"what":"用 Ecoh 差检验声称的 RMSE","result":"(-15.0630)-(-15.0643)=1.3 meV/对=0.65 meV/atom，大于声称 RMSE 0.01 meV/atom 65 倍；缺陷能误差 0.1 eV 除以 O(100) 原子超胞也约 1 meV/atom。Fig.2 放大可见 -6 eV/atom 附近约数十 meV 扩散。0.01 meV/atom 不可信。"},
+  {"what":"放大 Fig.5 读 DP/DFT/实验","result":"K 点 LA：DP 17.7，DFT 18.6，实验 19.4 THz；L 点 TA：DP 8.5，DFT 7.8。实验点约 6.4 THz（在 L 前）。match well 大体成立，但 DP 局部比 DFT 差。"},
+  {"what":"用 Fig.6 读数复算复合比例，并与 Fig.7 求和交叉","result":"DP (205-52)/205=75%，GW (335-105)/335=69%，MEAM (140-85)/140=39%，Tersoff (90-60)/90=33%。文中 20-30% 对后两者偏低。Fig.7 求和与 Fig.6 终态一致（DP 12+39=51，GW 32+73=105）。"},
+  {"what":"检查引言批评的量是否被本文回答","result":"引言提到迁移能和层错的争议，Table 3-4 没有迁移能垒，没有层错或位错、没有非晶和熔化性质。"},
+  {"what":"原子数和方向核对","result":"10×10×12×8=9600，60³×8=1728000，符合。Table 4 每方向是否多次取样未说明。"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"解决长期矛盾、终结争议","quote":"can terminate these controversies","page":2,"reality":"引言提到的迁移能和层错差异完全未测；单次级联无参照。证据只有训练内性质和 8 个 Ed。","consistent":false},
+  {"claim":"精度达到量子力学水平","quote":"can be expected to the level of quantum mechanics","page":1,"reality":"Ed 相对 CPMD MAPE 14%，最大 +32%；C44 -7%；声子 K 点差 DFT 5%。","consistent":false},
+  {"claim":"开发并验证（validated）","quote":"developed and validated an accurate inter-atomic potential","page":1,"reality":"全文无测试集，Fig.2-3 明确是训练集；所谓验证量大部分在 Table 2 训练类别内。","consistent":false},
+  {"claim":"RMSE 0.01 meV/atom","quote":"are 0.01 meV/atom","page":3,"reality":"与本文 Table 3 能量差矛盾（0.65 meV/atom）和 Fig.2 视觉扩散矛盾，数值或单位有误。","consistent":false},
+  {"claim":"所有结果 excellent","quote":"All results were in excellent agreement with DFT","page":3,"reality":"C44 -7.1%，GH -4.7%，EH -4.1%；Tersoff 的 GH 比 DP 更接近。缺陷能确实很好，但在训练集。","consistent":false},
+  {"claim":"Ed 明显优于经验势","quote":"it is clear that the DP-ZBL potential yield better Ed values","page":5,"reality":"总体 MAPE 最低成立，但 8 方向中 EDIP/Tersoff/MEAM 在若干方向更好。","consistent":true},
+  {"claim":"GW-ZBL 缺陷能较真实（引言引 Samolyuk）","quote":"gives a more realistic description of defect formation energy","page":2,"reality":"本文 Table 3 中 GW V_C=-0.84 eV、SiTC=0.33 eV，MAE 4.2 eV，为第 2 差，与引言矛盾且作者未解释；可能是化学势或实现差异，分析势列可靠性存疑。","consistent":false},
+  {"claim":"复合 20-30%","quote":"while only 20% ∼30% recombine","page":5,"reality":"读 Fig.6 约 33-39%。","consistent":false}
+ ],
+ "unverifiable":["Zhao 2012 [60] 的泛函、温度、判据是否与本文 Ed 流程可比","Ecoh -15.06 是否总能（依据是一般知识和 Fig.2 轴，未查 [47]）","分析势列的实现细节（化学势、势参数版本）","主动学习是否以 Ed 或缺陷能作为停止判据","势文件和训练数据（on request，未公开）"],
+ "one_line":"已有 DP-ZBL 在 3C-SiC 上的参数化：缺陷能 MAE 0.07 eV 等都在训练类别内，无测试集；独立对比只有 Ed 相对 CPMD 14% MAPE（最大 +32%）和声子 ≤9%，迁移能未测，而一次 5 keV 级联无参照，声称的终结争议没有支撑。"
+}

@@ -1,0 +1,59 @@
+{
+ "item":"1806","key":"PXVVURXC","cite":"Burr 2013 Corros Sci","type":"simulation",
+ "read_coverage":{"total_lines":545,"read_through_line":545,"pages_rendered":[2,3]},
+ "section_map":[
+  {"section":"Introduction","page":1,"gist":"Zry-4 去 Ni 后 HPUF 下降但机制不明；Hatano 提出金属态 SPP 作为穿越氧化膜的 H 桥；本文算二元金属间相的 H 溶解焓判断哪类 SPP 符合 Hatano 模型"},
+  {"section":"2 Computational methodology","page":2,"gist":"CASTEP 5.5、超软赝势、450 eV、PBE、k 间距 0.030 1/Å、收敛 1e-3 eV/atom；未提零点能和温度修正"},
+  {"section":"3.1 alpha and beta-Zr","page":2,"gist":"H2 解离能与键长对标；Eq.2 定义溶解焓；Table 2 列 alpha-Zr -0.464、beta-Zr -0.619 eV 与实验 PCT 值和 Domain DFT 并列；四面体位优先 0.086 / 0.21 eV"},
+  {"section":"3.2 Intermetallics of Zr","page":3,"gist":"Table 3：ZrCr2 -0.28~-0.36、ZrFe2 +0.03~+0.04、Zr2Fe -0.45、Zr2Ni -0.67 eV；据相对 alpha-Zr 的 Delta E 推断 Laves 相作桥、Zr2(Fe,Ni) 作陷阱；三元固溶体未计算"},
+  {"section":"4 Conclusions","page":3,"gist":"结论：Zr(Cr,Fe)2 助 H 穿越，Zr2(Fe,Ni) 捕获；因此 Zry-4 去 Ni 使 HPUF 下降须用 Hatano 之外的模型解释"},
+  {"section":"References","page":3,"gist":"34 条，实验 PCT 来源为 Yamanaka 1995、Ells 1956、Mallett 1957、Kearns 1967；相稳定性数据在当时未发表的 [28] Lumley"}
+ ],
+ "contribution":{
+  "primary":"NEITHER","secondary":"MECHANISM","neither_type":"常规应用/参数数据生成：标准 DFT 超胞溶解焓计算用于二元 Zr 金属间相，无新方法",
+  "claimed":"用 ab initio 预测 H 在 Zr 及 Zr-M 金属间相的溶解能，并提出 Zr(Cr,Fe)2 作桥、Zr2(Ni,Fe) 作陷阱",
+  "quote":"It is proposed that Zr(Cr,Fe)2 particles may act as bridges for the migration of H through the oxide layer",
+  "quote_page":1,
+  "novelty_test":"实质新增：10 个相的 H 溶解焓数表（Table 3）。旧的部分：桥接模型来自 Hatano [3]，陷阱阻滞想法来自 Lim [34]，计算协议沿用 Domain [22] 的 GGA 判断。本文只给出热力学排序，没有迁移势垒、没有氧化膜环境、没有三元成分。",
+  "mechanism_evidence":"事后解释。仅由静态 0 K 溶解焓差推断输运角色：没有计算迁移势垒、界面穿越或部分氧化 SPP，没有因果操控，也没有 HPUF 实验对照；未排除竞争解释（如 SPP 氧化态电子导电对阴极反应的作用）。唯一的否定性推论（Hatano 模型解释不了 Ni 趋势）依赖三元固溶体行为与二元端元相同的假设。",
+  "reuse_test":"NA"
+ },
+ "parameters":[
+  {"name":"交换关联泛函","value":"PBE-GGA","provenance":"FIRST_PRINCIPLES","page":2,"basis":"依据 Domain [22] 对固态 Zr 的 GGA/LDA 比较选取；未对金属间相单独比较泛函"},
+  {"name":"H2 参考能（解离能）","value":"4.53 eV","provenance":"FIRST_PRINCIPLES","page":2,"basis":"本文计算。它进入 Eq.2 的所有溶解焓；文中自述与 Domain 的 0.13 eV 差基本来自此项"},
+  {"name":"收敛判据","value":"1e-3 eV/atom；k 间距 0.030（上限 0.035）1/Å；450 eV","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"收敛测试确定。按原子计，96~192 原子胞对应总能容差可达 0.1~0.2 eV，靠差分抵消才可信，文中未单独给缺陷能收敛值"},
+  {"name":"二元端元代表三元 SPP","value":"Zr2Fe/Zr2Ni 代表 Zr2(Fe,Ni)，ZrCr2/ZrFe2 代表 Zr(Cr,Fe)2","provenance":"TUNED_OR_ASSUMED","page":3,"basis":"假设，文中明言三元影响属后续工作；同时承认实际合金中二元相不常出现（p.1 refs 9-11）"},
+  {"name":"零点能/温度修正","value":"未包含（文中未提及）","provenance":"TUNED_OR_ASSUMED","page":2,"basis":"方法节没有提到 ZPE，Eq.2 全部为 DFT 总能差"}
+ ],
+ "dof":{"free_or_tuned":0,"independent_constraints":9,"note":"我数的：无拟合参数；数值设置经收敛测试确定。外部对照共 9 个数：H2 2 个，alpha-Zr 实验 4 个，beta-Zr 实验 3 个。但所有金属间相的 Table 3 值（本文结论的依据）没有任何外部实验对照。"},
+ "comparisons":[
+  {"id":"C1","quantity":"H2 解离能","target_data":"CRC Handbook [29]，4.48 eV","authors_language":"in excellent agreement with experimental values, 4.48 eV and 746 pm","page":2,"where":"Sec 3.1 正文","used_in_construction":"NO","construction_evidence":"无拟合，DFT 直接算；赝势选择未声明以 H2 校准","temporal":"数据早于计算（手册值）","metric":"4.53 vs 4.48 eV，+1.1%。注意 4.48 是含零点能的 D0；静态 DFT 无 ZPE 时应比的是 De，约 4.75 eV（一般知识值，非文中数），差约 -4.6%。","discriminating":"弱。任何合理 GGA 都在此范围；且零点能不一致使 1% 的吻合部分属于巧合","verdict":"CONSISTENCY","verdict_reason":"定量但比较的两个量定义不同（静态 De 与含 ZPE 的 D0），不是干净的后验验证；只是赝势/泛函的合理性检查。"},
+  {"id":"C2","quantity":"H2 键长","target_data":"CRC Handbook [29]，文中写 746 pm","authors_language":"752 pm","page":2,"where":"Sec 3.1 正文","used_in_construction":"NO","construction_evidence":"无拟合","temporal":"数据早于计算","metric":"752 vs 746，+0.8%，但单位有误：真实 H2 键长约 74 pm（0.74 Å），文中两个数都大了 10 倍；若按 75.2 / 74.6 pm 理解则相对误差不变。","discriminating":"无。键长是任何泛函都能给到 1% 以内的量","verdict":"CONSISTENCY","verdict_reason":"合理性检查，不检验 H 在金属间相中的溶解焓；还含明显的单位笔误。"},
+  {"id":"C3","quantity":"alpha-Zr 中 H 溶解焓","target_data":"Yamanaka 1995 [31] -0.424；Ells 1956 [32] -0.473；Mallett 1957 [33] -0.373；Kearns 1967 [27] -0.513±0.09 eV（PCT）","authors_language":"The calculated values of solution enthalpies for interstitial H in pure Zr are presented in Table 2","page":2,"where":"Table 2","used_in_construction":"NO","construction_evidence":"PBE 无可调参数，文中未调参；实验值未进入计算","temporal":"数据早于计算数十年，非盲测","metric":"-0.464 eV；相对四个实验值误差 9.4%、1.9%、24.4%、9.6%（差 0.04、0.009、0.091、0.049 eV），落在实验范围 [-0.513,-0.373] 内。作者未给定量评价，只把数列在一起。","discriminating":"中低。实验自身跨度 0.14 eV，与 Table 3 中多数相间差（0.10~0.20 eV）同量级；Domain DFT 的 -0.600 因 H2 参考差就偏 0.13 eV。且 0 K 静态无 ZPE 对比高温 PCT 值。","verdict":"POSTDICTION","verdict_reason":"参数独立、定量、数据先发表，满足形式要件，但属于边缘：只验证了基准相 alpha-Zr，且未处理 ZPE/温度；不能推及金属间相。"},
+  {"id":"C4","quantity":"beta-Zr 中 H 溶解焓","target_data":"Yamanaka [31] -0.455；Ells [32] -0.688；Mallett [33] -0.077 eV","authors_language":"","page":2,"where":"Table 2","used_in_construction":"NO","construction_evidence":"同 C3","temporal":"数据早于计算","metric":"-0.619 eV；相对误差 36%、10%、约 700%（-0.077）。实验值跨度 0.61 eV，比模型任何相间差都大。","discriminating":"无。实验分散到任何 -0.1~-0.7 eV 的值都算相符","verdict":"CONSISTENCY","verdict_reason":"实验分散太大，无法构成定量检验；作者也未解释 Mallett 值的 8 倍差异。"},
+  {"id":"C5","quantity":"alpha-Zr 溶解焓及四面体/八面体位相对偏好","target_data":"Domain 2002 [22] DFT，-0.600 eV","authors_language":"same relative preference for the tetrahedral site over the octahedral site","page":2,"where":"Table 2；Sec 3.1","used_in_construction":"YES_INDIRECT","construction_evidence":"泛函选择直接引用 Domain [22] 的结论，同类方法","temporal":"Domain 先发表","metric":"-0.464 vs -0.600 eV，差 0.136 eV（29%）；文中 H2 解离差 0.26 eV/分子 = 0.13 eV/H，可解释绝大部分，剩余约 0.006 eV。相对位差 -0.086 eV，Domain 的数文中只说 similar。","discriminating":"同类 DFT 互比，不检验物理真实性","verdict":"VERIFICATION","verdict_reason":"与另一 DFT 计算对比，检验数值实现。"},
+  {"id":"C6","quantity":"各相晶格常数和形成焓","target_data":"未具体列出，引用同组 [28] Lumley（当时 submitted）及文献值","authors_language":"are in agreement with values available in the literature","page":2,"where":"Sec 3.1 正文，无数据","used_in_construction":"UNCLEAR","construction_evidence":"结构来自 DFT 弛豫；对比本身不在本文","temporal":"不详","metric":"本文未给数，无法计算","discriminating":"无从判断","verdict":"CONSISTENCY","verdict_reason":"只有一句话，没有数值，且来源当时未公开，放入 unverifiable。"},
+  {"id":"C7","quantity":"Laves 相溶解焓高于 alpha-Zr 与 Hatano 桥接模型的关系","target_data":"Hatano 1996 [3]；Lelièvre 1998 [7]","authors_language":"This finding is consistent with the H-uptake model of Hatano et al.","page":3,"where":"Sec 3.2","used_in_construction":"NO","construction_evidence":"Hatano 模型未进入 DFT，但本文用它作判断框架（靠它提出问题）","temporal":"模型先于计算","metric":"无定量。Delta E = +0.10~+0.50 eV 只是能量排序，文中未算迁移能","discriminating":"无。溶解焓低不等于扩散通道好；反过来 H 溶解焓高的相通常 H 浓度也低，同样可说不利于输运。竞争解释未测试。","verdict":"CONSISTENCY","verdict_reason":"定性、事后解释，没有迁移势垒或 H 通量的计算，也没有实验。"},
+  {"id":"C8","quantity":"Zr2(Fe,Ni) 作 H 陷阱阻滞 H 进入金属","target_data":"Lim 2003 [34]","authors_language":"as suggested by Lim et al.","page":3,"where":"Sec 3.2","used_in_construction":"NO","construction_evidence":"Lim 的文献未用于计算","temporal":"Lim 先于计算","metric":"无定量。Zr2Ni Delta E=-0.20 eV，Zr2Fe=+0.01 eV（后者并不比 alpha-Zr 更优）","discriminating":"无；Zr2Fe 与 alpha-Zr 打平，差值小于收敛容差量级","verdict":"CONSISTENCY","verdict_reason":"定性对照前人建议；只对 Ni 端元成立，Fe 端元不支持。"},
+  {"id":"C9","quantity":"Zry-4 去 Ni 使 HPUF 下降的实验趋势","target_data":"Sabol [1]，Intro 所述","authors_language":"must be explained using models other than the one first proposed by Hatano","page":3,"where":"Conclusions","used_in_construction":"NO","construction_evidence":"实验 HPUF 未进入计算","temporal":"趋势先于计算","metric":"无数值。若桥+陷阱均成立，Zry-2 的 Ni 相陷阱应降低 H 穿透，与 Zry-2 HPUF 更高的事实方向相反，本文计算没有解释该趋势。","discriminating":"这是本文唯一面向宏观现象的对照，结果是解释不了，作者把它转成了否定 Hatano 模型的结论","verdict":"CONSISTENCY","verdict_reason":"定性趋势比较且方向不符；不能算验证。否定 Hatano 的前提（二元代三元、只看热力学）未经检验。"}
+ ],
+ "paper_verdict":{"label":"CONSISTENCY_ONLY","why":"结论依赖的 Table 3 金属间相溶解焓没有任何实验对照。最强证据是 alpha-Zr 基准相 -0.464 eV 落在实验 -0.373~-0.513 eV 内（C3），属边缘后验且主要结论不靠它。主体证据是把热力学排序定性套进 Hatano/Lim 的模型。","best_comparison":"C3","fraction_note":"9 条：POSTDICTION 1（边缘，基准相）、VERIFICATION 1、CONSISTENCY 7；无校准，也无针对金属间相的外部测试。"},
+ "checks_performed":[
+  {"what":"用摩尔质量按 Table 1 的原子数复算全部等效 H 浓度","result":"73.7、86.3、80.7、161.4（表 161.3）、77.6、155.2、132.2、130.6 wt ppm，全部吻合，超胞记录可靠"},
+  {"what":"用渲染的 Table 2/3（抽取文本丢失负号）算 DFT 与各实验值误差","result":"alpha-Zr 误差 1.9~24%；beta-Zr 误差 10%、36%、约 700%，实验跨度 0.61 eV"},
+  {"what":"核对 Table 3 Delta E 与 E_sol 差","result":"ZrCr2 C36 差 0.18（表 0.19）、ZrFe2 C14 差 0.49（表 0.50）、Zr2Ni 差 -0.21（表 -0.20），都在舍入范围内"},
+  {"what":"比较作者结论用的能量差与收敛容差","result":"Zr2Fe 与 alpha-Zr 差 0.01 eV，Zr2Ni 与 beta-Zr 差 0.05 eV，而 Domain 与本文的 H2 参考差就有 0.13 eV/H；相间比用同一 H2 参考可抵消，但 0.01 eV 和 0.05 eV 无实际区分度"},
+  {"what":"核对 H2 键长和解离能的物理值","result":"文中 752/746 pm 比真实约 74 pm 大 10 倍；实验 4.48 eV 是 D0，静态 DFT 对应 De 约 4.75 eV，方法未提 ZPE"},
+  {"what":"核对 Domain 差异的解释","result":"0.26 eV/H2 ÷ 2 = 0.13 eV/H，对应 -0.600 与 -0.464 的 0.136 eV 差，作者解释算数成立"}
+ ],
+ "claim_vs_reality":[
+  {"claim":"Zr2Fe 和 Zr2Ni 相关的 SPP 溶解焓都有利","quote":"Intermetallics that relate to the Zr2(Ni,Fe) second phase particles (SPPs) found in Zircaloy-2 exhibit favourable solution enthalpies for H","page":1,"reality":"Table 3：Zr2Fe -0.45 eV，比 alpha-Zr 的 -0.46 反而高 0.01 eV，打平；只有 Zr2Ni 低 0.20 eV。把 Ni 端元结论推到整个 Zr2(Fe,Ni) 固溶体没有计算依据。","consistent":false},
+  {"claim":"Zr2Ni 明显低于 alpha 和 beta-Zr","quote":"Zr2Ni significantly lower than either","page":3,"reality":"相对 alpha-Zr 低 0.20 eV 成立；相对 beta-Zr 只低 0.05 eV（-0.67 vs -0.62），不算 significantly。","consistent":false},
+  {"claim":"H2 解离能和键长与实验极好吻合","quote":"752 pm, respectively, in excellent agreement","page":2,"reality":"数值差约 1%，但键长单位错 10 倍；解离能比较的是静态 DFT 与含 ZPE 的 D0。","consistent":false},
+  {"claim":"Laves 相发现与 Hatano 模型一致，同时结论说 Hatano 模型解释不了 Ni 趋势","quote":"This finding is consistent with the H-uptake model of Hatano et al.","page":3,"reality":"两句不矛盾但易误读：一致只是指 Laves 相可作桥，Hatano 模型作为 HPUF-Ni 趋势解释被结论否定。且该否定只靠热力学，无迁移势垒。","consistent":true},
+  {"claim":"三元相差异只是轻微","quote":"the enthalpy of solution may differ slightly due to electronic and elastic interaction","page":3,"reality":"未算。Table 3 中 Zr2Fe 与 Zr2Ni 差 0.22 eV、ZrCr2 与 ZrFe2 差约 0.3~0.4 eV，端元间差很大，说明成分效应不小；slightly 是假设，不是结果。","consistent":false},
+  {"claim":"Intro 称 Laves 型 SPP 有吸 H 倾向","quote":"have a tendency to absorb H","page":1,"reality":"Shaltiel [8] 的 Fe/Cr 比影响与 Table 3 ZrCr2(-0.3) vs ZrFe2(+0.04) 方向相合，但本文没有回头做该对比，只相对 alpha-Zr 称 Laves 相不保留 H。","consistent":true}
+ ],
+ "unverifiable":["[28] Lumley 的晶格常数和形成焓对比：本文未给数据，当时未发表","Domain [22] 的四面体-八面体差具体值：本文只说 similar","Shaltiel [8]、Lim [34]、Hatano [3] 原文未在手边核对","H2 De 约 4.75 eV、键长约 74 pm 是一般物理常数，并非本文所引；CRC 手册原值未核对"],
+ "one_line":"常规 DFT 算 10 个相的 H 溶解焓：alpha-Zr -0.464 eV 落在实验 -0.37~-0.51 eV 内，但 Zr 金属间相（Zr2Ni -0.67、ZrFe2 +0.04 eV）无实验对照，桥/陷阱机制由 0 K 热力学推断，没有迁移势垒，也没算三元相。"
+}
