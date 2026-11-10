@@ -56,6 +56,29 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 
 \maketitle
 
+\begin{abstract}
+Irradiation accelerates the intergranular oxidation that precedes
+irradiation-assisted stress corrosion cracking of austenitic stainless steels
+in PWR primary water, but no model connects the radiation-induced segregation
+(RIS) at a grain boundary to the kinetics of its oxidation. We develop a model
+that couples RIS to grain-boundary oxidation through the oxide itself:
+selective interfacial reactions convert the local, segregated alloy
+composition into an oxide composition, the oxide retains that composition as
+it grows, and the oxygen diffusivities along and across the boundary are
+computed from the resulting composition profile, with the porosity left by the
+dissolution of oxidized Si included. With one parameter set for all doses, the
+model reproduces the intergranular penetration depths measured on
+proton-irradiated 304 nuclear-grade stainless steel after \SI{500}{h} at 0,
+0.5 and \SI{3}{\dpa} (45, 69 and \SI{106}{nm} calculated against 40, 62 and
+\SI{105}{nm} measured), and it predicts the Cr minimum observed at the centre
+of the oxide of the irradiated specimens. Separating the two segregation
+routes shows that Si enrichment accounts for most of the dose dependence and
+Cr depletion for a minor part. Applied without adjustment to concurrent
+irradiation and oxidation of a type 316 baffle-former bolt after 40 years of
+service, the model gives a penetration depth of \SI{2.6}{\micro\metre}, within
+the 2 to \SI{3}{\micro\metre} measured.
+\end{abstract}
+
 
 % ============================================================
 \section{Introduction}
@@ -201,14 +224,12 @@ for assessing the coupling.
 
 % ---- 5. This work ----
 Here, we develop a coupled RIS and grain-boundary oxidation model for
-304SS, represented by the Fe--Cr--Ni--Si system. The model links
-defect-mediated solute redistribution and selective interfacial
-consumption to the effective oxygen diffusivities of the intergranular
-oxide, computed from its evolving composition and porosity. The oxide
-grows from the metal consumed at the interface and keeps the composition
-it had on formation, so its composition across the boundary records the
-segregation profile;
-within this description, increasing the Cr content of the oxide lowers
+304SS, represented by the Fe--Cr--Ni--Si system. The coupling is made
+through the oxide itself: selective interfacial reactions convert the
+local, segregated alloy composition into an oxide composition, the oxide
+retains that composition as it grows, and the oxygen diffusivities along
+and across the boundary are computed from the resulting composition
+profile. Within this description, increasing the Cr content of the oxide lowers
 the diffusivity, whereas Si oxidation followed by complete dissolution
 contributes porosity that enhances transport. The same growth record
 gives the diffusivity for oxygen transport along the grain boundary and
@@ -220,9 +241,10 @@ motivated by the mechanism discussed by Du and co-workers
 \cite{du2026silicon}. We examine the dose and exposure-time dependence of
 oxide penetration under sequential irradiation and water exposure, using
 separate calibration of the RIS and oxidation components and a common
-set of oxidation parameters across doses. The framework also permits
-predictions of concurrent RIS and oxidation within the same transport
-description.
+set of oxidation parameters across doses. The same equations, with
+irradiation and oxidation acting together, are then applied without
+adjustment to a baffle-former bolt after 40 years of service and compared
+with the depth of intergranular oxidation measured on it.
 
 % ============================================================
 \section{Model Formulation and Calibration}
@@ -782,10 +804,39 @@ modify the boundary composition while the oxidation front advances, so the compo
 that the interfacial reactions see evolves in time rather than being fixed at its
 end-of-irradiation value; conversely, the metal consumed at the front and the
 associated lattice drift, Eq.~\eqref{eq:vlat-ox}, alter the concentration field on
-which the segregation fluxes act. Predictions obtained in this mode are reported in
-Sec.~\ref{sec:resultsFullyCoupled}; because no experiment in the present dataset
-imposes concurrent irradiation and exposure, this mode is used only for prediction and
-takes no part in the calibration of Sec.~\ref{sec:methodCalibration}.
+which the segregation fluxes act. This mode takes no part in the calibration of
+Sec.~\ref{sec:methodCalibration} and is used only for prediction.
+
+\paragraph{In-service calculation.}
+The fully coupled mode is applied to a component that was irradiated and
+oxidized together in service: a type 316 stainless steel baffle-former bolt
+removed from a Westinghouse two-loop PWR after about 40 years, with a dose of
+about \SI{41}{\dpa} at the bolt head
+\parencite{gussev2023microstructure,lach2024inservice,lach2025inservice}. On
+the water-exposed head-to-shank transition of this bolt,
+\textcite{gussev2023microstructure} distinguished two kinds of intergranular
+damage: shallow, wedge-shaped oxidized grain boundaries, mostly 2 to
+\SI{3}{\micro\metre} deep, and deeper short cracks of \SI{4}{\micro\metre} or
+more. The shallow damage is the quantity compared with the calculated
+penetration depth; the cracks involve stress and are outside the model.
+
+The calculation differs from the calibrated one only in its inputs. The bulk
+site fractions are those of the bolt, taken from the atom-probe composition
+reported by \textcite{lach2024inservice}: 0.1932 Cr, 0.1155 Ni and 0.0124 Si,
+with Fe as the balance, 0.6789, which includes Mo, Mn and the minor elements
+as in Table~\ref{tab:composition}. The flux history of the bolt is not
+available \parencite{gussev2023microstructure}, so the dose rate is taken as
+constant in time, \(K_0=\SI{3.17e-8}{\dpa\per\second}\), that is
+\SI{1}{\dpa} per year and \SI{40}{\dpa} after the 40 years
+(\SI{350400}{h}) of the calculation. Irradiation and oxygen ingress
+start together at \(t=0\) from the unsegregated alloy and continue to the end.
+All other parameters, those of
+Tables~\ref{tab:params-ris}--\ref{tab:params-transport}, keep their
+calibrated values; none is adjusted to the in-service data. The domain is
+extended to \SI{5}{\micro\metre} along the boundary, with a mesh spacing of
+\SI{50}{nm} in that direction and \SI{1}{nm} normal to the boundary, and the
+penetration depth is defined as in
+Sec.~\ref{sec:methodTransportCalibration}.
 
 \subsection{Model Parameterization and Calibration}
 \label{sec:methodCalibration}
@@ -1200,17 +1251,9 @@ under-focus TEM imaging of proton-irradiated 316L.
 \subsection{Intergranular Oxide Penetration Depth}
 \label{sec:resultsOxi}
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.45\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_dose}
-  \caption{}\label{fig:front-dose}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.45\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_dose_normalized}
-  \caption{}\label{fig:front-dose-norm}
-\end{subfigure}
+\includegraphics[width=0.5\textwidth]{front_vs_dose}
 \caption{Intergranular oxide penetration depth after \SI{500}{h}, calculated
-and measured \parencite{deng2017effect}: (a) absolute depth; (b) depth
-normalized to the unirradiated value. These data calibrate the oxidation
+and measured \parencite{deng2017effect}. These data calibrate the oxidation
 parameters.}
 \label{fig:front}
 \end{figure}
@@ -1222,9 +1265,7 @@ With a single parameter set the calculated depths are 45, 69 and \SI{106}{nm}
 against measured values of 40, 62 and \SI{105}{nm}: the depth at
 \SI{3.0}{\dpa} is matched within \SI{1}{nm}, and the unirradiated and
 \SI{0.5}{\dpa} depths are overestimated by 5 and \SI{7}{nm}, 13 and
-\SI{10}{\percent}. Normalized to the unirradiated depth
-(Fig.~\ref{fig:front-dose-norm}), the calculated increase is 1.52 and 2.33
-against the measured 1.55 and 2.61. The increase of penetration depth
+\SI{10}{\percent}. The increase of penetration depth
 with dose is carried entirely by the segregation profiles inherited from the
 irradiation stage, Eq.~\eqref{eq:handoff}.
 
@@ -1306,6 +1347,26 @@ calculated normalized depths, 0.28 and 0.38, exceed the measured 0.12 and
 
 \subsection{Fully Coupled Predictions under Concurrent Irradiation and Oxidation}
 \label{sec:resultsFullyCoupled}
+
+\begin{figure}[!ht]\centering
+\includegraphics[width=0.6\textwidth]{front_vs_time_inservice}
+\caption{Penetration depth calculated for concurrent irradiation and
+oxidation of the type 316 baffle-former bolt at a constant dose rate of
+\SI{3.17e-8}{\dpa\per\second} over 40 years (\SI{350400}{h}), with all model
+parameters at their calibrated values. The bar at the end of the calculation
+is the depth range of the shallow intergranular oxidation damage, 2 to
+\SI{3}{\micro\metre}, reported for the bolt by
+\textcite{gussev2023microstructure}.}
+\label{fig:front-inservice}
+\end{figure}
+
+Figure~\ref{fig:front-inservice} shows the penetration depth calculated for
+the baffle-former bolt under concurrent irradiation and oxidation
+(Sec.~\ref{sec:methodFullyCoupled}). The depth increases monotonically and
+at a decreasing rate. After 40 years and
+\SI{40}{\dpa} the calculated depth is \SI{2.61}{\micro\metre}, inside the
+range of 2 to \SI{3}{\micro\metre} that \textcite{gussev2023microstructure}
+reported for the shallow intergranular oxidation damage of the bolt.
 
 
 % ============================================================
@@ -1472,6 +1533,25 @@ because its two exposure times do not resolve when the penetration began
 therefore validates the effect of dose on the penetration depth, not its
 time exponent.
 
+\subsection{Concurrent Irradiation and Oxidation in Service}
+\label{sec:discussionInService}
+
+The in-service calculation is a prediction without an adjusted parameter.
+The parameters were calibrated on proton-irradiated 304NG exposed for
+\SI{500}{h}, with penetration depths of 40 to \SI{105}{nm}; the bolt is a
+neutron-irradiated type 316 steel exposed for \SI{350400}{h}, at a dose rate
+about 190 times lower and with irradiation and oxidation acting together.
+The calculation extends the calibration by a factor of about 700 in time and
+25 in depth, and the calculated depth of \SI{2.61}{\micro\metre} falls within
+the 2 to \SI{3}{\micro\metre} measured for the shallow damage
+(Fig.~\ref{fig:front-inservice}). The measured oxide also shows the two
+processes on which the model rests. The original grain boundary inside the
+in-service oxide is depleted in Cr and in Si and acts as a path along which
+Fe and Ni leave toward the outer oxide \parencite{lach2025inservice}; in the
+model these are the Cr valley at the centre of the oxide, the dissolution of
+the oxidized Si, and the removal of the unoxidized Fe and Ni through the
+oxide (Sec.~\ref{sec:discussionTranscription}).
+
 \subsection{Uncertainties of the Model}
 \label{sec:discussionLimitations}
 
@@ -1514,7 +1594,7 @@ calibrated profiles overestimate the Cr depletion and underestimate the Si
 enrichment at \SI{0.5}{\dpa} (Fig.~\ref{fig:profiles}); a dose-dependent
 error in the input profiles propagates directly into the oxidation stage.
 
-The model has been exercised only in the sequential
+The model is calibrated only in the sequential
 irradiation-then-exposure protocol, and the oxygen supply through the surface
 film is represented by the Robin condition of Eq.~\eqref{eq:robin} with an
 assumed transfer coefficient, to which the depths are insensitive. The
@@ -1584,8 +1664,12 @@ exclusion of cation redistribution within the oxide, the porosity transport
 law and the complete-dissolution limit for \ce{SiO2}, and the calibrated
 redistribution velocities; each can be constrained by a measurement
 identified above.
-The extension to concurrent irradiation and oxidation requires no additional
-parameters and is the subject of future work.
+
+\item Applied without adjustment to concurrent irradiation and oxidation of
+a type 316 baffle-former bolt at a constant dose rate over 40 years of
+service, the model gives a penetration depth of \SI{2.61}{\micro\metre} at
+\SI{40}{\dpa}, within the 2 to \SI{3}{\micro\metre} reported for the shallow
+intergranular oxidation damage of the bolt.
 \end{enumerate}
 
 \printbibliography
