@@ -5,6 +5,7 @@
 \usepackage[
   backend=biber,
   style=numeric-comp,
+  sorting=none,
   maxcitenames=2,
   mincitenames=1,
   uniquename=false,
@@ -93,7 +94,7 @@ selectively and forms a Cr-rich intergranular oxide. (c) The Cr-rich oxide
 limits oxygen transport along the boundary and the penetration stays shallow.
 (d) Irradiation drives point defects to the boundary and the resulting
 radiation-induced segregation depletes Cr and enriches Ni and Si. (e) On
-exposure the Cr-depleted boundary forms a Cr-poor, Fe-rich oxide, and the
+exposure the Cr-depleted boundary forms a oxide lack of Cr, and the
 segregated Si oxidizes and dissolves, leaving pores. (f) The degraded oxide
 transports oxygen faster along the boundary and the oxide penetrates deeper.}
 \label{fig:physical-picture}
@@ -103,12 +104,12 @@ transports oxygen faster along the boundary and the oxide penetrates deeper.}
 Irradiation-assisted stress corrosion cracking (IASCC) is a major
 degradation mode of austenitic stainless steel core internals in
 light-water reactors \parencite{was2011irradiationassisted}. In irradiated
-stainless steels exposed to high-temperature water, intergranularoxidation weakens grain boundaries and precedes intergranular crack initiation
+stainless steels exposed to high-temperature water, intergranular oxidation weakens grain boundaries and precedes intergranular crack initiation
 \cite{was2024how}, and grain-boundary oxidation has been identified as
 a necessary precursor of IASCC at low doses \cite{kuang2022highresolution}. In 304
 stainless steel (304SS) exposed to pressurized water reactor (PWR) primary
 water, the extent of this oxidation depends on the chemical changes
-introduced by prior irradiation.
+introduced by prior irradiation (Fig.~\ref{fig:physical-picture}).
 \textcite{deng2017effect} found that increasing the proton irradiation dose
 produced deeper intergranular oxidation in 304 nuclear-grade stainless
 steel after water exposure, accompanied by a decrease in the Cr content of
@@ -116,7 +117,7 @@ the intergranular oxide. Cr depletion is not the only chemical change that
 matters. Using model alloys with Si and Cr contents chosen to mimic the
 segregated boundary, \textcite{du2026silicon} showed that Si enrichment
 promotes intergranular oxidation and cracking even when Cr is not
-depleted: Si forms \ce{SiO2} that is unstable in high-temperature water
+depleted: Si forms oxide that is unstable in high-temperature water
 and dissolves preferentially, leaving a porous oxide that provides
 pathways for oxygen diffusion along grain boundaries. These observations
 connect irradiation to both the chemistry and the penetration depth of the
@@ -126,20 +127,24 @@ oxygen transport and, consequently, the advance of the oxidation front.
 
 % ---- 2. RIS sets the boundary composition; oxide Cr sets transport resistance ----
 Radiation-induced segregation (RIS) establishes the local alloy
-composition from which the intergranular oxide develops. Coupling between
+composition from which the intergranular oxide develops
+(Fig.~\ref{fig:physical-picture}d). Coupling between
 solute and irradiation-generated point-defect fluxes redistributes
 alloying elements near grain boundaries. Measurements on irradiated
 304 nuclear-grade stainless steel reveal Cr depletion and Ni and Si enrichment
 at the grain boundary \cite{deng2021grain}. Subsequent
-oxidation selectively consumes alloying elements, changing both the oxide
+oxidation selectively consumes alloying elements
+(Fig.~\ref{fig:physical-picture}b,e), changing both the oxide
 composition and the adjacent metal, where Ni enrichment has also been
 observed \cite{deng2021grain}. The lower Cr content of the oxide
 formed on irradiated boundaries has been associated with reduced
-resistance to oxygen diffusion \cite{deng2017effect}. 
+resistance to oxygen diffusion \cite{deng2017effect}
+(Fig.~\ref{fig:physical-picture}c,f).
 
 % ---- 3. Si oxidation and dissolution add porosity to the same transport quantity ----
 Si oxidation and dissolution alter this transport resistance by changing
-the structure through which oxygen moves. The role of Si was established by
+the structure through which oxygen moves
+(Fig.~\ref{fig:physical-picture}e). The role of Si was established by
 \textcite{du2026silicon} with model alloys of systematically varied Cr and
 Si contents in hydrogenated water, which allowed the contributions of Cr
 depletion and Si enrichment to be separated. They
@@ -186,26 +191,15 @@ kinetic models of grain-boundary oxidation do not respond to the grain boundary
 chemistry. Models that resolve oxygen transport along the grain boundary treat
 the oxygen diffusivity as a single constant: in analytical or
 semi-analytical solutions that give the penetration depth in closed form
-\parencite{fisher1951calculation,xu2015modeling,evans2013mechanism}, in
+\parencite{xu2015modeling,evans2013mechanism}, in
 finite-element descriptions in which it is fitted to measured oxide depths
 through a parabolic law \parencite{zhao2011modeling,karabela2013oxygen} or
 prescribed together with a constant reaction rate
 \parencite{aoyagi2012crystal}, and in phase-field simulations of a single
 stoichiometric chromia intrusion
-\parencite{derancourt2015modelling,rancourt2025viscoplasticity}. In none of
+\parencite{rancourt2025viscoplasticity}. In none of
 these does the diffusivity depend on the composition of the oxide that has
-formed. Where the oxide identity does control transport, in multilayer
-descriptions of planar scales \parencite{harrison1984ratios,huang2022multilayer}
-and in the mechanistic treatment of uniform corrosion in high-temperature
-water \parencite{robertson1991mechanism}, the controlling phase is fixed at
-the outset rather than selected by the local alloy composition. The
-boundary composition enters only after conversion into an empirical
-parameter, as a Cr-content-dependent dissolution rate in sensitized steels
-\parencite{osawa1985computer} or as a sensitization index that increases
-with neutron fluence in the slip-oxidation prediction of crack growth
-\parencite{ford1996quantitative}; crack-growth models that require a
-grain-boundary oxidation law borrow rate constants measured on bulk
-surfaces \parencite{shoji2010formulating}. Thermodynamic selection of the
+formed. Thermodynamic selection of the
 oxide phases from the local alloy composition has been implemented for a
 Ni-base superalloy \parencite{fang2022numerical}, but with a constant
 oxygen diffusivity, the bulk composition at the boundary, and without the
