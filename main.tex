@@ -15,6 +15,7 @@
 
 
 \addbibresource{refs/304IASCC.bib}
+\addbibresource{refs/extra.bib}
 \setcounter{biburlnumpenalty}{9000}
 \setcounter{biburllcpenalty}{9000}
 \setcounter{biburlucpenalty}{9000}
@@ -46,6 +47,9 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 
 \usepackage{graphicx}
 \usepackage{subcaption}
+% panel labels (a), (b), ... at the top left of each panel
+\captionsetup[subfigure]{position=top,justification=raggedright,
+  singlelinecheck=false,labelfont=bf,skip=1pt}
 \usepackage{array}
 \graphicspath{{figures/}}
 
@@ -249,23 +253,23 @@ with the depth of intergranular oxidation measured on it.
 \makebox[\textwidth][c]{%
 \begin{minipage}{18.6cm}\centering
 \begin{subfigure}[t]{0.49\linewidth}\centering
-  \includegraphics[width=\linewidth]{framework_a}
   \caption{}\label{fig:framework-domain}
+  \includegraphics[width=\linewidth]{framework_a}
 \end{subfigure}\hfill
 \begin{subfigure}[t]{0.49\linewidth}\centering
-  \includegraphics[width=\linewidth]{framework_b}
   \caption{}\label{fig:framework-ris}
+  \includegraphics[width=\linewidth]{framework_b}
 \end{subfigure}
 
 \vspace{1em}
 
 \begin{subfigure}[t]{0.49\linewidth}\centering
-  \includegraphics[width=\linewidth]{framework_c}
   \caption{}\label{fig:framework-ox}
+  \includegraphics[width=\linewidth]{framework_c}
 \end{subfigure}\hfill
 \begin{subfigure}[t]{0.49\linewidth}\centering
-  \includegraphics[width=\linewidth]{framework_d}
   \caption{}\label{fig:framework-coupling}
+  \includegraphics[width=\linewidth]{framework_d}
 \end{subfigure}
 \end{minipage}}
 \caption{Overview of the model: (a) physical picture and computational domain,
@@ -1092,18 +1096,23 @@ Symbol & Description & Value & Source \\
 \subsection{Radiation-Induced Segregation Profiles}
 \label{sec:resultsRIS}
 \begin{figure}[htbp]\centering
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_doses}
+% panels are drawn at 6 cm; the block is set wider than the text column so
+% that they print at 1:1
+\makebox[\textwidth][c]{%
+\begin{minipage}{18.6cm}\centering
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:profile-cr}
+  \includegraphics[width=\linewidth]{Cr_doses}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Ni_doses}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:profile-ni}
+  \includegraphics[width=\linewidth]{Ni_doses}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Si_doses}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:profile-si}
+  \includegraphics[width=\linewidth]{Si_doses}
 \end{subfigure}
+\end{minipage}}
 \caption{Calculated and measured grain-boundary composition profiles after
 irradiation to 0.5 and \SI{3.0}{dpa}: (a) Cr, (b) Ni, (c) Si. Solid lines are
 calculated profiles obtained with the finite-efficiency sink condition,
@@ -1137,52 +1146,56 @@ about \SI{1.5}{\atpct} and underestimates the Si enrichment by about
 \subsection{Oxide Composition and Interfacial Chemistry}
 \label{sec:resultsNiEnrichment}
 
-\begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_across_interface_conv_dose0}
+\begin{figure}[!htp]\centering
+% panels are drawn at 6 cm; the block is set wider than the text column so
+% that they print at 1:1
+\makebox[\textwidth][c]{%
+\begin{minipage}{18.6cm}\centering
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-cr-0}
+  \includegraphics[width=\linewidth]{Cr_across_interface_dose0}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Ni_across_interface_conv_dose0}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-ni-0}
+  \includegraphics[width=\linewidth]{Ni_across_interface_dose0}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Fe_across_interface_conv_dose0}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-fe-0}
+  \includegraphics[width=\linewidth]{Fe_across_interface_dose0}
 \end{subfigure}
 \par\smallskip
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_across_interface_conv_dose0.5}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-cr-05}
+  \includegraphics[width=\linewidth]{Cr_across_interface_dose0.5}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Ni_across_interface_conv_dose0.5}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-ni-05}
+  \includegraphics[width=\linewidth]{Ni_across_interface_dose0.5}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Fe_across_interface_conv_dose0.5}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-fe-05}
+  \includegraphics[width=\linewidth]{Fe_across_interface_dose0.5}
 \end{subfigure}
 \par\smallskip
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_across_interface_conv_dose3}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-cr-3}
+  \includegraphics[width=\linewidth]{Cr_across_interface_dose3}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Ni_across_interface_conv_dose3}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-ni-3}
+  \includegraphics[width=\linewidth]{Ni_across_interface_dose3}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Fe_across_interface_conv_dose3}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:edx-fe-3}
+  \includegraphics[width=\linewidth]{Fe_across_interface_dose3}
 \end{subfigure}
+\end{minipage}}
 \caption{Calculated and measured composition profiles across the intergranular
 oxide after the \SI{500}{h} exposure, at the depth of the EDX line scan:
 (a--c) solution-annealed, (d--f) \SI{0.5}{\dpa}, (g--i) \SI{3.0}{\dpa}; Cr, Ni
-and Fe from left to right. Shaded bands mark the calculated oxide. Calculated
-profiles are convolved with a Gaussian of \SI{1}{nm} FWHM to match the EDX
-probe; measurements are the line scans of \textcite{deng2017effect}, centred
-on the oxygen signal.}
+and Fe from left to right. Shaded bands mark the calculated oxide and dotted
+lines the oxide/metal interfaces. Measurements are the line scans of
+\textcite{deng2017effect}, centred on the oxygen signal.}
 \label{fig:edx-compare}
 \end{figure}
 
@@ -1221,13 +1234,13 @@ there.
 
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.42\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_minimum_in_oxide_vs_dose}
+\begin{subfigure}[t]{0.48\textwidth}\centering
   \caption{}\label{fig:Cr-min}
+  \includegraphics[width=\linewidth]{Cr_minimum_in_oxide_vs_dose}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.42\textwidth}\centering
-  \includegraphics[width=\linewidth]{porosity_across_oxide_rel0.5}
+\begin{subfigure}[t]{0.48\textwidth}\centering
   \caption{}\label{fig:poro-across}
+  \includegraphics[width=\linewidth]{porosity_across_oxide_rel0.5}
 \end{subfigure}
 \caption{Cr content and \ce{SiO2}-dissolution porosity of the intergranular
 oxide after the \SI{500}{h} exposure. (a) Calculated minimum Cr content of the
@@ -1263,7 +1276,7 @@ under-focus TEM imaging of proton-irradiated 316L.
 \subsection{Intergranular Oxide Penetration Depth}
 \label{sec:resultsOxi}
 \begin{figure}[!ht]\centering
-\includegraphics[width=0.5\textwidth]{front_vs_dose}
+\includegraphics[width=0.48\textwidth]{front_vs_dose}
 \caption{Intergranular oxide penetration depth after \SI{500}{h}, calculated
 and measured \parencite{deng2017effect}. These data calibrate the oxidation
 parameters.}
@@ -1282,13 +1295,13 @@ with dose is carried entirely by the segregation profiles inherited from the
 irradiation stage, Eq.~\eqref{eq:handoff}.
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.45\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_dose_flatCr}
+\begin{subfigure}[t]{0.48\textwidth}\centering
   \caption{}\label{fig:front-SiOnly}
+  \includegraphics[width=\linewidth]{front_vs_dose_flatCr}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.45\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_dose_flatSi}
+\begin{subfigure}[t]{0.48\textwidth}\centering
   \caption{}\label{fig:front-CrOnly}
+  \includegraphics[width=\linewidth]{front_vs_dose_flatSi}
 \end{subfigure}
 \caption{Separation of the Cr and Si contributions to the dose dependence of
 the penetration depth after \SI{500}{h}. (a) Cr segregation suppressed: the Cr
@@ -1314,12 +1327,12 @@ present.
 
 \begin{figure}[!ht]\centering
 \begin{subfigure}[t]{0.48\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_vs_time_all_doses}
   \caption{}\label{fig:front-time-abs}
+  \includegraphics[width=\linewidth]{front_vs_time_all_doses}
 \end{subfigure}\hfill
 \begin{subfigure}[t]{0.48\textwidth}\centering
-  \includegraphics[width=\linewidth]{front_shape_normalized}
   \caption{}\label{fig:front-time-norm}
+  \includegraphics[width=\linewidth]{front_shape_normalized}
 \end{subfigure}
 \caption{Time dependence of the penetration depth at 0.5 and \SI{1.5}{\dpa},
 predicted with the calibrated parameters held fixed, and measured by
@@ -1538,6 +1551,57 @@ and, as noted in Sec.~\ref{sec:discussionTranscription}, appears to carry Fe
 and Ni toward the outer oxide; in the model these correspond to the Cr valley
 at the centre of the oxide, the dissolution of the oxidized Si, and the
 removal of the unoxidized Fe and Ni through the oxide.
+
+\subsection{Implications for Grain-Boundary Strength}
+\label{sec:discussionStrength}
+
+\begin{figure}[!ht]\centering
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \caption{}\label{fig:strength-dose}
+  \includegraphics[width=\linewidth]{strength_RD_centreline_vs_dose_rel0.5}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.48\textwidth}\centering
+  \caption{}\label{fig:strength-across}
+  \includegraphics[width=\linewidth]{strength_porosity_across_oxide_dose3_rel0.5}
+\end{subfigure}
+\caption{Estimate of the strength of the intergranular oxide relative to the
+pore-free oxide, \(\sigma/\sigma_0=\exp(-b\,f_{\mathrm{SiO_2}})\) with
+\(b=4\), from the calculated porosity at half the penetration depth after the
+\SI{500}{h} exposure. (a) Value at the centre of the oxide at 0, 0.5 and
+\SI{3.0}{\dpa}. (b) Porosity and estimated relative strength across the oxide
+at \SI{3.0}{\dpa}; dotted lines mark the oxide/metal interfaces.}
+\label{fig:strength}
+\end{figure}
+
+Intergranular oxidation weakens the boundary. In micromechanical tests on
+single grain boundaries of Alloy 600 oxidized in PWR primary water, the
+oxidized boundaries fractured under loads at which unoxidized boundaries only
+deformed plastically
+\parencite{fujii2011degradation,stratulat2016micromechanical}. The porosity
+calculated here suggests that irradiation may lower the strength of the
+intergranular oxide further. As a rough estimate, the empirical
+Ryshkewitch--Duckworth relation between the strength and the porosity of
+ceramics \parencite{ryshkewitch1953compression,duckworth1953discussion},
+\(\sigma/\sigma_0=\exp(-b\,f_{\mathrm{SiO_2}})\), is applied to the calculated
+porosity \(f_{\mathrm{SiO_2}}\), where \(\sigma_0\) is the strength of the
+pore-free oxide and \(b\) is an empirical constant, taken here as 4. At half
+the penetration depth the estimated relative strength at the centre of the
+oxide is 0.88 in the unirradiated specimen and 0.61 and 0.41 at 0.5 and
+\SI{3.0}{\dpa} (Fig.~\ref{fig:strength-dose}). Across the oxide at
+\SI{3.0}{\dpa} it increases from 0.41 at the centre to 0.82 at the
+oxide/metal interface (Fig.~\ref{fig:strength-across}). The strength of the
+section under a load normal to the boundary is limited by its weakest part, so
+within the oxide fracture would be more likely along the centreline, where the
+porosity is concentrated. This is consistent with reported crack paths. In proton-irradiated
+316L the centre of the intergranular crack lies along the original grain
+boundary, the crack walls are covered by oxide, and the porous interface
+along the centre of the oxide continues beyond the crack tip
+\parencite{kuang2022highresolution}; in irradiated 347, 316 and 304
+stainless steels strained in simulated PWR primary water the fracture path
+runs through the oxide and not along the oxide/metal interface
+\parencite{was2024how}; and in a fractured cantilever of oxidized Alloy 600
+the oxide was present on both sides of the crack, which was therefore
+contained within the oxide \parencite{stratulat2016micromechanical}.
 
 \section{Conclusions}
 \label{sec:conclusion}

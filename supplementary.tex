@@ -3,12 +3,16 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{subcaption}
+% panel labels (a), (b), ... at the top left of each panel
+\captionsetup[subfigure]{position=top,justification=raggedright,
+  singlelinecheck=false,labelfont=bf,skip=1pt}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{mhchem}
+% Same citation style as main.tex
 \usepackage[
   backend=biber,
-  style=authoryear,
+  style=numeric-comp,
   sorting=none,
   maxcitenames=2,
   mincitenames=1,
@@ -16,7 +20,16 @@
   uniquelist=false
 ]{biblatex}
 \addbibresource{refs/304IASCC.bib}
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+\appto{\bibsetup}{\sloppy}
 \graphicspath{{figures/}}
+
+% Equation, figure and section numbers of the main text are read from main.aux
+% (labels prefixed with M-); compile main.tex before this file.
+\usepackage{xr}
+\externaldocument[M-]{main}
 
 \DeclareSIUnit{\dpa}{dpa}
 \DeclareSIUnit{\atpct}{at.\%}
@@ -31,10 +44,11 @@
 \newcommand{\lat}{\mathrm{lat}}
 \newcommand{\ox}{\mathrm{ox}}
 \newcommand{\Ox}{\mathrm{O}}
-% shorthands used in Sec. S3 (from notes/gb_channel_closure_derivation.tex)
-\newcommand{\D}{D_{\Ox}^{\eff}}
+\newcommand{\textciteyear}[1]{\citeauthor{#1} (\citeyear{#1})~\cite{#1}}
+% shorthands for the main-text symbols used in Sec. S3
+\newcommand{\Dx}{D_{\Ox}^{\eff,x}}
+\newcommand{\Dy}{D_{\Ox}^{\eff,y}}
 \newcommand{\Cb}{\bar{C}_{\Ox}}
-\newcommand{\Cc}{C_{\Ox}^{\mathrm{c}}}
 \newcommand{\Ci}{C_{\Ox}^{\intf}}
 \newcommand{\Jr}{J_{\mathrm{r}}}
 \newcommand{\dd}{\mathrm{d}}
@@ -52,79 +66,61 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels}
 \date{\today}
 
 \begin{document}
+\emergencystretch=2em
 \maketitle
 
 \section{Mesh Sensitivity of the Segregation Profiles and the Finite-Efficiency Sink Condition}
 \label{sec:si-sink}
 
-In an earlier version of the model the point-defect site fractions at the grain
-boundary were fixed at their thermal-equilibrium values,
-\begin{equation}
-\left.C_{\Vac}\right|_{x=0}=C_{\Vac}^{\mathrm{eq}},\qquad
-\left.C_{\Int}\right|_{x=0}=C_{\Int}^{\mathrm{eq}},
-\label{eq:si-dirichlet}
-\end{equation}
-a Dirichlet condition that treats the boundary as a perfect sink. With this
-condition the solution does not converge under mesh refinement. As the grid
-spacing \(\Delta x\) is reduced, the point-defect profiles steepen at the
-boundary, and both the gradient and the magnitude of the solute segregation
-increase monotonically with refinement, Fig.~\ref{fig:si-mesh}(a--c). The width
-of the segregation profiles likewise fails to converge. The same mesh
-sensitivity has been reported for other Onsager-type RIS models
-\parencite{oplinger2026radiationinduceda}.
-
-To remove this dependence the boundary is treated as a sink of finite
-efficiency, i.e.\ a Robin condition on the defect fluxes,
-\begin{align}
-\left.\mathbf{J}_{\Vac}\!\cdot\!\mathbf{n}\right|_{x=0}
- &= k_{\Vac}^{\GB}\left(\left.C_{\Vac}\right|_{x=0}-C_{\Vac}^{\mathrm{eq}}\right),
-\label{eq:si-robin-vac}\\
-\left.\mathbf{J}_{\Int}\!\cdot\!\mathbf{n}\right|_{x=0}
- &= k_{\Int}^{\GB}\left(\left.C_{\Int}\right|_{x=0}-C_{\Int}^{\mathrm{eq}}\right),
-\label{eq:si-robin-int}
-\end{align}
-where \(k_{\Vac}^{\GB}\) and \(k_{\Int}^{\GB}\) are the grain-boundary sink
-efficiencies of vacancies and self-interstitials and \(\mathbf{n}\) is the unit
-normal of the boundary plane pointing from the metal towards the boundary, so
-that the flux is counted positive towards the boundary. Equation~\eqref{eq:si-dirichlet} is the limit
-\(k^{\GB}\to\infty\). With the Robin condition the profiles converge under
-refinement, Fig.~\ref{fig:si-mesh}(d--f). The sink efficiencies
-and the defect-mediated transport coefficients are calibrated jointly against the
-magnitude and the width of the measured segregation profiles; the resulting
-comparison at 0.5 and \SI{3.0}{\dpa} is shown in Fig.~3 of the main text.
+Figure~\ref{fig:si-mesh} shows the Cr, Ni and Si profiles across the grain
+boundary calculated at four grid spacings \(\Delta x\) with the two boundary
+conditions for the point defects. With the perfect-sink (Dirichlet) condition
+the solution does not converge under mesh refinement. As \(\Delta x\) is
+reduced, the point-defect profiles steepen at the boundary, and both the
+gradient and the magnitude of the solute segregation increase monotonically
+with refinement, Fig.~\ref{fig:si-mesh}(a--c). The width of the segregation
+profiles likewise fails to converge. With the finite-efficiency (Robin)
+condition, Eqs.~\eqref{M-eq:sink-vac} and \eqref{M-eq:sink-int} of the main
+text, the profiles converge under refinement, Fig.~\ref{fig:si-mesh}(d--f).
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_Dirich_vs_dx}
+% panels are drawn at 6 cm; the block is set wider than the text column so
+% that they print at 1:1
+\makebox[\textwidth][c]{%
+\begin{minipage}{18.6cm}\centering
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:si-cr-dirich}
+  \includegraphics[width=\linewidth]{Cr_Dirich_vs_dx}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Ni_Dirich_vs_dx}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:si-ni-dirich}
+  \includegraphics[width=\linewidth]{Ni_Dirich_vs_dx}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Si_Dirich_vs_dx}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:si-si-dirich}
+  \includegraphics[width=\linewidth]{Si_Dirich_vs_dx}
 \end{subfigure}
 \par\smallskip
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Cr_Robin_vs_dx}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:si-cr-robin}
+  \includegraphics[width=\linewidth]{Cr_Robin_vs_dx}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Ni_Robin_vs_dx}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:si-ni-robin}
+  \includegraphics[width=\linewidth]{Ni_Robin_vs_dx}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{Si_Robin_vs_dx}
+\begin{subfigure}[t]{0.32\linewidth}\centering
   \caption{}\label{fig:si-si-robin}
+  \includegraphics[width=\linewidth]{Si_Robin_vs_dx}
 \end{subfigure}
+\end{minipage}}
 \caption{Mesh sensitivity of the calculated Cr, Ni and Si concentration profiles
 across the grain boundary for the two boundary conditions.
-(a--c) Dirichlet (perfect-sink) condition, Eq.~\eqref{eq:si-dirichlet}, at grid
-spacings \(\Delta x\) = 0.25, 0.5, 1 and \SI{2}{nm}. (d--f) Robin
-(finite-efficiency) condition, Eqs.~\eqref{eq:si-robin-vac} and
-\eqref{eq:si-robin-int}, at the same spacings.}
+(a--c) Dirichlet (perfect-sink) condition,
+\(C_{\Vac}=C_{\Vac}^{\mathrm{eq}}\) and \(C_{\Int}=C_{\Int}^{\mathrm{eq}}\) at
+the boundary, at grid spacings \(\Delta x\) = 0.25, 0.5, 1 and \SI{2}{nm}.
+(d--f) Robin (finite-efficiency) condition, Eqs.~\eqref{M-eq:sink-vac} and
+\eqref{M-eq:sink-int} of the main text, at the same spacings.}
 \label{fig:si-mesh}
 \end{figure}
 
@@ -133,484 +129,392 @@ spacings \(\Delta x\) = 0.25, 0.5, 1 and \SI{2}{nm}. (d--f) Robin
 
 \subsection{Motivation}
 
-In an earlier version of the model the metal removed at the oxidation front was
-exactly the metal consumed by the three interfacial reactions, and all unoxidized
-metal swept by the advancing front was rejected to the metal side of the
-interface. Because the interfacial rate constant of Cr is much larger than that
-of Fe, this assumption depletes Cr and enriches Fe strongly in the metal at the
-interface. The EDX line scans of \textcite{deng2017effect} show the opposite
-picture. The oxide is enriched in Cr and depleted in Fe, as expected for
-selective oxidation, but the metal side of the interface shows no significant Cr
-depletion or Fe enrichment, only a slight Ni enrichment. In the irradiated
-specimens the Cr profile has a valley at the centre of the oxide that deepens
+If all the unoxidized metal swept by the advancing front were rejected to the
+metal side of the interface, \(\lambda_i=0\) in
+Eq.~\eqref{M-eq:capture-fraction} of the main text, the metal removed at the
+front would be exactly the metal consumed by the three interfacial reactions.
+Because the interfacial rate constant of Cr is much larger than that of Fe,
+this limit depletes Cr and enriches Fe strongly in the metal at the interface.
+The EDX line scans of \textcite{deng2017effect} show neither
+(Fig.~\ref{M-fig:edx-compare} of the main text). In the irradiated specimens,
+moreover, the Cr profile has a valley at the centre of the oxide that deepens
 with dose, which shows that the interfacial Cr concentration follows the
-radiation-induced segregation profile as the front advances and is not modulated
-by the selective oxidation. The excess Fe and Ni must therefore leave the
-interface by a path other than rejection into the metal. \textcite{deng2020corrosion}
-proposed that they diffuse along the oxide grain boundaries to the surface, where
-Fe takes part in the formation of the outer oxide particles. A small amount of Ni
-is detected in the intergranular oxide but no Ni oxide is observed
-\parencite{deng2021grain}, so Ni is treated as unoxidized solute, part of which
-remains in the oxide.
-
-\subsection{Formulation}
-
-Let \(J_{\mathrm{r}}^{i}\) be the rate at which element
-\(i\in\{\mathrm{Cr},\mathrm{Fe},\mathrm{Ni},\mathrm{Si}\}\) is consumed by the
-interfacial reactions through the stoichiometric sinks of the main text, with
-\(J_{\mathrm{r}}^{\mathrm{Ni}}=0\), and \(C_i^{\GB}\) its concentration at the
-interface. The element with the largest ratio of consumption to availability
-sets the velocity at which the front must advance into the metal to be supplied,
-\begin{equation}
-v_{\lat}^{\ox,\max}=\max_{i}\frac{J_{\mathrm{r}}^{i}}{C_i^{\GB}} .
-\label{eq:si-sweep}
-\end{equation}
-The front sweeps element \(i\) at the rate \(v_{\lat}^{\ox,\max}C_i^{\GB}\), of
-which \(J_{\mathrm{r}}^{i}\) is oxidized. The remainder,
-\begin{equation}
-E_i=\max\!\left(v_{\lat}^{\ox,\max}C_i^{\GB}-J_{\mathrm{r}}^{i},\,0\right),
-\label{eq:si-excess}
-\end{equation}
-is zero for the element that sets \(v_{\lat}^{\ox,\max}\) and equals the full
-swept amount \(v_{\lat}^{\ox,\max}C_{\mathrm{Ni}}^{\GB}\) for Ni. The excess is
-partitioned between rejection into the metal and removal through the oxide. The
-partition is controlled by a rejection velocity \(v_i^{\mathrm{r}}\) for
-each element, the characteristic velocity at which element \(i\) can be rejected
-into the metal ahead of the moving front. The fraction removed through the oxide
-is
-\begin{equation}
-\lambda_i=\frac{v_{\lat}^{\ox,\max}}{v_{\lat}^{\ox,\max}+v_i^{\mathrm{r}}},
-\label{eq:si-lambda}
-\end{equation}
-and the net removal of element \(i\) from the metal domain is
-\begin{equation}
-\tilde{J}_{\mathrm{r}}^{i}=J_{\mathrm{r}}^{i}+\lambda_i E_i .
-\label{eq:si-sink}
-\end{equation}
-\(\tilde{J}_{\mathrm{r}}^{i}\) replaces \(J_{\mathrm{r}}^{i}\) as the outgoing
-flux of element \(i\) at the boundary plane and in the recession rate of the
-interface,
-\begin{equation}
-v_{\ox}=\sum_i\tilde{J}_{\mathrm{r}}^{i}
- =\sum_i J_{\mathrm{r}}^{i}+\sum_i\lambda_iE_i .
-\label{eq:si-vox}
-\end{equation}
+radiation-induced segregation profile as the front advances and is not
+modulated by the selective oxidation. The excess Fe and Ni must therefore
+leave the interface by a path other than rejection into the metal.
 
 \subsection{Limiting behaviour}
 
+The recession rate of the interface, \(v_{\ox}\) of Eq.~\eqref{M-eq:vlat-ox}
+of the main text, has two limits.
 \begin{itemize}
   \item \(v_i^{\mathrm{r}}\to\infty\) for every element: \(\lambda_i=0\), the
-        excess is rejected entirely into the metal, \(v_{\ox}=\sum_iJ_{\mathrm{r}}^{i}\),
-        and the earlier formulation is recovered.
+        excess is rejected entirely into the metal and
+        \(v_{\ox}=\sum_iJ_{\mathrm{r}}^{i}\); the metal removed is the metal
+        oxidized.
   \item \(v_i^{\mathrm{r}}\ll v_{\lat}^{\ox,\max}\) for every element:
-        \(\lambda_i\to1\), the front outruns the rejection and the whole swept
-        volume is removed. Since \(\sum_iC_i^{\GB}=1\),
-        \(v_{\ox}=\sum_i v_{\lat}^{\ox,\max}C_i^{\GB}=v_{\lat}^{\ox,\max}\): the
-        interface recedes at the sweep velocity, and the composition profile in
-        the metal is translated rigidly without modification by the selective
-        oxidation.
-  \item Intermediate values give \(\sum_iJ_{\mathrm{r}}^{i}\le v_{\ox}\le v_{\lat}^{\ox,\max}\),
-        with the partition set element by element.
+        \(\lambda_i\to1\) and the whole swept volume is removed. For every
+        element with \(E_i>0\),
+        \(\tilde{J}_{\mathrm{r}}^{i}=v_{\lat}^{\ox,\max}C_i^{\GB}\), and the
+        same holds for the element that sets \(v_{\lat}^{\ox,\max}\), for which
+        \(E_i=0\) and \(J_{\mathrm{r}}^{i}=v_{\lat}^{\ox,\max}C_i^{\GB}\).
+        Since \(\sum_iC_i^{\GB}=1\),
+        \begin{equation}
+        v_{\ox}=\sum_i v_{\lat}^{\ox,\max}C_i^{\GB}=v_{\lat}^{\ox,\max}:
+        \label{eq:si-vox-limit}
+        \end{equation}
+        the interface recedes at the sweep velocity, and the composition
+        profile in the metal is translated rigidly towards the interface
+        without modification by the selective oxidation.
 \end{itemize}
-Equation~\eqref{eq:si-lambda} takes its form from the partition coefficient of
-solute trapping. In the solute-trapping theory of rapid solidification
+Intermediate values give
+\(\sum_iJ_{\mathrm{r}}^{i}\le v_{\ox}\le v_{\lat}^{\ox,\max}\), with the
+partition set element by element.
+
+\subsection{Relation to solute trapping}
+
+Equation~\eqref{M-eq:capture-fraction} of the main text takes its form from
+the continuous-growth partition coefficient \(k(v)\) of solute trapping quoted
+there. In the solute-trapping theory of rapid solidification
 \parencite{aziz1982model,aziz1988continuous} a solute atom swept by the
 interface escapes into the parent phase only by a diffusive exchange jump of
-length \(\lambda\) with interface diffusivity \(D_i\); the competition between
-the advance of the interface by one monolayer, in a time \(\lambda/v\), and the
-escape, in a time \(\lambda^{2}/D_i\), gives the continuous-growth partition
-coefficient
-\begin{equation}
-k(v)=\frac{v/v_D+k_e}{v/v_D+1},\qquad v_D=\frac{D_i}{\lambda},
-\label{eq:si-aziz}
-\end{equation}
-which goes from the equilibrium value \(k_e\) for \(v\ll v_D\) to complete
-trapping, \(k=1\), for \(v\gg v_D\). \textcite{aziz1988continuous} note that
-the model is not specific to solidification and applies to solid-state
-transformations. \textcite{yu2018nonequilibrium} and
-\textcite{sherman2019thermodynamics} transposed it to the oxide/metal
-interface as nonequilibrium solute capture: oxides form with compositions
-outside their equilibrium solubility limits when (i) the captured oxide has a
-lower free energy than the alloy it forms from and (ii) the effective velocity
-of cation incorporation exceeds the diffusive velocity of cation exchange
-across the interface, \(v_a/v_D\gg1\) with \(v_D=D_i/a\) and \(a\) the hop
-distance. They argue that for the oxidation of Ni--Cr alloys condition (i) is
-met over essentially the whole composition range, so that the oxide
-composition is set by the kinetics, and that condition (ii) holds for most
-high-temperature and almost all aqueous oxidation. Equation~\eqref{eq:si-lambda}
-has the form of Eq.~\eqref{eq:si-aziz} with \(k_e=0\), so that the excess
-\(E_i\) is rejected completely when the front is slow, with the sweep velocity
-\(v_{\lat}^{\ox,\max}\) in place of the interface velocity and
-\(v_i^{\mathrm{r}}\) in place of the diffusive velocity of element \(i\). The interface exchange diffusivities
-that would fix \(v_D\) are not known for the Fe--Cr--Ni oxide/metal interface
-\parencite{yu2018nonequilibrium}, so the rejection velocities are treated
-as element-specific parameters; the element that sets \(v_{\lat}^{\ox,\max}\)
-(Cr under the present conditions) has \(E_i=0\) and is unaffected by its value.
-
-\subsection{Comparison with the line scans}
-
-With the calculated oxide formed first placed at the centre of the intergranular
-oxide, consistent with symmetric growth into both grains, the revised model
-reproduces the central valley of the Cr profile in the irradiated specimens and
-its deepening with dose, together with the measured dose dependence of the Cr and
-Fe contents of the oxide (Fig.~4 of the main text).
+length \(a\) with interface diffusivity \(D_i\), so that the diffusive
+velocity is \(v_D=D_i/a\). The partition coefficient follows from the
+competition between the advance of the interface by one monolayer, in a time
+\(a/v\), and the escape, in a time \(a^{2}/D_i\); it goes from the equilibrium
+value \(k_e\) for \(v\ll v_D\) to complete trapping, \(k=1\), for
+\(v\gg v_D\). \textcite{aziz1988continuous} note that the model is not
+specific to solidification and applies to solid-state transformations.
+\textcite{yu2018nonequilibrium} and \textcite{sherman2019thermodynamics}
+transposed it to the oxide/metal interface as nonequilibrium solute capture:
+oxides form with compositions outside their equilibrium solubility limits when
+(i) the captured oxide has a lower free energy than the alloy it forms from
+and (ii) the effective velocity of cation incorporation exceeds the diffusive
+velocity of cation exchange across the interface. They argue that for the
+oxidation of Ni--Cr alloys condition (i) is met over essentially the whole
+composition range, so that the oxide composition is set by the kinetics, and
+that condition (ii) holds for most high-temperature and almost all aqueous
+oxidation. The interface exchange diffusivities that would fix \(v_D\) are not
+known for the Fe--Cr--Ni oxide/metal interface
+\parencite{yu2018nonequilibrium}, so the rejection velocities
+\(v_i^{\mathrm{r}}\) are treated as element-specific parameters; the element
+that sets \(v_{\lat}^{\ox,\max}\) (Cr under the present conditions) has
+\(E_i=0\) and is unaffected by its value.
 
 \section{Cross-Section-Averaged Oxygen Transport and the Lateral Closure}
 \label{sec:si-closure}
-\subsection{Purpose and result}
 
-The grain-boundary oxidation model reduces oxygen transport to one dimension
-along the boundary. This note treats the entire oxide cross-section as the
-transport channel and derives, from the two-dimensional diffusion equation,
-\begin{enumerate}
-  \item[(i)] the one-dimensional balance for the cross-section-averaged oxygen
-        concentration $\Cb$;
-  \item[(ii)] a closure that gives the interfacial flux $\Jr$ directly from $\Cb$, the
-        oxide half-width $L$, the diffusivity $\D$ and the interfacial reaction law
-        $\Jr(\Ci)$.
-\end{enumerate}
-The closure is obtained from the separable solution of the Laplace equation in the
-oxide cross-section. It reduces to one scalar equation for a dimensionless
-eigenvalue $\mu\in(0,\pi/2)$,
-\begin{equation}
-\boxed{\;
-\frac{\D\,\mu^{2}\,\Cb}{L}
- =\sum_k \Jr^{k}\!\bigl(\Cb\,\mu\cot\mu\bigr)
-\;}
-\label{eq:mu-eq}
-\end{equation}
-after which
-\begin{equation}
-\boxed{\;
-\Jr=\frac{\D\,\mu^{2}\,\Cb}{L},
-\qquad
-\Ci=\Cb\,\mu\cot\mu
-\;}
-\label{eq:result}
-\end{equation}
-Equation~\eqref{eq:mu-eq} has a unique root and is solved pointwise by Newton's method,
-in the same way as the series-resistance closure of the earlier model was solved for $\Ci$.
+This section derives the one-dimensional oxygen balance,
+Eqs.~\eqref{M-eq:O-mass} and \eqref{M-eq:O-flux} of the main text, and the
+closure for the interfacial flux, Eqs.~\eqref{M-eq:film-transport} and
+\eqref{M-eq:qss-closure} of the main text, from the two-dimensional diffusion
+equation in the oxide cross-section, and gives the solution procedure for the
+eigenvalue \(\mu\), the neglected higher modes and the range of validity.
 
-\subsection{Geometry and notation}
+\subsection{Notation}
 \label{sec:notation}
 
-\begin{itemize}
-  \item $y$: coordinate along the grain boundary, $y=0$ at the surface.
-  \item $x$: coordinate normal to the boundary, $x=0$ on the boundary mid-plane
-        (plane of symmetry). Only the half-domain $0\le x\le L$ is considered.
-  \item $L(y,t)$: distance from the mid-plane to the oxide/metal interface. After the original boundary channel is filled.
-  \item $C_{\Ox}(x,y,t)$: concentration of mobile (dissolved) oxygen in the oxide.
-  \item $\D(y,t)$: effective oxygen diffusivity for transport across the
-        section, $D_{\Ox}^{\eff,x}$ of the main text, the harmonic mean of the
-        diffusivity profile across the oxide. The lateral problem is solved for
-        an equivalent uniform oxide with the same series resistance; the balance
-        along the boundary uses the arithmetic mean $D_{\Ox}^{\eff,y}$.
-  \item Cross-section average, mid-plane value and interface value:
-        \begin{equation}
-        \Cb(y,t)=\frac{1}{L}\int_{0}^{L} C_{\Ox}\,\dd x,\qquad
-        \Cc=C_{\Ox}(0,y,t),\qquad
-        \Ci=C_{\Ox}(L,y,t).
-        \end{equation}
-  \item Interfacial oxygen flux (per unit boundary area, positive toward the metal):
-        \begin{equation}
-        \Jr(y,t)=-\D\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=L}.
-        \label{eq:Jr-def}
-        \end{equation}
-  \item Interfacial reaction law: the total consumption
-        $\Jr(\Ci)=\sum_k\Jr^{k}(\Ci)$ of
-        the rate laws of the main text.
-        It is a nondecreasing function of $\Ci$ at fixed metal concentrations. Where
-        a linearized form is used below, $k\equiv\dd\Jr/\dd\Ci$.
-\end{itemize}
+The notation is that of the main text: \(y\) runs along the grain boundary
+from the surface, \(x\) is normal to it with \(x=0\) on the mid-plane, and only
+the half-domain \(0\le x\le L(y,t)\) is considered, with \(L\) the half-width
+of Eq.~\eqref{M-eq:halfwidth} of the main text. \(\Dy\) and \(\Dx\) are the
+effective diffusivities along and across the boundary,
+Eq.~\eqref{M-eq:Deff} of the main text. \(C_{\Ox}(x,y,t)\) denotes the local
+concentration of dissolved oxygen in the section; its cross-section average
+and its value at the interface are
+\begin{equation}
+\Cb(y,t)=\frac{1}{L}\int_{0}^{L} C_{\Ox}\,\dd x,\qquad
+\Ci=C_{\Ox}(L,y,t),
+\label{eq:avg-def}
+\end{equation}
+and the diffusive oxygen flux reaching the interface, per unit area of
+interface and positive towards the metal, is
+\begin{equation}
+\Jr(y,t)=-\Dx\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=L}.
+\label{eq:Jr-def}
+\end{equation}
+The interfacial reaction law is the total consumption
+\(\Jr(\Ci)=\sum_k\Jr^{k}(\Ci)\) of the rate laws,
+Eqs.~\eqref{M-eq:rate-cr2o3}--\eqref{M-eq:rate-sio2} of the main text; at
+fixed metal concentrations it is a nondecreasing function of \(\Ci\).
 
 \subsection{Assumptions}
 \label{sec:assumptions}
 
 \begin{enumerate}
-  \item[A1.] Two-dimensional Fickian diffusion of oxygen in an equivalent
-        uniform oxide: the oxide of the main text, whose diffusivity varies
-        across the section, is replaced, for the lateral problem, by a uniform
-        oxide with the across-section diffusivity $\D=D_{\Ox}^{\eff,x}$, the
-        harmonic mean of the profile, which carries the same steady flux across
-        the section.
-  \item[A2.] Symmetry at the mid-plane: $\partial C_{\Ox}/\partial x=0$ at $x=0$.
-  \item[A3.] Slow variation along the boundary of the half-width, the diffusivity and
-        the metal concentrations that enter the reaction law:
-        $|\partial L/\partial y|\ll1$, and $\D$, $\Jr(\cdot)$ change little over a
-        distance $L$.
-  \item[A4.] Lateral quasi-steady state: the lateral profile adjusts on the time scale
-        $L^2/\D$, which is short compared with the time scales on which $\Cb$ and $L$
-        change.
-  \item[A5.] Locally, the lateral profile is the fundamental separable mode of the
-        Laplace equation (Sec.~\ref{sec:mode}). Higher modes decay over a distance
-        of order $0.3L$ or less and are neglected (Sec.~\ref{sec:validity}).
+  \item[A1.] Equivalent homogeneous medium. The oxide, whose diffusivity
+        \(D_{\Ox}(x)\) varies across the section, is replaced by a homogeneous
+        anisotropic medium with diffusivity \(\Dy\) along the boundary and
+        \(\Dx\) across it. The two means carry the same steady flux as the
+        actual profile for a uniform gradient along the boundary and for a
+        one-dimensional flux across the section, respectively.
+  \item[A2.] Symmetry at the mid-plane: \(\partial C_{\Ox}/\partial x=0\) at
+        \(x=0\).
+  \item[A3.] Slow variation along the boundary:
+        \(|\partial L/\partial y|\ll1\), and \(L\), \(\Dx\), \(\Dy\) and the
+        metal concentrations that enter the reaction law change little over
+        the decay length of the lateral mode,
+        \((L/\mu)\sqrt{\Dy/\Dx}\) (Sec.~\ref{sec:mode}).
+  \item[A4.] Lateral quasi-steady state: the profile across the section
+        adjusts on the time scale \(L^{2}/\Dx\), which is short compared with
+        the time scales on which \(\Cb\) and \(L\) change.
+  \item[A5.] Locally, the profile across the section is the fundamental
+        separable mode of the steady diffusion equation
+        (Sec.~\ref{sec:mode}). Higher modes decay over a shorter distance
+        along the boundary and are neglected (Sec.~\ref{sec:validity}).
 \end{enumerate}
-No assumption is made on whether the interface is reaction- or diffusion-limited, and
-no assumption is made that $C_{\Ox}$ is uniform across the section.
+No assumption is made on whether the interface is reaction- or
+diffusion-limited, and \(C_{\Ox}\) is not assumed uniform across the section.
 
-\subsection{Cross-section integration of the 2D balance}
+\subsection{Cross-section integration of the two-dimensional balance}
 \label{sec:integration}
 
-The two-dimensional conservation equation in the oxide is
+Under A1 the two-dimensional conservation equation in the oxide is
 \begin{equation}
 \frac{\partial C_{\Ox}}{\partial t}
- =\frac{\partial}{\partial y}\!\left(\D\,\frac{\partial C_{\Ox}}{\partial y}\right)
- +\D\,\frac{\partial^2 C_{\Ox}}{\partial x^2}.
+ =\frac{\partial}{\partial y}\!\left(\Dy\,\frac{\partial C_{\Ox}}{\partial y}\right)
+ +\Dx\,\frac{\partial^2 C_{\Ox}}{\partial x^2}.
 \label{eq:2d}
 \end{equation}
-Integrate each term over $0\le x\le L(y,t)$, using the Leibniz rule where the limit
-depends on $y$ or $t$.
+Each term is integrated over \(0\le x\le L(y,t)\), with the Leibniz rule
+where the limit depends on \(y\) or \(t\).
 
 \paragraph{Lateral term.} With A2 and the definition \eqref{eq:Jr-def},
 \begin{equation}
-\int_{0}^{L}\D\,\frac{\partial^2 C_{\Ox}}{\partial x^2}\,\dd x
- =\D\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{0}^{L}
+\int_{0}^{L}\Dx\,\frac{\partial^2 C_{\Ox}}{\partial x^2}\,\dd x
+ =\Dx\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{0}^{L}
  =-\Jr .
 \label{eq:int-lateral}
 \end{equation}
 
-\paragraph{Time term.} Because the upper limit moves, the Leibniz rule gives the
-identity
+\paragraph{Time term.} Because the upper limit moves,
 \begin{equation}
-\frac{\partial}{\partial t}\int_{0}^{L}C_{\Ox}\,\dd x
- =\int_{0}^{L}\frac{\partial C_{\Ox}}{\partial t}\,\dd x
-  +C_{\Ox}(L)\,\frac{\partial L}{\partial t},
-\qquad\text{i.e.}\qquad
 \int_{0}^{L}\frac{\partial C_{\Ox}}{\partial t}\,\dd x
  =\frac{\partial}{\partial t}\bigl(L\,\Cb\bigr)-\Ci\,\frac{\partial L}{\partial t}.
 \label{eq:int-time}
 \end{equation}
-The last term is the dissolved oxygen, at concentration $\Ci$, contained in the
-oxide formed during $\dd t$.
+The last term is the dissolved oxygen, at concentration \(\Ci\), contained in
+the oxide formed during \(\dd t\).
 
 \paragraph{Along-boundary term.} Applying the Leibniz rule twice,
 \begin{align}
-\int_{0}^{L}\frac{\partial}{\partial y}\!\left(\D\frac{\partial C_{\Ox}}{\partial y}\right)\dd x
- &=\frac{\partial}{\partial y}\int_{0}^{L}\D\frac{\partial C_{\Ox}}{\partial y}\,\dd x
-   -\D\,\frac{\partial C_{\Ox}}{\partial y}\bigg|_{x=L}\frac{\partial L}{\partial y},
+\int_{0}^{L}\frac{\partial}{\partial y}\!\left(\Dy\frac{\partial C_{\Ox}}{\partial y}\right)\dd x
+ &=\frac{\partial}{\partial y}\int_{0}^{L}\Dy\frac{\partial C_{\Ox}}{\partial y}\,\dd x
+   -\Dy\,\frac{\partial C_{\Ox}}{\partial y}\bigg|_{x=L}\frac{\partial L}{\partial y},
 \\
-\int_{0}^{L}\D\frac{\partial C_{\Ox}}{\partial y}\,\dd x
- &=\D\left[\frac{\partial}{\partial y}\bigl(L\,\Cb\bigr)-\Ci\,\frac{\partial L}{\partial y}\right]
-  =\D\,L\,\frac{\partial\Cb}{\partial y}
-   +\D\,(\Cb-\Ci)\,\frac{\partial L}{\partial y}.
+\int_{0}^{L}\Dy\frac{\partial C_{\Ox}}{\partial y}\,\dd x
+ &=\Dy\left[\frac{\partial}{\partial y}\bigl(L\,\Cb\bigr)-\Ci\,\frac{\partial L}{\partial y}\right]
+ \notag\\
+ &=\Dy\,L\,\frac{\partial\Cb}{\partial y}
+   +\Dy\,(\Cb-\Ci)\,\frac{\partial L}{\partial y}.
 \end{align}
 Hence
 \begin{equation}
-\int_{0}^{L}\frac{\partial}{\partial y}\!\left(\D\frac{\partial C_{\Ox}}{\partial y}\right)\dd x
- =\frac{\partial}{\partial y}\!\left(\D\,L\,\frac{\partial\Cb}{\partial y}\right)
-  +\underbrace{\frac{\partial}{\partial y}\!\left[\D(\Cb-\Ci)\frac{\partial L}{\partial y}\right]
-   -\D\frac{\partial C_{\Ox}}{\partial y}\bigg|_{x=L}\frac{\partial L}{\partial y}}_{O(\partial L/\partial y)} .
+\begin{aligned}
+\int_{0}^{L}\frac{\partial}{\partial y}\!\left(\Dy\frac{\partial C_{\Ox}}{\partial y}\right)\dd x
+ ={}&\frac{\partial}{\partial y}\!\left(\Dy\,L\,\frac{\partial\Cb}{\partial y}\right)\\
+  &+\underbrace{\frac{\partial}{\partial y}\!\left[\Dy(\Cb-\Ci)\frac{\partial L}{\partial y}\right]
+   -\Dy\frac{\partial C_{\Ox}}{\partial y}\bigg|_{x=L}\frac{\partial L}{\partial y}}_{O(\partial L/\partial y)} .
+\end{aligned}
 \label{eq:int-y}
 \end{equation}
 
 \paragraph{Result.} Collecting \eqref{eq:int-lateral}--\eqref{eq:int-y},
 \begin{equation}
 \frac{\partial}{\partial t}\bigl(L\,\Cb\bigr)
- =\frac{\partial}{\partial y}\!\left(\D\,L\,\frac{\partial\Cb}{\partial y}\right)
+ =\frac{\partial}{\partial y}\!\left(\Dy\,L\,\frac{\partial\Cb}{\partial y}\right)
   -\Jr
   +\Ci\,\frac{\partial L}{\partial t}
-  +O\!\left(\frac{\partial L}{\partial y}\right).
+  +O\!\left(\frac{\partial L}{\partial y}\right),
 \label{eq:1d-exact}
 \end{equation}
-Equation~\eqref{eq:1d-exact} is exact. Under A3 the last group is dropped.
+which is exact for Eq.~\eqref{eq:2d}. Under A3 the last group is dropped.
 
-At the moving interface the diffusive flux $\Jr$ of \eqref{eq:Jr-def} supplies both
-the reaction and the dissolved oxygen in the fresh oxide (Stefan condition, dissolved
-oxygen in the metal neglected):
+At the moving interface the diffusive flux \(\Jr\) of \eqref{eq:Jr-def}
+supplies both the reactions and the dissolved oxygen in the newly formed oxide
+(Stefan condition, dissolved oxygen in the metal neglected):
 \begin{equation}
 \Jr=\sum_k\Jr^{k}(\Ci)+\Ci\,\frac{\partial L}{\partial t}.
 \label{eq:stefan}
 \end{equation}
 Substituting \eqref{eq:stefan} into \eqref{eq:1d-exact}, the terms
-$\Ci\,\partial L/\partial t$ cancel and the sink is the reaction consumption alone.
-The working one-dimensional equation is
+\(\Ci\,\partial L/\partial t\) cancel and the sink is the reaction consumption
+alone,
 \begin{equation}
-\boxed{\;
 \frac{\partial}{\partial t}\bigl(L\,\Cb\bigr)
- =\frac{\partial}{\partial y}\!\left(\D\,L\,\frac{\partial\Cb}{\partial y}\right)
-  -\sum_k\Jr^{k}
-\;}
+ =\frac{\partial}{\partial y}\!\left(\Dy\,L\,\frac{\partial\Cb}{\partial y}\right)
+  -\sum_k\Jr^{k},
 \label{eq:1d-working}
 \end{equation}
-With $\partial L/\partial t=\Omega\sum_k\Jr^k$ and $\Omega=1/C_{\Ox}^{\mathrm{oxide}}$
-the oxide volume formed per unit oxygen consumed, the ratio of the Stefan term in
-\eqref{eq:stefan} to the reaction term is $\Ci/C_{\Ox}^{\mathrm{oxide}}\ll1$. The
-diffusive flux $\Jr$ and the reaction consumption $\sum_k\Jr^k$ therefore differ by a
-negligible amount, and from here on the single symbol $\Jr$ is used for both; in
-particular the closure of Sec.~\ref{sec:mu} equates $\Jr$ of \eqref{eq:Jr-def} to
-$\sum_k\Jr^k$.
-Two remarks:
-\begin{itemize}
-  \item The along-boundary conductance is $\D L$ with the \emph{same} $\D$ as in the
-        lateral direction. This follows from A1 alone; no assumption on the lateral
-        profile was used.
-  \item $L$ sits inside the time derivative. Expanding,
-        $L\,\partial\Cb/\partial t=\partial_y(\D L\,\partial_y\Cb)-\Jr-\Cb\,\partial L/\partial t$;
-        the last term is the dilution of dissolved oxygen as the section widens.
-\end{itemize}
-Equation~\eqref{eq:1d-working} contains two unknowns per position, $\Cb$ and $\Jr$.
-The relation between them is derived next.
+which is Eq.~\eqref{M-eq:O-mass} of the main text with the flux of
+Eq.~\eqref{M-eq:O-flux}. The ratio of the Stefan term in \eqref{eq:stefan} to
+the reaction term is the ratio of the dissolved oxygen concentration \(\Ci\)
+to the concentration of the oxygen bound in the oxide, which is much smaller
+than unity. The diffusive flux \(\Jr\) and the reaction consumption
+\(\sum_k\Jr^{k}\) therefore differ by a negligible amount, and the single
+symbol \(\Jr\) is used for both, as in the main text; in particular the
+closure of Sec.~\ref{sec:mu} equates \(\Jr\) of \eqref{eq:Jr-def} to
+\(\sum_k\Jr^{k}\).
 
 \subsection{Lateral problem: separation of variables}
 \label{sec:mode}
 
 \subsubsection{Local problem}
 
-Under A3 and A4, in the neighbourhood of a given position along the boundary, the
-oxide occupies a half-strip $0\le x\le L$ with $L$, $\D$ and the reaction law treated
-as constants, and the concentration satisfies the steady equation
+Under A3 and A4, in the neighbourhood of a given position along the boundary
+the oxide occupies a half-strip \(0\le x\le L\) with \(L\), \(\Dx\), \(\Dy\)
+and the reaction law treated as constants, and the concentration satisfies
+the steady form of Eq.~\eqref{eq:2d},
 \begin{equation}
-\frac{\partial^2 C_{\Ox}}{\partial x^2}+\frac{\partial^2 C_{\Ox}}{\partial y^2}=0,
-\qquad
+\begin{gathered}
+\Dx\,\frac{\partial^2 C_{\Ox}}{\partial x^2}
++\Dy\,\frac{\partial^2 C_{\Ox}}{\partial y^2}=0,\\
 \frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=0}=0,
 \qquad
--\D\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=L}=\Jr\bigl(C_{\Ox}(L,y)\bigr).
+-\Dx\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=L}=\Jr\bigl(C_{\Ox}(L,y)\bigr).
+\end{gathered}
 \label{eq:laplace}
 \end{equation}
 
 \subsubsection{Separable solutions}
 
-Seek $C_{\Ox}=X(x)\,Y(y)$. Substituting into the Laplace equation and dividing by
-$XY$,
+With \(C_{\Ox}=X(x)\,Y(y)\), Eq.~\eqref{eq:laplace} separates into
 \begin{equation}
-\frac{X''}{X}=-\frac{Y''}{Y}=-\left(\frac{\mu}{L}\right)^2,
+\frac{X''}{X}=-\frac{\Dy}{\Dx}\,\frac{Y''}{Y}=-\left(\frac{\mu}{L}\right)^2,
 \end{equation}
-where the separation constant is written as $-(\mu/L)^2$ with $\mu>0$, because the
-$x$-problem must be oscillatory (it has a homogeneous Neumann condition at $x=0$ and a
-sink at $x=L$) and the $y$-dependence must decay into the boundary. Then
+where the separation constant is written as \(-(\mu/L)^2\) with \(\mu>0\),
+because the \(x\)-problem must be oscillatory (it has a homogeneous Neumann
+condition at \(x=0\) and a sink at \(x=L\)) and the \(y\)-dependence must
+decay into the boundary. Then
 \begin{equation}
-X''+\left(\frac{\mu}{L}\right)^2X=0,\quad X'(0)=0
-\;\Rightarrow\;
-X=\cos\!\left(\frac{\mu x}{L}\right);
+X=\cos\!\left(\frac{\mu x}{L}\right),
 \qquad
-Y''-\left(\frac{\mu}{L}\right)^2Y=0,\;Y\to0
-\;\Rightarrow\;
-Y=e^{-\mu y/L}.
+Y=\exp\!\left(-\frac{\mu y}{L}\sqrt{\frac{\Dx}{\Dy}}\right),
 \end{equation}
-Hence
+and
 \begin{equation}
-C_{\Ox}(x,y)=A\,\cos\!\left(\frac{\mu x}{L}\right)e^{-\mu y/L},
+C_{\Ox}(x,y)=A\,\cos\!\left(\frac{\mu x}{L}\right)
+ \exp\!\left(-\frac{\mu y}{L}\sqrt{\frac{\Dx}{\Dy}}\right),
 \label{eq:mode}
 \end{equation}
-where $A$ is an amplitude and $\mu$ is to be fixed by the interfacial condition.
-Different values of $\mu$ give different modes; the fundamental mode has the smallest
-$\mu$ and the slowest decay in $y$, and by A5 it is the one retained.
+where \(A\) is an amplitude and \(\mu\) is to be fixed by the interfacial
+condition. The dependence on \(x\) involves \(\Dx\) alone; the ratio of the
+two diffusivities enters only the decay length along the boundary,
+\((L/\mu)\sqrt{\Dy/\Dx}\). Different values of \(\mu\) give different modes;
+the fundamental mode has the smallest \(\mu\) and the slowest decay in \(y\),
+and by A5 it is the one retained.
 
 \subsubsection{Averages and flux of the mode}
 
-From \eqref{eq:mode}, with the common factor $e^{-\mu y/L}$ absorbed into $A$,
+From \eqref{eq:mode}, with the factor depending on \(y\) absorbed into \(A\),
 \begin{align}
 \Cb&=\frac{A}{L}\int_{0}^{L}\cos\!\left(\frac{\mu x}{L}\right)\dd x
     =A\,\frac{\sin\mu}{\mu},
 \label{eq:mode-avg}\\
 \Ci&=A\cos\mu,
 \label{eq:mode-int}\\
-\Cc&=A,
-\label{eq:mode-center}\\
-\Jr&=-\D\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=L}
-    =\frac{\D\,A\,\mu\sin\mu}{L}.
+\Jr&=-\Dx\,\frac{\partial C_{\Ox}}{\partial x}\bigg|_{x=L}
+    =\frac{\Dx\,A\,\mu\sin\mu}{L}.
 \label{eq:mode-flux}
 \end{align}
-Eliminating the amplitude with \eqref{eq:mode-avg}, $A=\mu\Cb/\sin\mu$, gives the
-two relations of \eqref{eq:result}:
-\begin{equation}
-\Jr=\frac{\D\,\mu^{2}\,\Cb}{L},
-\qquad
-\Ci=\Cb\,\mu\cot\mu,
-\qquad
-\Cc=\frac{\mu\,\Cb}{\sin\mu}.
-\label{eq:mode-relations}
-\end{equation}
-Both $\Jr$ and $\Ci$ are expressed through $\Cb$ and $\mu$ only. Note that
-$\mu\cot\mu$ decreases monotonically from $1$ at $\mu=0$ to $0$ at $\mu=\pi/2$, so
-$0\le\Ci\le\Cb$ for $\mu\in[0,\pi/2]$.
+Eliminating the amplitude with \eqref{eq:mode-avg}, \(A=\mu\Cb/\sin\mu\),
+gives the two relations of Eq.~\eqref{M-eq:film-transport} of the main text,
+\(\Jr=\Dx\mu^{2}\Cb/L\) and \(\Ci=\Cb\,\mu\cot\mu\). Since \(\mu\cot\mu\)
+decreases monotonically from \(1\) at \(\mu=0\) to \(0\) at \(\mu=\pi/2\),
+\(0\le\Ci\le\Cb\) for \(\mu\in[0,\pi/2]\).
 
 \subsubsection{Consistency with the averaged equation}
 
-Substituting the mode into the steady form of \eqref{eq:1d-working} with constant
-$L$ and $\D$,
+Substituting the mode into the steady form of \eqref{eq:1d-working} with
+constant \(L\), \(\Dx\) and \(\Dy\),
 \begin{equation}
-\D L\,\frac{\partial^2\Cb}{\partial y^2}
- =\D L\left(\frac{\mu}{L}\right)^2\Cb
- =\frac{\D\,\mu^2\,\Cb}{L}
+\Dy L\,\frac{\partial^2\Cb}{\partial y^2}
+ =\Dy L\,\frac{\Dx}{\Dy}\left(\frac{\mu}{L}\right)^2\Cb
+ =\frac{\Dx\,\mu^2\,\Cb}{L}
  =\Jr ,
 \end{equation}
-with no residual. The averaged equation and the mode closure are therefore mutually
-consistent; no additional approximation is introduced by combining them.
+with no residual. The averaged equation, which carries \(\Dy\), and the mode
+closure, which carries \(\Dx\), are therefore mutually consistent; no
+additional approximation is introduced by combining them.
 
-\subsection{The equation for $\mu$}
+\subsection{The equation for \(\mu\)}
 \label{sec:mu}
 
-\subsubsection{General (nonlinear) reaction law}
+\subsubsection{General reaction law}
 
-Imposing the interfacial condition of \eqref{eq:laplace} on the mode, and using
-\eqref{eq:mode-relations} to express both sides through $\Cb$ and $\mu$,
+Imposing the interfacial condition of \eqref{eq:laplace} on the mode gives
+Eq.~\eqref{M-eq:qss-closure} of the main text, written here as the root of
 \begin{equation}
-g(\mu)\equiv\frac{\D\,\mu^{2}\,\Cb}{L}-\Jr\bigl(\Cb\,\mu\cot\mu\bigr)=0 .
+g(\mu)\equiv\frac{\Dx\,\mu^{2}\,\Cb}{L}-\Jr\bigl(\Cb\,\mu\cot\mu\bigr)=0 .
 \label{eq:g}
 \end{equation}
-This is Eq.~\eqref{eq:mu-eq}. It is a single scalar equation in $\mu$; the inputs are
-the local values of $\Cb$, $L$, $\D$ and the metal concentrations that enter
-$\Jr(\cdot)$.
+It is a single scalar equation in \(\mu\); the inputs are the local values of
+\(\Cb\), \(L\), \(\Dx\) and the metal concentrations that enter
+\(\Jr(\cdot)\). The diffusivity \(\Dy\) does not enter.
 
-\paragraph{Existence and uniqueness.} On $(0,\pi/2)$ the first term increases
-monotonically from $0$; the second term decreases monotonically, because $\Jr(\cdot)$ is
-nondecreasing and $\mu\cot\mu$ is decreasing. Hence $g$ is strictly increasing, with
+\paragraph{Existence and uniqueness.} On \((0,\pi/2)\) the first term
+increases monotonically from \(0\); the second term decreases monotonically,
+because \(\Jr(\cdot)\) is nondecreasing and \(\mu\cot\mu\) is decreasing.
+Hence \(g\) is strictly increasing, with
 \begin{equation}
 g(0^+)=-\Jr(\Cb),
 \qquad
-g(\pi/2)=\frac{\pi^2\D\,\Cb}{4L}-\Jr(0).
+g(\pi/2)=\frac{\pi^2\Dx\,\Cb}{4L}-\Jr(0).
 \end{equation}
-If $\Jr(\Cb)>0$ (oxidation possible at the local average concentration) and
-$\Jr(0)\le0$ (no consumption at zero oxygen, which holds for all three rate laws),
-there is exactly one root
-$\mu^\ast\in(0,\pi/2)$. If $\Jr(\Cb)\le0$, no oxygen is consumed: set $\mu=0$,
-$\Jr=0$, $\Ci=\Cb$.
+If \(\Jr(\Cb)>0\) (oxidation possible at the local average concentration) and
+\(\Jr(0)\le0\) (no consumption at zero oxygen, which holds for all three rate
+laws), there is exactly one root \(\mu\in(0,\pi/2)\). If \(\Jr(\Cb)\le0\), no
+oxygen is consumed: \(\mu=0\), \(\Jr=0\) and \(\Ci=\Cb\).
 
 \paragraph{Newton iteration.} The derivative is
 \begin{equation}
-g'(\mu)=\frac{2\D\,\mu\,\Cb}{L}
-        -\Jr'\bigl(\Ci\bigr)\,\Cb\,\frac{\dd}{\dd\mu}\bigl(\mu\cot\mu\bigr),
-\qquad
+\begin{gathered}
+g'(\mu)=\frac{2\Dx\,\mu\,\Cb}{L}
+        -\Jr'\bigl(\Ci\bigr)\,\Cb\,\frac{\dd}{\dd\mu}\bigl(\mu\cot\mu\bigr),\\
 \frac{\dd}{\dd\mu}\bigl(\mu\cot\mu\bigr)=\frac{\sin\mu\cos\mu-\mu}{\sin^2\mu}<0,
+\end{gathered}
 \end{equation}
-so $g'>0$ throughout and Newton's method converges from any bracketed start. A
-safeguarded Newton (fall back to bisection if an iterate leaves $(0,\pi/2)$) is
-used. A good initial guess is
-the linearized value of Sec.~\ref{sec:linear}.
+so \(g'>0\) throughout. A safeguarded Newton iteration is used, which falls
+back to bisection if an iterate leaves \((0,\pi/2)\), started from the
+linearized value of Sec.~\ref{sec:linear}.
 
-\paragraph{Algorithm per grid point and time step.}
+\paragraph{Procedure at each grid point and time step.}
 \begin{enumerate}
-  \item Inputs: $\Cb$, $L$, $\D$, $C_{\mathrm{Cr}}^{\GB}$, $C_{\mathrm{Fe}}^{\GB}$,
-        $C_{\mathrm{Si}}^{\GB}$.
-  \item If $\Jr(\Cb)\le0$: $\mu=0$, $\Jr=0$, $\Ci=\Cb$. Stop.
-  \item Solve $g(\mu)=0$ on $(0,\pi/2)$ by safeguarded Newton.
-  \item $\Jr=\D\mu^2\Cb/L$; $\Ci=\Cb\,\mu\cot\mu$; the individual $\Jr^{k}(\Ci)$
-        give the metal sinks, the stoichiometric sinks of the main text, and the growth of each $L_k$.
-  \item Use $\Jr$ as the sink in \eqref{eq:1d-working}.
+  \item Inputs: \(\Cb\), \(L\), \(\Dx\), \(C_{\mathrm{Cr}}^{\GB}\),
+        \(C_{\mathrm{Fe}}^{\GB}\), \(C_{\mathrm{Si}}^{\GB}\).
+  \item If \(\Jr(\Cb)\le0\): \(\mu=0\), \(\Jr=0\), \(\Ci=\Cb\).
+  \item Otherwise \(g(\mu)=0\) is solved on \((0,\pi/2)\).
+  \item \(\Jr=\Dx\mu^2\Cb/L\) and \(\Ci=\Cb\,\mu\cot\mu\); the individual
+        \(\Jr^{k}(\Ci)\) give the metal sinks,
+        Eqs.~\eqref{M-eq:sink-cr}--\eqref{M-eq:sink-si} of the main text, and
+        the thickness rates,
+        Eqs.~\eqref{M-eq:thick-cr2o3}--\eqref{M-eq:thick-sio2}.
+  \item \(\Jr\) is the sink in Eq.~\eqref{M-eq:O-mass} of the main text.
 \end{enumerate}
-This replaces the series-resistance closure of the earlier model, which
-also solves one scalar equation per point; the unknown is now $\mu$ instead of $\Ci$.
 
-\subsubsection{Linearized reaction law}
+\subsubsection{Linear reaction law}
 \label{sec:linear}
 
-For $\Jr=k\,\Ci$, Eq.~\eqref{eq:g} becomes
+For \(\Jr=k\,\Ci\), with \(k=\dd\Jr/\dd\Ci\) as in the main text,
+Eq.~\eqref{eq:g} becomes
 \begin{equation}
-\frac{\D\mu^2}{L}=k\,\mu\cot\mu
+\frac{\Dx\mu^2}{L}=k\,\mu\cot\mu
 \qquad\Longleftrightarrow\qquad
-\mu\tan\mu=\frac{kL}{\D}\equiv\mathrm{Da},
+\mu\tan\mu=\frac{kL}{\Dx}\equiv\mathrm{Da},
 \label{eq:mu-linear}
 \end{equation}
-the classical eigenvalue condition for a Robin boundary. $\mathrm{Da}$ is the ratio of
-the lateral diffusion resistance $L/\D$ to the reaction resistance $1/k$. The
-concentration $\Cb$ drops out: $\mu$ depends only on $\mathrm{Da}$.
+the classical eigenvalue condition for a Robin boundary. \(\mathrm{Da}\) is
+the ratio of the diffusion resistance across the section, \(L/\Dx\), to the
+reaction resistance \(1/k\). The concentration \(\Cb\) drops out: \(\mu\)
+depends only on \(\mathrm{Da}\) (Table~\ref{tab:mu}).
 
 \begin{table}[h]
 \centering
+\caption{Fundamental mode for a linear reaction law.}
+\label{tab:mu}
 \begin{tabular}{rrrr}
 \toprule
-$\mathrm{Da}=kL/\D$ & $\mu$ & $\Ci/\Cb=\mu\cot\mu$ & $\Jr L/(\D\Cb)=\mu^2$ \\
+$\mathrm{Da}=kL/\Dx$ & $\mu$ & $\Ci/\Cb=\mu\cot\mu$ & $\Jr L/(\Dx\Cb)=\mu^2$ \\
 \midrule
 $0$      & $0$     & $1$     & $0$ \\
 $0.1$    & $0.311$ & $0.968$ & $0.097$ \\
@@ -619,126 +523,83 @@ $10$     & $1.429$ & $0.204$ & $2.042$ \\
 $\infty$ & $\pi/2$ & $0$     & $\pi^2/4\approx2.467$ \\
 \bottomrule
 \end{tabular}
-\caption{Fundamental mode for a linear reaction law.}
-\label{tab:mu}
 \end{table}
 
-\subsubsection{Limits}
-
-\begin{itemize}
-  \item \textbf{Reaction-limited}, $\mathrm{Da}\ll1$: $\mu^2\simeq\mathrm{Da}$, so
-        $\Jr\simeq k\,\Cb$ and $\Ci\simeq\Cb$. The interface sees the average
-        concentration; the lateral profile is nearly uniform, with a parabolic
-        deviation of relative size $O(\mathrm{Da})$. The decay length along the
-        boundary is $L/\mu\simeq\sqrt{\D L/k}\gg L$.
-  \item \textbf{Diffusion-limited}, $\mathrm{Da}\gg1$: $\mu\to\pi/2$, so
-        $\Jr\to\pi^2\D\Cb/(4L)$ and $\Ci\to0$. Oxygen is consumed as soon as it
-        reaches the interface; the lateral profile is a quarter cosine; the decay
-        length along the boundary is $2L/\pi\approx0.64L$.
-\end{itemize}
-Between these limits $\mu$ interpolates smoothly. The closure never needs a
-shape factor: if one insists on writing $\Jr=f\,\D(\Cb-\Ci)/L$, then
-$f=\mu^2/(1-\mu\cot\mu)$, which runs from $3$ to $\pi^2/4$, but $f$ plays no role in
-the algorithm.
+In the reaction-limited limit, \(\mathrm{Da}\ll1\), the profile across the
+section is nearly uniform, with a parabolic deviation of relative size
+\(O(\mathrm{Da})\), and the decay length along the boundary is
+\((L/\mu)\sqrt{\Dy/\Dx}\simeq\sqrt{\Dy L/k}\), much larger than \(L\). In the
+diffusion-limited limit, \(\mathrm{Da}\gg1\), the profile across the section
+is a quarter cosine and the decay length along the boundary is
+\((2L/\pi)\sqrt{\Dy/\Dx}\). Between these limits \(\mu\) interpolates
+smoothly.
 
 \subsection{Range of validity}
 \label{sec:validity}
 
 \begin{enumerate}
   \item \textbf{Higher modes.} The interfacial condition admits a sequence of
-        eigenvalues $\mu_0<\mu_1<\dots$, with $\mu_n\in(n\pi,\,n\pi+\pi/2)$ for a
-        Robin condition. Each decays as $e^{-\mu_n y/L}$. The first higher mode decays
-        at least as fast as $e^{-\pi y/L}$, i.e.\ over a distance $\lesssim L/\pi
-        \approx0.3L$, compared with $\ge2L/\pi$ for the fundamental. Higher modes are
-        excited where the boundary data change abruptly: the surface entry, the
-        oxidation tip, and any position where $L$, $\D$ or the metal concentrations
-        jump. Away from such places, only the fundamental survives (A5).
-  \item \textbf{Slowly varying geometry (A3).} The mode is derived for a strip of
-        constant width. For a wedge-shaped oxide the closure is applied with the local
-        $L(y)$; the error is $O(\partial L/\partial y)$, the same order as the terms
-        dropped in \eqref{eq:1d-exact}.
-  \item \textbf{Quasi-steady lateral profile (A4).} Requires $L^2/\D$ to be short
-        compared with the time scales of $\Cb(t)$ and $L(t)$. This can be checked
-        from the simulation output.
-  \item \textbf{Early stage.} When the oxidized zone is as deep as it is wide, the
-        decay length is comparable to $L$ and the whole problem is two-dimensional.
-        The one-dimensional description is meaningful only once the oxidized zone is
-        slender; the initial aspect-ratio-one stage lies outside its scope.
-  \item \textbf{Equivalent uniform oxide (A1).} The diffusivity of the oxide
-        varies across the section, and the lateral problem is solved with the
-        harmonic mean $D_{\Ox}^{\eff,x}$, which is exact for a one-dimensional
-        steady flux across the section. For a nonuniform $\D(x)$ the
-        fundamental mode is not a pure cosine; the deviation is neglected. The
-        conductance along the boundary in \eqref{eq:1d-working} uses the
-        arithmetic mean $D_{\Ox}^{\eff,y}$, exact for flux along the direction
-        in which $\D$ is uniform; the two means are the Wiener bounds of
-        effective-medium theory.
+        eigenvalues \(\mu_0<\mu_1<\dots\), with
+        \(\mu_n\in(n\pi,\,n\pi+\pi/2)\) for a Robin condition. Each mode
+        decays along the boundary over the distance
+        \((L/\mu_n)\sqrt{\Dy/\Dx}\). The first higher mode therefore decays
+        over at most \((L/\pi)\sqrt{\Dy/\Dx}\), compared with at least
+        \((2L/\pi)\sqrt{\Dy/\Dx}\) for the fundamental. Higher modes are
+        excited where the boundary data change abruptly: the surface entry,
+        the oxidation tip, and any position where \(L\), the diffusivities or
+        the metal concentrations jump. Away from such places only the
+        fundamental survives (A5).
+  \item \textbf{Slowly varying geometry (A3).} The mode is derived for a
+        strip of constant width. For a wedge-shaped oxide the closure is
+        applied with the local \(L(y)\); the error is
+        \(O(\partial L/\partial y)\), the same order as the terms dropped in
+        \eqref{eq:1d-exact}.
+  \item \textbf{Quasi-steady lateral profile (A4).} \(L^2/\Dx\) must be short
+        compared with the time scales of \(\Cb(t)\) and \(L(t)\).
+  \item \textbf{Early stage.} When the depth of the oxidized zone is
+        comparable to the decay length \((L/\mu)\sqrt{\Dy/\Dx}\), the whole
+        problem is two-dimensional. The one-dimensional description is
+        meaningful only once the oxidized zone is slender; the initial stage
+        lies outside its scope.
+  \item \textbf{Equivalent homogeneous medium (A1).} The harmonic mean
+        \(\Dx\) is exact for a one-dimensional steady flux across the
+        section; for a nonuniform \(D_{\Ox}(x)\) the fundamental mode is not
+        a pure cosine, and the deviation is neglected. The arithmetic mean
+        \(\Dy\) is exact when the gradient along the boundary is uniform
+        across the section; the correlation between \(D_{\Ox}(x)\) and the
+        variation of \(\partial C_{\Ox}/\partial y\) across the section is
+        neglected.
 \end{enumerate}
-
-\subsection{Summary of the model change}
-\label{sec:summary}
-
-Earlier formulation:
-\begin{align}
-\frac{\partial C_{\Ox}}{\partial t}
- &=\frac{\partial}{\partial y}\!\left(\D\frac{\partial C_{\Ox}}{\partial y}\right)
-   -\frac{\Jr}{\delta_{\GB}}, &
-\Jr &=\D\,\frac{C_{\Ox}-\Ci}{\sum_k L_k}=\sum_k\Jr^{k}(\Ci).
-\end{align}
-Proposed formulation (cross-section average over the whole oxide, fundamental-mode
-closure):
-\begin{align}
-\frac{\partial}{\partial t}\bigl(L\,\Cb\bigr)
- &=\frac{\partial}{\partial y}\!\left(\D\,L\,\frac{\partial\Cb}{\partial y}\right)-\Jr, &
-\Jr &=\frac{\D\,\mu^{2}\,\Cb}{L},\quad
-\frac{\D\,\mu^{2}\,\Cb}{L}=\sum_k\Jr^{k}\!\bigl(\Cb\,\mu\cot\mu\bigr).
-\end{align}
-What changes: (i) the storage width and along-boundary conductance are the
-time-dependent half-width $L$ instead of the fixed $\delta_{\GB}$, with $L$ inside the
-time derivative; (ii) the lateral closure is the fundamental Laplace mode, valid from
-the reaction-limited to the diffusion-limited regime, with $\mu$ obtained pointwise
-by Newton's method; (iii) $L$ is the mid-plane-to-interface distance. What does not
-change: the reaction laws, the metal sinks, the definition of $\D$ as a local
-volume-fraction average, and the structure of the pointwise scalar solve.
 
 \section{Apparent Effective Diffusivities of the Oxidation Front}
 \label{sec:si-deff}
 
 Table~\ref{tab:si-deff} lists the apparent effective diffusivities
-\(\bar{D}_{\mathrm{eff}}=L^{2}/2t\) computed from the reported final penetration
-depth \(L\) and total exposure time \(t\) of the two experimental series used in
-the main text. The values assume parabolic kinetics from \(t=0\) with no
-incubation correction. At the same dose the oxide penetrates faster in the series
-of \textcite{deng2020corrosion} than in that of \textcite{deng2017effect}; the
-\SI{0.5}{\dpa} value of the former exceeds the \SI{3.0}{\dpa} value of the
-latter. A model calibrated on the 2017 series is therefore expected to
-underestimate the absolute depths of the 2020 series, as observed in Fig.~8 of
-the main text. The normalized depth used there is
-\begin{equation}
-L_{\mathrm{norm}}=\frac{L}{L_{\max}},
-\label{eq:si-lnorm}
-\end{equation}
-where \(L_{\max}\) is the maximum penetration depth over both doses, taken
-separately for the calculations (\SI{110}{nm}) and for the measurements
-(\SI{231}{nm}).
+\(\bar{D}_{\mathrm{eff}}=L^{2}/2t\) of the two experimental series used in the
+main text, the \SI{500}{h} series of \textciteyear{deng2017effect} and the
+\SI{1500}{h} series of \textciteyear{deng2020corrosion}, computed from the
+reported final penetration depth \(L\) and total exposure time \(t\). The
+values assume parabolic kinetics from \(t=0\) with no incubation correction.
 
 \begin{table}[htbp]
 \centering
 \caption{Apparent effective diffusivities of the grain-boundary oxidation
 front, \(\bar{D}_{\mathrm{eff}}=L^{2}/2t\), from the reported final penetration
-depth \(L\) and total exposure time \(t\). Depths for \textcite{deng2017effect}
+depth \(L\) and total exposure time \(t\). Depths for \textciteyear{deng2017effect}
 are digitized from Fig.~12 therein (mean over the reported boundaries); depths
-for \textcite{deng2020corrosion} are the values reported in the text.}
+for \textciteyear{deng2020corrosion} are the values reported in the text.}
 \label{tab:si-deff}
+\small
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{llS[table-format=4.0]S[table-format=3.0]S[table-format=2.1]S[table-format=2.1]}
 \toprule
 Source & Dose & {\(t\) (\si{h})} & {\(L\) (\si{nm})} & {\(\bar{D}_{\mathrm{eff}}\) (\si{nm^2/h})} & {\(\bar{D}_{\mathrm{eff}}\) (\(10^{-22}\)~\si{m^2/s})} \\
 \midrule
-\textcite{deng2017effect}    & SA             & 500  & 40  & 1.6  & 4.4  \\
-\textcite{deng2017effect}    & \SI{0.5}{\dpa} & 500  & 60  & 3.6  & 10.0 \\
-\textcite{deng2017effect}    & \SI{3.0}{\dpa} & 500  & 100 & 10.0 & 27.8 \\
-\textcite{deng2020corrosion} & \SI{0.5}{\dpa} & 1500 & 190 & 12.0 & 33.4 \\
-\textcite{deng2020corrosion} & \SI{1.5}{\dpa} & 1500 & 240 & 19.2 & 53.3 \\
+\textciteyear{deng2017effect}    & SA             & 500  & 40  & 1.6  & 4.4  \\
+\textciteyear{deng2017effect}    & \SI{0.5}{\dpa} & 500  & 62  & 3.8  & 10.7 \\
+\textciteyear{deng2017effect}    & \SI{3.0}{\dpa} & 500  & 105 & 11.0 & 30.6 \\
+\textciteyear{deng2020corrosion} & \SI{0.5}{\dpa} & 1500 & 190 & 12.0 & 33.4 \\
+\textciteyear{deng2020corrosion} & \SI{1.5}{\dpa} & 1500 & 240 & 19.2 & 53.3 \\
 \bottomrule
 \end{tabular}
 \end{table}
