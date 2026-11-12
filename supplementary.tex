@@ -71,7 +71,7 @@ boundary, and both the gradient and the magnitude of the solute segregation
 increase monotonically with refinement, Fig.~\ref{fig:si-mesh}(a--c). The width
 of the segregation profiles likewise fails to converge. The same mesh
 sensitivity has been reported for other Onsager-type RIS models
-\parencite{oplinger2026radiationinduced}.
+\parencite{oplinger2026radiationinduceda}.
 
 To remove this dependence the boundary is treated as a sink of finite
 efficiency, i.e.\ a Robin condition on the defect fluxes,
@@ -128,7 +128,7 @@ spacings \(\Delta x\) = 0.25, 0.5, 1 and \SI{2}{nm}. (d--f) Robin
 \label{fig:si-mesh}
 \end{figure}
 
-\section{Interfacial Mass Redistribution}
+\section{Partition of the Unoxidized Metal at the Oxidation Front}
 \label{sec:si-redistribution}
 
 \subsection{Motivation}
@@ -142,7 +142,7 @@ interface. The EDX line scans of \textcite{deng2017effect} show the opposite
 picture. The oxide is enriched in Cr and depleted in Fe, as expected for
 selective oxidation, but the metal side of the interface shows no significant Cr
 depletion or Fe enrichment, only a slight Ni enrichment. In the irradiated
-specimens the Cr profile has a minimum at the centre of the oxide that deepens
+specimens the Cr profile has a valley at the centre of the oxide that deepens
 with dose, which shows that the interfacial Cr concentration follows the
 radiation-induced segregation profile as the front advances and is not modulated
 by the selective oxidation. The excess Fe and Ni must therefore leave the
@@ -174,7 +174,7 @@ E_i=\max\!\left(v_{\lat}^{\ox,\max}C_i^{\GB}-J_{\mathrm{r}}^{i},\,0\right),
 is zero for the element that sets \(v_{\lat}^{\ox,\max}\) and equals the full
 swept amount \(v_{\lat}^{\ox,\max}C_{\mathrm{Ni}}^{\GB}\) for Ni. The excess is
 partitioned between rejection into the metal and removal through the oxide. The
-partition is controlled by a redistribution velocity \(v_i^{\mathrm{r}}\) for
+partition is controlled by a rejection velocity \(v_i^{\mathrm{r}}\) for
 each element, the characteristic velocity at which element \(i\) can be rejected
 into the metal ahead of the moving front. The fraction removed through the oxide
 is
@@ -212,8 +212,8 @@ v_{\ox}=\sum_i\tilde{J}_{\mathrm{r}}^{i}
   \item Intermediate values give \(\sum_iJ_{\mathrm{r}}^{i}\le v_{\ox}\le v_{\lat}^{\ox,\max}\),
         with the partition set element by element.
 \end{itemize}
-Equation~\eqref{eq:si-lambda} is the partition law of nonequilibrium solute
-capture. In the solute-trapping theory of rapid solidification
+Equation~\eqref{eq:si-lambda} takes its form from the partition coefficient of
+solute trapping. In the solute-trapping theory of rapid solidification
 \parencite{aziz1982model,aziz1988continuous} a solute atom swept by the
 interface escapes into the parent phase only by a diffusive exchange jump of
 length \(\lambda\) with interface diffusivity \(D_i\); the competition between
@@ -238,12 +238,12 @@ distance. They argue that for the oxidation of Ni--Cr alloys condition (i) is
 met over essentially the whole composition range, so that the oxide
 composition is set by the kinetics, and that condition (ii) holds for most
 high-temperature and almost all aqueous oxidation. Equation~\eqref{eq:si-lambda}
-is Eq.~\eqref{eq:si-aziz} with \(k_e=0\), since the excess \(E_i\) is metal
-that the oxide does not accommodate at equilibrium, with the sweep velocity
-\(v_{\lat}^{\ox,\max}\) as the interface velocity and \(v_i^{\mathrm{r}}\) as
-the diffusive velocity of element \(i\). The interface exchange diffusivities
+has the form of Eq.~\eqref{eq:si-aziz} with \(k_e=0\), so that the excess
+\(E_i\) is rejected completely when the front is slow, with the sweep velocity
+\(v_{\lat}^{\ox,\max}\) in place of the interface velocity and
+\(v_i^{\mathrm{r}}\) in place of the diffusive velocity of element \(i\). The interface exchange diffusivities
 that would fix \(v_D\) are not known for the Fe--Cr--Ni oxide/metal interface
-\parencite{yu2018nonequilibrium}, so the redistribution velocities are treated
+\parencite{yu2018nonequilibrium}, so the rejection velocities are treated
 as element-specific parameters; the element that sets \(v_{\lat}^{\ox,\max}\)
 (Cr under the present conditions) has \(E_i=0\) and is unaffected by its value.
 
@@ -251,7 +251,7 @@ as element-specific parameters; the element that sets \(v_{\lat}^{\ox,\max}\)
 
 With the calculated oxide formed first placed at the centre of the intergranular
 oxide, consistent with symmetric growth into both grains, the revised model
-reproduces the central minimum of the Cr profile in the irradiated specimens and
+reproduces the central valley of the Cr profile in the irradiated specimens and
 its deepening with dose, together with the measured dose dependence of the Cr and
 Fe contents of the oxide (Fig.~4 of the main text).
 

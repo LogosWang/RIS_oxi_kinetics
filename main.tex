@@ -15,6 +15,10 @@
 
 
 \addbibresource{refs/304IASCC.bib}
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+\appto{\bibsetup}{\sloppy}
 
 \title{
 A Mechanistic Model for Radiation-Induced Segregation Controlled
@@ -58,6 +62,7 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 \maketitle
 
 \begin{abstract}
+\emergencystretch=1em
 Irradiation accelerates the intergranular oxidation that precedes
 irradiation-assisted stress corrosion cracking of austenitic stainless steels
 in PWR primary water, but no model connects the radiation-induced segregation
@@ -71,10 +76,11 @@ dissolution of oxidized Si included. With one parameter set for all doses, the
 model reproduces the intergranular penetration depths measured on
 proton-irradiated 304 nuclear-grade stainless steel after \SI{500}{h} at 0,
 0.5 and \SI{3}{\dpa} (45, 69 and \SI{106}{nm} calculated against 40, 62 and
-\SI{105}{nm} measured), and it predicts the Cr minimum observed at the centre
-of the oxide of the irradiated specimens. Separating the two segregation
-routes shows that Si enrichment accounts for most of the dose dependence and
-Cr depletion for a minor part. Applied without adjustment to concurrent
+\SI{105}{nm} measured), and it predicts the Cr valley observed at the centre
+of the oxide of the irradiated specimens. Under the present parameterization
+the results support the view that Si enrichment is the dominant factor in the
+dose dependence, with Cr depletion contributing a minor part. Applied
+without adjustment to concurrent
 irradiation and oxidation of a type 316 baffle-former bolt after 40 years of
 service, the model gives a penetration depth of \SI{2.6}{\micro\metre}, within
 the 2 to \SI{3}{\micro\metre} measured.
@@ -94,7 +100,7 @@ selectively and forms a Cr-rich intergranular oxide. (c) The Cr-rich oxide
 limits oxygen transport along the boundary and the penetration stays shallow.
 (d) Irradiation drives point defects to the boundary and the resulting
 radiation-induced segregation depletes Cr and enriches Ni and Si. (e) On
-exposure the Cr-depleted boundary forms a oxide lack of Cr, and the
+exposure the Cr-depleted boundary forms an oxide poor in Cr, and the
 segregated Si oxidizes and dissolves, leaving pores. (f) The degraded oxide
 transports oxygen faster along the boundary and the oxide penetrates deeper.}
 \label{fig:physical-picture}
@@ -114,12 +120,8 @@ introduced by prior irradiation (Fig.~\ref{fig:physical-picture}).
 produced deeper intergranular oxidation in 304 nuclear-grade stainless
 steel after water exposure, accompanied by a decrease in the Cr content of
 the intergranular oxide. Cr depletion is not the only chemical change that
-matters. Using model alloys with Si and Cr contents chosen to mimic the
-segregated boundary, \textcite{du2026silicon} showed that Si enrichment
-promotes intergranular oxidation and cracking even when Cr is not
-depleted: Si forms oxide that is unstable in high-temperature water
-and dissolves preferentially, leaving a porous oxide that provides
-pathways for oxygen diffusion along grain boundaries. These observations
+matters: Si enrichment promotes intergranular oxidation and cracking even
+when Cr is not depleted \parencite{du2026silicon}. These observations
 connect irradiation to both the chemistry and the penetration depth of the
 intergranular oxide. Turning them into a predictive relationship requires a
 description of how the changing oxide composition and structure affect
@@ -167,8 +169,7 @@ segregation of multiple elements to the quantities governing oxygen
 transport.
 
 % ---- 4. Existing models and the gap ----
-Each half of this sequence has been modeled separately, and the two
-halves are not equally developed. The segregation half is settled enough
+Each half of this sequence has been modelled separately. The segregation half is settled enough
 that the grain boundary composition can be computed rather than only measured.
 Since the inverse-Kirkendall and rate-theory descriptions of RIS in
 concentrated alloys \parencite{marwick1978segregation,wiedersich1979theory},
@@ -176,10 +177,10 @@ the composition profile at a grain boundary has been obtained from the
 coupled fluxes of point defects and alloying elements, with Fe--Cr--Ni
 parameterizations that reproduce the measured dose and temperature
 dependence of Cr depletion and Ni enrichment
-\parencite{allen1998modeling}. Current models go further and
-resolve the sink itself, predicting segregation at grain boundaries and
-dislocation cell walls \parencite{kadambi2025phasefield} and the
-conditions under which Cr switches from enrichment to depletion
+\parencite{allen1998modeling}. Recent models predict the
+segregation at grain boundaries and dislocation cell walls in austenitic
+Fe--Cr--Ni \parencite{kadambi2025phasefield} and the conditions under which
+Cr switches from enrichment to depletion in Fe--Cr
 \parencite{oplinger2026radiationinduceda}. All of these models return the segregation profile as their final output;
 none includes how the modified boundary composition affects the subsequent
 grain-boundary oxidation.
@@ -192,10 +193,10 @@ chemistry. Models that resolve oxygen transport along the grain boundary treat
 the oxygen diffusivity as a single constant: in analytical or
 semi-analytical solutions that give the penetration depth in closed form
 \parencite{xu2015modeling,evans2013mechanism}, in
-finite-element descriptions in which it is fitted to measured oxide depths
-through a parabolic law \parencite{zhao2011modeling,karabela2013oxygen} or
-prescribed together with a constant reaction rate
-\parencite{aoyagi2012crystal}, and in phase-field simulations of a single
+finite-element models that couple oxygen diffusion along grain boundaries
+with mechanical deformation \parencite{zhao2011modeling,karabela2013oxygen}
+or combine it with a constant reaction rate \parencite{aoyagi2012crystal},
+and in phase-field simulations of a single
 stoichiometric chromia intrusion
 \parencite{rancourt2025viscoplasticity}. In none of
 these does the diffusivity depend on the composition of the oxide that has
@@ -203,13 +204,11 @@ formed. Thermodynamic selection of the
 oxide phases from the local alloy composition has been implemented for a
 Ni-base superalloy \parencite{fang2022numerical}, but with a constant
 oxygen diffusivity, the bulk composition at the boundary, and without the
-Cr oxide that limits transport. No model takes the irradiation-modified
-boundary composition as input and lets the resulting oxide composition set
-the oxygen transport that governs further penetration.
+Cr oxide that limits transport. To our knowledge, no model takes the
+irradiation-modified boundary composition as input and lets the resulting
+oxide composition set the oxygen transport that governs further penetration.
 
-To our knowledge, no model connects the segregated composition to the
-advance of the oxidation front through a transport quantity computed from
-both. Establishing this connection requires tracking how the segregated
+Establishing this connection requires tracking how the segregated
 alloy supplies the interfacial reactions, how those reactions change the
 oxide composition, and how the resulting diffusivity affects subsequent oxygen
 delivery. Segregation profiles, oxide composition, interfacial Ni
@@ -276,11 +275,11 @@ interfacial reactions, and (d) coupling between the two components.}
 \end{figure}
 
 
-The model consists of two components: a radiation-induced segregation (RIS) model for the evolving GB chemistry and a reduced-dimensional oxidation model for oxygen transport, consumption, and oxide growth. The RIS-predicted Cr, Ni, Si, and Fe concentrations provide the local alloy composition for the oxidation model. Oxygen transport along the boundary is solved for the cross-section-averaged concentration of the oxidized zone, and the delivery of oxygen to the oxide/metal interface is closed by the fundamental mode of the steady diffusion equation in the cross-section. The oxide composition, recorded across the section as the oxide grows, determines the effective oxygen diffusivities along and across the boundary, which control the local oxygen consumption and oxide growth rate. The formulations of the two components are described below.
+The model consists of two components: a radiation-induced segregation (RIS) model for the evolving grain-boundary chemistry and a reduced-dimensional oxidation model for oxygen transport, consumption, and oxide growth. The RIS-predicted Cr, Ni, Si, and Fe concentrations provide the local alloy composition for the oxidation model. Oxygen transport along the boundary is solved for the cross-section-averaged concentration of the oxidized zone, and the delivery of oxygen to the oxide/metal interface is closed by the fundamental mode of the steady diffusion equation in the cross-section. The oxide composition, recorded across the section as the oxide grows, determines the effective oxygen diffusivities along and across the boundary, which control the local oxygen consumption and oxide growth rate. The formulations of the two components are described below.
 
-Figure~\ref{fig:framework} summarises the model. The computational domain,
+Figure~\ref{fig:framework} summarizes the model. The computational domain,
 Fig.~\ref{fig:framework-domain}, is a grain boundary that opens onto the surface exposed to the primary water.
-Oxygen enters at the mouth through the surface film and migrates along the
+Oxygen enters at the mouth through the surface oxide scales and migrates along the
 boundary within the oxidized zone, whose half-width grows as the oxide thickens.
 Only the half-domain on one side of the boundary is simulated, the other half
 following by symmetry; it extends \SI{50}{nm} normal to the boundary and
@@ -295,10 +294,10 @@ lattice velocity; the profiles shown are calculated, mirrored about the boundary
 and convolved with a \SI{1}{\nano\metre} FWHM Gaussian. At a given depth,
 Fig.~\ref{fig:framework-ox}, the oxygen delivered along the boundary reaches the
 advancing oxide/metal interface through the oxide cross-section and is
-partitioned there among the three oxides; the metal swept by the front is either
+partitioned there among the three oxide end members; the metal swept by the front is either
 oxidized, rejected into the metal, or carried away through the oxide, and the net
-removal sets the oxidation contribution \(v_{\ox}\). The two components are coupled as shown in
-Fig.~\ref{fig:framework-coupling}: irradiation fixes the boundary chemistry and
+removal sets the oxidation contribution to the lattice velocity \(v_{\ox}\). The two components are coupled as shown in
+Fig.~\ref{fig:framework-coupling}: irradiation controls the boundary chemistry and
 part of the lattice velocity, the boundary chemistry controls the interfacial
 reaction rates, and the oxide that forms feeds back on the oxygen supply through
 its thickness and its effective diffusivity.
@@ -348,7 +347,19 @@ alloying element carried by each defect mechanism is
    \nabla\!\left(\mu_j+\mu_{\Int}\right),
 \label{eq:flux-int}
 \end{align}
-with the Onsager coefficients
+where the chemical potentials are those of an ideal solution,
+\begin{align}
+\mu_j &= \mu_j^{0}+k_BT\ln C_j,
+\label{eq:mu-atom}\\
+\mu_{\Vac} &= k_BT\ln\frac{C_{\Vac}}{C_{\Vac}^{\mathrm{eq}}},\qquad
+\mu_{\Int} = k_BT\ln\frac{C_{\Int}}{C_{\Int}^{\mathrm{eq}}},
+\label{eq:mu-defect}
+\end{align}
+with \(\mu_j^{0}\) the reference chemical potential of element \(j\) and
+\(C_{\Vac}^{\mathrm{eq}}\), \(C_{\Int}^{\mathrm{eq}}\) the thermal-equilibrium
+defect site fractions, all taken independent of composition. The alloy is thus
+treated as an ideal solution: the activity coefficients are unity and no
+thermodynamic factor enters the fluxes. The Onsager coefficients are
 \begin{align}
 L_{ii}^{\Vac} &= \frac{C_iD_i^{\Vac}C_{\Vac}}{k_BT}
   \left(1+\frac{1-f_0^{\Vac}}{f_0^{\Vac}}\,
@@ -398,15 +409,14 @@ the boundary plane the defect fluxes obey the Robin conditions
  &= k_{\Int}^{\GB}\left(\left.C_{\Int}\right|_{x=0}-C_{\Int}^{\mathrm{eq}}\right),
 \label{eq:sink-int}
 \end{align}
-where \(C_{\Vac}^{\mathrm{eq}}\) and \(C_{\Int}^{\mathrm{eq}}\) are the
-thermal-equilibrium site fractions and \(k_{\Vac}^{\GB}\), \(k_{\Int}^{\GB}\) are
-the grain-boundary sink efficiencies of the two defects. The perfect-sink
+where \(k_{\Vac}^{\GB}\) and \(k_{\Int}^{\GB}\) are the grain-boundary sink
+efficiencies of the two defects. The perfect-sink
 (Dirichlet) condition \(C_{\Vac}=C_{\Vac}^{\mathrm{eq}}\),
 \(C_{\Int}=C_{\Int}^{\mathrm{eq}}\) is recovered for \(k^{\GB}\to\infty\). With the
 Dirichlet condition the defect gradients at the boundary, and with them both the
 magnitude and the width of the segregation profiles, do not converge under mesh
 refinement, a behaviour also reported for other Onsager-type RIS models
-\parencite{oplinger2026radiationinduced}; the finite-efficiency condition removes
+\parencite{oplinger2026radiationinduceda}; the finite-efficiency condition removes
 this dependence (Supplementary Information, Sec.~S1). The sink efficiencies
 are calibrated together with the defect-mediated transport coefficients,
 Sec.~\ref{sec:methodRISCalibration}.
@@ -469,11 +479,12 @@ Oxygen moves along the boundary through the whole section in parallel and
 reaches the interface across it in series, so an oxide whose diffusivity
 varies across the section has two effective diffusivities,
 \begin{equation}
-D_{\Ox}^{\eff,y}=\frac{1}{L}\left[\int_{0}^{S} D_{\Ox}(x)\,\mathrm{d}x
-                     +D_{\Ox}^{0}\,(L-S)\right],
-\qquad
-D_{\Ox}^{\eff,x}=L\left[\int_{0}^{S}\frac{\mathrm{d}x}{D_{\Ox}(x)}
+\begin{aligned}
+D_{\Ox}^{\eff,y}&=\frac{1}{L}\left[\int_{0}^{S} D_{\Ox}(x)\,\mathrm{d}x
+                     +D_{\Ox}^{0}\,(L-S)\right],\\
+D_{\Ox}^{\eff,x}&=L\left[\int_{0}^{S}\frac{\mathrm{d}x}{D_{\Ox}(x)}
                      +\frac{L-S}{D_{\Ox}^{0}}\right]^{-1},
+\end{aligned}
 \label{eq:Deff}
 \end{equation}
 the arithmetic and harmonic means that are the exact transport coefficients
@@ -491,10 +502,11 @@ are advanced in time together with the oxide,
 \label{eq:Dint}
 \end{equation}
 where \(D_{\Ox}^{\mathrm{new}}\) is Eq.~\eqref{eq:Dlocal} evaluated for the
-oxide forming at the interface. The composition at every position thus acts
-on the transport without the profile \(f_k(x)\) being stored; the
-composition profiles across the oxide reported in Sec.~\ref{sec:results}
-are reconstructed from the same growth record.
+oxide forming at the interface. The transport therefore requires only these
+two integrals and not the profile \(f_k(x)\) itself; the composition profiles
+across the oxide reported in Sec.~\ref{sec:results} are reconstructed from
+the growth record, that is, from the composition \(f_k^{\mathrm{new}}\) of the
+oxide formed at each thickness \(S\).
 
 Integrating the two-dimensional oxygen balance over the cross-section gives,
 for the section-averaged concentration \(\bar{C}_{\Ox}(y,t)\),
@@ -505,11 +517,20 @@ for the section-averaged concentration \(\bar{C}_{\Ox}(y,t)\),
 J_{\Ox} &= -D_{\Ox}^{\eff,y}\,\frac{\partial \bar{C}_{\Ox}}{\partial y},
 \label{eq:O-flux}
 \end{align}
-where \(J_{\mathrm{r}}\) is the oxygen flux reaching the interface.
-Equation~\eqref{eq:O-mass} is exact up to terms of order \(\partial L/\partial y\)
-and makes no assumption on the lateral concentration profile; \(L\) inside the
-time derivative accounts for the dilution of dissolved oxygen as the section
-widens (Supplementary Information, Sec.~S3).
+where \(J_{\Ox}\) is the oxygen flux along the boundary and
+\(J_{\mathrm{r}}=\sum_k J_{\mathrm{r}}^{k}\) is the rate at which oxygen is
+consumed by the interfacial reactions,
+Eqs.~\eqref{eq:rate-cr2o3}--\eqref{eq:rate-sio2}, per unit area of interface.
+The half-width \(L\) multiplies both the stored oxygen and the flux along the
+boundary because the oxide section is at once the volume that holds the
+dissolved oxygen and the channel that carries it; it stays inside the
+derivatives because the section widens as the oxide grows.
+Equation~\eqref{eq:O-mass} neglects terms of order \(\partial L/\partial y\)
+and therefore applies to a slender oxidized zone; its derivation is given in
+the Supplementary Information, Sec.~S3. The consumption \(J_{\mathrm{r}}\)
+equals the diffusive flux reaching the interface only when the concentration
+profile across the section is quasi-steady, which is the assumption used next
+to relate it to \(\bar{C}_{\Ox}\).
 
 The relation between \(J_{\mathrm{r}}\) and \(\bar{C}_{\Ox}\) is obtained from
 the fundamental separable mode of the steady diffusion equation in the
@@ -547,13 +568,7 @@ J_{\mathrm{r}}^{\mathrm{SiO_2}}
 \label{eq:rate-sio2}
 \end{align}
 where \(k_{\mathrm{r}}^{k}\) is the interfacial rate constant of end-member
-\(k\); their sum is the total interfacial consumption,
-\begin{equation}
-J_{\mathrm{r}}
- = J_{\mathrm{r}}^{\mathrm{Cr_2O_3}}+J_{\mathrm{r}}^{\mathrm{Fe_3O_4}}
-  +J_{\mathrm{r}}^{\mathrm{SiO_2}} .
-\label{eq:rate-total}
-\end{equation}
+\(k\).
 The left-hand side of Eq.~\eqref{eq:qss-closure} increases and the right-hand
 side decreases monotonically with \(\mu\), so the root is unique; it is found by
 Newton's method. In the reaction-limited limit,
@@ -605,10 +620,11 @@ and the prefactors are the reciprocals of the number of oxygen atoms per
 formula unit. \ce{SiO2} is treated as dissolved on formation, so
 \(L_{\mathrm{SiO_2}}\) is the thickness its volume would occupy, which is
 retained as porosity in Eq.~\eqref{eq:Dlocal}. The total thickness
-\(S=\sum_k L_k\) and the composition \(f_k^{\mathrm{new}}\) of the oxide forming at the interface, of
-Sec.~\ref{sec:methodGBOxidation} follow from Eqs.~\eqref{eq:thick-cr2o3}--\eqref{eq:thick-sio2}.
+\(S=\sum_k L_k\) and the composition \(f_k^{\mathrm{new}}\) of the oxide
+forming at the interface follow from
+Eqs.~\eqref{eq:thick-cr2o3}--\eqref{eq:thick-sio2}.
 
-\paragraph{Interfacial mass redistribution.}
+\paragraph{Partition of the unoxidized metal at the oxidation front.}
 The element with the largest ratio of consumption to availability sets the rate
 at which the oxidation front advances into the metal,
 \begin{equation}
@@ -625,31 +641,42 @@ E_i=\max\!\left(v_{\lat}^{\ox,\max}C_i^{\GB}-J_{\mathrm{r}}^{i},\,0\right)
 is either rejected into the metal ahead of the front or carried into the oxide,
 where it is retained as unoxidized solute or transported along the oxide grain
 boundaries to the surface \parencite{deng2020corrosion}. The partition between
-the two paths is treated as a nonequilibrium solute capture at the moving
-oxide/metal interface \parencite{yu2018nonequilibrium,sherman2019thermodynamics},
-the oxidation analogue of solute trapping during rapid solidification
-\parencite{aziz1982model,aziz1988continuous}: an element escapes the advancing
-front only by diffusive exchange across the interface, so the fraction
-incorporated is set by the ratio of the front velocity to a diffusive velocity.
-In the continuous-growth model of \textcite{aziz1982model} the partition
-coefficient of the growing phase is \(k(v)=(v/v_D+k_e)/(v/v_D+1)\), with
-\(v_D\) the diffusive velocity of the interface and \(k_e\) the equilibrium
-partition coefficient. The excess \(E_i\) is metal that the oxide does not
-accommodate at equilibrium, \(k_e=0\), so the fraction carried into the oxide
-is
+the two paths is described by a function whose form is taken from the
+continuous-growth model of solute trapping
+\parencite{aziz1982model,aziz1988continuous}, which has also been applied to
+the oxide/metal interface
+\parencite{yu2018nonequilibrium,sherman2019thermodynamics}. In that model an
+atom escapes the advancing interface only by diffusive exchange across it, and
+the partition coefficient of the growing phase is
+\(k(v)=(v/v_D+k_e)/(v/v_D+1)\), with \(v\) the interface velocity, \(v_D\) the
+diffusive velocity of the interface and \(k_e\) the equilibrium partition
+coefficient. The same form is used here for the unoxidized excess \(E_i\):
+with \(v=v_{\lat}^{\ox,\max}\) and \(k_e=0\), so that the excess is rejected
+completely when the front is slow, the fraction of the excess that passes to
+the oxide side of the interface is
 \begin{equation}
 \lambda_i=\frac{v_{\lat}^{\ox,\max}}{v_{\lat}^{\ox,\max}+v_i^{\mathrm{r}}} ,
 \label{eq:capture-fraction}
 \end{equation}
-where the redistribution velocity \(v_i^{\mathrm{r}}\) takes the place of the
-diffusive velocity of element \(i\), the characteristic velocity at which it can
-be rejected into the metal ahead of the front. Complete rejection
+where the rejection velocity \(v_i^{\mathrm{r}}\) takes the place of the
+diffusive velocity: it is the characteristic velocity at which element \(i\)
+can be rejected into the metal ahead of the front. Complete rejection
 (\(\lambda_i=0\)), the local-equilibrium limit of classical oxidation theory
 \parencite{sherman2019thermodynamics}, is recovered for
 \(v_i^{\mathrm{r}}\to\infty\); for \(v_i^{\mathrm{r}}\ll v_{\lat}^{\ox,\max}\)
-the front outruns the rejection and the excess is carried into the oxide
-(\(\lambda_i\to1\)), the capture regime that \textcite{yu2018nonequilibrium}
-argue is the common case in aqueous oxidation. The net removal of element
+the front outruns the rejection and the whole excess passes to the oxide side
+(\(\lambda_i\to1\)). In solute trapping the atoms that fail to escape are
+frozen into the growing phase, and complete trapping gives that phase the
+composition of the parent phase. Here Fe and Ni, which make up nearly all of
+the excess, are both soluble
+and mobile in the intergranular oxide \parencite{deng2020corrosion}, so the
+atoms that pass to the oxide side are not frozen into it but are transported
+along its grain boundaries towards the surface. The limit
+\(\lambda_{\mathrm{Fe}}\to1\) adopted for Fe
+(Sec.~\ref{sec:methodGBOXidationCalibration}) therefore does not return the
+atomic fractions of the oxide to the composition of the metal; these remain
+set by the reaction rates through
+Eqs.~\eqref{eq:thick-cr2o3}--\eqref{eq:thick-sio2}. The net removal of element
 \(i\) from the metal is then
 \begin{equation}
 \tilde{J}_{\mathrm{r}}^{i}=J_{\mathrm{r}}^{i}+\lambda_i E_i ,
@@ -721,7 +748,7 @@ carries no species selectivity, it does not by itself alter the relative composi
 selectivity enters only through the mechanism-specific diffusivities in
 Eqs.~\eqref{eq:onsager-vac-diag}--\eqref{eq:onsager-int-off}, through the
 stoichiometric sinks in Eqs.~\eqref{eq:sink-cr}--\eqref{eq:sink-si}, and through
-the element-specific redistribution fractions \(\lambda_i\) of
+the element-specific partition fractions \(\lambda_i\) of
 Eq.~\eqref{eq:capture-fraction}.
 
 \subsubsection{Sequential Irradiation--Oxidation Protocol}
@@ -771,7 +798,8 @@ where \(C_{\Ox}^{\mathrm{w}}\) is the oxygen concentration of the bulk water,
 initial instant. The \(t^{-1/2}\) decay reproduces the parabolic thickening of the
 surface film, so that the cumulative oxygen admitted through the mouth grows as
 \(t^{1/2}\). The deep end of the boundary is closed,
-\(\left.J_{\Ox}\right|_{y=L_{\GB}}=0\).
+\(\left.J_{\Ox}\right|_{y=L_{\GB}}=0\), where \(L_{\GB}\) is the length of
+the boundary in the computational domain.
 
 Because no point defects are produced once \(K_0=0\), the inherited supersaturation
 decays on the recombination timescale, which is short compared with the exposure time;
@@ -836,7 +864,7 @@ Sec.~\ref{sec:methodTransportCalibration}.
 \label{sec:methodCalibration}
 The two components are parameterized and calibrated separately and against
 separate data. The RIS model is calibrated first; the oxidation model is then
-calibrated with the RIS model related parameters fixed. The bulk composition
+calibrated with the parameters of the RIS model held fixed. The bulk composition
 of the alloy, which sets the initial and far-field site fractions of the four
 elements in both components, is given in Table~\ref{tab:composition}.
 
@@ -877,7 +905,7 @@ damage efficiency accounts for the fraction of displacements that survive
 in-cascade recombination and escape as freely migrating defects; its value is
 that reported for proton irradiation. The mechanism-specific diffusion
 coefficients and the grain-boundary sink efficiencies are calibrated against the measured grain-boundary composition
-profiles of the reference experiment \cite{deng2021grain}, as shown in Figure~\ref{fig:profiles}. The interstitial-mediated diffusion coefficients \(D_i^{\Int}\) are effective
+profiles of the reference experiment \cite{deng2021grain}, as shown in Fig.~\ref{fig:profiles}. The interstitial-mediated diffusion coefficients \(D_i^{\Int}\) are effective
 values. In the multicomponent rate-theory model of
 \textcite{fukuya2009multicomponent}, the preferential association of
 undersized solutes with self-interstitials is represented by a coupling
@@ -894,10 +922,10 @@ and the weak dependence of \(\xi_k\) on the local composition through its
 normalization is neglected. Related parameters are shown in Table~\ref{tab:params-ris}.
 
 
-\subsubsection{Interfacial Reaction and Redistribution Parameterization}
+\subsubsection{Interfacial Reaction and Partition Parameterization}
 \label{sec:methodGBOXidationCalibration}
 The interfacial rate constants \(k_{\mathrm{r}}^{k}\) of the three end-members
-and the redistribution velocities \(v_i^{\mathrm{r}}\) of
+and the rejection velocities \(v_i^{\mathrm{r}}\) of
 Eq.~\eqref{eq:capture-fraction} are fixed by the EDX line scan across the
 intergranular oxide of the unirradiated specimen of \textcite{deng2017effect}:
 the metal-basis atomic fractions of the oxide and the Ni content of the metal
@@ -999,7 +1027,8 @@ Symbol & Description & Value & Source \\
 
 \begin{table}[htbp]
 \centering
-\caption{Parameters of the interfacial reaction and redistribution model,
+\caption{Parameters of the interfacial reactions and of the partition of the
+unoxidized metal,
 fixed by the composition of the intergranular oxide and the Ni content of the
 metal at the oxide/metal interface of the unirradiated specimen
 (Sec.~\ref{sec:methodGBOXidationCalibration}). Oxygen
@@ -1015,10 +1044,10 @@ Symbol & Description & Value & Source \\
 \(k_{\mathrm{r}}^{\mathrm{Cr_2O_3}}\) & Interfacial rate constant, \ce{Cr2O3}, Eq.~\eqref{eq:rate-cr2o3} & \SI{6e-4}{nm.s^{-1}} & Calibrated against the oxide composition, \SI{0}{\dpa} \\
 \(k_{\mathrm{r}}^{\mathrm{Fe_3O_4}}\) & Interfacial rate constant, \ce{Fe3O4}, Eq.~\eqref{eq:rate-fe3o4} & \SI{5e-5}{nm.s^{-1}} & Calibrated against the oxide composition, \SI{0}{\dpa} \\
 \(k_{\mathrm{r}}^{\mathrm{SiO_2}}\) & Interfacial rate constant, \ce{SiO2}, Eq.~\eqref{eq:rate-sio2} & \SI{7e-4}{nm.s^{-1}} & Stability ordering, held fixed \\
-\(v_{\mathrm{Cr}}^{\mathrm{r}}\) & Redistribution velocity, Cr, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Capture limit \\
-\(v_{\mathrm{Fe}}^{\mathrm{r}}\) & Redistribution velocity, Fe, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Capture limit \parencite{deng2020corrosion} \\
-\(v_{\mathrm{Si}}^{\mathrm{r}}\) & Redistribution velocity, Si, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Capture limit \\
-\(v_{\mathrm{Ni}}^{\mathrm{r}}\) & Redistribution velocity, Ni, Eq.~\eqref{eq:capture-fraction} & \SI{1.5e-5}{nm.s^{-1}} & Calibrated against the interface Ni content, \SI{0}{\dpa} \\
+\(v_{\mathrm{Cr}}^{\mathrm{r}}\) & Rejection velocity, Cr, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \\
+\(v_{\mathrm{Fe}}^{\mathrm{r}}\) & Rejection velocity, Fe, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \parencite{deng2020corrosion} \\
+\(v_{\mathrm{Si}}^{\mathrm{r}}\) & Rejection velocity, Si, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \\
+\(v_{\mathrm{Ni}}^{\mathrm{r}}\) & Rejection velocity, Ni, Eq.~\eqref{eq:capture-fraction} & \SI{1.5e-5}{nm.s^{-1}} & Calibrated against the interface Ni content, \SI{0}{\dpa} \\
 \(C_{\Ox}^{\mathrm{ref}}\) & Reference oxygen density, Eqs.~\eqref{eq:sink-cr}--\eqref{eq:thick-sio2} & \SI{22}{nm^{-3}} & Assumed \\
 \(N\) & Lattice site density of the fcc metal & \SI{87}{nm^{-3}} & fcc lattice, \(a=\SI{0.359}{nm}\) \\
 \(\rho_{\mathrm{Cr_2O_3}}\) & Density of \ce{Cr2O3}, Eq.~\eqref{eq:thick-cr2o3} & \SI{5.22}{g.cm^{-3}} & Crystallographic \\
@@ -1171,49 +1200,41 @@ content of the oxide, normalized to exclude oxygen, decreases with dose, from
 \SI{58.3}{\atpct} at 0.5 and \SI{3.0}{\dpa} \parencite{deng2017effect}. On the
 metal side of the interface the scans show no significant Cr depletion or Fe
 enrichment, and only a slight Ni enrichment. In the irradiated specimens the Cr
-profile exhibits a minimum at the centre of the oxide that deepens with
+profile exhibits a valley at the centre of the oxide that deepens with
 increasing dose.
 
-The calculated profiles reproduce these features. With the interfacial mass
-redistribution of Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture}, the
+The calculated profiles reproduce these features. With the partition of the
+unoxidized metal, Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture}, the
 calculated Cr profile retains the shape of the segregation profile across the
 interface, with neither Cr depletion nor Fe enrichment on the metal side, and
-shows the central Cr minimum whose depth increases with dose; Fe shows the
+shows the central Cr valley, whose depth increases with dose; Fe shows the
 mirror image, a central maximum in a Fe-depleted oxide. The Cr content away
 from the centre stays close to its unirradiated value, because the outer
 part of the oxide forms from metal outside the segregated zone, which is only
 a few nanometres wide (Fig.~\ref{fig:profiles}). Ni is not oxidized in the
-model and the Ni swept by the front is carried out through the oxide
+model and the Ni that passes to the oxide side is carried out through it
 (Eq.~\eqref{eq:capture-fraction}), so the calculated Ni content of the oxide is
-zero, against measured values of 1 to \SI{4}{\atpct}; on the metal side the
-calculated Ni, convolved with the probe, rises only to 9 to \SI{10}{\atpct}
-immediately ahead of the interface at the depth of the scans, below the
-measured 12 to \SI{16}{\atpct}; at the boundary plane itself the calculated
-Ni after oxidation is 12.5, 13.4 and \SI{14.5}{\atpct} at 0, 0.5 and
-\SI{3.0}{\dpa}, against 20, 22 and \SI{20}{\atpct} reported by
-\textcite{deng2017effect}.
+zero, against measured values of 1 to \SI{4}{\atpct}. On the metal side the
+calculated Ni shows a slight additional enrichment at the interface,
+consistent with the measurements; neither Fe nor Ni is strongly enriched
+there.
 
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.32\textwidth}\centering
+\begin{subfigure}[t]{0.42\textwidth}\centering
   \includegraphics[width=\linewidth]{Cr_minimum_in_oxide_vs_dose}
   \caption{}\label{fig:Cr-min}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
-  \includegraphics[width=\linewidth]{porosity_SiO2_dissolution_vs_dose}
-  \caption{}\label{fig:poro-doses}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.32\textwidth}\centering
+\begin{subfigure}[t]{0.42\textwidth}\centering
   \includegraphics[width=\linewidth]{porosity_across_oxide_rel0.5}
   \caption{}\label{fig:poro-across}
 \end{subfigure}
 \caption{Cr content and \ce{SiO2}-dissolution porosity of the intergranular
 oxide after the \SI{500}{h} exposure. (a) Calculated minimum Cr content of the
 intergranular oxide, on a metal basis, compared with the EDX values of
-\textcite{deng2017effect}. (b) Porosity generated by \ce{SiO2} dissolution
-along the boundary, averaged over the oxide section, as a function of
-relative depth, at 0, 0.5 and \SI{3.0}{\dpa}. (c) Porosity profile across the
-intergranular oxide at half the penetration depth; dotted lines mark the
+\textcite{deng2017effect}. (b) Porosity profile across the intergranular
+oxide at half the penetration depth, at 0, 0.5 and \SI{3.0}{\dpa}; dotted
+lines mark the
 oxide/metal interfaces and the arrows give the oxide width.}
 \label{fig:oxide-chem}
 \end{figure}
@@ -1226,16 +1247,13 @@ to 67.6 and \SI{64.3}{\atpct} at \SI{0.5}{\dpa} and 63.0 and \SI{54.3}{\atpct}
 at \SI{3.0}{\dpa} (Fig.~\ref{fig:Cr-min}).
 
 With all \ce{SiO2} treated as dissolved on formation, the porosity generated
-in the intergranular oxide increases with dose and with depth along the
-boundary (Fig.~\ref{fig:poro-doses}): averaged over the oxide section it rises
-from the unirradiated value of \SI{3.1}{vol\percent} to about 12 and
-\SI{22}{vol\percent} at the front at 0.5 and \SI{3.0}{\dpa}, while near the
-mouth, where the oxide is thickest, it stays at 3.2 and \SI{4.0}{vol\percent}.
+in the intergranular oxide increases with dose.
 Across the oxide section at half the penetration depth
 (Fig.~\ref{fig:poro-across}) the porosity is concentrated within a few
 nanometres of the boundary mid-plane, where the Si-enriched boundary was
-oxidized first, with peak values of about 12.5 and \SI{22.5}{vol\percent} that
-fall toward the unirradiated value at the oxide/metal interface; the oxide at
+oxidized first, with peak values of about 12.5 and \SI{22.5}{vol\percent} at
+0.5 and \SI{3.0}{\dpa} that fall toward the unirradiated value of
+\SI{3.1}{vol\percent} at the oxide/metal interface; the oxide at
 this depth is narrower at higher dose, 34, 20 and \SI{13}{nm} at 0, 0.5 and
 \SI{3.0}{\dpa}, because the faster front leaves less time for it to thicken.
 A porous interface along the centre of the intergranular oxide, extending to
@@ -1281,8 +1299,8 @@ Measurements from \textcite{deng2017effect}.}
 \label{fig:front-decoupled}
 \end{figure}
 
-To separate the two routes by which segregation enters the oxidation kinetics,
-the calculation of Fig.~\ref{fig:front} was repeated with one segregation
+To examine the contributions of the Cr depletion and the Si enrichment
+separately, the calculation of Fig.~\ref{fig:front} was repeated with one segregation
 profile at a time reset to its unirradiated value, all other inputs unchanged
 (Fig.~\ref{fig:front-decoupled}). Both runs start from the unirradiated depth
 of \SI{45}{nm}. With the Cr profile reset and only the Si enrichment retained,
@@ -1291,8 +1309,8 @@ the measured 62 and \SI{105}{nm}. With the Si profile reset and only the Cr
 depletion retained, the depth increases to 49 and \SI{52}{nm}. Of the
 \SI{60}{nm} increase of the full calculation between 0 and \SI{3.0}{\dpa}, the
 Si enrichment alone produces \SI{43}{nm} and the Cr depletion alone
-\SI{7}{nm}; the two routes are not additive, and their combination accounts
-for the remaining \SI{11}{nm}.
+\SI{7}{nm}; the remaining \SI{11}{nm} appears only when both profiles are
+present.
 
 \begin{figure}[!ht]\centering
 \begin{subfigure}[t]{0.48\textwidth}\centering
@@ -1323,7 +1341,9 @@ The two experimental series differ in their apparent kinetics: the
 apparent effective diffusivity \(\bar{D}_{\mathrm{eff}}=L^{2}/2t\) of the
 \SI{0.5}{\dpa} specimen of \textcite{deng2020corrosion} after \SI{1500}{h}
 exceeds that of the \SI{3.0}{\dpa} specimen of \textcite{deng2017effect}
-after \SI{500}{h} (Supplementary Information, Table~S1).
+after \SI{500}{h} (Supplementary Information, Table~S1), although its dose
+is lower. A model calibrated on the \SI{500}{h} series therefore
+underestimates the absolute depths of the \SI{1500}{h} series.
 The measurements do not determine the time exponent of the penetration. The
 intergranular oxide was still flat after \SI{25}{h} and had penetrated along
 the boundary after \SI{100}{h} \parencite{deng2020corrosion}, so the
@@ -1371,10 +1391,7 @@ reported for the shallow intergranular oxidation damage of the bolt.
 \label{sec:discussionTransport}
 
 The penetration depth is set by the rate at which oxygen reaches the front,
-and the model resolves this rate into two steps that the single effective
-diffusivity of earlier grain-boundary oxidation models
-\parencite{zhao2011modeling,karabela2013oxygen,xu2015modeling} does not
-separate: transport along the boundary, with \(D_{\Ox}^{\eff,y}\), and
+and the model resolves this rate into two steps: transport along the boundary, with \(D_{\Ox}^{\eff,y}\), and
 delivery across the oxide to the interface, with \(D_{\Ox}^{\eff,x}\)
 combined with the interfacial rates through the eigenvalue \(\mu\) of
 Eq.~\eqref{eq:qss-closure}. The two diffusivities weight the same profile
@@ -1385,8 +1402,9 @@ therefore carries the transport along the boundary, whereas the delivery to
 the interface has to cross the dense Cr-rich oxide formed later from metal of
 matrix composition and is limited by it. The closure also fixes the regime
 of the interfacial reaction. With the calibrated values of
-Tables~\ref{tab:params-ox} and \ref{tab:params-transport}, the Damk\"ohler
-number \(kL/D_{\Ox}^{\eff,x}\) of Sec.~\ref{sec:methodGBOxidation} passes
+Tables~\ref{tab:params-ox} and \ref{tab:params-transport}, the ratio
+\(kL/D_{\Ox}^{\eff,x}\) of the interfacial rate to the rate of transport
+across the oxide (Sec.~\ref{sec:methodGBOxidation}) passes
 unity when the oxide reaches a thickness of the order of \SI{10}{nm},
 comparable to the oxide width at half the penetration depth
 (Fig.~\ref{fig:poro-across}). The two regimes therefore coexist along the
@@ -1396,7 +1414,7 @@ is increasingly limited by delivery across the oxide. The interfacial rate
 constants thus enter the kinetics both directly, near the front, and through
 the composition of the oxide they produce.
 
-This is why the dose dependence of the penetration depth is a transport
+The dose dependence of the penetration depth is, in the model, a transport
 effect. In the sequential protocol the only quantity that irradiation hands
 to the oxidation stage is the composition of the boundary,
 Eq.~\eqref{eq:handoff}; the rate constants and the oxygen supply at the mouth
@@ -1434,33 +1452,43 @@ the model both are images of the segregation profile, and their position at
 the centre is the position of the original boundary plane.
 
 The transcription requires that the elements not consumed at the front do
-not accumulate ahead of it. In the local-equilibrium limit of
+not accumulate strongly ahead of it. In the local-equilibrium limit of
 Eq.~\eqref{eq:capture-fraction}, \(v_i^{\mathrm{r}}\to\infty\), the ordering
-of the oxygen affinities, Si > Cr \(\gg\) Fe \(\gg\) Ni, would deplete Cr and
-Si and enrich Fe and Ni strongly in the metal ahead of the front, and the
+of the oxygen affinities, Si \(>\) Cr \(\gg\) Fe \(\gg\) Ni, would deplete Cr
+and Si and enrich Fe and Ni strongly in the metal ahead of the front, and the
 composition at the interface would no longer be that of the segregation
-profile; the scans show neither Cr depletion nor Fe enrichment on the metal
-side (Fig.~\ref{fig:edx-compare}). The nonequilibrium capture of
-Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture}
-\parencite{yu2018nonequilibrium,sherman2019thermodynamics} resolves this: the
-Fe and Ni swept by the front are carried into the oxide and leave along its
-grain boundaries to the surface, where they feed the outer oxide particles
-that \textcite{deng2020corrosion} observed to grow faster on irradiated
-specimens. The measured Ni content of the oxide, 1 to \SI{4}{\atpct} against
-zero in the model, indicates that part of the captured Ni is retained in the
-oxide rather than transported out of it, and the calculated Ni content of
-the metal at the interface after oxidation, 12.5 to \SI{14.5}{\atpct} against
-the measured 20 to \SI{22}{\atpct} reported by \textcite{deng2017effect}, that the rejected
-fraction of Ni is larger than the calibrated \(v_{\mathrm{Ni}}^{\mathrm{r}}\)
-gives.
+profile. The scans show otherwise: on the metal side there is neither Cr
+depletion nor Fe enrichment, and only a slight additional Ni enrichment at
+the interface (Fig.~\ref{fig:edx-compare}). The partition of the unoxidized
+metal, Eqs.~\eqref{eq:sweep-velocity}--\eqref{eq:sink-capture}, accounts for
+this. The Fe swept by the front and part of the Ni pass into the oxide and
+leave along its grain boundaries to the surface, where they feed the outer
+oxide particles that \textcite{deng2020corrosion} observed to grow faster on
+irradiated specimens; the rest of the Ni is rejected into the metal and gives
+the slight additional Ni enrichment at the interface. Consistent with this
+path, \textcite{boisson2018effects} observed larger outer oxide crystallites
+on top of the preferentially oxidized grain boundaries of 316L exposed to
+simulated PWR primary water. \textcite{lach2025inservice} found that the
+large Fe-rich outer oxides on neutron-irradiated 316 baffle-former bolts lie
+primarily over the oxidized grain boundaries, and proposed that the grain
+boundary feeds them.
+
+The measured Ni content of the oxide, 1 to \SI{4}{\atpct} against
+zero in the model, indicates that part of the Ni passing to the oxide side is
+retained in the oxide rather than transported out of it. Atom probe
+tomography of the intergranular oxide detected Ni but no NiO\(_x\) among the
+evaporated species \parencite{deng2021grain}, so the retained Ni is
+unoxidized, as expected from the low oxygen affinity of Ni, and is most
+likely dissolved in the oxide without yet having been transported out.
 
 \subsection{Contributions of Cr Depletion and Si Enrichment}
-\label{sec:discussionRoutes}
+\label{sec:discussionCrSi}
 
-Irradiation depletes Cr and enriches Si at the boundary together, so the
-experiments cannot attribute the faster intergranular oxidation to one or
-the other; the model can, by resetting one segregation profile at a time
-(Fig.~\ref{fig:front-decoupled}). Under the present parameterization the Si
+Irradiation depletes Cr and enriches Si at the boundary together. In the
+model the two can be examined separately by resetting one segregation
+profile at a time (Fig.~\ref{fig:front-decoupled}). Under the present
+parameterization the results support the view that the Si enrichment is the
+dominant factor: the Si
 enrichment alone produces \SI{43}{nm} of the \SI{60}{nm} increase of
 penetration depth between 0 and \SI{3.0}{\dpa}, reproducing the measured
 depth at \SI{0.5}{\dpa} and falling \SI{17}{nm} short of it at
@@ -1475,19 +1503,13 @@ into a porosity of up to \SI{22}{vol\percent} at the same position
 (Fig.~\ref{fig:poro-across}); even reduced by the Archie exponent, this
 porosity has a diffusivity orders of magnitude above that of either oxide,
 and the central oxide becomes the path along which oxygen reaches the front.
-The two routes act on the same part of the section and reinforce each
-other, which is why their combination produces \SI{11}{nm} more than the sum
-of their separate contributions.
 
-The share assigned to each route is conditional on the treatment of Si: on
-the complete dissolution of \ce{SiO2}, on the porosity diffusivity, which is
-calibrated, and on the Archie exponent, which is not. Partial retention of
-\ce{SiO2}, or a less connected pore network, would reduce the Si share and
-raise the Cr share; the ordering, however, holds as long as the dissolved
-\ce{SiO2} leaves connected porosity, because the Cr route can at most raise
-the diffusivity of the central oxide to that of \ce{Fe3O4}, whereas the Si
-route opens a path with a diffusivity set by the porosity itself. The
-ordering agrees with the experimental assessments that place Si above Cr.
+This result depends on how Si is treated in the model: all \ce{SiO2} is
+assumed to dissolve, the oxygen diffusivity
+of the porosity is calibrated, and the Archie exponent is taken from the
+literature. If part of the \ce{SiO2} were retained, or the pores were less
+connected, the contribution of the Si enrichment would be smaller. The
+experimental assessments also place Si above Cr.
 \textcite{kuang2022highresolution} found that segregated Si is oxidized
 preferentially at the front and dissolves, leaving the porous interface
 discussed above, while the oxide tip was not depleted in Cr, and judged the
@@ -1496,36 +1518,7 @@ mechanism in PWR primary water. \textcite{du2026silicon}, with unirradiated
 model alloys in which Si and Cr were varied independently, found that the
 susceptibility to crack initiation rose strongly with Si content whereas a
 low Cr content added little, with deeper intergranular oxidation in the
-high-Si alloys. Those are statements about cracking susceptibility and
-oxide-tip chemistry; the present calculation gives the corresponding
-statement for the oxidation kinetics. It also qualifies the attribution of
-the faster intergranular oxidation of irradiated 304NG to the lower Cr
-content of the oxide \parencite{deng2017effect,deng2021grain}: the lower Cr
-content at the centre of the oxide is reproduced, but in the model it
-accounts for a minor part of the acceleration.
-
-\subsection{Interpretation of the Measured Penetration Kinetics}
-\label{sec:discussionKinetics}
-
-The two experimental series available for 304NG differ in their apparent
-kinetics. The apparent effective diffusivity
-\(\bar{D}_{\mathrm{eff}}=L^{2}/2t\) of the \SI{0.5}{\dpa} specimen exposed
-for \SI{1500}{h}
-\parencite{deng2020corrosion} exceeds that of the \SI{3.0}{\dpa} specimen
-exposed for \SI{500}{h} \parencite{deng2017effect} (Supplementary
-Information, Table~S1), although the material, irradiation and exposure
-conditions are nominally the same and the model predicts the opposite
-ordering for the same boundary. The oxidation parameters were calibrated on
-the slower series, and a model calibrated on it cannot reproduce the
-absolute depths of the faster one, which it underestimates by about a factor
-of two (Fig.~\ref{fig:front-time-abs}). What survives the difference between
-the series is the relative effect of dose: the ratio between the two doses
-at \SI{1500}{h}, 0.81 against 0.84 (Fig.~\ref{fig:front-time-norm}). The
-time dependence of the penetration cannot be tested against this series,
-because its two exposure times do not resolve when the penetration began
-(Sec.~\ref{sec:resultsOxi}); the comparison with \textcite{deng2020corrosion}
-therefore validates the effect of dose on the penetration depth, not its
-time exponent.
+high-Si alloys.
 
 \subsection{Concurrent Irradiation and Oxidation in Service}
 \label{sec:discussionInService}
@@ -1538,65 +1531,13 @@ about 190 times lower and with irradiation and oxidation acting together.
 The calculation extends the calibration by a factor of about 700 in time and
 25 in depth, and the calculated depth of \SI{2.61}{\micro\metre} falls within
 the 2 to \SI{3}{\micro\metre} measured for the shallow damage
-(Fig.~\ref{fig:front-inservice}). The measured oxide also shows the two
+(Fig.~\ref{fig:front-inservice}). The measured oxide also shows the
 processes on which the model rests. The original grain boundary inside the
-in-service oxide is depleted in Cr and in Si and acts as a path along which
-Fe and Ni leave toward the outer oxide \parencite{lach2025inservice}; in the
-model these are the Cr valley at the centre of the oxide, the dissolution of
-the oxidized Si, and the removal of the unoxidized Fe and Ni through the
-oxide (Sec.~\ref{sec:discussionTranscription}).
-
-\subsection{Uncertainties of the Model}
-\label{sec:discussionLimitations}
-
-The uncertainties of the model lie in the description of the oxide, in the
-interfacial redistribution, and in the scope of the protocol; each is paired
-below with the measurement or extension that would reduce it.
-
-The oxide keeps the composition it had on formation, so a redistribution of
-cations within the oxide is excluded; composition profiles across the
-oxide at several doses would establish whether a cation diffusion term is
-needed. The porosity enters through an Archie exponent taken from continuum
-percolation of three-dimensional porous media
-\parencite{hunt2004continuum,balberg1986excludedvolume}; neither the exponent
-nor the percolation threshold of a porous intergranular oxide has been
-measured, the threshold depends on the shape of the pores
-\parencite{balberg1986excludedvolume}, and fitted transport coefficients of
-reacting porous media are known to absorb kinetic effects
-\parencite{ghanbarian2013tortuosity}. The porosity diffusivity is
-calibrated for the same reason. A direct measurement of the centreline
-porosity at a known dose, of the kind that \textcite{kuang2022highresolution}
-obtained by under-focus imaging, would turn the porosity from a calculated
-into a measured quantity and separate the exponent from the diffusivity. The
-complete dissolution of \ce{SiO2} is a limiting case; the Si content of the
-oxide, which the model sets to zero, measures how far the real oxide departs
-from it. The delivery of oxygen to the interface is closed by the fundamental
-mode of an equivalent uniform oxide with the series resistance of the
-section (Supplementary Information, Sec.~S3); the deviation of the lateral
-profile from a cosine for a nonuniform \(D_{\Ox}(x)\) is neglected.
-
-The redistribution velocities are calibrated rather than derived from the
-interfacial exchange diffusivities that define the diffusive velocity in the
-solute-capture models \parencite{aziz1982model,yu2018nonequilibrium}, and
-the capture carries all unoxidized Fe and Ni out of the oxide, whereas the
-measured oxide retains 1 to \SI{4}{\atpct} Ni. A retained fraction would
-require the capture to be split between retention and transport through the
-oxide, with the Ni content of the oxide as the additional observable. On the
-segregation side, the Si--interstitial coupling is absorbed into an effective
-\(D_{\mathrm{Si}}^{\Int}\) (Sec.~\ref{sec:methodRISCalibration}), and the
-calibrated profiles overestimate the Cr depletion and underestimate the Si
-enrichment at \SI{0.5}{\dpa} (Fig.~\ref{fig:profiles}); a dose-dependent
-error in the input profiles propagates directly into the oxidation stage.
-
-The model is calibrated only in the sequential
-irradiation-then-exposure protocol, and the oxygen supply through the surface
-film is represented by the Robin condition of Eq.~\eqref{eq:robin} with an
-assumed transfer coefficient, to which the depths are insensitive. The
-extension to concurrent irradiation and oxidation requires no additional
-parameters (Sec.~\ref{sec:methodFullyCoupled}); what it does not include is
-the effect of irradiation on the oxide itself, by radiolysis of the water in
-the channel or by enhanced transport in the oxide, which would have to be
-added before predictions under in-reactor conditions are attempted.
+in-service oxide is depleted in Cr and in Si \parencite{lach2025inservice}
+and, as noted in Sec.~\ref{sec:discussionTranscription}, appears to carry Fe
+and Ni toward the outer oxide; in the model these correspond to the Cr valley
+at the centre of the oxide, the dissolution of the oxidized Si, and the
+removal of the unoxidized Fe and Ni through the oxide.
 
 \section{Conclusions}
 \label{sec:conclusion}
@@ -1604,66 +1545,38 @@ added before predictions under in-reactor conditions are attempted.
 A model that couples radiation-induced segregation to grain-boundary
 oxidation through the composition-dependent oxygen transport of the
 intergranular oxide has been developed for 304 stainless steel in PWR primary
-water and compared with measured segregation profiles, oxide compositions and
-intergranular penetration depths. The main conclusions are as follows.
+water. The main conclusions are as follows.
 
 \begin{enumerate}
-\item The model closes the chain from the segregated boundary composition to
-the advance of the oxidation front. The segregation model, with the boundary
-as a point-defect sink of finite efficiency, supplies the dose-dependent Cr,
-Ni and Si profiles; the oxidation model consumes the segregated metal through
-composition-dependent interfacial reactions, records the composition of the
-oxide across the section as it grows, and computes from that record the two
-effective oxygen diffusivities that govern transport along the boundary and
-delivery across the oxide to the interface, with the porosity left by
-\ce{SiO2} dissolution entering through Archie's law. The delivery to the
-interface is closed by the fundamental mode of the diffusion equation in the
-cross-section, which spans the reaction-limited and diffusion-limited regimes
-without a prescribed transport resistance.
+\item The segregation model is calibrated on the measured grain-boundary
+profiles, and the oxidation model, with a single parameter set, on the
+composition of the unirradiated oxide and on the penetration depths after
+\SI{500}{h} at 0, 0.5 and \SI{3.0}{\dpa}. Without further adjustment the
+model reproduces the composition profiles across the oxide of the irradiated
+specimens, including the Cr valley at its centre, and the ratio of the
+penetration depths between doses in an independent exposure series. The
+absolute depths of that series after \SI{1500}{h} are underestimated by
+about a factor of two.
 
-\item The interfacial parameters are fixed by the composition of the
-unirradiated oxide and the Ni content of the metal at its interface, and the
-three transport parameters by the penetration depths after \SI{500}{h} at 0,
-0.5 and \SI{3.0}{\dpa}, with a single parameter set. Outside the calibration
-the model reproduces the Cr, Ni and Si concentrations at the boundary at
-\SI{3.0}{\dpa}, the composition profiles across the oxide of the irradiated
-specimens, and, in an independent exposure series, the ratio between doses
-after \SI{1500}{h}. The depths of that series after \SI{1500}{h} are
-underestimated by about a factor of two; the Ni enrichment of the metal at
-the interface is underestimated.
+\item The segregation profile is transcribed into the oxide as it grows
+outward from the boundary plane: the Cr depletion becomes the Cr valley at
+the centre of the oxide, which deepens with dose, and the Si enrichment
+becomes porosity concentrated along the centreline.
 
-\item Because the oxide keeps its composition of formation and grows from
-the boundary plane outward, the segregation profile is transcribed into the
-oxide: the Cr minimum of the profile becomes the Cr valley at the centre of
-the oxide that deepens with dose, and the Si peak becomes the porosity
-concentrated along the centreline. Both follow from the segregation profile
-and the nonequilibrium capture of the unoxidized metal without being fitted,
-and both have been observed, the Cr valley on 304NG and the centreline
-porosity on proton-irradiated 316L.
-
-\item The dose dependence of intergranular oxidation is carried entirely by
-the inherited segregation profile and acts through the transport resistance
-of the oxide rather than through the interfacial rate constants. Resetting
-one segregation profile at a time separates the two routes, which the
-experiments cannot: under the present parameterization the Si enrichment
-produces \SI{43}{nm} of the \SI{60}{nm} increase of penetration depth between
-0 and \SI{3.0}{\dpa} and the Cr depletion \SI{7}{nm}, the remainder arising
-from their combination in the same central part of the oxide. The ordering
-is conditional on the complete dissolution of \ce{SiO2} and on the porosity
-transport law, and it agrees with the experimental assessments that place Si
-above Cr.
-
-\item The main uncertainties are the
-exclusion of cation redistribution within the oxide, the porosity transport
-law and the complete-dissolution limit for \ce{SiO2}, and the calibrated
-redistribution velocities; each can be constrained by a measurement
-identified above.
+\item In the model, the dose dependence of the penetration depth is carried
+by the segregation profile inherited from the irradiation stage and acts
+through the oxygen transport of the oxide. Under the present
+parameterization the results support the view that the Si enrichment is the
+dominant factor: alone it produces \SI{43}{nm} of the \SI{60}{nm} increase
+of penetration depth between 0 and \SI{3.0}{\dpa}, against \SI{7}{nm} for
+the Cr depletion. This result is conditional on the complete dissolution of
+\ce{SiO2} and on the porosity transport law.
 
 \item Applied without adjustment to concurrent irradiation and oxidation of
-a type 316 baffle-former bolt at a constant dose rate over 40 years of
-service, the model gives a penetration depth of \SI{2.61}{\micro\metre} at
-\SI{40}{\dpa}, within the 2 to \SI{3}{\micro\metre} reported for the shallow
-intergranular oxidation damage of the bolt.
+a type 316 baffle-former bolt over 40 years of service, the model gives a
+penetration depth of \SI{2.61}{\micro\metre} at \SI{40}{\dpa}, within the 2
+to \SI{3}{\micro\metre} reported for the shallow intergranular oxidation
+damage of the bolt.
 \end{enumerate}
 
 \printbibliography
