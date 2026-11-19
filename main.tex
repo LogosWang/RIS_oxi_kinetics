@@ -1,7 +1,102 @@
-\documentclass[12pt]{article}
+%energy gap%\documentclass[3p,times]{elsarticle}
+\RequirePackage{etex}
+\documentclass[3p,times,nonatbib]{elsarticle} % nonatbib: references are set with biblatex from the Zotero export
+%\documentclass[preprint,12pt]{elsarticle}
+%\RequirePackage{etex} 
+\usepackage{etex}
+ 
+%% The `ecrc' package must be called to make the CRC functionality available
+%\usepackage{ecrc}
+\usepackage{multirow}
+\usepackage[abs]{overpic}
+%\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{pgfplotstable} % loads pgfplots, which loads tikz, which loads graphicx
+\usetikzlibrary{shapes.geometric,positioning,calc,patterns}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{statistics}
+\usepackage{pict2e}
+%\usepackage{subfigure}
+\usepackage{siunitx}
+\usetikzlibrary{spy,patterns,arrows,decorations.pathmorphing,backgrounds,positioning,fit,calc,3d,er,pgfplots.groupplots,shapes.geometric, arrows.meta, positioning, decorations.markings}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.18,set layers}
+%\usepackage{graphicx}		% package for including graphics
+%\usepackage[font=scriptsize]{subcaption}
+%\usepackage{subfig}
+%\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage[mode=buildnew]{standalone}
+\usepackage{arydshln}
 
-\usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage[bold]{hhtensor}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{nicefrac}
+\usepackage{tikz}
+\usetikzlibrary{positioning,fit,calc,decorations.pathreplacing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{siunitx}
+\usepackage{subcaption}
+
+% colors
+\definecolor{diffcol}{RGB}{252,244,214}
+\definecolor{inscol}{RGB}{221,238,255}
+\definecolor{sinkcol}{RGB}{214,237,214}
+\definecolor{reaccol}{RGB}{245,214,214}
+
+% \newcommand{\boxfont}{\small} % << change once if you want smaller/larger text in cards
+\usepackage{cases}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,calc,3d,er}
+\usetikzlibrary{intersections,fillbetween}
+
+\usepackage{todonotes}
+\usepackage[most]{tcolorbox}
+\usepackage{soul}
+% \usepackage{ulem}
+% \sethlcolor{green}
+% %\usepackage{pdflscape}
+
+\newcommand{\hlc}[2][yellow]{{%
+    \colorlet{foo}{#1}%
+    \sethlcolor{foo}\hl{#2}}%
+}
+%\usepgfplotslibrary{external} 
+%\tikzexternalize
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+            
+%\usepackage[pagebackref]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+   % pagebackref =true,
+    colorlinks,%
+    citecolor=blue,% 
+    filecolor=black,%
+    linkcolor=magenta,% 
+    urlcolor=black
+}
+\def\Baseline{1e-3}   % small offset so bars are valid on log-y
+\def\BarW{4pt}
+\def\Shift{2pt}
+\def\BarWi{15pt}         % bar width
+\def\Eps{-1pt}
+\usepackage{latexsym}
+\usepgfplotslibrary{fillbetween}
+\usepackage{lineno}
+\usepackage{float}
+\usepackage{booktabs} 
+%\usepackage{cite}
+
+% references: biblatex + biber, reading the Zotero Better BibLaTeX export as it is
 \usepackage[
   backend=biber,
   style=numeric-comp,
@@ -11,26 +106,147 @@
   uniquename=false,
   uniquelist=false
 ]{biblatex}
-
-
-
 \addbibresource{refs/304IASCC.bib}
 \setcounter{biburlnumpenalty}{9000}
 \setcounter{biburllcpenalty}{9000}
 \setcounter{biburlucpenalty}{9000}
 \appto{\bibsetup}{\sloppy}
 
-\title{
-A Mechanistic Model for Radiation-Induced Segregation Controlled
-Grain-Boundary Oxidation in Austenitic Stainless Steels
+%% The ecrc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+ 
+%% set the volume if you know. Otherwise `00'
+%\volume{00}
+ 
+%% set the starting page if not 1
+%\firstpage{1}
+ 
+%% Give the name of the journal\part{title}
+%\journalname{Fusion Engineering \& Design}
+ 
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+%\runauth{Schappel et al.}
+ 
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+ 
+%% Give the abbreviation of the Journal.
+%\jid{FUSENGDES}
+ 
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{Acta Materialia}
+%\jnltitlelogo{Fus.~Eng.~\& Des.}
+ 
+%\documentclass[article]{elsarticle}
+ 
+%\modulolinenumbers[5] % from template
+ 
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage[dvipsnames]{xcolor}
+%\definecolor{orange}{rgb}{1.0,0.4,0.0}
+%\usepackage{subcaption}
+
+%\usepackage[colorlinks]{hyperref}
+ 
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\etal}{{\it et al.}}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{calc}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\usepackage{tkz-berge}
+\usepackage{transparent}
+\usepackage{sansmath}
+\usepackage{bm}
+\usetikzlibrary{shadings,intersections,fadings}
+\usetikzlibrary{shapes.geometric, arrows.meta}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc,3d,decorations.markings,backgrounds,positioning,intersections,shapes,quotes,angles}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{pdflscape}
+%\usepackage{mathptmx}% http://ctan.org/pkg/mathptmx
+\usepackage{graphicx}
+\usepackage{caption,booktabs}
+\usepackage{amsmath}
+%\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+\usepackage{amstext} 
+\newcommand{\angstrom}{\textup{\AA}}
+\usepackage[abs]{overpic}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{enumitem}
+
+%\graphicspath{ {./figures/} }
+%\usepackage[numbers,sort&compress,square]{natbib}
+%\usepackage{cite}
+ 
+\usepackage[]{hyperref}
+\hypersetup{
+  % pagebackref =true,
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=black,%
+    linkcolor=blue,%
+    urlcolor=black
 }
+\usepackage{cleveref}
+\usepackage{tabularx}
+\usepackage{multicol}
+%\usepackage{subfigure}
+ 
+ \usepackage[bold]{hhtensor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
-\author{Zhuo Wang \and Md Shahrier Hasan \and Jaime Marian}
-\date{\today}
-
-% \setlength{\parindent}{0pt}
-% \setlength{\parskip}{0.8em}
-
+% \renewcommand{\appendix}{\par
+%   \setcounter{section}{0}
+%   \setcounter{subsection}{0}
+%   \gdef\thesection{\Alph{section}}
+% }
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%% Numbered
+%\bibliographystyle{model1-num-names}
+ 
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+ 
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+ 
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+ 
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+ 
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+ 
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+ 
+%% `Elsevier LaTeX' style
+%\usepackage{elsarticle/numcompress}
+ 
+\usepackage{scrextend}
+ \usepackage{lineno}
+\linenumbers
+\modulolinenumbers[1]
 \newcommand{\Vac}{\mathrm{V}}          % vacancy
 \newcommand{\Int}{\mathrm{I}}          % self-interstitial
 \newcommand{\GB}{\mathrm{GB}}
@@ -58,11 +274,22 @@ Grain-Boundary Oxidation in Austenitic Stainless Steels
 \DeclareSIUnit{\dpa}{dpa}
 \DeclareSIUnit{\atpct}{at.\%}
 
-
-
 \begin{document}
+\emergencystretch=1em
 
-\maketitle
+\begin{frontmatter}
+
+\title{A Mechanistic Model for Radiation-Induced Segregation Controlled Grain-Boundary Oxidation in Austenitic Stainless Steels}
+
+\author[UCLA_MSE]{Zhuo Wang}
+\ead{jmarian@ucla.edu}
+\author[UCLA_MSE]{Md Shahrier Hasan}
+\author[UCLA_MSE,UCLA_MAE]{Jaime Marian}
+
+
+ 
+\address[UCLA_MSE]{Department of Materials Science and Engineering, University of California Los Angeles, Los Angeles, CA 90095, USA}
+\address[UCLA_MAE]{Department of Mechanical and Aerospace Engineering, University of California Los Angeles, Los Angeles, CA 90095, USA}
 
 \begin{abstract}
 \emergencystretch=1em
@@ -89,6 +316,9 @@ service, the model gives a penetration depth of \SI{2.6}{\micro\metre}, within
 the 2 to \SI{3}{\micro\metre} measured.
 \end{abstract}
 
+\end{frontmatter}
+
+
 
 % ============================================================
 \section{Introduction}
@@ -112,7 +342,7 @@ transports oxygen faster along the boundary and the oxide penetrates deeper.}
 % ---- 1. Phenomenon, why it matters, key observations, question ----
 Irradiation-assisted stress corrosion cracking (IASCC) is a major
 degradation mode of austenitic stainless steel core internals in
-light-water reactors \parencite{was2011irradiationassisted}. In irradiated
+light-water reactors \cite{was2011irradiationassisted}. In irradiated
 stainless steels exposed to high-temperature water, intergranular oxidation weakens grain boundaries and precedes intergranular crack initiation
 \cite{was2024how}, and grain-boundary oxidation has been identified as
 a necessary precursor of IASCC at low doses \cite{kuang2022highresolution}. In 304
@@ -124,7 +354,7 @@ produced deeper intergranular oxidation in 304 nuclear-grade stainless
 steel after water exposure, accompanied by a decrease in the Cr content of
 the intergranular oxide. Cr depletion is not the only chemical change that
 matters: Si enrichment promotes intergranular oxidation and cracking even
-when Cr is not depleted \parencite{du2026silicon}. These observations
+when Cr is not depleted \cite{du2026silicon}. These observations
 connect irradiation to both the chemistry and the penetration depth of the
 intergranular oxide. Turning them into a predictive relationship requires a
 description of how the changing oxide composition and structure affect
@@ -159,7 +389,7 @@ resulting porous, defective film, and their STEM analysis of intergranular
 oxides indicated faster grain-boundary diffusion at higher Si content. Related microscopy on
 proton-irradiated 316L identified Si enrichment at oxide tips and
 porosity behind them, consistent with preferential Si oxidation followed
-by dissolution \parencite{kuang2022highresolution}. Although that alloy
+by dissolution \cite{kuang2022highresolution}. Although that alloy
 differs from 304SS in bulk composition, the sequence itself is not
 alloy-specific: oxidation and dissolution of segregated Si appears as a
 step in the IASCC mechanism summarized by \textcite{was2024how} for
@@ -175,37 +405,37 @@ transport.
 Each half of this sequence has been modelled separately. The segregation half is settled enough
 that the grain boundary composition can be computed rather than only measured.
 Since the inverse-Kirkendall and rate-theory descriptions of RIS in
-concentrated alloys \parencite{marwick1978segregation,wiedersich1979theory},
+concentrated alloys \cite{marwick1978segregation,wiedersich1979theory},
 the composition profile at a grain boundary has been obtained from the
 coupled fluxes of point defects and alloying elements, with Fe--Cr--Ni
 parameterizations that reproduce the measured dose and temperature
 dependence of Cr depletion and Ni enrichment
-\parencite{allen1998modeling}. Recent models predict the
+\cite{allen1998modeling}. Recent models predict the
 segregation at grain boundaries and dislocation cell walls in austenitic
-Fe--Cr--Ni \parencite{kadambi2025phasefield} and the conditions under which
+Fe--Cr--Ni \cite{kadambi2025phasefield} and the conditions under which
 Cr switches from enrichment to depletion in Fe--Cr
-\parencite{oplinger2026radiationinduceda}. All of these models return the segregation profile as their final output;
+\cite{oplinger2026radiationinduceda}. All of these models return the segregation profile as their final output;
 none includes how the modified boundary composition affects the subsequent
 grain-boundary oxidation.
 
 On the oxidation side, the dependence of intergranular penetration depth
 on dose and exposure time has been characterized
-experimentally \parencite{deng2017effect,deng2020corrosion}, but existing
+experimentally \cite{deng2017effect,deng2020corrosion}, but existing
 kinetic models of grain-boundary oxidation do not respond to the grain boundary
 chemistry. Models that resolve oxygen transport along the grain boundary treat
 the oxygen diffusivity as a single constant: in analytical or
 semi-analytical solutions that give the penetration depth in closed form
-\parencite{xu2015modeling,evans2013mechanism}, in
+\cite{xu2015modeling,evans2013mechanism}, in
 finite-element models that couple oxygen diffusion along grain boundaries
-with mechanical deformation \parencite{zhao2011modeling,karabela2013oxygen}
-or combine it with a constant reaction rate \parencite{aoyagi2012crystal},
+with mechanical deformation \cite{zhao2011modeling,karabela2013oxygen}
+or combine it with a constant reaction rate \cite{aoyagi2012crystal},
 and in phase-field simulations of a single
 stoichiometric chromia intrusion
-\parencite{rancourt2025viscoplasticity}. In none of
+\cite{rancourt2025viscoplasticity}. In none of
 these does the diffusivity depend on the composition of the oxide that has
 formed. Thermodynamic selection of the
 oxide phases from the local alloy composition has been implemented for a
-Ni-base superalloy \parencite{fang2022numerical}, but with a constant
+Ni-base superalloy \cite{fang2022numerical}, but with a constant
 oxygen diffusivity, the bulk composition at the boundary, and without the
 Cr oxide that limits transport. To our knowledge, no model takes the
 irradiation-modified boundary composition as input and lets the resulting
@@ -419,7 +649,7 @@ efficiencies of the two defects. The perfect-sink
 Dirichlet condition the defect gradients at the boundary, and with them both the
 magnitude and the width of the segregation profiles, do not converge under mesh
 refinement, a behaviour also reported for other Onsager-type RIS models
-\parencite{oplinger2026radiationinduceda}; the finite-efficiency condition removes
+\cite{oplinger2026radiationinduceda}; the finite-efficiency condition removes
 this dependence (Supplementary Information, Sec.~S1). The sink efficiencies
 are calibrated together with the defect-mediated transport coefficients,
 Sec.~\ref{sec:methodRISCalibration}.
@@ -441,9 +671,9 @@ oxygen diffusivity \(D_{\Ox}^{0}\) of the unoxidized boundary.
 
 The intergranular oxide formed on 304NG in PWR primary water gives an
 amorphous-like fast Fourier transform in high-resolution TEM
-\parencite{deng2017effect}, and the oxide core along the boundary plane of
+\cite{deng2017effect}, and the oxide core along the boundary plane of
 proton-irradiated 316L is amorphous and porous
-\parencite{kuang2022highresolution}; the oxide is therefore not treated as an
+\cite{kuang2022highresolution}; the oxide is therefore not treated as an
 assembly of crystalline phases. The three oxides \ce{Cr2O3}, \ce{Fe3O4} and
 \ce{SiO2} are the end-members of a locally mixed oxide: they carry the
 stoichiometry of the Cr, Fe and Si consumption and the oxygen diffusivity
@@ -470,11 +700,11 @@ where \(D_{\Ox}^{k}\) is the oxygen diffusivity of end-member \(k\) and
 enter as a volume-fraction average. The porosity enters through Archie's
 law, in which the transport coefficient of a porous medium scales with the
 porosity raised to a power \(m\)
-\parencite{hunt2004continuum,balberg1986excludedvolume}: the pores left
+\cite{hunt2004continuum,balberg1986excludedvolume}: the pores left
 by the dissolution connect to one another only in proportion to their volume
 fraction, and \(m=2\), within the range 1.9--2.0 derived for three-dimensional
 porous media from continuum percolation
-\parencite{hunt2004continuum,balberg1986excludedvolume}, is held fixed. For
+\cite{hunt2004continuum,balberg1986excludedvolume}, is held fixed. For
 \(m=1\) the porosity would be a parallel path and Eq.~\eqref{eq:Dlocal}
 would reduce to the plain volume-fraction average.
 
@@ -494,7 +724,7 @@ the arithmetic and harmonic means that are the exact transport coefficients
 of a medium whose diffusivity varies in one direction, for flux parallel and
 normal to that direction, and that form the upper and lower Wiener bounds of
 effective-medium theory
-\parencite{hashin1962variational,bruggeman2006berechnung}. The two integrals
+\cite{hashin1962variational,bruggeman2006berechnung}. The two integrals
 are advanced in time together with the oxide,
 \begin{equation}
 \frac{\mathrm{d}}{\mathrm{d}t}\int_{0}^{S} D_{\Ox}\,\mathrm{d}x
@@ -643,12 +873,12 @@ E_i=\max\!\left(v_{\lat}^{\ox,\max}C_i^{\GB}-J_{\mathrm{r}}^{i},\,0\right)
 \end{equation}
 is either rejected into the metal ahead of the front or carried into the oxide,
 where it is retained as unoxidized solute or transported along the oxide grain
-boundaries to the surface \parencite{deng2020corrosion}. The partition between
+boundaries to the surface \cite{deng2020corrosion}. The partition between
 the two paths is described by a function whose form is taken from the
 continuous-growth model of solute trapping
-\parencite{aziz1982model,aziz1988continuous}, which has also been applied to
+\cite{aziz1982model,aziz1988continuous}, which has also been applied to
 the oxide/metal interface
-\parencite{yu2018nonequilibrium,sherman2019thermodynamics}. In that model an
+\cite{yu2018nonequilibrium,sherman2019thermodynamics}. In that model an
 atom escapes the advancing interface only by diffusive exchange across it, and
 the partition coefficient of the growing phase is
 \(k(v)=(v/v_D+k_e)/(v/v_D+1)\), with \(v\) the interface velocity, \(v_D\) the
@@ -665,14 +895,14 @@ where the rejection velocity \(v_i^{\mathrm{r}}\) takes the place of the
 diffusive velocity: it is the characteristic velocity at which element \(i\)
 can be rejected into the metal ahead of the front. Complete rejection
 (\(\lambda_i=0\)), the local-equilibrium limit of classical oxidation theory
-\parencite{sherman2019thermodynamics}, is recovered for
+\cite{sherman2019thermodynamics}, is recovered for
 \(v_i^{\mathrm{r}}\to\infty\); for \(v_i^{\mathrm{r}}\ll v_{\lat}^{\ox,\max}\)
 the front outruns the rejection and the whole excess passes to the oxide side
 (\(\lambda_i\to1\)). In solute trapping the atoms that fail to escape are
 frozen into the growing phase, and complete trapping gives that phase the
 composition of the parent phase. Here Fe and Ni, which make up nearly all of
 the excess, are both soluble
-and mobile in the intergranular oxide \parencite{deng2020corrosion}, so the
+and mobile in the intergranular oxide \cite{deng2020corrosion}, so the
 atoms that pass to the oxide side are not frozen into it but are transported
 along its grain boundaries towards the surface. The limit
 \(\lambda_{\mathrm{Fe}}\to1\) adopted for Fe
@@ -837,7 +1067,7 @@ The fully coupled mode is applied to a component that was irradiated and
 oxidized together in service: a type 316 stainless steel baffle-former bolt
 removed from a Westinghouse two-loop PWR after about 40 years, with a dose of
 about \SI{41}{\dpa} at the bolt head
-\parencite{gussev2023microstructure,lach2024inservice,lach2025inservice}. On
+\cite{gussev2023microstructure,lach2024inservice,lach2025inservice}. On
 the water-exposed head-to-shank transition of this bolt,
 \textcite{gussev2023microstructure} distinguished two kinds of intergranular
 damage: shallow, wedge-shaped oxidized grain boundaries, mostly 2 to
@@ -850,7 +1080,7 @@ site fractions are those of the bolt, taken from the atom-probe composition
 reported by \textcite{lach2024inservice}: 0.1932 Cr, 0.1155 Ni and 0.0124 Si,
 with Fe as the balance, 0.6789, which includes Mo, Mn and the minor elements
 as in Table~\ref{tab:composition}. The flux history of the bolt is not
-available \parencite{gussev2023microstructure}, so the dose rate is taken as
+available \cite{gussev2023microstructure}, so the dose rate is taken as
 constant in time, \(K_0=\SI{3.17e-8}{\dpa\per\second}\), that is
 \SI{1}{\dpa} per year and \SI{40}{\dpa} after the 40 years
 (\SI{350400}{h}) of the calculation. Irradiation and oxygen ingress
@@ -874,7 +1104,7 @@ elements in both components, is given in Table~\ref{tab:composition}.
 \begin{table}[htbp]
 \centering
 \caption{Composition of the 304NG stainless steel of the reference experiments
-\parencite{deng2017effect} and the bulk site fractions used in the model as
+\cite{deng2017effect} and the bulk site fractions used in the model as
 initial and far-field values of the four elements. The site fractions are the
 atomic fractions of the substitutional lattice: C, an interstitial solute, is
 excluded, and Mn, Co, P and S are counted with Fe.}
@@ -936,7 +1166,7 @@ at the oxide/metal interface (Fig.~\ref{fig:edx-compare}a--c). The scans of the 
 calibration. Fe is soluble in the oxide and
 diffuses through the intergranular oxide along its grain boundaries to the
 surface, where it feeds the growth of the outer spinel particles
-\parencite{deng2020corrosion}; it is therefore assumed not to be rejected
+\cite{deng2020corrosion}; it is therefore assumed not to be rejected
 into the metal, and \(v_{\mathrm{Fe}}^{\mathrm{r}}\) is set to a value small
 compared with the front velocity, the limit \(\lambda_{\mathrm{Fe}}\to1\) in
 which the Fe removed is the amount swept at the metal-side composition,
@@ -955,7 +1185,7 @@ fixed, under the constraint
 \(k_{\mathrm{r}}^{\mathrm{SiO_2}}>k_{\mathrm{r}}^{\mathrm{Cr_2O_3}}
 \gg k_{\mathrm{r}}^{\mathrm{Fe_3O_4}}\) imposed by the order of
 thermodynamic stability of the three oxides, \ce{SiO2} being the most and
-\ce{Fe3O4} the least stable \parencite{young2016high}. The reference oxygen
+\ce{Fe3O4} the least stable \cite{young2016high}. The reference oxygen
 density and lattice site density of Eqs.~\eqref{eq:sink-cr}--\eqref{eq:sink-si}
 and the oxide densities of Eqs.~\eqref{eq:thick-cr2o3}--\eqref{eq:thick-sio2}
 are fixed. The values are given in Table~\ref{tab:params-ox}; they are held
@@ -1008,7 +1238,7 @@ Symbol & Description & Value & Source \\
 \hline
 \(K_0\) & Dose rate & \SI{6e-6}{\dpa\per\second} & \textcite{deng2017effect} \\
  & Dose (irradiation time \(=\) dose\(/K_0\)) & 0.5, \SI{3.0}{\dpa} & \textcite{deng2017effect} \\
-\(\epsilon\) & Damage efficiency & 0.2 & Protons \parencite{allen1998mechanism} \\
+\(\epsilon\) & Damage efficiency & 0.2 & Protons \cite{allen1998mechanism} \\
 \(R\) & Recombination coefficient & \SI{1e4}{\per\second} & Calibrated against the grain-boundary composition profiles \\
 \(C_{\Vac}^{\mathrm{eq}}\) & Equilibrium vacancy site fraction & \num{1e-13} & Assumed \\
 \(C_{\Int}^{\mathrm{eq}}\) & Equilibrium interstitial site fraction & \num{1e-30} & Assumed \\
@@ -1021,7 +1251,7 @@ Symbol & Description & Value & Source \\
 \(D_{\mathrm{Ni}}^{\Int}\) & Interstitial-mediated diffusivity, Ni & \SI{3.0e5}{nm^2.s^{-1}} & Calibrated against the grain-boundary composition profiles \\
 \(D_{\mathrm{Si}}^{\Int}\) & Interstitial-mediated diffusivity, Si (effective, includes \(\xi_{\mathrm{Si}}\)) & \SI{1.25e6}{nm^2.s^{-1}} & Calibrated against the grain-boundary composition profiles \\
 \(f_0^{\Vac}\) & Vacancy correlation factor & 0.78 & fcc lattice \\
-\(f_0^{\Int}\) & Interstitial correlation factor & 0.44 & fcc dumbbell \parencite{barbu1980expressions} \\
+\(f_0^{\Int}\) & Interstitial correlation factor & 0.44 & fcc dumbbell \cite{barbu1980expressions} \\
 \(k_{\Vac}^{\GB}\) & Grain-boundary sink efficiency, vacancies, Eq.~\eqref{eq:sink-vac} & \SI{3e4}{nm.s^{-1}} & Calibrated against the grain-boundary composition profiles \\
 \(k_{\Int}^{\GB}\) & Grain-boundary sink efficiency, interstitials, Eq.~\eqref{eq:sink-int} & \SI{2e5}{nm.s^{-1}} & Calibrated against the grain-boundary composition profiles \\
 \hline
@@ -1048,7 +1278,7 @@ Symbol & Description & Value & Source \\
 \(k_{\mathrm{r}}^{\mathrm{Fe_3O_4}}\) & Interfacial rate constant, \ce{Fe3O4}, Eq.~\eqref{eq:rate-fe3o4} & \SI{5e-5}{nm.s^{-1}} & Calibrated against the oxide composition, \SI{0}{\dpa} \\
 \(k_{\mathrm{r}}^{\mathrm{SiO_2}}\) & Interfacial rate constant, \ce{SiO2}, Eq.~\eqref{eq:rate-sio2} & \SI{7e-4}{nm.s^{-1}} & Stability ordering, held fixed \\
 \(v_{\mathrm{Cr}}^{\mathrm{r}}\) & Rejection velocity, Cr, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \\
-\(v_{\mathrm{Fe}}^{\mathrm{r}}\) & Rejection velocity, Fe, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \parencite{deng2020corrosion} \\
+\(v_{\mathrm{Fe}}^{\mathrm{r}}\) & Rejection velocity, Fe, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \cite{deng2020corrosion} \\
 \(v_{\mathrm{Si}}^{\mathrm{r}}\) & Rejection velocity, Si, Eq.~\eqref{eq:capture-fraction} & \SI{1e-7}{nm.s^{-1}} & Limit \(\lambda_i\to1\) \\
 \(v_{\mathrm{Ni}}^{\mathrm{r}}\) & Rejection velocity, Ni, Eq.~\eqref{eq:capture-fraction} & \SI{1.5e-5}{nm.s^{-1}} & Calibrated against the interface Ni content, \SI{0}{\dpa} \\
 \(C_{\Ox}^{\mathrm{ref}}\) & Reference oxygen density, Eqs.~\eqref{eq:sink-cr}--\eqref{eq:thick-sio2} & \SI{22}{nm^{-3}} & Assumed \\
@@ -1079,7 +1309,7 @@ Symbol & Description & Value & Source \\
 \(D_{\Ox}^{\mathrm{Cr_2O_3}}\) & Oxygen diffusivity in \ce{Cr2O3}, Eq.~\eqref{eq:Dlocal} & \SI{6e-5}{nm^2.s^{-1}} & Calibrated against the oxidation depths \\
 \(D_{\Ox}^{\mathrm{Fe_3O_4}}\) & Oxygen diffusivity in \ce{Fe3O4}, Eq.~\eqref{eq:Dlocal} & \SI{5e-3}{nm^2.s^{-1}} & Calibrated against the oxidation depths \\
 \(D_{\Ox}^{\mathrm{por}}\) & Oxygen diffusivity of the porosity, Eq.~\eqref{eq:Dlocal} & \SI{0.8}{nm^2.s^{-1}} & Calibrated against the oxidation depths \\
-\(m\) & Archie exponent, Eq.~\eqref{eq:Dlocal} & 2 & Held fixed \parencite{hunt2004continuum} \\
+\(m\) & Archie exponent, Eq.~\eqref{eq:Dlocal} & 2 & Held fixed \cite{hunt2004continuum} \\
 \(D_{\Ox}^{0}\) & Oxygen diffusivity of the open boundary channel, Eq.~\eqref{eq:Deff} & \SI{0.8}{nm^2.s^{-1}} & Set equal to \(D_{\Ox}^{\mathrm{por}}\) \\
 \(\delta_{\GB}\) & Half-width of the unoxidized boundary, Eq.~\eqref{eq:halfwidth} & \SI{0.05}{nm} & Assumed \\
 \hline
@@ -1209,7 +1439,7 @@ The measurements show the signature of selective oxidation at all three doses:
 Cr is enriched and Fe depleted in the oxide relative to the matrix. The Cr
 content of the oxide, normalized to exclude oxygen, decreases with dose, from
 \SI{74.9}{\atpct} in the solution-annealed specimen to 69.5 and
-\SI{58.3}{\atpct} at 0.5 and \SI{3.0}{\dpa} \parencite{deng2017effect}. On the
+\SI{58.3}{\atpct} at 0.5 and \SI{3.0}{\dpa} \cite{deng2017effect}. On the
 metal side of the interface the scans show no significant Cr depletion or Fe
 enrichment, and only a slight Ni enrichment. In the irradiated specimens the Cr
 profile exhibits a valley at the centre of the oxide that deepens with
@@ -1233,11 +1463,11 @@ there.
 
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:Cr-min}
   \includegraphics[width=\linewidth]{Cr_minimum_in_oxide_vs_dose}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\end{subfigure}\hspace{0.6cm}
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:poro-across}
   \includegraphics[width=\linewidth]{porosity_across_oxide_rel0.5}
 \end{subfigure}
@@ -1275,9 +1505,9 @@ under-focus TEM imaging of proton-irradiated 316L.
 \subsection{Intergranular Oxide Penetration Depth}
 \label{sec:resultsOxi}
 \begin{figure}[!ht]\centering
-\includegraphics[width=0.48\textwidth]{front_vs_dose}
+\includegraphics[width=6.6cm]{front_vs_dose}
 \caption{Intergranular oxide penetration depth after \SI{500}{h}, calculated
-and measured \parencite{deng2017effect}. These data calibrate the oxidation
+and measured \cite{deng2017effect}. These data calibrate the oxidation
 parameters.}
 \label{fig:front}
 \end{figure}
@@ -1294,11 +1524,11 @@ with dose is carried entirely by the segregation profiles inherited from the
 irradiation stage, Eq.~\eqref{eq:handoff}.
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:front-SiOnly}
   \includegraphics[width=\linewidth]{front_vs_dose_flatCr}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\end{subfigure}\hspace{0.6cm}
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:front-CrOnly}
   \includegraphics[width=\linewidth]{front_vs_dose_flatSi}
 \end{subfigure}
@@ -1325,11 +1555,11 @@ Si enrichment alone produces \SI{43}{nm} and the Cr depletion alone
 present.
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:front-time-abs}
   \includegraphics[width=\linewidth]{front_vs_time_all_doses}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\end{subfigure}\hspace{0.6cm}
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:front-time-norm}
   \includegraphics[width=\linewidth]{front_shape_normalized}
 \end{subfigure}
@@ -1358,7 +1588,7 @@ is lower. A model calibrated on the \SI{500}{h} series therefore
 underestimates the absolute depths of the \SI{1500}{h} series.
 The measurements do not determine the time exponent of the penetration. The
 intergranular oxide was still flat after \SI{25}{h} and had penetrated along
-the boundary after \SI{100}{h} \parencite{deng2020corrosion}, so the
+the boundary after \SI{100}{h} \cite{deng2020corrosion}, so the
 penetration began at an unknown time between the two. With only two
 approximate depths per dose, the onset and the time exponent cannot be
 determined separately, and the time exponents of the calculation and the
@@ -1375,7 +1605,7 @@ calculated normalized depths, 0.28 and 0.38, exceed the measured 0.12 and
 \label{sec:resultsFullyCoupled}
 
 \begin{figure}[!ht]\centering
-\includegraphics[width=0.6\textwidth]{front_vs_time_inservice}
+\includegraphics[width=8.2cm]{front_vs_time_inservice}
 \caption{Penetration depth calculated for concurrent irradiation and
 oxidation of the type 316 baffle-former bolt at a constant dose rate of
 \SI{3.17e-8}{\dpa\per\second} over 40 years (\SI{350400}{h}), with all model
@@ -1489,7 +1719,7 @@ The measured Ni content of the oxide, 1 to \SI{4}{\atpct} against
 zero in the model, indicates that part of the Ni passing to the oxide side is
 retained in the oxide rather than transported out of it. Atom probe
 tomography of the intergranular oxide detected Ni but no NiO\(_x\) among the
-evaporated species \parencite{deng2021grain}, so the retained Ni is
+evaporated species \cite{deng2021grain}, so the retained Ni is
 unoxidized, as expected from the low oxygen affinity of Ni, and is most
 likely dissolved in the oxide without yet having been transported out.
 
@@ -1545,7 +1775,7 @@ The calculation extends the calibration by a factor of about 700 in time and
 the 2 to \SI{3}{\micro\metre} measured for the shallow damage
 (Fig.~\ref{fig:front-inservice}). The measured oxide also shows the
 processes on which the model rests. The original grain boundary inside the
-in-service oxide is depleted in Cr and in Si \parencite{lach2025inservice}
+in-service oxide is depleted in Cr and in Si \cite{lach2025inservice}
 and, as noted in Sec.~\ref{sec:discussionTranscription}, appears to carry Fe
 and Ni toward the outer oxide; in the model these correspond to the Cr valley
 at the centre of the oxide, the dissolution of the oxidized Si, and the
@@ -1555,11 +1785,11 @@ removal of the unoxidized Fe and Ni through the oxide.
 \label{sec:discussionStrength}
 
 \begin{figure}[!ht]\centering
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:strength-dose}
   \includegraphics[width=\linewidth]{strength_RD_centreline_vs_dose_rel0.5}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.48\textwidth}\centering
+\end{subfigure}\hspace{0.6cm}
+\begin{subfigure}[t]{6.6cm}\centering
   \caption{}\label{fig:strength-across}
   \includegraphics[width=\linewidth]{strength_porosity_across_oxide_dose3_rel0.5}
 \end{subfigure}
@@ -1576,15 +1806,15 @@ Intergranular oxidation weakens the boundary. In micromechanical tests on
 single grain boundaries of Alloy 600 oxidized in PWR primary water, the
 oxidized boundaries fractured under loads at which unoxidized boundaries only
 deformed plastically
-\parencite{fujii2011degradation,stratulat2016micromechanical}. The porosity
+\cite{fujii2011degradation,stratulat2016micromechanical}. The porosity
 calculated here suggests that irradiation may lower the strength of the
 intergranular oxide further. As a rough estimate, the empirical
 Ryshkewitch--Duckworth relation between the strength and the porosity of
-ceramics \parencite{duckworth1953discussion},
+ceramics \cite{duckworth1953discussion},
 \(\sigma/\sigma_0=\exp(-b\,f_{\mathrm{SiO_2}})\), is applied to the calculated
 porosity \(f_{\mathrm{SiO_2}}\), where \(\sigma_0\) is the strength of the
 pore-free oxide and \(b\) is an empirical constant between about 2 and 7
-\parencite{biggemann2021porous}, taken here as 4. At half
+\cite{biggemann2021porous}, taken here as 4. At half
 the penetration depth the estimated relative strength at the centre of the
 oxide is 0.88 in the unirradiated specimen and 0.61 and 0.41 at 0.5 and
 \SI{3.0}{\dpa} (Fig.~\ref{fig:strength-dose}). Across the oxide at
@@ -1596,12 +1826,12 @@ porosity is concentrated. This is consistent with reported crack paths. In proto
 316L the centre of the intergranular crack lies along the original grain
 boundary, the crack walls are covered by oxide, and the porous interface
 along the centre of the oxide continues beyond the crack tip
-\parencite{kuang2022highresolution}; in irradiated 347, 316 and 304
+\cite{kuang2022highresolution}; in irradiated 347, 316 and 304
 stainless steels strained in simulated PWR primary water the fracture path
 runs through the oxide and not along the oxide/metal interface
-\parencite{was2024how}; and in a fractured cantilever of oxidized Alloy 600
+\cite{was2024how}; and in a fractured cantilever of oxidized Alloy 600
 the oxide was present on both sides of the crack, which was therefore
-contained within the oxide \parencite{stratulat2016micromechanical}.
+contained within the oxide \cite{stratulat2016micromechanical}.
 
 \section{Conclusions}
 \label{sec:conclusion}
