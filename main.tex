@@ -663,6 +663,7 @@ as the end-members of the amorphous oxide, but do not treat them as distinguishe
 Oxygen diffuses along the grain boundary through a channel made of two parts. Before being oxidized, grain boundary is an open channel which has half-width of \(\delta_{\GB}\), where the oxygen diffusivity is \(D_\Ox^0\). After oxidation, the oxide has already grown is also the diffusion channel for oxygen. As the oxide grows and fills the grain boundary, the open channel will be narrowed by the growing oxide. Once the total local oxide thickness exceeds the width of the open channel, the whole diffusion channel is made of oxide and widens with the growth of oxide. The half-width of the oxygen diffusion channel \(w\) is given by:
 \begin{equation}
     w=max\left(\sum_k L_k, \delta_{\GB}\right)
+\label{eq:halfwidth}
 \end{equation}
 where \(\sum_k L_k\) is the total thickness of the oxide on the one side of the grain boundary. where \(L_k\) is the thickness contributed by each oxide end-member. The remaining open channel half-width is \(w-\sum_k L_k\).
 
@@ -703,6 +704,7 @@ C_\Ox\left(x,y,t\right)=A\left(y,t\right)\cos\left(\frac{\lambda x}{w}\right),
 where \(\lambda\) is an eigenvalue which can be solved by following equation which balancing the diffusion and reaction at the interface.
 \begin{equation}
 \lambda \tan{\lambda} = \frac{w\left(C_\mathrm{Cr}^\GB k_\mathrm{r}^\mathrm{Cr_2 O_3}+C_\mathrm{Fe}^\GB k_\mathrm{r}^\mathrm{Fe_3 O_4}+C_\mathrm{Si}^\GB k_\mathrm{r}^\mathrm{SiO_2}\right)}{D_\Ox^\mathrm{eff,x}} \cite{crank1975mathematics}
+\label{eq:qss-closure}
 \end{equation}
 where \(D_\Ox^\mathrm{eff,x}\) is the oxygen effective diffusivity across the grain boundary diffusion channel, and it is also determined by the local oxide previously formed, and will be explained later. \(A\) is the mid-plane oxygen concentration. With this cosine shape of the oxygen concentration profile and the solved eigenvalue \(\lambda\), the interfac oxygen concentration \(C_{\Ox}^{\intf}\) is given by:
 \begin{equation}
@@ -753,6 +755,7 @@ f_k\left(x\right)=\frac{\dot{L}_k\left(t|_{x=\sum_h L_h}\right)}{\sum_h \dot{L}_
 With the volume fraction of each end-member, the oxygen diffusivity at a specific position in the oxide can be calculated. Here we use Archie's percolation law to handle the \ce{SiO_2} induced porosity \cite{hunt2004continuum,balberg1986excludedvolume}:
 \begin{equation}
 D_\Ox\left(x\right) = f_\mathrm{Cr_2O_3}\left(x\right)D_\Ox^\mathrm{Cr_2O_3}+f_\mathrm{Fe_3O_4}\left(x\right)D_\Ox^\mathrm{Fe_3O_4}+{f_\mathrm{porosity}\left(x\right)}^\mathrm{m}D_\Ox^\mathrm{porosity}
+\label{eq:Dlocal}
 \end{equation}
 where \(m\) is the cementation exponent, \(D_\Ox^k\) is the oxygen diffusivity in the end-member \(k\), and \(D_\Ox^\mathrm{porosity}\) is the oxygen diffusivity in free space, which is the same to the diffusivity in un-oxidized grain boundary open channel \(D_\Ox^0\). The \(f_\mathrm{porosity}}\) is the volume fraction of the pores induced by the SiO_2 and \(f_\mathrm{porosity}=f_\mathrm{SiO_2}\).
 Oxygen moves along the boundary through the whole section in parallel and
